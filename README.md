@@ -17,7 +17,7 @@ composer.json require entry:
 
 ```json
 {
-   "dcarbone/php-fhir-generated": "DSTU2"
+   "dcarbone/php-fhir-generated": "dev-DSTU2"
 }
 ```
 
