@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Immunization event information.
  */
-class FHIRImmunizationExplanation extends FHIRBackboneElement implements JsonSerializable
+class FHIRImmunizationExplanation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Reasons why a vaccine was administered.
@@ -91,7 +90,7 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement implements JsonSer
 
     /**
      * Reasons why a vaccine was administered.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -111,7 +110,7 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement implements JsonSer
 
     /**
      * Refusal or exemption reasons.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $refusalReason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $refusalReason
      * @return $this
      */
     public function addRefusalReason($refusalReason)
@@ -143,15 +142,15 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement implements JsonSer
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->reason)) {
-            $json['reason'] = array();
+            $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = $reason->jsonSerialize();
+                $json['reason'][] = json_encode($reason);
             }
         }
         if (0 < count($this->refusalReason)) {
-            $json['refusalReason'] = array();
+            $json['refusalReason'] = [];
             foreach($this->refusalReason as $refusalReason) {
-                $json['refusalReason'][] = $refusalReason->jsonSerialize();
+                $json['refusalReason'][] = json_encode($refusalReason);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A patient's point-of-time immunization status and recommendation with optional supporting justification.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImmunizationRecommendation extends FHIRResource implements JsonSerializable
+class FHIRImmunizationRecommendation extends FHIRResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this particular recommendation record.
@@ -98,7 +97,7 @@ class FHIRImmunizationRecommendation extends FHIRResource implements JsonSeriali
 
     /**
      * A unique identifier assigned to this particular recommendation record.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -138,7 +137,7 @@ class FHIRImmunizationRecommendation extends FHIRResource implements JsonSeriali
 
     /**
      * Vaccine administration recommendations.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation[] $recommendation
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $recommendation
      * @return $this
      */
     public function addRecommendation($recommendation)
@@ -171,16 +170,16 @@ class FHIRImmunizationRecommendation extends FHIRResource implements JsonSeriali
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->recommendation)) {
-            $json['recommendation'] = array();
+            $json['recommendation'] = [];
             foreach($this->recommendation as $recommendation) {
-                $json['recommendation'][] = $recommendation->jsonSerialize();
+                $json['recommendation'][] = json_encode($recommendation);
             }
         }
         return $json;

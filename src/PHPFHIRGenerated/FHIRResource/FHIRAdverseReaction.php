@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Records an unexpected reaction suspected to be related to the exposure of the reaction subject to a substance.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRAdverseReaction extends FHIRResource implements JsonSerializable
+class FHIRAdverseReaction extends FHIRResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this reaction that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -122,7 +121,7 @@ class FHIRAdverseReaction extends FHIRResource implements JsonSerializable
 
     /**
      * This records identifiers associated with this reaction that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -222,7 +221,7 @@ class FHIRAdverseReaction extends FHIRResource implements JsonSerializable
 
     /**
      * The signs and symptoms that were observed as part of the reaction.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRAdverseReaction\FHIRAdverseReactionSymptom[] $symptom
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRAdverseReaction\FHIRAdverseReactionSymptom $symptom
      * @return $this
      */
     public function addSymptom($symptom)
@@ -242,7 +241,7 @@ class FHIRAdverseReaction extends FHIRResource implements JsonSerializable
 
     /**
      * An exposure to a substance that preceded a reaction occurrence.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRAdverseReaction\FHIRAdverseReactionExposure[] $exposure
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRAdverseReaction\FHIRAdverseReactionExposure $exposure
      * @return $this
      */
     public function addExposure($exposure)
@@ -275,25 +274,25 @@ class FHIRAdverseReaction extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->didNotOccurFlag) $json['didNotOccurFlag'] = $this->didNotOccurFlag->jsonSerialize();
-        if (null !== $this->recorder) $json['recorder'] = $this->recorder->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->didNotOccurFlag) $json['didNotOccurFlag'] = json_encode($this->didNotOccurFlag);
+        if (null !== $this->recorder) $json['recorder'] = json_encode($this->recorder);
         if (0 < count($this->symptom)) {
-            $json['symptom'] = array();
+            $json['symptom'] = [];
             foreach($this->symptom as $symptom) {
-                $json['symptom'][] = $symptom->jsonSerialize();
+                $json['symptom'][] = json_encode($symptom);
             }
         }
         if (0 < count($this->exposure)) {
-            $json['exposure'] = array();
+            $json['exposure'] = [];
             foreach($this->exposure as $exposure) {
-                $json['exposure'][] = $exposure->jsonSerialize();
+                $json['exposure'][] = json_encode($exposure);
             }
         }
         return $json;

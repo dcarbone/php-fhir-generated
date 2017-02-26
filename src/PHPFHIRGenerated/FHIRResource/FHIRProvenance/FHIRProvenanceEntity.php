@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Provenance information that describes the activity that led to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance.
  */
-class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializable
+class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * How the entity was used during the activity.
@@ -220,11 +219,11 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = $this->role->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->reference) $json['reference'] = $this->reference->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
-        if (null !== $this->agent) $json['agent'] = $this->agent->jsonSerialize();
+        if (null !== $this->role) $json['role'] = json_encode($this->role);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
+        if (null !== $this->agent) $json['agent'] = json_encode($this->agent);
         return $json;
     }
 

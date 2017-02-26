@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the data produced by a device at a point in time.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDeviceObservationReport extends FHIRResource implements JsonSerializable
+class FHIRDeviceObservationReport extends FHIRResource implements \JsonSerializable
 {
     /**
      * The point in time that the values are reported.
@@ -190,7 +189,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements JsonSerializab
 
     /**
      * A medical-related subsystem of a medical device.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceObservationReport\FHIRDeviceObservationReportVirtualDevice[] $virtualDevice
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceObservationReport\FHIRDeviceObservationReportVirtualDevice $virtualDevice
      * @return $this
      */
     public function addVirtualDevice($virtualDevice)
@@ -222,14 +221,14 @@ class FHIRDeviceObservationReport extends FHIRResource implements JsonSerializab
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->instant) $json['instant'] = $this->instant->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
+        if (null !== $this->instant) $json['instant'] = json_encode($this->instant);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->virtualDevice)) {
-            $json['virtualDevice'] = array();
+            $json['virtualDevice'] = [];
             foreach($this->virtualDevice as $virtualDevice) {
-                $json['virtualDevice'][] = $virtualDevice->jsonSerialize();
+                $json['virtualDevice'][] = json_encode($virtualDevice);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concept systems.
  */
-class FHIRConceptMapDependsOn extends FHIRBackboneElement implements JsonSerializable
+class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A reference to a specific concept that holds a coded value. This can be an element in a FHIR resource, or a specific reference to a data element in a different specification (e.g. v2) or a general reference to a kind of data field, or a reference to a value set with an appropriately narrow definition.
@@ -168,9 +167,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->concept) $json['concept'] = $this->concept->jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->concept) $json['concept'] = json_encode($this->concept);
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         return $json;
     }
 

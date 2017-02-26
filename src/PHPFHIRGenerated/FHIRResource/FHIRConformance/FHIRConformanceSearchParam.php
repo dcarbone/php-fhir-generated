@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.
  */
-class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceSearchParam extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The name of the search parameter used in the interface.
@@ -195,7 +194,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * Types of resource (if a resource is referenced).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $target
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $target
      * @return $this
      */
     public function addTarget($target)
@@ -215,7 +214,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * Chained names supported.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $chain
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $chain
      * @return $this
      */
     public function addChain($chain)
@@ -246,20 +245,20 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->definition) $json['definition'] = $this->definition->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
         if (0 < count($this->target)) {
-            $json['target'] = array();
+            $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = $target->jsonSerialize();
+                $json['target'][] = json_encode($target);
             }
         }
         if (0 < count($this->chain)) {
-            $json['chain'] = array();
+            $json['chain'] = [];
             foreach($this->chain as $chain) {
-                $json['chain'][] = $chain->jsonSerialize();
+                $json['chain'][] = json_encode($chain);
             }
         }
         return $json;

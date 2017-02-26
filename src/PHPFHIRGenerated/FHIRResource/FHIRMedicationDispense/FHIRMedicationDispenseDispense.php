@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.
  */
-class FHIRMedicationDispenseDispense extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationDispenseDispense extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifier assigned by the dispensing facility.   This is an identifier assigned outside FHIR.
@@ -299,7 +298,7 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement implements Json
 
     /**
      * Identifies the person who picked up the medication.  This will usually be a patient or their carer, but some cases exist where it can be a healthcare professional.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $receiver
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $receiver
      * @return $this
      */
     public function addReceiver($receiver)
@@ -319,7 +318,7 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement implements Json
 
     /**
      * Indicates how the medication is to be used by the patient.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseDosage[] $dosage
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseDosage $dosage
      * @return $this
      */
     public function addDosage($dosage)
@@ -350,24 +349,24 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement implements Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->medication) $json['medication'] = $this->medication->jsonSerialize();
-        if (null !== $this->whenPrepared) $json['whenPrepared'] = $this->whenPrepared->jsonSerialize();
-        if (null !== $this->whenHandedOver) $json['whenHandedOver'] = $this->whenHandedOver->jsonSerialize();
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->medication) $json['medication'] = json_encode($this->medication);
+        if (null !== $this->whenPrepared) $json['whenPrepared'] = json_encode($this->whenPrepared);
+        if (null !== $this->whenHandedOver) $json['whenHandedOver'] = json_encode($this->whenHandedOver);
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
         if (0 < count($this->receiver)) {
-            $json['receiver'] = array();
+            $json['receiver'] = [];
             foreach($this->receiver as $receiver) {
-                $json['receiver'][] = $receiver->jsonSerialize();
+                $json['receiver'][] = json_encode($receiver);
             }
         }
         if (0 < count($this->dosage)) {
-            $json['dosage'] = array();
+            $json['dosage'] = [];
             foreach($this->dosage as $dosage) {
-                $json['dosage'][] = $dosage->jsonSerialize();
+                $json['dosage'][] = json_encode($dosage);
             }
         }
         return $json;

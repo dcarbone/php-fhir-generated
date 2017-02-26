@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A reference to a code defined by a terminology system.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRCoding extends FHIRElement implements JsonSerializable
+class FHIRCoding extends FHIRElement implements \JsonSerializable
 {
     /**
      * The identification of the code system that defines the meaning of the symbol in the code.
@@ -247,12 +246,12 @@ class FHIRCoding extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
-        if (null !== $this->primary) $json['primary'] = $this->primary->jsonSerialize();
-        if (null !== $this->valueSet) $json['valueSet'] = $this->valueSet->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
+        if (null !== $this->primary) $json['primary'] = json_encode($this->primary);
+        if (null !== $this->valueSet) $json['valueSet'] = json_encode($this->valueSet);
         return $json;
     }
 

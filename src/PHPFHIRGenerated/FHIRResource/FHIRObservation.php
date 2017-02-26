@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRObservation extends FHIRResource implements JsonSerializable
+class FHIRObservation extends FHIRResource implements \JsonSerializable
 {
     /**
      * Describes what was observed. Sometimes this is called the observation "code".
@@ -591,7 +590,7 @@ class FHIRObservation extends FHIRResource implements JsonSerializable
 
     /**
      * Who was responsible for asserting the observed value as "true".
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $performer
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -611,7 +610,7 @@ class FHIRObservation extends FHIRResource implements JsonSerializable
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[] $referenceRange
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationReferenceRange $referenceRange
      * @return $this
      */
     public function addReferenceRange($referenceRange)
@@ -631,7 +630,7 @@ class FHIRObservation extends FHIRResource implements JsonSerializable
 
     /**
      * Related observations - either components, or previous observations, or statements of derivation.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationRelated[] $related
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationRelated $related
      * @return $this
      */
     public function addRelated($related)
@@ -663,42 +662,42 @@ class FHIRObservation extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity->jsonSerialize();
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept->jsonSerialize();
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment->jsonSerialize();
-        if (null !== $this->valueRatio) $json['valueRatio'] = $this->valueRatio->jsonSerialize();
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = $this->valuePeriod->jsonSerialize();
-        if (null !== $this->valueSampledData) $json['valueSampledData'] = $this->valueSampledData->jsonSerialize();
-        if (null !== $this->valueString) $json['valueString'] = $this->valueString->jsonSerialize();
-        if (null !== $this->interpretation) $json['interpretation'] = $this->interpretation->jsonSerialize();
-        if (null !== $this->comments) $json['comments'] = $this->comments->jsonSerialize();
-        if (null !== $this->appliesDateTime) $json['appliesDateTime'] = $this->appliesDateTime->jsonSerialize();
-        if (null !== $this->appliesPeriod) $json['appliesPeriod'] = $this->appliesPeriod->jsonSerialize();
-        if (null !== $this->issued) $json['issued'] = $this->issued->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->reliability) $json['reliability'] = $this->reliability->jsonSerialize();
-        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->specimen) $json['specimen'] = $this->specimen->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
+        if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
+        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
+        if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
+        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
+        if (null !== $this->interpretation) $json['interpretation'] = json_encode($this->interpretation);
+        if (null !== $this->comments) $json['comments'] = json_encode($this->comments);
+        if (null !== $this->appliesDateTime) $json['appliesDateTime'] = json_encode($this->appliesDateTime);
+        if (null !== $this->appliesPeriod) $json['appliesPeriod'] = json_encode($this->appliesPeriod);
+        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->reliability) $json['reliability'] = json_encode($this->reliability);
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->specimen) $json['specimen'] = json_encode($this->specimen);
         if (0 < count($this->performer)) {
-            $json['performer'] = array();
+            $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = $performer->jsonSerialize();
+                $json['performer'][] = json_encode($performer);
             }
         }
         if (0 < count($this->referenceRange)) {
-            $json['referenceRange'] = array();
+            $json['referenceRange'] = [];
             foreach($this->referenceRange as $referenceRange) {
-                $json['referenceRange'][] = $referenceRange->jsonSerialize();
+                $json['referenceRange'][] = json_encode($referenceRange);
             }
         }
         if (0 < count($this->related)) {
-            $json['related'] = array();
+            $json['related'] = [];
             foreach($this->related as $related) {
-                $json['related'][] = $related->jsonSerialize();
+                $json['related'][] = json_encode($related);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  */
-class FHIRProfileConstraint extends FHIRBackboneElement implements JsonSerializable
+class FHIRProfileConstraint extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Allows identification of which elements have their cardinalities impacted by the constraint.  Will not be referenced for constraints that do not affect cardinality.
@@ -220,11 +219,11 @@ class FHIRProfileConstraint extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->key) $json['key'] = $this->key->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->severity) $json['severity'] = $this->severity->jsonSerialize();
-        if (null !== $this->human) $json['human'] = $this->human->jsonSerialize();
-        if (null !== $this->xpath) $json['xpath'] = $this->xpath->jsonSerialize();
+        if (null !== $this->key) $json['key'] = json_encode($this->key);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
+        if (null !== $this->human) $json['human'] = json_encode($this->human);
+        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
         return $json;
     }
 

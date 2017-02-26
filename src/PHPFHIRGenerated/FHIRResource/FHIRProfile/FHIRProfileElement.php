@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  */
-class FHIRProfileElement extends FHIRBackboneElement implements JsonSerializable
+class FHIRProfileElement extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The path identifies the element and is expressed as a "."-separated list of ancestor elements, beginning with the name of the resource.
@@ -129,7 +128,7 @@ class FHIRProfileElement extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Codes that define how this element is represented in instances, when the deviation varies from the normal case.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPropertyRepresentation[] $representation
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPropertyRepresentation $representation
      * @return $this
      */
     public function addRepresentation($representation)
@@ -220,16 +219,16 @@ class FHIRProfileElement extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->path) $json['path'] = $this->path->jsonSerialize();
+        if (null !== $this->path) $json['path'] = json_encode($this->path);
         if (0 < count($this->representation)) {
-            $json['representation'] = array();
+            $json['representation'] = [];
             foreach($this->representation as $representation) {
-                $json['representation'][] = $representation->jsonSerialize();
+                $json['representation'][] = json_encode($representation);
             }
         }
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->slicing) $json['slicing'] = $this->slicing->jsonSerialize();
-        if (null !== $this->definition) $json['definition'] = $this->definition->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->slicing) $json['slicing'] = json_encode($this->slicing);
+        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRRelatedPerson extends FHIRResource implements JsonSerializable
+class FHIRRelatedPerson extends FHIRResource implements \JsonSerializable
 {
     /**
      * Identifier for a person within a particular scope.
@@ -128,7 +127,7 @@ class FHIRRelatedPerson extends FHIRResource implements JsonSerializable
 
     /**
      * Identifier for a person within a particular scope.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -208,7 +207,7 @@ class FHIRRelatedPerson extends FHIRResource implements JsonSerializable
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -268,7 +267,7 @@ class FHIRRelatedPerson extends FHIRResource implements JsonSerializable
 
     /**
      * Image of the person.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $photo
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function addPhoto($photo)
@@ -301,26 +300,26 @@ class FHIRRelatedPerson extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->relationship) $json['relationship'] = $this->relationship->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
-        if (null !== $this->gender) $json['gender'] = $this->gender->jsonSerialize();
-        if (null !== $this->address) $json['address'] = $this->address->jsonSerialize();
+        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
+        if (null !== $this->address) $json['address'] = json_encode($this->address);
         if (0 < count($this->photo)) {
-            $json['photo'] = array();
+            $json['photo'] = [];
             foreach($this->photo as $photo) {
-                $json['photo'][] = $photo->jsonSerialize();
+                $json['photo'][] = json_encode($photo);
             }
         }
         return $json;

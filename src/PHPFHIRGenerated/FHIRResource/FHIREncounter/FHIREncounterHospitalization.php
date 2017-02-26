@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
  */
-class FHIREncounterHospitalization extends FHIRBackboneElement implements JsonSerializable
+class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Pre-admission identifier.
@@ -231,7 +230,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements JsonSe
 
     /**
      * Where the patient stays during this encounter.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterAccomodation[] $accomodation
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterAccomodation $accomodation
      * @return $this
      */
     public function addAccomodation($accomodation)
@@ -271,7 +270,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements JsonSe
 
     /**
      * Special courtesies (VIP, board member).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $specialCourtesy
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specialCourtesy
      * @return $this
      */
     public function addSpecialCourtesy($specialCourtesy)
@@ -291,7 +290,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements JsonSe
 
     /**
      * Wheelchair, translator, stretcher, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $specialArrangement
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specialArrangement
      * @return $this
      */
     public function addSpecialArrangement($specialArrangement)
@@ -402,33 +401,33 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->preAdmissionIdentifier) $json['preAdmissionIdentifier'] = $this->preAdmissionIdentifier->jsonSerialize();
-        if (null !== $this->origin) $json['origin'] = $this->origin->jsonSerialize();
-        if (null !== $this->admitSource) $json['admitSource'] = $this->admitSource->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->preAdmissionIdentifier) $json['preAdmissionIdentifier'] = json_encode($this->preAdmissionIdentifier);
+        if (null !== $this->origin) $json['origin'] = json_encode($this->origin);
+        if (null !== $this->admitSource) $json['admitSource'] = json_encode($this->admitSource);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (0 < count($this->accomodation)) {
-            $json['accomodation'] = array();
+            $json['accomodation'] = [];
             foreach($this->accomodation as $accomodation) {
-                $json['accomodation'][] = $accomodation->jsonSerialize();
+                $json['accomodation'][] = json_encode($accomodation);
             }
         }
-        if (null !== $this->diet) $json['diet'] = $this->diet->jsonSerialize();
+        if (null !== $this->diet) $json['diet'] = json_encode($this->diet);
         if (0 < count($this->specialCourtesy)) {
-            $json['specialCourtesy'] = array();
+            $json['specialCourtesy'] = [];
             foreach($this->specialCourtesy as $specialCourtesy) {
-                $json['specialCourtesy'][] = $specialCourtesy->jsonSerialize();
+                $json['specialCourtesy'][] = json_encode($specialCourtesy);
             }
         }
         if (0 < count($this->specialArrangement)) {
-            $json['specialArrangement'] = array();
+            $json['specialArrangement'] = [];
             foreach($this->specialArrangement as $specialArrangement) {
-                $json['specialArrangement'][] = $specialArrangement->jsonSerialize();
+                $json['specialArrangement'][] = json_encode($specialArrangement);
             }
         }
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
-        if (null !== $this->dischargeDisposition) $json['dischargeDisposition'] = $this->dischargeDisposition->jsonSerialize();
-        if (null !== $this->dischargeDiagnosis) $json['dischargeDiagnosis'] = $this->dischargeDiagnosis->jsonSerialize();
-        if (null !== $this->reAdmission) $json['reAdmission'] = $this->reAdmission->jsonSerialize();
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
+        if (null !== $this->dischargeDisposition) $json['dischargeDisposition'] = json_encode($this->dischargeDisposition);
+        if (null !== $this->dischargeDiagnosis) $json['dischargeDiagnosis'] = json_encode($this->dischargeDiagnosis);
+        if (null !== $this->reAdmission) $json['reAdmission'] = json_encode($this->reAdmission);
         return $json;
     }
 

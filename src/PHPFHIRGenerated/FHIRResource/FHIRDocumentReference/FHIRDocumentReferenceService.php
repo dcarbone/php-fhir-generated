@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A reference to a document.
  */
-class FHIRDocumentReferenceService extends FHIRBackboneElement implements JsonSerializable
+class FHIRDocumentReferenceService extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The type of the service that can be used to access the documents.
@@ -137,7 +136,7 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement implements JsonSe
 
     /**
      * A list of named parameters that is used in the service call.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceParameter[] $parameter
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -168,12 +167,12 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement implements JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->address) $json['address'] = $this->address->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->address) $json['address'] = json_encode($this->address);
         if (0 < count($this->parameter)) {
-            $json['parameter'] = array();
+            $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = $parameter->jsonSerialize();
+                $json['parameter'][] = json_encode($parameter);
             }
         }
         return $json;

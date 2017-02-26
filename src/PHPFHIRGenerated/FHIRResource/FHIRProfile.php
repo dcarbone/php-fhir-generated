@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRProfile extends FHIRResource implements JsonSerializable
+class FHIRProfile extends FHIRResource implements \JsonSerializable
 {
     /**
      * The identifier that is used to identify this profile when it is referenced in a specification, model, design or an instance  (should be globally unique OID, UUID, or URI).
@@ -256,7 +255,7 @@ class FHIRProfile extends FHIRResource implements JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -296,7 +295,7 @@ class FHIRProfile extends FHIRResource implements JsonSerializable
 
     /**
      * A set of terms from external terminologies that may be used to assist with indexing and searching of templates.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $code
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
      * @return $this
      */
     public function addCode($code)
@@ -416,7 +415,7 @@ class FHIRProfile extends FHIRResource implements JsonSerializable
 
     /**
      * An external specification that the content is mapped to.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileMapping[] $mapping
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileMapping $mapping
      * @return $this
      */
     public function addMapping($mapping)
@@ -436,7 +435,7 @@ class FHIRProfile extends FHIRResource implements JsonSerializable
 
     /**
      * A constraint statement about what contents a resource or data type may have.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileStructure[] $structure
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileStructure $structure
      * @return $this
      */
     public function addStructure($structure)
@@ -456,7 +455,7 @@ class FHIRProfile extends FHIRResource implements JsonSerializable
 
     /**
      * An extension defined as part of the profile.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileExtensionDefn[] $extensionDefn
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileExtensionDefn $extensionDefn
      * @return $this
      */
     public function addExtensionDefn($extensionDefn)
@@ -476,7 +475,7 @@ class FHIRProfile extends FHIRResource implements JsonSerializable
 
     /**
      * Definition of a named query and its parameters and their meaning.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileQuery[] $query
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileQuery $query
      * @return $this
      */
     public function addQuery($query)
@@ -508,50 +507,50 @@ class FHIRProfile extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->code)) {
-            $json['code'] = array();
+            $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = $code->jsonSerialize();
+                $json['code'][] = json_encode($code);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
         if (0 < count($this->mapping)) {
-            $json['mapping'] = array();
+            $json['mapping'] = [];
             foreach($this->mapping as $mapping) {
-                $json['mapping'][] = $mapping->jsonSerialize();
+                $json['mapping'][] = json_encode($mapping);
             }
         }
         if (0 < count($this->structure)) {
-            $json['structure'] = array();
+            $json['structure'] = [];
             foreach($this->structure as $structure) {
-                $json['structure'][] = $structure->jsonSerialize();
+                $json['structure'][] = json_encode($structure);
             }
         }
         if (0 < count($this->extensionDefn)) {
-            $json['extensionDefn'] = array();
+            $json['extensionDefn'] = [];
             foreach($this->extensionDefn as $extensionDefn) {
-                $json['extensionDefn'][] = $extensionDefn->jsonSerialize();
+                $json['extensionDefn'][] = json_encode($extensionDefn);
             }
         }
         if (0 < count($this->query)) {
-            $json['query'] = array();
+            $json['query'] = [];
             foreach($this->query as $query) {
-                $json['query'][] = $query->jsonSerialize();
+                $json['query'][] = json_encode($query);
             }
         }
         return $json;

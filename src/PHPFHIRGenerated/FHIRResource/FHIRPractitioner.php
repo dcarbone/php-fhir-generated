@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A person who is directly or indirectly involved in the provisioning of healthcare.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRPractitioner extends FHIRResource implements JsonSerializable
+class FHIRPractitioner extends FHIRResource implements \JsonSerializable
 {
     /**
      * An identifier that applies to this person in this role.
@@ -164,7 +163,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * An identifier that applies to this person in this role.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -204,7 +203,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * A contact detail for the practitioner, e.g. a telephone number or an email address.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -284,7 +283,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * Image of the person.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $photo
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function addPhoto($photo)
@@ -324,7 +323,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * Roles which this practitioner is authorized to perform for the organization.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $role
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function addRole($role)
@@ -344,7 +343,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * Specific specialty of the practitioner.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $specialty
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -384,7 +383,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * The location(s) at which this practitioner provides care.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $location
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $location
      * @return $this
      */
     public function addLocation($location)
@@ -404,7 +403,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * Qualifications obtained by training and certification.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification[] $qualification
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification $qualification
      * @return $this
      */
     public function addQualification($qualification)
@@ -424,7 +423,7 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
 
     /**
      * A language the practitioner is able to use in patient communication.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $communication
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $communication
      * @return $this
      */
     public function addCommunication($communication)
@@ -457,57 +456,57 @@ class FHIRPractitioner extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
-        if (null !== $this->address) $json['address'] = $this->address->jsonSerialize();
-        if (null !== $this->gender) $json['gender'] = $this->gender->jsonSerialize();
-        if (null !== $this->birthDate) $json['birthDate'] = $this->birthDate->jsonSerialize();
+        if (null !== $this->address) $json['address'] = json_encode($this->address);
+        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
+        if (null !== $this->birthDate) $json['birthDate'] = json_encode($this->birthDate);
         if (0 < count($this->photo)) {
-            $json['photo'] = array();
+            $json['photo'] = [];
             foreach($this->photo as $photo) {
-                $json['photo'][] = $photo->jsonSerialize();
+                $json['photo'][] = json_encode($photo);
             }
         }
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
         if (0 < count($this->role)) {
-            $json['role'] = array();
+            $json['role'] = [];
             foreach($this->role as $role) {
-                $json['role'][] = $role->jsonSerialize();
+                $json['role'][] = json_encode($role);
             }
         }
         if (0 < count($this->specialty)) {
-            $json['specialty'] = array();
+            $json['specialty'] = [];
             foreach($this->specialty as $specialty) {
-                $json['specialty'][] = $specialty->jsonSerialize();
+                $json['specialty'][] = json_encode($specialty);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (0 < count($this->location)) {
-            $json['location'] = array();
+            $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = $location->jsonSerialize();
+                $json['location'][] = json_encode($location);
             }
         }
         if (0 < count($this->qualification)) {
-            $json['qualification'] = array();
+            $json['qualification'] = [];
             foreach($this->qualification as $qualification) {
-                $json['qualification'][] = $qualification->jsonSerialize();
+                $json['qualification'][] = json_encode($qualification);
             }
         }
         if (0 < count($this->communication)) {
-            $json['communication'] = array();
+            $json['communication'] = [];
             foreach($this->communication as $communication) {
-                $json['communication'][] = $communication->jsonSerialize();
+                $json['communication'][] = json_encode($communication);
             }
         }
         return $json;

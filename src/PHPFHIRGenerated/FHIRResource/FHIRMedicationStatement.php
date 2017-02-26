@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient or another clinician.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedicationStatement extends FHIRResource implements JsonSerializable
+class FHIRMedicationStatement extends FHIRResource implements \JsonSerializable
 {
     /**
      * External identifier - FHIR will generate its own internal IDs (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.
@@ -128,7 +127,7 @@ class FHIRMedicationStatement extends FHIRResource implements JsonSerializable
 
     /**
      * External identifier - FHIR will generate its own internal IDs (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -188,7 +187,7 @@ class FHIRMedicationStatement extends FHIRResource implements JsonSerializable
 
     /**
      * A code indicating why the medication was not taken.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reasonNotGiven
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonNotGiven
      * @return $this
      */
     public function addReasonNotGiven($reasonNotGiven)
@@ -248,7 +247,7 @@ class FHIRMedicationStatement extends FHIRResource implements JsonSerializable
 
     /**
      * An identifier or a link to a resource that identifies a device used in administering the medication to the patient.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $device
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $device
      * @return $this
      */
     public function addDevice($device)
@@ -268,7 +267,7 @@ class FHIRMedicationStatement extends FHIRResource implements JsonSerializable
 
     /**
      * Indicates how the medication is/was used by the patient.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationStatement\FHIRMedicationStatementDosage[] $dosage
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationStatement\FHIRMedicationStatementDosage $dosage
      * @return $this
      */
     public function addDosage($dosage)
@@ -301,31 +300,31 @@ class FHIRMedicationStatement extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = $this->wasNotGiven->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = json_encode($this->wasNotGiven);
         if (0 < count($this->reasonNotGiven)) {
-            $json['reasonNotGiven'] = array();
+            $json['reasonNotGiven'] = [];
             foreach($this->reasonNotGiven as $reasonNotGiven) {
-                $json['reasonNotGiven'][] = $reasonNotGiven->jsonSerialize();
+                $json['reasonNotGiven'][] = json_encode($reasonNotGiven);
             }
         }
-        if (null !== $this->whenGiven) $json['whenGiven'] = $this->whenGiven->jsonSerialize();
-        if (null !== $this->medication) $json['medication'] = $this->medication->jsonSerialize();
+        if (null !== $this->whenGiven) $json['whenGiven'] = json_encode($this->whenGiven);
+        if (null !== $this->medication) $json['medication'] = json_encode($this->medication);
         if (0 < count($this->device)) {
-            $json['device'] = array();
+            $json['device'] = [];
             foreach($this->device as $device) {
-                $json['device'][] = $device->jsonSerialize();
+                $json['device'][] = json_encode($device);
             }
         }
         if (0 < count($this->dosage)) {
-            $json['dosage'] = array();
+            $json['dosage'] = [];
             foreach($this->dosage as $dosage) {
-                $json['dosage'][] = $dosage->jsonSerialize();
+                $json['dosage'][] = json_encode($dosage);
             }
         }
         return $json;

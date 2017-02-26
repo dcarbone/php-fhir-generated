@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient or another clinician.
  */
-class FHIRMedicationStatementDosage extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationStatementDosage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  "Every  8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:";  "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013".
@@ -324,15 +323,15 @@ Terminologies used often pre-coordinate this term with the route and or form of 
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->timing) $json['timing'] = $this->timing->jsonSerialize();
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean->jsonSerialize();
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept->jsonSerialize();
-        if (null !== $this->site) $json['site'] = $this->site->jsonSerialize();
-        if (null !== $this->route) $json['route'] = $this->route->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->rate) $json['rate'] = $this->rate->jsonSerialize();
-        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = $this->maxDosePerPeriod->jsonSerialize();
+        if (null !== $this->timing) $json['timing'] = json_encode($this->timing);
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
+        if (null !== $this->site) $json['site'] = json_encode($this->site);
+        if (null !== $this->route) $json['route'] = json_encode($this->route);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->rate) $json['rate'] = json_encode($this->rate);
+        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = json_encode($this->maxDosePerPeriod);
         return $json;
     }
 

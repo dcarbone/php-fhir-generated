@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request for a diagnostic investigation service to be performed.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDiagnosticOrder extends FHIRResource implements JsonSerializable
+class FHIRDiagnosticOrder extends FHIRResource implements \JsonSerializable
 {
     /**
      * Who or what the investigation is to be performed on. This is usually a human patient, but diagnostic tests can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans).
@@ -180,7 +179,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements JsonSerializable
 
     /**
      * Identifiers assigned to this order by the order or by the receiver.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -240,7 +239,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements JsonSerializable
 
     /**
      * One or more specimens that the diagnostic investigation is about.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $specimen
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $specimen
      * @return $this
      */
     public function addSpecimen($specimen)
@@ -300,7 +299,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements JsonSerializable
 
     /**
      * A summary of the events of interest that have occurred as the request is processed. E.g. when the order was made, various processing steps (specimens received), when it was completed.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent[] $event
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent $event
      * @return $this
      */
     public function addEvent($event)
@@ -320,7 +319,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements JsonSerializable
 
     /**
      * The specific diagnostic investigations that are requested as part of this request. Sometimes, there can only be one item per request, but in most contexts, more than one investigation can be requested.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem[] $item
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem $item
      * @return $this
      */
     public function addItem($item)
@@ -352,34 +351,34 @@ class FHIRDiagnosticOrder extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->orderer) $json['orderer'] = $this->orderer->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->orderer) $json['orderer'] = json_encode($this->orderer);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->clinicalNotes) $json['clinicalNotes'] = $this->clinicalNotes->jsonSerialize();
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->clinicalNotes) $json['clinicalNotes'] = json_encode($this->clinicalNotes);
         if (0 < count($this->specimen)) {
-            $json['specimen'] = array();
+            $json['specimen'] = [];
             foreach($this->specimen as $specimen) {
-                $json['specimen'][] = $specimen->jsonSerialize();
+                $json['specimen'][] = json_encode($specimen);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
         if (0 < count($this->event)) {
-            $json['event'] = array();
+            $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = $event->jsonSerialize();
+                $json['event'][] = json_encode($event);
             }
         }
         if (0 < count($this->item)) {
-            $json['item'] = array();
+            $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = $item->jsonSerialize();
+                $json['item'][] = json_encode($item);
             }
         }
         return $json;

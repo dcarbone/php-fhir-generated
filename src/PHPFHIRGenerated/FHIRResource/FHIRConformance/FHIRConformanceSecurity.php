@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.
  */
-class FHIRConformanceSecurity extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceSecurity extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Server adds CORS headers when responding to requests - this enables javascript applications to yuse the server.
@@ -123,7 +122,7 @@ class FHIRConformanceSecurity extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Types of security services are supported/required by the system.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $service
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $service
      * @return $this
      */
     public function addService($service)
@@ -163,7 +162,7 @@ class FHIRConformanceSecurity extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Certificates associated with security profiles.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceCertificate[] $certificate
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceCertificate $certificate
      * @return $this
      */
     public function addCertificate($certificate)
@@ -194,18 +193,18 @@ class FHIRConformanceSecurity extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->cors) $json['cors'] = $this->cors->jsonSerialize();
+        if (null !== $this->cors) $json['cors'] = json_encode($this->cors);
         if (0 < count($this->service)) {
-            $json['service'] = array();
+            $json['service'] = [];
             foreach($this->service as $service) {
-                $json['service'][] = $service->jsonSerialize();
+                $json['service'][] = json_encode($service);
             }
         }
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->certificate)) {
-            $json['certificate'] = array();
+            $json['certificate'] = [];
             foreach($this->certificate as $certificate) {
-                $json['certificate'][] = $certificate->jsonSerialize();
+                $json['certificate'][] = json_encode($certificate);
             }
         }
         return $json;

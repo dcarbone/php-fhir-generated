@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Significant health events and conditions for people related to the subject relevant in the context of care for the subject.
  */
-class FHIRFamilyHistoryRelation extends FHIRBackboneElement implements JsonSerializable
+class FHIRFamilyHistoryRelation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * This will either be a name or a description.  E.g. "Aunt Susan", "my cousin with the red hair".
@@ -96,7 +95,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement implements JsonSeria
     public $deceasedBoolean = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRAge
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $deceasedAge = null;
 
@@ -245,7 +244,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement implements JsonSeria
     }
 
     /**
-     * @return \PHPFHIRGenerated\FHIRAge
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDeceasedAge()
     {
@@ -253,7 +252,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement implements JsonSeria
     }
 
     /**
-     * @param \PHPFHIRGenerated\FHIRAge $deceasedAge
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @return $this
      */
     public function setDeceasedAge($deceasedAge)
@@ -347,7 +346,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement implements JsonSeria
 
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRFamilyHistory\FHIRFamilyHistoryCondition[] $condition
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRFamilyHistory\FHIRFamilyHistoryCondition $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -378,21 +377,21 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement implements JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->relationship) $json['relationship'] = $this->relationship->jsonSerialize();
-        if (null !== $this->bornPeriod) $json['bornPeriod'] = $this->bornPeriod->jsonSerialize();
-        if (null !== $this->bornDate) $json['bornDate'] = $this->bornDate->jsonSerialize();
-        if (null !== $this->bornString) $json['bornString'] = $this->bornString->jsonSerialize();
-        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = $this->deceasedBoolean->jsonSerialize();
-        if (null !== $this->deceasedAge) $json['deceasedAge'] = $this->deceasedAge->jsonSerialize();
-        if (null !== $this->deceasedRange) $json['deceasedRange'] = $this->deceasedRange->jsonSerialize();
-        if (null !== $this->deceasedDate) $json['deceasedDate'] = $this->deceasedDate->jsonSerialize();
-        if (null !== $this->deceasedString) $json['deceasedString'] = $this->deceasedString->jsonSerialize();
-        if (null !== $this->note) $json['note'] = $this->note->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
+        if (null !== $this->bornPeriod) $json['bornPeriod'] = json_encode($this->bornPeriod);
+        if (null !== $this->bornDate) $json['bornDate'] = json_encode($this->bornDate);
+        if (null !== $this->bornString) $json['bornString'] = json_encode($this->bornString);
+        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = json_encode($this->deceasedBoolean);
+        if (null !== $this->deceasedAge) $json['deceasedAge'] = json_encode($this->deceasedAge);
+        if (null !== $this->deceasedRange) $json['deceasedRange'] = json_encode($this->deceasedRange);
+        if (null !== $this->deceasedDate) $json['deceasedDate'] = json_encode($this->deceasedDate);
+        if (null !== $this->deceasedString) $json['deceasedString'] = json_encode($this->deceasedString);
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
         if (0 < count($this->condition)) {
-            $json['condition'] = array();
+            $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = $condition->jsonSerialize();
+                $json['condition'][] = json_encode($condition);
             }
         }
         return $json;

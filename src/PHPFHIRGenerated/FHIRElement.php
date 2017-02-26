@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,12 +55,10 @@
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
-use PHPFHIRGenerated\JsonSerializable;
-
 /**
  * The base element used for all FHIR elements and resources - allows for them to be extended with extensions
  */
-class FHIRElement implements JsonSerializable
+class FHIRElement implements \JsonSerializable
 {
     /**
      * An extension - additional local content. The extension URL defines it's meaning
@@ -89,7 +87,7 @@ class FHIRElement implements JsonSerializable
 
     /**
      * An extension - additional local content. The extension URL defines it's meaning
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $extension
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $extension
      * @return $this
      */
     public function addExtension($extension)
@@ -137,11 +135,11 @@ class FHIRElement implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        $json = array();
+        $json = [];
         if (0 < count($this->extension)) {
-            $json['extension'] = array();
+            $json['extension'] = [];
             foreach($this->extension as $extension) {
-                $json['extension'][] = $extension->jsonSerialize();
+                $json['extension'][] = json_encode($extension);
             }
         }
         if (null !== $this->id) $json['id'] = $this->id;

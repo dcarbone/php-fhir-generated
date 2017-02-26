@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The code system from which the selected codes come from.
@@ -143,7 +142,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Specifies a code or concept to be included or excluded. The list of codes is considered ordered, though the order may not have any particular significance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $code
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
     public function addCode($code)
@@ -163,7 +162,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Select concepts by specify a matching criteria based on the properties (including relationships) defined by the system. If multiple filters are specified, they SHALL all be true.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetFilter[] $filter
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetFilter $filter
      * @return $this
      */
     public function addFilter($filter)
@@ -194,18 +193,18 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
         if (0 < count($this->code)) {
-            $json['code'] = array();
+            $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = $code->jsonSerialize();
+                $json['code'][] = json_encode($code);
             }
         }
         if (0 < count($this->filter)) {
-            $json['filter'] = array();
+            $json['filter'] = [];
             foreach($this->filter as $filter) {
-                $json['filter'][] = $filter->jsonSerialize();
+                $json['filter'][] = json_encode($filter);
             }
         }
         return $json;

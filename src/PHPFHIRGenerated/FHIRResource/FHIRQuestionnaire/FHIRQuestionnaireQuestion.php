@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  */
-class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSerializable
+class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Structured name for the question that identifies this question within the Questionnaire or Group.
@@ -451,7 +450,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSeria
 
     /**
      * Selections made by the user from the list of options.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $choice
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $choice
      * @return $this
      */
     public function addChoice($choice)
@@ -997,7 +996,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSeria
 
     /**
      * Nested group, containing nested question for this question. The order of groups within the question is relevant.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup[] $group
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup $group
      * @return $this
      */
     public function addGroup($group)
@@ -1028,54 +1027,54 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->answerDecimal) $json['answerDecimal'] = $this->answerDecimal->jsonSerialize();
-        if (null !== $this->answerInteger) $json['answerInteger'] = $this->answerInteger->jsonSerialize();
-        if (null !== $this->answerBoolean) $json['answerBoolean'] = $this->answerBoolean->jsonSerialize();
-        if (null !== $this->answerDate) $json['answerDate'] = $this->answerDate->jsonSerialize();
-        if (null !== $this->answerString) $json['answerString'] = $this->answerString->jsonSerialize();
-        if (null !== $this->answerDateTime) $json['answerDateTime'] = $this->answerDateTime->jsonSerialize();
-        if (null !== $this->answerInstant) $json['answerInstant'] = $this->answerInstant->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->answerDecimal) $json['answerDecimal'] = json_encode($this->answerDecimal);
+        if (null !== $this->answerInteger) $json['answerInteger'] = json_encode($this->answerInteger);
+        if (null !== $this->answerBoolean) $json['answerBoolean'] = json_encode($this->answerBoolean);
+        if (null !== $this->answerDate) $json['answerDate'] = json_encode($this->answerDate);
+        if (null !== $this->answerString) $json['answerString'] = json_encode($this->answerString);
+        if (null !== $this->answerDateTime) $json['answerDateTime'] = json_encode($this->answerDateTime);
+        if (null !== $this->answerInstant) $json['answerInstant'] = json_encode($this->answerInstant);
         if (0 < count($this->choice)) {
-            $json['choice'] = array();
+            $json['choice'] = [];
             foreach($this->choice as $choice) {
-                $json['choice'][] = $choice->jsonSerialize();
+                $json['choice'][] = json_encode($choice);
             }
         }
-        if (null !== $this->options) $json['options'] = $this->options->jsonSerialize();
-        if (null !== $this->dataBoolean) $json['dataBoolean'] = $this->dataBoolean->jsonSerialize();
-        if (null !== $this->dataInteger) $json['dataInteger'] = $this->dataInteger->jsonSerialize();
-        if (null !== $this->dataDecimal) $json['dataDecimal'] = $this->dataDecimal->jsonSerialize();
-        if (null !== $this->dataBase64Binary) $json['dataBase64Binary'] = $this->dataBase64Binary->jsonSerialize();
-        if (null !== $this->dataInstant) $json['dataInstant'] = $this->dataInstant->jsonSerialize();
-        if (null !== $this->dataString) $json['dataString'] = $this->dataString->jsonSerialize();
-        if (null !== $this->dataUri) $json['dataUri'] = $this->dataUri->jsonSerialize();
-        if (null !== $this->dataDate) $json['dataDate'] = $this->dataDate->jsonSerialize();
-        if (null !== $this->dataDateTime) $json['dataDateTime'] = $this->dataDateTime->jsonSerialize();
-        if (null !== $this->dataCode) $json['dataCode'] = $this->dataCode->jsonSerialize();
-        if (null !== $this->dataOid) $json['dataOid'] = $this->dataOid->jsonSerialize();
-        if (null !== $this->dataUuid) $json['dataUuid'] = $this->dataUuid->jsonSerialize();
-        if (null !== $this->dataId) $json['dataId'] = $this->dataId->jsonSerialize();
-        if (null !== $this->dataAttachment) $json['dataAttachment'] = $this->dataAttachment->jsonSerialize();
-        if (null !== $this->dataIdentifier) $json['dataIdentifier'] = $this->dataIdentifier->jsonSerialize();
-        if (null !== $this->dataCodeableConcept) $json['dataCodeableConcept'] = $this->dataCodeableConcept->jsonSerialize();
-        if (null !== $this->dataCoding) $json['dataCoding'] = $this->dataCoding->jsonSerialize();
-        if (null !== $this->dataQuantity) $json['dataQuantity'] = $this->dataQuantity->jsonSerialize();
-        if (null !== $this->dataRange) $json['dataRange'] = $this->dataRange->jsonSerialize();
-        if (null !== $this->dataPeriod) $json['dataPeriod'] = $this->dataPeriod->jsonSerialize();
-        if (null !== $this->dataRatio) $json['dataRatio'] = $this->dataRatio->jsonSerialize();
-        if (null !== $this->dataResource) $json['dataResource'] = $this->dataResource->jsonSerialize();
-        if (null !== $this->dataSampledData) $json['dataSampledData'] = $this->dataSampledData->jsonSerialize();
-        if (null !== $this->dataHumanName) $json['dataHumanName'] = $this->dataHumanName->jsonSerialize();
-        if (null !== $this->dataAddress) $json['dataAddress'] = $this->dataAddress->jsonSerialize();
-        if (null !== $this->dataContact) $json['dataContact'] = $this->dataContact->jsonSerialize();
-        if (null !== $this->dataSchedule) $json['dataSchedule'] = $this->dataSchedule->jsonSerialize();
-        if (null !== $this->remarks) $json['remarks'] = $this->remarks->jsonSerialize();
+        if (null !== $this->options) $json['options'] = json_encode($this->options);
+        if (null !== $this->dataBoolean) $json['dataBoolean'] = json_encode($this->dataBoolean);
+        if (null !== $this->dataInteger) $json['dataInteger'] = json_encode($this->dataInteger);
+        if (null !== $this->dataDecimal) $json['dataDecimal'] = json_encode($this->dataDecimal);
+        if (null !== $this->dataBase64Binary) $json['dataBase64Binary'] = json_encode($this->dataBase64Binary);
+        if (null !== $this->dataInstant) $json['dataInstant'] = json_encode($this->dataInstant);
+        if (null !== $this->dataString) $json['dataString'] = json_encode($this->dataString);
+        if (null !== $this->dataUri) $json['dataUri'] = json_encode($this->dataUri);
+        if (null !== $this->dataDate) $json['dataDate'] = json_encode($this->dataDate);
+        if (null !== $this->dataDateTime) $json['dataDateTime'] = json_encode($this->dataDateTime);
+        if (null !== $this->dataCode) $json['dataCode'] = json_encode($this->dataCode);
+        if (null !== $this->dataOid) $json['dataOid'] = json_encode($this->dataOid);
+        if (null !== $this->dataUuid) $json['dataUuid'] = json_encode($this->dataUuid);
+        if (null !== $this->dataId) $json['dataId'] = json_encode($this->dataId);
+        if (null !== $this->dataAttachment) $json['dataAttachment'] = json_encode($this->dataAttachment);
+        if (null !== $this->dataIdentifier) $json['dataIdentifier'] = json_encode($this->dataIdentifier);
+        if (null !== $this->dataCodeableConcept) $json['dataCodeableConcept'] = json_encode($this->dataCodeableConcept);
+        if (null !== $this->dataCoding) $json['dataCoding'] = json_encode($this->dataCoding);
+        if (null !== $this->dataQuantity) $json['dataQuantity'] = json_encode($this->dataQuantity);
+        if (null !== $this->dataRange) $json['dataRange'] = json_encode($this->dataRange);
+        if (null !== $this->dataPeriod) $json['dataPeriod'] = json_encode($this->dataPeriod);
+        if (null !== $this->dataRatio) $json['dataRatio'] = json_encode($this->dataRatio);
+        if (null !== $this->dataResource) $json['dataResource'] = json_encode($this->dataResource);
+        if (null !== $this->dataSampledData) $json['dataSampledData'] = json_encode($this->dataSampledData);
+        if (null !== $this->dataHumanName) $json['dataHumanName'] = json_encode($this->dataHumanName);
+        if (null !== $this->dataAddress) $json['dataAddress'] = json_encode($this->dataAddress);
+        if (null !== $this->dataContact) $json['dataContact'] = json_encode($this->dataContact);
+        if (null !== $this->dataSchedule) $json['dataSchedule'] = json_encode($this->dataSchedule);
+        if (null !== $this->remarks) $json['remarks'] = json_encode($this->remarks);
         if (0 < count($this->group)) {
-            $json['group'] = array();
+            $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = $group->jsonSerialize();
+                $json['group'][] = json_encode($group);
             }
         }
         return $json;

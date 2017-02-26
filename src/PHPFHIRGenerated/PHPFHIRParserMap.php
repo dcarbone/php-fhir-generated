@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1512,7 +1512,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Age' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRAge',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -1562,7 +1562,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Count' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRCount',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRCount',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -1612,7 +1612,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Money' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRMoney',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -1662,7 +1662,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Distance' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDistance',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDistance',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -1712,7 +1712,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Duration' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDuration',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -4018,7 +4018,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setOnsetAge',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'abatementDate' => 
       array (
@@ -4030,7 +4030,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAbatementAge',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'abatementBoolean' => 
       array (
@@ -6640,7 +6640,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setLength',
         'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRDuration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
       'reason' => 
       array (
@@ -7082,7 +7082,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDeceasedAge',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'deceasedRange' => 
       array (
@@ -7156,7 +7156,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setOnsetAge',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'onsetRange' => 
       array (
@@ -9906,7 +9906,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setExpectedSupplyDuration',
         'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRDuration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
     ),
   ),

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIREncounter extends FHIRResource implements JsonSerializable
+class FHIREncounter extends FHIRResource implements \JsonSerializable
 {
     /**
      * Identifier(s) by which this encounter is known.
@@ -108,7 +107,7 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @var \PHPFHIRGenerated\FHIRDuration
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $length = null;
 
@@ -170,7 +169,7 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
 
     /**
      * Identifier(s) by which this encounter is known.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -230,7 +229,7 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
 
     /**
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -270,7 +269,7 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
 
     /**
      * The main practitioner responsible for providing the service.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterParticipant[] $participant
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -301,7 +300,7 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @return \PHPFHIRGenerated\FHIRDuration
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getLength()
     {
@@ -310,7 +309,7 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @param \PHPFHIRGenerated\FHIRDuration $length
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $length
      * @return $this
      */
     public function setLength($length)
@@ -410,7 +409,7 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
 
     /**
      * List of locations at which the patient has been.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterLocation[] $location
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterLocation $location
      * @return $this
      */
     public function addLocation($location)
@@ -483,40 +482,40 @@ class FHIREncounter extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->class) $json['class'] = $this->class->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->class) $json['class'] = json_encode($this->class);
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->participant)) {
-            $json['participant'] = array();
+            $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = $participant->jsonSerialize();
+                $json['participant'][] = json_encode($participant);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->length) $json['length'] = $this->length->jsonSerialize();
-        if (null !== $this->reason) $json['reason'] = $this->reason->jsonSerialize();
-        if (null !== $this->indication) $json['indication'] = $this->indication->jsonSerialize();
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
-        if (null !== $this->hospitalization) $json['hospitalization'] = $this->hospitalization->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->length) $json['length'] = json_encode($this->length);
+        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->indication) $json['indication'] = json_encode($this->indication);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->hospitalization) $json['hospitalization'] = json_encode($this->hospitalization);
         if (0 < count($this->location)) {
-            $json['location'] = array();
+            $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = $location->jsonSerialize();
+                $json['location'][] = json_encode($location);
             }
         }
-        if (null !== $this->serviceProvider) $json['serviceProvider'] = $this->serviceProvider->jsonSerialize();
-        if (null !== $this->partOf) $json['partOf'] = $this->partOf->jsonSerialize();
+        if (null !== $this->serviceProvider) $json['serviceProvider'] = json_encode($this->serviceProvider);
+        if (null !== $this->partOf) $json['partOf'] = json_encode($this->partOf);
         return $json;
     }
 

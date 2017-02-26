@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A description of a query with a set of parameters.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRQuery extends FHIRResource implements JsonSerializable
+class FHIRQuery extends FHIRResource implements \JsonSerializable
 {
     /**
      * Links query and its response(s).
@@ -118,7 +117,7 @@ class FHIRQuery extends FHIRResource implements JsonSerializable
 
     /**
      * Set of query parameters with values.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $parameter
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -170,14 +169,14 @@ class FHIRQuery extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
         if (0 < count($this->parameter)) {
-            $json['parameter'] = array();
+            $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = $parameter->jsonSerialize();
+                $json['parameter'][] = json_encode($parameter);
             }
         }
-        if (null !== $this->response) $json['response'] = $this->response->jsonSerialize();
+        if (null !== $this->response) $json['response'] = json_encode($this->response);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  */
-class FHIRProfileDefinition extends FHIRBackboneElement implements JsonSerializable
+class FHIRProfileDefinition extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A concise definition that  is shown in the generated XML format that summarizes profiles (used throughout the specification).
@@ -525,7 +524,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Identifies additional names by which this element might also be known.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $synonym
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $synonym
      * @return $this
      */
     public function addSynonym($synonym)
@@ -585,7 +584,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The data type or resource that the value of this element is permitted to be.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileType[] $type
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileType $type
      * @return $this
      */
     public function addType($type)
@@ -1617,7 +1616,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * A reference to an invariant that may make additional statements about the cardinality or value in the instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRId[] $condition
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRId $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -1637,7 +1636,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Formal constraints such as co-occurrence and other constraints that can be computationally evaluated within the context of the instance.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileConstraint[] $constraint
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileConstraint $constraint
      * @return $this
      */
     public function addConstraint($constraint)
@@ -1717,7 +1716,7 @@ class FHIRProfileDefinition extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Identifies a concept from an external specification that roughly corresponds to this element.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileMapping1[] $mapping
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileMapping1 $mapping
      * @return $this
      */
     public function addMapping($mapping)
@@ -1748,99 +1747,99 @@ class FHIRProfileDefinition extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->short) $json['short'] = $this->short->jsonSerialize();
-        if (null !== $this->formal) $json['formal'] = $this->formal->jsonSerialize();
-        if (null !== $this->comments) $json['comments'] = $this->comments->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
+        if (null !== $this->short) $json['short'] = json_encode($this->short);
+        if (null !== $this->formal) $json['formal'] = json_encode($this->formal);
+        if (null !== $this->comments) $json['comments'] = json_encode($this->comments);
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
         if (0 < count($this->synonym)) {
-            $json['synonym'] = array();
+            $json['synonym'] = [];
             foreach($this->synonym as $synonym) {
-                $json['synonym'][] = $synonym->jsonSerialize();
+                $json['synonym'][] = json_encode($synonym);
             }
         }
-        if (null !== $this->min) $json['min'] = $this->min->jsonSerialize();
-        if (null !== $this->max) $json['max'] = $this->max->jsonSerialize();
+        if (null !== $this->min) $json['min'] = json_encode($this->min);
+        if (null !== $this->max) $json['max'] = json_encode($this->max);
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
-        if (null !== $this->nameReference) $json['nameReference'] = $this->nameReference->jsonSerialize();
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = $this->valueBoolean->jsonSerialize();
-        if (null !== $this->valueInteger) $json['valueInteger'] = $this->valueInteger->jsonSerialize();
-        if (null !== $this->valueDecimal) $json['valueDecimal'] = $this->valueDecimal->jsonSerialize();
-        if (null !== $this->valueBase64Binary) $json['valueBase64Binary'] = $this->valueBase64Binary->jsonSerialize();
-        if (null !== $this->valueInstant) $json['valueInstant'] = $this->valueInstant->jsonSerialize();
-        if (null !== $this->valueString) $json['valueString'] = $this->valueString->jsonSerialize();
-        if (null !== $this->valueUri) $json['valueUri'] = $this->valueUri->jsonSerialize();
-        if (null !== $this->valueDate) $json['valueDate'] = $this->valueDate->jsonSerialize();
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime->jsonSerialize();
-        if (null !== $this->valueCode) $json['valueCode'] = $this->valueCode->jsonSerialize();
-        if (null !== $this->valueOid) $json['valueOid'] = $this->valueOid->jsonSerialize();
-        if (null !== $this->valueUuid) $json['valueUuid'] = $this->valueUuid->jsonSerialize();
-        if (null !== $this->valueId) $json['valueId'] = $this->valueId->jsonSerialize();
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment->jsonSerialize();
-        if (null !== $this->valueIdentifier) $json['valueIdentifier'] = $this->valueIdentifier->jsonSerialize();
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept->jsonSerialize();
-        if (null !== $this->valueCoding) $json['valueCoding'] = $this->valueCoding->jsonSerialize();
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity->jsonSerialize();
-        if (null !== $this->valueRange) $json['valueRange'] = $this->valueRange->jsonSerialize();
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = $this->valuePeriod->jsonSerialize();
-        if (null !== $this->valueRatio) $json['valueRatio'] = $this->valueRatio->jsonSerialize();
-        if (null !== $this->valueResource) $json['valueResource'] = $this->valueResource->jsonSerialize();
-        if (null !== $this->valueSampledData) $json['valueSampledData'] = $this->valueSampledData->jsonSerialize();
-        if (null !== $this->valueHumanName) $json['valueHumanName'] = $this->valueHumanName->jsonSerialize();
-        if (null !== $this->valueAddress) $json['valueAddress'] = $this->valueAddress->jsonSerialize();
-        if (null !== $this->valueContact) $json['valueContact'] = $this->valueContact->jsonSerialize();
-        if (null !== $this->valueSchedule) $json['valueSchedule'] = $this->valueSchedule->jsonSerialize();
-        if (null !== $this->exampleBoolean) $json['exampleBoolean'] = $this->exampleBoolean->jsonSerialize();
-        if (null !== $this->exampleInteger) $json['exampleInteger'] = $this->exampleInteger->jsonSerialize();
-        if (null !== $this->exampleDecimal) $json['exampleDecimal'] = $this->exampleDecimal->jsonSerialize();
-        if (null !== $this->exampleBase64Binary) $json['exampleBase64Binary'] = $this->exampleBase64Binary->jsonSerialize();
-        if (null !== $this->exampleInstant) $json['exampleInstant'] = $this->exampleInstant->jsonSerialize();
-        if (null !== $this->exampleString) $json['exampleString'] = $this->exampleString->jsonSerialize();
-        if (null !== $this->exampleUri) $json['exampleUri'] = $this->exampleUri->jsonSerialize();
-        if (null !== $this->exampleDate) $json['exampleDate'] = $this->exampleDate->jsonSerialize();
-        if (null !== $this->exampleDateTime) $json['exampleDateTime'] = $this->exampleDateTime->jsonSerialize();
-        if (null !== $this->exampleCode) $json['exampleCode'] = $this->exampleCode->jsonSerialize();
-        if (null !== $this->exampleOid) $json['exampleOid'] = $this->exampleOid->jsonSerialize();
-        if (null !== $this->exampleUuid) $json['exampleUuid'] = $this->exampleUuid->jsonSerialize();
-        if (null !== $this->exampleId) $json['exampleId'] = $this->exampleId->jsonSerialize();
-        if (null !== $this->exampleAttachment) $json['exampleAttachment'] = $this->exampleAttachment->jsonSerialize();
-        if (null !== $this->exampleIdentifier) $json['exampleIdentifier'] = $this->exampleIdentifier->jsonSerialize();
-        if (null !== $this->exampleCodeableConcept) $json['exampleCodeableConcept'] = $this->exampleCodeableConcept->jsonSerialize();
-        if (null !== $this->exampleCoding) $json['exampleCoding'] = $this->exampleCoding->jsonSerialize();
-        if (null !== $this->exampleQuantity) $json['exampleQuantity'] = $this->exampleQuantity->jsonSerialize();
-        if (null !== $this->exampleRange) $json['exampleRange'] = $this->exampleRange->jsonSerialize();
-        if (null !== $this->examplePeriod) $json['examplePeriod'] = $this->examplePeriod->jsonSerialize();
-        if (null !== $this->exampleRatio) $json['exampleRatio'] = $this->exampleRatio->jsonSerialize();
-        if (null !== $this->exampleResource) $json['exampleResource'] = $this->exampleResource->jsonSerialize();
-        if (null !== $this->exampleSampledData) $json['exampleSampledData'] = $this->exampleSampledData->jsonSerialize();
-        if (null !== $this->exampleHumanName) $json['exampleHumanName'] = $this->exampleHumanName->jsonSerialize();
-        if (null !== $this->exampleAddress) $json['exampleAddress'] = $this->exampleAddress->jsonSerialize();
-        if (null !== $this->exampleContact) $json['exampleContact'] = $this->exampleContact->jsonSerialize();
-        if (null !== $this->exampleSchedule) $json['exampleSchedule'] = $this->exampleSchedule->jsonSerialize();
-        if (null !== $this->maxLength) $json['maxLength'] = $this->maxLength->jsonSerialize();
+        if (null !== $this->nameReference) $json['nameReference'] = json_encode($this->nameReference);
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
+        if (null !== $this->valueInteger) $json['valueInteger'] = json_encode($this->valueInteger);
+        if (null !== $this->valueDecimal) $json['valueDecimal'] = json_encode($this->valueDecimal);
+        if (null !== $this->valueBase64Binary) $json['valueBase64Binary'] = json_encode($this->valueBase64Binary);
+        if (null !== $this->valueInstant) $json['valueInstant'] = json_encode($this->valueInstant);
+        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
+        if (null !== $this->valueUri) $json['valueUri'] = json_encode($this->valueUri);
+        if (null !== $this->valueDate) $json['valueDate'] = json_encode($this->valueDate);
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
+        if (null !== $this->valueCode) $json['valueCode'] = json_encode($this->valueCode);
+        if (null !== $this->valueOid) $json['valueOid'] = json_encode($this->valueOid);
+        if (null !== $this->valueUuid) $json['valueUuid'] = json_encode($this->valueUuid);
+        if (null !== $this->valueId) $json['valueId'] = json_encode($this->valueId);
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
+        if (null !== $this->valueIdentifier) $json['valueIdentifier'] = json_encode($this->valueIdentifier);
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
+        if (null !== $this->valueCoding) $json['valueCoding'] = json_encode($this->valueCoding);
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
+        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
+        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
+        if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
+        if (null !== $this->valueResource) $json['valueResource'] = json_encode($this->valueResource);
+        if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
+        if (null !== $this->valueHumanName) $json['valueHumanName'] = json_encode($this->valueHumanName);
+        if (null !== $this->valueAddress) $json['valueAddress'] = json_encode($this->valueAddress);
+        if (null !== $this->valueContact) $json['valueContact'] = json_encode($this->valueContact);
+        if (null !== $this->valueSchedule) $json['valueSchedule'] = json_encode($this->valueSchedule);
+        if (null !== $this->exampleBoolean) $json['exampleBoolean'] = json_encode($this->exampleBoolean);
+        if (null !== $this->exampleInteger) $json['exampleInteger'] = json_encode($this->exampleInteger);
+        if (null !== $this->exampleDecimal) $json['exampleDecimal'] = json_encode($this->exampleDecimal);
+        if (null !== $this->exampleBase64Binary) $json['exampleBase64Binary'] = json_encode($this->exampleBase64Binary);
+        if (null !== $this->exampleInstant) $json['exampleInstant'] = json_encode($this->exampleInstant);
+        if (null !== $this->exampleString) $json['exampleString'] = json_encode($this->exampleString);
+        if (null !== $this->exampleUri) $json['exampleUri'] = json_encode($this->exampleUri);
+        if (null !== $this->exampleDate) $json['exampleDate'] = json_encode($this->exampleDate);
+        if (null !== $this->exampleDateTime) $json['exampleDateTime'] = json_encode($this->exampleDateTime);
+        if (null !== $this->exampleCode) $json['exampleCode'] = json_encode($this->exampleCode);
+        if (null !== $this->exampleOid) $json['exampleOid'] = json_encode($this->exampleOid);
+        if (null !== $this->exampleUuid) $json['exampleUuid'] = json_encode($this->exampleUuid);
+        if (null !== $this->exampleId) $json['exampleId'] = json_encode($this->exampleId);
+        if (null !== $this->exampleAttachment) $json['exampleAttachment'] = json_encode($this->exampleAttachment);
+        if (null !== $this->exampleIdentifier) $json['exampleIdentifier'] = json_encode($this->exampleIdentifier);
+        if (null !== $this->exampleCodeableConcept) $json['exampleCodeableConcept'] = json_encode($this->exampleCodeableConcept);
+        if (null !== $this->exampleCoding) $json['exampleCoding'] = json_encode($this->exampleCoding);
+        if (null !== $this->exampleQuantity) $json['exampleQuantity'] = json_encode($this->exampleQuantity);
+        if (null !== $this->exampleRange) $json['exampleRange'] = json_encode($this->exampleRange);
+        if (null !== $this->examplePeriod) $json['examplePeriod'] = json_encode($this->examplePeriod);
+        if (null !== $this->exampleRatio) $json['exampleRatio'] = json_encode($this->exampleRatio);
+        if (null !== $this->exampleResource) $json['exampleResource'] = json_encode($this->exampleResource);
+        if (null !== $this->exampleSampledData) $json['exampleSampledData'] = json_encode($this->exampleSampledData);
+        if (null !== $this->exampleHumanName) $json['exampleHumanName'] = json_encode($this->exampleHumanName);
+        if (null !== $this->exampleAddress) $json['exampleAddress'] = json_encode($this->exampleAddress);
+        if (null !== $this->exampleContact) $json['exampleContact'] = json_encode($this->exampleContact);
+        if (null !== $this->exampleSchedule) $json['exampleSchedule'] = json_encode($this->exampleSchedule);
+        if (null !== $this->maxLength) $json['maxLength'] = json_encode($this->maxLength);
         if (0 < count($this->condition)) {
-            $json['condition'] = array();
+            $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = $condition->jsonSerialize();
+                $json['condition'][] = json_encode($condition);
             }
         }
         if (0 < count($this->constraint)) {
-            $json['constraint'] = array();
+            $json['constraint'] = [];
             foreach($this->constraint as $constraint) {
-                $json['constraint'][] = $constraint->jsonSerialize();
+                $json['constraint'][] = json_encode($constraint);
             }
         }
-        if (null !== $this->mustSupport) $json['mustSupport'] = $this->mustSupport->jsonSerialize();
-        if (null !== $this->isModifier) $json['isModifier'] = $this->isModifier->jsonSerialize();
-        if (null !== $this->binding) $json['binding'] = $this->binding->jsonSerialize();
+        if (null !== $this->mustSupport) $json['mustSupport'] = json_encode($this->mustSupport);
+        if (null !== $this->isModifier) $json['isModifier'] = json_encode($this->isModifier);
+        if (null !== $this->binding) $json['binding'] = json_encode($this->binding);
         if (0 < count($this->mapping)) {
-            $json['mapping'] = array();
+            $json['mapping'] = [];
             foreach($this->mapping as $mapping) {
-                $json['mapping'][] = $mapping->jsonSerialize();
+                $json['mapping'][] = json_encode($mapping);
             }
         }
         return $json;

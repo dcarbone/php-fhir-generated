@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A description of a query with a set of parameters.
  */
-class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
+class FHIRQueryResponse extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Links response to source query.
@@ -193,7 +192,7 @@ class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Parameters server used.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $parameter
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -213,7 +212,7 @@ class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * To get first page (if paged).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $first
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $first
      * @return $this
      */
     public function addFirst($first)
@@ -233,7 +232,7 @@ class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * To get previous page (if paged).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $previous
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $previous
      * @return $this
      */
     public function addPrevious($previous)
@@ -253,7 +252,7 @@ class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * To get next page (if paged).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $next
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $next
      * @return $this
      */
     public function addNext($next)
@@ -273,7 +272,7 @@ class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * To get last page (if paged).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $last
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $last
      * @return $this
      */
     public function addLast($last)
@@ -293,7 +292,7 @@ class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Resources that are the results of the search.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $reference
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $reference
      * @return $this
      */
     public function addReference($reference)
@@ -324,43 +323,43 @@ class FHIRQueryResponse extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
-        if (null !== $this->total) $json['total'] = $this->total->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->total) $json['total'] = json_encode($this->total);
         if (0 < count($this->parameter)) {
-            $json['parameter'] = array();
+            $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = $parameter->jsonSerialize();
+                $json['parameter'][] = json_encode($parameter);
             }
         }
         if (0 < count($this->first)) {
-            $json['first'] = array();
+            $json['first'] = [];
             foreach($this->first as $first) {
-                $json['first'][] = $first->jsonSerialize();
+                $json['first'][] = json_encode($first);
             }
         }
         if (0 < count($this->previous)) {
-            $json['previous'] = array();
+            $json['previous'] = [];
             foreach($this->previous as $previous) {
-                $json['previous'][] = $previous->jsonSerialize();
+                $json['previous'][] = json_encode($previous);
             }
         }
         if (0 < count($this->next)) {
-            $json['next'] = array();
+            $json['next'] = [];
             foreach($this->next as $next) {
-                $json['next'][] = $next->jsonSerialize();
+                $json['next'][] = json_encode($next);
             }
         }
         if (0 < count($this->last)) {
-            $json['last'] = array();
+            $json['last'] = [];
             foreach($this->last as $last) {
-                $json['last'][] = $last->jsonSerialize();
+                $json['last'][] = json_encode($last);
             }
         }
         if (0 < count($this->reference)) {
-            $json['reference'] = array();
+            $json['reference'] = [];
             foreach($this->reference as $reference) {
-                $json['reference'][] = $reference->jsonSerialize();
+                $json['reference'][] = json_encode($reference);
             }
         }
         return $json;

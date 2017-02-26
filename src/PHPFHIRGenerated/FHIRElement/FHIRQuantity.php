@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRQuantity extends FHIRElement implements JsonSerializable
+class FHIRQuantity extends FHIRElement implements \JsonSerializable
 {
     /**
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
@@ -221,11 +220,11 @@ class FHIRQuantity extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
-        if (null !== $this->comparator) $json['comparator'] = $this->comparator->jsonSerialize();
-        if (null !== $this->units) $json['units'] = $this->units->jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (null !== $this->comparator) $json['comparator'] = json_encode($this->comparator);
+        if (null !== $this->units) $json['units'] = json_encode($this->units);
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         return $json;
     }
 

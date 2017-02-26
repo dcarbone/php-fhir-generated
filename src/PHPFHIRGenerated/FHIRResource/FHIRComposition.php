@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRComposition extends FHIRResource implements JsonSerializable
+class FHIRComposition extends FHIRResource implements \JsonSerializable
 {
     /**
      * Logical Identifier for the composition, assigned when created. This identifier stays constant as the composition is changed over time.
@@ -324,7 +323,7 @@ class FHIRComposition extends FHIRResource implements JsonSerializable
 
     /**
      * Identifies who is responsible for the information in the composition.  (Not necessarily who typed it in.).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $author
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $author
      * @return $this
      */
     public function addAuthor($author)
@@ -344,7 +343,7 @@ class FHIRComposition extends FHIRResource implements JsonSerializable
 
     /**
      * A participant who has attested to the accuracy of the composition/document.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionAttester[] $attester
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionAttester $attester
      * @return $this
      */
     public function addAttester($attester)
@@ -424,7 +423,7 @@ class FHIRComposition extends FHIRResource implements JsonSerializable
 
     /**
      * The root of the sections that make up the composition.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection[] $section
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection $section
      * @return $this
      */
     public function addSection($section)
@@ -456,33 +455,33 @@ class FHIRComposition extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->class) $json['class'] = $this->class->jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->confidentiality) $json['confidentiality'] = $this->confidentiality->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->class) $json['class'] = json_encode($this->class);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->confidentiality) $json['confidentiality'] = json_encode($this->confidentiality);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->author)) {
-            $json['author'] = array();
+            $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = $author->jsonSerialize();
+                $json['author'][] = json_encode($author);
             }
         }
         if (0 < count($this->attester)) {
-            $json['attester'] = array();
+            $json['attester'] = [];
             foreach($this->attester as $attester) {
-                $json['attester'][] = $attester->jsonSerialize();
+                $json['attester'][] = json_encode($attester);
             }
         }
-        if (null !== $this->custodian) $json['custodian'] = $this->custodian->jsonSerialize();
-        if (null !== $this->event) $json['event'] = $this->event->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
+        if (null !== $this->custodian) $json['custodian'] = json_encode($this->custodian);
+        if (null !== $this->event) $json['event'] = json_encode($this->event);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
         if (0 < count($this->section)) {
-            $json['section'] = array();
+            $json['section'] = [];
             foreach($this->section as $section) {
-                $json['section'][] = $section->jsonSerialize();
+                $json['section'][] = json_encode($section);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A homogeneous material with a definite composition.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSubstance extends FHIRResource implements JsonSerializable
+class FHIRSubstance extends FHIRResource implements \JsonSerializable
 {
     /**
      * A code (or set of codes) that identify this substance.
@@ -164,7 +163,7 @@ class FHIRSubstance extends FHIRResource implements JsonSerializable
 
     /**
      * A substance can be composed of other substances.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient[] $ingredient
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)
@@ -196,13 +195,13 @@ class FHIRSubstance extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->instance) $json['instance'] = $this->instance->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->instance) $json['instance'] = json_encode($this->instance);
         if (0 < count($this->ingredient)) {
-            $json['ingredient'] = array();
+            $json['ingredient'] = [];
             foreach($this->ingredient as $ingredient) {
-                $json['ingredient'][] = $ingredient->jsonSerialize();
+                $json['ingredient'][] = json_encode($ingredient);
             }
         }
         return $json;

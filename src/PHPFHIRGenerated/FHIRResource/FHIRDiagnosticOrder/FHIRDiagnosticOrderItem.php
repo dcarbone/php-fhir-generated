@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request for a diagnostic investigation service to be performed.
  */
-class FHIRDiagnosticOrderItem extends FHIRBackboneElement implements JsonSerializable
+class FHIRDiagnosticOrderItem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A code that identifies a particular diagnostic investigation, or panel of investigations, that have been requested.
@@ -129,7 +128,7 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * If the item is related to a specific speciment.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $specimen
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $specimen
      * @return $this
      */
     public function addSpecimen($specimen)
@@ -189,7 +188,7 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * A summary of the events of interest that have occurred as this item of the request is processed.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent[] $event
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent $event
      * @return $this
      */
     public function addEvent($event)
@@ -220,19 +219,19 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (0 < count($this->specimen)) {
-            $json['specimen'] = array();
+            $json['specimen'] = [];
             foreach($this->specimen as $specimen) {
-                $json['specimen'][] = $specimen->jsonSerialize();
+                $json['specimen'][] = json_encode($specimen);
             }
         }
-        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->event)) {
-            $json['event'] = array();
+            $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = $event->jsonSerialize();
+                $json['event'][] = json_encode($event);
             }
         }
         return $json;

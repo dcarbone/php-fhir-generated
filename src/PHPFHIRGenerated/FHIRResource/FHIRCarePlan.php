@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRCarePlan extends FHIRResource implements JsonSerializable
+class FHIRCarePlan extends FHIRResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this care plan that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -140,7 +139,7 @@ class FHIRCarePlan extends FHIRResource implements JsonSerializable
 
     /**
      * This records identifiers associated with this care plan that are defined by business processed and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -240,7 +239,7 @@ class FHIRCarePlan extends FHIRResource implements JsonSerializable
 
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $concern
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $concern
      * @return $this
      */
     public function addConcern($concern)
@@ -260,7 +259,7 @@ class FHIRCarePlan extends FHIRResource implements JsonSerializable
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanParticipant[] $participant
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -280,7 +279,7 @@ class FHIRCarePlan extends FHIRResource implements JsonSerializable
 
     /**
      * Describes the intended objective(s) of carrying out the Care Plan.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanGoal[] $goal
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanGoal $goal
      * @return $this
      */
     public function addGoal($goal)
@@ -300,7 +299,7 @@ class FHIRCarePlan extends FHIRResource implements JsonSerializable
 
     /**
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity[] $activity
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity $activity
      * @return $this
      */
     public function addActivity($activity)
@@ -353,40 +352,40 @@ class FHIRCarePlan extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->modified) $json['modified'] = $this->modified->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->modified) $json['modified'] = json_encode($this->modified);
         if (0 < count($this->concern)) {
-            $json['concern'] = array();
+            $json['concern'] = [];
             foreach($this->concern as $concern) {
-                $json['concern'][] = $concern->jsonSerialize();
+                $json['concern'][] = json_encode($concern);
             }
         }
         if (0 < count($this->participant)) {
-            $json['participant'] = array();
+            $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = $participant->jsonSerialize();
+                $json['participant'][] = json_encode($participant);
             }
         }
         if (0 < count($this->goal)) {
-            $json['goal'] = array();
+            $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = $goal->jsonSerialize();
+                $json['goal'][] = json_encode($goal);
             }
         }
         if (0 < count($this->activity)) {
-            $json['activity'] = array();
+            $json['activity'] = [];
             foreach($this->activity as $activity) {
-                $json['activity'][] = $activity->jsonSerialize();
+                $json['activity'][] = json_encode($activity);
             }
         }
-        if (null !== $this->notes) $json['notes'] = $this->notes->jsonSerialize();
+        if (null !== $this->notes) $json['notes'] = json_encode($this->notes);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Demographics and other administrative information about a person or animal receiving care or other health-related services.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRPatient extends FHIRResource implements JsonSerializable
+class FHIRPatient extends FHIRResource implements \JsonSerializable
 {
     /**
      * An identifier that applies to this person as a patient.
@@ -190,7 +189,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * An identifier that applies to this person as a patient.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -210,7 +209,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * A name associated with the individual.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName[] $name
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $name
      * @return $this
      */
     public function addName($name)
@@ -230,7 +229,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContact $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -326,7 +325,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * Addresses for the individual.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress[] $address
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function addAddress($address)
@@ -402,7 +401,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * Image of the person.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $photo
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function addPhoto($photo)
@@ -422,7 +421,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPatient\FHIRPatientContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPatient\FHIRPatientContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -462,7 +461,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * Languages which may be used to communicate with the patient about his or her health.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $communication
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $communication
      * @return $this
      */
     public function addCommunication($communication)
@@ -482,7 +481,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * Patient's nominated care provider.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $careProvider
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $careProvider
      * @return $this
      */
     public function addCareProvider($careProvider)
@@ -522,7 +521,7 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
 
     /**
      * Link to another patient resource that concerns the same actual person.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPatient\FHIRPatientLink[] $link
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPatient\FHIRPatientLink $link
      * @return $this
      */
     public function addLink($link)
@@ -575,69 +574,69 @@ class FHIRPatient extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
         if (0 < count($this->name)) {
-            $json['name'] = array();
+            $json['name'] = [];
             foreach($this->name as $name) {
-                $json['name'][] = $name->jsonSerialize();
+                $json['name'][] = json_encode($name);
             }
         }
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
-        if (null !== $this->gender) $json['gender'] = $this->gender->jsonSerialize();
-        if (null !== $this->birthDate) $json['birthDate'] = $this->birthDate->jsonSerialize();
-        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = $this->deceasedBoolean->jsonSerialize();
-        if (null !== $this->deceasedDateTime) $json['deceasedDateTime'] = $this->deceasedDateTime->jsonSerialize();
+        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
+        if (null !== $this->birthDate) $json['birthDate'] = json_encode($this->birthDate);
+        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = json_encode($this->deceasedBoolean);
+        if (null !== $this->deceasedDateTime) $json['deceasedDateTime'] = json_encode($this->deceasedDateTime);
         if (0 < count($this->address)) {
-            $json['address'] = array();
+            $json['address'] = [];
             foreach($this->address as $address) {
-                $json['address'][] = $address->jsonSerialize();
+                $json['address'][] = json_encode($address);
             }
         }
-        if (null !== $this->maritalStatus) $json['maritalStatus'] = $this->maritalStatus->jsonSerialize();
-        if (null !== $this->multipleBirthBoolean) $json['multipleBirthBoolean'] = $this->multipleBirthBoolean->jsonSerialize();
-        if (null !== $this->multipleBirthInteger) $json['multipleBirthInteger'] = $this->multipleBirthInteger->jsonSerialize();
+        if (null !== $this->maritalStatus) $json['maritalStatus'] = json_encode($this->maritalStatus);
+        if (null !== $this->multipleBirthBoolean) $json['multipleBirthBoolean'] = json_encode($this->multipleBirthBoolean);
+        if (null !== $this->multipleBirthInteger) $json['multipleBirthInteger'] = json_encode($this->multipleBirthInteger);
         if (0 < count($this->photo)) {
-            $json['photo'] = array();
+            $json['photo'] = [];
             foreach($this->photo as $photo) {
-                $json['photo'][] = $photo->jsonSerialize();
+                $json['photo'][] = json_encode($photo);
             }
         }
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->animal) $json['animal'] = $this->animal->jsonSerialize();
+        if (null !== $this->animal) $json['animal'] = json_encode($this->animal);
         if (0 < count($this->communication)) {
-            $json['communication'] = array();
+            $json['communication'] = [];
             foreach($this->communication as $communication) {
-                $json['communication'][] = $communication->jsonSerialize();
+                $json['communication'][] = json_encode($communication);
             }
         }
         if (0 < count($this->careProvider)) {
-            $json['careProvider'] = array();
+            $json['careProvider'] = [];
             foreach($this->careProvider as $careProvider) {
-                $json['careProvider'][] = $careProvider->jsonSerialize();
+                $json['careProvider'][] = json_encode($careProvider);
             }
         }
-        if (null !== $this->managingOrganization) $json['managingOrganization'] = $this->managingOrganization->jsonSerialize();
+        if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
         if (0 < count($this->link)) {
-            $json['link'] = array();
+            $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = $link->jsonSerialize();
+                $json['link'][] = json_encode($link);
             }
         }
-        if (null !== $this->active) $json['active'] = $this->active->jsonSerialize();
+        if (null !== $this->active) $json['active'] = json_encode($this->active);
         return $json;
     }
 

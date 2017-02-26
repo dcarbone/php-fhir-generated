@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.
  */
-class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceRest extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies whether this portion of the statement is describing ability to initiate or receive restful operations.
@@ -181,7 +180,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceResource[] $resource
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceResource $resource
      * @return $this
      */
     public function addResource($resource)
@@ -201,7 +200,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * A specification of restful operations supported by the system.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceOperation1[] $operation
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceOperation1 $operation
      * @return $this
      */
     public function addOperation($operation)
@@ -221,7 +220,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Definition of a named query and its parameters and their meaning.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceQuery[] $query
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceQuery $query
      * @return $this
      */
     public function addQuery($query)
@@ -241,7 +240,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * A list of profiles that this server implements for accepting documents in the mailbox. If this list is empty, then documents are not accepted. The base specification has the profile identifier "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their own identifier for this purpose.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $documentMailbox
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $documentMailbox
      * @return $this
      */
     public function addDocumentMailbox($documentMailbox)
@@ -272,31 +271,31 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = $this->mode->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
-        if (null !== $this->security) $json['security'] = $this->security->jsonSerialize();
+        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->security) $json['security'] = json_encode($this->security);
         if (0 < count($this->resource)) {
-            $json['resource'] = array();
+            $json['resource'] = [];
             foreach($this->resource as $resource) {
-                $json['resource'][] = $resource->jsonSerialize();
+                $json['resource'][] = json_encode($resource);
             }
         }
         if (0 < count($this->operation)) {
-            $json['operation'] = array();
+            $json['operation'] = [];
             foreach($this->operation as $operation) {
-                $json['operation'][] = $operation->jsonSerialize();
+                $json['operation'][] = json_encode($operation);
             }
         }
         if (0 < count($this->query)) {
-            $json['query'] = array();
+            $json['query'] = [];
             foreach($this->query as $query) {
-                $json['query'][] = $query->jsonSerialize();
+                $json['query'][] = json_encode($query);
             }
         }
         if (0 < count($this->documentMailbox)) {
-            $json['documentMailbox'] = array();
+            $json['documentMailbox'] = [];
             foreach($this->documentMailbox as $documentMailbox) {
-                $json['documentMailbox'][] = $documentMailbox->jsonSerialize();
+                $json['documentMailbox'][] = json_encode($documentMailbox);
             }
         }
         return $json;

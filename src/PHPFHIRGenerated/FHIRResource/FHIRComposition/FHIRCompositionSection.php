@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.
  */
-class FHIRCompositionSection extends FHIRBackboneElement implements JsonSerializable
+class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The heading for this particular section.  This will be part of the rendered content for the document.
@@ -189,7 +188,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * A nested sub-section within this section.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection[] $section
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection $section
      * @return $this
      */
     public function addSection($section)
@@ -220,14 +219,14 @@ class FHIRCompositionSection extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->content) $json['content'] = $this->content->jsonSerialize();
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->content) $json['content'] = json_encode($this->content);
         if (0 < count($this->section)) {
-            $json['section'] = array();
+            $json['section'] = [];
             foreach($this->section as $section) {
-                $json['section'][] = $section->jsonSerialize();
+                $json['section'][] = json_encode($section);
             }
         }
         return $json;

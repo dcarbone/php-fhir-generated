@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized.  I.e. A collection of entities that isn't an Organization.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRGroup extends FHIRResource implements JsonSerializable
+class FHIRGroup extends FHIRResource implements \JsonSerializable
 {
     /**
      * A unique business identifier for this group.
@@ -248,7 +247,7 @@ class FHIRGroup extends FHIRResource implements JsonSerializable
 
     /**
      * Identifies the traits shared by members of the group.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRGroup\FHIRGroupCharacteristic[] $characteristic
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRGroup\FHIRGroupCharacteristic $characteristic
      * @return $this
      */
     public function addCharacteristic($characteristic)
@@ -268,7 +267,7 @@ class FHIRGroup extends FHIRResource implements JsonSerializable
 
     /**
      * Identifies the resource instances that are members of the group.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $member
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $member
      * @return $this
      */
     public function addMember($member)
@@ -300,22 +299,22 @@ class FHIRGroup extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->actual) $json['actual'] = $this->actual->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->actual) $json['actual'] = json_encode($this->actual);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
         if (0 < count($this->characteristic)) {
-            $json['characteristic'] = array();
+            $json['characteristic'] = [];
             foreach($this->characteristic as $characteristic) {
-                $json['characteristic'][] = $characteristic->jsonSerialize();
+                $json['characteristic'][] = json_encode($characteristic);
             }
         }
         if (0 < count($this->member)) {
-            $json['member'] = array();
+            $json['member'] = [];
             foreach($this->member as $member) {
-                $json['member'][] = $member->jsonSerialize();
+                $json['member'][] = json_encode($member);
             }
         }
         return $json;

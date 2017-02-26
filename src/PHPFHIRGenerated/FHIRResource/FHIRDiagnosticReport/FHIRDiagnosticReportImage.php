@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.
  */
-class FHIRDiagnosticReportImage extends FHIRBackboneElement implements JsonSerializable
+class FHIRDiagnosticReportImage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A comment about the image. Typically, this is used to provide an explanation for why the image is included, or to draw the viewer's attention to important features.
@@ -142,8 +141,8 @@ class FHIRDiagnosticReportImage extends FHIRBackboneElement implements JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->comment) $json['comment'] = $this->comment->jsonSerialize();
-        if (null !== $this->link) $json['link'] = $this->link->jsonSerialize();
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->link) $json['link'] = json_encode($this->link);
         return $json;
     }
 

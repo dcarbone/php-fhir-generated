@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.
  */
-class FHIRConformanceDocument extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceDocument extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Mode of this document declaration - whether application is producer or consumer.
@@ -168,9 +167,9 @@ class FHIRConformanceDocument extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = $this->mode->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
-        if (null !== $this->profile) $json['profile'] = $this->profile->jsonSerialize();
+        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
         return $json;
     }
 

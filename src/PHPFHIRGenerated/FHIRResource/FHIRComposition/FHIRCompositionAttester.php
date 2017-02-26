@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.
  */
-class FHIRCompositionAttester extends FHIRBackboneElement implements JsonSerializable
+class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The type of attestation the authenticator offers.
@@ -97,7 +96,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * The type of attestation the authenticator offers.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCompositionAttestationMode[] $mode
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCompositionAttestationMode $mode
      * @return $this
      */
     public function addMode($mode)
@@ -169,13 +168,13 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements JsonSeriali
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->mode)) {
-            $json['mode'] = array();
+            $json['mode'] = [];
             foreach($this->mode as $mode) {
-                $json['mode'][] = $mode->jsonSerialize();
+                $json['mode'][] = json_encode($mode);
             }
         }
-        if (null !== $this->time) $json['time'] = $this->time->jsonSerialize();
-        if (null !== $this->party) $json['party'] = $this->party->jsonSerialize();
+        if (null !== $this->time) $json['time'] = json_encode($this->time);
+        if (null !== $this->party) $json['party'] = json_encode($this->party);
         return $json;
     }
 

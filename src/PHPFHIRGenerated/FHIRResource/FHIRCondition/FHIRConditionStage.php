@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.
  */
-class FHIRConditionStage extends FHIRBackboneElement implements JsonSerializable
+class FHIRConditionStage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A simple summary of the stage such as "Stage 3". The determination of the stage is disease-specific.
@@ -111,7 +110,7 @@ class FHIRConditionStage extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Reference to a formal record of the evidence on which the staging assessment is based.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $assessment
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $assessment
      * @return $this
      */
     public function addAssessment($assessment)
@@ -142,11 +141,11 @@ class FHIRConditionStage extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->summary) $json['summary'] = $this->summary->jsonSerialize();
+        if (null !== $this->summary) $json['summary'] = json_encode($this->summary);
         if (0 < count($this->assessment)) {
-            $json['assessment'] = array();
+            $json['assessment'] = [];
             foreach($this->assessment as $assessment) {
-                $json['assessment'][] = $assessment->jsonSerialize();
+                $json['assessment'][] = json_encode($assessment);
             }
         }
         return $json;

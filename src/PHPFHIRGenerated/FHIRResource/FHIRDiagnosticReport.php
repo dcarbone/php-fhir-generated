@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The findings and interpretation of diagnostic  tests performed on patients, groups of patients, devices, and locations, and/or specimens derived from these. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
+class FHIRDiagnosticReport extends FHIRResource implements \JsonSerializable
 {
     /**
      * A code or name that describes this diagnostic report.
@@ -300,7 +299,7 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
 
     /**
      * Details concerning a test requested.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $requestDetail
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $requestDetail
      * @return $this
      */
     public function addRequestDetail($requestDetail)
@@ -376,7 +375,7 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
 
     /**
      * Details about the specimens on which this Disagnostic report is based.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $specimen
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $specimen
      * @return $this
      */
     public function addSpecimen($specimen)
@@ -396,7 +395,7 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
 
     /**
      * Observations that are part of this diagnostic report. Observations can be simple name/value pairs (e.g. "atomic" results), or they can be grouping observations that include references to other members of the group (e.g. "panels").
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $result
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $result
      * @return $this
      */
     public function addResult($result)
@@ -416,7 +415,7 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
 
     /**
      * One or more links to full details of any imaging performed during the diagnostic investigation. Typically, this is imaging performed by DICOM enabled modalities, but this is not required. A fully enabled PACS viewer can use this information to provide views of the source images.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $imagingStudy
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $imagingStudy
      * @return $this
      */
     public function addImagingStudy($imagingStudy)
@@ -436,7 +435,7 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
 
     /**
      * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportImage[] $image
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportImage $image
      * @return $this
      */
     public function addImage($image)
@@ -476,7 +475,7 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
 
     /**
      * Codes for the conclusion.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $codedDiagnosis
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $codedDiagnosis
      * @return $this
      */
     public function addCodedDiagnosis($codedDiagnosis)
@@ -496,7 +495,7 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
 
     /**
      * Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $presentedForm
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $presentedForm
      * @return $this
      */
     public function addPresentedForm($presentedForm)
@@ -528,56 +527,56 @@ class FHIRDiagnosticReport extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->issued) $json['issued'] = $this->issued->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->performer) $json['performer'] = $this->performer->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
         if (0 < count($this->requestDetail)) {
-            $json['requestDetail'] = array();
+            $json['requestDetail'] = [];
             foreach($this->requestDetail as $requestDetail) {
-                $json['requestDetail'][] = $requestDetail->jsonSerialize();
+                $json['requestDetail'][] = json_encode($requestDetail);
             }
         }
-        if (null !== $this->serviceCategory) $json['serviceCategory'] = $this->serviceCategory->jsonSerialize();
-        if (null !== $this->diagnosticDateTime) $json['diagnosticDateTime'] = $this->diagnosticDateTime->jsonSerialize();
-        if (null !== $this->diagnosticPeriod) $json['diagnosticPeriod'] = $this->diagnosticPeriod->jsonSerialize();
+        if (null !== $this->serviceCategory) $json['serviceCategory'] = json_encode($this->serviceCategory);
+        if (null !== $this->diagnosticDateTime) $json['diagnosticDateTime'] = json_encode($this->diagnosticDateTime);
+        if (null !== $this->diagnosticPeriod) $json['diagnosticPeriod'] = json_encode($this->diagnosticPeriod);
         if (0 < count($this->specimen)) {
-            $json['specimen'] = array();
+            $json['specimen'] = [];
             foreach($this->specimen as $specimen) {
-                $json['specimen'][] = $specimen->jsonSerialize();
+                $json['specimen'][] = json_encode($specimen);
             }
         }
         if (0 < count($this->result)) {
-            $json['result'] = array();
+            $json['result'] = [];
             foreach($this->result as $result) {
-                $json['result'][] = $result->jsonSerialize();
+                $json['result'][] = json_encode($result);
             }
         }
         if (0 < count($this->imagingStudy)) {
-            $json['imagingStudy'] = array();
+            $json['imagingStudy'] = [];
             foreach($this->imagingStudy as $imagingStudy) {
-                $json['imagingStudy'][] = $imagingStudy->jsonSerialize();
+                $json['imagingStudy'][] = json_encode($imagingStudy);
             }
         }
         if (0 < count($this->image)) {
-            $json['image'] = array();
+            $json['image'] = [];
             foreach($this->image as $image) {
-                $json['image'][] = $image->jsonSerialize();
+                $json['image'][] = json_encode($image);
             }
         }
-        if (null !== $this->conclusion) $json['conclusion'] = $this->conclusion->jsonSerialize();
+        if (null !== $this->conclusion) $json['conclusion'] = json_encode($this->conclusion);
         if (0 < count($this->codedDiagnosis)) {
-            $json['codedDiagnosis'] = array();
+            $json['codedDiagnosis'] = [];
             foreach($this->codedDiagnosis as $codedDiagnosis) {
-                $json['codedDiagnosis'][] = $codedDiagnosis->jsonSerialize();
+                $json['codedDiagnosis'][] = json_encode($codedDiagnosis);
             }
         }
         if (0 < count($this->presentedForm)) {
-            $json['presentedForm'] = array();
+            $json['presentedForm'] = [];
             foreach($this->presentedForm as $presentedForm) {
-                $json['presentedForm'][] = $presentedForm->jsonSerialize();
+                $json['presentedForm'][] = json_encode($presentedForm);
             }
         }
         return $json;

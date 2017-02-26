@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  */
-class FHIRProfileMapping1 extends FHIRBackboneElement implements JsonSerializable
+class FHIRProfileMapping1 extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An internal reference to the definition of a mapping.
@@ -142,8 +141,8 @@ class FHIRProfileMapping1 extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identity) $json['identity'] = $this->identity->jsonSerialize();
-        if (null !== $this->map) $json['map'] = $this->map->jsonSerialize();
+        if (null !== $this->identity) $json['identity'] = json_encode($this->identity);
+        if (null !== $this->map) $json['map'] = json_encode($this->map);
         return $json;
     }
 

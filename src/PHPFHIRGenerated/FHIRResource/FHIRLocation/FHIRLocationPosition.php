@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.
  */
-class FHIRLocationPosition extends FHIRBackboneElement implements JsonSerializable
+class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
@@ -168,9 +167,9 @@ class FHIRLocationPosition extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->longitude) $json['longitude'] = $this->longitude->jsonSerialize();
-        if (null !== $this->latitude) $json['latitude'] = $this->latitude->jsonSerialize();
-        if (null !== $this->altitude) $json['altitude'] = $this->altitude->jsonSerialize();
+        if (null !== $this->longitude) $json['longitude'] = json_encode($this->longitude);
+        if (null !== $this->latitude) $json['latitude'] = json_encode($this->latitude);
+        if (null !== $this->altitude) $json['altitude'] = json_encode($this->altitude);
         return $json;
     }
 

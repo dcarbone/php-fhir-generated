@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to perform an action.
  */
-class FHIROrderWhen extends FHIRBackboneElement implements JsonSerializable
+class FHIROrderWhen extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Code specifies when request should be done. The code may simply be a priority code.
@@ -142,8 +141,8 @@ class FHIROrderWhen extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->schedule) $json['schedule'] = $this->schedule->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->schedule) $json['schedule'] = json_encode($this->schedule);
         return $json;
     }
 

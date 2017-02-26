@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An element defined in a FHIR resources - can have modifierExtension elements
  */
-class FHIRBackboneElement extends FHIRElement implements JsonSerializable
+class FHIRBackboneElement extends FHIRElement implements \JsonSerializable
 {
     /**
      * An extension that modifies the meaning of the element that contains it - additional local content. The extension URL defines it's meaning
@@ -85,7 +84,7 @@ class FHIRBackboneElement extends FHIRElement implements JsonSerializable
 
     /**
      * An extension that modifies the meaning of the element that contains it - additional local content. The extension URL defines it's meaning
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $modifierExtension
      * @return $this
      */
     public function addModifierExtension($modifierExtension)
@@ -117,9 +116,9 @@ class FHIRBackboneElement extends FHIRElement implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->modifierExtension)) {
-            $json['modifierExtension'] = array();
+            $json['modifierExtension'] = [];
             foreach($this->modifierExtension as $modifierExtension) {
-                $json['modifierExtension'][] = $modifierExtension->jsonSerialize();
+                $json['modifierExtension'][] = json_encode($modifierExtension);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A patient's point-of-time immunization status and recommendation with optional supporting justification.
  */
-class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement implements JsonSerializable
+class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Indicates the nominal position in a series of the next dose.  This is the recommended dose number as per a specified protocol.
@@ -194,10 +193,10 @@ class FHIRImmunizationRecommendationProtocol extends FHIRBackboneElement impleme
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->doseSequence) $json['doseSequence'] = $this->doseSequence->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->authority) $json['authority'] = $this->authority->jsonSerialize();
-        if (null !== $this->series) $json['series'] = $this->series->jsonSerialize();
+        if (null !== $this->doseSequence) $json['doseSequence'] = json_encode($this->doseSequence);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->authority) $json['authority'] = json_encode($this->authority);
+        if (null !== $this->series) $json['series'] = json_encode($this->series);
         return $json;
     }
 

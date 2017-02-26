@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of information summarized from a list of other resources.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRList extends FHIRResource implements JsonSerializable
+class FHIRList extends FHIRResource implements \JsonSerializable
 {
     /**
      * Identifier for the List assigned for business purposes outside the context of FHIR.
@@ -134,7 +133,7 @@ class FHIRList extends FHIRResource implements JsonSerializable
 
     /**
      * Identifier for the List assigned for business purposes outside the context of FHIR.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -274,7 +273,7 @@ class FHIRList extends FHIRResource implements JsonSerializable
 
     /**
      * Entries in this list.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRList\FHIRListEntry[] $entry
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRList\FHIRListEntry $entry
      * @return $this
      */
     public function addEntry($entry)
@@ -327,24 +326,24 @@ class FHIRList extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->ordered) $json['ordered'] = $this->ordered->jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = $this->mode->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->ordered) $json['ordered'] = json_encode($this->ordered);
+        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
         if (0 < count($this->entry)) {
-            $json['entry'] = array();
+            $json['entry'] = [];
             foreach($this->entry as $entry) {
-                $json['entry'][] = $entry->jsonSerialize();
+                $json['entry'][] = json_encode($entry);
             }
         }
-        if (null !== $this->emptyReason) $json['emptyReason'] = $this->emptyReason->jsonSerialize();
+        if (null !== $this->emptyReason) $json['emptyReason'] = json_encode($this->emptyReason);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concept systems.
  */
-class FHIRConceptMapConcept extends FHIRBackboneElement implements JsonSerializable
+class FHIRConceptMapConcept extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * System that defines the concept being mapped.
@@ -143,7 +142,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified concept can be resolved, and it has the specified value.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[] $dependsOn
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
      * @return $this
      */
     public function addDependsOn($dependsOn)
@@ -163,7 +162,7 @@ class FHIRConceptMapConcept extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * A concept from the target value set that this concept maps to.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapMap[] $map
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapMap $map
      * @return $this
      */
     public function addMap($map)
@@ -194,18 +193,18 @@ class FHIRConceptMapConcept extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (0 < count($this->dependsOn)) {
-            $json['dependsOn'] = array();
+            $json['dependsOn'] = [];
             foreach($this->dependsOn as $dependsOn) {
-                $json['dependsOn'][] = $dependsOn->jsonSerialize();
+                $json['dependsOn'][] = json_encode($dependsOn);
             }
         }
         if (0 < count($this->map)) {
-            $json['map'] = array();
+            $json['map'] = [];
             foreach($this->map as $map) {
-                $json['map'][] = $map->jsonSerialize();
+                $json['map'][] = json_encode($map);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Immunization event information.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImmunization extends FHIRResource implements JsonSerializable
+class FHIRImmunization extends FHIRResource implements \JsonSerializable
 {
     /**
      * A unique identifier assigned to this adverse reaction record.
@@ -188,7 +187,7 @@ class FHIRImmunization extends FHIRResource implements JsonSerializable
 
     /**
      * A unique identifier assigned to this adverse reaction record.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -508,7 +507,7 @@ class FHIRImmunization extends FHIRResource implements JsonSerializable
 
     /**
      * Categorical data indicating that an adverse event is associated in time to an immunization.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationReaction[] $reaction
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationReaction $reaction
      * @return $this
      */
     public function addReaction($reaction)
@@ -528,7 +527,7 @@ class FHIRImmunization extends FHIRResource implements JsonSerializable
 
     /**
      * Contains information about the protocol(s) under which the vaccine was administered.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationVaccinationProtocol[] $vaccinationProtocol
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationVaccinationProtocol $vaccinationProtocol
      * @return $this
      */
     public function addVaccinationProtocol($vaccinationProtocol)
@@ -561,36 +560,36 @@ class FHIRImmunization extends FHIRResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->vaccineType) $json['vaccineType'] = $this->vaccineType->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->refusedIndicator) $json['refusedIndicator'] = $this->refusedIndicator->jsonSerialize();
-        if (null !== $this->reported) $json['reported'] = $this->reported->jsonSerialize();
-        if (null !== $this->performer) $json['performer'] = $this->performer->jsonSerialize();
-        if (null !== $this->requester) $json['requester'] = $this->requester->jsonSerialize();
-        if (null !== $this->manufacturer) $json['manufacturer'] = $this->manufacturer->jsonSerialize();
-        if (null !== $this->location) $json['location'] = $this->location->jsonSerialize();
-        if (null !== $this->lotNumber) $json['lotNumber'] = $this->lotNumber->jsonSerialize();
-        if (null !== $this->expirationDate) $json['expirationDate'] = $this->expirationDate->jsonSerialize();
-        if (null !== $this->site) $json['site'] = $this->site->jsonSerialize();
-        if (null !== $this->route) $json['route'] = $this->route->jsonSerialize();
-        if (null !== $this->doseQuantity) $json['doseQuantity'] = $this->doseQuantity->jsonSerialize();
-        if (null !== $this->explanation) $json['explanation'] = $this->explanation->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->vaccineType) $json['vaccineType'] = json_encode($this->vaccineType);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->refusedIndicator) $json['refusedIndicator'] = json_encode($this->refusedIndicator);
+        if (null !== $this->reported) $json['reported'] = json_encode($this->reported);
+        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
+        if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->lotNumber) $json['lotNumber'] = json_encode($this->lotNumber);
+        if (null !== $this->expirationDate) $json['expirationDate'] = json_encode($this->expirationDate);
+        if (null !== $this->site) $json['site'] = json_encode($this->site);
+        if (null !== $this->route) $json['route'] = json_encode($this->route);
+        if (null !== $this->doseQuantity) $json['doseQuantity'] = json_encode($this->doseQuantity);
+        if (null !== $this->explanation) $json['explanation'] = json_encode($this->explanation);
         if (0 < count($this->reaction)) {
-            $json['reaction'] = array();
+            $json['reaction'] = [];
             foreach($this->reaction as $reaction) {
-                $json['reaction'][] = $reaction->jsonSerialize();
+                $json['reaction'][] = json_encode($reaction);
             }
         }
         if (0 < count($this->vaccinationProtocol)) {
-            $json['vaccinationProtocol'] = array();
+            $json['vaccinationProtocol'] = [];
             foreach($this->vaccinationProtocol as $vaccinationProtocol) {
-                $json['vaccinationProtocol'][] = $vaccinationProtocol->jsonSerialize();
+                $json['vaccinationProtocol'][] = json_encode($vaccinationProtocol);
             }
         }
         return $json;

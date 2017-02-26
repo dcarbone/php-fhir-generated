@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The base resource declaration used for all FHIR resource types - adds Narrative and xml:lang
  */
-class FHIRResource extends FHIRBackboneElement implements JsonSerializable
+class FHIRResource extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The human language of the content. The value can be any valid value according to BCP-47
@@ -137,7 +136,7 @@ class FHIRResource extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Contained, inline Resources. These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRResource\FHIRResourceInline[] $contained
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRResource\FHIRResourceInline $contained
      * @return $this
      */
     public function addContained($contained)
@@ -169,12 +168,12 @@ class FHIRResource extends FHIRBackboneElement implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->language) $json['language'] = $this->language->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->language) $json['language'] = json_encode($this->language);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         if (0 < count($this->contained)) {
-            $json['contained'] = array();
+            $json['contained'] = [];
             foreach($this->contained as $contained) {
-                $json['contained'][] = $contained->jsonSerialize();
+                $json['contained'][] = json_encode($contained);
             }
         }
         return $json;

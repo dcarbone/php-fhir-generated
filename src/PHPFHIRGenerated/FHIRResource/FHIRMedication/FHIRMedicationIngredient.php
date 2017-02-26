@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Primarily used for identification and definition of Medication, but also covers ingredients and packaging.
  */
-class FHIRMedicationIngredient extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The actual ingredient - either a substance (simple ingredient) or another medication.
@@ -142,8 +141,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->item) $json['item'] = $this->item->jsonSerialize();
-        if (null !== $this->amount) $json['amount'] = $this->amount->jsonSerialize();
+        if (null !== $this->item) $json['item'] = json_encode($this->item);
+        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
         return $json;
     }
 

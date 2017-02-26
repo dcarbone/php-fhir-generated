@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  */
-class FHIRProfileStructure extends FHIRBackboneElement implements JsonSerializable
+class FHIRProfileStructure extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The Resource or Data type being described.
@@ -195,7 +194,7 @@ class FHIRProfileStructure extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Captures constraints on each element within the resource.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileElement[] $element
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileElement $element
      * @return $this
      */
     public function addElement($element)
@@ -215,7 +214,7 @@ class FHIRProfileStructure extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Additional search parameters for implementations to support and/or make use of.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileSearchParam[] $searchParam
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProfile\FHIRProfileSearchParam $searchParam
      * @return $this
      */
     public function addSearchParam($searchParam)
@@ -246,20 +245,20 @@ class FHIRProfileStructure extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->publish) $json['publish'] = $this->publish->jsonSerialize();
-        if (null !== $this->purpose) $json['purpose'] = $this->purpose->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->publish) $json['publish'] = json_encode($this->publish);
+        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
         if (0 < count($this->element)) {
-            $json['element'] = array();
+            $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = $element->jsonSerialize();
+                $json['element'][] = json_encode($element);
             }
         }
         if (0 < count($this->searchParam)) {
-            $json['searchParam'] = array();
+            $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = $searchParam->jsonSerialize();
+                $json['searchParam'][] = json_encode($searchParam);
             }
         }
         return $json;

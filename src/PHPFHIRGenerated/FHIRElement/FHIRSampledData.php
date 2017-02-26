@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRSampledData extends FHIRElement implements JsonSerializable
+class FHIRSampledData extends FHIRElement implements \JsonSerializable
 {
     /**
      * The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series.
@@ -273,13 +272,13 @@ class FHIRSampledData extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->origin) $json['origin'] = $this->origin->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->factor) $json['factor'] = $this->factor->jsonSerialize();
-        if (null !== $this->lowerLimit) $json['lowerLimit'] = $this->lowerLimit->jsonSerialize();
-        if (null !== $this->upperLimit) $json['upperLimit'] = $this->upperLimit->jsonSerialize();
-        if (null !== $this->dimensions) $json['dimensions'] = $this->dimensions->jsonSerialize();
-        if (null !== $this->data) $json['data'] = $this->data->jsonSerialize();
+        if (null !== $this->origin) $json['origin'] = json_encode($this->origin);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
+        if (null !== $this->lowerLimit) $json['lowerLimit'] = json_encode($this->lowerLimit);
+        if (null !== $this->upperLimit) $json['upperLimit'] = json_encode($this->upperLimit);
+        if (null !== $this->dimensions) $json['dimensions'] = json_encode($this->dimensions);
+        if (null !== $this->data) $json['data'] = json_encode($this->data);
         return $json;
     }
 

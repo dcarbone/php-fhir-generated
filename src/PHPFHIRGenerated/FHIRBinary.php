@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,19 +56,13 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBase64Binary;
-use PHPFHIRGenerated\JsonSerializable;
 
-class FHIRBinary extends FHIRBase64Binary implements JsonSerializable
+class FHIRBinary extends FHIRBase64Binary implements \JsonSerializable
 {
     /**
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $contentType = null;
-
-    /**
-     * @var string
-     */
-    public $id = null;
 
     /**
      * @var string
@@ -96,24 +90,6 @@ class FHIRBinary extends FHIRBase64Binary implements JsonSerializable
     /**
      * @return string
      */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param string $id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function get_fhirElementName()
     {
         return $this->_fhirElementName;
@@ -124,7 +100,7 @@ class FHIRBinary extends FHIRBase64Binary implements JsonSerializable
      */
     public function __toString()
     {
-        return (string)$this->getId();
+        return $this->get_fhirElementName();
     }
 
     /**
@@ -133,8 +109,7 @@ class FHIRBinary extends FHIRBase64Binary implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->contentType) $json['contentType'] = $this->contentType->jsonSerialize();
-        if (null !== $this->id) $json['id'] = $this->id;
+        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
         return $json;
     }
 
@@ -148,10 +123,6 @@ class FHIRBinary extends FHIRBase64Binary implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Binary xmlns="http://hl7.org/fhir"></Binary>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->contentType) $this->contentType->xmlSerialize(true, $sxe->addChild('contentType'));
-        if (null !== $this->id) {
-            $idElement = $sxe->addChild('id');
-            $idElement->addAttribute('value', (string)$this->id);
-        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

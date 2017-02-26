@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of requirements for a desired implementation or a description of how a target application fulfills those requirements in a particular implementation.
  */
-class FHIRConformanceEvent extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceEvent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A coded identifier of a supported messaging event.
@@ -187,7 +186,7 @@ class FHIRConformanceEvent extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * A list of the messaging transport protocol(s) identifiers, supported by this endpoint.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $protocol
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $protocol
      * @return $this
      */
     public function addProtocol($protocol)
@@ -298,19 +297,19 @@ class FHIRConformanceEvent extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = $this->mode->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
         if (0 < count($this->protocol)) {
-            $json['protocol'] = array();
+            $json['protocol'] = [];
             foreach($this->protocol as $protocol) {
-                $json['protocol'][] = $protocol->jsonSerialize();
+                $json['protocol'][] = json_encode($protocol);
             }
         }
-        if (null !== $this->focus) $json['focus'] = $this->focus->jsonSerialize();
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->response) $json['response'] = $this->response->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
+        if (null !== $this->focus) $json['focus'] = json_encode($this->focus);
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->response) $json['response'] = json_encode($this->response);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  */
-class FHIRProfileSearchParam extends FHIRBackboneElement implements JsonSerializable
+class FHIRProfileSearchParam extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The name of the standard or custom search parameter.
@@ -189,7 +188,7 @@ class FHIRProfileSearchParam extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * Types of resource (if a resource is referenced).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $target
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $target
      * @return $this
      */
     public function addTarget($target)
@@ -220,14 +219,14 @@ class FHIRProfileSearchParam extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
-        if (null !== $this->xpath) $json['xpath'] = $this->xpath->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
         if (0 < count($this->target)) {
-            $json['target'] = array();
+            $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = $target->jsonSerialize();
+                $json['target'][] = json_encode($target);
             }
         }
         return $json;

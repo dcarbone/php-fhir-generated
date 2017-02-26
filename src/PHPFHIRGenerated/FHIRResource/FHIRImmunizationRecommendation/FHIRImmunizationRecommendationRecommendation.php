@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A patient's point-of-time immunization status and recommendation with optional supporting justification.
  */
-class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement implements JsonSerializable
+class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The date the immunization recommendation was created.
@@ -207,7 +206,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Vaccine date recommendations - e.g. earliest date to administer, latest date to administer, etc.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[] $dateCriterion
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion $dateCriterion
      * @return $this
      */
     public function addDateCriterion($dateCriterion)
@@ -247,7 +246,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Immunization event history that supports the status and recommendation.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $supportingImmunization
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $supportingImmunization
      * @return $this
      */
     public function addSupportingImmunization($supportingImmunization)
@@ -267,7 +266,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
 
     /**
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $supportingPatientInformation
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $supportingPatientInformation
      * @return $this
      */
     public function addSupportingPatientInformation($supportingPatientInformation)
@@ -298,27 +297,27 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->vaccineType) $json['vaccineType'] = $this->vaccineType->jsonSerialize();
-        if (null !== $this->doseNumber) $json['doseNumber'] = $this->doseNumber->jsonSerialize();
-        if (null !== $this->forecastStatus) $json['forecastStatus'] = $this->forecastStatus->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->vaccineType) $json['vaccineType'] = json_encode($this->vaccineType);
+        if (null !== $this->doseNumber) $json['doseNumber'] = json_encode($this->doseNumber);
+        if (null !== $this->forecastStatus) $json['forecastStatus'] = json_encode($this->forecastStatus);
         if (0 < count($this->dateCriterion)) {
-            $json['dateCriterion'] = array();
+            $json['dateCriterion'] = [];
             foreach($this->dateCriterion as $dateCriterion) {
-                $json['dateCriterion'][] = $dateCriterion->jsonSerialize();
+                $json['dateCriterion'][] = json_encode($dateCriterion);
             }
         }
-        if (null !== $this->protocol) $json['protocol'] = $this->protocol->jsonSerialize();
+        if (null !== $this->protocol) $json['protocol'] = json_encode($this->protocol);
         if (0 < count($this->supportingImmunization)) {
-            $json['supportingImmunization'] = array();
+            $json['supportingImmunization'] = [];
             foreach($this->supportingImmunization as $supportingImmunization) {
-                $json['supportingImmunization'][] = $supportingImmunization->jsonSerialize();
+                $json['supportingImmunization'][] = json_encode($supportingImmunization);
             }
         }
         if (0 < count($this->supportingPatientInformation)) {
-            $json['supportingPatientInformation'] = array();
+            $json['supportingPatientInformation'] = [];
             foreach($this->supportingPatientInformation as $supportingPatientInformation) {
-                $json['supportingPatientInformation'][] = $supportingPatientInformation->jsonSerialize();
+                $json['supportingPatientInformation'][] = json_encode($supportingPatientInformation);
             }
         }
         return $json;

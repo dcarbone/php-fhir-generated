@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
  */
-class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonSerializable
+class FHIRObservationReferenceRange extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The value of the low bound of the reference range. If this is omitted, the low bound of the reference range is assumed to be meaningless. E.g. <2.3.
@@ -194,10 +193,10 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->low) $json['low'] = $this->low->jsonSerialize();
-        if (null !== $this->high) $json['high'] = $this->high->jsonSerialize();
-        if (null !== $this->meaning) $json['meaning'] = $this->meaning->jsonSerialize();
-        if (null !== $this->age) $json['age'] = $this->age->jsonSerialize();
+        if (null !== $this->low) $json['low'] = json_encode($this->low);
+        if (null !== $this->high) $json['high'] = json_encode($this->high);
+        if (null !== $this->meaning) $json['meaning'] = json_encode($this->meaning);
+        if (null !== $this->age) $json['age'] = json_encode($this->age);
         return $json;
     }
 

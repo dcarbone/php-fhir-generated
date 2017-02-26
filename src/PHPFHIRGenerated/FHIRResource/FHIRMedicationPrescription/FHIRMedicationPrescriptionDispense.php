@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An order for both supply of the medication and the instructions for administration of the medicine to a patient.
  */
-class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the medication that is to be dispensed.  This may be a more specifically defined than the medicationPrescription.medication . This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications.
@@ -93,7 +92,7 @@ UsageNotes: For example, the number of times the prescribed quantity is to be su
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last. 
 In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
-     * @var \PHPFHIRGenerated\FHIRDuration
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $expectedSupplyDuration = null;
 
@@ -191,7 +190,7 @@ UsageNotes: For example, the number of times the prescribed quantity is to be su
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last. 
 In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
-     * @return \PHPFHIRGenerated\FHIRDuration
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getExpectedSupplyDuration()
     {
@@ -201,7 +200,7 @@ In some situations, this attribute may be used instead of quantity to identify t
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last. 
 In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
-     * @param \PHPFHIRGenerated\FHIRDuration $expectedSupplyDuration
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @return $this
      */
     public function setExpectedSupplyDuration($expectedSupplyDuration)
@@ -232,11 +231,11 @@ In some situations, this attribute may be used instead of quantity to identify t
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->medication) $json['medication'] = $this->medication->jsonSerialize();
-        if (null !== $this->validityPeriod) $json['validityPeriod'] = $this->validityPeriod->jsonSerialize();
-        if (null !== $this->numberOfRepeatsAllowed) $json['numberOfRepeatsAllowed'] = $this->numberOfRepeatsAllowed->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->expectedSupplyDuration) $json['expectedSupplyDuration'] = $this->expectedSupplyDuration->jsonSerialize();
+        if (null !== $this->medication) $json['medication'] = json_encode($this->medication);
+        if (null !== $this->validityPeriod) $json['validityPeriod'] = json_encode($this->validityPeriod);
+        if (null !== $this->numberOfRepeatsAllowed) $json['numberOfRepeatsAllowed'] = json_encode($this->numberOfRepeatsAllowed);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->expectedSupplyDuration) $json['expectedSupplyDuration'] = json_encode($this->expectedSupplyDuration);
         return $json;
     }
 

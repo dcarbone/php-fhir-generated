@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.
  */
-class FHIRProfileExtensionDefn extends FHIRBackboneElement implements JsonSerializable
+class FHIRProfileExtensionDefn extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A unique code (within the profile) used to identify the extension.
@@ -169,7 +168,7 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement implements JsonSerial
 
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $context
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $context
      * @return $this
      */
     public function addContext($context)
@@ -220,16 +219,16 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
-        if (null !== $this->contextType) $json['contextType'] = $this->contextType->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
+        if (null !== $this->contextType) $json['contextType'] = json_encode($this->contextType);
         if (0 < count($this->context)) {
-            $json['context'] = array();
+            $json['context'] = [];
             foreach($this->context as $context) {
-                $json['context'][] = $context->jsonSerialize();
+                $json['context'][] = json_encode($context);
             }
         }
-        if (null !== $this->definition) $json['definition'] = $this->definition->jsonSerialize();
+        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
         return $json;
     }
 

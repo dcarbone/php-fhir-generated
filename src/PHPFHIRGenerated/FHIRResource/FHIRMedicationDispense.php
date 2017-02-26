@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedicationDispense extends FHIRResource implements JsonSerializable
+class FHIRMedicationDispense extends FHIRResource implements \JsonSerializable
 {
     /**
      * Identifier assigned by the dispensing facility - this is an identifier assigned outside FHIR.
@@ -202,7 +201,7 @@ class FHIRMedicationDispense extends FHIRResource implements JsonSerializable
 
     /**
      * Indicates the medication order that is being dispensed against.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $authorizingPrescription
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $authorizingPrescription
      * @return $this
      */
     public function addAuthorizingPrescription($authorizingPrescription)
@@ -222,7 +221,7 @@ class FHIRMedicationDispense extends FHIRResource implements JsonSerializable
 
     /**
      * Indicates the details of the dispense event such as the days supply and quantity of medication dispensed.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseDispense[] $dispense
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseDispense $dispense
      * @return $this
      */
     public function addDispense($dispense)
@@ -274,23 +273,23 @@ class FHIRMedicationDispense extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->dispenser) $json['dispenser'] = $this->dispenser->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->dispenser) $json['dispenser'] = json_encode($this->dispenser);
         if (0 < count($this->authorizingPrescription)) {
-            $json['authorizingPrescription'] = array();
+            $json['authorizingPrescription'] = [];
             foreach($this->authorizingPrescription as $authorizingPrescription) {
-                $json['authorizingPrescription'][] = $authorizingPrescription->jsonSerialize();
+                $json['authorizingPrescription'][] = json_encode($authorizingPrescription);
             }
         }
         if (0 < count($this->dispense)) {
-            $json['dispense'] = array();
+            $json['dispense'] = [];
             foreach($this->dispense as $dispense) {
-                $json['dispense'][] = $dispense->jsonSerialize();
+                $json['dispense'][] = json_encode($dispense);
             }
         }
-        if (null !== $this->substitution) $json['substitution'] = $this->substitution->jsonSerialize();
+        if (null !== $this->substitution) $json['substitution'] = json_encode($this->substitution);
         return $json;
     }
 

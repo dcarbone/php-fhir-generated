@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,12 +56,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.
  */
-class FHIRCarePlanSimple extends FHIRBackboneElement implements JsonSerializable
+class FHIRCarePlanSimple extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * High-level categorization of the type of activity in a care plan.
@@ -256,7 +255,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Identifies who's expected to be involved in the activity.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference[] $performer
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -367,22 +366,22 @@ class FHIRCarePlanSimple extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->timingSchedule) $json['timingSchedule'] = $this->timingSchedule->jsonSerialize();
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = $this->timingPeriod->jsonSerialize();
-        if (null !== $this->timingString) $json['timingString'] = $this->timingString->jsonSerialize();
-        if (null !== $this->location) $json['location'] = $this->location->jsonSerialize();
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->timingSchedule) $json['timingSchedule'] = json_encode($this->timingSchedule);
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
+        if (null !== $this->timingString) $json['timingString'] = json_encode($this->timingString);
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
         if (0 < count($this->performer)) {
-            $json['performer'] = array();
+            $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = $performer->jsonSerialize();
+                $json['performer'][] = json_encode($performer);
             }
         }
-        if (null !== $this->product) $json['product'] = $this->product->jsonSerialize();
-        if (null !== $this->dailyAmount) $json['dailyAmount'] = $this->dailyAmount->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->details) $json['details'] = $this->details->jsonSerialize();
+        if (null !== $this->product) $json['product'] = json_encode($this->product);
+        if (null !== $this->dailyAmount) $json['dailyAmount'] = json_encode($this->dailyAmount);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->details) $json['details'] = json_encode($this->details);
         return $json;
     }
 
