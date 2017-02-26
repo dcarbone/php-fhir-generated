@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedia extends FHIRDomainResource implements JsonSerializable
+class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Whether the media is a photo (still image), an audio recording, or a video recording.
@@ -197,7 +196,7 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -409,23 +408,23 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->subtype) $json['subtype'] = $this->subtype->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->subtype) $json['subtype'] = json_encode($this->subtype);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->operator) $json['operator'] = $this->operator->jsonSerialize();
-        if (null !== $this->view) $json['view'] = $this->view->jsonSerialize();
-        if (null !== $this->deviceName) $json['deviceName'] = $this->deviceName->jsonSerialize();
-        if (null !== $this->height) $json['height'] = $this->height->jsonSerialize();
-        if (null !== $this->width) $json['width'] = $this->width->jsonSerialize();
-        if (null !== $this->frames) $json['frames'] = $this->frames->jsonSerialize();
-        if (null !== $this->duration) $json['duration'] = $this->duration->jsonSerialize();
-        if (null !== $this->content) $json['content'] = $this->content->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->operator) $json['operator'] = json_encode($this->operator);
+        if (null !== $this->view) $json['view'] = json_encode($this->view);
+        if (null !== $this->deviceName) $json['deviceName'] = json_encode($this->deviceName);
+        if (null !== $this->height) $json['height'] = json_encode($this->height);
+        if (null !== $this->width) $json['width'] = json_encode($this->width);
+        if (null !== $this->frames) $json['frames'] = json_encode($this->frames);
+        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
+        if (null !== $this->content) $json['content'] = json_encode($this->content);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a diagnosis during an encounter; populating a problem list or a summary statement, such as a discharge summary.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRCondition extends FHIRDomainResource implements JsonSerializable
+class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this condition that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -137,7 +136,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
-     * @var \PHPFHIRGenerated\FHIRAge
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $onsetQuantity = null;
 
@@ -167,7 +166,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
-     * @var \PHPFHIRGenerated\FHIRAge
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $abatementQuantity = null;
 
@@ -235,7 +234,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This records identifiers associated with this condition that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -446,7 +445,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
-     * @return \PHPFHIRGenerated\FHIRAge
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetQuantity()
     {
@@ -455,7 +454,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
-     * @param \PHPFHIRGenerated\FHIRAge $onsetQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $onsetQuantity
      * @return $this
      */
     public function setOnsetQuantity($onsetQuantity)
@@ -546,7 +545,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
-     * @return \PHPFHIRGenerated\FHIRAge
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAbatementQuantity()
     {
@@ -555,7 +554,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
-     * @param \PHPFHIRGenerated\FHIRAge $abatementQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $abatementQuantity
      * @return $this
      */
     public function setAbatementQuantity($abatementQuantity)
@@ -675,7 +674,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCondition\FHIRConditionEvidence[] $evidence
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRCondition\FHIRConditionEvidence $evidence
      * @return $this
      */
     public function addEvidence($evidence)
@@ -695,7 +694,7 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The anatomical location where this condition manifests itself.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $bodySite
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function addBodySite($bodySite)
@@ -748,45 +747,45 @@ class FHIRCondition extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->asserter) $json['asserter'] = $this->asserter->jsonSerialize();
-        if (null !== $this->dateRecorded) $json['dateRecorded'] = $this->dateRecorded->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->clinicalStatus) $json['clinicalStatus'] = $this->clinicalStatus->jsonSerialize();
-        if (null !== $this->verificationStatus) $json['verificationStatus'] = $this->verificationStatus->jsonSerialize();
-        if (null !== $this->severity) $json['severity'] = $this->severity->jsonSerialize();
-        if (null !== $this->onsetDateTime) $json['onsetDateTime'] = $this->onsetDateTime->jsonSerialize();
-        if (null !== $this->onsetQuantity) $json['onsetQuantity'] = $this->onsetQuantity->jsonSerialize();
-        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = $this->onsetPeriod->jsonSerialize();
-        if (null !== $this->onsetRange) $json['onsetRange'] = $this->onsetRange->jsonSerialize();
-        if (null !== $this->onsetString) $json['onsetString'] = $this->onsetString->jsonSerialize();
-        if (null !== $this->abatementDateTime) $json['abatementDateTime'] = $this->abatementDateTime->jsonSerialize();
-        if (null !== $this->abatementQuantity) $json['abatementQuantity'] = $this->abatementQuantity->jsonSerialize();
-        if (null !== $this->abatementBoolean) $json['abatementBoolean'] = $this->abatementBoolean->jsonSerialize();
-        if (null !== $this->abatementPeriod) $json['abatementPeriod'] = $this->abatementPeriod->jsonSerialize();
-        if (null !== $this->abatementRange) $json['abatementRange'] = $this->abatementRange->jsonSerialize();
-        if (null !== $this->abatementString) $json['abatementString'] = $this->abatementString->jsonSerialize();
-        if (null !== $this->stage) $json['stage'] = $this->stage->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->asserter) $json['asserter'] = json_encode($this->asserter);
+        if (null !== $this->dateRecorded) $json['dateRecorded'] = json_encode($this->dateRecorded);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->clinicalStatus) $json['clinicalStatus'] = json_encode($this->clinicalStatus);
+        if (null !== $this->verificationStatus) $json['verificationStatus'] = json_encode($this->verificationStatus);
+        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
+        if (null !== $this->onsetDateTime) $json['onsetDateTime'] = json_encode($this->onsetDateTime);
+        if (null !== $this->onsetQuantity) $json['onsetQuantity'] = json_encode($this->onsetQuantity);
+        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = json_encode($this->onsetPeriod);
+        if (null !== $this->onsetRange) $json['onsetRange'] = json_encode($this->onsetRange);
+        if (null !== $this->onsetString) $json['onsetString'] = json_encode($this->onsetString);
+        if (null !== $this->abatementDateTime) $json['abatementDateTime'] = json_encode($this->abatementDateTime);
+        if (null !== $this->abatementQuantity) $json['abatementQuantity'] = json_encode($this->abatementQuantity);
+        if (null !== $this->abatementBoolean) $json['abatementBoolean'] = json_encode($this->abatementBoolean);
+        if (null !== $this->abatementPeriod) $json['abatementPeriod'] = json_encode($this->abatementPeriod);
+        if (null !== $this->abatementRange) $json['abatementRange'] = json_encode($this->abatementRange);
+        if (null !== $this->abatementString) $json['abatementString'] = json_encode($this->abatementString);
+        if (null !== $this->stage) $json['stage'] = json_encode($this->stage);
         if (0 < count($this->evidence)) {
-            $json['evidence'] = array();
+            $json['evidence'] = [];
             foreach($this->evidence as $evidence) {
-                $json['evidence'][] = $evidence->jsonSerialize();
+                $json['evidence'][] = json_encode($evidence);
             }
         }
         if (0 < count($this->bodySite)) {
-            $json['bodySite'] = array();
+            $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = $bodySite->jsonSerialize();
+                $json['bodySite'][] = json_encode($bodySite);
             }
         }
-        if (null !== $this->notes) $json['notes'] = $this->notes->jsonSerialize();
+        if (null !== $this->notes) $json['notes'] = json_encode($this->notes);
         return $json;
     }
 

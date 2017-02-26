@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
  */
-class FHIRClaimResponseCoverage extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimResponseCoverage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A service line item.
@@ -232,7 +231,7 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement implements JsonSeria
 
     /**
      * A list of references from the Insurer to which these services pertain.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $preAuthRef
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $preAuthRef
      * @return $this
      */
     public function addPreAuthRef($preAuthRef)
@@ -303,19 +302,19 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement implements JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = $this->sequence->jsonSerialize();
-        if (null !== $this->focal) $json['focal'] = $this->focal->jsonSerialize();
-        if (null !== $this->coverage) $json['coverage'] = $this->coverage->jsonSerialize();
-        if (null !== $this->businessArrangement) $json['businessArrangement'] = $this->businessArrangement->jsonSerialize();
-        if (null !== $this->relationship) $json['relationship'] = $this->relationship->jsonSerialize();
+        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
+        if (null !== $this->focal) $json['focal'] = json_encode($this->focal);
+        if (null !== $this->coverage) $json['coverage'] = json_encode($this->coverage);
+        if (null !== $this->businessArrangement) $json['businessArrangement'] = json_encode($this->businessArrangement);
+        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
         if (0 < count($this->preAuthRef)) {
-            $json['preAuthRef'] = array();
+            $json['preAuthRef'] = [];
             foreach($this->preAuthRef as $preAuthRef) {
-                $json['preAuthRef'][] = $preAuthRef->jsonSerialize();
+                $json['preAuthRef'][] = json_encode($preAuthRef);
             }
         }
-        if (null !== $this->claimResponse) $json['claimResponse'] = $this->claimResponse->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
+        if (null !== $this->claimResponse) $json['claimResponse'] = json_encode($this->claimResponse);
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
         return $json;
     }
 

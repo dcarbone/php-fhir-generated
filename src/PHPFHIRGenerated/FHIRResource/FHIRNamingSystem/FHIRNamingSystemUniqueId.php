@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a "System" used within the Identifier and Coding data types.
  */
-class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements JsonSerializable
+class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the unique identifier scheme used for this particular identifier.
@@ -199,10 +198,10 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
-        if (null !== $this->preferred) $json['preferred'] = $this->preferred->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (null !== $this->preferred) $json['preferred'] = json_encode($this->preferred);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
 

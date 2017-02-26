@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,14 +61,13 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now, or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from e.g. the patient's memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains 
 
 The primary difference between a medication statement and a medication administration is that the medication administration has complete administration information and is based on actual administration information from the person who administered the medication.  A medication statement is often, if not always, less specific.  There is no required date/time when the medication was administered, in fact we only know that a source has reported the patient is taking this medication, where details such as time, quantity, or rate or even medication product may be incomplete or missing or less precise.  As stated earlier, the medication statement information may come from the patient's memory, from a prescription bottle or from a list of medications the patient, clinician or other party maintains.  Medication administration is more formal and is not missing detailed information.
  */
-class FHIRMedicationStatementDosage extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationStatementDosage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Free text dosage information as reported about a patient's medication use. When coded dosage information is present, the free text may still be present for display to humans.
@@ -124,7 +123,7 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
 
     /**
      * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $quantityQuantity = null;
 
@@ -327,7 +326,7 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
 
     /**
      * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantityQuantity()
     {
@@ -336,7 +335,7 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
 
     /**
      * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantityQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantityQuantity
      * @return $this
      */
     public function setQuantityQuantity($quantityQuantity)
@@ -447,19 +446,19 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->timing) $json['timing'] = $this->timing->jsonSerialize();
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean->jsonSerialize();
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept->jsonSerialize();
-        if (null !== $this->siteCodeableConcept) $json['siteCodeableConcept'] = $this->siteCodeableConcept->jsonSerialize();
-        if (null !== $this->siteReference) $json['siteReference'] = $this->siteReference->jsonSerialize();
-        if (null !== $this->route) $json['route'] = $this->route->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->quantityQuantity) $json['quantityQuantity'] = $this->quantityQuantity->jsonSerialize();
-        if (null !== $this->quantityRange) $json['quantityRange'] = $this->quantityRange->jsonSerialize();
-        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio->jsonSerialize();
-        if (null !== $this->rateRange) $json['rateRange'] = $this->rateRange->jsonSerialize();
-        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = $this->maxDosePerPeriod->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->timing) $json['timing'] = json_encode($this->timing);
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
+        if (null !== $this->siteCodeableConcept) $json['siteCodeableConcept'] = json_encode($this->siteCodeableConcept);
+        if (null !== $this->siteReference) $json['siteReference'] = json_encode($this->siteReference);
+        if (null !== $this->route) $json['route'] = json_encode($this->route);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->quantityQuantity) $json['quantityQuantity'] = json_encode($this->quantityQuantity);
+        if (null !== $this->quantityRange) $json['quantityRange'] = json_encode($this->quantityRange);
+        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
+        if (null !== $this->rateRange) $json['rateRange'] = json_encode($this->rateRange);
+        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = json_encode($this->maxDosePerPeriod);
         return $json;
     }
 

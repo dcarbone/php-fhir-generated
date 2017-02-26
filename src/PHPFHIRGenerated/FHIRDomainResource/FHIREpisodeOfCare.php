@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
+class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier(s) by which this EpisodeOfCare is known.
@@ -151,7 +150,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifier(s) by which this EpisodeOfCare is known.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -191,7 +190,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[] $statusHistory
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory $statusHistory
      * @return $this
      */
     public function addStatusHistory($statusHistory)
@@ -211,7 +210,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A classification of the type of encounter; e.g. specialist referral, disease management, type of funded care.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -231,7 +230,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $condition
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -311,7 +310,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $referralRequest
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $referralRequest
      * @return $this
      */
     public function addReferralRequest($referralRequest)
@@ -351,7 +350,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The list of practitioners that may be facilitating this episode of care for specific purposes.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareCareTeam[] $careTeam
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareCareTeam $careTeam
      * @return $this
      */
     public function addCareTeam($careTeam)
@@ -384,44 +383,44 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->statusHistory)) {
-            $json['statusHistory'] = array();
+            $json['statusHistory'] = [];
             foreach($this->statusHistory as $statusHistory) {
-                $json['statusHistory'][] = $statusHistory->jsonSerialize();
+                $json['statusHistory'][] = json_encode($statusHistory);
             }
         }
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
         if (0 < count($this->condition)) {
-            $json['condition'] = array();
+            $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = $condition->jsonSerialize();
+                $json['condition'][] = json_encode($condition);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->managingOrganization) $json['managingOrganization'] = $this->managingOrganization->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (0 < count($this->referralRequest)) {
-            $json['referralRequest'] = array();
+            $json['referralRequest'] = [];
             foreach($this->referralRequest as $referralRequest) {
-                $json['referralRequest'][] = $referralRequest->jsonSerialize();
+                $json['referralRequest'][] = json_encode($referralRequest);
             }
         }
-        if (null !== $this->careManager) $json['careManager'] = $this->careManager->jsonSerialize();
+        if (null !== $this->careManager) $json['careManager'] = json_encode($this->careManager);
         if (0 < count($this->careTeam)) {
-            $json['careTeam'] = array();
+            $json['careTeam'] = [];
             foreach($this->careTeam as $careTeam) {
-                $json['careTeam'][] = $careTeam->jsonSerialize();
+                $json['careTeam'][] = json_encode($careTeam);
             }
         }
         return $json;

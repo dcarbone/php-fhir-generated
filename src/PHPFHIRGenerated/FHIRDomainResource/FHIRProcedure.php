@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An action that is or was performed on a patient. This can be a physical intervention like an operation, or less invasive like counseling or hypnotherapy.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
+class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this procedure that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -223,7 +222,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This records identifiers associated with this procedure that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -343,7 +342,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A code indicating why the procedure was not performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reasonNotPerformed
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonNotPerformed
      * @return $this
      */
     public function addReasonNotPerformed($reasonNotPerformed)
@@ -363,7 +362,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $bodySite
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function addBodySite($bodySite)
@@ -423,7 +422,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Limited to 'real' people rather than equipment.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProcedure\FHIRProcedurePerformer[] $performer
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProcedure\FHIRProcedurePerformer $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -543,7 +542,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This could be a histology result, pathology report, surgical report, etc..
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $report
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $report
      * @return $this
      */
     public function addReport($report)
@@ -563,7 +562,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Any complications that occurred during the procedure, or in the immediate post-performance period. These are generally tracked separately from the notes, which will typically describe the procedure itself rather than any 'post procedure' issues.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $complication
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $complication
      * @return $this
      */
     public function addComplication($complication)
@@ -583,7 +582,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or could potentially be more complex in which case the CarePlan resource can be used.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $followUp
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $followUp
      * @return $this
      */
     public function addFollowUp($followUp)
@@ -623,7 +622,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Any other notes about the procedure.  E.g. the operative notes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[] $notes
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $notes
      * @return $this
      */
     public function addNotes($notes)
@@ -643,7 +642,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice[] $focalDevice
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProcedure\FHIRProcedureFocalDevice $focalDevice
      * @return $this
      */
     public function addFocalDevice($focalDevice)
@@ -663,7 +662,7 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifies medications, devices and any other substance used as part of the procedure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $used
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $used
      * @return $this
      */
     public function addUsed($used)
@@ -696,76 +695,76 @@ class FHIRProcedure extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->notPerformed) $json['notPerformed'] = $this->notPerformed->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->notPerformed) $json['notPerformed'] = json_encode($this->notPerformed);
         if (0 < count($this->reasonNotPerformed)) {
-            $json['reasonNotPerformed'] = array();
+            $json['reasonNotPerformed'] = [];
             foreach($this->reasonNotPerformed as $reasonNotPerformed) {
-                $json['reasonNotPerformed'][] = $reasonNotPerformed->jsonSerialize();
+                $json['reasonNotPerformed'][] = json_encode($reasonNotPerformed);
             }
         }
         if (0 < count($this->bodySite)) {
-            $json['bodySite'] = array();
+            $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = $bodySite->jsonSerialize();
+                $json['bodySite'][] = json_encode($bodySite);
             }
         }
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept->jsonSerialize();
-        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference->jsonSerialize();
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
+        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
         if (0 < count($this->performer)) {
-            $json['performer'] = array();
+            $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = $performer->jsonSerialize();
+                $json['performer'][] = json_encode($performer);
             }
         }
-        if (null !== $this->performedDateTime) $json['performedDateTime'] = $this->performedDateTime->jsonSerialize();
-        if (null !== $this->performedPeriod) $json['performedPeriod'] = $this->performedPeriod->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->location) $json['location'] = $this->location->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
+        if (null !== $this->performedDateTime) $json['performedDateTime'] = json_encode($this->performedDateTime);
+        if (null !== $this->performedPeriod) $json['performedPeriod'] = json_encode($this->performedPeriod);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
         if (0 < count($this->report)) {
-            $json['report'] = array();
+            $json['report'] = [];
             foreach($this->report as $report) {
-                $json['report'][] = $report->jsonSerialize();
+                $json['report'][] = json_encode($report);
             }
         }
         if (0 < count($this->complication)) {
-            $json['complication'] = array();
+            $json['complication'] = [];
             foreach($this->complication as $complication) {
-                $json['complication'][] = $complication->jsonSerialize();
+                $json['complication'][] = json_encode($complication);
             }
         }
         if (0 < count($this->followUp)) {
-            $json['followUp'] = array();
+            $json['followUp'] = [];
             foreach($this->followUp as $followUp) {
-                $json['followUp'][] = $followUp->jsonSerialize();
+                $json['followUp'][] = json_encode($followUp);
             }
         }
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
         if (0 < count($this->notes)) {
-            $json['notes'] = array();
+            $json['notes'] = [];
             foreach($this->notes as $notes) {
-                $json['notes'][] = $notes->jsonSerialize();
+                $json['notes'][] = json_encode($notes);
             }
         }
         if (0 < count($this->focalDevice)) {
-            $json['focalDevice'] = array();
+            $json['focalDevice'] = [];
             foreach($this->focalDevice as $focalDevice) {
-                $json['focalDevice'][] = $focalDevice->jsonSerialize();
+                $json['focalDevice'][] = json_encode($focalDevice);
             }
         }
         if (0 < count($this->used)) {
-            $json['used'] = array();
+            $json['used'] = [];
             foreach($this->used as $used) {
-                $json['used'][] = $used->jsonSerialize();
+                $json['used'][] = json_encode($used);
             }
         }
         return $json;

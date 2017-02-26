@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
  */
-class FHIRNutritionOrderTexture extends FHIRBackboneElement implements JsonSerializable
+class FHIRNutritionOrderTexture extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Any texture modifications (for solid foods) that should be made, e.g. easy to chew, chopped, ground, and pureed.
@@ -147,8 +146,8 @@ class FHIRNutritionOrderTexture extends FHIRBackboneElement implements JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->modifier) $json['modifier'] = $this->modifier->jsonSerialize();
-        if (null !== $this->foodType) $json['foodType'] = $this->foodType->jsonSerialize();
+        if (null !== $this->modifier) $json['modifier'] = json_encode($this->modifier);
+        if (null !== $this->foodType) $json['foodType'] = json_encode($this->foodType);
         return $json;
     }
 

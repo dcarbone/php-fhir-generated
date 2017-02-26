@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A search parameter that defines a named search item that can be used to search/filter on a resource.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSearchParameter extends FHIRDomainResource implements JsonSerializable
+class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published.
@@ -275,7 +274,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSearchParameter\FHIRSearchParameterContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSearchParameter\FHIRSearchParameterContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -455,7 +454,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Types of resource (if a resource is referenced).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $target
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $target
      * @return $this
      */
     public function addTarget($target)
@@ -487,29 +486,29 @@ class FHIRSearchParameter extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->base) $json['base'] = $this->base->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->xpath) $json['xpath'] = $this->xpath->jsonSerialize();
-        if (null !== $this->xpathUsage) $json['xpathUsage'] = $this->xpathUsage->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->base) $json['base'] = json_encode($this->base);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
+        if (null !== $this->xpathUsage) $json['xpathUsage'] = json_encode($this->xpathUsage);
         if (0 < count($this->target)) {
-            $json['target'] = array();
+            $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = $target->jsonSerialize();
+                $json['target'][] = json_encode($target);
             }
         }
         return $json;

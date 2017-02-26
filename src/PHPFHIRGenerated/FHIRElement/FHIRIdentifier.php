@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A technical identifier - identifies some entity uniquely and unambiguously.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRIdentifier extends FHIRElement implements JsonSerializable
+class FHIRIdentifier extends FHIRElement implements \JsonSerializable
 {
     /**
      * The purpose of this identifier.
@@ -252,12 +251,12 @@ class FHIRIdentifier extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->use) $json['use'] = $this->use->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->assigner) $json['assigner'] = $this->assigner->jsonSerialize();
+        if (null !== $this->use) $json['use'] = json_encode($this->use);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->assigner) $json['assigner'] = json_encode($this->assigner);
         return $json;
     }
 

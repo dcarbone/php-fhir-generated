@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
  */
-class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationContent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies one of the items in the package.
@@ -76,7 +75,7 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The amount of the product that is in the package.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $amount = null;
 
@@ -107,7 +106,7 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The amount of the product that is in the package.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getAmount()
     {
@@ -116,7 +115,7 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The amount of the product that is in the package.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $amount
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -147,8 +146,8 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->item) $json['item'] = $this->item->jsonSerialize();
-        if (null !== $this->amount) $json['amount'] = $this->amount->jsonSerialize();
+        if (null !== $this->item) $json['item'] = json_encode($this->item);
+        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
         return $json;
     }
 

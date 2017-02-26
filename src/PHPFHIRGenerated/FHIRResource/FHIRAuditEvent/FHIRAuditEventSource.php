@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
  */
-class FHIRAuditEventSource extends FHIRBackboneElement implements JsonSerializable
+class FHIRAuditEventSource extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Logical source location within the healthcare enterprise network.  For example, a hospital or other provider location within a multi-entity provider group.
@@ -142,7 +141,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Code specifying the type of source where event originated.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function addType($type)
@@ -173,12 +172,12 @@ class FHIRAuditEventSource extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->site) $json['site'] = $this->site->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
+        if (null !== $this->site) $json['site'] = json_encode($this->site);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
         return $json;

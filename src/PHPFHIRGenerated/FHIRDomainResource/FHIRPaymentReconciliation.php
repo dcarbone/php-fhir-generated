@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides payment details and claim references supporting a bulk payment.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerializable
+class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Response business identifier.
@@ -149,7 +148,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Total payment amount.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $total = null;
 
@@ -175,7 +174,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * The Response business identifier.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -395,7 +394,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * List of individual settlement amounts and the corresponding transaction.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[] $detail
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $detail
      * @return $this
      */
     public function addDetail($detail)
@@ -426,7 +425,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Total payment amount.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getTotal()
     {
@@ -435,7 +434,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Total payment amount.
-     * @param \PHPFHIRGenerated\FHIRMoney $total
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $total
      * @return $this
      */
     public function setTotal($total)
@@ -455,7 +454,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Suite of notes.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote[] $note
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote $note
      * @return $this
      */
     public function addNote($note)
@@ -488,33 +487,33 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
-        if (null !== $this->disposition) $json['disposition'] = $this->disposition->jsonSerialize();
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->requestProvider) $json['requestProvider'] = $this->requestProvider->jsonSerialize();
-        if (null !== $this->requestOrganization) $json['requestOrganization'] = $this->requestOrganization->jsonSerialize();
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->disposition) $json['disposition'] = json_encode($this->disposition);
+        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
+        if (null !== $this->requestOrganization) $json['requestOrganization'] = json_encode($this->requestOrganization);
         if (0 < count($this->detail)) {
-            $json['detail'] = array();
+            $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = $detail->jsonSerialize();
+                $json['detail'][] = json_encode($detail);
             }
         }
-        if (null !== $this->form) $json['form'] = $this->form->jsonSerialize();
-        if (null !== $this->total) $json['total'] = $this->total->jsonSerialize();
+        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (null !== $this->total) $json['total'] = json_encode($this->total);
         if (0 < count($this->note)) {
-            $json['note'] = array();
+            $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = $note->jsonSerialize();
+                $json['note'][] = json_encode($note);
             }
         }
         return $json;

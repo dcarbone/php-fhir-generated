@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
  */
-class FHIRClaimResponseDetail extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimResponseDetail extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A service line number.
@@ -122,7 +121,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * The adjudications results.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication1[] $adjudication
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication1 $adjudication
      * @return $this
      */
     public function addAdjudication($adjudication)
@@ -142,7 +141,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * The third tier service adjudications for submitted services.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail[] $subDetail
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseSubDetail $subDetail
      * @return $this
      */
     public function addSubDetail($subDetail)
@@ -173,17 +172,17 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequenceLinkId) $json['sequenceLinkId'] = $this->sequenceLinkId->jsonSerialize();
+        if (null !== $this->sequenceLinkId) $json['sequenceLinkId'] = json_encode($this->sequenceLinkId);
         if (0 < count($this->adjudication)) {
-            $json['adjudication'] = array();
+            $json['adjudication'] = [];
             foreach($this->adjudication as $adjudication) {
-                $json['adjudication'][] = $adjudication->jsonSerialize();
+                $json['adjudication'][] = json_encode($adjudication);
             }
         }
         if (0 < count($this->subDetail)) {
-            $json['subDetail'] = array();
+            $json['subDetail'] = [];
             foreach($this->subDetail as $subDetail) {
-                $json['subDetail'][] = $subDetail->jsonSerialize();
+                $json['subDetail'][] = json_encode($subDetail);
             }
         }
         return $json;

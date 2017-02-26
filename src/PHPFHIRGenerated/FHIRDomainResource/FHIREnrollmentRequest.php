@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the insurance enrollment details to the insurer regarding a specified coverage.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializable
+class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Response business identifier.
@@ -145,7 +144,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
 
     /**
      * The Response business identifier.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -358,20 +357,20 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->target) $json['target'] = $this->target->jsonSerialize();
-        if (null !== $this->provider) $json['provider'] = $this->provider->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->coverage) $json['coverage'] = $this->coverage->jsonSerialize();
-        if (null !== $this->relationship) $json['relationship'] = $this->relationship->jsonSerialize();
+        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->target) $json['target'] = json_encode($this->target);
+        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->coverage) $json['coverage'] = json_encode($this->coverage);
+        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
         return $json;
     }
 

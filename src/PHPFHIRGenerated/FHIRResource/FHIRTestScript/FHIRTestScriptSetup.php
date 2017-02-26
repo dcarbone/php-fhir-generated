@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptSetup extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptSetup extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
@@ -116,7 +115,7 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Action would contain either an operation or an assertion.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction[] $action
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction $action
      * @return $this
      */
     public function addAction($action)
@@ -147,11 +146,11 @@ class FHIRTestScriptSetup extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->metadata) $json['metadata'] = $this->metadata->jsonSerialize();
+        if (null !== $this->metadata) $json['metadata'] = json_encode($this->metadata);
         if (0 < count($this->action)) {
-            $json['action'] = array();
+            $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = $action->jsonSerialize();
+                $json['action'][] = json_encode($action);
             }
         }
         return $json;

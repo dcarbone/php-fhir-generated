@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions intended to guide the collection of answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  */
-class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSerializable
+class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An identifier that is unique within the questionnaire allowing linkage to the equivalent group in a [[[QuestionnaireResponse]]] resource.
@@ -158,7 +157,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSeria
 
     /**
      * Identifies a how this question is known in a particular terminology such as LOINC.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $concept
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $concept
      * @return $this
      */
     public function addConcept($concept)
@@ -278,7 +277,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSeria
 
     /**
      * For a "choice" question, identifies one of the permitted answers for the question.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $option
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $option
      * @return $this
      */
     public function addOption($option)
@@ -298,7 +297,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSeria
 
     /**
      * Nested group, containing nested question for this question. The order of groups within the question is relevant.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup[] $group
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup $group
      * @return $this
      */
     public function addGroup($group)
@@ -329,28 +328,28 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->linkId) $json['linkId'] = $this->linkId->jsonSerialize();
+        if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
         if (0 < count($this->concept)) {
-            $json['concept'] = array();
+            $json['concept'] = [];
             foreach($this->concept as $concept) {
-                $json['concept'][] = $concept->jsonSerialize();
+                $json['concept'][] = json_encode($concept);
             }
         }
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->required) $json['required'] = $this->required->jsonSerialize();
-        if (null !== $this->repeats) $json['repeats'] = $this->repeats->jsonSerialize();
-        if (null !== $this->options) $json['options'] = $this->options->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->required) $json['required'] = json_encode($this->required);
+        if (null !== $this->repeats) $json['repeats'] = json_encode($this->repeats);
+        if (null !== $this->options) $json['options'] = json_encode($this->options);
         if (0 < count($this->option)) {
-            $json['option'] = array();
+            $json['option'] = [];
             foreach($this->option as $option) {
-                $json['option'][] = $option->jsonSerialize();
+                $json['option'][] = json_encode($option);
             }
         }
         if (0 < count($this->group)) {
-            $json['group'] = array();
+            $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = $group->jsonSerialize();
+                $json['group'][] = json_encode($group);
             }
         }
         return $json;

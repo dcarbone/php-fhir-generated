@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An absolute URI which is the code system in which the code for this item in the expansion is defined.
@@ -220,7 +219,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContains[] $contains
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContains $contains
      * @return $this
      */
     public function addContains($contains)
@@ -251,15 +250,15 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->abstract) $json['abstract'] = $this->abstract->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->abstract) $json['abstract'] = json_encode($this->abstract);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
         if (0 < count($this->contains)) {
-            $json['contains'] = array();
+            $json['contains'] = [];
             foreach($this->contains as $contains) {
-                $json['contains'][] = $contains->jsonSerialize();
+                $json['contains'][] = json_encode($contains);
             }
         }
         return $json;

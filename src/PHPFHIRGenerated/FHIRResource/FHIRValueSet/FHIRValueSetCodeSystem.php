@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetCodeSystem extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetCodeSystem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An absolute URI that is used to reference this code system, including in [Coding]{datatypes.html#Coding}.system.
@@ -168,7 +167,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * Concepts that are in the code system. The concept definitions are inherently hierarchical, but the definitions must be consulted to determine what the meaning of the hierarchical relationships are.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept[] $concept
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept $concept
      * @return $this
      */
     public function addConcept($concept)
@@ -199,13 +198,13 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->caseSensitive) $json['caseSensitive'] = $this->caseSensitive->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->caseSensitive) $json['caseSensitive'] = json_encode($this->caseSensitive);
         if (0 < count($this->concept)) {
-            $json['concept'] = array();
+            $json['concept'] = [];
             foreach($this->concept as $concept) {
-                $json['concept'][] = $concept->jsonSerialize();
+                $json['concept'][] = json_encode($concept);
             }
         }
         return $json;

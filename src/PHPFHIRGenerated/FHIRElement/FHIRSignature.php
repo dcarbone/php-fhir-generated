@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A digital signature along with supporting context. The signature may be electronic/cryptographic in nature, or a graphical image representing a hand-written signature, or a signature process. Different Signature approaches have different utilities.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRSignature extends FHIRElement implements JsonSerializable
+class FHIRSignature extends FHIRElement implements \JsonSerializable
 {
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
@@ -121,7 +120,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
 
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function addType($type)
@@ -253,16 +252,16 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
-        if (null !== $this->when) $json['when'] = $this->when->jsonSerialize();
-        if (null !== $this->whoUri) $json['whoUri'] = $this->whoUri->jsonSerialize();
-        if (null !== $this->whoReference) $json['whoReference'] = $this->whoReference->jsonSerialize();
-        if (null !== $this->contentType) $json['contentType'] = $this->contentType->jsonSerialize();
-        if (null !== $this->blob) $json['blob'] = $this->blob->jsonSerialize();
+        if (null !== $this->when) $json['when'] = json_encode($this->when);
+        if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
+        if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
+        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
+        if (null !== $this->blob) $json['blob'] = json_encode($this->blob);
         return $json;
     }
 

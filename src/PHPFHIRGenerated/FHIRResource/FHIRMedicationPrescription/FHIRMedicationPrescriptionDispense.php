@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An order for both supply of the medication and the instructions for administration of the medication to a patient.
  */
-class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
@@ -94,13 +93,13 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements 
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $quantity = null;
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.  In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
-     * @var \PHPFHIRGenerated\FHIRDuration
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $expectedSupplyDuration = null;
 
@@ -191,7 +190,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements 
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity()
     {
@@ -200,7 +199,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements 
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -211,7 +210,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements 
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.  In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
-     * @return \PHPFHIRGenerated\FHIRDuration
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getExpectedSupplyDuration()
     {
@@ -220,7 +219,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements 
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.  In some situations, this attribute may be used instead of quantity to identify the amount supplied by how long it is expected to last, rather than the physical quantity issued, e.g. 90 days supply of medication (based on an ordered dosage) When possible, it is always better to specify quantity, as this tends to be more precise. expectedSupplyDuration will always be an estimate that can be influenced by external factors.
-     * @param \PHPFHIRGenerated\FHIRDuration $expectedSupplyDuration
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @return $this
      */
     public function setExpectedSupplyDuration($expectedSupplyDuration)
@@ -251,12 +250,12 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement implements 
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept->jsonSerialize();
-        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference->jsonSerialize();
-        if (null !== $this->validityPeriod) $json['validityPeriod'] = $this->validityPeriod->jsonSerialize();
-        if (null !== $this->numberOfRepeatsAllowed) $json['numberOfRepeatsAllowed'] = $this->numberOfRepeatsAllowed->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->expectedSupplyDuration) $json['expectedSupplyDuration'] = $this->expectedSupplyDuration->jsonSerialize();
+        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
+        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
+        if (null !== $this->validityPeriod) $json['validityPeriod'] = json_encode($this->validityPeriod);
+        if (null !== $this->numberOfRepeatsAllowed) $json['numberOfRepeatsAllowed'] = json_encode($this->numberOfRepeatsAllowed);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->expectedSupplyDuration) $json['expectedSupplyDuration'] = json_encode($this->expectedSupplyDuration);
         return $json;
     }
 

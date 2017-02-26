@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.  Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedicationAdministration extends FHIRDomainResource implements JsonSerializable
+class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * External identifier - FHIR will generate its own internal identifiers (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.
@@ -181,7 +180,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements JsonSer
 
     /**
      * External identifier - FHIR will generate its own internal identifiers (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -321,7 +320,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements JsonSer
 
     /**
      * A code indicating why the administration was not performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reasonNotGiven
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonNotGiven
      * @return $this
      */
     public function addReasonNotGiven($reasonNotGiven)
@@ -341,7 +340,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements JsonSer
 
     /**
      * A code indicating why the medication was given.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reasonGiven
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonGiven
      * @return $this
      */
     public function addReasonGiven($reasonGiven)
@@ -441,7 +440,7 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements JsonSer
 
     /**
      * The device used in administering the medication to the patient.  For example, a particular infusion pump.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $device
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $device
      * @return $this
      */
     public function addDevice($device)
@@ -514,41 +513,41 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements JsonSer
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->practitioner) $json['practitioner'] = $this->practitioner->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->prescription) $json['prescription'] = $this->prescription->jsonSerialize();
-        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = $this->wasNotGiven->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->practitioner) $json['practitioner'] = json_encode($this->practitioner);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->prescription) $json['prescription'] = json_encode($this->prescription);
+        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = json_encode($this->wasNotGiven);
         if (0 < count($this->reasonNotGiven)) {
-            $json['reasonNotGiven'] = array();
+            $json['reasonNotGiven'] = [];
             foreach($this->reasonNotGiven as $reasonNotGiven) {
-                $json['reasonNotGiven'][] = $reasonNotGiven->jsonSerialize();
+                $json['reasonNotGiven'][] = json_encode($reasonNotGiven);
             }
         }
         if (0 < count($this->reasonGiven)) {
-            $json['reasonGiven'] = array();
+            $json['reasonGiven'] = [];
             foreach($this->reasonGiven as $reasonGiven) {
-                $json['reasonGiven'][] = $reasonGiven->jsonSerialize();
+                $json['reasonGiven'][] = json_encode($reasonGiven);
             }
         }
-        if (null !== $this->effectiveTimeDateTime) $json['effectiveTimeDateTime'] = $this->effectiveTimeDateTime->jsonSerialize();
-        if (null !== $this->effectiveTimePeriod) $json['effectiveTimePeriod'] = $this->effectiveTimePeriod->jsonSerialize();
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept->jsonSerialize();
-        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference->jsonSerialize();
+        if (null !== $this->effectiveTimeDateTime) $json['effectiveTimeDateTime'] = json_encode($this->effectiveTimeDateTime);
+        if (null !== $this->effectiveTimePeriod) $json['effectiveTimePeriod'] = json_encode($this->effectiveTimePeriod);
+        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
+        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
         if (0 < count($this->device)) {
-            $json['device'] = array();
+            $json['device'] = [];
             foreach($this->device as $device) {
-                $json['device'][] = $device->jsonSerialize();
+                $json['device'][] = json_encode($device);
             }
         }
-        if (null !== $this->note) $json['note'] = $this->note->jsonSerialize();
-        if (null !== $this->dosage) $json['dosage'] = $this->dosage->jsonSerialize();
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (null !== $this->dosage) $json['dosage'] = json_encode($this->dosage);
         return $json;
     }
 

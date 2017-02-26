@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to a patient which is provided to an insurer for payment recovery.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRClaim extends FHIRDomainResource implements JsonSerializable
+class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The category of claim this is.
@@ -279,7 +278,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The business identifier for the instance: invoice number, claim number, pre-determination or pre-authorization number.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -599,7 +598,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Ordered list of patient diagnosis for which care is sought.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimDiagnosis[] $diagnosis
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimDiagnosis $diagnosis
      * @return $this
      */
     public function addDiagnosis($diagnosis)
@@ -619,7 +618,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * List of patient conditions for which care is sought.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $condition
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -659,7 +658,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Financial instrument by which payment information for health care.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimCoverage[] $coverage
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimCoverage $coverage
      * @return $this
      */
     public function addCoverage($coverage)
@@ -679,7 +678,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Factors which may influence the applicability of coverage.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $exception
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $exception
      * @return $this
      */
     public function addException($exception)
@@ -759,7 +758,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of intervention and exception codes which may influence the adjudication of the claim.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $interventionException
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $interventionException
      * @return $this
      */
     public function addInterventionException($interventionException)
@@ -779,7 +778,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * First tier of goods and services.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimItem[] $item
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimItem $item
      * @return $this
      */
     public function addItem($item)
@@ -799,7 +798,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Code to indicate that Xrays, images, emails, documents, models or attachments are being sent in support of this submission.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $additionalMaterials
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $additionalMaterials
      * @return $this
      */
     public function addAdditionalMaterials($additionalMaterials)
@@ -819,7 +818,7 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of teeth which would be expected but are not found due to having been previously  extracted or for other reasons.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimMissingTeeth[] $missingTeeth
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimMissingTeeth $missingTeeth
      * @return $this
      */
     public function addMissingTeeth($missingTeeth)
@@ -851,78 +850,78 @@ class FHIRClaim extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->target) $json['target'] = $this->target->jsonSerialize();
-        if (null !== $this->provider) $json['provider'] = $this->provider->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->use) $json['use'] = $this->use->jsonSerialize();
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
-        if (null !== $this->fundsReserve) $json['fundsReserve'] = $this->fundsReserve->jsonSerialize();
-        if (null !== $this->enterer) $json['enterer'] = $this->enterer->jsonSerialize();
-        if (null !== $this->facility) $json['facility'] = $this->facility->jsonSerialize();
-        if (null !== $this->prescription) $json['prescription'] = $this->prescription->jsonSerialize();
-        if (null !== $this->originalPrescription) $json['originalPrescription'] = $this->originalPrescription->jsonSerialize();
-        if (null !== $this->payee) $json['payee'] = $this->payee->jsonSerialize();
-        if (null !== $this->referral) $json['referral'] = $this->referral->jsonSerialize();
+        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->target) $json['target'] = json_encode($this->target);
+        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->use) $json['use'] = json_encode($this->use);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->fundsReserve) $json['fundsReserve'] = json_encode($this->fundsReserve);
+        if (null !== $this->enterer) $json['enterer'] = json_encode($this->enterer);
+        if (null !== $this->facility) $json['facility'] = json_encode($this->facility);
+        if (null !== $this->prescription) $json['prescription'] = json_encode($this->prescription);
+        if (null !== $this->originalPrescription) $json['originalPrescription'] = json_encode($this->originalPrescription);
+        if (null !== $this->payee) $json['payee'] = json_encode($this->payee);
+        if (null !== $this->referral) $json['referral'] = json_encode($this->referral);
         if (0 < count($this->diagnosis)) {
-            $json['diagnosis'] = array();
+            $json['diagnosis'] = [];
             foreach($this->diagnosis as $diagnosis) {
-                $json['diagnosis'][] = $diagnosis->jsonSerialize();
+                $json['diagnosis'][] = json_encode($diagnosis);
             }
         }
         if (0 < count($this->condition)) {
-            $json['condition'] = array();
+            $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = $condition->jsonSerialize();
+                $json['condition'][] = json_encode($condition);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (0 < count($this->coverage)) {
-            $json['coverage'] = array();
+            $json['coverage'] = [];
             foreach($this->coverage as $coverage) {
-                $json['coverage'][] = $coverage->jsonSerialize();
+                $json['coverage'][] = json_encode($coverage);
             }
         }
         if (0 < count($this->exception)) {
-            $json['exception'] = array();
+            $json['exception'] = [];
             foreach($this->exception as $exception) {
-                $json['exception'][] = $exception->jsonSerialize();
+                $json['exception'][] = json_encode($exception);
             }
         }
-        if (null !== $this->school) $json['school'] = $this->school->jsonSerialize();
-        if (null !== $this->accident) $json['accident'] = $this->accident->jsonSerialize();
-        if (null !== $this->accidentType) $json['accidentType'] = $this->accidentType->jsonSerialize();
+        if (null !== $this->school) $json['school'] = json_encode($this->school);
+        if (null !== $this->accident) $json['accident'] = json_encode($this->accident);
+        if (null !== $this->accidentType) $json['accidentType'] = json_encode($this->accidentType);
         if (0 < count($this->interventionException)) {
-            $json['interventionException'] = array();
+            $json['interventionException'] = [];
             foreach($this->interventionException as $interventionException) {
-                $json['interventionException'][] = $interventionException->jsonSerialize();
+                $json['interventionException'][] = json_encode($interventionException);
             }
         }
         if (0 < count($this->item)) {
-            $json['item'] = array();
+            $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = $item->jsonSerialize();
+                $json['item'][] = json_encode($item);
             }
         }
         if (0 < count($this->additionalMaterials)) {
-            $json['additionalMaterials'] = array();
+            $json['additionalMaterials'] = [];
             foreach($this->additionalMaterials as $additionalMaterials) {
-                $json['additionalMaterials'][] = $additionalMaterials->jsonSerialize();
+                $json['additionalMaterials'][] = json_encode($additionalMaterials);
             }
         }
         if (0 < count($this->missingTeeth)) {
-            $json['missingTeeth'] = array();
+            $json['missingTeeth'] = [];
             foreach($this->missingTeeth as $missingTeeth) {
-                $json['missingTeeth'][] = $missingTeeth->jsonSerialize();
+                $json['missingTeeth'][] = json_encode($missingTeeth);
             }
         }
         return $json;

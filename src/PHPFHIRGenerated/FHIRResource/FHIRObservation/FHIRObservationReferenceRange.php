@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,22 +61,21 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
  */
-class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonSerializable
+class FHIRObservationReferenceRange extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $low = null;
 
     /**
      * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $high = null;
 
@@ -105,7 +104,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonS
 
     /**
      * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getLow()
     {
@@ -114,7 +113,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonS
 
     /**
      * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $low
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
      * @return $this
      */
     public function setLow($low)
@@ -125,7 +124,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonS
 
     /**
      * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getHigh()
     {
@@ -134,7 +133,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonS
 
     /**
      * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $high
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
      * @return $this
      */
     public function setHigh($high)
@@ -225,11 +224,11 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->low) $json['low'] = $this->low->jsonSerialize();
-        if (null !== $this->high) $json['high'] = $this->high->jsonSerialize();
-        if (null !== $this->meaning) $json['meaning'] = $this->meaning->jsonSerialize();
-        if (null !== $this->age) $json['age'] = $this->age->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->low) $json['low'] = json_encode($this->low);
+        if (null !== $this->high) $json['high'] = json_encode($this->high);
+        if (null !== $this->meaning) $json['meaning'] = json_encode($this->meaning);
+        if (null !== $this->age) $json['age'] = json_encode($this->age);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         return $json;
     }
 

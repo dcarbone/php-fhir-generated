@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A human's name with the ability to identify parts and usage.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRHumanName extends FHIRElement implements JsonSerializable
+class FHIRHumanName extends FHIRElement implements \JsonSerializable
 {
     /**
      * Identifies the purpose for this name.
@@ -167,7 +166,7 @@ class FHIRHumanName extends FHIRElement implements JsonSerializable
 
     /**
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $family
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $family
      * @return $this
      */
     public function addFamily($family)
@@ -187,7 +186,7 @@ class FHIRHumanName extends FHIRElement implements JsonSerializable
 
     /**
      * Given name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $given
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $given
      * @return $this
      */
     public function addGiven($given)
@@ -207,7 +206,7 @@ class FHIRHumanName extends FHIRElement implements JsonSerializable
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $prefix
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $prefix
      * @return $this
      */
     public function addPrefix($prefix)
@@ -227,7 +226,7 @@ class FHIRHumanName extends FHIRElement implements JsonSerializable
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $suffix
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $suffix
      * @return $this
      */
     public function addSuffix($suffix)
@@ -278,33 +277,33 @@ class FHIRHumanName extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->use) $json['use'] = $this->use->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->use) $json['use'] = json_encode($this->use);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         if (0 < count($this->family)) {
-            $json['family'] = array();
+            $json['family'] = [];
             foreach($this->family as $family) {
-                $json['family'][] = $family->jsonSerialize();
+                $json['family'][] = json_encode($family);
             }
         }
         if (0 < count($this->given)) {
-            $json['given'] = array();
+            $json['given'] = [];
             foreach($this->given as $given) {
-                $json['given'][] = $given->jsonSerialize();
+                $json['given'][] = json_encode($given);
             }
         }
         if (0 < count($this->prefix)) {
-            $json['prefix'] = array();
+            $json['prefix'] = [];
             foreach($this->prefix as $prefix) {
-                $json['prefix'][] = $prefix->jsonSerialize();
+                $json['prefix'][] = json_encode($prefix);
             }
         }
         if (0 < count($this->suffix)) {
-            $json['suffix'] = array();
+            $json['suffix'] = [];
             foreach($this->suffix as $suffix) {
-                $json['suffix'][] = $suffix->jsonSerialize();
+                $json['suffix'][] = json_encode($suffix);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
 

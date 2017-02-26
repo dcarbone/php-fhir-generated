@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance ("cine" video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSerializable
+class FHIRImagingObjectSelection extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Instance UID of the DICOM KOS SOP Instances represented in this resource.
@@ -247,7 +246,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
 
     /**
      * Study identity and locating information of the DICOM SOP instances in the selection.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy[] $study
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy $study
      * @return $this
      */
     public function addStudy($study)
@@ -279,16 +278,16 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->author) $json['author'] = $this->author->jsonSerialize();
-        if (null !== $this->authoringTime) $json['authoringTime'] = $this->authoringTime->jsonSerialize();
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->author) $json['author'] = json_encode($this->author);
+        if (null !== $this->authoringTime) $json['authoringTime'] = json_encode($this->authoringTime);
         if (0 < count($this->study)) {
-            $json['study'] = array();
+            $json['study'] = [];
             foreach($this->study as $study) {
-                $json['study'][] = $study->jsonSerialize();
+                $json['study'][] = json_encode($study);
             }
         }
         return $json;

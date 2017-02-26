@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource identifies an instance of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.  Medical devices includes durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.  Non-medical devices may include items such as a machine, cellphone, computer, application, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDevice extends FHIRDomainResource implements JsonSerializable
+class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique instance identifiers assigned to a device by organizations like manufacturers or owners. If the identifier identifies the type of device, Device.type should be used.
@@ -181,7 +180,7 @@ class FHIRDevice extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Unique instance identifiers assigned to a device by organizations like manufacturers or owners. If the identifier identifies the type of device, Device.type should be used.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -221,7 +220,7 @@ class FHIRDevice extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[] $note
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -461,7 +460,7 @@ class FHIRDevice extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contact details for an organization or a particular human that is responsible for the device.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[] $contact
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $contact
      * @return $this
      */
     public function addContact($contact)
@@ -514,36 +513,36 @@ class FHIRDevice extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (0 < count($this->note)) {
-            $json['note'] = array();
+            $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = $note->jsonSerialize();
+                $json['note'][] = json_encode($note);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->manufacturer) $json['manufacturer'] = $this->manufacturer->jsonSerialize();
-        if (null !== $this->model) $json['model'] = $this->model->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->manufactureDate) $json['manufactureDate'] = $this->manufactureDate->jsonSerialize();
-        if (null !== $this->expiry) $json['expiry'] = $this->expiry->jsonSerialize();
-        if (null !== $this->udi) $json['udi'] = $this->udi->jsonSerialize();
-        if (null !== $this->lotNumber) $json['lotNumber'] = $this->lotNumber->jsonSerialize();
-        if (null !== $this->owner) $json['owner'] = $this->owner->jsonSerialize();
-        if (null !== $this->location) $json['location'] = $this->location->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
+        if (null !== $this->model) $json['model'] = json_encode($this->model);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->manufactureDate) $json['manufactureDate'] = json_encode($this->manufactureDate);
+        if (null !== $this->expiry) $json['expiry'] = json_encode($this->expiry);
+        if (null !== $this->udi) $json['udi'] = json_encode($this->udi);
+        if (null !== $this->lotNumber) $json['lotNumber'] = json_encode($this->lotNumber);
+        if (null !== $this->owner) $json['owner'] = json_encode($this->owner);
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
         return $json;
     }
 

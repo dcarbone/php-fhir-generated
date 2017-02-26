@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedication extends FHIRDomainResource implements JsonSerializable
+class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A code (or set of codes) that specify this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.
@@ -227,11 +226,11 @@ class FHIRMedication extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->isBrand) $json['isBrand'] = $this->isBrand->jsonSerialize();
-        if (null !== $this->manufacturer) $json['manufacturer'] = $this->manufacturer->jsonSerialize();
-        if (null !== $this->product) $json['product'] = $this->product->jsonSerialize();
-        if (null !== $this->package) $json['package'] = $this->package->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->isBrand) $json['isBrand'] = json_encode($this->isBrand);
+        if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
+        if (null !== $this->product) $json['product'] = json_encode($this->product);
+        if (null !== $this->package) $json['package'] = json_encode($this->package);
         return $json;
     }
 

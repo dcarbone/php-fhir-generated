@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance ("cine" video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.
  */
-class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement implements JsonSerializable
+class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Study instance UID of the SOP instances in the selection.
@@ -168,7 +167,7 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement implements Jso
 
     /**
      * Series identity and locating information of the DICOM SOP instances in the selection.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries[] $series
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries $series
      * @return $this
      */
     public function addSeries($series)
@@ -199,13 +198,13 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement implements Jso
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->imagingStudy) $json['imagingStudy'] = $this->imagingStudy->jsonSerialize();
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->imagingStudy) $json['imagingStudy'] = json_encode($this->imagingStudy);
         if (0 < count($this->series)) {
-            $json['series'] = array();
+            $json['series'] = [];
             foreach($this->series as $series) {
-                $json['series'][] = $series->jsonSerialize();
+                $json['series'][] = json_encode($series);
             }
         }
         return $json;

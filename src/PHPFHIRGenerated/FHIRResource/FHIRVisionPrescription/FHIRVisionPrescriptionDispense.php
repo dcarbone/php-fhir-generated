@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An authorization for the supply of glasses and/or contact lenses to a patient.
  */
-class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements JsonSerializable
+class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the type of vision correction product which is required for the patient.
@@ -136,7 +135,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The recommended maximum wear period for the lens.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $duration = null;
 
@@ -385,7 +384,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The recommended maximum wear period for the lens.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getDuration()
     {
@@ -394,7 +393,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The recommended maximum wear period for the lens.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $duration
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $duration
      * @return $this
      */
     public function setDuration($duration)
@@ -485,21 +484,21 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->product) $json['product'] = $this->product->jsonSerialize();
-        if (null !== $this->eye) $json['eye'] = $this->eye->jsonSerialize();
-        if (null !== $this->sphere) $json['sphere'] = $this->sphere->jsonSerialize();
-        if (null !== $this->cylinder) $json['cylinder'] = $this->cylinder->jsonSerialize();
-        if (null !== $this->axis) $json['axis'] = $this->axis->jsonSerialize();
-        if (null !== $this->prism) $json['prism'] = $this->prism->jsonSerialize();
-        if (null !== $this->base) $json['base'] = $this->base->jsonSerialize();
-        if (null !== $this->add) $json['add'] = $this->add->jsonSerialize();
-        if (null !== $this->power) $json['power'] = $this->power->jsonSerialize();
-        if (null !== $this->backCurve) $json['backCurve'] = $this->backCurve->jsonSerialize();
-        if (null !== $this->diameter) $json['diameter'] = $this->diameter->jsonSerialize();
-        if (null !== $this->duration) $json['duration'] = $this->duration->jsonSerialize();
-        if (null !== $this->color) $json['color'] = $this->color->jsonSerialize();
-        if (null !== $this->brand) $json['brand'] = $this->brand->jsonSerialize();
-        if (null !== $this->notes) $json['notes'] = $this->notes->jsonSerialize();
+        if (null !== $this->product) $json['product'] = json_encode($this->product);
+        if (null !== $this->eye) $json['eye'] = json_encode($this->eye);
+        if (null !== $this->sphere) $json['sphere'] = json_encode($this->sphere);
+        if (null !== $this->cylinder) $json['cylinder'] = json_encode($this->cylinder);
+        if (null !== $this->axis) $json['axis'] = json_encode($this->axis);
+        if (null !== $this->prism) $json['prism'] = json_encode($this->prism);
+        if (null !== $this->base) $json['base'] = json_encode($this->base);
+        if (null !== $this->add) $json['add'] = json_encode($this->add);
+        if (null !== $this->power) $json['power'] = json_encode($this->power);
+        if (null !== $this->backCurve) $json['backCurve'] = json_encode($this->backCurve);
+        if (null !== $this->diameter) $json['diameter'] = json_encode($this->diameter);
+        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
+        if (null !== $this->color) $json['color'] = json_encode($this->color);
+        if (null !== $this->brand) $json['brand'] = json_encode($this->brand);
+        if (null !== $this->notes) $json['notes'] = json_encode($this->notes);
         return $json;
     }
 

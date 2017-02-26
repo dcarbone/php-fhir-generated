@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions intended to guide the collection of answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  */
-class FHIRQuestionnaireGroup extends FHIRBackboneElement implements JsonSerializable
+class FHIRQuestionnaireGroup extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An identifier that is unique within the Questionnaire allowing linkage to the equivalent group in a QuestionnaireResponse resource.
@@ -172,7 +171,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * Identifies a how this group of questions is known in a particular terminology such as LOINC.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $concept
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $concept
      * @return $this
      */
     public function addConcept($concept)
@@ -252,7 +251,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * A sub-group within a group. The ordering of groups within this group is relevant.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup[] $group
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup $group
      * @return $this
      */
     public function addGroup($group)
@@ -272,7 +271,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * Set of questions within this group. The order of questions within the group is relevant.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireQuestion[] $question
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireQuestion $question
      * @return $this
      */
     public function addQuestion($question)
@@ -303,27 +302,27 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->linkId) $json['linkId'] = $this->linkId->jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
+        if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
         if (0 < count($this->concept)) {
-            $json['concept'] = array();
+            $json['concept'] = [];
             foreach($this->concept as $concept) {
-                $json['concept'][] = $concept->jsonSerialize();
+                $json['concept'][] = json_encode($concept);
             }
         }
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->required) $json['required'] = $this->required->jsonSerialize();
-        if (null !== $this->repeats) $json['repeats'] = $this->repeats->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->required) $json['required'] = json_encode($this->required);
+        if (null !== $this->repeats) $json['repeats'] = json_encode($this->repeats);
         if (0 < count($this->group)) {
-            $json['group'] = array();
+            $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = $group->jsonSerialize();
+                $json['group'][] = json_encode($group);
             }
         }
         if (0 < count($this->question)) {
-            $json['question'] = array();
+            $json['question'] = [];
             foreach($this->question as $question) {
-                $json['question'][] = $question->jsonSerialize();
+                $json['question'][] = json_encode($question);
             }
         }
         return $json;

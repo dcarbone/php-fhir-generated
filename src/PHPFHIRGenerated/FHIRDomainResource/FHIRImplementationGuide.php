@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of rules or how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole, and to publish a computable definition of all the parts.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializable
+class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published.
@@ -307,7 +306,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -367,7 +366,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of implementation guides. The most common use of this element is to represent the country / jurisdiction for which this implementation guide was defined.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -427,7 +426,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependency[] $dependency
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependency $dependency
      * @return $this
      */
     public function addDependency($dependency)
@@ -447,7 +446,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * A logical group of resources. Logical groups can be used when building pages.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePackage[] $package
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePackage $package
      * @return $this
      */
     public function addPackage($package)
@@ -467,7 +466,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * A set of profiles that all resources covered by this implementation guide must conform to.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[] $global
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal $global
      * @return $this
      */
     public function addGlobal($global)
@@ -487,7 +486,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * A binary file that is included in the  implementation guide when it is published.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $binary
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $binary
      * @return $this
      */
     public function addBinary($binary)
@@ -539,53 +538,53 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion->jsonSerialize();
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
         if (0 < count($this->dependency)) {
-            $json['dependency'] = array();
+            $json['dependency'] = [];
             foreach($this->dependency as $dependency) {
-                $json['dependency'][] = $dependency->jsonSerialize();
+                $json['dependency'][] = json_encode($dependency);
             }
         }
         if (0 < count($this->package)) {
-            $json['package'] = array();
+            $json['package'] = [];
             foreach($this->package as $package) {
-                $json['package'][] = $package->jsonSerialize();
+                $json['package'][] = json_encode($package);
             }
         }
         if (0 < count($this->global)) {
-            $json['global'] = array();
+            $json['global'] = [];
             foreach($this->global as $global) {
-                $json['global'][] = $global->jsonSerialize();
+                $json['global'][] = json_encode($global);
             }
         }
         if (0 < count($this->binary)) {
-            $json['binary'] = array();
+            $json['binary'] = [];
             foreach($this->binary as $binary) {
-                $json['binary'][] = $binary->jsonSerialize();
+                $json['binary'][] = json_encode($binary);
             }
         }
-        if (null !== $this->page) $json['page'] = $this->page->jsonSerialize();
+        if (null !== $this->page) $json['page'] = json_encode($this->page);
         return $json;
     }
 

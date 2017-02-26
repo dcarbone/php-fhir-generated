@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal agreement between parties regarding the conduct of business, exchange of information or other matters.
  */
-class FHIRContractActor1 extends FHIRBackboneElement implements JsonSerializable
+class FHIRContractActor1 extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The actor assigned a role in this Contract Provision.
@@ -116,7 +115,7 @@ class FHIRContractActor1 extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Role played by the actor assigned this role in this Contract Provision.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $role
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function addRole($role)
@@ -147,11 +146,11 @@ class FHIRContractActor1 extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->entity) $json['entity'] = $this->entity->jsonSerialize();
+        if (null !== $this->entity) $json['entity'] = json_encode($this->entity);
         if (0 < count($this->role)) {
-            $json['role'] = array();
+            $json['role'] = [];
             foreach($this->role as $role) {
-                $json['role'][] = $role->jsonSerialize();
+                $json['role'][] = json_encode($role);
             }
         }
         return $json;

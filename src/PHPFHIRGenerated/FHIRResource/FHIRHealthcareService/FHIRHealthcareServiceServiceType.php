@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The details of a healthcare service available at a location.
  */
-class FHIRHealthcareServiceServiceType extends FHIRBackboneElement implements JsonSerializable
+class FHIRHealthcareServiceServiceType extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The specific type of service being delivered or performed.
@@ -116,7 +115,7 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement implements Js
 
     /**
      * Collection of specialties handled by the service site. This is more of a medical term.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $specialty
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -147,11 +146,11 @@ class FHIRHealthcareServiceServiceType extends FHIRBackboneElement implements Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (0 < count($this->specialty)) {
-            $json['specialty'] = array();
+            $json['specialty'] = [];
             foreach($this->specialty as $specialty) {
-                $json['specialty'][] = $specialty->jsonSerialize();
+                $json['specialty'][] = json_encode($specialty);
             }
         }
         return $json;

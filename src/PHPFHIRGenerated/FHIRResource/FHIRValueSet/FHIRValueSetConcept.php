@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A code - a text symbol - that uniquely identifies the concept within the code system.
@@ -200,7 +199,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[] $designation
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
      * @return $this
      */
     public function addDesignation($designation)
@@ -220,7 +219,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) and can only be determined by examining the definitions of the concepts.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept[] $concept
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept $concept
      * @return $this
      */
     public function addConcept($concept)
@@ -251,20 +250,20 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->abstract) $json['abstract'] = $this->abstract->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
-        if (null !== $this->definition) $json['definition'] = $this->definition->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->abstract) $json['abstract'] = json_encode($this->abstract);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
+        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
         if (0 < count($this->designation)) {
-            $json['designation'] = array();
+            $json['designation'] = [];
             foreach($this->designation as $designation) {
-                $json['designation'][] = $designation->jsonSerialize();
+                $json['designation'][] = json_encode($designation);
             }
         }
         if (0 < count($this->concept)) {
-            $json['concept'] = array();
+            $json['concept'] = [];
             foreach($this->concept as $concept) {
-                $json['concept'][] = $concept->jsonSerialize();
+                $json['concept'][] = json_encode($concept);
             }
         }
         return $json;

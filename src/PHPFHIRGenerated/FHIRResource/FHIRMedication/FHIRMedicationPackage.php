@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
  */
-class FHIRMedicationPackage extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The kind of container that this package comes as.
@@ -116,7 +115,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * A set of components that go to make up the described item.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationContent[] $content
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationContent $content
      * @return $this
      */
     public function addContent($content)
@@ -147,11 +146,11 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->container) $json['container'] = $this->container->jsonSerialize();
+        if (null !== $this->container) $json['container'] = json_encode($this->container);
         if (0 < count($this->content)) {
-            $json['content'] = array();
+            $json['content'] = [];
             foreach($this->content as $content) {
-                $json['content'][] = $content->jsonSerialize();
+                $json['content'][] = json_encode($content);
             }
         }
         return $json;

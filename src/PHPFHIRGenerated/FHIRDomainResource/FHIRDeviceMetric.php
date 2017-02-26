@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes a measurement, calculation or setting capability of a medical device.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDeviceMetric extends FHIRDomainResource implements JsonSerializable
+class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
@@ -325,7 +324,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Describes the calibrations that have been performed or that are required to be performed.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration[] $calibration
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceMetric\FHIRDeviceMetricCalibration $calibration
      * @return $this
      */
     public function addCalibration($calibration)
@@ -357,19 +356,19 @@ class FHIRDeviceMetric extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->unit) $json['unit'] = $this->unit->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->parent) $json['parent'] = $this->parent->jsonSerialize();
-        if (null !== $this->operationalStatus) $json['operationalStatus'] = $this->operationalStatus->jsonSerialize();
-        if (null !== $this->color) $json['color'] = $this->color->jsonSerialize();
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->measurementPeriod) $json['measurementPeriod'] = $this->measurementPeriod->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->unit) $json['unit'] = json_encode($this->unit);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
+        if (null !== $this->operationalStatus) $json['operationalStatus'] = json_encode($this->operationalStatus);
+        if (null !== $this->color) $json['color'] = json_encode($this->color);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->measurementPeriod) $json['measurementPeriod'] = json_encode($this->measurementPeriod);
         if (0 < count($this->calibration)) {
-            $json['calibration'] = array();
+            $json['calibration'] = [];
             foreach($this->calibration as $calibration) {
-                $json['calibration'][] = $calibration->jsonSerialize();
+                $json['calibration'][] = json_encode($calibration);
             }
         }
         return $json;

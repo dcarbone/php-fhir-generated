@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A sample to be used for analysis.
  */
-class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializable
+class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
@@ -88,13 +87,13 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The capacity (volume or other measure) the container may contain.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $capacity = null;
 
     /**
      * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $specimenQuantity = null;
 
@@ -126,7 +125,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -177,7 +176,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The capacity (volume or other measure) the container may contain.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getCapacity()
     {
@@ -186,7 +185,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The capacity (volume or other measure) the container may contain.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $capacity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $capacity
      * @return $this
      */
     public function setCapacity($capacity)
@@ -197,7 +196,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getSpecimenQuantity()
     {
@@ -206,7 +205,7 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $specimenQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $specimenQuantity
      * @return $this
      */
     public function setSpecimenQuantity($specimenQuantity)
@@ -278,17 +277,17 @@ class FHIRSpecimenContainer extends FHIRBackboneElement implements JsonSerializa
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->capacity) $json['capacity'] = $this->capacity->jsonSerialize();
-        if (null !== $this->specimenQuantity) $json['specimenQuantity'] = $this->specimenQuantity->jsonSerialize();
-        if (null !== $this->additiveCodeableConcept) $json['additiveCodeableConcept'] = $this->additiveCodeableConcept->jsonSerialize();
-        if (null !== $this->additiveReference) $json['additiveReference'] = $this->additiveReference->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->capacity) $json['capacity'] = json_encode($this->capacity);
+        if (null !== $this->specimenQuantity) $json['specimenQuantity'] = json_encode($this->specimenQuantity);
+        if (null !== $this->additiveCodeableConcept) $json['additiveCodeableConcept'] = json_encode($this->additiveCodeableConcept);
+        if (null !== $this->additiveReference) $json['additiveReference'] = json_encode($this->additiveReference);
         return $json;
     }
 

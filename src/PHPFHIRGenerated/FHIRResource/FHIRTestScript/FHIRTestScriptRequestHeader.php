@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The HTTP header field e.g. "Accept".
@@ -147,8 +146,8 @@ class FHIRTestScriptRequestHeader extends FHIRBackboneElement implements JsonSer
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->field) $json['field'] = $this->field->jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
+        if (null !== $this->field) $json['field'] = json_encode($this->field);
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
         return $json;
     }
 

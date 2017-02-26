@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of rules or how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole, and to publish a computable definition of all the parts.
  */
-class FHIRImplementationGuidePage extends FHIRBackboneElement implements JsonSerializable
+class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The source address for the page.
@@ -186,7 +185,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements JsonSer
 
     /**
      * For constructed pages, what kind of resources to include in the list.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
      * @return $this
      */
     public function addType($type)
@@ -206,7 +205,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements JsonSer
 
     /**
      * For constructed pages, a list of packages to include in the page (or else empty for everything).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $package
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $package
      * @return $this
      */
     public function addPackage($package)
@@ -246,7 +245,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements JsonSer
 
     /**
      * Nested Pages/Sections under this page.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage[] $page
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage $page
      * @return $this
      */
     public function addPage($page)
@@ -277,26 +276,26 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements JsonSer
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->kind) $json['kind'] = $this->kind->jsonSerialize();
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
         if (0 < count($this->package)) {
-            $json['package'] = array();
+            $json['package'] = [];
             foreach($this->package as $package) {
-                $json['package'][] = $package->jsonSerialize();
+                $json['package'][] = json_encode($package);
             }
         }
-        if (null !== $this->format) $json['format'] = $this->format->jsonSerialize();
+        if (null !== $this->format) $json['format'] = json_encode($this->format);
         if (0 < count($this->page)) {
-            $json['page'] = array();
+            $json['page'] = [];
             foreach($this->page as $page) {
-                $json['page'][] = $page->jsonSerialize();
+                $json['page'][] = json_encode($page);
             }
         }
         return $json;

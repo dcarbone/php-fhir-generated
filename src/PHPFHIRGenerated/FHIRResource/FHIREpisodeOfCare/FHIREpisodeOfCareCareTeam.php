@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An association between a patient and an organization / healthcare provider(s) during which time encounters may occur. The managing organization assumes a level of responsibility for the patient during this time.
  */
-class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement implements JsonSerializable
+class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The role this team member is taking within this episode of care.
@@ -102,7 +101,7 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement implements JsonSeria
 
     /**
      * The role this team member is taking within this episode of care.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $role
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function addRole($role)
@@ -174,13 +173,13 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement implements JsonSeria
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->role)) {
-            $json['role'] = array();
+            $json['role'] = [];
             foreach($this->role as $role) {
-                $json['role'][] = $role->jsonSerialize();
+                $json['role'][] = json_encode($role);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->member) $json['member'] = $this->member->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->member) $json['member'] = json_encode($this->member);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The details of a healthcare service available at a location.
  */
-class FHIRHealthcareServiceNotAvailable extends FHIRBackboneElement implements JsonSerializable
+class FHIRHealthcareServiceNotAvailable extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The reason that can be presented to the user as to why this time is not available.
@@ -147,8 +146,8 @@ class FHIRHealthcareServiceNotAvailable extends FHIRBackboneElement implements J
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->during) $json['during'] = $this->during->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->during) $json['during'] = json_encode($this->during);
         return $json;
     }
 

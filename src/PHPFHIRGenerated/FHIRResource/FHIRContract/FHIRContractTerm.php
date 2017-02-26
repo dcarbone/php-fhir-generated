@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal agreement between parties regarding the conduct of business, exchange of information or other matters.
  */
-class FHIRContractTerm extends FHIRBackboneElement implements JsonSerializable
+class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Unique identifier for this particular Contract Provision.
@@ -276,7 +275,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Action stipulated by this Contract Provision.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $action
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $action
      * @return $this
      */
     public function addAction($action)
@@ -296,7 +295,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Reason or purpose for the action stipulated by this Contract Provision.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $actionReason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $actionReason
      * @return $this
      */
     public function addActionReason($actionReason)
@@ -316,7 +315,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * List of actors participating in this Contract Provision.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractActor1[] $actor
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractActor1 $actor
      * @return $this
      */
     public function addActor($actor)
@@ -356,7 +355,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Contract Provision Valued Item List.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractValuedItem1[] $valuedItem
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractValuedItem1 $valuedItem
      * @return $this
      */
     public function addValuedItem($valuedItem)
@@ -376,7 +375,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Nested group of Contract Provisions.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractTerm[] $group
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractTerm $group
      * @return $this
      */
     public function addGroup($group)
@@ -407,41 +406,41 @@ class FHIRContractTerm extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->issued) $json['issued'] = $this->issued->jsonSerialize();
-        if (null !== $this->applies) $json['applies'] = $this->applies->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->subType) $json['subType'] = $this->subType->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
+        if (null !== $this->applies) $json['applies'] = json_encode($this->applies);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->subType) $json['subType'] = json_encode($this->subType);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->action)) {
-            $json['action'] = array();
+            $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = $action->jsonSerialize();
+                $json['action'][] = json_encode($action);
             }
         }
         if (0 < count($this->actionReason)) {
-            $json['actionReason'] = array();
+            $json['actionReason'] = [];
             foreach($this->actionReason as $actionReason) {
-                $json['actionReason'][] = $actionReason->jsonSerialize();
+                $json['actionReason'][] = json_encode($actionReason);
             }
         }
         if (0 < count($this->actor)) {
-            $json['actor'] = array();
+            $json['actor'] = [];
             foreach($this->actor as $actor) {
-                $json['actor'][] = $actor->jsonSerialize();
+                $json['actor'][] = json_encode($actor);
             }
         }
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         if (0 < count($this->valuedItem)) {
-            $json['valuedItem'] = array();
+            $json['valuedItem'] = [];
             foreach($this->valuedItem as $valuedItem) {
-                $json['valuedItem'][] = $valuedItem->jsonSerialize();
+                $json['valuedItem'][] = json_encode($valuedItem);
             }
         }
         if (0 < count($this->group)) {
-            $json['group'] = array();
+            $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = $group->jsonSerialize();
+                $json['group'][] = json_encode($group);
             }
         }
         return $json;

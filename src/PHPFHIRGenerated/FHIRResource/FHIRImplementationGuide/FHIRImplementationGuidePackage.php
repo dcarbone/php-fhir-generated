@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of rules or how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole, and to publish a computable definition of all the parts.
  */
-class FHIRImplementationGuidePackage extends FHIRBackboneElement implements JsonSerializable
+class FHIRImplementationGuidePackage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The name for the group, as used in page.package.
@@ -142,7 +141,7 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements Json
 
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, conformance statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource[] $resource
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideResource $resource
      * @return $this
      */
     public function addResource($resource)
@@ -173,12 +172,12 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement implements Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->resource)) {
-            $json['resource'] = array();
+            $json['resource'] = [];
             foreach($this->resource as $resource) {
-                $json['resource'][] = $resource->jsonSerialize();
+                $json['resource'][] = json_encode($resource);
             }
         }
         return $json;

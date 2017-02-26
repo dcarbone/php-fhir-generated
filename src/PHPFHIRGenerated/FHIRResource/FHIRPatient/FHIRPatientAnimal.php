@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Demographics and other administrative information about an individual or animal receiving care or other health-related services.
  */
-class FHIRPatientAnimal extends FHIRBackboneElement implements JsonSerializable
+class FHIRPatientAnimal extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the high level taxonomic categorization of the kind of animal.
@@ -173,9 +172,9 @@ class FHIRPatientAnimal extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->species) $json['species'] = $this->species->jsonSerialize();
-        if (null !== $this->breed) $json['breed'] = $this->breed->jsonSerialize();
-        if (null !== $this->genderStatus) $json['genderStatus'] = $this->genderStatus->jsonSerialize();
+        if (null !== $this->species) $json['species'] = json_encode($this->species);
+        if (null !== $this->breed) $json['breed'] = json_encode($this->breed);
+        if (null !== $this->genderStatus) $json['genderStatus'] = json_encode($this->genderStatus);
         return $json;
     }
 

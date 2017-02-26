@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An assessment of the likely outcome(s) for a patient or other subject as well as the likelihood of each outcome.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
+class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The patient or group the risk assessment applies to.
@@ -285,7 +284,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $basis
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basis
      * @return $this
      */
     public function addBasis($basis)
@@ -305,7 +304,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Describes the expected outcome for the subject.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[] $prediction
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $prediction
      * @return $this
      */
     public function addPrediction($prediction)
@@ -357,26 +356,26 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->condition) $json['condition'] = $this->condition->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->performer) $json['performer'] = $this->performer->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->condition) $json['condition'] = json_encode($this->condition);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
         if (0 < count($this->basis)) {
-            $json['basis'] = array();
+            $json['basis'] = [];
             foreach($this->basis as $basis) {
-                $json['basis'][] = $basis->jsonSerialize();
+                $json['basis'][] = json_encode($basis);
             }
         }
         if (0 < count($this->prediction)) {
-            $json['prediction'] = array();
+            $json['prediction'] = [];
             foreach($this->prediction as $prediction) {
-                $json['prediction'][] = $prediction->jsonSerialize();
+                $json['prediction'][] = json_encode($prediction);
             }
         }
-        if (null !== $this->mitigation) $json['mitigation'] = $this->mitigation->jsonSerialize();
+        if (null !== $this->mitigation) $json['mitigation'] = json_encode($this->mitigation);
         return $json;
     }
 

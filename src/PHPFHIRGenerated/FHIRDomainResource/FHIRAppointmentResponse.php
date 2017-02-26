@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRAppointmentResponse extends FHIRDomainResource implements JsonSerializable
+class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
@@ -133,7 +132,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements JsonSerializ
 
     /**
      * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -213,7 +212,7 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Role of participant in the appointment.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $participantType
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $participantType
      * @return $this
      */
     public function addParticipantType($participantType)
@@ -306,23 +305,23 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements JsonSerializ
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->appointment) $json['appointment'] = $this->appointment->jsonSerialize();
-        if (null !== $this->start) $json['start'] = $this->start->jsonSerialize();
-        if (null !== $this->end) $json['end'] = $this->end->jsonSerialize();
+        if (null !== $this->appointment) $json['appointment'] = json_encode($this->appointment);
+        if (null !== $this->start) $json['start'] = json_encode($this->start);
+        if (null !== $this->end) $json['end'] = json_encode($this->end);
         if (0 < count($this->participantType)) {
-            $json['participantType'] = array();
+            $json['participantType'] = [];
             foreach($this->participantType as $participantType) {
-                $json['participantType'][] = $participantType->jsonSerialize();
+                $json['participantType'][] = json_encode($participantType);
             }
         }
-        if (null !== $this->actor) $json['actor'] = $this->actor->jsonSerialize();
-        if (null !== $this->participantStatus) $json['participantStatus'] = $this->participantStatus->jsonSerialize();
-        if (null !== $this->comment) $json['comment'] = $this->comment->jsonSerialize();
+        if (null !== $this->actor) $json['actor'] = json_encode($this->actor);
+        if (null !== $this->participantStatus) $json['participantStatus'] = json_encode($this->participantStatus);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         return $json;
     }
 

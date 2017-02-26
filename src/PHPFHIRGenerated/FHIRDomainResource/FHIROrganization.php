@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIROrganization extends FHIRDomainResource implements JsonSerializable
+class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
@@ -133,7 +132,7 @@ class FHIROrganization extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -213,7 +212,7 @@ class FHIROrganization extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A contact detail for the organization.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -233,7 +232,7 @@ class FHIROrganization extends FHIRDomainResource implements JsonSerializable
 
     /**
      * An address for the organization.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress[] $address
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function addAddress($address)
@@ -273,7 +272,7 @@ class FHIROrganization extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contact for the organization for a certain purpose.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIROrganization\FHIROrganizationContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIROrganization\FHIROrganizationContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -306,31 +305,31 @@ class FHIROrganization extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->active) $json['active'] = $this->active->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
+        if (null !== $this->active) $json['active'] = json_encode($this->active);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
         if (0 < count($this->address)) {
-            $json['address'] = array();
+            $json['address'] = [];
             foreach($this->address as $address) {
-                $json['address'][] = $address->jsonSerialize();
+                $json['address'][] = json_encode($address);
             }
         }
-        if (null !== $this->partOf) $json['partOf'] = $this->partOf->jsonSerialize();
+        if (null !== $this->partOf) $json['partOf'] = json_encode($this->partOf);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
         return $json;

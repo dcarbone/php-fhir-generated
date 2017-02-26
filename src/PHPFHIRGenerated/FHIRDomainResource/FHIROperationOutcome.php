@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A collection of error, warning or information messages that result from a system action.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIROperationOutcome extends FHIRDomainResource implements JsonSerializable
+class FHIROperationOutcome extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An error, warning or information message that results from a system action.
@@ -91,7 +90,7 @@ class FHIROperationOutcome extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * An error, warning or information message that results from a system action.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue[] $issue
+     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationOutcome\FHIROperationOutcomeIssue $issue
      * @return $this
      */
     public function addIssue($issue)
@@ -124,9 +123,9 @@ class FHIROperationOutcome extends FHIRDomainResource implements JsonSerializabl
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->issue)) {
-            $json['issue'] = array();
+            $json['issue'] = [];
             foreach($this->issue as $issue) {
-                $json['issue'][] = $issue->jsonSerialize();
+                $json['issue'][] = json_encode($issue);
             }
         }
         return $json;

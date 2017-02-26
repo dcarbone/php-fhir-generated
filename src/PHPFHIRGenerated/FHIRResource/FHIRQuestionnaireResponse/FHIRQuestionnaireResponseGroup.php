@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  */
-class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement implements JsonSerializable
+class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the group from the Questionnaire that corresponds to this group in the QuestionnaireResponse resource.
@@ -200,7 +199,7 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement implements Json
 
     /**
      * A sub-group within a group. The ordering of groups within this group is relevant.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup[] $group
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup $group
      * @return $this
      */
     public function addGroup($group)
@@ -220,7 +219,7 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement implements Json
 
     /**
      * Set of questions within this group. The order of questions within the group is relevant.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseQuestion[] $question
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseQuestion $question
      * @return $this
      */
     public function addQuestion($question)
@@ -251,20 +250,20 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement implements Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->linkId) $json['linkId'] = $this->linkId->jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
+        if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->group)) {
-            $json['group'] = array();
+            $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = $group->jsonSerialize();
+                $json['group'][] = json_encode($group);
             }
         }
         if (0 < count($this->question)) {
-            $json['question'] = array();
+            $json['question'] = [];
             foreach($this->question as $question) {
-                $json['question'][] = $question->jsonSerialize();
+                $json['question'][] = json_encode($question);
             }
         }
         return $json;

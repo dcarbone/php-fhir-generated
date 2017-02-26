@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
  */
-class FHIRClinicalImpressionInvestigations extends FHIRBackboneElement implements JsonSerializable
+class FHIRClinicalImpressionInvestigations extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A name/code for the group ("set") of investigations. Typically, this will be something like "signs", "symptoms", "clinical", "diagnostic", but the list is not constrained, and others such groups such as (exposure|family|travel|nutitirional) history may be used.
@@ -116,7 +115,7 @@ class FHIRClinicalImpressionInvestigations extends FHIRBackboneElement implement
 
     /**
      * A record of a specific investigation that was undertaken.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $item
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $item
      * @return $this
      */
     public function addItem($item)
@@ -147,11 +146,11 @@ class FHIRClinicalImpressionInvestigations extends FHIRBackboneElement implement
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (0 < count($this->item)) {
-            $json['item'] = array();
+            $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = $item->jsonSerialize();
+                $json['item'][] = json_encode($item);
             }
         }
         return $json;

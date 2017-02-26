@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to a patient which is provided to an insurer for payment recovery.
  */
-class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A service line number.
@@ -106,13 +105,13 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The number of repetitions of a service or product.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $quantity = null;
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $unitPrice = null;
 
@@ -130,7 +129,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $net = null;
 
@@ -246,7 +245,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Diagnosis applicable for this service or product line.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[] $diagnosisLinkId
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $diagnosisLinkId
      * @return $this
      */
     public function addDiagnosisLinkId($diagnosisLinkId)
@@ -297,7 +296,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The number of repetitions of a service or product.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity()
     {
@@ -306,7 +305,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The number of repetitions of a service or product.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -317,7 +316,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -326,7 +325,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @param \PHPFHIRGenerated\FHIRMoney $unitPrice
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -377,7 +376,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getNet()
     {
@@ -386,7 +385,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @param \PHPFHIRGenerated\FHIRMoney $net
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $net
      * @return $this
      */
     public function setNet($net)
@@ -446,7 +445,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * A region or surface of the site, e.g. limb region or tooth surface(s).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $subSite
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $subSite
      * @return $this
      */
     public function addSubSite($subSite)
@@ -466,7 +465,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Item typification or modifiers codes, e.g. for Oral whether the treatment is cosmetic or associated with TMJ, or an appliance was lost or stolen.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $modifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -486,7 +485,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Second tier of goods and services.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimDetail[] $detail
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimDetail $detail
      * @return $this
      */
     public function addDetail($detail)
@@ -537,43 +536,43 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = $this->sequence->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->provider) $json['provider'] = $this->provider->jsonSerialize();
+        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
         if (0 < count($this->diagnosisLinkId)) {
-            $json['diagnosisLinkId'] = array();
+            $json['diagnosisLinkId'] = [];
             foreach($this->diagnosisLinkId as $diagnosisLinkId) {
-                $json['diagnosisLinkId'][] = $diagnosisLinkId->jsonSerialize();
+                $json['diagnosisLinkId'][] = json_encode($diagnosisLinkId);
             }
         }
-        if (null !== $this->service) $json['service'] = $this->service->jsonSerialize();
-        if (null !== $this->serviceDate) $json['serviceDate'] = $this->serviceDate->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice->jsonSerialize();
-        if (null !== $this->factor) $json['factor'] = $this->factor->jsonSerialize();
-        if (null !== $this->points) $json['points'] = $this->points->jsonSerialize();
-        if (null !== $this->net) $json['net'] = $this->net->jsonSerialize();
-        if (null !== $this->udi) $json['udi'] = $this->udi->jsonSerialize();
-        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite->jsonSerialize();
+        if (null !== $this->service) $json['service'] = json_encode($this->service);
+        if (null !== $this->serviceDate) $json['serviceDate'] = json_encode($this->serviceDate);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
+        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
+        if (null !== $this->points) $json['points'] = json_encode($this->points);
+        if (null !== $this->net) $json['net'] = json_encode($this->net);
+        if (null !== $this->udi) $json['udi'] = json_encode($this->udi);
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
         if (0 < count($this->subSite)) {
-            $json['subSite'] = array();
+            $json['subSite'] = [];
             foreach($this->subSite as $subSite) {
-                $json['subSite'][] = $subSite->jsonSerialize();
+                $json['subSite'][] = json_encode($subSite);
             }
         }
         if (0 < count($this->modifier)) {
-            $json['modifier'] = array();
+            $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = $modifier->jsonSerialize();
+                $json['modifier'][] = json_encode($modifier);
             }
         }
         if (0 < count($this->detail)) {
-            $json['detail'] = array();
+            $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = $detail->jsonSerialize();
+                $json['detail'][] = json_encode($detail);
             }
         }
-        if (null !== $this->prosthesis) $json['prosthesis'] = $this->prosthesis->jsonSerialize();
+        if (null !== $this->prosthesis) $json['prosthesis'] = json_encode($this->prosthesis);
         return $json;
     }
 

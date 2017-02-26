@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,13 +60,11 @@
  * 
  */
 
-use PHPFHIRGenerated\JsonSerializable;
-
 /**
  * Base definition for all elements in a resource.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRElement implements JsonSerializable
+class FHIRElement implements \JsonSerializable
 {
     /**
      * May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
@@ -95,7 +93,7 @@ class FHIRElement implements JsonSerializable
 
     /**
      * May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $extension
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $extension
      * @return $this
      */
     public function addExtension($extension)
@@ -143,11 +141,11 @@ class FHIRElement implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        $json = array();
+        $json = [];
         if (0 < count($this->extension)) {
-            $json['extension'] = array();
+            $json['extension'] = [];
             foreach($this->extension as $extension) {
-                $json['extension'][] = $extension->jsonSerialize();
+                $json['extension'][] = json_encode($extension);
             }
         }
         if (null !== $this->id) $json['id'] = $this->id;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized; i.e. a collection of entities that isn't an Organization.
  */
-class FHIRGroupCharacteristic extends FHIRBackboneElement implements JsonSerializable
+class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A code that identifies the kind of trait being asserted.
@@ -277,13 +276,13 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept->jsonSerialize();
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = $this->valueBoolean->jsonSerialize();
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity->jsonSerialize();
-        if (null !== $this->valueRange) $json['valueRange'] = $this->valueRange->jsonSerialize();
-        if (null !== $this->exclude) $json['exclude'] = $this->exclude->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
+        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
+        if (null !== $this->exclude) $json['exclude'] = json_encode($this->exclude);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
 

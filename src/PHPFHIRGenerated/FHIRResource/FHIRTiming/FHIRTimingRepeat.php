@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,17 +61,16 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Specifies an event that may occur multiple times. Timing schedules are used to record when things are expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRTimingRepeat extends FHIRElement implements JsonSerializable
+class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
 {
     /**
      * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
-     * @var \PHPFHIRGenerated\FHIRDuration
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $boundsQuantity = null;
 
@@ -154,7 +153,7 @@ class FHIRTimingRepeat extends FHIRElement implements JsonSerializable
 
     /**
      * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
-     * @return \PHPFHIRGenerated\FHIRDuration
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getBoundsQuantity()
     {
@@ -163,7 +162,7 @@ class FHIRTimingRepeat extends FHIRElement implements JsonSerializable
 
     /**
      * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
-     * @param \PHPFHIRGenerated\FHIRDuration $boundsQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $boundsQuantity
      * @return $this
      */
     public function setBoundsQuantity($boundsQuantity)
@@ -434,19 +433,19 @@ class FHIRTimingRepeat extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->boundsQuantity) $json['boundsQuantity'] = $this->boundsQuantity->jsonSerialize();
-        if (null !== $this->boundsRange) $json['boundsRange'] = $this->boundsRange->jsonSerialize();
-        if (null !== $this->boundsPeriod) $json['boundsPeriod'] = $this->boundsPeriod->jsonSerialize();
-        if (null !== $this->count) $json['count'] = $this->count->jsonSerialize();
-        if (null !== $this->duration) $json['duration'] = $this->duration->jsonSerialize();
-        if (null !== $this->durationMax) $json['durationMax'] = $this->durationMax->jsonSerialize();
-        if (null !== $this->durationUnits) $json['durationUnits'] = $this->durationUnits->jsonSerialize();
-        if (null !== $this->frequency) $json['frequency'] = $this->frequency->jsonSerialize();
-        if (null !== $this->frequencyMax) $json['frequencyMax'] = $this->frequencyMax->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->periodMax) $json['periodMax'] = $this->periodMax->jsonSerialize();
-        if (null !== $this->periodUnits) $json['periodUnits'] = $this->periodUnits->jsonSerialize();
-        if (null !== $this->when) $json['when'] = $this->when->jsonSerialize();
+        if (null !== $this->boundsQuantity) $json['boundsQuantity'] = json_encode($this->boundsQuantity);
+        if (null !== $this->boundsRange) $json['boundsRange'] = json_encode($this->boundsRange);
+        if (null !== $this->boundsPeriod) $json['boundsPeriod'] = json_encode($this->boundsPeriod);
+        if (null !== $this->count) $json['count'] = json_encode($this->count);
+        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
+        if (null !== $this->durationMax) $json['durationMax'] = json_encode($this->durationMax);
+        if (null !== $this->durationUnits) $json['durationUnits'] = json_encode($this->durationUnits);
+        if (null !== $this->frequency) $json['frequency'] = json_encode($this->frequency);
+        if (null !== $this->frequencyMax) $json['frequencyMax'] = json_encode($this->frequencyMax);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->periodMax) $json['periodMax'] = json_encode($this->periodMax);
+        if (null !== $this->periodUnits) $json['periodUnits'] = json_encode($this->periodUnits);
+        if (null !== $this->when) $json['when'] = json_encode($this->when);
         return $json;
     }
 

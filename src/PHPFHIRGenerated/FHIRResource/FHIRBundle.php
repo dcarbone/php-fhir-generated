@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A container for a collection of resources.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRBundle extends FHIRResource implements JsonSerializable
+class FHIRBundle extends FHIRResource implements \JsonSerializable
 {
     /**
      * Indicates the purpose of this bundle- how it was intended to be used.
@@ -155,7 +154,7 @@ class FHIRBundle extends FHIRResource implements JsonSerializable
 
     /**
      * A series of links that provide context to this bundle.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRBundle\FHIRBundleLink[] $link
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRBundle\FHIRBundleLink $link
      * @return $this
      */
     public function addLink($link)
@@ -175,7 +174,7 @@ class FHIRBundle extends FHIRResource implements JsonSerializable
 
     /**
      * An entry in a bundle resource - will either contain a resource, or information about a resource (transactions and history only).
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRBundle\FHIRBundleEntry[] $entry
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRBundle\FHIRBundleEntry $entry
      * @return $this
      */
     public function addEntry($entry)
@@ -227,21 +226,21 @@ class FHIRBundle extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->total) $json['total'] = $this->total->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->total) $json['total'] = json_encode($this->total);
         if (0 < count($this->link)) {
-            $json['link'] = array();
+            $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = $link->jsonSerialize();
+                $json['link'][] = json_encode($link);
             }
         }
         if (0 < count($this->entry)) {
-            $json['entry'] = array();
+            $json['entry'] = [];
             foreach($this->entry as $entry) {
-                $json['entry'][] = $entry->jsonSerialize();
+                $json['entry'][] = json_encode($entry);
             }
         }
-        if (null !== $this->signature) $json['signature'] = $this->signature->jsonSerialize();
+        if (null !== $this->signature) $json['signature'] = json_encode($this->signature);
         return $json;
     }
 

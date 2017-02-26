@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRAuditEvent extends FHIRDomainResource implements JsonSerializable
+class FHIRAuditEvent extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifies the name, action type, time, and disposition of the audited event.
@@ -129,7 +128,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A person, a hardware device or software process.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventParticipant[] $participant
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -169,7 +168,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Specific instances of data or objects that have been accessed.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventObject[] $object
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventObject $object
      * @return $this
      */
     public function addObject($object)
@@ -201,18 +200,18 @@ class FHIRAuditEvent extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->event) $json['event'] = $this->event->jsonSerialize();
+        if (null !== $this->event) $json['event'] = json_encode($this->event);
         if (0 < count($this->participant)) {
-            $json['participant'] = array();
+            $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = $participant->jsonSerialize();
+                $json['participant'][] = json_encode($participant);
             }
         }
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
         if (0 < count($this->object)) {
-            $json['object'] = array();
+            $json['object'] = [];
             foreach($this->object as $object) {
-                $json['object'][] = $object->jsonSerialize();
+                $json['object'][] = json_encode($object);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Used to record and send details about a request for referral service or transfer of a patient to the care of another provider or provider organization.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRReferralRequest extends FHIRDomainResource implements JsonSerializable
+class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The workflow status of the referral or transfer of care request.
@@ -201,7 +200,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Business identifier that uniquely identifies the referral/care transfer request instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -341,7 +340,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The healthcare provider(s) or provider organization(s) who/which is to receive the referral/transfer of care request.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $recipient
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function addRecipient($recipient)
@@ -441,7 +440,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The service(s) that is/are requested to be provided to the patient.  For example: cardiac pacemaker insertion.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $serviceRequested
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceRequested
      * @return $this
      */
     public function addServiceRequested($serviceRequested)
@@ -461,7 +460,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Any additional (administrative, financial or clinical) information required to support request for referral or transfer of care.  For example: Presenting problems/chief complaints Medical History Family History Alerts Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $supportingInformation
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
      * @return $this
      */
     public function addSupportingInformation($supportingInformation)
@@ -513,42 +512,42 @@ class FHIRReferralRequest extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->specialty) $json['specialty'] = $this->specialty->jsonSerialize();
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->requester) $json['requester'] = $this->requester->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->specialty) $json['specialty'] = json_encode($this->specialty);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
         if (0 < count($this->recipient)) {
-            $json['recipient'] = array();
+            $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = $recipient->jsonSerialize();
+                $json['recipient'][] = json_encode($recipient);
             }
         }
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->dateSent) $json['dateSent'] = $this->dateSent->jsonSerialize();
-        if (null !== $this->reason) $json['reason'] = $this->reason->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->dateSent) $json['dateSent'] = json_encode($this->dateSent);
+        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->serviceRequested)) {
-            $json['serviceRequested'] = array();
+            $json['serviceRequested'] = [];
             foreach($this->serviceRequested as $serviceRequested) {
-                $json['serviceRequested'][] = $serviceRequested->jsonSerialize();
+                $json['serviceRequested'][] = json_encode($serviceRequested);
             }
         }
         if (0 < count($this->supportingInformation)) {
-            $json['supportingInformation'] = array();
+            $json['supportingInformation'] = [];
             foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = $supportingInformation->jsonSerialize();
+                $json['supportingInformation'][] = json_encode($supportingInformation);
             }
         }
-        if (null !== $this->fulfillmentTime) $json['fulfillmentTime'] = $this->fulfillmentTime->jsonSerialize();
+        if (null !== $this->fulfillmentTime) $json['fulfillmentTime'] = json_encode($this->fulfillmentTime);
         return $json;
     }
 

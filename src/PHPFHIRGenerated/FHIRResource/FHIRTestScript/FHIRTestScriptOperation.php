@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Server interaction or operation type.
@@ -348,7 +347,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Header elements would be used to set HTTP headers.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader[] $requestHeader
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader $requestHeader
      * @return $this
      */
     public function addRequestHeader($requestHeader)
@@ -459,25 +458,25 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->resource) $json['resource'] = $this->resource->jsonSerialize();
-        if (null !== $this->label) $json['label'] = $this->label->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->accept) $json['accept'] = $this->accept->jsonSerialize();
-        if (null !== $this->contentType) $json['contentType'] = $this->contentType->jsonSerialize();
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
-        if (null !== $this->encodeRequestUrl) $json['encodeRequestUrl'] = $this->encodeRequestUrl->jsonSerialize();
-        if (null !== $this->params) $json['params'] = $this->params->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (null !== $this->label) $json['label'] = json_encode($this->label);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->accept) $json['accept'] = json_encode($this->accept);
+        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
+        if (null !== $this->encodeRequestUrl) $json['encodeRequestUrl'] = json_encode($this->encodeRequestUrl);
+        if (null !== $this->params) $json['params'] = json_encode($this->params);
         if (0 < count($this->requestHeader)) {
-            $json['requestHeader'] = array();
+            $json['requestHeader'] = [];
             foreach($this->requestHeader as $requestHeader) {
-                $json['requestHeader'][] = $requestHeader->jsonSerialize();
+                $json['requestHeader'][] = json_encode($requestHeader);
             }
         }
-        if (null !== $this->responseId) $json['responseId'] = $this->responseId->jsonSerialize();
-        if (null !== $this->sourceId) $json['sourceId'] = $this->sourceId->jsonSerialize();
-        if (null !== $this->targetId) $json['targetId'] = $this->targetId->jsonSerialize();
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
+        if (null !== $this->responseId) $json['responseId'] = json_encode($this->responseId);
+        if (null !== $this->sourceId) $json['sourceId'] = json_encode($this->sourceId);
+        if (null !== $this->targetId) $json['targetId'] = json_encode($this->targetId);
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
         return $json;
     }
 

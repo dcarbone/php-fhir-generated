@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
  */
-class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements JsonSerializable
+class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The nutrient that is being modified such as carbohydrate or sodium.
@@ -76,7 +75,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The quantity of the specified nutrient to include in diet.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $amount = null;
 
@@ -107,7 +106,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The quantity of the specified nutrient to include in diet.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getAmount()
     {
@@ -116,7 +115,7 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The quantity of the specified nutrient to include in diet.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $amount
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -147,8 +146,8 @@ class FHIRNutritionOrderNutrient extends FHIRBackboneElement implements JsonSeri
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->modifier) $json['modifier'] = $this->modifier->jsonSerialize();
-        if (null !== $this->amount) $json['amount'] = $this->amount->jsonSerialize();
+        if (null !== $this->modifier) $json['modifier'] = json_encode($this->modifier);
+        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A person who is directly or indirectly involved in the provisioning of healthcare.
  */
-class FHIRPractitionerPractitionerRole extends FHIRBackboneElement implements JsonSerializable
+class FHIRPractitionerPractitionerRole extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The organization where the Practitioner performs the roles associated.
@@ -160,7 +159,7 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement implements Js
 
     /**
      * Specific specialty of the practitioner.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $specialty
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specialty
      * @return $this
      */
     public function addSpecialty($specialty)
@@ -200,7 +199,7 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement implements Js
 
     /**
      * The location(s) at which this practitioner provides care.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $location
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $location
      * @return $this
      */
     public function addLocation($location)
@@ -220,7 +219,7 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement implements Js
 
     /**
      * The list of healthcare services that this worker provides for this role's Organization/Location(s).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $healthcareService
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $healthcareService
      * @return $this
      */
     public function addHealthcareService($healthcareService)
@@ -251,25 +250,25 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement implements Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->managingOrganization) $json['managingOrganization'] = $this->managingOrganization->jsonSerialize();
-        if (null !== $this->role) $json['role'] = $this->role->jsonSerialize();
+        if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
+        if (null !== $this->role) $json['role'] = json_encode($this->role);
         if (0 < count($this->specialty)) {
-            $json['specialty'] = array();
+            $json['specialty'] = [];
             foreach($this->specialty as $specialty) {
-                $json['specialty'][] = $specialty->jsonSerialize();
+                $json['specialty'][] = json_encode($specialty);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (0 < count($this->location)) {
-            $json['location'] = array();
+            $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = $location->jsonSerialize();
+                $json['location'][] = json_encode($location);
             }
         }
         if (0 < count($this->healthcareService)) {
-            $json['healthcareService'] = array();
+            $json['healthcareService'] = [];
             foreach($this->healthcareService as $healthcareService) {
-                $json['healthcareService'][] = $healthcareService->jsonSerialize();
+                $json['healthcareService'][] = json_encode($healthcareService);
             }
         }
         return $json;

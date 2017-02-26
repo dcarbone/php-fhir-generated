@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An occurrence of information being transmitted; e.g. an alert that was sent to a responsible provider, a public health agency was notified about a reportable condition.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRCommunication extends FHIRDomainResource implements JsonSerializable
+class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers associated with this Communication that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -163,7 +162,7 @@ class FHIRCommunication extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifiers associated with this Communication that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -223,7 +222,7 @@ class FHIRCommunication extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The entity (e.g. person, organization, clinical information system, or device) which was the target of the communication. If receipts need to be tracked by individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either a receipt(s) is not tracked (e.g. a mass mail-out) or is captured in aggregate (all emails confirmed received by a particular time).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $recipient
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function addRecipient($recipient)
@@ -243,7 +242,7 @@ class FHIRCommunication extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCommunication\FHIRCommunicationPayload[] $payload
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRCommunication\FHIRCommunicationPayload $payload
      * @return $this
      */
     public function addPayload($payload)
@@ -263,7 +262,7 @@ class FHIRCommunication extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A channel that was used for this communication (e.g. email, fax).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $medium
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $medium
      * @return $this
      */
     public function addMedium($medium)
@@ -363,7 +362,7 @@ class FHIRCommunication extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The reason or justification for the communication.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -436,43 +435,43 @@ class FHIRCommunication extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->sender) $json['sender'] = $this->sender->jsonSerialize();
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->sender) $json['sender'] = json_encode($this->sender);
         if (0 < count($this->recipient)) {
-            $json['recipient'] = array();
+            $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = $recipient->jsonSerialize();
+                $json['recipient'][] = json_encode($recipient);
             }
         }
         if (0 < count($this->payload)) {
-            $json['payload'] = array();
+            $json['payload'] = [];
             foreach($this->payload as $payload) {
-                $json['payload'][] = $payload->jsonSerialize();
+                $json['payload'][] = json_encode($payload);
             }
         }
         if (0 < count($this->medium)) {
-            $json['medium'] = array();
+            $json['medium'] = [];
             foreach($this->medium as $medium) {
-                $json['medium'][] = $medium->jsonSerialize();
+                $json['medium'][] = json_encode($medium);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->sent) $json['sent'] = $this->sent->jsonSerialize();
-        if (null !== $this->received) $json['received'] = $this->received->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->sent) $json['sent'] = json_encode($this->sent);
+        if (null !== $this->received) $json['received'] = json_encode($this->received);
         if (0 < count($this->reason)) {
-            $json['reason'] = array();
+            $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = $reason->jsonSerialize();
+                $json['reason'][] = json_encode($reason);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->requestDetail) $json['requestDetail'] = $this->requestDetail->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->requestDetail) $json['requestDetail'] = json_encode($this->requestDetail);
         return $json;
     }
 

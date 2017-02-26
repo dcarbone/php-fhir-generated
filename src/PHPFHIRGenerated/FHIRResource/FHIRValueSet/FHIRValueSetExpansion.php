@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetExpansion extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An identifier that uniquely identifies this expansion of the valueset. Systems may re-use the same identifier as long as the expansion and the definition remain the same, but are not required to do so.
@@ -200,7 +199,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * A parameter that controlled the expansion process. These parameters may be used by users of expanded value sets to check whether the expansion is suitable for a particular purpose, or to pick the correct expansion.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetParameter[] $parameter
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
@@ -220,7 +219,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The codes that are contained in the value set expansion.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContains[] $contains
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContains $contains
      * @return $this
      */
     public function addContains($contains)
@@ -251,20 +250,20 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->timestamp) $json['timestamp'] = $this->timestamp->jsonSerialize();
-        if (null !== $this->total) $json['total'] = $this->total->jsonSerialize();
-        if (null !== $this->offset) $json['offset'] = $this->offset->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->timestamp) $json['timestamp'] = json_encode($this->timestamp);
+        if (null !== $this->total) $json['total'] = json_encode($this->total);
+        if (null !== $this->offset) $json['offset'] = json_encode($this->offset);
         if (0 < count($this->parameter)) {
-            $json['parameter'] = array();
+            $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = $parameter->jsonSerialize();
+                $json['parameter'][] = json_encode($parameter);
             }
         }
         if (0 < count($this->contains)) {
-            $json['contains'] = array();
+            $json['contains'] = [];
             foreach($this->contains as $contains) {
-                $json['contains'][] = $contains->jsonSerialize();
+                $json['contains'][] = json_encode($contains);
             }
         }
         return $json;

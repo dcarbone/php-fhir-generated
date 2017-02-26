@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The formal description of a single piece of information that can be gathered and reported.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDataElement extends FHIRDomainResource implements JsonSerializable
+class FHIRDataElement extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this data element when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this data element is (or will be) published.
@@ -189,7 +188,7 @@ class FHIRDataElement extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Formal identifier that is used to identify this data element when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -309,7 +308,7 @@ class FHIRDataElement extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDataElement\FHIRDataElementContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDataElement\FHIRDataElementContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -349,7 +348,7 @@ class FHIRDataElement extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of data element definitions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -409,7 +408,7 @@ class FHIRDataElement extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifies a specification (other than a terminology) that the elements which make up the DataElement have some correspondence with.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDataElement\FHIRDataElementMapping[] $mapping
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDataElement\FHIRDataElementMapping $mapping
      * @return $this
      */
     public function addMapping($mapping)
@@ -429,7 +428,7 @@ class FHIRDataElement extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Defines the structure, type, allowed values and other constraining characteristics of the data element.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition[] $element
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition $element
      * @return $this
      */
     public function addElement($element)
@@ -461,43 +460,43 @@ class FHIRDataElement extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->stringency) $json['stringency'] = $this->stringency->jsonSerialize();
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->stringency) $json['stringency'] = json_encode($this->stringency);
         if (0 < count($this->mapping)) {
-            $json['mapping'] = array();
+            $json['mapping'] = [];
             foreach($this->mapping as $mapping) {
-                $json['mapping'][] = $mapping->jsonSerialize();
+                $json['mapping'][] = json_encode($mapping);
             }
         }
         if (0 < count($this->element)) {
-            $json['element'] = array();
+            $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = $element->jsonSerialize();
+                $json['element'][] = json_encode($element);
             }
         }
         return $json;

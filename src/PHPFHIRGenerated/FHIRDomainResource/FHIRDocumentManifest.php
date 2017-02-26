@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A manifest that defines a set of documents.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDocumentManifest extends FHIRDomainResource implements JsonSerializable
+class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A single identifier that uniquely identifies this manifest. Principally used to refer to the manifest in non-FHIR contexts.
@@ -177,7 +176,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * Other identifiers associated with the document manifest, including version independent  identifiers.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -217,7 +216,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * A patient, practitioner, or organization for which this set of documents is intended.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $recipient
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $recipient
      * @return $this
      */
     public function addRecipient($recipient)
@@ -257,7 +256,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * Identifies who is responsible for creating the manifest, and adding  documents to it.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $author
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
      * @return $this
      */
     public function addAuthor($author)
@@ -357,7 +356,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * The list of Documents included in the manifest.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestContent[] $content
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestContent $content
      * @return $this
      */
     public function addContent($content)
@@ -377,7 +376,7 @@ class FHIRDocumentManifest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * Related identifiers or resources associated with the DocumentManifest.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated[] $related
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDocumentManifest\FHIRDocumentManifestRelated $related
      * @return $this
      */
     public function addRelated($related)
@@ -409,41 +408,41 @@ class FHIRDocumentManifest extends FHIRDomainResource implements JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->masterIdentifier) $json['masterIdentifier'] = $this->masterIdentifier->jsonSerialize();
+        if (null !== $this->masterIdentifier) $json['masterIdentifier'] = json_encode($this->masterIdentifier);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->recipient)) {
-            $json['recipient'] = array();
+            $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = $recipient->jsonSerialize();
+                $json['recipient'][] = json_encode($recipient);
             }
         }
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (0 < count($this->author)) {
-            $json['author'] = array();
+            $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = $author->jsonSerialize();
+                $json['author'][] = json_encode($author);
             }
         }
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->content)) {
-            $json['content'] = array();
+            $json['content'] = [];
             foreach($this->content as $content) {
-                $json['content'][] = $content->jsonSerialize();
+                $json['content'][] = json_encode($content);
             }
         }
         if (0 < count($this->related)) {
-            $json['related'] = array();
+            $json['related'] = [];
             foreach($this->related as $related) {
-                $json['related'][] = $related->jsonSerialize();
+                $json['related'][] = json_encode($related);
             }
         }
         return $json;

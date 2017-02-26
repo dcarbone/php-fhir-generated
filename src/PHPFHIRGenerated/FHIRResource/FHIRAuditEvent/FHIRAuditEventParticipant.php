@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
  */
-class FHIRAuditEventParticipant extends FHIRBackboneElement implements JsonSerializable
+class FHIRAuditEventParticipant extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context.
@@ -150,7 +149,7 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement implements JsonSeria
 
     /**
      * Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $role
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
     public function addRole($role)
@@ -290,7 +289,7 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement implements JsonSeria
 
     /**
      * The policy or plan that authorized the activity being recorded. Typically, a single activity may have multiple applicable policies, such as patient consent, guarantor funding, etc. The policy would also indicate the security token used.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $policy
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $policy
      * @return $this
      */
     public function addPolicy($policy)
@@ -350,7 +349,7 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement implements JsonSeria
 
     /**
      * The reason (purpose of use), specific to this participant, that was used during the event being recorded.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $purposeOfUse
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $purposeOfUse
      * @return $this
      */
     public function addPurposeOfUse($purposeOfUse)
@@ -382,29 +381,29 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement implements JsonSeria
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->role)) {
-            $json['role'] = array();
+            $json['role'] = [];
             foreach($this->role as $role) {
-                $json['role'][] = $role->jsonSerialize();
+                $json['role'][] = json_encode($role);
             }
         }
-        if (null !== $this->reference) $json['reference'] = $this->reference->jsonSerialize();
-        if (null !== $this->userId) $json['userId'] = $this->userId->jsonSerialize();
-        if (null !== $this->altId) $json['altId'] = $this->altId->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->requestor) $json['requestor'] = $this->requestor->jsonSerialize();
-        if (null !== $this->location) $json['location'] = $this->location->jsonSerialize();
+        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (null !== $this->userId) $json['userId'] = json_encode($this->userId);
+        if (null !== $this->altId) $json['altId'] = json_encode($this->altId);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->requestor) $json['requestor'] = json_encode($this->requestor);
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
         if (0 < count($this->policy)) {
-            $json['policy'] = array();
+            $json['policy'] = [];
             foreach($this->policy as $policy) {
-                $json['policy'][] = $policy->jsonSerialize();
+                $json['policy'][] = json_encode($policy);
             }
         }
-        if (null !== $this->media) $json['media'] = $this->media->jsonSerialize();
-        if (null !== $this->network) $json['network'] = $this->network->jsonSerialize();
+        if (null !== $this->media) $json['media'] = json_encode($this->media);
+        if (null !== $this->network) $json['network'] = json_encode($this->network);
         if (0 < count($this->purposeOfUse)) {
-            $json['purposeOfUse'] = array();
+            $json['purposeOfUse'] = [];
             foreach($this->purposeOfUse as $purposeOfUse) {
-                $json['purposeOfUse'][] = $purposeOfUse->jsonSerialize();
+                $json['purposeOfUse'][] = json_encode($purposeOfUse);
             }
         }
         return $json;

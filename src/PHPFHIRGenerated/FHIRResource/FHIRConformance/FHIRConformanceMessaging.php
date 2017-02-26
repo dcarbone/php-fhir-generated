@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
  */
-class FHIRConformanceMessaging extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceMessaging extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
@@ -108,7 +107,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement implements JsonSerial
 
     /**
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceEndpoint[] $endpoint
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceEndpoint $endpoint
      * @return $this
      */
     public function addEndpoint($endpoint)
@@ -168,7 +167,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement implements JsonSerial
 
     /**
      * A description of the solution's support for an event at this end-point.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceEvent[] $event
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceEvent $event
      * @return $this
      */
     public function addEvent($event)
@@ -200,17 +199,17 @@ class FHIRConformanceMessaging extends FHIRBackboneElement implements JsonSerial
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->endpoint)) {
-            $json['endpoint'] = array();
+            $json['endpoint'] = [];
             foreach($this->endpoint as $endpoint) {
-                $json['endpoint'][] = $endpoint->jsonSerialize();
+                $json['endpoint'][] = json_encode($endpoint);
             }
         }
-        if (null !== $this->reliableCache) $json['reliableCache'] = $this->reliableCache->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
+        if (null !== $this->reliableCache) $json['reliableCache'] = json_encode($this->reliableCache);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
         if (0 < count($this->event)) {
-            $json['event'] = array();
+            $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = $event->jsonSerialize();
+                $json['event'][] = json_encode($event);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRAppointment extends FHIRDomainResource implements JsonSerializable
+class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -157,7 +156,7 @@ class FHIRAppointment extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -337,7 +336,7 @@ class FHIRAppointment extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The slot that this appointment is filling. If provided then the schedule will not be provided as slots are not recursive, and the start/end values MUST be the same as from the slot.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $slot
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $slot
      * @return $this
      */
     public function addSlot($slot)
@@ -377,7 +376,7 @@ class FHIRAppointment extends FHIRDomainResource implements JsonSerializable
 
     /**
      * List of participants involved in the appointment.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant[] $participant
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -410,30 +409,30 @@ class FHIRAppointment extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->reason) $json['reason'] = $this->reason->jsonSerialize();
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->start) $json['start'] = $this->start->jsonSerialize();
-        if (null !== $this->end) $json['end'] = $this->end->jsonSerialize();
-        if (null !== $this->minutesDuration) $json['minutesDuration'] = $this->minutesDuration->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->start) $json['start'] = json_encode($this->start);
+        if (null !== $this->end) $json['end'] = json_encode($this->end);
+        if (null !== $this->minutesDuration) $json['minutesDuration'] = json_encode($this->minutesDuration);
         if (0 < count($this->slot)) {
-            $json['slot'] = array();
+            $json['slot'] = [];
             foreach($this->slot as $slot) {
-                $json['slot'][] = $slot->jsonSerialize();
+                $json['slot'][] = json_encode($slot);
             }
         }
-        if (null !== $this->comment) $json['comment'] = $this->comment->jsonSerialize();
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         if (0 < count($this->participant)) {
-            $json['participant'] = array();
+            $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = $participant->jsonSerialize();
+                $json['participant'][] = json_encode($participant);
             }
         }
         return $json;

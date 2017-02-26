@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal agreement between parties regarding the conduct of business, exchange of information or other matters.
  */
-class FHIRContractRule extends FHIRBackboneElement implements JsonSerializable
+class FHIRContractRule extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL, SecPal). (choose any one of content*, but only one)
@@ -147,8 +146,8 @@ class FHIRContractRule extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->contentAttachment) $json['contentAttachment'] = $this->contentAttachment->jsonSerialize();
-        if (null !== $this->contentReference) $json['contentReference'] = $this->contentReference->jsonSerialize();
+        if (null !== $this->contentAttachment) $json['contentAttachment'] = json_encode($this->contentAttachment);
+        if (null !== $this->contentReference) $json['contentReference'] = json_encode($this->contentReference);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A response to an order.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIROrderResponse extends FHIRDomainResource implements JsonSerializable
+class FHIROrderResponse extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers assigned to this order. The identifiers are usually assigned by the system responding to the order, but they may be provided or added to by other systems.
@@ -127,7 +126,7 @@ class FHIROrderResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifiers assigned to this order. The identifiers are usually assigned by the system responding to the order, but they may be provided or added to by other systems.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -247,7 +246,7 @@ class FHIROrderResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Links to resources that provide details of the outcome of performing the order; e.g. Diagnostic Reports in a response that is made to an order that referenced a diagnostic order.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $fulfillment
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $fulfillment
      * @return $this
      */
     public function addFulfillment($fulfillment)
@@ -280,20 +279,20 @@ class FHIROrderResponse extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->who) $json['who'] = $this->who->jsonSerialize();
-        if (null !== $this->orderStatus) $json['orderStatus'] = $this->orderStatus->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->who) $json['who'] = json_encode($this->who);
+        if (null !== $this->orderStatus) $json['orderStatus'] = json_encode($this->orderStatus);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->fulfillment)) {
-            $json['fulfillment'] = array();
+            $json['fulfillment'] = [];
             foreach($this->fulfillment as $fulfillment) {
-                $json['fulfillment'][] = $fulfillment->jsonSerialize();
+                $json['fulfillment'][] = json_encode($fulfillment);
             }
         }
         return $json;

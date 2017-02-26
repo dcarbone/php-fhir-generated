@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Descriptive name for this variable.
@@ -199,10 +198,10 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->headerField) $json['headerField'] = $this->headerField->jsonSerialize();
-        if (null !== $this->path) $json['path'] = $this->path->jsonSerialize();
-        if (null !== $this->sourceId) $json['sourceId'] = $this->sourceId->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->headerField) $json['headerField'] = json_encode($this->headerField);
+        if (null !== $this->path) $json['path'] = json_encode($this->path);
+        if (null !== $this->sourceId) $json['sourceId'] = json_encode($this->sourceId);
         return $json;
     }
 

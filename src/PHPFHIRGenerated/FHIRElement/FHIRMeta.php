@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRMeta extends FHIRElement implements JsonSerializable
+class FHIRMeta extends FHIRElement implements \JsonSerializable
 {
     /**
      * The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.
@@ -155,7 +154,7 @@ class FHIRMeta extends FHIRElement implements JsonSerializable
 
     /**
      * A list of profiles [[[StructureDefinition]]]s that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $profile
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -175,7 +174,7 @@ class FHIRMeta extends FHIRElement implements JsonSerializable
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $security
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $security
      * @return $this
      */
     public function addSecurity($security)
@@ -195,7 +194,7 @@ class FHIRMeta extends FHIRElement implements JsonSerializable
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $tag
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $tag
      * @return $this
      */
     public function addTag($tag)
@@ -226,24 +225,24 @@ class FHIRMeta extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->versionId) $json['versionId'] = $this->versionId->jsonSerialize();
-        if (null !== $this->lastUpdated) $json['lastUpdated'] = $this->lastUpdated->jsonSerialize();
+        if (null !== $this->versionId) $json['versionId'] = json_encode($this->versionId);
+        if (null !== $this->lastUpdated) $json['lastUpdated'] = json_encode($this->lastUpdated);
         if (0 < count($this->profile)) {
-            $json['profile'] = array();
+            $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = $profile->jsonSerialize();
+                $json['profile'][] = json_encode($profile);
             }
         }
         if (0 < count($this->security)) {
-            $json['security'] = array();
+            $json['security'] = [];
             foreach($this->security as $security) {
-                $json['security'][] = $security->jsonSerialize();
+                $json['security'][] = json_encode($security);
             }
         }
         if (0 < count($this->tag)) {
-            $json['tag'] = array();
+            $json['tag'] = [];
             foreach($this->tag as $tag) {
-                $json['tag'][] = $tag->jsonSerialize();
+                $json['tag'][] = json_encode($tag);
             }
         }
         return $json;

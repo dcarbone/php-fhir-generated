@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the characteristics, operational status and capabilities of a medical-related component of a medical device.
  */
-class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement implements JsonSerializable
+class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Describes the specification type, such as, serial number, part number, hardware revision, software revision, etc.
@@ -173,9 +172,9 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->specType) $json['specType'] = $this->specType->jsonSerialize();
-        if (null !== $this->componentId) $json['componentId'] = $this->componentId->jsonSerialize();
-        if (null !== $this->productionSpec) $json['productionSpec'] = $this->productionSpec->jsonSerialize();
+        if (null !== $this->specType) $json['specType'] = json_encode($this->specType);
+        if (null !== $this->componentId) $json['componentId'] = json_encode($this->componentId);
+        if (null !== $this->productionSpec) $json['productionSpec'] = json_encode($this->productionSpec);
         return $json;
     }
 

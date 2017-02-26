@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
  */
-class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerializable
+class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Role of participant in encounter.
@@ -102,7 +101,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerial
 
     /**
      * Role of participant in encounter.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -174,13 +173,13 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerial
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->individual) $json['individual'] = $this->individual->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->individual) $json['individual'] = json_encode($this->individual);
         return $json;
     }
 

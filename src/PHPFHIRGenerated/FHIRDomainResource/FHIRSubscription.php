@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system is able to take an appropriate action.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSubscription extends FHIRDomainResource implements JsonSerializable
+class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The rules that the server should use to determine when to generate notifications for this subscription.
@@ -153,7 +152,7 @@ class FHIRSubscription extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[] $contact
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $contact
      * @return $this
      */
     public function addContact($contact)
@@ -273,7 +272,7 @@ class FHIRSubscription extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A tag to add to any resource that matches the criteria, after the subscription is processed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $tag
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $tag
      * @return $this
      */
     public function addTag($tag)
@@ -305,22 +304,22 @@ class FHIRSubscription extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->criteria) $json['criteria'] = $this->criteria->jsonSerialize();
+        if (null !== $this->criteria) $json['criteria'] = json_encode($this->criteria);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->reason) $json['reason'] = $this->reason->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->error) $json['error'] = $this->error->jsonSerialize();
-        if (null !== $this->channel) $json['channel'] = $this->channel->jsonSerialize();
-        if (null !== $this->end) $json['end'] = $this->end->jsonSerialize();
+        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->error) $json['error'] = json_encode($this->error);
+        if (null !== $this->channel) $json['channel'] = json_encode($this->channel);
+        if (null !== $this->end) $json['end'] = json_encode($this->end);
         if (0 < count($this->tag)) {
-            $json['tag'] = array();
+            $json['tag'] = [];
             foreach($this->tag as $tag) {
-                $json['tag'][] = $tag->jsonSerialize();
+                $json['tag'][] = json_encode($tag);
             }
         }
         return $json;

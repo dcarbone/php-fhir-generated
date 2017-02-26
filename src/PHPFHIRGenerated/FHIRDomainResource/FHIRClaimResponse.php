@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
+class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Response business identifier.
@@ -155,25 +154,25 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The total cost of the services reported.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $totalCost = null;
 
     /**
      * The amount of deductible applied which was not allocated to any particular service line.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $unallocDeductable = null;
 
     /**
      * Total amount of benefit payable (Equal to sum of the Benefit amounts from all detail lines and additions less the Unallocated Deductible).
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $totalBenefit = null;
 
     /**
      * Adjustment to the payment of this transaction which is not related to adjudication of this transaction.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $paymentAdjustment = null;
 
@@ -191,7 +190,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Payable less any payment adjustment.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $paymentAmount = null;
 
@@ -241,7 +240,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The Response business identifier.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -461,7 +460,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The first tier service adjudications for submitted services.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem[] $item
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseItem $item
      * @return $this
      */
     public function addItem($item)
@@ -481,7 +480,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The first tier service adjudications for payor added services.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem[] $addItem
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAddItem $addItem
      * @return $this
      */
     public function addAddItem($addItem)
@@ -501,7 +500,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Mutually exclusive with Services Provided (Item).
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError[] $error
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseError $error
      * @return $this
      */
     public function addError($error)
@@ -512,7 +511,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The total cost of the services reported.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getTotalCost()
     {
@@ -521,7 +520,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The total cost of the services reported.
-     * @param \PHPFHIRGenerated\FHIRMoney $totalCost
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $totalCost
      * @return $this
      */
     public function setTotalCost($totalCost)
@@ -532,7 +531,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The amount of deductible applied which was not allocated to any particular service line.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUnallocDeductable()
     {
@@ -541,7 +540,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The amount of deductible applied which was not allocated to any particular service line.
-     * @param \PHPFHIRGenerated\FHIRMoney $unallocDeductable
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $unallocDeductable
      * @return $this
      */
     public function setUnallocDeductable($unallocDeductable)
@@ -552,7 +551,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Total amount of benefit payable (Equal to sum of the Benefit amounts from all detail lines and additions less the Unallocated Deductible).
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getTotalBenefit()
     {
@@ -561,7 +560,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Total amount of benefit payable (Equal to sum of the Benefit amounts from all detail lines and additions less the Unallocated Deductible).
-     * @param \PHPFHIRGenerated\FHIRMoney $totalBenefit
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $totalBenefit
      * @return $this
      */
     public function setTotalBenefit($totalBenefit)
@@ -572,7 +571,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Adjustment to the payment of this transaction which is not related to adjudication of this transaction.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getPaymentAdjustment()
     {
@@ -581,7 +580,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Adjustment to the payment of this transaction which is not related to adjudication of this transaction.
-     * @param \PHPFHIRGenerated\FHIRMoney $paymentAdjustment
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $paymentAdjustment
      * @return $this
      */
     public function setPaymentAdjustment($paymentAdjustment)
@@ -632,7 +631,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Payable less any payment adjustment.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getPaymentAmount()
     {
@@ -641,7 +640,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Payable less any payment adjustment.
-     * @param \PHPFHIRGenerated\FHIRMoney $paymentAmount
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $paymentAmount
      * @return $this
      */
     public function setPaymentAmount($paymentAmount)
@@ -721,7 +720,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Note text.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseNote[] $note
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseNote $note
      * @return $this
      */
     public function addNote($note)
@@ -741,7 +740,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Financial instrument by which payment information for health care.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseCoverage[] $coverage
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseCoverage $coverage
      * @return $this
      */
     public function addCoverage($coverage)
@@ -774,59 +773,59 @@ class FHIRClaimResponse extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->requestProvider) $json['requestProvider'] = $this->requestProvider->jsonSerialize();
-        if (null !== $this->requestOrganization) $json['requestOrganization'] = $this->requestOrganization->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
-        if (null !== $this->disposition) $json['disposition'] = $this->disposition->jsonSerialize();
-        if (null !== $this->payeeType) $json['payeeType'] = $this->payeeType->jsonSerialize();
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
+        if (null !== $this->requestOrganization) $json['requestOrganization'] = json_encode($this->requestOrganization);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->disposition) $json['disposition'] = json_encode($this->disposition);
+        if (null !== $this->payeeType) $json['payeeType'] = json_encode($this->payeeType);
         if (0 < count($this->item)) {
-            $json['item'] = array();
+            $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = $item->jsonSerialize();
+                $json['item'][] = json_encode($item);
             }
         }
         if (0 < count($this->addItem)) {
-            $json['addItem'] = array();
+            $json['addItem'] = [];
             foreach($this->addItem as $addItem) {
-                $json['addItem'][] = $addItem->jsonSerialize();
+                $json['addItem'][] = json_encode($addItem);
             }
         }
         if (0 < count($this->error)) {
-            $json['error'] = array();
+            $json['error'] = [];
             foreach($this->error as $error) {
-                $json['error'][] = $error->jsonSerialize();
+                $json['error'][] = json_encode($error);
             }
         }
-        if (null !== $this->totalCost) $json['totalCost'] = $this->totalCost->jsonSerialize();
-        if (null !== $this->unallocDeductable) $json['unallocDeductable'] = $this->unallocDeductable->jsonSerialize();
-        if (null !== $this->totalBenefit) $json['totalBenefit'] = $this->totalBenefit->jsonSerialize();
-        if (null !== $this->paymentAdjustment) $json['paymentAdjustment'] = $this->paymentAdjustment->jsonSerialize();
-        if (null !== $this->paymentAdjustmentReason) $json['paymentAdjustmentReason'] = $this->paymentAdjustmentReason->jsonSerialize();
-        if (null !== $this->paymentDate) $json['paymentDate'] = $this->paymentDate->jsonSerialize();
-        if (null !== $this->paymentAmount) $json['paymentAmount'] = $this->paymentAmount->jsonSerialize();
-        if (null !== $this->paymentRef) $json['paymentRef'] = $this->paymentRef->jsonSerialize();
-        if (null !== $this->reserved) $json['reserved'] = $this->reserved->jsonSerialize();
-        if (null !== $this->form) $json['form'] = $this->form->jsonSerialize();
+        if (null !== $this->totalCost) $json['totalCost'] = json_encode($this->totalCost);
+        if (null !== $this->unallocDeductable) $json['unallocDeductable'] = json_encode($this->unallocDeductable);
+        if (null !== $this->totalBenefit) $json['totalBenefit'] = json_encode($this->totalBenefit);
+        if (null !== $this->paymentAdjustment) $json['paymentAdjustment'] = json_encode($this->paymentAdjustment);
+        if (null !== $this->paymentAdjustmentReason) $json['paymentAdjustmentReason'] = json_encode($this->paymentAdjustmentReason);
+        if (null !== $this->paymentDate) $json['paymentDate'] = json_encode($this->paymentDate);
+        if (null !== $this->paymentAmount) $json['paymentAmount'] = json_encode($this->paymentAmount);
+        if (null !== $this->paymentRef) $json['paymentRef'] = json_encode($this->paymentRef);
+        if (null !== $this->reserved) $json['reserved'] = json_encode($this->reserved);
+        if (null !== $this->form) $json['form'] = json_encode($this->form);
         if (0 < count($this->note)) {
-            $json['note'] = array();
+            $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = $note->jsonSerialize();
+                $json['note'][] = json_encode($note);
             }
         }
         if (0 < count($this->coverage)) {
-            $json['coverage'] = array();
+            $json['coverage'] = [];
             foreach($this->coverage as $coverage) {
-                $json['coverage'][] = $coverage->jsonSerialize();
+                $json['coverage'][] = json_encode($coverage);
             }
         }
         return $json;

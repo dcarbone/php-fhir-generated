@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Whether or not the test execution will require the given capabilities of the server in order for this test script to execute.
@@ -200,7 +199,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
 
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $link
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $link
      * @return $this
      */
     public function addLink($link)
@@ -251,17 +250,17 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->required) $json['required'] = $this->required->jsonSerialize();
-        if (null !== $this->validated) $json['validated'] = $this->validated->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
+        if (null !== $this->required) $json['required'] = json_encode($this->required);
+        if (null !== $this->validated) $json['validated'] = json_encode($this->validated);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
         if (0 < count($this->link)) {
-            $json['link'] = array();
+            $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = $link->jsonSerialize();
+                $json['link'][] = json_encode($link);
             }
         }
-        if (null !== $this->conformance) $json['conformance'] = $this->conformance->jsonSerialize();
+        if (null !== $this->conformance) $json['conformance'] = json_encode($this->conformance);
         return $json;
     }
 

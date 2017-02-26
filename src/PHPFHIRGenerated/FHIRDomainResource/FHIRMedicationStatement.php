@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +61,6 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now, or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from e.g. the patient's memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains 
@@ -69,7 +68,7 @@ use PHPFHIRGenerated\JsonSerializable;
 The primary difference between a medication statement and a medication administration is that the medication administration has complete administration information and is based on actual administration information from the person who administered the medication.  A medication statement is often, if not always, less specific.  There is no required date/time when the medication was administered, in fact we only know that a source has reported the patient is taking this medication, where details such as time, quantity, or rate or even medication product may be incomplete or missing or less precise.  As stated earlier, the medication statement information may come from the patient's memory, from a prescription bottle or from a list of medications the patient, clinician or other party maintains.  Medication administration is more formal and is not missing detailed information.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedicationStatement extends FHIRDomainResource implements JsonSerializable
+class FHIRMedicationStatement extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * External identifier - FHIR will generate its own internal identifiers (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.
@@ -183,7 +182,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements JsonSerializ
 
     /**
      * External identifier - FHIR will generate its own internal identifiers (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -303,7 +302,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements JsonSerializ
 
     /**
      * A code indicating why the medication was not taken.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reasonNotTaken
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonNotTaken
      * @return $this
      */
     public function addReasonNotTaken($reasonNotTaken)
@@ -423,7 +422,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Allows linking the MedicationStatement to the underlying MedicationOrder, or to other information that supports the MedicationStatement.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $supportingInformation
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
      * @return $this
      */
     public function addSupportingInformation($supportingInformation)
@@ -483,7 +482,7 @@ class FHIRMedicationStatement extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Indicates how the medication is/was used by the patient.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationStatement\FHIRMedicationStatementDosage[] $dosage
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationStatement\FHIRMedicationStatementDosage $dosage
      * @return $this
      */
     public function addDosage($dosage)
@@ -516,39 +515,39 @@ class FHIRMedicationStatement extends FHIRDomainResource implements JsonSerializ
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->informationSource) $json['informationSource'] = $this->informationSource->jsonSerialize();
-        if (null !== $this->dateAsserted) $json['dateAsserted'] = $this->dateAsserted->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->wasNotTaken) $json['wasNotTaken'] = $this->wasNotTaken->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->informationSource) $json['informationSource'] = json_encode($this->informationSource);
+        if (null !== $this->dateAsserted) $json['dateAsserted'] = json_encode($this->dateAsserted);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->wasNotTaken) $json['wasNotTaken'] = json_encode($this->wasNotTaken);
         if (0 < count($this->reasonNotTaken)) {
-            $json['reasonNotTaken'] = array();
+            $json['reasonNotTaken'] = [];
             foreach($this->reasonNotTaken as $reasonNotTaken) {
-                $json['reasonNotTaken'][] = $reasonNotTaken->jsonSerialize();
+                $json['reasonNotTaken'][] = json_encode($reasonNotTaken);
             }
         }
-        if (null !== $this->reasonForUseCodeableConcept) $json['reasonForUseCodeableConcept'] = $this->reasonForUseCodeableConcept->jsonSerialize();
-        if (null !== $this->reasonForUseReference) $json['reasonForUseReference'] = $this->reasonForUseReference->jsonSerialize();
-        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = $this->effectiveDateTime->jsonSerialize();
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = $this->effectivePeriod->jsonSerialize();
-        if (null !== $this->note) $json['note'] = $this->note->jsonSerialize();
+        if (null !== $this->reasonForUseCodeableConcept) $json['reasonForUseCodeableConcept'] = json_encode($this->reasonForUseCodeableConcept);
+        if (null !== $this->reasonForUseReference) $json['reasonForUseReference'] = json_encode($this->reasonForUseReference);
+        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
+        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
         if (0 < count($this->supportingInformation)) {
-            $json['supportingInformation'] = array();
+            $json['supportingInformation'] = [];
             foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = $supportingInformation->jsonSerialize();
+                $json['supportingInformation'][] = json_encode($supportingInformation);
             }
         }
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept->jsonSerialize();
-        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference->jsonSerialize();
+        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
+        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
         if (0 < count($this->dosage)) {
-            $json['dosage'] = array();
+            $json['dosage'] = [];
             foreach($this->dosage as $dosage) {
-                $json['dosage'][] = $dosage->jsonSerialize();
+                $json['dosage'][] = json_encode($dosage);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The details of a healthcare service available at a location.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializable
+class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * External identifiers for this item.
@@ -217,7 +216,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * External identifiers for this item.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -277,7 +276,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * A specific type of service that may be delivered or performed.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceServiceType[] $serviceType
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceServiceType $serviceType
      * @return $this
      */
     public function addServiceType($serviceType)
@@ -397,7 +396,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * List of contacts related to this specific healthcare service.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -417,7 +416,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * The location(s) that this service is available to (not where the service is provided).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $coverageArea
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $coverageArea
      * @return $this
      */
     public function addCoverageArea($coverageArea)
@@ -437,7 +436,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * The code(s) that detail the conditions under which the healthcare service is available/offered.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $serviceProvisionCode
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceProvisionCode
      * @return $this
      */
     public function addServiceProvisionCode($serviceProvisionCode)
@@ -497,7 +496,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * Program Names that can be used to categorize the service.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $programName
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $programName
      * @return $this
      */
     public function addProgramName($programName)
@@ -517,7 +516,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * Collection of characteristics (attributes).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $characteristic
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $characteristic
      * @return $this
      */
     public function addCharacteristic($characteristic)
@@ -537,7 +536,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $referralMethod
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $referralMethod
      * @return $this
      */
     public function addReferralMethod($referralMethod)
@@ -597,7 +596,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * A collection of times that the Service Site is available.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[] $availableTime
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime $availableTime
      * @return $this
      */
     public function addAvailableTime($availableTime)
@@ -617,7 +616,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
 
     /**
      * The HealthcareService is not available during this period of time due to the provided reason.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[] $notAvailable
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable $notAvailable
      * @return $this
      */
     public function addNotAvailable($notAvailable)
@@ -670,77 +669,77 @@ class FHIRHealthcareService extends FHIRDomainResource implements JsonSerializab
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->providedBy) $json['providedBy'] = $this->providedBy->jsonSerialize();
-        if (null !== $this->serviceCategory) $json['serviceCategory'] = $this->serviceCategory->jsonSerialize();
+        if (null !== $this->providedBy) $json['providedBy'] = json_encode($this->providedBy);
+        if (null !== $this->serviceCategory) $json['serviceCategory'] = json_encode($this->serviceCategory);
         if (0 < count($this->serviceType)) {
-            $json['serviceType'] = array();
+            $json['serviceType'] = [];
             foreach($this->serviceType as $serviceType) {
-                $json['serviceType'][] = $serviceType->jsonSerialize();
+                $json['serviceType'][] = json_encode($serviceType);
             }
         }
-        if (null !== $this->location) $json['location'] = $this->location->jsonSerialize();
-        if (null !== $this->serviceName) $json['serviceName'] = $this->serviceName->jsonSerialize();
-        if (null !== $this->comment) $json['comment'] = $this->comment->jsonSerialize();
-        if (null !== $this->extraDetails) $json['extraDetails'] = $this->extraDetails->jsonSerialize();
-        if (null !== $this->photo) $json['photo'] = $this->photo->jsonSerialize();
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->serviceName) $json['serviceName'] = json_encode($this->serviceName);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->extraDetails) $json['extraDetails'] = json_encode($this->extraDetails);
+        if (null !== $this->photo) $json['photo'] = json_encode($this->photo);
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
         if (0 < count($this->coverageArea)) {
-            $json['coverageArea'] = array();
+            $json['coverageArea'] = [];
             foreach($this->coverageArea as $coverageArea) {
-                $json['coverageArea'][] = $coverageArea->jsonSerialize();
+                $json['coverageArea'][] = json_encode($coverageArea);
             }
         }
         if (0 < count($this->serviceProvisionCode)) {
-            $json['serviceProvisionCode'] = array();
+            $json['serviceProvisionCode'] = [];
             foreach($this->serviceProvisionCode as $serviceProvisionCode) {
-                $json['serviceProvisionCode'][] = $serviceProvisionCode->jsonSerialize();
+                $json['serviceProvisionCode'][] = json_encode($serviceProvisionCode);
             }
         }
-        if (null !== $this->eligibility) $json['eligibility'] = $this->eligibility->jsonSerialize();
-        if (null !== $this->eligibilityNote) $json['eligibilityNote'] = $this->eligibilityNote->jsonSerialize();
+        if (null !== $this->eligibility) $json['eligibility'] = json_encode($this->eligibility);
+        if (null !== $this->eligibilityNote) $json['eligibilityNote'] = json_encode($this->eligibilityNote);
         if (0 < count($this->programName)) {
-            $json['programName'] = array();
+            $json['programName'] = [];
             foreach($this->programName as $programName) {
-                $json['programName'][] = $programName->jsonSerialize();
+                $json['programName'][] = json_encode($programName);
             }
         }
         if (0 < count($this->characteristic)) {
-            $json['characteristic'] = array();
+            $json['characteristic'] = [];
             foreach($this->characteristic as $characteristic) {
-                $json['characteristic'][] = $characteristic->jsonSerialize();
+                $json['characteristic'][] = json_encode($characteristic);
             }
         }
         if (0 < count($this->referralMethod)) {
-            $json['referralMethod'] = array();
+            $json['referralMethod'] = [];
             foreach($this->referralMethod as $referralMethod) {
-                $json['referralMethod'][] = $referralMethod->jsonSerialize();
+                $json['referralMethod'][] = json_encode($referralMethod);
             }
         }
-        if (null !== $this->publicKey) $json['publicKey'] = $this->publicKey->jsonSerialize();
-        if (null !== $this->appointmentRequired) $json['appointmentRequired'] = $this->appointmentRequired->jsonSerialize();
+        if (null !== $this->publicKey) $json['publicKey'] = json_encode($this->publicKey);
+        if (null !== $this->appointmentRequired) $json['appointmentRequired'] = json_encode($this->appointmentRequired);
         if (0 < count($this->availableTime)) {
-            $json['availableTime'] = array();
+            $json['availableTime'] = [];
             foreach($this->availableTime as $availableTime) {
-                $json['availableTime'][] = $availableTime->jsonSerialize();
+                $json['availableTime'][] = json_encode($availableTime);
             }
         }
         if (0 < count($this->notAvailable)) {
-            $json['notAvailable'] = array();
+            $json['notAvailable'] = [];
             foreach($this->notAvailable as $notAvailable) {
-                $json['notAvailable'][] = $notAvailable->jsonSerialize();
+                $json['notAvailable'][] = json_encode($notAvailable);
             }
         }
-        if (null !== $this->availabilityExceptions) $json['availabilityExceptions'] = $this->availabilityExceptions->jsonSerialize();
+        if (null !== $this->availabilityExceptions) $json['availabilityExceptions'] = json_encode($this->availabilityExceptions);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
  */
-class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements JsonSerializable
+class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The time period and frequency at which the enteral formula should be delivered to the patient.
@@ -76,13 +75,13 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements Js
 
     /**
      * The volume of formula to provide to the patient per the specified administration schedule.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $quantity = null;
 
     /**
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $rateQuantity = null;
 
@@ -119,7 +118,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements Js
 
     /**
      * The volume of formula to provide to the patient per the specified administration schedule.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity()
     {
@@ -128,7 +127,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements Js
 
     /**
      * The volume of formula to provide to the patient per the specified administration schedule.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -139,7 +138,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements Js
 
     /**
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getRateQuantity()
     {
@@ -148,7 +147,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements Js
 
     /**
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $rateQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $rateQuantity
      * @return $this
      */
     public function setRateQuantity($rateQuantity)
@@ -199,10 +198,10 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->schedule) $json['schedule'] = $this->schedule->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->rateQuantity) $json['rateQuantity'] = $this->rateQuantity->jsonSerialize();
-        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio->jsonSerialize();
+        if (null !== $this->schedule) $json['schedule'] = json_encode($this->schedule);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->rateQuantity) $json['rateQuantity'] = json_encode($this->rateQuantity);
+        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
         return $json;
     }
 

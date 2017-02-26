@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Specifies an event that may occur multiple times. Timing schedules are used to record when things are expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRTiming extends FHIRElement implements JsonSerializable
+class FHIRTiming extends FHIRElement implements \JsonSerializable
 {
     /**
      * Identifies specific times when the event occurs.
@@ -103,7 +102,7 @@ class FHIRTiming extends FHIRElement implements JsonSerializable
 
     /**
      * Identifies specific times when the event occurs.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime[] $event
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $event
      * @return $this
      */
     public function addEvent($event)
@@ -175,13 +174,13 @@ class FHIRTiming extends FHIRElement implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->event)) {
-            $json['event'] = array();
+            $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = $event->jsonSerialize();
+                $json['event'][] = json_encode($event);
             }
         }
-        if (null !== $this->repeat) $json['repeat'] = $this->repeat->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->repeat) $json['repeat'] = json_encode($this->repeat);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRNutritionOrder extends FHIRDomainResource implements JsonSerializable
+class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
@@ -197,7 +196,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifiers assigned to this order by the order sender or by the order receiver.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -277,7 +276,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A link to a record of allergies or intolerances  which should be included in the nutrition order.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $allergyIntolerance
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $allergyIntolerance
      * @return $this
      */
     public function addAllergyIntolerance($allergyIntolerance)
@@ -297,7 +296,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This modifier is used to convey order-specific modifiers about the type of food that should be given. These can be derived from patient allergies, intolerances, or preferences such as Halal, Vegan or Kosher. This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $foodPreferenceModifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $foodPreferenceModifier
      * @return $this
      */
     public function addFoodPreferenceModifier($foodPreferenceModifier)
@@ -317,7 +316,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This modifier is used to convey order-specific modifiers about the type of food that should NOT be given. These can be derived from patient allergies, intolerances, or preferences such as No Red Meat, No Soy or No Wheat or  Gluten-Free.  While it should not be necessary to repeat allergy or intolerance information captured in the referenced allergyIntolerance resource in the excludeFoodModifier, this element may be used to convey additional specificity related to foods that should be eliminated from the patient’s diet for any reason.  This modifier applies to the entire nutrition order inclusive of the oral diet, nutritional supplements and enteral formula feedings.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $excludeFoodModifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $excludeFoodModifier
      * @return $this
      */
     public function addExcludeFoodModifier($excludeFoodModifier)
@@ -357,7 +356,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Oral nutritional products given in order to add further nutritional value to the patient's diet.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement[] $supplement
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderSupplement $supplement
      * @return $this
      */
     public function addSupplement($supplement)
@@ -409,43 +408,43 @@ class FHIRNutritionOrder extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->orderer) $json['orderer'] = $this->orderer->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->orderer) $json['orderer'] = json_encode($this->orderer);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->dateTime) $json['dateTime'] = $this->dateTime->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->dateTime) $json['dateTime'] = json_encode($this->dateTime);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->allergyIntolerance)) {
-            $json['allergyIntolerance'] = array();
+            $json['allergyIntolerance'] = [];
             foreach($this->allergyIntolerance as $allergyIntolerance) {
-                $json['allergyIntolerance'][] = $allergyIntolerance->jsonSerialize();
+                $json['allergyIntolerance'][] = json_encode($allergyIntolerance);
             }
         }
         if (0 < count($this->foodPreferenceModifier)) {
-            $json['foodPreferenceModifier'] = array();
+            $json['foodPreferenceModifier'] = [];
             foreach($this->foodPreferenceModifier as $foodPreferenceModifier) {
-                $json['foodPreferenceModifier'][] = $foodPreferenceModifier->jsonSerialize();
+                $json['foodPreferenceModifier'][] = json_encode($foodPreferenceModifier);
             }
         }
         if (0 < count($this->excludeFoodModifier)) {
-            $json['excludeFoodModifier'] = array();
+            $json['excludeFoodModifier'] = [];
             foreach($this->excludeFoodModifier as $excludeFoodModifier) {
-                $json['excludeFoodModifier'][] = $excludeFoodModifier->jsonSerialize();
+                $json['excludeFoodModifier'][] = json_encode($excludeFoodModifier);
             }
         }
-        if (null !== $this->oralDiet) $json['oralDiet'] = $this->oralDiet->jsonSerialize();
+        if (null !== $this->oralDiet) $json['oralDiet'] = json_encode($this->oralDiet);
         if (0 < count($this->supplement)) {
-            $json['supplement'] = array();
+            $json['supplement'] = [];
             foreach($this->supplement as $supplement) {
-                $json['supplement'][] = $supplement->jsonSerialize();
+                $json['supplement'][] = json_encode($supplement);
             }
         }
-        if (null !== $this->enteralFormula) $json['enteralFormula'] = $this->enteralFormula->jsonSerialize();
+        if (null !== $this->enteralFormula) $json['enteralFormula'] = json_encode($this->enteralFormula);
         return $json;
     }
 

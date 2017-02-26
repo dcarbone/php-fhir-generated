@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
+class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published.
@@ -333,7 +332,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -393,7 +392,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of concept map instances.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -533,7 +532,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[] $element
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement $element
      * @return $this
      */
     public function addElement($element)
@@ -565,37 +564,37 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->sourceUri) $json['sourceUri'] = $this->sourceUri->jsonSerialize();
-        if (null !== $this->sourceReference) $json['sourceReference'] = $this->sourceReference->jsonSerialize();
-        if (null !== $this->targetUri) $json['targetUri'] = $this->targetUri->jsonSerialize();
-        if (null !== $this->targetReference) $json['targetReference'] = $this->targetReference->jsonSerialize();
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->sourceUri) $json['sourceUri'] = json_encode($this->sourceUri);
+        if (null !== $this->sourceReference) $json['sourceReference'] = json_encode($this->sourceReference);
+        if (null !== $this->targetUri) $json['targetUri'] = json_encode($this->targetUri);
+        if (null !== $this->targetReference) $json['targetReference'] = json_encode($this->targetReference);
         if (0 < count($this->element)) {
-            $json['element'] = array();
+            $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = $element->jsonSerialize();
+                $json['element'][] = json_encode($element);
             }
         }
         return $json;

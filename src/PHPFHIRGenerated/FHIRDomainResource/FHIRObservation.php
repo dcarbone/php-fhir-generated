@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Measurements and simple assertions made about a patient, device or other subject.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRObservation extends FHIRDomainResource implements JsonSerializable
+class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A unique identifier for the simple observation instance.
@@ -265,7 +264,7 @@ class FHIRObservation extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A unique identifier for the simple observation instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -445,7 +444,7 @@ class FHIRObservation extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Who was responsible for asserting the observed value as "true".
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $performer
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $performer
      * @return $this
      */
     public function addPerformer($performer)
@@ -805,7 +804,7 @@ class FHIRObservation extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[] $referenceRange
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationReferenceRange $referenceRange
      * @return $this
      */
     public function addReferenceRange($referenceRange)
@@ -825,7 +824,7 @@ class FHIRObservation extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A  reference to another resource (usually another Observation but could  also be a QuestionnaireAnswer) whose relationship is defined by the relationship type code.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationRelated[] $related
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationRelated $related
      * @return $this
      */
     public function addRelated($related)
@@ -845,7 +844,7 @@ class FHIRObservation extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Some observations have multiple component observations.  These component observations are expressed as separate code value pairs that share the same attributes.  Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationComponent[] $component
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationComponent $component
      * @return $this
      */
     public function addComponent($component)
@@ -878,58 +877,58 @@ class FHIRObservation extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = $this->effectiveDateTime->jsonSerialize();
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = $this->effectivePeriod->jsonSerialize();
-        if (null !== $this->issued) $json['issued'] = $this->issued->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
+        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
+        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
         if (0 < count($this->performer)) {
-            $json['performer'] = array();
+            $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = $performer->jsonSerialize();
+                $json['performer'][] = json_encode($performer);
             }
         }
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity->jsonSerialize();
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept->jsonSerialize();
-        if (null !== $this->valueString) $json['valueString'] = $this->valueString->jsonSerialize();
-        if (null !== $this->valueRange) $json['valueRange'] = $this->valueRange->jsonSerialize();
-        if (null !== $this->valueRatio) $json['valueRatio'] = $this->valueRatio->jsonSerialize();
-        if (null !== $this->valueSampledData) $json['valueSampledData'] = $this->valueSampledData->jsonSerialize();
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment->jsonSerialize();
-        if (null !== $this->valueTime) $json['valueTime'] = $this->valueTime->jsonSerialize();
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime->jsonSerialize();
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = $this->valuePeriod->jsonSerialize();
-        if (null !== $this->dataAbsentReason) $json['dataAbsentReason'] = $this->dataAbsentReason->jsonSerialize();
-        if (null !== $this->interpretation) $json['interpretation'] = $this->interpretation->jsonSerialize();
-        if (null !== $this->comments) $json['comments'] = $this->comments->jsonSerialize();
-        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->specimen) $json['specimen'] = $this->specimen->jsonSerialize();
-        if (null !== $this->device) $json['device'] = $this->device->jsonSerialize();
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
+        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
+        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
+        if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
+        if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
+        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
+        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
+        if (null !== $this->dataAbsentReason) $json['dataAbsentReason'] = json_encode($this->dataAbsentReason);
+        if (null !== $this->interpretation) $json['interpretation'] = json_encode($this->interpretation);
+        if (null !== $this->comments) $json['comments'] = json_encode($this->comments);
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->specimen) $json['specimen'] = json_encode($this->specimen);
+        if (null !== $this->device) $json['device'] = json_encode($this->device);
         if (0 < count($this->referenceRange)) {
-            $json['referenceRange'] = array();
+            $json['referenceRange'] = [];
             foreach($this->referenceRange as $referenceRange) {
-                $json['referenceRange'][] = $referenceRange->jsonSerialize();
+                $json['referenceRange'][] = json_encode($referenceRange);
             }
         }
         if (0 < count($this->related)) {
-            $json['related'] = array();
+            $json['related'] = [];
             foreach($this->related as $related) {
-                $json['related'][] = $related->jsonSerialize();
+                $json['related'][] = json_encode($related);
             }
         }
         if (0 < count($this->component)) {
-            $json['component'] = array();
+            $json['component'] = [];
             foreach($this->component as $component) {
-                $json['component'][] = $component->jsonSerialize();
+                $json['component'][] = json_encode($component);
             }
         }
         return $json;

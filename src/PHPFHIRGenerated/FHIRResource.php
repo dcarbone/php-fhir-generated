@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,12 +60,10 @@
  * 
  */
 
-use PHPFHIRGenerated\JsonSerializable;
-
 /**
  * This is the base resource type for everything.
  */
-class FHIRResource implements JsonSerializable
+class FHIRResource implements \JsonSerializable
 {
     /**
      * The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
@@ -197,11 +195,11 @@ class FHIRResource implements JsonSerializable
      */
     public function jsonSerialize()
     {
-        $json = array();
-        if (null !== $this->id) $json['id'] = $this->id->jsonSerialize();
-        if (null !== $this->meta) $json['meta'] = $this->meta->jsonSerialize();
-        if (null !== $this->implicitRules) $json['implicitRules'] = $this->implicitRules->jsonSerialize();
-        if (null !== $this->language) $json['language'] = $this->language->jsonSerialize();
+        $json = [];
+        if (null !== $this->id) $json['id'] = json_encode($this->id);
+        if (null !== $this->meta) $json['meta'] = json_encode($this->meta);
+        if (null !== $this->implicitRules) $json['implicitRules'] = json_encode($this->implicitRules);
+        if (null !== $this->language) $json['language'] = json_encode($this->language);
         return $json;
     }
 

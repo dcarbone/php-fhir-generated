@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides payment details and claim references supporting a bulk payment.
  */
-class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements JsonSerializable
+class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Code to indicate the nature of the payment, adjustment, funds advance, etc.
@@ -106,7 +105,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements Jso
 
     /**
      * Amount paid for this detail.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $amount = null;
 
@@ -237,7 +236,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements Jso
 
     /**
      * Amount paid for this detail.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAmount()
     {
@@ -246,7 +245,7 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements Jso
 
     /**
      * Amount paid for this detail.
-     * @param \PHPFHIRGenerated\FHIRMoney $amount
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -277,13 +276,13 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements Jso
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->responce) $json['responce'] = $this->responce->jsonSerialize();
-        if (null !== $this->submitter) $json['submitter'] = $this->submitter->jsonSerialize();
-        if (null !== $this->payee) $json['payee'] = $this->payee->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->amount) $json['amount'] = $this->amount->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->responce) $json['responce'] = json_encode($this->responce);
+        if (null !== $this->submitter) $json['submitter'] = json_encode($this->submitter);
+        if (null !== $this->payee) $json['payee'] = json_encode($this->payee);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
         return $json;
     }
 

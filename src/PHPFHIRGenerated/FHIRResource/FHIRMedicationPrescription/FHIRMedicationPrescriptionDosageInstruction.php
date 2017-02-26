@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An order for both supply of the medication and the instructions for administration of the medication to a patient.
  */
-class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Free text dosage instructions can be used for cases where the instructions are too complex to code. When coded instructions are present, the free text instructions may still be present for display to humans taking or administering the medication.
@@ -124,7 +123,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement im
 
     /**
      * The amount of therapeutic or other substance given at one administration event. (choose any one of dose*, but only one)
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $doseQuantity = null;
 
@@ -339,7 +338,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement im
 
     /**
      * The amount of therapeutic or other substance given at one administration event. (choose any one of dose*, but only one)
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getDoseQuantity()
     {
@@ -348,7 +347,7 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement im
 
     /**
      * The amount of therapeutic or other substance given at one administration event. (choose any one of dose*, but only one)
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $doseQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $doseQuantity
      * @return $this
      */
     public function setDoseQuantity($doseQuantity)
@@ -459,20 +458,20 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement im
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->additionalInstructions) $json['additionalInstructions'] = $this->additionalInstructions->jsonSerialize();
-        if (null !== $this->timing) $json['timing'] = $this->timing->jsonSerialize();
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean->jsonSerialize();
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept->jsonSerialize();
-        if (null !== $this->site) $json['site'] = $this->site->jsonSerialize();
-        if (null !== $this->route) $json['route'] = $this->route->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->doseRange) $json['doseRange'] = $this->doseRange->jsonSerialize();
-        if (null !== $this->doseQuantity) $json['doseQuantity'] = $this->doseQuantity->jsonSerialize();
-        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio->jsonSerialize();
-        if (null !== $this->rateQuantity) $json['rateQuantity'] = $this->rateQuantity->jsonSerialize();
-        if (null !== $this->rateRange) $json['rateRange'] = $this->rateRange->jsonSerialize();
-        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = $this->maxDosePerPeriod->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->additionalInstructions) $json['additionalInstructions'] = json_encode($this->additionalInstructions);
+        if (null !== $this->timing) $json['timing'] = json_encode($this->timing);
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
+        if (null !== $this->site) $json['site'] = json_encode($this->site);
+        if (null !== $this->route) $json['route'] = json_encode($this->route);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->doseRange) $json['doseRange'] = json_encode($this->doseRange);
+        if (null !== $this->doseQuantity) $json['doseQuantity'] = json_encode($this->doseQuantity);
+        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
+        if (null !== $this->rateQuantity) $json['rateQuantity'] = json_encode($this->rateQuantity);
+        if (null !== $this->rateRange) $json['rateRange'] = json_encode($this->rateRange);
+        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = json_encode($this->maxDosePerPeriod);
         return $json;
     }
 

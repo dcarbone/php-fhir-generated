@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
  */
-class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerializable
+class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The number of instance in the series.
@@ -220,7 +219,7 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
 
     /**
      * Content of the instance or a rendering thereof (e.g. a JPEG of an image, or an XML of a structured report). May be represented for example by inline encoding; by a URL reference to a WADO-RS service that makes the instance available; or to a FHIR Resource (e.g. Media, Document, etc.). Multiple content attachments may be used for alternate representations of the instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $content
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $content
      * @return $this
      */
     public function addContent($content)
@@ -251,15 +250,15 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->number) $json['number'] = $this->number->jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->sopClass) $json['sopClass'] = $this->sopClass->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
+        if (null !== $this->number) $json['number'] = json_encode($this->number);
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->sopClass) $json['sopClass'] = json_encode($this->sopClass);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
         if (0 < count($this->content)) {
-            $json['content'] = array();
+            $json['content'] = [];
             foreach($this->content as $content) {
-                $json['content'][] = $content->jsonSerialize();
+                $json['content'][] = json_encode($content);
             }
         }
         return $json;

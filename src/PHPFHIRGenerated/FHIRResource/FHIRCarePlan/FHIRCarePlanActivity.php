@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.
  */
-class FHIRCarePlanActivity extends FHIRBackboneElement implements JsonSerializable
+class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Resources that describe follow-on actions resulting from the plan, such as drug prescriptions, encounter records, appointments, etc.
@@ -108,7 +107,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Resources that describe follow-on actions resulting from the plan, such as drug prescriptions, encounter records, appointments, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $actionResulting
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $actionResulting
      * @return $this
      */
     public function addActionResulting($actionResulting)
@@ -128,7 +127,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Notes about the adherence/status/progress of the activity.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[] $progress
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $progress
      * @return $this
      */
     public function addProgress($progress)
@@ -200,19 +199,19 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements JsonSerializab
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->actionResulting)) {
-            $json['actionResulting'] = array();
+            $json['actionResulting'] = [];
             foreach($this->actionResulting as $actionResulting) {
-                $json['actionResulting'][] = $actionResulting->jsonSerialize();
+                $json['actionResulting'][] = json_encode($actionResulting);
             }
         }
         if (0 < count($this->progress)) {
-            $json['progress'] = array();
+            $json['progress'] = [];
             foreach($this->progress as $progress) {
-                $json['progress'][] = $progress->jsonSerialize();
+                $json['progress'][] = json_encode($progress);
             }
         }
-        if (null !== $this->reference) $json['reference'] = $this->reference->jsonSerialize();
-        if (null !== $this->detail) $json['detail'] = $this->detail->jsonSerialize();
+        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (null !== $this->detail) $json['detail'] = json_encode($this->detail);
         return $json;
     }
 

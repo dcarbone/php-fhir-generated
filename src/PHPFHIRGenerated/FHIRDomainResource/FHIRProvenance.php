@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
+class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
@@ -145,7 +144,7 @@ class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The Reference(s) that were generated or updated by  the activity described in this resource. A provenance can point to more than one target if multiple resources were created/updated by the same activity.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $target
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $target
      * @return $this
      */
     public function addTarget($target)
@@ -205,7 +204,7 @@ class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The reason that the activity was taking place.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -265,7 +264,7 @@ class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $policy
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $policy
      * @return $this
      */
     public function addPolicy($policy)
@@ -285,7 +284,7 @@ class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * An agent takes a role in an activity such that the agent can be assigned some degree of responsibility for the activity taking place. An agent can be a person, an organization, software, or other entities that may be ascribed responsibility.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[] $agent
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent $agent
      * @return $this
      */
     public function addAgent($agent)
@@ -305,7 +304,7 @@ class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * An entity used in this activity.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceEntity[] $entity
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceEntity $entity
      * @return $this
      */
     public function addEntity($entity)
@@ -325,7 +324,7 @@ class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature[] $signature
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $signature
      * @return $this
      */
     public function addSignature($signature)
@@ -358,43 +357,43 @@ class FHIRProvenance extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->target)) {
-            $json['target'] = array();
+            $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = $target->jsonSerialize();
+                $json['target'][] = json_encode($target);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->recorded) $json['recorded'] = $this->recorded->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->recorded) $json['recorded'] = json_encode($this->recorded);
         if (0 < count($this->reason)) {
-            $json['reason'] = array();
+            $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = $reason->jsonSerialize();
+                $json['reason'][] = json_encode($reason);
             }
         }
-        if (null !== $this->activity) $json['activity'] = $this->activity->jsonSerialize();
-        if (null !== $this->location) $json['location'] = $this->location->jsonSerialize();
+        if (null !== $this->activity) $json['activity'] = json_encode($this->activity);
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
         if (0 < count($this->policy)) {
-            $json['policy'] = array();
+            $json['policy'] = [];
             foreach($this->policy as $policy) {
-                $json['policy'][] = $policy->jsonSerialize();
+                $json['policy'][] = json_encode($policy);
             }
         }
         if (0 < count($this->agent)) {
-            $json['agent'] = array();
+            $json['agent'] = [];
             foreach($this->agent as $agent) {
-                $json['agent'][] = $agent->jsonSerialize();
+                $json['agent'][] = json_encode($agent);
             }
         }
         if (0 < count($this->entity)) {
-            $json['entity'] = array();
+            $json['entity'] = [];
             foreach($this->entity as $entity) {
-                $json['entity'][] = $entity->jsonSerialize();
+                $json['entity'][] = json_encode($entity);
             }
         }
         if (0 < count($this->signature)) {
-            $json['signature'] = array();
+            $json['signature'] = [];
             foreach($this->signature as $signature) {
-                $json['signature'][] = $signature->jsonSerialize();
+                $json['signature'][] = json_encode($signature);
             }
         }
         return $json;

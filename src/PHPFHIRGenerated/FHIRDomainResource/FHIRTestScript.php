@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
+class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this Test Script. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this Test Script is (or will be) published.
@@ -351,7 +350,7 @@ class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -411,7 +410,7 @@ class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of Test Scripts.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -511,7 +510,7 @@ class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptFixture[] $fixture
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptFixture $fixture
      * @return $this
      */
     public function addFixture($fixture)
@@ -531,7 +530,7 @@ class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Reference to the profile to be used for validation.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $profile
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -551,7 +550,7 @@ class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptVariable[] $variable
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptVariable $variable
      * @return $this
      */
     public function addVariable($variable)
@@ -591,7 +590,7 @@ class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A test in this script.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptTest[] $test
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptTest $test
      * @return $this
      */
     public function addTest($test)
@@ -643,57 +642,57 @@ class FHIRTestScript extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->metadata) $json['metadata'] = $this->metadata->jsonSerialize();
-        if (null !== $this->multiserver) $json['multiserver'] = $this->multiserver->jsonSerialize();
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->metadata) $json['metadata'] = json_encode($this->metadata);
+        if (null !== $this->multiserver) $json['multiserver'] = json_encode($this->multiserver);
         if (0 < count($this->fixture)) {
-            $json['fixture'] = array();
+            $json['fixture'] = [];
             foreach($this->fixture as $fixture) {
-                $json['fixture'][] = $fixture->jsonSerialize();
+                $json['fixture'][] = json_encode($fixture);
             }
         }
         if (0 < count($this->profile)) {
-            $json['profile'] = array();
+            $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = $profile->jsonSerialize();
+                $json['profile'][] = json_encode($profile);
             }
         }
         if (0 < count($this->variable)) {
-            $json['variable'] = array();
+            $json['variable'] = [];
             foreach($this->variable as $variable) {
-                $json['variable'][] = $variable->jsonSerialize();
+                $json['variable'][] = json_encode($variable);
             }
         }
-        if (null !== $this->setup) $json['setup'] = $this->setup->jsonSerialize();
+        if (null !== $this->setup) $json['setup'] = json_encode($this->setup);
         if (0 < count($this->test)) {
-            $json['test'] = array();
+            $json['test'] = [];
             foreach($this->test as $test) {
-                $json['test'][] = $test->jsonSerialize();
+                $json['test'][] = json_encode($test);
             }
         }
-        if (null !== $this->teardown) $json['teardown'] = $this->teardown->jsonSerialize();
+        if (null !== $this->teardown) $json['teardown'] = json_encode($this->teardown);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
  */
-class FHIROperationDefinitionParameter extends FHIRBackboneElement implements JsonSerializable
+class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The name of used to identify the parameter.
@@ -298,7 +297,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
 
     /**
      * The parts of a Tuple Parameter.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[] $part
+     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $part
      * @return $this
      */
     public function addPart($part)
@@ -329,18 +328,18 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->use) $json['use'] = $this->use->jsonSerialize();
-        if (null !== $this->min) $json['min'] = $this->min->jsonSerialize();
-        if (null !== $this->max) $json['max'] = $this->max->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->profile) $json['profile'] = $this->profile->jsonSerialize();
-        if (null !== $this->binding) $json['binding'] = $this->binding->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->use) $json['use'] = json_encode($this->use);
+        if (null !== $this->min) $json['min'] = json_encode($this->min);
+        if (null !== $this->max) $json['max'] = json_encode($this->max);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (null !== $this->binding) $json['binding'] = json_encode($this->binding);
         if (0 < count($this->part)) {
-            $json['part'] = array();
+            $json['part'] = [];
             foreach($this->part as $part) {
-                $json['part'][] = $part->jsonSerialize();
+                $json['part'][] = json_encode($part);
             }
         }
         return $json;

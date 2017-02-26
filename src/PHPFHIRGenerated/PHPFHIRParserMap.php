@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1480,13 +1480,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setLow',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'high' => 
       array (
         'setter' => 'setHigh',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
     ),
   ),
@@ -1732,7 +1732,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setOrigin',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'period' => 
       array (
@@ -2002,7 +2002,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Age' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRAge',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -2052,7 +2052,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Count' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRCount',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRCount',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -2102,7 +2102,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Money' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRMoney',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -2152,7 +2152,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Distance' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDistance',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDistance',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -2202,7 +2202,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'Duration' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDuration',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -2252,7 +2252,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
   ),
   'SimpleQuantity' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRSimpleQuantity',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
     'extendedElementName' => 'Quantity',
     'properties' => 
     array (
@@ -4136,7 +4136,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setBoundsQuantity',
         'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRDuration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
       'boundsRange' => 
       array (
@@ -5000,7 +5000,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setBalance',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'coveragePeriod' => 
       array (
@@ -7342,13 +7342,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDailyAmount',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'quantity' => 
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'description' => 
       array (
@@ -7892,13 +7892,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'unitPrice' => 
       array (
         'setter' => 'setUnitPrice',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'factor' => 
       array (
@@ -7916,7 +7916,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setNet',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'udi' => 
       array (
@@ -8002,13 +8002,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'unitPrice' => 
       array (
         'setter' => 'setUnitPrice',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'factor' => 
       array (
@@ -8026,7 +8026,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setNet',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'udi' => 
       array (
@@ -8088,13 +8088,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'unitPrice' => 
       array (
         'setter' => 'setUnitPrice',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'factor' => 
       array (
@@ -8112,7 +8112,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setNet',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'udi' => 
       array (
@@ -8404,25 +8404,25 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setTotalCost',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'unallocDeductable' => 
       array (
         'setter' => 'setUnallocDeductable',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'totalBenefit' => 
       array (
         'setter' => 'setTotalBenefit',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'paymentAdjustment' => 
       array (
         'setter' => 'setPaymentAdjustment',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'paymentAdjustmentReason' => 
       array (
@@ -8440,7 +8440,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setPaymentAmount',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'paymentRef' => 
       array (
@@ -8558,7 +8558,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'value' => 
       array (
@@ -8646,7 +8646,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'value' => 
       array (
@@ -8728,7 +8728,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'value' => 
       array (
@@ -8778,7 +8778,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setFee',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'noteNumberLinkId' => 
       array (
@@ -8834,7 +8834,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'value' => 
       array (
@@ -8878,7 +8878,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setFee',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'adjudication' => 
       array (
@@ -8922,7 +8922,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'value' => 
       array (
@@ -10654,7 +10654,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setOnsetQuantity',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'onsetPeriod' => 
       array (
@@ -10684,7 +10684,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAbatementQuantity',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'abatementBoolean' => 
       array (
@@ -12556,13 +12556,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'unitPrice' => 
       array (
         'setter' => 'setUnitPrice',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'factor' => 
       array (
@@ -12580,7 +12580,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setNet',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
     ),
   ),
@@ -12816,13 +12816,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'unitPrice' => 
       array (
         'setter' => 'setUnitPrice',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'factor' => 
       array (
@@ -12840,7 +12840,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setNet',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
     ),
   ),
@@ -16138,7 +16138,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setLength',
         'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRDuration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
       'reason' => 
       array (
@@ -17170,7 +17170,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAgeQuantity',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'ageRange' => 
       array (
@@ -17194,7 +17194,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDeceasedQuantity',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'deceasedRange' => 
       array (
@@ -17268,7 +17268,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setOnsetQuantity',
         'element' => 'Age',
-        'type' => 'PHPFHIRGenerated\\FHIRAge',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
       ),
       'onsetRange' => 
       array (
@@ -17540,7 +17540,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setTargetQuantity',
         'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRDuration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
       'category' => 
       array (
@@ -19016,7 +19016,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDoseQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'note' => 
       array (
@@ -20858,7 +20858,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
     ),
   ),
@@ -21072,7 +21072,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'rateRatio' => 
       array (
@@ -21208,13 +21208,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'daysSupply' => 
       array (
         'setter' => 'setDaysSupply',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'medicationCodeableConcept' => 
       array (
@@ -21360,7 +21360,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDoseQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'rateRatio' => 
       array (
@@ -21698,7 +21698,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDoseQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'rateRatio' => 
       array (
@@ -21772,13 +21772,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'expectedSupplyDuration' => 
       array (
         'setter' => 'setExpectedSupplyDuration',
         'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRDuration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
     ),
   ),
@@ -22086,7 +22086,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDoseQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'rateRatio' => 
       array (
@@ -22166,13 +22166,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'expectedSupplyDuration' => 
       array (
         'setter' => 'setExpectedSupplyDuration',
         'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRDuration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
     ),
   ),
@@ -22468,7 +22468,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantityQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'quantityRange' => 
       array (
@@ -23312,7 +23312,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
     ),
   ),
@@ -23400,7 +23400,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'instruction' => 
       array (
@@ -23462,7 +23462,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setCaloricDensity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'routeofAdministration' => 
       array (
@@ -23480,7 +23480,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setMaxVolumeToDeliver',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'administrationInstruction' => 
       array (
@@ -23524,13 +23524,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'rateQuantity' => 
       array (
         'setter' => 'setRateQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'rateRatio' => 
       array (
@@ -23830,13 +23830,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setLow',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'high' => 
       array (
         'setter' => 'setHigh',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'meaning' => 
       array (
@@ -25960,7 +25960,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setTotal',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
       'note' => 
       array (
@@ -26034,7 +26034,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setAmount',
         'element' => 'Money',
-        'type' => 'PHPFHIRGenerated\\FHIRMoney',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
     ),
   ),
@@ -29762,7 +29762,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'method' => 
       array (
@@ -29868,13 +29868,13 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setCapacity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'specimenQuantity' => 
       array (
         'setter' => 'setSpecimenQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'additiveCodeableConcept' => 
       array (
@@ -30664,7 +30664,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
     ),
   ),
@@ -31018,7 +31018,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setQuantity',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'suppliedItem' => 
       array (
@@ -33298,7 +33298,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setDuration',
         'element' => 'SimpleQuantity',
-        'type' => 'PHPFHIRGenerated\\FHIRSimpleQuantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRSimpleQuantity',
       ),
       'color' => 
       array (

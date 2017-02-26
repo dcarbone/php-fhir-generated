@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
  */
-class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements JsonSerializable
+class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The type of enteral or infant formula such as an adult standard formula with fiber or a soy-based infant formula.
@@ -94,7 +93,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
 
     /**
      * The amount of energy (Calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 Calories per fluid ounce or an adult may require an enteral formula that provides 1.5 Calorie/mL.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $caloricDensity = null;
 
@@ -112,7 +111,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
 
     /**
      * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $maxVolumeToDeliver = null;
 
@@ -209,7 +208,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
 
     /**
      * The amount of energy (Calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 Calories per fluid ounce or an adult may require an enteral formula that provides 1.5 Calorie/mL.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getCaloricDensity()
     {
@@ -218,7 +217,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
 
     /**
      * The amount of energy (Calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 Calories per fluid ounce or an adult may require an enteral formula that provides 1.5 Calorie/mL.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $caloricDensity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $caloricDensity
      * @return $this
      */
     public function setCaloricDensity($caloricDensity)
@@ -258,7 +257,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
 
     /**
      * Formula administration instructions as structured data.  This repeating structure allows for changing the administration rate or volume over time for both bolus and continuous feeding.  An example of this would be an instruction to increase the rate of continuous feeding every 2 hours.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration[] $administration
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderAdministration $administration
      * @return $this
      */
     public function addAdministration($administration)
@@ -269,7 +268,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
 
     /**
      * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getMaxVolumeToDeliver()
     {
@@ -278,7 +277,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
 
     /**
      * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $maxVolumeToDeliver
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $maxVolumeToDeliver
      * @return $this
      */
     public function setMaxVolumeToDeliver($maxVolumeToDeliver)
@@ -329,20 +328,20 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->baseFormulaType) $json['baseFormulaType'] = $this->baseFormulaType->jsonSerialize();
-        if (null !== $this->baseFormulaProductName) $json['baseFormulaProductName'] = $this->baseFormulaProductName->jsonSerialize();
-        if (null !== $this->additiveType) $json['additiveType'] = $this->additiveType->jsonSerialize();
-        if (null !== $this->additiveProductName) $json['additiveProductName'] = $this->additiveProductName->jsonSerialize();
-        if (null !== $this->caloricDensity) $json['caloricDensity'] = $this->caloricDensity->jsonSerialize();
-        if (null !== $this->routeofAdministration) $json['routeofAdministration'] = $this->routeofAdministration->jsonSerialize();
+        if (null !== $this->baseFormulaType) $json['baseFormulaType'] = json_encode($this->baseFormulaType);
+        if (null !== $this->baseFormulaProductName) $json['baseFormulaProductName'] = json_encode($this->baseFormulaProductName);
+        if (null !== $this->additiveType) $json['additiveType'] = json_encode($this->additiveType);
+        if (null !== $this->additiveProductName) $json['additiveProductName'] = json_encode($this->additiveProductName);
+        if (null !== $this->caloricDensity) $json['caloricDensity'] = json_encode($this->caloricDensity);
+        if (null !== $this->routeofAdministration) $json['routeofAdministration'] = json_encode($this->routeofAdministration);
         if (0 < count($this->administration)) {
-            $json['administration'] = array();
+            $json['administration'] = [];
             foreach($this->administration as $administration) {
-                $json['administration'][] = $administration->jsonSerialize();
+                $json['administration'][] = json_encode($administration);
             }
         }
-        if (null !== $this->maxVolumeToDeliver) $json['maxVolumeToDeliver'] = $this->maxVolumeToDeliver->jsonSerialize();
-        if (null !== $this->administrationInstruction) $json['administrationInstruction'] = $this->administrationInstruction->jsonSerialize();
+        if (null !== $this->maxVolumeToDeliver) $json['maxVolumeToDeliver'] = json_encode($this->maxVolumeToDeliver);
+        if (null !== $this->administrationInstruction) $json['administrationInstruction'] = json_encode($this->administrationInstruction);
         return $json;
     }
 

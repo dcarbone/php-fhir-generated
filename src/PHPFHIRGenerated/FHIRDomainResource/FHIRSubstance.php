@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A homogeneous material with a definite composition.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSubstance extends FHIRDomainResource implements JsonSerializable
+class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique identifier for the substance.
@@ -121,7 +120,7 @@ class FHIRSubstance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Unique identifier for the substance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -141,7 +140,7 @@ class FHIRSubstance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A code that classifies the general type of substance.  This is used  for searching, sorting and display purposes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $category
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
     public function addCategory($category)
@@ -201,7 +200,7 @@ class FHIRSubstance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSubstance\FHIRSubstanceInstance[] $instance
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSubstance\FHIRSubstanceInstance $instance
      * @return $this
      */
     public function addInstance($instance)
@@ -221,7 +220,7 @@ class FHIRSubstance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A substance can be composed of other substances.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient[] $ingredient
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSubstance\FHIRSubstanceIngredient $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)
@@ -254,29 +253,29 @@ class FHIRSubstance extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
         if (0 < count($this->category)) {
-            $json['category'] = array();
+            $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = $category->jsonSerialize();
+                $json['category'][] = json_encode($category);
             }
         }
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->instance)) {
-            $json['instance'] = array();
+            $json['instance'] = [];
             foreach($this->instance as $instance) {
-                $json['instance'][] = $instance->jsonSerialize();
+                $json['instance'][] = json_encode($instance);
             }
         }
         if (0 < count($this->ingredient)) {
-            $json['ingredient'] = array();
+            $json['ingredient'] = [];
             foreach($this->ingredient as $ingredient) {
-                $json['ingredient'][] = $ingredient->jsonSerialize();
+                $json['ingredient'][] = json_encode($ingredient);
             }
         }
         return $json;

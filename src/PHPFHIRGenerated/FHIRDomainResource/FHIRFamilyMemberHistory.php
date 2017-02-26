@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Significant health events and conditions for a person related to the patient relevant in the context of care for the patient.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializable
+class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this family member history record that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -131,7 +130,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The actual or approximate age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
-     * @var \PHPFHIRGenerated\FHIRAge
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $ageQuantity = null;
 
@@ -155,7 +154,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
-     * @var \PHPFHIRGenerated\FHIRAge
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $deceasedQuantity = null;
 
@@ -205,7 +204,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * This records identifiers associated with this family member history record that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -396,7 +395,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The actual or approximate age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
-     * @return \PHPFHIRGenerated\FHIRAge
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAgeQuantity()
     {
@@ -405,7 +404,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The actual or approximate age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
-     * @param \PHPFHIRGenerated\FHIRAge $ageQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $ageQuantity
      * @return $this
      */
     public function setAgeQuantity($ageQuantity)
@@ -476,7 +475,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
-     * @return \PHPFHIRGenerated\FHIRAge
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDeceasedQuantity()
     {
@@ -485,7 +484,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
-     * @param \PHPFHIRGenerated\FHIRAge $deceasedQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $deceasedQuantity
      * @return $this
      */
     public function setDeceasedQuantity($deceasedQuantity)
@@ -585,7 +584,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[] $condition
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition $condition
      * @return $this
      */
     public function addCondition($condition)
@@ -618,33 +617,33 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements JsonSerializ
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->relationship) $json['relationship'] = $this->relationship->jsonSerialize();
-        if (null !== $this->gender) $json['gender'] = $this->gender->jsonSerialize();
-        if (null !== $this->bornPeriod) $json['bornPeriod'] = $this->bornPeriod->jsonSerialize();
-        if (null !== $this->bornDate) $json['bornDate'] = $this->bornDate->jsonSerialize();
-        if (null !== $this->bornString) $json['bornString'] = $this->bornString->jsonSerialize();
-        if (null !== $this->ageQuantity) $json['ageQuantity'] = $this->ageQuantity->jsonSerialize();
-        if (null !== $this->ageRange) $json['ageRange'] = $this->ageRange->jsonSerialize();
-        if (null !== $this->ageString) $json['ageString'] = $this->ageString->jsonSerialize();
-        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = $this->deceasedBoolean->jsonSerialize();
-        if (null !== $this->deceasedQuantity) $json['deceasedQuantity'] = $this->deceasedQuantity->jsonSerialize();
-        if (null !== $this->deceasedRange) $json['deceasedRange'] = $this->deceasedRange->jsonSerialize();
-        if (null !== $this->deceasedDate) $json['deceasedDate'] = $this->deceasedDate->jsonSerialize();
-        if (null !== $this->deceasedString) $json['deceasedString'] = $this->deceasedString->jsonSerialize();
-        if (null !== $this->note) $json['note'] = $this->note->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
+        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
+        if (null !== $this->bornPeriod) $json['bornPeriod'] = json_encode($this->bornPeriod);
+        if (null !== $this->bornDate) $json['bornDate'] = json_encode($this->bornDate);
+        if (null !== $this->bornString) $json['bornString'] = json_encode($this->bornString);
+        if (null !== $this->ageQuantity) $json['ageQuantity'] = json_encode($this->ageQuantity);
+        if (null !== $this->ageRange) $json['ageRange'] = json_encode($this->ageRange);
+        if (null !== $this->ageString) $json['ageString'] = json_encode($this->ageString);
+        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = json_encode($this->deceasedBoolean);
+        if (null !== $this->deceasedQuantity) $json['deceasedQuantity'] = json_encode($this->deceasedQuantity);
+        if (null !== $this->deceasedRange) $json['deceasedRange'] = json_encode($this->deceasedRange);
+        if (null !== $this->deceasedDate) $json['deceasedDate'] = json_encode($this->deceasedDate);
+        if (null !== $this->deceasedString) $json['deceasedString'] = json_encode($this->deceasedString);
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
         if (0 < count($this->condition)) {
-            $json['condition'] = array();
+            $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = $condition->jsonSerialize();
+                $json['condition'][] = json_encode($condition);
             }
         }
         return $json;

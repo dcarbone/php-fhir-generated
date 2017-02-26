@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
+class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Date and Time the study started.
@@ -261,7 +260,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Other identifiers for the study.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -281,7 +280,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of the diagnostic orders that resulted in this imaging study being performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $order
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $order
      * @return $this
      */
     public function addOrder($order)
@@ -301,7 +300,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $modalityList
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $modalityList
      * @return $this
      */
     public function addModalityList($modalityList)
@@ -421,7 +420,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Type of procedure performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $procedure
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $procedure
      * @return $this
      */
     public function addProcedure($procedure)
@@ -481,7 +480,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Each study has one or more series of images or other content.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries[] $series
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries $series
      * @return $this
      */
     public function addSeries($series)
@@ -513,45 +512,45 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->started) $json['started'] = $this->started->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->accession) $json['accession'] = $this->accession->jsonSerialize();
+        if (null !== $this->started) $json['started'] = json_encode($this->started);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->accession) $json['accession'] = json_encode($this->accession);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
         if (0 < count($this->order)) {
-            $json['order'] = array();
+            $json['order'] = [];
             foreach($this->order as $order) {
-                $json['order'][] = $order->jsonSerialize();
+                $json['order'][] = json_encode($order);
             }
         }
         if (0 < count($this->modalityList)) {
-            $json['modalityList'] = array();
+            $json['modalityList'] = [];
             foreach($this->modalityList as $modalityList) {
-                $json['modalityList'][] = $modalityList->jsonSerialize();
+                $json['modalityList'][] = json_encode($modalityList);
             }
         }
-        if (null !== $this->referrer) $json['referrer'] = $this->referrer->jsonSerialize();
-        if (null !== $this->availability) $json['availability'] = $this->availability->jsonSerialize();
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->numberOfSeries) $json['numberOfSeries'] = $this->numberOfSeries->jsonSerialize();
-        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = $this->numberOfInstances->jsonSerialize();
+        if (null !== $this->referrer) $json['referrer'] = json_encode($this->referrer);
+        if (null !== $this->availability) $json['availability'] = json_encode($this->availability);
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->numberOfSeries) $json['numberOfSeries'] = json_encode($this->numberOfSeries);
+        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = json_encode($this->numberOfInstances);
         if (0 < count($this->procedure)) {
-            $json['procedure'] = array();
+            $json['procedure'] = [];
             foreach($this->procedure as $procedure) {
-                $json['procedure'][] = $procedure->jsonSerialize();
+                $json['procedure'][] = json_encode($procedure);
             }
         }
-        if (null !== $this->interpreter) $json['interpreter'] = $this->interpreter->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->interpreter) $json['interpreter'] = json_encode($this->interpreter);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->series)) {
-            $json['series'] = array();
+            $json['series'] = [];
             foreach($this->series as $series) {
-                $json['series'][] = $series->jsonSerialize();
+                $json['series'][] = json_encode($series);
             }
         }
         return $json;

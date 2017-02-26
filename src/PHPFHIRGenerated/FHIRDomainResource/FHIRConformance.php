@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRConformance extends FHIRDomainResource implements JsonSerializable
+class FHIRConformance extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this conformance statement when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this conformance statement is (or will be) published.
@@ -331,7 +330,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -531,7 +530,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of the formats supported by this implementation using their content types.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $format
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $format
      * @return $this
      */
     public function addFormat($format)
@@ -551,7 +550,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles]{profiling.html#profile-uses}.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $profile
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -571,7 +570,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A definition of the restful capabilities of the solution, if any.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceRest[] $rest
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceRest $rest
      * @return $this
      */
     public function addRest($rest)
@@ -591,7 +590,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A description of the messaging capabilities of the solution.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceMessaging[] $messaging
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceMessaging $messaging
      * @return $this
      */
     public function addMessaging($messaging)
@@ -611,7 +610,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A document definition.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceDocument[] $document
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceDocument $document
      * @return $this
      */
     public function addDocument($document)
@@ -643,55 +642,55 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->kind) $json['kind'] = $this->kind->jsonSerialize();
-        if (null !== $this->software) $json['software'] = $this->software->jsonSerialize();
-        if (null !== $this->implementation) $json['implementation'] = $this->implementation->jsonSerialize();
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion->jsonSerialize();
-        if (null !== $this->acceptUnknown) $json['acceptUnknown'] = $this->acceptUnknown->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
+        if (null !== $this->software) $json['software'] = json_encode($this->software);
+        if (null !== $this->implementation) $json['implementation'] = json_encode($this->implementation);
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
+        if (null !== $this->acceptUnknown) $json['acceptUnknown'] = json_encode($this->acceptUnknown);
         if (0 < count($this->format)) {
-            $json['format'] = array();
+            $json['format'] = [];
             foreach($this->format as $format) {
-                $json['format'][] = $format->jsonSerialize();
+                $json['format'][] = json_encode($format);
             }
         }
         if (0 < count($this->profile)) {
-            $json['profile'] = array();
+            $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = $profile->jsonSerialize();
+                $json['profile'][] = json_encode($profile);
             }
         }
         if (0 < count($this->rest)) {
-            $json['rest'] = array();
+            $json['rest'] = [];
             foreach($this->rest as $rest) {
-                $json['rest'][] = $rest->jsonSerialize();
+                $json['rest'][] = json_encode($rest);
             }
         }
         if (0 < count($this->messaging)) {
-            $json['messaging'] = array();
+            $json['messaging'] = [];
             foreach($this->messaging as $messaging) {
-                $json['messaging'][] = $messaging->jsonSerialize();
+                $json['messaging'][] = json_encode($messaging);
             }
         }
         if (0 < count($this->document)) {
-            $json['document'] = array();
+            $json['document'] = [];
             foreach($this->document as $document) {
-                $json['document'][] = $document->jsonSerialize();
+                $json['document'][] = json_encode($document);
             }
         }
         return $json;

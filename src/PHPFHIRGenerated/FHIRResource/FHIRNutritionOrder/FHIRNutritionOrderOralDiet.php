@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
  */
-class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements JsonSerializable
+class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
@@ -120,7 +119,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -140,7 +139,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The time period and frequency at which the diet should be given.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming[] $schedule
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $schedule
      * @return $this
      */
     public function addSchedule($schedule)
@@ -160,7 +159,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements JsonSeri
 
     /**
      * Class that defines the quantity and type of nutrient modifications required for the oral diet.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient[] $nutrient
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderNutrient $nutrient
      * @return $this
      */
     public function addNutrient($nutrient)
@@ -180,7 +179,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements JsonSeri
 
     /**
      * Class that describes any texture modifications required for the patient to safely consume various types of solid foods.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture[] $texture
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRNutritionOrder\FHIRNutritionOrderTexture $texture
      * @return $this
      */
     public function addTexture($texture)
@@ -200,7 +199,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $fluidConsistencyType
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $fluidConsistencyType
      * @return $this
      */
     public function addFluidConsistencyType($fluidConsistencyType)
@@ -252,36 +251,36 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements JsonSeri
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
         if (0 < count($this->schedule)) {
-            $json['schedule'] = array();
+            $json['schedule'] = [];
             foreach($this->schedule as $schedule) {
-                $json['schedule'][] = $schedule->jsonSerialize();
+                $json['schedule'][] = json_encode($schedule);
             }
         }
         if (0 < count($this->nutrient)) {
-            $json['nutrient'] = array();
+            $json['nutrient'] = [];
             foreach($this->nutrient as $nutrient) {
-                $json['nutrient'][] = $nutrient->jsonSerialize();
+                $json['nutrient'][] = json_encode($nutrient);
             }
         }
         if (0 < count($this->texture)) {
-            $json['texture'] = array();
+            $json['texture'] = [];
             foreach($this->texture as $texture) {
-                $json['texture'][] = $texture->jsonSerialize();
+                $json['texture'][] = json_encode($texture);
             }
         }
         if (0 < count($this->fluidConsistencyType)) {
-            $json['fluidConsistencyType'] = array();
+            $json['fluidConsistencyType'] = [];
             foreach($this->fluidConsistencyType as $fluidConsistencyType) {
-                $json['fluidConsistencyType'][] = $fluidConsistencyType->jsonSerialize();
+                $json['fluidConsistencyType'][] = json_encode($fluidConsistencyType);
             }
         }
-        if (null !== $this->instruction) $json['instruction'] = $this->instruction->jsonSerialize();
+        if (null !== $this->instruction) $json['instruction'] = json_encode($this->instruction);
         return $json;
     }
 

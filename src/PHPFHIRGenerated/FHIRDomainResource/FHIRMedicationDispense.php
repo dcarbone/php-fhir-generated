@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Indicates that a medication product is to be or has been dispensed for a named person/patient.  This includes a description of the medication product (supply) provided and the instructions for administering the medication.  The medication dispense is the result of a pharmacy system responding to a medication order.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializable
+class FHIRMedicationDispense extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier assigned by the dispensing facility - this is an identifier assigned outside FHIR.
@@ -107,13 +106,13 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * The amount of medication that has been dispensed. Includes unit of measure.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $quantity = null;
 
     /**
      * The amount of medication expressed as a timing amount.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $daysSupply = null;
 
@@ -267,7 +266,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * Indicates the medication order that is being dispensed against.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $authorizingPrescription
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $authorizingPrescription
      * @return $this
      */
     public function addAuthorizingPrescription($authorizingPrescription)
@@ -298,7 +297,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * The amount of medication that has been dispensed. Includes unit of measure.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantity()
     {
@@ -307,7 +306,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * The amount of medication that has been dispensed. Includes unit of measure.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -318,7 +317,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * The amount of medication expressed as a timing amount.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getDaysSupply()
     {
@@ -327,7 +326,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * The amount of medication expressed as a timing amount.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $daysSupply
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $daysSupply
      * @return $this
      */
     public function setDaysSupply($daysSupply)
@@ -447,7 +446,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * Identifies the person who picked up the medication.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $receiver
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $receiver
      * @return $this
      */
     public function addReceiver($receiver)
@@ -487,7 +486,7 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
 
     /**
      * Indicates how the medication is to be used by the patient.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseDosageInstruction[] $dosageInstruction
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationDispense\FHIRMedicationDispenseDosageInstruction $dosageInstruction
      * @return $this
      */
     public function addDosageInstruction($dosageInstruction)
@@ -539,38 +538,38 @@ class FHIRMedicationDispense extends FHIRDomainResource implements JsonSerializa
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->dispenser) $json['dispenser'] = $this->dispenser->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->dispenser) $json['dispenser'] = json_encode($this->dispenser);
         if (0 < count($this->authorizingPrescription)) {
-            $json['authorizingPrescription'] = array();
+            $json['authorizingPrescription'] = [];
             foreach($this->authorizingPrescription as $authorizingPrescription) {
-                $json['authorizingPrescription'][] = $authorizingPrescription->jsonSerialize();
+                $json['authorizingPrescription'][] = json_encode($authorizingPrescription);
             }
         }
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->daysSupply) $json['daysSupply'] = $this->daysSupply->jsonSerialize();
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept->jsonSerialize();
-        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference->jsonSerialize();
-        if (null !== $this->whenPrepared) $json['whenPrepared'] = $this->whenPrepared->jsonSerialize();
-        if (null !== $this->whenHandedOver) $json['whenHandedOver'] = $this->whenHandedOver->jsonSerialize();
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->daysSupply) $json['daysSupply'] = json_encode($this->daysSupply);
+        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
+        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
+        if (null !== $this->whenPrepared) $json['whenPrepared'] = json_encode($this->whenPrepared);
+        if (null !== $this->whenHandedOver) $json['whenHandedOver'] = json_encode($this->whenHandedOver);
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
         if (0 < count($this->receiver)) {
-            $json['receiver'] = array();
+            $json['receiver'] = [];
             foreach($this->receiver as $receiver) {
-                $json['receiver'][] = $receiver->jsonSerialize();
+                $json['receiver'][] = json_encode($receiver);
             }
         }
-        if (null !== $this->note) $json['note'] = $this->note->jsonSerialize();
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
         if (0 < count($this->dosageInstruction)) {
-            $json['dosageInstruction'] = array();
+            $json['dosageInstruction'] = [];
             foreach($this->dosageInstruction as $dosageInstruction) {
-                $json['dosageInstruction'][] = $dosageInstruction->jsonSerialize();
+                $json['dosageInstruction'][] = json_encode($dosageInstruction);
             }
         }
-        if (null !== $this->substitution) $json['substitution'] = $this->substitution->jsonSerialize();
+        if (null !== $this->substitution) $json['substitution'] = json_encode($this->substitution);
         return $json;
     }
 

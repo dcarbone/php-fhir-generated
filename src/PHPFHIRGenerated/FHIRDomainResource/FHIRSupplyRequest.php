@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of a request for a medication, substance or device used in the healthcare setting.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSupplyRequest extends FHIRDomainResource implements JsonSerializable
+class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A link to a resource representing the person whom the ordered item is for.
@@ -291,7 +290,7 @@ class FHIRSupplyRequest extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Who is intended to fulfill the request.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $supplier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supplier
      * @return $this
      */
     public function addSupplier($supplier)
@@ -383,22 +382,22 @@ class FHIRSupplyRequest extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->kind) $json['kind'] = $this->kind->jsonSerialize();
-        if (null !== $this->orderedItem) $json['orderedItem'] = $this->orderedItem->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
+        if (null !== $this->orderedItem) $json['orderedItem'] = json_encode($this->orderedItem);
         if (0 < count($this->supplier)) {
-            $json['supplier'] = array();
+            $json['supplier'] = [];
             foreach($this->supplier as $supplier) {
-                $json['supplier'][] = $supplier->jsonSerialize();
+                $json['supplier'][] = json_encode($supplier);
             }
         }
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept->jsonSerialize();
-        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference->jsonSerialize();
-        if (null !== $this->when) $json['when'] = $this->when->jsonSerialize();
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
+        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
+        if (null !== $this->when) $json['when'] = json_encode($this->when);
         return $json;
     }
 
