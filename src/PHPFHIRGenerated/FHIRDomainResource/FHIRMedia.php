@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,14 +61,19 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedia extends FHIRDomainResource implements JsonSerializable
+class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
 {
+    /**
+     * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
+     */
+    public $identifier = array();
+
     /**
      * Whether the media is a photo (still image), an audio recording, or a video recording.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType
@@ -82,10 +87,10 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
     public $subtype = null;
 
     /**
-     * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
+     * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $identifier = array();
+    public $view = null;
 
     /**
      * Who/What this Media is a record of.
@@ -98,12 +103,6 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $operator = null;
-
-    /**
-     * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $view = null;
 
     /**
      * The name of the device / manufacturer of the device  that was used to make the recording.
@@ -147,6 +146,26 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
     private $_fhirElementName = 'Media';
 
     /**
+     * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
+     * @return $this
+     */
+    public function addIdentifier($identifier)
+    {
+        $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
      * Whether the media is a photo (still image), an audio recording, or a video recording.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDigitalMediaType
      */
@@ -187,22 +206,22 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
+     * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getIdentifier()
+    public function getView()
     {
-        return $this->identifier;
+        return $this->view;
     }
 
     /**
-     * Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $view
      * @return $this
      */
-    public function addIdentifier($identifier)
+    public function setView($view)
     {
-        $this->identifier[] = $identifier;
+        $this->view = $view;
         return $this;
     }
 
@@ -243,26 +262,6 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
     public function setOperator($operator)
     {
         $this->operator = $operator;
-        return $this;
-    }
-
-    /**
-     * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getView()
-    {
-        return $this->view;
-    }
-
-    /**
-     * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $view
-     * @return $this
-     */
-    public function setView($view)
-    {
-        $this->view = $view;
         return $this;
     }
 
@@ -409,23 +408,23 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->subtype) $json['subtype'] = $this->subtype->jsonSerialize();
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->operator) $json['operator'] = $this->operator->jsonSerialize();
-        if (null !== $this->view) $json['view'] = $this->view->jsonSerialize();
-        if (null !== $this->deviceName) $json['deviceName'] = $this->deviceName->jsonSerialize();
-        if (null !== $this->height) $json['height'] = $this->height->jsonSerialize();
-        if (null !== $this->width) $json['width'] = $this->width->jsonSerialize();
-        if (null !== $this->frames) $json['frames'] = $this->frames->jsonSerialize();
-        if (null !== $this->duration) $json['duration'] = $this->duration->jsonSerialize();
-        if (null !== $this->content) $json['content'] = $this->content->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->subtype) $json['subtype'] = json_encode($this->subtype);
+        if (null !== $this->view) $json['view'] = json_encode($this->view);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->operator) $json['operator'] = json_encode($this->operator);
+        if (null !== $this->deviceName) $json['deviceName'] = json_encode($this->deviceName);
+        if (null !== $this->height) $json['height'] = json_encode($this->height);
+        if (null !== $this->width) $json['width'] = json_encode($this->width);
+        if (null !== $this->frames) $json['frames'] = json_encode($this->frames);
+        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
+        if (null !== $this->content) $json['content'] = json_encode($this->content);
         return $json;
     }
 
@@ -438,16 +437,16 @@ class FHIRMedia extends FHIRDomainResource implements JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Media xmlns="http://hl7.org/fhir"></Media>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->subtype) $this->subtype->xmlSerialize(true, $sxe->addChild('subtype'));
         if (0 < count($this->identifier)) {
             foreach($this->identifier as $identifier) {
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->subtype) $this->subtype->xmlSerialize(true, $sxe->addChild('subtype'));
+        if (null !== $this->view) $this->view->xmlSerialize(true, $sxe->addChild('view'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->operator) $this->operator->xmlSerialize(true, $sxe->addChild('operator'));
-        if (null !== $this->view) $this->view->xmlSerialize(true, $sxe->addChild('view'));
         if (null !== $this->deviceName) $this->deviceName->xmlSerialize(true, $sxe->addChild('deviceName'));
         if (null !== $this->height) $this->height->xmlSerialize(true, $sxe->addChild('height'));
         if (null !== $this->width) $this->width->xmlSerialize(true, $sxe->addChild('width'));

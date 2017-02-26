@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A manifest that defines a set of documents.
  */
-class FHIRDocumentManifestRelated extends FHIRBackboneElement implements JsonSerializable
+class FHIRDocumentManifestRelated extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Related identifier to this DocumentManifest.  For example, Order numbers, accession numbers, XDW workflow numbers.
@@ -75,7 +74,7 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements JsonSer
     public $identifier = null;
 
     /**
-     * Related Resource to this DocumentManifest. For example, Order, DiagnosticOrder,  Procedure, EligibilityRequest, etc.
+     * Related Resource to this DocumentManifest. For example, Order, DiagnosticRequest,  Procedure, EligibilityRequest, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $ref = null;
@@ -106,7 +105,7 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements JsonSer
     }
 
     /**
-     * Related Resource to this DocumentManifest. For example, Order, DiagnosticOrder,  Procedure, EligibilityRequest, etc.
+     * Related Resource to this DocumentManifest. For example, Order, DiagnosticRequest,  Procedure, EligibilityRequest, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getRef()
@@ -115,7 +114,7 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements JsonSer
     }
 
     /**
-     * Related Resource to this DocumentManifest. For example, Order, DiagnosticOrder,  Procedure, EligibilityRequest, etc.
+     * Related Resource to this DocumentManifest. For example, Order, DiagnosticRequest,  Procedure, EligibilityRequest, etc.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $ref
      * @return $this
      */
@@ -147,8 +146,8 @@ class FHIRDocumentManifestRelated extends FHIRBackboneElement implements JsonSer
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->ref) $json['ref'] = $this->ref->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->ref) $json['ref'] = json_encode($this->ref);
         return $json;
     }
 

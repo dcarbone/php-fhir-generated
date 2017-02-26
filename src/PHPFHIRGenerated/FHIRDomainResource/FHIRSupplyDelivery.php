@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Record of delivery of what is supplied.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
+class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier assigned by the dispensing facility when the item(s) is dispensed.
@@ -95,15 +94,21 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a simple attribute carrying a code that identifies the item from a known list.
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $suppliedItemCodeableConcept = null;
+
+    /**
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $suppliedItem = null;
+    public $suppliedItemReference = null;
 
     /**
      * The individual responsible for dispensing the medication, supplier or device.
@@ -222,7 +227,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -231,7 +236,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The amount of supply that has been dispensed. Includes unit of measure.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -241,22 +246,42 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a simple attribute carrying a code that identifies the item from a known list.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getSuppliedItem()
+    public function getSuppliedItemCodeableConcept()
     {
-        return $this->suppliedItem;
+        return $this->suppliedItemCodeableConcept;
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a simple attribute carrying a code that identifies the item from a known list.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $suppliedItem
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $suppliedItemCodeableConcept
      * @return $this
      */
-    public function setSuppliedItem($suppliedItem)
+    public function setSuppliedItemCodeableConcept($suppliedItemCodeableConcept)
     {
-        $this->suppliedItem = $suppliedItem;
+        $this->suppliedItemCodeableConcept = $suppliedItemCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getSuppliedItemReference()
+    {
+        return $this->suppliedItemReference;
+    }
+
+    /**
+     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $suppliedItemReference
+     * @return $this
+     */
+    public function setSuppliedItemReference($suppliedItemReference)
+    {
+        $this->suppliedItemReference = $suppliedItemReference;
         return $this;
     }
 
@@ -351,7 +376,7 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifies the person who picked up the Supply.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $receiver
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $receiver
      * @return $this
      */
     public function addReceiver($receiver)
@@ -383,20 +408,21 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->suppliedItem) $json['suppliedItem'] = $this->suppliedItem->jsonSerialize();
-        if (null !== $this->supplier) $json['supplier'] = $this->supplier->jsonSerialize();
-        if (null !== $this->whenPrepared) $json['whenPrepared'] = $this->whenPrepared->jsonSerialize();
-        if (null !== $this->time) $json['time'] = $this->time->jsonSerialize();
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->suppliedItemCodeableConcept) $json['suppliedItemCodeableConcept'] = json_encode($this->suppliedItemCodeableConcept);
+        if (null !== $this->suppliedItemReference) $json['suppliedItemReference'] = json_encode($this->suppliedItemReference);
+        if (null !== $this->supplier) $json['supplier'] = json_encode($this->supplier);
+        if (null !== $this->whenPrepared) $json['whenPrepared'] = json_encode($this->whenPrepared);
+        if (null !== $this->time) $json['time'] = json_encode($this->time);
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
         if (0 < count($this->receiver)) {
-            $json['receiver'] = array();
+            $json['receiver'] = [];
             foreach($this->receiver as $receiver) {
-                $json['receiver'][] = $receiver->jsonSerialize();
+                $json['receiver'][] = json_encode($receiver);
             }
         }
         return $json;
@@ -416,7 +442,8 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements JsonSerializable
         if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
-        if (null !== $this->suppliedItem) $this->suppliedItem->xmlSerialize(true, $sxe->addChild('suppliedItem'));
+        if (null !== $this->suppliedItemCodeableConcept) $this->suppliedItemCodeableConcept->xmlSerialize(true, $sxe->addChild('suppliedItemCodeableConcept'));
+        if (null !== $this->suppliedItemReference) $this->suppliedItemReference->xmlSerialize(true, $sxe->addChild('suppliedItemReference'));
         if (null !== $this->supplier) $this->supplier->xmlSerialize(true, $sxe->addChild('supplier'));
         if (null !== $this->whenPrepared) $this->whenPrepared->xmlSerialize(true, $sxe->addChild('whenPrepared'));
         if (null !== $this->time) $this->time->xmlSerialize(true, $sxe->addChild('time'));

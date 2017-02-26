@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRCodeableConcept extends FHIRElement implements JsonSerializable
+class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
 {
     /**
      * A reference to a code defined by a terminology system.
@@ -97,7 +96,7 @@ class FHIRCodeableConcept extends FHIRElement implements JsonSerializable
 
     /**
      * A reference to a code defined by a terminology system.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $coding
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $coding
      * @return $this
      */
     public function addCoding($coding)
@@ -149,12 +148,12 @@ class FHIRCodeableConcept extends FHIRElement implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->coding)) {
-            $json['coding'] = array();
+            $json['coding'] = [];
             foreach($this->coding as $coding) {
-                $json['coding'][] = $coding->jsonSerialize();
+                $json['coding'][] = json_encode($coding);
             }
         }
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         return $json;
     }
 

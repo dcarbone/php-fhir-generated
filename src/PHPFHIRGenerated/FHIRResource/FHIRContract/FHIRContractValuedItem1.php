@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal agreement between parties regarding the conduct of business, exchange of information or other matters.
  */
-class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSerializable
+class FHIRContractValuedItem1 extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Specific type of Contract Provision Valued Item that may be priced. (choose any one of entity*, but only one)
@@ -94,13 +93,13 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Specifies the units by which the Contract Provision Valued Item is measured or counted, and quantifies the countable or measurable Contract Term Valued Item instances.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * A Contract Provision Valued Item unit valuation measure.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $unitPrice = null;
 
@@ -118,7 +117,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Expresses the product of the Contract Provision Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $net = null;
 
@@ -209,7 +208,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Specifies the units by which the Contract Provision Valued Item is measured or counted, and quantifies the countable or measurable Contract Term Valued Item instances.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -218,7 +217,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Specifies the units by which the Contract Provision Valued Item is measured or counted, and quantifies the countable or measurable Contract Term Valued Item instances.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -229,7 +228,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * A Contract Provision Valued Item unit valuation measure.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -238,7 +237,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * A Contract Provision Valued Item unit valuation measure.
-     * @param \PHPFHIRGenerated\FHIRMoney $unitPrice
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -289,7 +288,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Expresses the product of the Contract Provision Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getNet()
     {
@@ -298,7 +297,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Expresses the product of the Contract Provision Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @param \PHPFHIRGenerated\FHIRMoney $net
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $net
      * @return $this
      */
     public function setNet($net)
@@ -329,15 +328,15 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->entityCodeableConcept) $json['entityCodeableConcept'] = $this->entityCodeableConcept->jsonSerialize();
-        if (null !== $this->entityReference) $json['entityReference'] = $this->entityReference->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->effectiveTime) $json['effectiveTime'] = $this->effectiveTime->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice->jsonSerialize();
-        if (null !== $this->factor) $json['factor'] = $this->factor->jsonSerialize();
-        if (null !== $this->points) $json['points'] = $this->points->jsonSerialize();
-        if (null !== $this->net) $json['net'] = $this->net->jsonSerialize();
+        if (null !== $this->entityCodeableConcept) $json['entityCodeableConcept'] = json_encode($this->entityCodeableConcept);
+        if (null !== $this->entityReference) $json['entityReference'] = json_encode($this->entityReference);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->effectiveTime) $json['effectiveTime'] = json_encode($this->effectiveTime);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
+        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
+        if (null !== $this->points) $json['points'] = json_encode($this->points);
+        if (null !== $this->net) $json['net'] = json_encode($this->net);
         return $json;
     }
 

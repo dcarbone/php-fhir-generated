@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,23 +61,22 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a "System" used within the Identifier and Coding data types.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
+class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * The descriptive name of this particular identifier type or code system.
+     * A natural language name identifying the naming system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
-     * Indicates whether the naming system is "ready for use" or not.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this naming system. Enables tracking the life-cycle of the content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
@@ -88,14 +87,20 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     public $kind = null;
 
     /**
+     * The date  (and optionally time) when the naming system was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $date = null;
+
+    /**
      * The name of the individual or organization that published the naming system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $publisher = null;
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public $contact = array();
 
@@ -106,28 +111,28 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     public $responsible = null;
 
     /**
-     * The date  (and optionally time) when the system was registered or published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the registration changes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $date = null;
-
-    /**
      * Categorizes a naming system for easier search by grouping related naming systems.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * Details about what the namespace identifies including scope, granularity, version labeling, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the naming system from the consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of naming systems.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
+
+    /**
+     * A jurisdiction in which the naming system is intended to be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $jurisdiction = array();
 
     /**
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
@@ -153,7 +158,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     private $_fhirElementName = 'NamingSystem';
 
     /**
-     * The descriptive name of this particular identifier type or code system.
+     * A natural language name identifying the naming system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -162,7 +167,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The descriptive name of this particular identifier type or code system.
+     * A natural language name identifying the naming system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
@@ -173,8 +178,8 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Indicates whether the naming system is "ready for use" or not.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this naming system. Enables tracking the life-cycle of the content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -182,8 +187,8 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Indicates whether the naming system is "ready for use" or not.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * The status of this naming system. Enables tracking the life-cycle of the content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -213,6 +218,26 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
+     * The date  (and optionally time) when the naming system was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * The date  (and optionally time) when the naming system was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
      * The name of the individual or organization that published the naming system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -233,8 +258,8 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -242,8 +267,8 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemContact[] $contact
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -273,26 +298,6 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the system was registered or published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the registration changes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * The date  (and optionally time) when the system was registered or published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the registration changes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
      * Categorizes a naming system for easier search by grouping related naming systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
@@ -313,8 +318,8 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Details about what the namespace identifies including scope, granularity, version labeling, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the naming system from the consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -322,8 +327,8 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Details about what the namespace identifies including scope, granularity, version labeling, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * A free text natural language description of the naming system from the consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -333,8 +338,8 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of naming systems.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -342,13 +347,33 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of naming systems.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
     {
         $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * A jurisdiction in which the naming system is intended to be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getJurisdiction()
+    {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * A jurisdiction in which the naming system is intended to be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @return $this
+     */
+    public function addJurisdiction($jurisdiction)
+    {
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
@@ -383,7 +408,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates how the system may be identified when referenced in electronic exchange.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId[] $uniqueId
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId $uniqueId
      * @return $this
      */
     public function addUniqueId($uniqueId)
@@ -435,34 +460,40 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->kind) $json['kind'] = $this->kind->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->responsible) $json['responsible'] = $this->responsible->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->responsible) $json['responsible'] = json_encode($this->responsible);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->usage) $json['usage'] = $this->usage->jsonSerialize();
+        if (0 < count($this->jurisdiction)) {
+            $json['jurisdiction'] = [];
+            foreach($this->jurisdiction as $jurisdiction) {
+                $json['jurisdiction'][] = json_encode($jurisdiction);
+            }
+        }
+        if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
         if (0 < count($this->uniqueId)) {
-            $json['uniqueId'] = array();
+            $json['uniqueId'] = [];
             foreach($this->uniqueId as $uniqueId) {
-                $json['uniqueId'][] = $uniqueId->jsonSerialize();
+                $json['uniqueId'][] = json_encode($uniqueId);
             }
         }
-        if (null !== $this->replacedBy) $json['replacedBy'] = $this->replacedBy->jsonSerialize();
+        if (null !== $this->replacedBy) $json['replacedBy'] = json_encode($this->replacedBy);
         return $json;
     }
 
@@ -478,6 +509,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
+        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
@@ -485,12 +517,16 @@ class FHIRNamingSystem extends FHIRDomainResource implements JsonSerializable
             }
         }
         if (null !== $this->responsible) $this->responsible->xmlSerialize(true, $sxe->addChild('responsible'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
+            }
+        }
+        if (0 < count($this->jurisdiction)) {
+            foreach($this->jurisdiction as $jurisdiction) {
+                $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
         if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));

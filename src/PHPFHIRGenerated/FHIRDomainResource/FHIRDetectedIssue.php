@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, Ineffective treatment frequency, Procedure-condition conflict, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDetectedIssue extends FHIRDomainResource implements JsonSerializable
+class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Indicates the patient whose record the detected issue is associated with.
@@ -205,7 +204,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates the resource representing the current activity or proposed activity that is potentially problematic.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $implicated
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $implicated
      * @return $this
      */
     public function addImplicated($implicated)
@@ -325,7 +324,7 @@ class FHIRDetectedIssue extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates an action that has been taken or is committed to to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation[] $mitigation
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDetectedIssue\FHIRDetectedIssueMitigation $mitigation
      * @return $this
      */
     public function addMitigation($mitigation)
@@ -357,24 +356,24 @@ class FHIRDetectedIssue extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->severity) $json['severity'] = $this->severity->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
         if (0 < count($this->implicated)) {
-            $json['implicated'] = array();
+            $json['implicated'] = [];
             foreach($this->implicated as $implicated) {
-                $json['implicated'][] = $implicated->jsonSerialize();
+                $json['implicated'][] = json_encode($implicated);
             }
         }
-        if (null !== $this->detail) $json['detail'] = $this->detail->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->author) $json['author'] = $this->author->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->reference) $json['reference'] = $this->reference->jsonSerialize();
+        if (null !== $this->detail) $json['detail'] = json_encode($this->detail);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->author) $json['author'] = json_encode($this->author);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
         if (0 < count($this->mitigation)) {
-            $json['mitigation'] = array();
+            $json['mitigation'] = [];
             foreach($this->mitigation as $mitigation) {
-                $json['mitigation'][] = $mitigation->jsonSerialize();
+                $json['mitigation'][] = json_encode($mitigation);
             }
         }
         return $json;

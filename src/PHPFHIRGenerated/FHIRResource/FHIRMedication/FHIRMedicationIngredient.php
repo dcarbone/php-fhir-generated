@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,21 +61,26 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
  */
-class FHIRMedicationIngredient extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $item = null;
+    public $itemCodeableConcept = null;
 
     /**
-     * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.
+     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $itemReference = null;
+
+    /**
+     * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $amount = null;
@@ -86,27 +91,47 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements JsonSerial
     private $_fhirElementName = 'Medication.Ingredient';
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getItem()
+    public function getItemCodeableConcept()
     {
-        return $this->item;
+        return $this->itemCodeableConcept;
     }
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $item
+     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
-    public function setItem($item)
+    public function setItemCodeableConcept($itemCodeableConcept)
     {
-        $this->item = $item;
+        $this->itemCodeableConcept = $itemCodeableConcept;
         return $this;
     }
 
     /**
-     * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.
+     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getItemReference()
+    {
+        return $this->itemReference;
+    }
+
+    /**
+     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $itemReference
+     * @return $this
+     */
+    public function setItemReference($itemReference)
+    {
+        $this->itemReference = $itemReference;
+        return $this;
+    }
+
+    /**
+     * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getAmount()
@@ -115,7 +140,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
-     * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.
+     * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $amount
      * @return $this
      */
@@ -147,8 +172,9 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->item) $json['item'] = $this->item->jsonSerialize();
-        if (null !== $this->amount) $json['amount'] = $this->amount->jsonSerialize();
+        if (null !== $this->itemCodeableConcept) $json['itemCodeableConcept'] = json_encode($this->itemCodeableConcept);
+        if (null !== $this->itemReference) $json['itemReference'] = json_encode($this->itemReference);
+        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
         return $json;
     }
 
@@ -161,7 +187,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements JsonSerial
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationIngredient xmlns="http://hl7.org/fhir"></MedicationIngredient>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->item) $this->item->xmlSerialize(true, $sxe->addChild('item'));
+        if (null !== $this->itemCodeableConcept) $this->itemCodeableConcept->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
+        if (null !== $this->itemReference) $this->itemReference->xmlSerialize(true, $sxe->addChild('itemReference'));
         if (null !== $this->amount) $this->amount->xmlSerialize(true, $sxe->addChild('amount'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,19 +61,24 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A sample to be used for analysis.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
+class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Id for specimen.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public $accessionIdentifier = null;
 
     /**
      * The availability of the specimen.
@@ -88,28 +93,28 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
     public $type = null;
 
     /**
-     * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $parent = array();
-
-    /**
      * Where the specimen came from. This may be from the patient(s) or from the environment or a device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $subject = null;
 
     /**
-     * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public $accessionIdentifier = null;
-
-    /**
      * Time when specimen was received for processing or testing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $receivedTime = null;
+
+    /**
+     * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $parent = array();
+
+    /**
+     * Details concerning a test or procedure request that required a specimen to be collected.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $request = array();
 
     /**
      * Details concerning the specimen collection.
@@ -130,6 +135,12 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
     public $container = array();
 
     /**
+     * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public $note = array();
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'Specimen';
@@ -145,12 +156,32 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Id for specimen.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getAccessionIdentifier()
+    {
+        return $this->accessionIdentifier;
+    }
+
+    /**
+     * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $accessionIdentifier
+     * @return $this
+     */
+    public function setAccessionIdentifier($accessionIdentifier)
+    {
+        $this->accessionIdentifier = $accessionIdentifier;
         return $this;
     }
 
@@ -195,26 +226,6 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-    /**
-     * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $parent
-     * @return $this
-     */
-    public function addParent($parent)
-    {
-        $this->parent[] = $parent;
-        return $this;
-    }
-
-    /**
      * Where the specimen came from. This may be from the patient(s) or from the environment or a device.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -235,26 +246,6 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public function getAccessionIdentifier()
-    {
-        return $this->accessionIdentifier;
-    }
-
-    /**
-     * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $accessionIdentifier
-     * @return $this
-     */
-    public function setAccessionIdentifier($accessionIdentifier)
-    {
-        $this->accessionIdentifier = $accessionIdentifier;
-        return $this;
-    }
-
-    /**
      * Time when specimen was received for processing or testing.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
@@ -271,6 +262,46 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
     public function setReceivedTime($receivedTime)
     {
         $this->receivedTime = $receivedTime;
+        return $this;
+    }
+
+    /**
+     * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Reference to the parent (source) specimen which is used when the specimen was either derived from or a component of another specimen.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $parent
+     * @return $this
+     */
+    public function addParent($parent)
+    {
+        $this->parent[] = $parent;
+        return $this;
+    }
+
+    /**
+     * Details concerning a test or procedure request that required a specimen to be collected.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * Details concerning a test or procedure request that required a specimen to be collected.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
+     * @return $this
+     */
+    public function addRequest($request)
+    {
+        $this->request[] = $request;
         return $this;
     }
 
@@ -305,7 +336,7 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Details concerning treatment and processing steps for the specimen.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenTreatment[] $treatment
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenTreatment $treatment
      * @return $this
      */
     public function addTreatment($treatment)
@@ -325,12 +356,32 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer[] $container
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenContainer $container
      * @return $this
      */
     public function addContainer($container)
     {
         $this->container[] = $container;
+        return $this;
+    }
+
+    /**
+     * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
+     * @return $this
+     */
+    public function addNote($note)
+    {
+        $this->note[] = $note;
         return $this;
     }
 
@@ -358,33 +409,45 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
+        if (null !== $this->accessionIdentifier) $json['accessionIdentifier'] = json_encode($this->accessionIdentifier);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->receivedTime) $json['receivedTime'] = json_encode($this->receivedTime);
         if (0 < count($this->parent)) {
-            $json['parent'] = array();
+            $json['parent'] = [];
             foreach($this->parent as $parent) {
-                $json['parent'][] = $parent->jsonSerialize();
+                $json['parent'][] = json_encode($parent);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->accessionIdentifier) $json['accessionIdentifier'] = $this->accessionIdentifier->jsonSerialize();
-        if (null !== $this->receivedTime) $json['receivedTime'] = $this->receivedTime->jsonSerialize();
-        if (null !== $this->collection) $json['collection'] = $this->collection->jsonSerialize();
+        if (0 < count($this->request)) {
+            $json['request'] = [];
+            foreach($this->request as $request) {
+                $json['request'][] = json_encode($request);
+            }
+        }
+        if (null !== $this->collection) $json['collection'] = json_encode($this->collection);
         if (0 < count($this->treatment)) {
-            $json['treatment'] = array();
+            $json['treatment'] = [];
             foreach($this->treatment as $treatment) {
-                $json['treatment'][] = $treatment->jsonSerialize();
+                $json['treatment'][] = json_encode($treatment);
             }
         }
         if (0 < count($this->container)) {
-            $json['container'] = array();
+            $json['container'] = [];
             foreach($this->container as $container) {
-                $json['container'][] = $container->jsonSerialize();
+                $json['container'][] = json_encode($container);
+            }
+        }
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
             }
         }
         return $json;
@@ -404,16 +467,21 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->accessionIdentifier) $this->accessionIdentifier->xmlSerialize(true, $sxe->addChild('accessionIdentifier'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->receivedTime) $this->receivedTime->xmlSerialize(true, $sxe->addChild('receivedTime'));
         if (0 < count($this->parent)) {
             foreach($this->parent as $parent) {
                 $parent->xmlSerialize(true, $sxe->addChild('parent'));
             }
         }
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->accessionIdentifier) $this->accessionIdentifier->xmlSerialize(true, $sxe->addChild('accessionIdentifier'));
-        if (null !== $this->receivedTime) $this->receivedTime->xmlSerialize(true, $sxe->addChild('receivedTime'));
+        if (0 < count($this->request)) {
+            foreach($this->request as $request) {
+                $request->xmlSerialize(true, $sxe->addChild('request'));
+            }
+        }
         if (null !== $this->collection) $this->collection->xmlSerialize(true, $sxe->addChild('collection'));
         if (0 < count($this->treatment)) {
             foreach($this->treatment as $treatment) {
@@ -423,6 +491,11 @@ class FHIRSpecimen extends FHIRDomainResource implements JsonSerializable
         if (0 < count($this->container)) {
             foreach($this->container as $container) {
                 $container->xmlSerialize(true, $sxe->addChild('container'));
+            }
+        }
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
             }
         }
         if ($returnSXE) return $sxe;

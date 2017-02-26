@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,22 +61,21 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An authorization for the supply of glasses and/or contact lenses to a patient.
  */
-class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements JsonSerializable
+class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the type of vision correction product which is required for the patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $product = null;
 
     /**
      * The eye for which the lens applies.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $eye = null;
 
@@ -106,7 +105,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRVisionBase
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $base = null;
 
@@ -136,7 +135,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The recommended maximum wear period for the lens.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $duration = null;
 
@@ -156,7 +155,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
      * Notes for special requirements such as coatings and lens materials.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $notes = null;
+    public $note = null;
 
     /**
      * @var string
@@ -165,7 +164,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * Identifies the type of vision correction product which is required for the patient.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getProduct()
     {
@@ -174,7 +173,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * Identifies the type of vision correction product which is required for the patient.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $product
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $product
      * @return $this
      */
     public function setProduct($product)
@@ -185,7 +184,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The eye for which the lens applies.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getEye()
     {
@@ -194,7 +193,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The eye for which the lens applies.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes $eye
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $eye
      * @return $this
      */
     public function setEye($eye)
@@ -285,7 +284,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRVisionBase
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getBase()
     {
@@ -294,7 +293,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRVisionBase $base
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $base
      * @return $this
      */
     public function setBase($base)
@@ -385,7 +384,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The recommended maximum wear period for the lens.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getDuration()
     {
@@ -394,7 +393,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
 
     /**
      * The recommended maximum wear period for the lens.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $duration
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $duration
      * @return $this
      */
     public function setDuration($duration)
@@ -447,19 +446,19 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
      * Notes for special requirements such as coatings and lens materials.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getNotes()
+    public function getNote()
     {
-        return $this->notes;
+        return $this->note;
     }
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $notes
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $note
      * @return $this
      */
-    public function setNotes($notes)
+    public function setNote($note)
     {
-        $this->notes = $notes;
+        $this->note = $note;
         return $this;
     }
 
@@ -485,21 +484,21 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->product) $json['product'] = $this->product->jsonSerialize();
-        if (null !== $this->eye) $json['eye'] = $this->eye->jsonSerialize();
-        if (null !== $this->sphere) $json['sphere'] = $this->sphere->jsonSerialize();
-        if (null !== $this->cylinder) $json['cylinder'] = $this->cylinder->jsonSerialize();
-        if (null !== $this->axis) $json['axis'] = $this->axis->jsonSerialize();
-        if (null !== $this->prism) $json['prism'] = $this->prism->jsonSerialize();
-        if (null !== $this->base) $json['base'] = $this->base->jsonSerialize();
-        if (null !== $this->add) $json['add'] = $this->add->jsonSerialize();
-        if (null !== $this->power) $json['power'] = $this->power->jsonSerialize();
-        if (null !== $this->backCurve) $json['backCurve'] = $this->backCurve->jsonSerialize();
-        if (null !== $this->diameter) $json['diameter'] = $this->diameter->jsonSerialize();
-        if (null !== $this->duration) $json['duration'] = $this->duration->jsonSerialize();
-        if (null !== $this->color) $json['color'] = $this->color->jsonSerialize();
-        if (null !== $this->brand) $json['brand'] = $this->brand->jsonSerialize();
-        if (null !== $this->notes) $json['notes'] = $this->notes->jsonSerialize();
+        if (null !== $this->product) $json['product'] = json_encode($this->product);
+        if (null !== $this->eye) $json['eye'] = json_encode($this->eye);
+        if (null !== $this->sphere) $json['sphere'] = json_encode($this->sphere);
+        if (null !== $this->cylinder) $json['cylinder'] = json_encode($this->cylinder);
+        if (null !== $this->axis) $json['axis'] = json_encode($this->axis);
+        if (null !== $this->prism) $json['prism'] = json_encode($this->prism);
+        if (null !== $this->base) $json['base'] = json_encode($this->base);
+        if (null !== $this->add) $json['add'] = json_encode($this->add);
+        if (null !== $this->power) $json['power'] = json_encode($this->power);
+        if (null !== $this->backCurve) $json['backCurve'] = json_encode($this->backCurve);
+        if (null !== $this->diameter) $json['diameter'] = json_encode($this->diameter);
+        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
+        if (null !== $this->color) $json['color'] = json_encode($this->color);
+        if (null !== $this->brand) $json['brand'] = json_encode($this->brand);
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
         return $json;
     }
 
@@ -526,7 +525,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements Json
         if (null !== $this->duration) $this->duration->xmlSerialize(true, $sxe->addChild('duration'));
         if (null !== $this->color) $this->color->xmlSerialize(true, $sxe->addChild('color'));
         if (null !== $this->brand) $this->brand->xmlSerialize(true, $sxe->addChild('brand'));
-        if (null !== $this->notes) $this->notes->xmlSerialize(true, $sxe->addChild('notes'));
+        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

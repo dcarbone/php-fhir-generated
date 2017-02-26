@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,35 +61,34 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializable
+class FHIROperationDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published.
+     * An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published. The URL SHOULD include the major version of the operation definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
-     * The identifier that is used to identify this version of the profile when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
-     * A free text natural language name identifying the operation.
+     * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
-     * The status of the profile.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this operation definition. Enables tracking the life-cycle of the content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
@@ -100,10 +99,16 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     public $kind = null;
 
     /**
-     * This profile was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
+
+    /**
+     * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $date = null;
 
     /**
      * The name of the individual or organization that published the operation definition.
@@ -112,28 +117,34 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     public $publisher = null;
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public $contact = array();
 
     /**
-     * The date this version of the operation definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the Operation Definition changes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $date = null;
-
-    /**
-     * A free text natural language description of the profile and its use.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the operation definition from the consumer's perspective.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * Explains why this operation definition is needed and why it's been constrained as it has.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $requirements = null;
+    public $useContext = array();
+
+    /**
+     * A jurisdiction in which the operation definition is intended to be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $jurisdiction = array();
+
+    /**
+     * Explains why this operation definition is needed and why it has been designed as it has.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public $purpose = null;
 
     /**
      * Operations that are idempotent (see [HTTP specification definition of idempotent](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)) may be invoked by performing an HTTP GET operation instead of a POST.
@@ -151,7 +162,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
      * Additional information about how to use this operation or named query.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $notes = null;
+    public $comment = null;
 
     /**
      * Indicates that this operation definition is a constraining profile on the base.
@@ -160,16 +171,22 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     public $base = null;
 
     /**
+     * The types on which this operation can be executed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     */
+    public $resource = array();
+
+    /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $system = null;
 
     /**
-     * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a resource type for the context).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $type = array();
+    public $type = null;
 
     /**
      * Indicates whether this operation can be invoked on a particular instance of one of the given types.
@@ -184,12 +201,18 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     public $parameter = array();
 
     /**
+     * Defines an appropriate combination of parameters to use when invoking this operation.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload[]
+     */
+    public $overload = array();
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'OperationDefinition';
 
     /**
-     * An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published.
+     * An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published. The URL SHOULD include the major version of the operation definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -198,7 +221,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published.
+     * An absolute URL that is used to identify this operation definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this operation definition is (or will be) published. The URL SHOULD include the major version of the operation definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -209,7 +232,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the profile when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -218,7 +241,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the profile when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the operation definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the operation definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -229,7 +252,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language name identifying the operation.
+     * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -238,7 +261,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language name identifying the operation.
+     * A natural language name identifying the operation definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
@@ -249,8 +272,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The status of the profile.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this operation definition. Enables tracking the life-cycle of the content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -258,8 +281,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The status of the profile.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * The status of this operation definition. Enables tracking the life-cycle of the content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -289,7 +312,7 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * This profile was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -298,13 +321,33 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * This profile was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
     {
         $this->experimental = $experimental;
+        return $this;
+    }
+
+    /**
+     * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * The date  (and optionally time) when the operation definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
         return $this;
     }
 
@@ -329,8 +372,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -338,8 +381,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionContact[] $contact
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -349,28 +392,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The date this version of the operation definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the Operation Definition changes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * The date this version of the operation definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the Operation Definition changes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
-     * A free text natural language description of the profile and its use.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the operation definition from the consumer's perspective.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -378,8 +401,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language description of the profile and its use.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * A free text natural language description of the operation definition from the consumer's perspective.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -389,22 +412,62 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Explains why this operation definition is needed and why it's been constrained as it has.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getRequirements()
+    public function getUseContext()
     {
-        return $this->requirements;
+        return $this->useContext;
     }
 
     /**
-     * Explains why this operation definition is needed and why it's been constrained as it has.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $requirements
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function setRequirements($requirements)
+    public function addUseContext($useContext)
     {
-        $this->requirements = $requirements;
+        $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * A jurisdiction in which the operation definition is intended to be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getJurisdiction()
+    {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * A jurisdiction in which the operation definition is intended to be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @return $this
+     */
+    public function addJurisdiction($jurisdiction)
+    {
+        $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * Explains why this operation definition is needed and why it has been designed as it has.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getPurpose()
+    {
+        return $this->purpose;
+    }
+
+    /**
+     * Explains why this operation definition is needed and why it has been designed as it has.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
+     * @return $this
+     */
+    public function setPurpose($purpose)
+    {
+        $this->purpose = $purpose;
         return $this;
     }
 
@@ -452,19 +515,19 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
      * Additional information about how to use this operation or named query.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getNotes()
+    public function getComment()
     {
-        return $this->notes;
+        return $this->comment;
     }
 
     /**
      * Additional information about how to use this operation or named query.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $notes
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setNotes($notes)
+    public function setComment($comment)
     {
-        $this->notes = $notes;
+        $this->comment = $comment;
         return $this;
     }
 
@@ -489,6 +552,26 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
+     * The types on which this operation can be executed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * The types on which this operation can be executed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $resource
+     * @return $this
+     */
+    public function addResource($resource)
+    {
+        $this->resource[] = $resource;
+        return $this;
+    }
+
+    /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
@@ -509,8 +592,8 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a resource type for the context).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getType()
     {
@@ -518,13 +601,13 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a resource type for the context).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $type
+     * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $type
      * @return $this
      */
-    public function addType($type)
+    public function setType($type)
     {
-        $this->type[] = $type;
+        $this->type = $type;
         return $this;
     }
 
@@ -559,12 +642,32 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The parameters for the operation/query.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[] $parameter
+     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $parameter
      * @return $this
      */
     public function addParameter($parameter)
     {
         $this->parameter[] = $parameter;
+        return $this;
+    }
+
+    /**
+     * Defines an appropriate combination of parameters to use when invoking this operation.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload[]
+     */
+    public function getOverload()
+    {
+        return $this->overload;
+    }
+
+    /**
+     * Defines an appropriate combination of parameters to use when invoking this operation.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionOverload $overload
+     * @return $this
+     */
+    public function addOverload($overload)
+    {
+        $this->overload[] = $overload;
         return $this;
     }
 
@@ -591,38 +694,57 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->kind) $json['kind'] = $this->kind->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->idempotent) $json['idempotent'] = $this->idempotent->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->notes) $json['notes'] = $this->notes->jsonSerialize();
-        if (null !== $this->base) $json['base'] = $this->base->jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (0 < count($this->type)) {
-            $json['type'] = array();
-            foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (0 < count($this->useContext)) {
+            $json['useContext'] = [];
+            foreach($this->useContext as $useContext) {
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->instance) $json['instance'] = $this->instance->jsonSerialize();
+        if (0 < count($this->jurisdiction)) {
+            $json['jurisdiction'] = [];
+            foreach($this->jurisdiction as $jurisdiction) {
+                $json['jurisdiction'][] = json_encode($jurisdiction);
+            }
+        }
+        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
+        if (null !== $this->idempotent) $json['idempotent'] = json_encode($this->idempotent);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->base) $json['base'] = json_encode($this->base);
+        if (0 < count($this->resource)) {
+            $json['resource'] = [];
+            foreach($this->resource as $resource) {
+                $json['resource'][] = json_encode($resource);
+            }
+        }
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->instance) $json['instance'] = json_encode($this->instance);
         if (0 < count($this->parameter)) {
-            $json['parameter'] = array();
+            $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = $parameter->jsonSerialize();
+                $json['parameter'][] = json_encode($parameter);
+            }
+        }
+        if (0 < count($this->overload)) {
+            $json['overload'] = [];
+            foreach($this->overload as $overload) {
+                $json['overload'][] = json_encode($overload);
             }
         }
         return $json;
@@ -643,29 +765,45 @@ class FHIROperationDefinition extends FHIRDomainResource implements JsonSerializ
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
-        if (null !== $this->idempotent) $this->idempotent->xmlSerialize(true, $sxe->addChild('idempotent'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->notes) $this->notes->xmlSerialize(true, $sxe->addChild('notes'));
-        if (null !== $this->base) $this->base->xmlSerialize(true, $sxe->addChild('base'));
-        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (0 < count($this->type)) {
-            foreach($this->type as $type) {
-                $type->xmlSerialize(true, $sxe->addChild('type'));
+        if (0 < count($this->useContext)) {
+            foreach($this->useContext as $useContext) {
+                $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
             }
         }
+        if (0 < count($this->jurisdiction)) {
+            foreach($this->jurisdiction as $jurisdiction) {
+                $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+            }
+        }
+        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (null !== $this->idempotent) $this->idempotent->xmlSerialize(true, $sxe->addChild('idempotent'));
+        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
+        if (null !== $this->base) $this->base->xmlSerialize(true, $sxe->addChild('base'));
+        if (0 < count($this->resource)) {
+            foreach($this->resource as $resource) {
+                $resource->xmlSerialize(true, $sxe->addChild('resource'));
+            }
+        }
+        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
+        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->instance) $this->instance->xmlSerialize(true, $sxe->addChild('instance'));
         if (0 < count($this->parameter)) {
             foreach($this->parameter as $parameter) {
                 $parameter->xmlSerialize(true, $sxe->addChild('parameter'));
+            }
+        }
+        if (0 < count($this->overload)) {
+            foreach($this->overload as $overload) {
+                $overload->xmlSerialize(true, $sxe->addChild('overload'));
             }
         }
         if ($returnSXE) return $sxe;

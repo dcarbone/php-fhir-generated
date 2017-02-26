@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
  */
-class FHIROperationDefinitionParameter extends FHIRBackboneElement implements JsonSerializable
+class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The name of used to identify the parameter.
@@ -105,6 +104,12 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
     public $type = null;
 
     /**
+     * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
+     */
+    public $searchType = null;
+
+    /**
      * A profile the specifies the rules that this parameter must conform to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -117,7 +122,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
     public $binding = null;
 
     /**
-     * The parts of a Tuple Parameter.
+     * The parts of a nested Parameter.
      * @var \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public $part = array();
@@ -248,6 +253,26 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
     }
 
     /**
+     * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
+     */
+    public function getSearchType()
+    {
+        return $this->searchType;
+    }
+
+    /**
+     * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType $searchType
+     * @return $this
+     */
+    public function setSearchType($searchType)
+    {
+        $this->searchType = $searchType;
+        return $this;
+    }
+
+    /**
      * A profile the specifies the rules that this parameter must conform to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -288,7 +313,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
     }
 
     /**
-     * The parts of a Tuple Parameter.
+     * The parts of a nested Parameter.
      * @return \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     public function getPart()
@@ -297,8 +322,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
     }
 
     /**
-     * The parts of a Tuple Parameter.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[] $part
+     * The parts of a nested Parameter.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $part
      * @return $this
      */
     public function addPart($part)
@@ -329,18 +354,19 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->use) $json['use'] = $this->use->jsonSerialize();
-        if (null !== $this->min) $json['min'] = $this->min->jsonSerialize();
-        if (null !== $this->max) $json['max'] = $this->max->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->profile) $json['profile'] = $this->profile->jsonSerialize();
-        if (null !== $this->binding) $json['binding'] = $this->binding->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->use) $json['use'] = json_encode($this->use);
+        if (null !== $this->min) $json['min'] = json_encode($this->min);
+        if (null !== $this->max) $json['max'] = json_encode($this->max);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->searchType) $json['searchType'] = json_encode($this->searchType);
+        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (null !== $this->binding) $json['binding'] = json_encode($this->binding);
         if (0 < count($this->part)) {
-            $json['part'] = array();
+            $json['part'] = [];
             foreach($this->part as $part) {
-                $json['part'][] = $part->jsonSerialize();
+                $json['part'][] = json_encode($part);
             }
         }
         return $json;
@@ -361,6 +387,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements Js
         if (null !== $this->max) $this->max->xmlSerialize(true, $sxe->addChild('max'));
         if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->searchType) $this->searchType->xmlSerialize(true, $sxe->addChild('searchType'));
         if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
         if (null !== $this->binding) $this->binding->xmlSerialize(true, $sxe->addChild('binding'));
         if (0 < count($this->part)) {

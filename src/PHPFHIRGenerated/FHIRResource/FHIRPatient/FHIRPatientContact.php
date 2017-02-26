@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Demographics and other administrative information about an individual or animal receiving care or other health-related services.
  */
-class FHIRPatientContact extends FHIRBackboneElement implements JsonSerializable
+class FHIRPatientContact extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The nature of the relationship between the patient and the contact person.
@@ -94,7 +93,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
     public $gender = null;
 
@@ -126,7 +125,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The nature of the relationship between the patient and the contact person.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $relationship
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
     public function addRelationship($relationship)
@@ -166,7 +165,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -197,7 +196,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender()
     {
@@ -206,7 +205,7 @@ class FHIRPatientContact extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Administrative Gender - the gender that the contact person is considered to have for administration and record keeping purposes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $gender
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
     public function setGender($gender)
@@ -278,22 +277,22 @@ class FHIRPatientContact extends FHIRBackboneElement implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->relationship)) {
-            $json['relationship'] = array();
+            $json['relationship'] = [];
             foreach($this->relationship as $relationship) {
-                $json['relationship'][] = $relationship->jsonSerialize();
+                $json['relationship'][] = json_encode($relationship);
             }
         }
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
-        if (null !== $this->address) $json['address'] = $this->address->jsonSerialize();
-        if (null !== $this->gender) $json['gender'] = $this->gender->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->address) $json['address'] = json_encode($this->address);
+        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
 

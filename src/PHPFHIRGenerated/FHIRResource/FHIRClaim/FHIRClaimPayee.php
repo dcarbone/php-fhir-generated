@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,36 +61,29 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to a patient which is provided to an insurer for payment recovery.
  */
-class FHIRClaimPayee extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimPayee extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Party to be reimbursed: Subscriber, provider, other.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Type of Party to be reimbursed: Subscriber, provider, other.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
     /**
-     * The provider who is to be reimbursed for the claim (the party to whom any benefit is assigned).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * organization | patient | practitioner | relatedperson.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $provider = null;
+    public $resourceType = null;
 
     /**
-     * The organization who is to be reimbursed for the claim (the party to whom any benefit is assigned).
+     * Party to be reimbursed: Subscriber, provider, other.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $organization = null;
-
-    /**
-     * The person other than the subscriber who is to be reimbursed for the claim (the party to whom any benefit is assigned).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $person = null;
+    public $party = null;
 
     /**
      * @var string
@@ -98,8 +91,8 @@ class FHIRClaimPayee extends FHIRBackboneElement implements JsonSerializable
     private $_fhirElementName = 'Claim.Payee';
 
     /**
-     * Party to be reimbursed: Subscriber, provider, other.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Type of Party to be reimbursed: Subscriber, provider, other.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -107,8 +100,8 @@ class FHIRClaimPayee extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * Party to be reimbursed: Subscriber, provider, other.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
+     * Type of Party to be reimbursed: Subscriber, provider, other.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -118,62 +111,42 @@ class FHIRClaimPayee extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The provider who is to be reimbursed for the claim (the party to whom any benefit is assigned).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * organization | patient | practitioner | relatedperson.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getProvider()
+    public function getResourceType()
     {
-        return $this->provider;
+        return $this->resourceType;
     }
 
     /**
-     * The provider who is to be reimbursed for the claim (the party to whom any benefit is assigned).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $provider
+     * organization | patient | practitioner | relatedperson.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $resourceType
      * @return $this
      */
-    public function setProvider($provider)
+    public function setResourceType($resourceType)
     {
-        $this->provider = $provider;
+        $this->resourceType = $resourceType;
         return $this;
     }
 
     /**
-     * The organization who is to be reimbursed for the claim (the party to whom any benefit is assigned).
+     * Party to be reimbursed: Subscriber, provider, other.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getOrganization()
+    public function getParty()
     {
-        return $this->organization;
+        return $this->party;
     }
 
     /**
-     * The organization who is to be reimbursed for the claim (the party to whom any benefit is assigned).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $organization
+     * Party to be reimbursed: Subscriber, provider, other.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $party
      * @return $this
      */
-    public function setOrganization($organization)
+    public function setParty($party)
     {
-        $this->organization = $organization;
-        return $this;
-    }
-
-    /**
-     * The person other than the subscriber who is to be reimbursed for the claim (the party to whom any benefit is assigned).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPerson()
-    {
-        return $this->person;
-    }
-
-    /**
-     * The person other than the subscriber who is to be reimbursed for the claim (the party to whom any benefit is assigned).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $person
-     * @return $this
-     */
-    public function setPerson($person)
-    {
-        $this->person = $person;
+        $this->party = $party;
         return $this;
     }
 
@@ -199,10 +172,9 @@ class FHIRClaimPayee extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->provider) $json['provider'] = $this->provider->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->person) $json['person'] = $this->person->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->resourceType) $json['resourceType'] = json_encode($this->resourceType);
+        if (null !== $this->party) $json['party'] = json_encode($this->party);
         return $json;
     }
 
@@ -216,9 +188,8 @@ class FHIRClaimPayee extends FHIRBackboneElement implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimPayee xmlns="http://hl7.org/fhir"></ClaimPayee>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->provider) $this->provider->xmlSerialize(true, $sxe->addChild('provider'));
-        if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
-        if (null !== $this->person) $this->person->xmlSerialize(true, $sxe->addChild('person'));
+        if (null !== $this->resourceType) $this->resourceType->xmlSerialize(true, $sxe->addChild('resourceType'));
+        if (null !== $this->party) $this->party->xmlSerialize(true, $sxe->addChild('party'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

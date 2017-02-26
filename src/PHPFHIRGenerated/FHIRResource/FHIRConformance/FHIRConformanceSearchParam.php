@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
  */
-class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceSearchParam extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The name of the search parameter used in the interface.
@@ -82,7 +81,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
     public $type = null;
 
@@ -157,7 +156,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
     public function getType()
     {
@@ -166,7 +165,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType $type
      * @return $this
      */
     public function setType($type)
@@ -206,7 +205,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * Types of resource (if a resource is referenced).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $target
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $target
      * @return $this
      */
     public function addTarget($target)
@@ -226,7 +225,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * A modifier supported for the search parameter.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode[] $modifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -246,7 +245,7 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
 
     /**
      * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from Conformance.rest.resource.searchParam.name on the target resource type.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $chain
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $chain
      * @return $this
      */
     public function addChain($chain)
@@ -277,26 +276,26 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement implements JsonSeri
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->definition) $json['definition'] = $this->definition->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
         if (0 < count($this->target)) {
-            $json['target'] = array();
+            $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = $target->jsonSerialize();
+                $json['target'][] = json_encode($target);
             }
         }
         if (0 < count($this->modifier)) {
-            $json['modifier'] = array();
+            $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = $modifier->jsonSerialize();
+                $json['modifier'][] = json_encode($modifier);
             }
         }
         if (0 < count($this->chain)) {
-            $json['chain'] = array();
+            $json['chain'] = [];
             foreach($this->chain as $chain) {
-                $json['chain'][] = $chain->jsonSerialize();
+                $json['chain'][] = json_encode($chain);
             }
         }
         return $json;

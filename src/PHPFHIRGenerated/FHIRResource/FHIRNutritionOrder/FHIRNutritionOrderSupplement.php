@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional supplement to a patient/resident.
  */
-class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements JsonSerializable
+class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The kind of nutritional supplement product required such as a high protein or pediatric clear liquid supplement.
@@ -88,7 +87,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements JsonSe
 
     /**
      * The amount of the nutritional supplement to be given.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
@@ -154,7 +153,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements JsonSe
 
     /**
      * The time period and frequency at which the supplement(s) should be given.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming[] $schedule
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $schedule
      * @return $this
      */
     public function addSchedule($schedule)
@@ -165,7 +164,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements JsonSe
 
     /**
      * The amount of the nutritional supplement to be given.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -174,7 +173,7 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements JsonSe
 
     /**
      * The amount of the nutritional supplement to be given.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -225,16 +224,16 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->productName) $json['productName'] = $this->productName->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->productName) $json['productName'] = json_encode($this->productName);
         if (0 < count($this->schedule)) {
-            $json['schedule'] = array();
+            $json['schedule'] = [];
             foreach($this->schedule as $schedule) {
-                $json['schedule'][] = $schedule->jsonSerialize();
+                $json['schedule'][] = json_encode($schedule);
             }
         }
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->instruction) $json['instruction'] = $this->instruction->jsonSerialize();
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->instruction) $json['instruction'] = json_encode($this->instruction);
         return $json;
     }
 

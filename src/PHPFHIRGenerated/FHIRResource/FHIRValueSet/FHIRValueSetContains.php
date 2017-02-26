@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An absolute URI which is the code system in which the code for this item in the expansion is defined.
@@ -79,6 +78,12 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $abstract = null;
+
+    /**
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understnading legacy data.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $inactive = null;
 
     /**
      * The version of this code system that defined this code and/or display. This should only be used with code systems that do not enforce concept permanence.
@@ -97,6 +102,12 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $display = null;
+
+    /**
+     * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
+     */
+    public $designation = array();
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
@@ -146,6 +157,26 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
     public function setAbstract($abstract)
     {
         $this->abstract = $abstract;
+        return $this;
+    }
+
+    /**
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understnading legacy data.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understnading legacy data.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $inactive
+     * @return $this
+     */
+    public function setInactive($inactive)
+    {
+        $this->inactive = $inactive;
         return $this;
     }
 
@@ -210,6 +241,26 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
+     * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
+     */
+    public function getDesignation()
+    {
+        return $this->designation;
+    }
+
+    /**
+     * Additional representations for this item - other languages, aliases, specialized purposes, used for particular purposes, etc. These are relevant when the conditions of the expansion do not fix to a single correct representation.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
+     * @return $this
+     */
+    public function addDesignation($designation)
+    {
+        $this->designation[] = $designation;
+        return $this;
+    }
+
+    /**
      * Other codes and entries contained under this entry in the hierarchy.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContains[]
      */
@@ -220,7 +271,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Other codes and entries contained under this entry in the hierarchy.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContains[] $contains
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContains $contains
      * @return $this
      */
     public function addContains($contains)
@@ -251,15 +302,22 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->abstract) $json['abstract'] = $this->abstract->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->abstract) $json['abstract'] = json_encode($this->abstract);
+        if (null !== $this->inactive) $json['inactive'] = json_encode($this->inactive);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
+        if (0 < count($this->designation)) {
+            $json['designation'] = [];
+            foreach($this->designation as $designation) {
+                $json['designation'][] = json_encode($designation);
+            }
+        }
         if (0 < count($this->contains)) {
-            $json['contains'] = array();
+            $json['contains'] = [];
             foreach($this->contains as $contains) {
-                $json['contains'][] = $contains->jsonSerialize();
+                $json['contains'][] = json_encode($contains);
             }
         }
         return $json;
@@ -276,9 +334,15 @@ class FHIRValueSetContains extends FHIRBackboneElement implements JsonSerializab
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
         if (null !== $this->abstract) $this->abstract->xmlSerialize(true, $sxe->addChild('abstract'));
+        if (null !== $this->inactive) $this->inactive->xmlSerialize(true, $sxe->addChild('inactive'));
         if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
+        if (0 < count($this->designation)) {
+            foreach($this->designation as $designation) {
+                $designation->xmlSerialize(true, $sxe->addChild('designation'));
+            }
+        }
         if (0 < count($this->contains)) {
             foreach($this->contains as $contains) {
                 $contains->xmlSerialize(true, $sxe->addChild('contains'));

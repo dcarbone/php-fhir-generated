@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,18 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
  */
-class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializable
+class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSerializable
 {
+    /**
+     * Formal identifier for this series.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIROid
+     */
+    public $uid = null;
+
     /**
      * The Numeric identifier of this series in the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
@@ -79,12 +84,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $modality = null;
-
-    /**
-     * Formal identifier for this series.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIROid
-     */
-    public $uid = null;
 
     /**
      * A description of the series.
@@ -105,10 +104,10 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
     public $availability = null;
 
     /**
-     * URI/URL specifying the location of the referenced series using WADO-RS.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * Methods of accessing (e.g. retrieving) the series.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation1[]
      */
-    public $url = null;
+    public $baseLocation = array();
 
     /**
      * Body part examined. See  DICOM Part 16 Annex L for the mapping from DICOM to Snomed CT.
@@ -138,6 +137,26 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
      * @var string
      */
     private $_fhirElementName = 'ImagingStudy.Series';
+
+    /**
+     * Formal identifier for this series.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIROid
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+
+    /**
+     * Formal identifier for this series.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIROid $uid
+     * @return $this
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+        return $this;
+    }
 
     /**
      * The Numeric identifier of this series in the study.
@@ -176,26 +195,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
     public function setModality($modality)
     {
         $this->modality = $modality;
-        return $this;
-    }
-
-    /**
-     * Formal identifier for this series.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIROid
-     */
-    public function getUid()
-    {
-        return $this->uid;
-    }
-
-    /**
-     * Formal identifier for this series.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIROid $uid
-     * @return $this
-     */
-    public function setUid($uid)
-    {
-        $this->uid = $uid;
         return $this;
     }
 
@@ -260,22 +259,22 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
     }
 
     /**
-     * URI/URL specifying the location of the referenced series using WADO-RS.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * Methods of accessing (e.g. retrieving) the series.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation1[]
      */
-    public function getUrl()
+    public function getBaseLocation()
     {
-        return $this->url;
+        return $this->baseLocation;
     }
 
     /**
-     * URI/URL specifying the location of the referenced series using WADO-RS.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
+     * Methods of accessing (e.g. retrieving) the series.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation1 $baseLocation
      * @return $this
      */
-    public function setUrl($url)
+    public function addBaseLocation($baseLocation)
     {
-        $this->url = $url;
+        $this->baseLocation[] = $baseLocation;
         return $this;
     }
 
@@ -350,7 +349,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * A single SOP Instance within the series, e.g. an image, or presentation state.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance[] $instance
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance $instance
      * @return $this
      */
     public function addInstance($instance)
@@ -381,20 +380,25 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->number) $json['number'] = $this->number->jsonSerialize();
-        if (null !== $this->modality) $json['modality'] = $this->modality->jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = $this->numberOfInstances->jsonSerialize();
-        if (null !== $this->availability) $json['availability'] = $this->availability->jsonSerialize();
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite->jsonSerialize();
-        if (null !== $this->laterality) $json['laterality'] = $this->laterality->jsonSerialize();
-        if (null !== $this->started) $json['started'] = $this->started->jsonSerialize();
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->number) $json['number'] = json_encode($this->number);
+        if (null !== $this->modality) $json['modality'] = json_encode($this->modality);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = json_encode($this->numberOfInstances);
+        if (null !== $this->availability) $json['availability'] = json_encode($this->availability);
+        if (0 < count($this->baseLocation)) {
+            $json['baseLocation'] = [];
+            foreach($this->baseLocation as $baseLocation) {
+                $json['baseLocation'][] = json_encode($baseLocation);
+            }
+        }
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->laterality) $json['laterality'] = json_encode($this->laterality);
+        if (null !== $this->started) $json['started'] = json_encode($this->started);
         if (0 < count($this->instance)) {
-            $json['instance'] = array();
+            $json['instance'] = [];
             foreach($this->instance as $instance) {
-                $json['instance'][] = $instance->jsonSerialize();
+                $json['instance'][] = json_encode($instance);
             }
         }
         return $json;
@@ -409,13 +413,17 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements JsonSerializ
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImagingStudySeries xmlns="http://hl7.org/fhir"></ImagingStudySeries>');
         parent::xmlSerialize(true, $sxe);
+        if (null !== $this->uid) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
         if (null !== $this->number) $this->number->xmlSerialize(true, $sxe->addChild('number'));
         if (null !== $this->modality) $this->modality->xmlSerialize(true, $sxe->addChild('modality'));
-        if (null !== $this->uid) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->numberOfInstances) $this->numberOfInstances->xmlSerialize(true, $sxe->addChild('numberOfInstances'));
         if (null !== $this->availability) $this->availability->xmlSerialize(true, $sxe->addChild('availability'));
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (0 < count($this->baseLocation)) {
+            foreach($this->baseLocation as $baseLocation) {
+                $baseLocation->xmlSerialize(true, $sxe->addChild('baseLocation'));
+            }
+        }
         if (null !== $this->bodySite) $this->bodySite->xmlSerialize(true, $sxe->addChild('bodySite'));
         if (null !== $this->laterality) $this->laterality->xmlSerialize(true, $sxe->addChild('laterality'));
         if (null !== $this->started) $this->started->xmlSerialize(true, $sxe->addChild('started'));

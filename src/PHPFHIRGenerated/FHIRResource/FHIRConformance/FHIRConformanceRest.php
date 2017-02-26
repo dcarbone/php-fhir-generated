@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
  */
-class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceRest extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies whether this portion of the statement is describing ability to initiate or receive restful operations.
@@ -99,12 +98,6 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
     public $interaction = array();
 
     /**
-     * A code that indicates how transactions are supported.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRTransactionMode
-     */
-    public $transactionMode = null;
-
-    /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceSearchParam[]
      */
@@ -117,7 +110,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
     public $operation = array();
 
     /**
-     * An absolute URI which is a reference to the definition of a compartment hosted by the system.
+     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by it's canonical URL.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public $compartment = array();
@@ -198,7 +191,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * A specification of the restful capabilities of the solution for a specific resource type.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceResource[] $resource
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceResource $resource
      * @return $this
      */
     public function addResource($resource)
@@ -218,32 +211,12 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * A specification of restful operations supported by the system.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceInteraction1[] $interaction
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceInteraction1 $interaction
      * @return $this
      */
     public function addInteraction($interaction)
     {
         $this->interaction[] = $interaction;
-        return $this;
-    }
-
-    /**
-     * A code that indicates how transactions are supported.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRTransactionMode
-     */
-    public function getTransactionMode()
-    {
-        return $this->transactionMode;
-    }
-
-    /**
-     * A code that indicates how transactions are supported.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRTransactionMode $transactionMode
-     * @return $this
-     */
-    public function setTransactionMode($transactionMode)
-    {
-        $this->transactionMode = $transactionMode;
         return $this;
     }
 
@@ -258,7 +231,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceSearchParam[] $searchParam
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceSearchParam $searchParam
      * @return $this
      */
     public function addSearchParam($searchParam)
@@ -278,7 +251,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Definition of an operation or a named query and with its parameters and their meaning and type.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceOperation[] $operation
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceOperation $operation
      * @return $this
      */
     public function addOperation($operation)
@@ -288,7 +261,7 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * An absolute URI which is a reference to the definition of a compartment hosted by the system.
+     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by it's canonical URL.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getCompartment()
@@ -297,8 +270,8 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * An absolute URI which is a reference to the definition of a compartment hosted by the system.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $compartment
+     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by it's canonical URL.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $compartment
      * @return $this
      */
     public function addCompartment($compartment)
@@ -329,38 +302,37 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = $this->mode->jsonSerialize();
-        if (null !== $this->documentation) $json['documentation'] = $this->documentation->jsonSerialize();
-        if (null !== $this->security) $json['security'] = $this->security->jsonSerialize();
+        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->security) $json['security'] = json_encode($this->security);
         if (0 < count($this->resource)) {
-            $json['resource'] = array();
+            $json['resource'] = [];
             foreach($this->resource as $resource) {
-                $json['resource'][] = $resource->jsonSerialize();
+                $json['resource'][] = json_encode($resource);
             }
         }
         if (0 < count($this->interaction)) {
-            $json['interaction'] = array();
+            $json['interaction'] = [];
             foreach($this->interaction as $interaction) {
-                $json['interaction'][] = $interaction->jsonSerialize();
+                $json['interaction'][] = json_encode($interaction);
             }
         }
-        if (null !== $this->transactionMode) $json['transactionMode'] = $this->transactionMode->jsonSerialize();
         if (0 < count($this->searchParam)) {
-            $json['searchParam'] = array();
+            $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = $searchParam->jsonSerialize();
+                $json['searchParam'][] = json_encode($searchParam);
             }
         }
         if (0 < count($this->operation)) {
-            $json['operation'] = array();
+            $json['operation'] = [];
             foreach($this->operation as $operation) {
-                $json['operation'][] = $operation->jsonSerialize();
+                $json['operation'][] = json_encode($operation);
             }
         }
         if (0 < count($this->compartment)) {
-            $json['compartment'] = array();
+            $json['compartment'] = [];
             foreach($this->compartment as $compartment) {
-                $json['compartment'][] = $compartment->jsonSerialize();
+                $json['compartment'][] = json_encode($compartment);
             }
         }
         return $json;
@@ -388,7 +360,6 @@ class FHIRConformanceRest extends FHIRBackboneElement implements JsonSerializabl
                 $interaction->xmlSerialize(true, $sxe->addChild('interaction'));
             }
         }
-        if (null !== $this->transactionMode) $this->transactionMode->xmlSerialize(true, $sxe->addChild('transactionMode'));
         if (0 < count($this->searchParam)) {
             foreach($this->searchParam as $searchParam) {
                 $searchParam->xmlSerialize(true, $sxe->addChild('searchParam'));

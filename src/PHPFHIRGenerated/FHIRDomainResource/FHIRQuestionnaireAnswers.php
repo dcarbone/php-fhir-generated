@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRQuestionnaireAnswers extends FHIRDomainResource implements JsonSerializable
+class FHIRQuestionnaireAnswers extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A business identifier assigned to a particular completed (or partially completed) questionnaire.
@@ -331,15 +330,15 @@ class FHIRQuestionnaireAnswers extends FHIRDomainResource implements JsonSeriali
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->questionnaire) $json['questionnaire'] = $this->questionnaire->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->author) $json['author'] = $this->author->jsonSerialize();
-        if (null !== $this->authored) $json['authored'] = $this->authored->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->group) $json['group'] = $this->group->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->questionnaire) $json['questionnaire'] = json_encode($this->questionnaire);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->author) $json['author'] = json_encode($this->author);
+        if (null !== $this->authored) $json['authored'] = json_encode($this->authored);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->group) $json['group'] = json_encode($this->group);
         return $json;
     }
 

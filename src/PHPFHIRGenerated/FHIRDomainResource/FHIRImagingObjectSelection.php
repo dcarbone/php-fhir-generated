@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances have been selected for a purpose, such as quality assurance, conference, or consult. Reflecting that range of purposes, typical ImagingObjectSelection resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); a multi-frame ultrasound instance ("cine" video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSerializable
+class FHIRImagingObjectSelection extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Instance UID of the DICOM KOS SOP Instances represented in this resource.
@@ -82,6 +81,18 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
     public $patient = null;
 
     /**
+     * Date and time when the selection of the referenced instances were made. It is (typically) different from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $authoringTime = null;
+
+    /**
+     * Author of ImagingObjectSelection. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attach in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $author = null;
+
+    /**
      * The reason for, or significance of, the selection of objects referenced in the resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
@@ -92,18 +103,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $description = null;
-
-    /**
-     * Author of ImagingObjectSelection. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attach in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $author = null;
-
-    /**
-     * Date and time when the selection of the referenced instances were made. It is (typically) different from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $authoringTime = null;
 
     /**
      * Study identity and locating information of the DICOM SOP instances in the selection.
@@ -157,6 +156,46 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
     }
 
     /**
+     * Date and time when the selection of the referenced instances were made. It is (typically) different from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getAuthoringTime()
+    {
+        return $this->authoringTime;
+    }
+
+    /**
+     * Date and time when the selection of the referenced instances were made. It is (typically) different from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authoringTime
+     * @return $this
+     */
+    public function setAuthoringTime($authoringTime)
+    {
+        $this->authoringTime = $authoringTime;
+        return $this;
+    }
+
+    /**
+     * Author of ImagingObjectSelection. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attach in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Author of ImagingObjectSelection. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attach in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
+     * @return $this
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+        return $this;
+    }
+
+    /**
      * The reason for, or significance of, the selection of objects referenced in the resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
@@ -197,46 +236,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
     }
 
     /**
-     * Author of ImagingObjectSelection. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attach in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * Author of ImagingObjectSelection. It can be a human author or a device which made the decision of the SOP instances selected. For example, a radiologist selected a set of imaging SOP instances to attach in a diagnostic report, and a CAD application may author a selection to describe SOP instances it used to generate a detection conclusion.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
-     * @return $this
-     */
-    public function setAuthor($author)
-    {
-        $this->author = $author;
-        return $this;
-    }
-
-    /**
-     * Date and time when the selection of the referenced instances were made. It is (typically) different from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getAuthoringTime()
-    {
-        return $this->authoringTime;
-    }
-
-    /**
-     * Date and time when the selection of the referenced instances were made. It is (typically) different from the creation date of the selection resource, and from dates associated with the referenced instances (e.g. capture time of the referenced image).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authoringTime
-     * @return $this
-     */
-    public function setAuthoringTime($authoringTime)
-    {
-        $this->authoringTime = $authoringTime;
-        return $this;
-    }
-
-    /**
      * Study identity and locating information of the DICOM SOP instances in the selection.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy[]
      */
@@ -247,7 +246,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
 
     /**
      * Study identity and locating information of the DICOM SOP instances in the selection.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy[] $study
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy $study
      * @return $this
      */
     public function addStudy($study)
@@ -279,16 +278,16 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->author) $json['author'] = $this->author->jsonSerialize();
-        if (null !== $this->authoringTime) $json['authoringTime'] = $this->authoringTime->jsonSerialize();
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->authoringTime) $json['authoringTime'] = json_encode($this->authoringTime);
+        if (null !== $this->author) $json['author'] = json_encode($this->author);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->study)) {
-            $json['study'] = array();
+            $json['study'] = [];
             foreach($this->study as $study) {
-                $json['study'][] = $study->jsonSerialize();
+                $json['study'][] = json_encode($study);
             }
         }
         return $json;
@@ -305,10 +304,10 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements JsonSeria
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->uid) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
         if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (null !== $this->authoringTime) $this->authoringTime->xmlSerialize(true, $sxe->addChild('authoringTime'));
+        if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
-        if (null !== $this->authoringTime) $this->authoringTime->xmlSerialize(true, $sxe->addChild('authoringTime'));
         if (0 < count($this->study)) {
             foreach($this->study as $study) {
                 $study->xmlSerialize(true, $sxe->addChild('study'));

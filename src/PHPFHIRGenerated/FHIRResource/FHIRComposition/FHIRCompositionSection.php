@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
  */
-class FHIRCompositionSection extends FHIRBackboneElement implements JsonSerializable
+class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The label for this particular section.  This will be part of the rendered content for the document, and is often used to build a table of contents.
@@ -232,7 +231,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * A reference to the actual resource from which the narrative in the section is derived.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $entry
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $entry
      * @return $this
      */
     public function addEntry($entry)
@@ -272,7 +271,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * A nested sub-section within this section.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection[] $section
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection $section
      * @return $this
      */
     public function addSection($section)
@@ -303,22 +302,22 @@ class FHIRCompositionSection extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = $this->mode->jsonSerialize();
-        if (null !== $this->orderedBy) $json['orderedBy'] = $this->orderedBy->jsonSerialize();
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
+        if (null !== $this->orderedBy) $json['orderedBy'] = json_encode($this->orderedBy);
         if (0 < count($this->entry)) {
-            $json['entry'] = array();
+            $json['entry'] = [];
             foreach($this->entry as $entry) {
-                $json['entry'][] = $entry->jsonSerialize();
+                $json['entry'][] = json_encode($entry);
             }
         }
-        if (null !== $this->emptyReason) $json['emptyReason'] = $this->emptyReason->jsonSerialize();
+        if (null !== $this->emptyReason) $json['emptyReason'] = json_encode($this->emptyReason);
         if (0 < count($this->section)) {
-            $json['section'] = array();
+            $json['section'] = [];
             foreach($this->section as $section) {
-                $json['section'][] = $section->jsonSerialize();
+                $json['section'][] = json_encode($section);
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to a patient which is provided to an insurer for payment recovery.
  */
-class FHIRClaimDiagnosis extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimDiagnosis extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Sequence of diagnosis which serves to order and provide a link.
@@ -75,10 +74,28 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement implements JsonSerializable
     public $sequence = null;
 
     /**
-     * The diagnosis.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The diagnosis. (choose any one of diagnosis*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $diagnosis = null;
+    public $diagnosisCodeableConcept = null;
+
+    /**
+     * The diagnosis. (choose any one of diagnosis*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $diagnosisReference = null;
+
+    /**
+     * The type of the Diagnosis, for example: admitting,.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $type = array();
+
+    /**
+     * The package billing code, for example DRG, based on the assigned grouping code system.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $packageCode = null;
 
     /**
      * @var string
@@ -106,22 +123,82 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The diagnosis.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The diagnosis. (choose any one of diagnosis*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDiagnosis()
+    public function getDiagnosisCodeableConcept()
     {
-        return $this->diagnosis;
+        return $this->diagnosisCodeableConcept;
     }
 
     /**
-     * The diagnosis.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $diagnosis
+     * The diagnosis. (choose any one of diagnosis*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
      * @return $this
      */
-    public function setDiagnosis($diagnosis)
+    public function setDiagnosisCodeableConcept($diagnosisCodeableConcept)
     {
-        $this->diagnosis = $diagnosis;
+        $this->diagnosisCodeableConcept = $diagnosisCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * The diagnosis. (choose any one of diagnosis*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getDiagnosisReference()
+    {
+        return $this->diagnosisReference;
+    }
+
+    /**
+     * The diagnosis. (choose any one of diagnosis*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $diagnosisReference
+     * @return $this
+     */
+    public function setDiagnosisReference($diagnosisReference)
+    {
+        $this->diagnosisReference = $diagnosisReference;
+        return $this;
+    }
+
+    /**
+     * The type of the Diagnosis, for example: admitting,.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * The type of the Diagnosis, for example: admitting,.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
+     * @return $this
+     */
+    public function addType($type)
+    {
+        $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * The package billing code, for example DRG, based on the assigned grouping code system.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getPackageCode()
+    {
+        return $this->packageCode;
+    }
+
+    /**
+     * The package billing code, for example DRG, based on the assigned grouping code system.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $packageCode
+     * @return $this
+     */
+    public function setPackageCode($packageCode)
+    {
+        $this->packageCode = $packageCode;
         return $this;
     }
 
@@ -147,8 +224,16 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = $this->sequence->jsonSerialize();
-        if (null !== $this->diagnosis) $json['diagnosis'] = $this->diagnosis->jsonSerialize();
+        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
+        if (null !== $this->diagnosisCodeableConcept) $json['diagnosisCodeableConcept'] = json_encode($this->diagnosisCodeableConcept);
+        if (null !== $this->diagnosisReference) $json['diagnosisReference'] = json_encode($this->diagnosisReference);
+        if (0 < count($this->type)) {
+            $json['type'] = [];
+            foreach($this->type as $type) {
+                $json['type'][] = json_encode($type);
+            }
+        }
+        if (null !== $this->packageCode) $json['packageCode'] = json_encode($this->packageCode);
         return $json;
     }
 
@@ -162,7 +247,14 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimDiagnosis xmlns="http://hl7.org/fhir"></ClaimDiagnosis>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->diagnosis) $this->diagnosis->xmlSerialize(true, $sxe->addChild('diagnosis'));
+        if (null !== $this->diagnosisCodeableConcept) $this->diagnosisCodeableConcept->xmlSerialize(true, $sxe->addChild('diagnosisCodeableConcept'));
+        if (null !== $this->diagnosisReference) $this->diagnosisReference->xmlSerialize(true, $sxe->addChild('diagnosisReference'));
+        if (0 < count($this->type)) {
+            foreach($this->type as $type) {
+                $type->xmlSerialize(true, $sxe->addChild('type'));
+            }
+        }
+        if (null !== $this->packageCode) $this->packageCode->xmlSerialize(true, $sxe->addChild('packageCode'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

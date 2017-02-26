@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
  */
-class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializable
+class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * How the entity was used during the activity.
@@ -75,28 +74,16 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
     public $role = null;
 
     /**
-     * The type of the entity. If the entity is a resource, then this is a resource type.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $type = null;
-
-    /**
      * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reference = null;
 
     /**
-     * Human-readable description of the entity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $display = null;
-
-    /**
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    public $agent = null;
+    public $agent = array();
 
     /**
      * @var string
@@ -124,28 +111,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * The type of the entity. If the entity is a resource, then this is a resource type.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * The type of the entity. If the entity is a resource, then this is a resource type.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
      * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReference()
     {
@@ -154,7 +121,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $reference
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reference
      * @return $this
      */
     public function setReference($reference)
@@ -164,28 +131,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * Human-readable description of the entity.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDisplay()
-    {
-        return $this->display;
-    }
-
-    /**
-     * Human-readable description of the entity.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
-     * @return $this
-     */
-    public function setDisplay($display)
-    {
-        $this->display = $display;
-        return $this;
-    }
-
-    /**
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent[]
      */
     public function getAgent()
     {
@@ -197,9 +144,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceAgent $agent
      * @return $this
      */
-    public function setAgent($agent)
+    public function addAgent($agent)
     {
-        $this->agent = $agent;
+        $this->agent[] = $agent;
         return $this;
     }
 
@@ -225,11 +172,14 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = $this->role->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->reference) $json['reference'] = $this->reference->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
-        if (null !== $this->agent) $json['agent'] = $this->agent->jsonSerialize();
+        if (null !== $this->role) $json['role'] = json_encode($this->role);
+        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (0 < count($this->agent)) {
+            $json['agent'] = [];
+            foreach($this->agent as $agent) {
+                $json['agent'][] = json_encode($agent);
+            }
+        }
         return $json;
     }
 
@@ -243,10 +193,12 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements JsonSerializab
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProvenanceEntity xmlns="http://hl7.org/fhir"></ProvenanceEntity>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->reference) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
-        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
-        if (null !== $this->agent) $this->agent->xmlSerialize(true, $sxe->addChild('agent'));
+        if (0 < count($this->agent)) {
+            foreach($this->agent as $agent) {
+                $agent->xmlSerialize(true, $sxe->addChild('agent'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

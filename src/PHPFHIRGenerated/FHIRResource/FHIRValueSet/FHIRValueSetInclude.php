@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetInclude extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An absolute URI which is the code system from which the selected codes come from.
@@ -82,7 +81,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Specifies a concept to be included or excluded.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept1[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
      */
     public $concept = array();
 
@@ -91,6 +90,12 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
      * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetFilter[]
      */
     public $filter = array();
+
+    /**
+     * Selects concepts found in this value set. This is an absolute URI that is a reference to ValueSet.url.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public $valueSet = array();
 
     /**
      * @var string
@@ -139,7 +144,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Specifies a concept to be included or excluded.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept1[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
      */
     public function getConcept()
     {
@@ -148,7 +153,7 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Specifies a concept to be included or excluded.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept1[] $concept
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept $concept
      * @return $this
      */
     public function addConcept($concept)
@@ -168,12 +173,32 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
 
     /**
      * Select concepts by specify a matching criteria based on the properties (including relationships) defined by the system. If multiple filters are specified, they SHALL all be true.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetFilter[] $filter
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetFilter $filter
      * @return $this
      */
     public function addFilter($filter)
     {
         $this->filter[] = $filter;
+        return $this;
+    }
+
+    /**
+     * Selects concepts found in this value set. This is an absolute URI that is a reference to ValueSet.url.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public function getValueSet()
+    {
+        return $this->valueSet;
+    }
+
+    /**
+     * Selects concepts found in this value set. This is an absolute URI that is a reference to ValueSet.url.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $valueSet
+     * @return $this
+     */
+    public function addValueSet($valueSet)
+    {
+        $this->valueSet[] = $valueSet;
         return $this;
     }
 
@@ -199,18 +224,24 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
         if (0 < count($this->concept)) {
-            $json['concept'] = array();
+            $json['concept'] = [];
             foreach($this->concept as $concept) {
-                $json['concept'][] = $concept->jsonSerialize();
+                $json['concept'][] = json_encode($concept);
             }
         }
         if (0 < count($this->filter)) {
-            $json['filter'] = array();
+            $json['filter'] = [];
             foreach($this->filter as $filter) {
-                $json['filter'][] = $filter->jsonSerialize();
+                $json['filter'][] = json_encode($filter);
+            }
+        }
+        if (0 < count($this->valueSet)) {
+            $json['valueSet'] = [];
+            foreach($this->valueSet as $valueSet) {
+                $json['valueSet'][] = json_encode($valueSet);
             }
         }
         return $json;
@@ -235,6 +266,11 @@ class FHIRValueSetInclude extends FHIRBackboneElement implements JsonSerializabl
         if (0 < count($this->filter)) {
             foreach($this->filter as $filter) {
                 $filter->xmlSerialize(true, $sxe->addChild('filter'));
+            }
+        }
+        if (0 < count($this->valueSet)) {
+            foreach($this->valueSet as $valueSet) {
+                $valueSet->xmlSerialize(true, $sxe->addChild('valueSet'));
             }
         }
         if ($returnSXE) return $sxe;

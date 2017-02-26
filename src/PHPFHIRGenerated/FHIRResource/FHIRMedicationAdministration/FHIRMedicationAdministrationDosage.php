@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,30 +61,25 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the event of a patient consuming or otherwise being administered a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.  Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.
  */
-class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Free text dosage instructions can be used for cases where the instructions are too complex to code. When coded instructions are present, the free text instructions may still be present for display to humans taking or administering the medication.
+     * Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
+
+The dosage instructions should reflect the dosage of the medication that was administered.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
-     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm". (choose any one of site*, but only one)
+     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm".
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $siteCodeableConcept = null;
-
-    /**
-     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm". (choose any one of site*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $siteReference = null;
+    public $site = null;
 
     /**
      * A code specifying the route or physiological path of administration of a therapeutic agent into or onto the patient.  For example, topical, intravenous, etc.
@@ -100,21 +95,21 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
 
     /**
      * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $quantity = null;
+    public $dose = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Currently we do not specify a default of '1' in the denominator, but this is being discussed.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
+     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Currently we do not specify a default of '1' in the denominator, but this is being discussed.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
+     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public $rateRange = null;
+    public $rateQuantity = null;
 
     /**
      * @var string
@@ -122,7 +117,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
     private $_fhirElementName = 'MedicationAdministration.Dosage';
 
     /**
-     * Free text dosage instructions can be used for cases where the instructions are too complex to code. When coded instructions are present, the free text instructions may still be present for display to humans taking or administering the medication.
+     * Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
+
+The dosage instructions should reflect the dosage of the medication that was administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getText()
@@ -131,7 +128,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
     }
 
     /**
-     * Free text dosage instructions can be used for cases where the instructions are too complex to code. When coded instructions are present, the free text instructions may still be present for display to humans taking or administering the medication.
+     * Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
+
+The dosage instructions should reflect the dosage of the medication that was administered.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
@@ -142,42 +141,22 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
     }
 
     /**
-     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm". (choose any one of site*, but only one)
+     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm".
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getSiteCodeableConcept()
+    public function getSite()
     {
-        return $this->siteCodeableConcept;
+        return $this->site;
     }
 
     /**
-     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm". (choose any one of site*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $siteCodeableConcept
+     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm".
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $site
      * @return $this
      */
-    public function setSiteCodeableConcept($siteCodeableConcept)
+    public function setSite($site)
     {
-        $this->siteCodeableConcept = $siteCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm". (choose any one of site*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSiteReference()
-    {
-        return $this->siteReference;
-    }
-
-    /**
-     * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm". (choose any one of site*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $siteReference
-     * @return $this
-     */
-    public function setSiteReference($siteReference)
-    {
-        $this->siteReference = $siteReference;
+        $this->site = $site;
         return $this;
     }
 
@@ -223,26 +202,26 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
 
     /**
      * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
+    public function getDose()
     {
-        return $this->quantity;
+        return $this->dose;
     }
 
     /**
      * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $dose
      * @return $this
      */
-    public function setQuantity($quantity)
+    public function setDose($dose)
     {
-        $this->quantity = $quantity;
+        $this->dose = $dose;
         return $this;
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Currently we do not specify a default of '1' in the denominator, but this is being discussed.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
+     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
@@ -251,7 +230,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Currently we do not specify a default of '1' in the denominator, but this is being discussed.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
+     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
@@ -262,22 +241,22 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Currently we do not specify a default of '1' in the denominator, but this is being discussed.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
+     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getRateRange()
+    public function getRateQuantity()
     {
-        return $this->rateRange;
+        return $this->rateQuantity;
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Currently we do not specify a default of '1' in the denominator, but this is being discussed.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $rateRange
+     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $rateQuantity
      * @return $this
      */
-    public function setRateRange($rateRange)
+    public function setRateQuantity($rateQuantity)
     {
-        $this->rateRange = $rateRange;
+        $this->rateQuantity = $rateQuantity;
         return $this;
     }
 
@@ -303,14 +282,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
-        if (null !== $this->siteCodeableConcept) $json['siteCodeableConcept'] = $this->siteCodeableConcept->jsonSerialize();
-        if (null !== $this->siteReference) $json['siteReference'] = $this->siteReference->jsonSerialize();
-        if (null !== $this->route) $json['route'] = $this->route->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio->jsonSerialize();
-        if (null !== $this->rateRange) $json['rateRange'] = $this->rateRange->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->site) $json['site'] = json_encode($this->site);
+        if (null !== $this->route) $json['route'] = json_encode($this->route);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->dose) $json['dose'] = json_encode($this->dose);
+        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
+        if (null !== $this->rateQuantity) $json['rateQuantity'] = json_encode($this->rateQuantity);
         return $json;
     }
 
@@ -324,13 +302,12 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement implements 
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationAdministrationDosage xmlns="http://hl7.org/fhir"></MedicationAdministrationDosage>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (null !== $this->siteCodeableConcept) $this->siteCodeableConcept->xmlSerialize(true, $sxe->addChild('siteCodeableConcept'));
-        if (null !== $this->siteReference) $this->siteReference->xmlSerialize(true, $sxe->addChild('siteReference'));
+        if (null !== $this->site) $this->site->xmlSerialize(true, $sxe->addChild('site'));
         if (null !== $this->route) $this->route->xmlSerialize(true, $sxe->addChild('route'));
         if (null !== $this->method) $this->method->xmlSerialize(true, $sxe->addChild('method'));
-        if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
+        if (null !== $this->dose) $this->dose->xmlSerialize(true, $sxe->addChild('dose'));
         if (null !== $this->rateRatio) $this->rateRatio->xmlSerialize(true, $sxe->addChild('rateRatio'));
-        if (null !== $this->rateRange) $this->rateRange->xmlSerialize(true, $sxe->addChild('rateRange'));
+        if (null !== $this->rateQuantity) $this->rateQuantity->xmlSerialize(true, $sxe->addChild('rateQuantity'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

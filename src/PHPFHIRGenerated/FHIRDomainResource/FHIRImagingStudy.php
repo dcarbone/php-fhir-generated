@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,26 +61,13 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
+class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
 {
-    /**
-     * Date and Time the study started.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $started = null;
-
-    /**
-     * The patient imaged in the study.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $patient = null;
-
     /**
      * Formal identifier for the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
@@ -100,10 +87,10 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     public $identifier = array();
 
     /**
-     * A list of the diagnostic orders that resulted in this imaging study being performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * Availability of study (online, offline or nearline).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
      */
-    public $order = array();
+    public $availability = null;
 
     /**
      * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
@@ -112,22 +99,46 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     public $modalityList = array();
 
     /**
+     * The patient imaged in the study.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $patient = null;
+
+    /**
+     * The encounter at which the request is initiated.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $context = null;
+
+    /**
+     * Date and Time the study started.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $started = null;
+
+    /**
+     * A list of the diagnostic requests that resulted in this imaging study being performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
+
+    /**
      * The requesting/referring physician.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $referrer = null;
 
     /**
-     * Availability of study (online, offline or nearline).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstanceAvailability
+     * Who read the study and interpreted the images or other content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $availability = null;
+    public $interpreter = array();
 
     /**
-     * WADO-RS resource where Study is available.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * Methods of accessing  (e.g., retrieving, viewing) the study.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation[]
      */
-    public $url = null;
+    public $baseLocation = array();
 
     /**
      * Number of Series in Study.
@@ -148,10 +159,10 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     public $procedure = array();
 
     /**
-     * Who read the study and interpreted the images or other content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Description of clinical codition indicating why the ImagingStudy was requested.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $interpreter = null;
+    public $reason = null;
 
     /**
      * Institution-generated description or classification of the Study performed.
@@ -169,46 +180,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
      * @var string
      */
     private $_fhirElementName = 'ImagingStudy';
-
-    /**
-     * Date and Time the study started.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getStarted()
-    {
-        return $this->started;
-    }
-
-    /**
-     * Date and Time the study started.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $started
-     * @return $this
-     */
-    public function setStarted($started)
-    {
-        $this->started = $started;
-        return $this;
-    }
-
-    /**
-     * The patient imaged in the study.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * The patient imaged in the study.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
-     * @return $this
-     */
-    public function setPatient($patient)
-    {
-        $this->patient = $patient;
-        return $this;
-    }
 
     /**
      * Formal identifier for the study.
@@ -261,72 +232,12 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Other identifiers for the study.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
-        return $this;
-    }
-
-    /**
-     * A list of the diagnostic orders that resulted in this imaging study being performed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getOrder()
-    {
-        return $this->order;
-    }
-
-    /**
-     * A list of the diagnostic orders that resulted in this imaging study being performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $order
-     * @return $this
-     */
-    public function addOrder($order)
-    {
-        $this->order[] = $order;
-        return $this;
-    }
-
-    /**
-     * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
-     */
-    public function getModalityList()
-    {
-        return $this->modalityList;
-    }
-
-    /**
-     * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $modalityList
-     * @return $this
-     */
-    public function addModalityList($modalityList)
-    {
-        $this->modalityList[] = $modalityList;
-        return $this;
-    }
-
-    /**
-     * The requesting/referring physician.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getReferrer()
-    {
-        return $this->referrer;
-    }
-
-    /**
-     * The requesting/referring physician.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $referrer
-     * @return $this
-     */
-    public function setReferrer($referrer)
-    {
-        $this->referrer = $referrer;
         return $this;
     }
 
@@ -351,22 +262,162 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * WADO-RS resource where Study is available.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getUrl()
+    public function getModalityList()
     {
-        return $this->url;
+        return $this->modalityList;
     }
 
     /**
-     * WADO-RS resource where Study is available.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
+     * A list of all the Series.ImageModality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $modalityList
      * @return $this
      */
-    public function setUrl($url)
+    public function addModalityList($modalityList)
     {
-        $this->url = $url;
+        $this->modalityList[] = $modalityList;
+        return $this;
+    }
+
+    /**
+     * The patient imaged in the study.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * The patient imaged in the study.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
+     * @return $this
+     */
+    public function setPatient($patient)
+    {
+        $this->patient = $patient;
+        return $this;
+    }
+
+    /**
+     * The encounter at which the request is initiated.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getContext()
+    {
+        return $this->context;
+    }
+
+    /**
+     * The encounter at which the request is initiated.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
+     * @return $this
+     */
+    public function setContext($context)
+    {
+        $this->context = $context;
+        return $this;
+    }
+
+    /**
+     * Date and Time the study started.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getStarted()
+    {
+        return $this->started;
+    }
+
+    /**
+     * Date and Time the study started.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $started
+     * @return $this
+     */
+    public function setStarted($started)
+    {
+        $this->started = $started;
+        return $this;
+    }
+
+    /**
+     * A list of the diagnostic requests that resulted in this imaging study being performed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A list of the diagnostic requests that resulted in this imaging study being performed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * The requesting/referring physician.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getReferrer()
+    {
+        return $this->referrer;
+    }
+
+    /**
+     * The requesting/referring physician.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $referrer
+     * @return $this
+     */
+    public function setReferrer($referrer)
+    {
+        $this->referrer = $referrer;
+        return $this;
+    }
+
+    /**
+     * Who read the study and interpreted the images or other content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getInterpreter()
+    {
+        return $this->interpreter;
+    }
+
+    /**
+     * Who read the study and interpreted the images or other content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $interpreter
+     * @return $this
+     */
+    public function addInterpreter($interpreter)
+    {
+        $this->interpreter[] = $interpreter;
+        return $this;
+    }
+
+    /**
+     * Methods of accessing  (e.g., retrieving, viewing) the study.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation[]
+     */
+    public function getBaseLocation()
+    {
+        return $this->baseLocation;
+    }
+
+    /**
+     * Methods of accessing  (e.g., retrieving, viewing) the study.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation $baseLocation
+     * @return $this
+     */
+    public function addBaseLocation($baseLocation)
+    {
+        $this->baseLocation[] = $baseLocation;
         return $this;
     }
 
@@ -421,7 +472,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Type of procedure performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $procedure
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $procedure
      * @return $this
      */
     public function addProcedure($procedure)
@@ -431,22 +482,22 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Who read the study and interpreted the images or other content.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Description of clinical codition indicating why the ImagingStudy was requested.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getInterpreter()
+    public function getReason()
     {
-        return $this->interpreter;
+        return $this->reason;
     }
 
     /**
-     * Who read the study and interpreted the images or other content.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $interpreter
+     * Description of clinical codition indicating why the ImagingStudy was requested.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
-    public function setInterpreter($interpreter)
+    public function setReason($reason)
     {
-        $this->interpreter = $interpreter;
+        $this->reason = $reason;
         return $this;
     }
 
@@ -481,7 +532,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Each study has one or more series of images or other content.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries[] $series
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudySeries $series
      * @return $this
      */
     public function addSeries($series)
@@ -513,45 +564,57 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->started) $json['started'] = $this->started->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->accession) $json['accession'] = $this->accession->jsonSerialize();
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->accession) $json['accession'] = json_encode($this->accession);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (0 < count($this->order)) {
-            $json['order'] = array();
-            foreach($this->order as $order) {
-                $json['order'][] = $order->jsonSerialize();
-            }
-        }
+        if (null !== $this->availability) $json['availability'] = json_encode($this->availability);
         if (0 < count($this->modalityList)) {
-            $json['modalityList'] = array();
+            $json['modalityList'] = [];
             foreach($this->modalityList as $modalityList) {
-                $json['modalityList'][] = $modalityList->jsonSerialize();
+                $json['modalityList'][] = json_encode($modalityList);
             }
         }
-        if (null !== $this->referrer) $json['referrer'] = $this->referrer->jsonSerialize();
-        if (null !== $this->availability) $json['availability'] = $this->availability->jsonSerialize();
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->numberOfSeries) $json['numberOfSeries'] = $this->numberOfSeries->jsonSerialize();
-        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = $this->numberOfInstances->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (null !== $this->started) $json['started'] = json_encode($this->started);
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
+        if (null !== $this->referrer) $json['referrer'] = json_encode($this->referrer);
+        if (0 < count($this->interpreter)) {
+            $json['interpreter'] = [];
+            foreach($this->interpreter as $interpreter) {
+                $json['interpreter'][] = json_encode($interpreter);
+            }
+        }
+        if (0 < count($this->baseLocation)) {
+            $json['baseLocation'] = [];
+            foreach($this->baseLocation as $baseLocation) {
+                $json['baseLocation'][] = json_encode($baseLocation);
+            }
+        }
+        if (null !== $this->numberOfSeries) $json['numberOfSeries'] = json_encode($this->numberOfSeries);
+        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = json_encode($this->numberOfInstances);
         if (0 < count($this->procedure)) {
-            $json['procedure'] = array();
+            $json['procedure'] = [];
             foreach($this->procedure as $procedure) {
-                $json['procedure'][] = $procedure->jsonSerialize();
+                $json['procedure'][] = json_encode($procedure);
             }
         }
-        if (null !== $this->interpreter) $json['interpreter'] = $this->interpreter->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->series)) {
-            $json['series'] = array();
+            $json['series'] = [];
             foreach($this->series as $series) {
-                $json['series'][] = $series->jsonSerialize();
+                $json['series'][] = json_encode($series);
             }
         }
         return $json;
@@ -566,8 +629,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImagingStudy xmlns="http://hl7.org/fhir"></ImagingStudy>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->started) $this->started->xmlSerialize(true, $sxe->addChild('started'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if (null !== $this->uid) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
         if (null !== $this->accession) $this->accession->xmlSerialize(true, $sxe->addChild('accession'));
         if (0 < count($this->identifier)) {
@@ -575,19 +636,31 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (0 < count($this->order)) {
-            foreach($this->order as $order) {
-                $order->xmlSerialize(true, $sxe->addChild('order'));
-            }
-        }
+        if (null !== $this->availability) $this->availability->xmlSerialize(true, $sxe->addChild('availability'));
         if (0 < count($this->modalityList)) {
             foreach($this->modalityList as $modalityList) {
                 $modalityList->xmlSerialize(true, $sxe->addChild('modalityList'));
             }
         }
+        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (null !== $this->started) $this->started->xmlSerialize(true, $sxe->addChild('started'));
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
         if (null !== $this->referrer) $this->referrer->xmlSerialize(true, $sxe->addChild('referrer'));
-        if (null !== $this->availability) $this->availability->xmlSerialize(true, $sxe->addChild('availability'));
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (0 < count($this->interpreter)) {
+            foreach($this->interpreter as $interpreter) {
+                $interpreter->xmlSerialize(true, $sxe->addChild('interpreter'));
+            }
+        }
+        if (0 < count($this->baseLocation)) {
+            foreach($this->baseLocation as $baseLocation) {
+                $baseLocation->xmlSerialize(true, $sxe->addChild('baseLocation'));
+            }
+        }
         if (null !== $this->numberOfSeries) $this->numberOfSeries->xmlSerialize(true, $sxe->addChild('numberOfSeries'));
         if (null !== $this->numberOfInstances) $this->numberOfInstances->xmlSerialize(true, $sxe->addChild('numberOfInstances'));
         if (0 < count($this->procedure)) {
@@ -595,7 +668,7 @@ class FHIRImagingStudy extends FHIRDomainResource implements JsonSerializable
                 $procedure->xmlSerialize(true, $sxe->addChild('procedure'));
             }
         }
-        if (null !== $this->interpreter) $this->interpreter->xmlSerialize(true, $sxe->addChild('interpreter'));
+        if (null !== $this->reason) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->series)) {
             foreach($this->series as $series) {

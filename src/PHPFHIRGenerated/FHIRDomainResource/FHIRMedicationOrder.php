@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationOrder" rather than "MedicationPrescription" to generalize the use across inpatient and outpatient settings as well as for care plans, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
+class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * External identifier - one that would be used by another non-FHIR system - for example a re-imbursement system might issue its own id for each prescription that is created.  This is particularly important where FHIR only provides part of an entire workflow process where records have to be tracked through an entire system.
@@ -76,10 +75,22 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     public $identifier = array();
 
     /**
-     * The date (and perhaps time) when the prescription was written.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Protocol or definition followed by this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $dateWritten = null;
+    public $definition = array();
+
+    /**
+     * Plan/proposal/order fulfilled by this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
+
+    /**
+     * Composite request this is part of.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public $requisition = null;
 
     /**
      * A code specifying the state of the order.  Generally this will be active or completed state.
@@ -88,52 +99,10 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     public $status = null;
 
     /**
-     * The date (and perhaps time) when the prescription was stopped.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $dateEnded = null;
-
-    /**
-     * The reason why the prescription was stopped, if it was.
+     * Whether the request is a proposal, plan, or an original order.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $reasonEnded = null;
-
-    /**
-     * A link to a resource representing the person to whom the medication will be given.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $patient = null;
-
-    /**
-     * The healthcare professional responsible for authorizing the prescription.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $prescriber = null;
-
-    /**
-     * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $encounter = null;
-
-    /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $reasonCodeableConcept = null;
-
-    /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $reasonReference = null;
-
-    /**
-     * Extra information about the prescription that could not be conveyed by the other attributes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $note = null;
+    public $stage = null;
 
     /**
      * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
@@ -148,8 +117,62 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     public $medicationReference = null;
 
     /**
+     * A link to a resource representing the person to whom the medication will be given.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $patient = null;
+
+    /**
+     * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $encounter = null;
+
+    /**
+     * Include additional information (for example, patient height and weight) that supports the ordering of the medication.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $supportingInformation = array();
+
+    /**
+     * The date (and perhaps time) when the prescription was initially written.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $dateWritten = null;
+
+    /**
+     * The healthcare professional responsible for authorizing the initial prescription.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $prescriber = null;
+
+    /**
+     * Can be the reason or the indication for writing the prescription.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $reasonCode = array();
+
+    /**
+     * Condition or observation that supports why the prescription is being written.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $reasonReference = array();
+
+    /**
+     * Extra information about the prescription that could not be conveyed by the other attributes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public $note = array();
+
+    /**
+     * Indicates where type of medication order and where the medication is expected to be consumed or administered.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMedicationOrderCategory
+     */
+    public $category = null;
+
+    /**
      * Indicates how the medication is to be used by the patient.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRMedicationOrder\FHIRMedicationOrderDosageInstruction[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDosageInstruction[]
      */
     public $dosageInstruction = array();
 
@@ -166,10 +189,16 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     public $substitution = null;
 
     /**
-     * A link to a resource representing an earlier order or prescription that this order supersedes.
+     * A link to a resource representing an earlier order related order or prescription.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $priorPrescription = null;
+
+    /**
+     * A summary of the events of interest that have occurred as the request is processed; e.g. when the order was verified or when it was completed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $eventHistory = array();
 
     /**
      * @var string
@@ -187,7 +216,7 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
 
     /**
      * External identifier - one that would be used by another non-FHIR system - for example a re-imbursement system might issue its own id for each prescription that is created.  This is particularly important where FHIR only provides part of an entire workflow process where records have to be tracked through an entire system.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -197,22 +226,62 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date (and perhaps time) when the prescription was written.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Protocol or definition followed by this request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getDateWritten()
+    public function getDefinition()
     {
-        return $this->dateWritten;
+        return $this->definition;
     }
 
     /**
-     * The date (and perhaps time) when the prescription was written.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $dateWritten
+     * Protocol or definition followed by this request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
      * @return $this
      */
-    public function setDateWritten($dateWritten)
+    public function addDefinition($definition)
     {
-        $this->dateWritten = $dateWritten;
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * Plan/proposal/order fulfilled by this request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * Plan/proposal/order fulfilled by this request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * Composite request this is part of.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getRequisition()
+    {
+        return $this->requisition;
+    }
+
+    /**
+     * Composite request this is part of.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $requisition
+     * @return $this
+     */
+    public function setRequisition($requisition)
+    {
+        $this->requisition = $requisition;
         return $this;
     }
 
@@ -237,162 +306,22 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date (and perhaps time) when the prescription was stopped.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDateEnded()
-    {
-        return $this->dateEnded;
-    }
-
-    /**
-     * The date (and perhaps time) when the prescription was stopped.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $dateEnded
-     * @return $this
-     */
-    public function setDateEnded($dateEnded)
-    {
-        $this->dateEnded = $dateEnded;
-        return $this;
-    }
-
-    /**
-     * The reason why the prescription was stopped, if it was.
+     * Whether the request is a proposal, plan, or an original order.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReasonEnded()
+    public function getStage()
     {
-        return $this->reasonEnded;
+        return $this->stage;
     }
 
     /**
-     * The reason why the prescription was stopped, if it was.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonEnded
+     * Whether the request is a proposal, plan, or an original order.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $stage
      * @return $this
      */
-    public function setReasonEnded($reasonEnded)
+    public function setStage($stage)
     {
-        $this->reasonEnded = $reasonEnded;
-        return $this;
-    }
-
-    /**
-     * A link to a resource representing the person to whom the medication will be given.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * A link to a resource representing the person to whom the medication will be given.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
-     * @return $this
-     */
-    public function setPatient($patient)
-    {
-        $this->patient = $patient;
-        return $this;
-    }
-
-    /**
-     * The healthcare professional responsible for authorizing the prescription.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPrescriber()
-    {
-        return $this->prescriber;
-    }
-
-    /**
-     * The healthcare professional responsible for authorizing the prescription.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $prescriber
-     * @return $this
-     */
-    public function setPrescriber($prescriber)
-    {
-        $this->prescriber = $prescriber;
-        return $this;
-    }
-
-    /**
-     * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getEncounter()
-    {
-        return $this->encounter;
-    }
-
-    /**
-     * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
-     * @return $this
-     */
-    public function setEncounter($encounter)
-    {
-        $this->encounter = $encounter;
-        return $this;
-    }
-
-    /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getReasonCodeableConcept()
-    {
-        return $this->reasonCodeableConcept;
-    }
-
-    /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
-     * @return $this
-     */
-    public function setReasonCodeableConcept($reasonCodeableConcept)
-    {
-        $this->reasonCodeableConcept = $reasonCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getReasonReference()
-    {
-        return $this->reasonReference;
-    }
-
-    /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
-     * @return $this
-     */
-    public function setReasonReference($reasonReference)
-    {
-        $this->reasonReference = $reasonReference;
-        return $this;
-    }
-
-    /**
-     * Extra information about the prescription that could not be conveyed by the other attributes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
-    /**
-     * Extra information about the prescription that could not be conveyed by the other attributes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $note
-     * @return $this
-     */
-    public function setNote($note)
-    {
-        $this->note = $note;
+        $this->stage = $stage;
         return $this;
     }
 
@@ -437,8 +366,188 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
+     * A link to a resource representing the person to whom the medication will be given.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * A link to a resource representing the person to whom the medication will be given.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
+     * @return $this
+     */
+    public function setPatient($patient)
+    {
+        $this->patient = $patient;
+        return $this;
+    }
+
+    /**
+     * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getEncounter()
+    {
+        return $this->encounter;
+    }
+
+    /**
+     * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
+     * @return $this
+     */
+    public function setEncounter($encounter)
+    {
+        $this->encounter = $encounter;
+        return $this;
+    }
+
+    /**
+     * Include additional information (for example, patient height and weight) that supports the ordering of the medication.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getSupportingInformation()
+    {
+        return $this->supportingInformation;
+    }
+
+    /**
+     * Include additional information (for example, patient height and weight) that supports the ordering of the medication.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
+     * @return $this
+     */
+    public function addSupportingInformation($supportingInformation)
+    {
+        $this->supportingInformation[] = $supportingInformation;
+        return $this;
+    }
+
+    /**
+     * The date (and perhaps time) when the prescription was initially written.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDateWritten()
+    {
+        return $this->dateWritten;
+    }
+
+    /**
+     * The date (and perhaps time) when the prescription was initially written.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $dateWritten
+     * @return $this
+     */
+    public function setDateWritten($dateWritten)
+    {
+        $this->dateWritten = $dateWritten;
+        return $this;
+    }
+
+    /**
+     * The healthcare professional responsible for authorizing the initial prescription.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getPrescriber()
+    {
+        return $this->prescriber;
+    }
+
+    /**
+     * The healthcare professional responsible for authorizing the initial prescription.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $prescriber
+     * @return $this
+     */
+    public function setPrescriber($prescriber)
+    {
+        $this->prescriber = $prescriber;
+        return $this;
+    }
+
+    /**
+     * Can be the reason or the indication for writing the prescription.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getReasonCode()
+    {
+        return $this->reasonCode;
+    }
+
+    /**
+     * Can be the reason or the indication for writing the prescription.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @return $this
+     */
+    public function addReasonCode($reasonCode)
+    {
+        $this->reasonCode[] = $reasonCode;
+        return $this;
+    }
+
+    /**
+     * Condition or observation that supports why the prescription is being written.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getReasonReference()
+    {
+        return $this->reasonReference;
+    }
+
+    /**
+     * Condition or observation that supports why the prescription is being written.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
+     * @return $this
+     */
+    public function addReasonReference($reasonReference)
+    {
+        $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
+     * Extra information about the prescription that could not be conveyed by the other attributes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Extra information about the prescription that could not be conveyed by the other attributes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
+     * @return $this
+     */
+    public function addNote($note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * Indicates where type of medication order and where the medication is expected to be consumed or administered.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMedicationOrderCategory
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Indicates where type of medication order and where the medication is expected to be consumed or administered.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMedicationOrderCategory $category
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
      * Indicates how the medication is to be used by the patient.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRMedicationOrder\FHIRMedicationOrderDosageInstruction[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDosageInstruction[]
      */
     public function getDosageInstruction()
     {
@@ -447,7 +556,7 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates how the medication is to be used by the patient.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedicationOrder\FHIRMedicationOrderDosageInstruction[] $dosageInstruction
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDosageInstruction $dosageInstruction
      * @return $this
      */
     public function addDosageInstruction($dosageInstruction)
@@ -497,7 +606,7 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A link to a resource representing an earlier order or prescription that this order supersedes.
+     * A link to a resource representing an earlier order related order or prescription.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPriorPrescription()
@@ -506,13 +615,33 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A link to a resource representing an earlier order or prescription that this order supersedes.
+     * A link to a resource representing an earlier order related order or prescription.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $priorPrescription
      * @return $this
      */
     public function setPriorPrescription($priorPrescription)
     {
         $this->priorPrescription = $priorPrescription;
+        return $this;
+    }
+
+    /**
+     * A summary of the events of interest that have occurred as the request is processed; e.g. when the order was verified or when it was completed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getEventHistory()
+    {
+        return $this->eventHistory;
+    }
+
+    /**
+     * A summary of the events of interest that have occurred as the request is processed; e.g. when the order was verified or when it was completed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $eventHistory
+     * @return $this
+     */
+    public function addEventHistory($eventHistory)
+    {
+        $this->eventHistory[] = $eventHistory;
         return $this;
     }
 
@@ -540,32 +669,72 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->dateWritten) $json['dateWritten'] = $this->dateWritten->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->dateEnded) $json['dateEnded'] = $this->dateEnded->jsonSerialize();
-        if (null !== $this->reasonEnded) $json['reasonEnded'] = $this->reasonEnded->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
-        if (null !== $this->prescriber) $json['prescriber'] = $this->prescriber->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept->jsonSerialize();
-        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference->jsonSerialize();
-        if (null !== $this->note) $json['note'] = $this->note->jsonSerialize();
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept->jsonSerialize();
-        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference->jsonSerialize();
+        if (0 < count($this->definition)) {
+            $json['definition'] = [];
+            foreach($this->definition as $definition) {
+                $json['definition'][] = json_encode($definition);
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
+        if (null !== $this->requisition) $json['requisition'] = json_encode($this->requisition);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->stage) $json['stage'] = json_encode($this->stage);
+        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
+        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (0 < count($this->supportingInformation)) {
+            $json['supportingInformation'] = [];
+            foreach($this->supportingInformation as $supportingInformation) {
+                $json['supportingInformation'][] = json_encode($supportingInformation);
+            }
+        }
+        if (null !== $this->dateWritten) $json['dateWritten'] = json_encode($this->dateWritten);
+        if (null !== $this->prescriber) $json['prescriber'] = json_encode($this->prescriber);
+        if (0 < count($this->reasonCode)) {
+            $json['reasonCode'] = [];
+            foreach($this->reasonCode as $reasonCode) {
+                $json['reasonCode'][] = json_encode($reasonCode);
+            }
+        }
+        if (0 < count($this->reasonReference)) {
+            $json['reasonReference'] = [];
+            foreach($this->reasonReference as $reasonReference) {
+                $json['reasonReference'][] = json_encode($reasonReference);
+            }
+        }
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
+            }
+        }
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
         if (0 < count($this->dosageInstruction)) {
-            $json['dosageInstruction'] = array();
+            $json['dosageInstruction'] = [];
             foreach($this->dosageInstruction as $dosageInstruction) {
-                $json['dosageInstruction'][] = $dosageInstruction->jsonSerialize();
+                $json['dosageInstruction'][] = json_encode($dosageInstruction);
             }
         }
-        if (null !== $this->dispenseRequest) $json['dispenseRequest'] = $this->dispenseRequest->jsonSerialize();
-        if (null !== $this->substitution) $json['substitution'] = $this->substitution->jsonSerialize();
-        if (null !== $this->priorPrescription) $json['priorPrescription'] = $this->priorPrescription->jsonSerialize();
+        if (null !== $this->dispenseRequest) $json['dispenseRequest'] = json_encode($this->dispenseRequest);
+        if (null !== $this->substitution) $json['substitution'] = json_encode($this->substitution);
+        if (null !== $this->priorPrescription) $json['priorPrescription'] = json_encode($this->priorPrescription);
+        if (0 < count($this->eventHistory)) {
+            $json['eventHistory'] = [];
+            foreach($this->eventHistory as $eventHistory) {
+                $json['eventHistory'][] = json_encode($eventHistory);
+            }
+        }
         return $json;
     }
 
@@ -583,18 +752,46 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->dateWritten) $this->dateWritten->xmlSerialize(true, $sxe->addChild('dateWritten'));
+        if (0 < count($this->definition)) {
+            foreach($this->definition as $definition) {
+                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
+        if (null !== $this->requisition) $this->requisition->xmlSerialize(true, $sxe->addChild('requisition'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->dateEnded) $this->dateEnded->xmlSerialize(true, $sxe->addChild('dateEnded'));
-        if (null !== $this->reasonEnded) $this->reasonEnded->xmlSerialize(true, $sxe->addChild('reasonEnded'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (null !== $this->prescriber) $this->prescriber->xmlSerialize(true, $sxe->addChild('prescriber'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
-        if (null !== $this->reasonCodeableConcept) $this->reasonCodeableConcept->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
-        if (null !== $this->reasonReference) $this->reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
-        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
+        if (null !== $this->stage) $this->stage->xmlSerialize(true, $sxe->addChild('stage'));
         if (null !== $this->medicationCodeableConcept) $this->medicationCodeableConcept->xmlSerialize(true, $sxe->addChild('medicationCodeableConcept'));
         if (null !== $this->medicationReference) $this->medicationReference->xmlSerialize(true, $sxe->addChild('medicationReference'));
+        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (0 < count($this->supportingInformation)) {
+            foreach($this->supportingInformation as $supportingInformation) {
+                $supportingInformation->xmlSerialize(true, $sxe->addChild('supportingInformation'));
+            }
+        }
+        if (null !== $this->dateWritten) $this->dateWritten->xmlSerialize(true, $sxe->addChild('dateWritten'));
+        if (null !== $this->prescriber) $this->prescriber->xmlSerialize(true, $sxe->addChild('prescriber'));
+        if (0 < count($this->reasonCode)) {
+            foreach($this->reasonCode as $reasonCode) {
+                $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));
+            }
+        }
+        if (0 < count($this->reasonReference)) {
+            foreach($this->reasonReference as $reasonReference) {
+                $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
+            }
+        }
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
+        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
         if (0 < count($this->dosageInstruction)) {
             foreach($this->dosageInstruction as $dosageInstruction) {
                 $dosageInstruction->xmlSerialize(true, $sxe->addChild('dosageInstruction'));
@@ -603,6 +800,11 @@ class FHIRMedicationOrder extends FHIRDomainResource implements JsonSerializable
         if (null !== $this->dispenseRequest) $this->dispenseRequest->xmlSerialize(true, $sxe->addChild('dispenseRequest'));
         if (null !== $this->substitution) $this->substitution->xmlSerialize(true, $sxe->addChild('substitution'));
         if (null !== $this->priorPrescription) $this->priorPrescription->xmlSerialize(true, $sxe->addChild('priorPrescription'));
+        if (0 < count($this->eventHistory)) {
+            foreach($this->eventHistory as $eventHistory) {
+                $eventHistory->xmlSerialize(true, $sxe->addChild('eventHistory'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

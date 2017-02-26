@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,46 +61,51 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
+class FHIRValueSet extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this value set when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this value set is (or will be) published.
+     * An absolute URL that is used to identify this value set when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this value set is (or will be) published. The URL SHOULD include the major version of the value set. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
-     * Formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    public $identifier = array();
 
     /**
-     * Used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
-     * A free text natural language name describing the value set.
+     * A natural language name identifying the value set. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
-     * The status of the value set.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A short, descriptive, user-friendly title for the value set.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $title = null;
+
+    /**
+     * The status of this value set. Enables tracking the life-cycle of the content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
-     * This valueset was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this value set is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
@@ -112,34 +117,34 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     public $publisher = null;
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public $contact = array();
 
     /**
-     * The date that the value set status was last changed. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes (e.g. the 'content logical definition').
+     * The date  (and optionally time) when the value set was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the value set changes. (e.g. the 'content logical definition').
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version of all referenced code system(s) and value set instances as of the locked date.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
-     */
-    public $lockedDate = null;
-
-    /**
-     * A free text natural language description of the use of the value set - reason for definition, "the semantic space" to be included in the value set, conditions of use, etc. The description may include a list of expected usages for the value set and can also describe the approach taken to build the value set.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the value set from the consumer's perspective.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of value set definitions.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
+
+    /**
+     * A jurisdiction in which the value set is intended to be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $jurisdiction = array();
 
     /**
      * If this is set to 'true', then no new versions of the content logical definition can be created.  Note: Other metadata might still change.
@@ -148,14 +153,14 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     public $immutable = null;
 
     /**
-     * Explains why this value set is needed and why it has been constrained as it has.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Explains why this value set is needed and why it has been designed as it has.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $requirements = null;
+    public $purpose = null;
 
     /**
      * A copyright statement relating to the value set and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the value set.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
@@ -166,13 +171,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     public $extensible = null;
 
     /**
-     * A definition of a code system, inlined into the value set (as a packaging convenience). Note that the inline code system may be used from other value sets by referring to its (codeSystem.system) directly.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetCodeSystem
-     */
-    public $codeSystem = null;
-
-    /**
-     * A set of criteria that provide the content logical definition of the value set by including or excluding codes from outside this value set.
+     * A set of criteria that define the content logical definition of the value set by including or excluding codes from outside this value set. This I also known as the "Content Logical Definition" (CLD).
      * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetCompose
      */
     public $compose = null;
@@ -189,7 +188,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     private $_fhirElementName = 'ValueSet';
 
     /**
-     * An absolute URL that is used to identify this value set when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this value set is (or will be) published.
+     * An absolute URL that is used to identify this value set when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this value set is (or will be) published. The URL SHOULD include the major version of the value set. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -198,7 +197,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * An absolute URL that is used to identify this value set when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this value set is (or will be) published.
+     * An absolute URL that is used to identify this value set when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this value set is (or will be) published. The URL SHOULD include the major version of the value set. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -209,8 +208,8 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -218,18 +217,18 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * A formal identifier that is used to identify this value set when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
+    public function addIdentifier($identifier)
     {
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -238,7 +237,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the value set when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -249,7 +248,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A free text natural language name describing the value set.
+     * A natural language name identifying the value set. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -258,7 +257,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A free text natural language name describing the value set.
+     * A natural language name identifying the value set. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
@@ -269,8 +268,28 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The status of the value set.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A short, descriptive, user-friendly title for the value set.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * A short, descriptive, user-friendly title for the value set.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * The status of this value set. Enables tracking the life-cycle of the content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -278,8 +297,8 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The status of the value set.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * The status of this value set. Enables tracking the life-cycle of the content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -289,7 +308,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * This valueset was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this value set is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -298,7 +317,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * This valueset was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this value set is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -329,8 +348,8 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -338,8 +357,8 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetContact[] $contact
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -349,7 +368,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date that the value set status was last changed. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes (e.g. the 'content logical definition').
+     * The date  (and optionally time) when the value set was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the value set changes. (e.g. the 'content logical definition').
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -358,7 +377,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date that the value set status was last changed. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes (e.g. the 'content logical definition').
+     * The date  (and optionally time) when the value set was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the value set changes. (e.g. the 'content logical definition').
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -369,28 +388,8 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version of all referenced code system(s) and value set instances as of the locked date.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
-     */
-    public function getLockedDate()
-    {
-        return $this->lockedDate;
-    }
-
-    /**
-     * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version of all referenced code system(s) and value set instances as of the locked date.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lockedDate
-     * @return $this
-     */
-    public function setLockedDate($lockedDate)
-    {
-        $this->lockedDate = $lockedDate;
-        return $this;
-    }
-
-    /**
-     * A free text natural language description of the use of the value set - reason for definition, "the semantic space" to be included in the value set, conditions of use, etc. The description may include a list of expected usages for the value set and can also describe the approach taken to build the value set.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the value set from the consumer's perspective.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -398,8 +397,8 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A free text natural language description of the use of the value set - reason for definition, "the semantic space" to be included in the value set, conditions of use, etc. The description may include a list of expected usages for the value set and can also describe the approach taken to build the value set.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * A free text natural language description of the value set from the consumer's perspective.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -409,8 +408,8 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of value set definitions.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -418,13 +417,33 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of value set definitions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
     {
         $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * A jurisdiction in which the value set is intended to be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getJurisdiction()
+    {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * A jurisdiction in which the value set is intended to be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @return $this
+     */
+    public function addJurisdiction($jurisdiction)
+    {
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
@@ -449,28 +468,28 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Explains why this value set is needed and why it has been constrained as it has.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Explains why this value set is needed and why it has been designed as it has.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getRequirements()
+    public function getPurpose()
     {
-        return $this->requirements;
+        return $this->purpose;
     }
 
     /**
-     * Explains why this value set is needed and why it has been constrained as it has.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $requirements
+     * Explains why this value set is needed and why it has been designed as it has.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setRequirements($requirements)
+    public function setPurpose($purpose)
     {
-        $this->requirements = $requirements;
+        $this->purpose = $purpose;
         return $this;
     }
 
     /**
      * A copyright statement relating to the value set and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the value set.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -479,7 +498,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A copyright statement relating to the value set and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the value set.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $copyright
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -509,27 +528,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A definition of a code system, inlined into the value set (as a packaging convenience). Note that the inline code system may be used from other value sets by referring to its (codeSystem.system) directly.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetCodeSystem
-     */
-    public function getCodeSystem()
-    {
-        return $this->codeSystem;
-    }
-
-    /**
-     * A definition of a code system, inlined into the value set (as a packaging convenience). Note that the inline code system may be used from other value sets by referring to its (codeSystem.system) directly.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetCodeSystem $codeSystem
-     * @return $this
-     */
-    public function setCodeSystem($codeSystem)
-    {
-        $this->codeSystem = $codeSystem;
-        return $this;
-    }
-
-    /**
-     * A set of criteria that provide the content logical definition of the value set by including or excluding codes from outside this value set.
+     * A set of criteria that define the content logical definition of the value set by including or excluding codes from outside this value set. This I also known as the "Content Logical Definition" (CLD).
      * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetCompose
      */
     public function getCompose()
@@ -538,7 +537,7 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A set of criteria that provide the content logical definition of the value set by including or excluding codes from outside this value set.
+     * A set of criteria that define the content logical definition of the value set by including or excluding codes from outside this value set. This I also known as the "Content Logical Definition" (CLD).
      * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetCompose $compose
      * @return $this
      */
@@ -591,35 +590,45 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (0 < count($this->identifier)) {
+            $json['identifier'] = [];
+            foreach($this->identifier as $identifier) {
+                $json['identifier'][] = json_encode($identifier);
+            }
+        }
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->lockedDate) $json['lockedDate'] = $this->lockedDate->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->immutable) $json['immutable'] = $this->immutable->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->extensible) $json['extensible'] = $this->extensible->jsonSerialize();
-        if (null !== $this->codeSystem) $json['codeSystem'] = $this->codeSystem->jsonSerialize();
-        if (null !== $this->compose) $json['compose'] = $this->compose->jsonSerialize();
-        if (null !== $this->expansion) $json['expansion'] = $this->expansion->jsonSerialize();
+        if (0 < count($this->jurisdiction)) {
+            $json['jurisdiction'] = [];
+            foreach($this->jurisdiction as $jurisdiction) {
+                $json['jurisdiction'][] = json_encode($jurisdiction);
+            }
+        }
+        if (null !== $this->immutable) $json['immutable'] = json_encode($this->immutable);
+        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->extensible) $json['extensible'] = json_encode($this->extensible);
+        if (null !== $this->compose) $json['compose'] = json_encode($this->compose);
+        if (null !== $this->expansion) $json['expansion'] = json_encode($this->expansion);
         return $json;
     }
 
@@ -633,9 +642,14 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ValueSet xmlns="http://hl7.org/fhir"></ValueSet>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (0 < count($this->identifier)) {
+            foreach($this->identifier as $identifier) {
+                $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+            }
+        }
         if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
@@ -645,18 +659,21 @@ class FHIRValueSet extends FHIRDomainResource implements JsonSerializable
             }
         }
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->lockedDate) $this->lockedDate->xmlSerialize(true, $sxe->addChild('lockedDate'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
             }
         }
+        if (0 < count($this->jurisdiction)) {
+            foreach($this->jurisdiction as $jurisdiction) {
+                $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+            }
+        }
         if (null !== $this->immutable) $this->immutable->xmlSerialize(true, $sxe->addChild('immutable'));
-        if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
+        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
         if (null !== $this->extensible) $this->extensible->xmlSerialize(true, $sxe->addChild('extensible'));
-        if (null !== $this->codeSystem) $this->codeSystem->xmlSerialize(true, $sxe->addChild('codeSystem'));
         if (null !== $this->compose) $this->compose->xmlSerialize(true, $sxe->addChild('compose'));
         if (null !== $this->expansion) $this->expansion->xmlSerialize(true, $sxe->addChild('expansion'));
         if ($returnSXE) return $sxe;

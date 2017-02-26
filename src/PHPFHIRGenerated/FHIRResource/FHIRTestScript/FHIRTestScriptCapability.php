@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptCapability extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Whether or not the test execution will require the given capabilities of the server in order for this test script to execute.
@@ -87,6 +86,12 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
     public $description = null;
 
     /**
+     * Which origin server these requirements apply to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger[]
+     */
+    public $origin = array();
+
+    /**
      * Which server these requirements apply to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
@@ -99,10 +104,10 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
     public $link = array();
 
     /**
-     * Minimum conformance required of server for test script to execute successfully.   If server does not meet at a minimum the reference conformance definition, then all tests in this script are skipped.
+     * Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $conformance = null;
+    public $capabilities = null;
 
     /**
      * @var string
@@ -170,6 +175,26 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
+     * Which origin server these requirements apply to.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger[]
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * Which origin server these requirements apply to.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $origin
+     * @return $this
+     */
+    public function addOrigin($origin)
+    {
+        $this->origin[] = $origin;
+        return $this;
+    }
+
+    /**
      * Which server these requirements apply to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
@@ -200,7 +225,7 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
 
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $link
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $link
      * @return $this
      */
     public function addLink($link)
@@ -210,22 +235,22 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
-     * Minimum conformance required of server for test script to execute successfully.   If server does not meet at a minimum the reference conformance definition, then all tests in this script are skipped.
+     * Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getConformance()
+    public function getCapabilities()
     {
-        return $this->conformance;
+        return $this->capabilities;
     }
 
     /**
-     * Minimum conformance required of server for test script to execute successfully.   If server does not meet at a minimum the reference conformance definition, then all tests in this script are skipped.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $conformance
+     * Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $capabilities
      * @return $this
      */
-    public function setConformance($conformance)
+    public function setCapabilities($capabilities)
     {
-        $this->conformance = $conformance;
+        $this->capabilities = $capabilities;
         return $this;
     }
 
@@ -251,17 +276,23 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->required) $json['required'] = $this->required->jsonSerialize();
-        if (null !== $this->validated) $json['validated'] = $this->validated->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
-        if (0 < count($this->link)) {
-            $json['link'] = array();
-            foreach($this->link as $link) {
-                $json['link'][] = $link->jsonSerialize();
+        if (null !== $this->required) $json['required'] = json_encode($this->required);
+        if (null !== $this->validated) $json['validated'] = json_encode($this->validated);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (0 < count($this->origin)) {
+            $json['origin'] = [];
+            foreach($this->origin as $origin) {
+                $json['origin'][] = json_encode($origin);
             }
         }
-        if (null !== $this->conformance) $json['conformance'] = $this->conformance->jsonSerialize();
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
+        if (0 < count($this->link)) {
+            $json['link'] = [];
+            foreach($this->link as $link) {
+                $json['link'][] = json_encode($link);
+            }
+        }
+        if (null !== $this->capabilities) $json['capabilities'] = json_encode($this->capabilities);
         return $json;
     }
 
@@ -277,13 +308,18 @@ class FHIRTestScriptCapability extends FHIRBackboneElement implements JsonSerial
         if (null !== $this->required) $this->required->xmlSerialize(true, $sxe->addChild('required'));
         if (null !== $this->validated) $this->validated->xmlSerialize(true, $sxe->addChild('validated'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (0 < count($this->origin)) {
+            foreach($this->origin as $origin) {
+                $origin->xmlSerialize(true, $sxe->addChild('origin'));
+            }
+        }
         if (null !== $this->destination) $this->destination->xmlSerialize(true, $sxe->addChild('destination'));
         if (0 < count($this->link)) {
             foreach($this->link as $link) {
                 $link->xmlSerialize(true, $sxe->addChild('link'));
             }
         }
-        if (null !== $this->conformance) $this->conformance->xmlSerialize(true, $sxe->addChild('conformance'));
+        if (null !== $this->capabilities) $this->capabilities->xmlSerialize(true, $sxe->addChild('capabilities'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

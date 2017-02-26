@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,24 +61,17 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A sample to be used for analysis.
  */
-class FHIRSpecimenCollection extends FHIRBackboneElement implements JsonSerializable
+class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Person who collected the specimen.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $collector = null;
-
-    /**
-     * To communicate any details or issues encountered during the specimen collection procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
-     */
-    public $comment = array();
 
     /**
      * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
@@ -94,7 +87,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
@@ -132,26 +125,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements JsonSerializ
     public function setCollector($collector)
     {
         $this->collector = $collector;
-        return $this;
-    }
-
-    /**
-     * To communicate any details or issues encountered during the specimen collection procedure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
-     */
-    public function getComment()
-    {
-        return $this->comment;
-    }
-
-    /**
-     * To communicate any details or issues encountered during the specimen collection procedure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $comment
-     * @return $this
-     */
-    public function addComment($comment)
-    {
-        $this->comment[] = $comment;
         return $this;
     }
 
@@ -197,7 +170,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -206,7 +179,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements JsonSerializ
 
     /**
      * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -277,18 +250,12 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->collector) $json['collector'] = $this->collector->jsonSerialize();
-        if (0 < count($this->comment)) {
-            $json['comment'] = array();
-            foreach($this->comment as $comment) {
-                $json['comment'][] = $comment->jsonSerialize();
-            }
-        }
-        if (null !== $this->collectedDateTime) $json['collectedDateTime'] = $this->collectedDateTime->jsonSerialize();
-        if (null !== $this->collectedPeriod) $json['collectedPeriod'] = $this->collectedPeriod->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite->jsonSerialize();
+        if (null !== $this->collector) $json['collector'] = json_encode($this->collector);
+        if (null !== $this->collectedDateTime) $json['collectedDateTime'] = json_encode($this->collectedDateTime);
+        if (null !== $this->collectedPeriod) $json['collectedPeriod'] = json_encode($this->collectedPeriod);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
         return $json;
     }
 
@@ -302,11 +269,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements JsonSerializ
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SpecimenCollection xmlns="http://hl7.org/fhir"></SpecimenCollection>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->collector) $this->collector->xmlSerialize(true, $sxe->addChild('collector'));
-        if (0 < count($this->comment)) {
-            foreach($this->comment as $comment) {
-                $comment->xmlSerialize(true, $sxe->addChild('comment'));
-            }
-        }
         if (null !== $this->collectedDateTime) $this->collectedDateTime->xmlSerialize(true, $sxe->addChild('collectedDateTime'));
         if (null !== $this->collectedPeriod) $this->collectedPeriod->xmlSerialize(true, $sxe->addChild('collectedPeriod'));
         if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));

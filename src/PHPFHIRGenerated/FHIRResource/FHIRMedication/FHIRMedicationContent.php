@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,22 +61,27 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
  */
-class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationContent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Identifies one of the items in the package.
+     * Identifies one of the items in the package. (choose any one of item*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $itemCodeableConcept = null;
+
+    /**
+     * Identifies one of the items in the package. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $item = null;
+    public $itemReference = null;
 
     /**
      * The amount of the product that is in the package.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $amount = null;
 
@@ -86,28 +91,48 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
     private $_fhirElementName = 'Medication.Content';
 
     /**
-     * Identifies one of the items in the package.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identifies one of the items in the package. (choose any one of item*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getItem()
+    public function getItemCodeableConcept()
     {
-        return $this->item;
+        return $this->itemCodeableConcept;
     }
 
     /**
-     * Identifies one of the items in the package.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $item
+     * Identifies one of the items in the package. (choose any one of item*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
-    public function setItem($item)
+    public function setItemCodeableConcept($itemCodeableConcept)
     {
-        $this->item = $item;
+        $this->itemCodeableConcept = $itemCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * Identifies one of the items in the package. (choose any one of item*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getItemReference()
+    {
+        return $this->itemReference;
+    }
+
+    /**
+     * Identifies one of the items in the package. (choose any one of item*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $itemReference
+     * @return $this
+     */
+    public function setItemReference($itemReference)
+    {
+        $this->itemReference = $itemReference;
         return $this;
     }
 
     /**
      * The amount of the product that is in the package.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getAmount()
     {
@@ -116,7 +141,7 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The amount of the product that is in the package.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $amount
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -147,8 +172,9 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->item) $json['item'] = $this->item->jsonSerialize();
-        if (null !== $this->amount) $json['amount'] = $this->amount->jsonSerialize();
+        if (null !== $this->itemCodeableConcept) $json['itemCodeableConcept'] = json_encode($this->itemCodeableConcept);
+        if (null !== $this->itemReference) $json['itemReference'] = json_encode($this->itemReference);
+        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
         return $json;
     }
 
@@ -161,7 +187,8 @@ class FHIRMedicationContent extends FHIRBackboneElement implements JsonSerializa
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationContent xmlns="http://hl7.org/fhir"></MedicationContent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->item) $this->item->xmlSerialize(true, $sxe->addChild('item'));
+        if (null !== $this->itemCodeableConcept) $this->itemCodeableConcept->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
+        if (null !== $this->itemReference) $this->itemReference->xmlSerialize(true, $sxe->addChild('itemReference'));
         if (null !== $this->amount) $this->amount->xmlSerialize(true, $sxe->addChild('amount'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

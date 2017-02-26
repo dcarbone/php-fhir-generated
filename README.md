@@ -1,10 +1,10 @@
 # php-fhir-generated
 Pre-generated classes from dcarbone/php-fhir
 
-# VERSION: DSTU2
+# VERSION: DSTU3
 
-- Homepage: http://hl7.org/fhir/DSTU2/index.html
-- Resources: http://hl7.org/fhir/DSTU2/resourcelist.html
+- Homepage: http://hl7.org/fhir/2017Jan/index.html
+- Resources: http://hl7.org/fhir/2017Jan/resourcelist.html
 
 ## Usage
 
@@ -17,7 +17,7 @@ composer.json require entry:
 
 ```json
 {
-   "dcarbone/php-fhir-generated": "DSTU2"
+   "dcarbone/php-fhir-generated": "dev-STU3"
 }
 ```
 

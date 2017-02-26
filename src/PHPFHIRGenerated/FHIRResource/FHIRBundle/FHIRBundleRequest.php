@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,15 +61,14 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A container for a collection of resources.
  */
-class FHIRBundleRequest extends FHIRBackboneElement implements JsonSerializable
+class FHIRBundleRequest extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The HTTP verb for this entry in either a update history, or a transaction/ transaction response.
+     * The HTTP verb for this entry in either a change history, or a transaction/ transaction response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHTTPVerb
      */
     public $method = null;
@@ -110,7 +109,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements JsonSerializable
     private $_fhirElementName = 'Bundle.Request';
 
     /**
-     * The HTTP verb for this entry in either a update history, or a transaction/ transaction response.
+     * The HTTP verb for this entry in either a change history, or a transaction/ transaction response.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHTTPVerb
      */
     public function getMethod()
@@ -119,7 +118,7 @@ class FHIRBundleRequest extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The HTTP verb for this entry in either a update history, or a transaction/ transaction response.
+     * The HTTP verb for this entry in either a change history, or a transaction/ transaction response.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHTTPVerb $method
      * @return $this
      */
@@ -251,12 +250,12 @@ class FHIRBundleRequest extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->ifNoneMatch) $json['ifNoneMatch'] = $this->ifNoneMatch->jsonSerialize();
-        if (null !== $this->ifModifiedSince) $json['ifModifiedSince'] = $this->ifModifiedSince->jsonSerialize();
-        if (null !== $this->ifMatch) $json['ifMatch'] = $this->ifMatch->jsonSerialize();
-        if (null !== $this->ifNoneExist) $json['ifNoneExist'] = $this->ifNoneExist->jsonSerialize();
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->ifNoneMatch) $json['ifNoneMatch'] = json_encode($this->ifNoneMatch);
+        if (null !== $this->ifModifiedSince) $json['ifModifiedSince'] = json_encode($this->ifModifiedSince);
+        if (null !== $this->ifMatch) $json['ifMatch'] = json_encode($this->ifMatch);
+        if (null !== $this->ifNoneExist) $json['ifNoneExist'] = json_encode($this->ifNoneExist);
         return $json;
     }
 

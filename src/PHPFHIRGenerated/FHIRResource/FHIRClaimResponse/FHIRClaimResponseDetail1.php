@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,28 +61,51 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
  */
-class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
+     * The type of reveneu or cost center providing the product and/or service.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $revenue = null;
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $category = null;
+
+    /**
      * A code to indicate the Professional Service or Product supplied.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $service = null;
 
     /**
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $modifier = array();
+
+    /**
      * The fee charged for the professional service or product..
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $fee = null;
 
     /**
+     * A list of note references to the notes provided below.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    public $noteNumber = array();
+
+    /**
      * The adjudications results.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication4[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public $adjudication = array();
 
@@ -92,8 +115,48 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
     private $_fhirElementName = 'ClaimResponse.Detail1';
 
     /**
+     * The type of reveneu or cost center providing the product and/or service.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getRevenue()
+    {
+        return $this->revenue;
+    }
+
+    /**
+     * The type of reveneu or cost center providing the product and/or service.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $revenue
+     * @return $this
+     */
+    public function setRevenue($revenue)
+    {
+        $this->revenue = $revenue;
+        return $this;
+    }
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
      * A code to indicate the Professional Service or Product supplied.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getService()
     {
@@ -102,7 +165,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
 
     /**
      * A code to indicate the Professional Service or Product supplied.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $service
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $service
      * @return $this
      */
     public function setService($service)
@@ -112,8 +175,28 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getModifier()
+    {
+        return $this->modifier;
+    }
+
+    /**
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $modifier
+     * @return $this
+     */
+    public function addModifier($modifier)
+    {
+        $this->modifier[] = $modifier;
+        return $this;
+    }
+
+    /**
      * The fee charged for the professional service or product..
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getFee()
     {
@@ -122,7 +205,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
 
     /**
      * The fee charged for the professional service or product..
-     * @param \PHPFHIRGenerated\FHIRMoney $fee
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $fee
      * @return $this
      */
     public function setFee($fee)
@@ -132,8 +215,28 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
+     * A list of note references to the notes provided below.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    public function getNoteNumber()
+    {
+        return $this->noteNumber;
+    }
+
+    /**
+     * A list of note references to the notes provided below.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $noteNumber
+     * @return $this
+     */
+    public function addNoteNumber($noteNumber)
+    {
+        $this->noteNumber[] = $noteNumber;
+        return $this;
+    }
+
+    /**
      * The adjudications results.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication4[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     public function getAdjudication()
     {
@@ -142,7 +245,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
 
     /**
      * The adjudications results.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication4[] $adjudication
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseAdjudication $adjudication
      * @return $this
      */
     public function addAdjudication($adjudication)
@@ -173,12 +276,26 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->service) $json['service'] = $this->service->jsonSerialize();
-        if (null !== $this->fee) $json['fee'] = $this->fee->jsonSerialize();
+        if (null !== $this->revenue) $json['revenue'] = json_encode($this->revenue);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->service) $json['service'] = json_encode($this->service);
+        if (0 < count($this->modifier)) {
+            $json['modifier'] = [];
+            foreach($this->modifier as $modifier) {
+                $json['modifier'][] = json_encode($modifier);
+            }
+        }
+        if (null !== $this->fee) $json['fee'] = json_encode($this->fee);
+        if (0 < count($this->noteNumber)) {
+            $json['noteNumber'] = [];
+            foreach($this->noteNumber as $noteNumber) {
+                $json['noteNumber'][] = json_encode($noteNumber);
+            }
+        }
         if (0 < count($this->adjudication)) {
-            $json['adjudication'] = array();
+            $json['adjudication'] = [];
             foreach($this->adjudication as $adjudication) {
-                $json['adjudication'][] = $adjudication->jsonSerialize();
+                $json['adjudication'][] = json_encode($adjudication);
             }
         }
         return $json;
@@ -193,8 +310,20 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements JsonSerial
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimResponseDetail1 xmlns="http://hl7.org/fhir"></ClaimResponseDetail1>');
         parent::xmlSerialize(true, $sxe);
+        if (null !== $this->revenue) $this->revenue->xmlSerialize(true, $sxe->addChild('revenue'));
+        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
         if (null !== $this->service) $this->service->xmlSerialize(true, $sxe->addChild('service'));
+        if (0 < count($this->modifier)) {
+            foreach($this->modifier as $modifier) {
+                $modifier->xmlSerialize(true, $sxe->addChild('modifier'));
+            }
+        }
         if (null !== $this->fee) $this->fee->xmlSerialize(true, $sxe->addChild('fee'));
+        if (0 < count($this->noteNumber)) {
+            foreach($this->noteNumber as $noteNumber) {
+                $noteNumber->xmlSerialize(true, $sxe->addChild('noteNumber'));
+            }
+        }
         if (0 < count($this->adjudication)) {
             foreach($this->adjudication as $adjudication) {
                 $adjudication->xmlSerialize(true, $sxe->addChild('adjudication'));

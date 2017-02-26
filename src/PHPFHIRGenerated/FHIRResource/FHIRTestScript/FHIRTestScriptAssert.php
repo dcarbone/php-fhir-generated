@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The label would be used for tracking/logging purposes by test engines.
@@ -87,13 +86,19 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     public $direction = null;
 
     /**
-     * Id of fixture used to compare the "sourceId/path" evaluations to.
+     * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $compareToSourceId = null;
 
     /**
-     * XPath or JSONPath expression against fixture used to compare the "sourceId/path" evaluations to.
+     * The fhirpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $compareToSourceExpression = null;
+
+    /**
+     * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $compareToSourcePath = null;
@@ -105,13 +110,19 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     public $contentType = null;
 
     /**
+     * The fhirpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $expression = null;
+
+    /**
      * The HTTP header field name e.g. 'Location'.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $headerField = null;
 
     /**
-     * The ID of a fixture.  Asserts that the response contains at a minimumId the fixture specified by minimumId.
+     * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $minimumId = null;
@@ -123,7 +134,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     public $navigationLinks = null;
 
     /**
-     * The operator type.
+     * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAssertionOperatorType
      */
     public $operator = null;
@@ -135,7 +146,13 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     public $path = null;
 
     /**
-     * The type of the resource.  See http://hl7-fhir.github.io/resourcelist.html.
+     * The value to use in a comparison against the request URL path string.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $requestURL = null;
+
+    /**
+     * The type of the resource.  See http://build.fhir.org/resourcelist.html.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $resource = null;
@@ -151,6 +168,18 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $responseCode = null;
+
+    /**
+     * The TestScript.rule this assert will evaluate.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRule2
+     */
+    public $rule = null;
+
+    /**
+     * The TestScript.ruleset this assert will evaluate.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRuleset1
+     */
+    public $ruleset = null;
 
     /**
      * Fixture to evaluate the XPath/JSONPath expression or the headerField  against.
@@ -242,7 +271,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * Id of fixture used to compare the "sourceId/path" evaluations to.
+     * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getCompareToSourceId()
@@ -251,7 +280,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * Id of fixture used to compare the "sourceId/path" evaluations to.
+     * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $compareToSourceId
      * @return $this
      */
@@ -262,7 +291,27 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * XPath or JSONPath expression against fixture used to compare the "sourceId/path" evaluations to.
+     * The fhirpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getCompareToSourceExpression()
+    {
+        return $this->compareToSourceExpression;
+    }
+
+    /**
+     * The fhirpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $compareToSourceExpression
+     * @return $this
+     */
+    public function setCompareToSourceExpression($compareToSourceExpression)
+    {
+        $this->compareToSourceExpression = $compareToSourceExpression;
+        return $this;
+    }
+
+    /**
+     * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getCompareToSourcePath()
@@ -271,7 +320,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * XPath or JSONPath expression against fixture used to compare the "sourceId/path" evaluations to.
+     * XPath or JSONPath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $compareToSourcePath
      * @return $this
      */
@@ -302,6 +351,26 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
+     * The fhirpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getExpression()
+    {
+        return $this->expression;
+    }
+
+    /**
+     * The fhirpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
+     * @return $this
+     */
+    public function setExpression($expression)
+    {
+        $this->expression = $expression;
+        return $this;
+    }
+
+    /**
      * The HTTP header field name e.g. 'Location'.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -322,7 +391,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * The ID of a fixture.  Asserts that the response contains at a minimumId the fixture specified by minimumId.
+     * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getMinimumId()
@@ -331,7 +400,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * The ID of a fixture.  Asserts that the response contains at a minimumId the fixture specified by minimumId.
+     * The ID of a fixture.  Asserts that the response contains at a minimum the fixture specified by minimumId.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $minimumId
      * @return $this
      */
@@ -362,7 +431,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * The operator type.
+     * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAssertionOperatorType
      */
     public function getOperator()
@@ -371,7 +440,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * The operator type.
+     * The operator type defines the conditional behavior of the assert. If not defined, the default is equals.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAssertionOperatorType $operator
      * @return $this
      */
@@ -402,7 +471,27 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * The type of the resource.  See http://hl7-fhir.github.io/resourcelist.html.
+     * The value to use in a comparison against the request URL path string.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getRequestURL()
+    {
+        return $this->requestURL;
+    }
+
+    /**
+     * The value to use in a comparison against the request URL path string.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $requestURL
+     * @return $this
+     */
+    public function setRequestURL($requestURL)
+    {
+        $this->requestURL = $requestURL;
+        return $this;
+    }
+
+    /**
+     * The type of the resource.  See http://build.fhir.org/resourcelist.html.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getResource()
@@ -411,7 +500,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     }
 
     /**
-     * The type of the resource.  See http://hl7-fhir.github.io/resourcelist.html.
+     * The type of the resource.  See http://build.fhir.org/resourcelist.html.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $resource
      * @return $this
      */
@@ -458,6 +547,46 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     public function setResponseCode($responseCode)
     {
         $this->responseCode = $responseCode;
+        return $this;
+    }
+
+    /**
+     * The TestScript.rule this assert will evaluate.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRule2
+     */
+    public function getRule()
+    {
+        return $this->rule;
+    }
+
+    /**
+     * The TestScript.rule this assert will evaluate.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRule2 $rule
+     * @return $this
+     */
+    public function setRule($rule)
+    {
+        $this->rule = $rule;
+        return $this;
+    }
+
+    /**
+     * The TestScript.ruleset this assert will evaluate.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRuleset1
+     */
+    public function getRuleset()
+    {
+        return $this->ruleset;
+    }
+
+    /**
+     * The TestScript.ruleset this assert will evaluate.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRuleset1 $ruleset
+     * @return $this
+     */
+    public function setRuleset($ruleset)
+    {
+        $this->ruleset = $ruleset;
         return $this;
     }
 
@@ -563,24 +692,29 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->label) $json['label'] = $this->label->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->direction) $json['direction'] = $this->direction->jsonSerialize();
-        if (null !== $this->compareToSourceId) $json['compareToSourceId'] = $this->compareToSourceId->jsonSerialize();
-        if (null !== $this->compareToSourcePath) $json['compareToSourcePath'] = $this->compareToSourcePath->jsonSerialize();
-        if (null !== $this->contentType) $json['contentType'] = $this->contentType->jsonSerialize();
-        if (null !== $this->headerField) $json['headerField'] = $this->headerField->jsonSerialize();
-        if (null !== $this->minimumId) $json['minimumId'] = $this->minimumId->jsonSerialize();
-        if (null !== $this->navigationLinks) $json['navigationLinks'] = $this->navigationLinks->jsonSerialize();
-        if (null !== $this->operator) $json['operator'] = $this->operator->jsonSerialize();
-        if (null !== $this->path) $json['path'] = $this->path->jsonSerialize();
-        if (null !== $this->resource) $json['resource'] = $this->resource->jsonSerialize();
-        if (null !== $this->response) $json['response'] = $this->response->jsonSerialize();
-        if (null !== $this->responseCode) $json['responseCode'] = $this->responseCode->jsonSerialize();
-        if (null !== $this->sourceId) $json['sourceId'] = $this->sourceId->jsonSerialize();
-        if (null !== $this->validateProfileId) $json['validateProfileId'] = $this->validateProfileId->jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
-        if (null !== $this->warningOnly) $json['warningOnly'] = $this->warningOnly->jsonSerialize();
+        if (null !== $this->label) $json['label'] = json_encode($this->label);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->direction) $json['direction'] = json_encode($this->direction);
+        if (null !== $this->compareToSourceId) $json['compareToSourceId'] = json_encode($this->compareToSourceId);
+        if (null !== $this->compareToSourceExpression) $json['compareToSourceExpression'] = json_encode($this->compareToSourceExpression);
+        if (null !== $this->compareToSourcePath) $json['compareToSourcePath'] = json_encode($this->compareToSourcePath);
+        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
+        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
+        if (null !== $this->headerField) $json['headerField'] = json_encode($this->headerField);
+        if (null !== $this->minimumId) $json['minimumId'] = json_encode($this->minimumId);
+        if (null !== $this->navigationLinks) $json['navigationLinks'] = json_encode($this->navigationLinks);
+        if (null !== $this->operator) $json['operator'] = json_encode($this->operator);
+        if (null !== $this->path) $json['path'] = json_encode($this->path);
+        if (null !== $this->requestURL) $json['requestURL'] = json_encode($this->requestURL);
+        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (null !== $this->response) $json['response'] = json_encode($this->response);
+        if (null !== $this->responseCode) $json['responseCode'] = json_encode($this->responseCode);
+        if (null !== $this->rule) $json['rule'] = json_encode($this->rule);
+        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
+        if (null !== $this->sourceId) $json['sourceId'] = json_encode($this->sourceId);
+        if (null !== $this->validateProfileId) $json['validateProfileId'] = json_encode($this->validateProfileId);
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (null !== $this->warningOnly) $json['warningOnly'] = json_encode($this->warningOnly);
         return $json;
     }
 
@@ -597,16 +731,21 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements JsonSerializab
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->direction) $this->direction->xmlSerialize(true, $sxe->addChild('direction'));
         if (null !== $this->compareToSourceId) $this->compareToSourceId->xmlSerialize(true, $sxe->addChild('compareToSourceId'));
+        if (null !== $this->compareToSourceExpression) $this->compareToSourceExpression->xmlSerialize(true, $sxe->addChild('compareToSourceExpression'));
         if (null !== $this->compareToSourcePath) $this->compareToSourcePath->xmlSerialize(true, $sxe->addChild('compareToSourcePath'));
         if (null !== $this->contentType) $this->contentType->xmlSerialize(true, $sxe->addChild('contentType'));
+        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
         if (null !== $this->headerField) $this->headerField->xmlSerialize(true, $sxe->addChild('headerField'));
         if (null !== $this->minimumId) $this->minimumId->xmlSerialize(true, $sxe->addChild('minimumId'));
         if (null !== $this->navigationLinks) $this->navigationLinks->xmlSerialize(true, $sxe->addChild('navigationLinks'));
         if (null !== $this->operator) $this->operator->xmlSerialize(true, $sxe->addChild('operator'));
         if (null !== $this->path) $this->path->xmlSerialize(true, $sxe->addChild('path'));
+        if (null !== $this->requestURL) $this->requestURL->xmlSerialize(true, $sxe->addChild('requestURL'));
         if (null !== $this->resource) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
         if (null !== $this->response) $this->response->xmlSerialize(true, $sxe->addChild('response'));
         if (null !== $this->responseCode) $this->responseCode->xmlSerialize(true, $sxe->addChild('responseCode'));
+        if (null !== $this->rule) $this->rule->xmlSerialize(true, $sxe->addChild('rule'));
+        if (null !== $this->ruleset) $this->ruleset->xmlSerialize(true, $sxe->addChild('ruleset'));
         if (null !== $this->sourceId) $this->sourceId->xmlSerialize(true, $sxe->addChild('sourceId'));
         if (null !== $this->validateProfileId) $this->validateProfileId->xmlSerialize(true, $sxe->addChild('validateProfileId'));
         if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));

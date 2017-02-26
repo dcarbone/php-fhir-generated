@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A person who is directly or indirectly involved in the provisioning of healthcare.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
+class FHIRPractitioner extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An identifier that applies to this person in this role.
@@ -82,10 +81,10 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
     public $active = null;
 
     /**
-     * A name associated with the person.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
+     * The name(s) associated with the practitioner.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
-    public $name = null;
+    public $name = array();
 
     /**
      * A contact detail for the practitioner, e.g. a telephone number or an email address.
@@ -94,14 +93,15 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
     public $telecom = array();
 
     /**
-     * The postal address where the practitioner can be found or visited or to which mail can be delivered.
+     * Address(es) of the practitioner that are not role specific (typically home address). 
+Work addresses are not typically entered in this property as they are usually role dependent.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
     public $address = array();
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
     public $gender = null;
 
@@ -119,9 +119,9 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The list of roles/organizations that the practitioner is associated with.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerPractitionerRole[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerRole[]
      */
-    public $practitionerRole = array();
+    public $role = array();
 
     /**
      * Qualifications obtained by training and certification.
@@ -151,7 +151,7 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * An identifier that applies to this person in this role.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -181,8 +181,8 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A name associated with the person.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
+     * The name(s) associated with the practitioner.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
     public function getName()
     {
@@ -190,13 +190,13 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A name associated with the person.
+     * The name(s) associated with the practitioner.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $name
      * @return $this
      */
-    public function setName($name)
+    public function addName($name)
     {
-        $this->name = $name;
+        $this->name[] = $name;
         return $this;
     }
 
@@ -211,7 +211,7 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A contact detail for the practitioner, e.g. a telephone number or an email address.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
@@ -221,7 +221,8 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The postal address where the practitioner can be found or visited or to which mail can be delivered.
+     * Address(es) of the practitioner that are not role specific (typically home address). 
+Work addresses are not typically entered in this property as they are usually role dependent.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
     public function getAddress()
@@ -230,8 +231,9 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The postal address where the practitioner can be found or visited or to which mail can be delivered.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress[] $address
+     * Address(es) of the practitioner that are not role specific (typically home address). 
+Work addresses are not typically entered in this property as they are usually role dependent.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $address
      * @return $this
      */
     public function addAddress($address)
@@ -242,7 +244,7 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
     public function getGender()
     {
@@ -251,7 +253,7 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $gender
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
     public function setGender($gender)
@@ -291,7 +293,7 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Image of the person.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $photo
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
     public function addPhoto($photo)
@@ -302,21 +304,21 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The list of roles/organizations that the practitioner is associated with.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerPractitionerRole[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerRole[]
      */
-    public function getPractitionerRole()
+    public function getRole()
     {
-        return $this->practitionerRole;
+        return $this->role;
     }
 
     /**
      * The list of roles/organizations that the practitioner is associated with.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerPractitionerRole[] $practitionerRole
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerRole $role
      * @return $this
      */
-    public function addPractitionerRole($practitionerRole)
+    public function addRole($role)
     {
-        $this->practitionerRole[] = $practitionerRole;
+        $this->role[] = $role;
         return $this;
     }
 
@@ -331,7 +333,7 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Qualifications obtained by training and certification.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification[] $qualification
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification $qualification
      * @return $this
      */
     public function addQualification($qualification)
@@ -351,7 +353,7 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A language the practitioner is able to use in patient communication.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $communication
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $communication
      * @return $this
      */
     public function addCommunication($communication)
@@ -384,49 +386,54 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->active) $json['active'] = $this->active->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
+        if (null !== $this->active) $json['active'] = json_encode($this->active);
+        if (0 < count($this->name)) {
+            $json['name'] = [];
+            foreach($this->name as $name) {
+                $json['name'][] = json_encode($name);
+            }
+        }
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
             }
         }
         if (0 < count($this->address)) {
-            $json['address'] = array();
+            $json['address'] = [];
             foreach($this->address as $address) {
-                $json['address'][] = $address->jsonSerialize();
+                $json['address'][] = json_encode($address);
             }
         }
-        if (null !== $this->gender) $json['gender'] = $this->gender->jsonSerialize();
-        if (null !== $this->birthDate) $json['birthDate'] = $this->birthDate->jsonSerialize();
+        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
+        if (null !== $this->birthDate) $json['birthDate'] = json_encode($this->birthDate);
         if (0 < count($this->photo)) {
-            $json['photo'] = array();
+            $json['photo'] = [];
             foreach($this->photo as $photo) {
-                $json['photo'][] = $photo->jsonSerialize();
+                $json['photo'][] = json_encode($photo);
             }
         }
-        if (0 < count($this->practitionerRole)) {
-            $json['practitionerRole'] = array();
-            foreach($this->practitionerRole as $practitionerRole) {
-                $json['practitionerRole'][] = $practitionerRole->jsonSerialize();
+        if (0 < count($this->role)) {
+            $json['role'] = [];
+            foreach($this->role as $role) {
+                $json['role'][] = json_encode($role);
             }
         }
         if (0 < count($this->qualification)) {
-            $json['qualification'] = array();
+            $json['qualification'] = [];
             foreach($this->qualification as $qualification) {
-                $json['qualification'][] = $qualification->jsonSerialize();
+                $json['qualification'][] = json_encode($qualification);
             }
         }
         if (0 < count($this->communication)) {
-            $json['communication'] = array();
+            $json['communication'] = [];
             foreach($this->communication as $communication) {
-                $json['communication'][] = $communication->jsonSerialize();
+                $json['communication'][] = json_encode($communication);
             }
         }
         return $json;
@@ -447,7 +454,11 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
             }
         }
         if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (0 < count($this->name)) {
+            foreach($this->name as $name) {
+                $name->xmlSerialize(true, $sxe->addChild('name'));
+            }
+        }
         if (0 < count($this->telecom)) {
             foreach($this->telecom as $telecom) {
                 $telecom->xmlSerialize(true, $sxe->addChild('telecom'));
@@ -465,9 +476,9 @@ class FHIRPractitioner extends FHIRDomainResource implements JsonSerializable
                 $photo->xmlSerialize(true, $sxe->addChild('photo'));
             }
         }
-        if (0 < count($this->practitionerRole)) {
-            foreach($this->practitionerRole as $practitionerRole) {
-                $practitionerRole->xmlSerialize(true, $sxe->addChild('practitionerRole'));
+        if (0 < count($this->role)) {
+            foreach($this->role as $role) {
+                $role->xmlSerialize(true, $sxe->addChild('role'));
             }
         }
         if (0 < count($this->qualification)) {

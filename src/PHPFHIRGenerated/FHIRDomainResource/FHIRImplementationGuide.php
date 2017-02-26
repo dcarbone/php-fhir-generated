@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,40 +61,39 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of rules or how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole, and to publish a computable definition of all the parts.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializable
+class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published.
+     * An absolute URL that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published. The URL SHOULD include the major version of the implementation guide. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
-     * The identifier that is used to identify this version of the Implementation Guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the Implementation Guide author manually.
+     * The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
-     * A free text natural language name identifying the Implementation Guide.
+     * A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
-     * The status of the Implementation Guide.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this implementation guide. Enables tracking the life-cycle of the content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
-     * This Implementation Guide was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
@@ -106,37 +105,43 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     public $publisher = null;
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public $contact = array();
 
     /**
-     * The date this version of the implementation guide was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
+     * The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the Implementation Guide and its use.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the implementation guide from the consumer's perspective.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of implementation guides. The most common use of this element is to represent the country / jurisdiction for which this implementation guide was defined.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the details of the constraints and mappings.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A jurisdiction in which the implementation guide is intended to be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $jurisdiction = array();
+
+    /**
+     * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
-     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.0.2 for this version.
+     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.8.0 for this version.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $fhirVersion = null;
@@ -177,7 +182,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     private $_fhirElementName = 'ImplementationGuide';
 
     /**
-     * An absolute URL that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published.
+     * An absolute URL that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published. The URL SHOULD include the major version of the implementation guide. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -186,7 +191,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * An absolute URL that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published.
+     * An absolute URL that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published. The URL SHOULD include the major version of the implementation guide. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -197,7 +202,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the Implementation Guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the Implementation Guide author manually.
+     * The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -206,7 +211,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the Implementation Guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the Implementation Guide author manually.
+     * The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -217,7 +222,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language name identifying the Implementation Guide.
+     * A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -226,7 +231,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language name identifying the Implementation Guide.
+     * A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
@@ -237,8 +242,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The status of the Implementation Guide.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this implementation guide. Enables tracking the life-cycle of the content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -246,8 +251,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The status of the Implementation Guide.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * The status of this implementation guide. Enables tracking the life-cycle of the content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -257,7 +262,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * This Implementation Guide was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -266,7 +271,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * This Implementation Guide was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -297,8 +302,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -306,8 +311,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideContact[] $contact
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -317,7 +322,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The date this version of the implementation guide was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
+     * The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -326,7 +331,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The date this version of the implementation guide was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
+     * The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -337,8 +342,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language description of the Implementation Guide and its use.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the implementation guide from the consumer's perspective.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -346,8 +351,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language description of the Implementation Guide and its use.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * A free text natural language description of the implementation guide from the consumer's perspective.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -357,8 +362,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of implementation guides. The most common use of this element is to represent the country / jurisdiction for which this implementation guide was defined.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -366,8 +371,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of implementation guides. The most common use of this element is to represent the country / jurisdiction for which this implementation guide was defined.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -377,8 +382,28 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the details of the constraints and mappings.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A jurisdiction in which the implementation guide is intended to be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getJurisdiction()
+    {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * A jurisdiction in which the implementation guide is intended to be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @return $this
+     */
+    public function addJurisdiction($jurisdiction)
+    {
+        $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -386,8 +411,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the details of the constraints and mappings.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $copyright
+     * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -397,7 +422,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.0.2 for this version.
+     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.8.0 for this version.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getFhirVersion()
@@ -406,7 +431,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.0.2 for this version.
+     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.8.0 for this version.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $fhirVersion
      * @return $this
      */
@@ -427,7 +452,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependency[] $dependency
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependency $dependency
      * @return $this
      */
     public function addDependency($dependency)
@@ -447,7 +472,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * A logical group of resources. Logical groups can be used when building pages.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePackage[] $package
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePackage $package
      * @return $this
      */
     public function addPackage($package)
@@ -467,7 +492,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * A set of profiles that all resources covered by this implementation guide must conform to.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[] $global
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal $global
      * @return $this
      */
     public function addGlobal($global)
@@ -487,7 +512,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
 
     /**
      * A binary file that is included in the  implementation guide when it is published.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $binary
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $binary
      * @return $this
      */
     public function addBinary($binary)
@@ -539,53 +564,59 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion->jsonSerialize();
+        if (0 < count($this->jurisdiction)) {
+            $json['jurisdiction'] = [];
+            foreach($this->jurisdiction as $jurisdiction) {
+                $json['jurisdiction'][] = json_encode($jurisdiction);
+            }
+        }
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
         if (0 < count($this->dependency)) {
-            $json['dependency'] = array();
+            $json['dependency'] = [];
             foreach($this->dependency as $dependency) {
-                $json['dependency'][] = $dependency->jsonSerialize();
+                $json['dependency'][] = json_encode($dependency);
             }
         }
         if (0 < count($this->package)) {
-            $json['package'] = array();
+            $json['package'] = [];
             foreach($this->package as $package) {
-                $json['package'][] = $package->jsonSerialize();
+                $json['package'][] = json_encode($package);
             }
         }
         if (0 < count($this->global)) {
-            $json['global'] = array();
+            $json['global'] = [];
             foreach($this->global as $global) {
-                $json['global'][] = $global->jsonSerialize();
+                $json['global'][] = json_encode($global);
             }
         }
         if (0 < count($this->binary)) {
-            $json['binary'] = array();
+            $json['binary'] = [];
             foreach($this->binary as $binary) {
-                $json['binary'][] = $binary->jsonSerialize();
+                $json['binary'][] = json_encode($binary);
             }
         }
-        if (null !== $this->page) $json['page'] = $this->page->jsonSerialize();
+        if (null !== $this->page) $json['page'] = json_encode($this->page);
         return $json;
     }
 
@@ -614,6 +645,11 @@ class FHIRImplementationGuide extends FHIRDomainResource implements JsonSerializ
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
+            }
+        }
+        if (0 < count($this->jurisdiction)) {
+            foreach($this->jurisdiction as $jurisdiction) {
+                $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
         if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));

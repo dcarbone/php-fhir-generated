@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,18 +61,17 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationOrder" rather than "MedicationPrescription" to generalize the use across inpatient and outpatient settings as well as for care plans, etc.
  */
-class FHIRMedicationOrderSubstitution extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationOrderSubstitution extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * A code signifying whether a different drug should be dispensed from what was prescribed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * True if the prescriber allows a different drug to be dispensed from what was prescribed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public $type = null;
+    public $allowed = null;
 
     /**
      * Indicates the reason for the substitution, or why substitution must or must not be performed.
@@ -86,22 +85,22 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement implements Jso
     private $_fhirElementName = 'MedicationOrder.Substitution';
 
     /**
-     * A code signifying whether a different drug should be dispensed from what was prescribed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * True if the prescriber allows a different drug to be dispensed from what was prescribed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getType()
+    public function getAllowed()
     {
-        return $this->type;
+        return $this->allowed;
     }
 
     /**
-     * A code signifying whether a different drug should be dispensed from what was prescribed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
+     * True if the prescriber allows a different drug to be dispensed from what was prescribed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $allowed
      * @return $this
      */
-    public function setType($type)
+    public function setAllowed($allowed)
     {
-        $this->type = $type;
+        $this->allowed = $allowed;
         return $this;
     }
 
@@ -147,8 +146,8 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement implements Jso
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->reason) $json['reason'] = $this->reason->jsonSerialize();
+        if (null !== $this->allowed) $json['allowed'] = json_encode($this->allowed);
+        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
         return $json;
     }
 
@@ -161,7 +160,7 @@ class FHIRMedicationOrderSubstitution extends FHIRBackboneElement implements Jso
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationOrderSubstitution xmlns="http://hl7.org/fhir"></MedicationOrderSubstitution>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->allowed) $this->allowed->xmlSerialize(true, $sxe->addChild('allowed'));
         if (null !== $this->reason) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

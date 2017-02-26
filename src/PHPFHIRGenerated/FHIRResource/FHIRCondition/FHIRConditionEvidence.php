@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a diagnosis during an encounter; populating a problem list or a summary statement, such as a discharge summary.
  */
-class FHIRConditionEvidence extends FHIRBackboneElement implements JsonSerializable
+class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A manifestation or symptom that led to the recording of this condition.
@@ -116,7 +115,7 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Links to other relevant information, including pathology reports.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $detail
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $detail
      * @return $this
      */
     public function addDetail($detail)
@@ -147,11 +146,11 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (0 < count($this->detail)) {
-            $json['detail'] = array();
+            $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = $detail->jsonSerialize();
+                $json['detail'][] = json_encode($detail);
             }
         }
         return $json;

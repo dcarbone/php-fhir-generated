@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A request for a procedure to be performed. May be a proposal or an order.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializable
+class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifiers assigned to this order by the order or by the receiver.
@@ -142,6 +141,12 @@ class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializabl
     public $status = null;
 
     /**
+     * Information that may be needed by/relevant to the performer in their execution of this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $supportingInfo = array();
+
+    /**
      * Any other notes associated with this proposal or order - e.g. provider instructions.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
@@ -193,7 +198,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * Identifiers assigned to this order by the order or by the receiver.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -253,7 +258,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * Indicates the sites on the subject's body where the procedure should be performed (I.e. the target sites).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $bodySite
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function addBodySite($bodySite)
@@ -423,6 +428,26 @@ class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializabl
     }
 
     /**
+     * Information that may be needed by/relevant to the performer in their execution of this request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getSupportingInfo()
+    {
+        return $this->supportingInfo;
+    }
+
+    /**
+     * Information that may be needed by/relevant to the performer in their execution of this request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInfo
+     * @return $this
+     */
+    public function addSupportingInfo($supportingInfo)
+    {
+        $this->supportingInfo[] = $supportingInfo;
+        return $this;
+    }
+
+    /**
      * Any other notes associated with this proposal or order - e.g. provider instructions.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
@@ -433,7 +458,7 @@ class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializabl
 
     /**
      * Any other notes associated with this proposal or order - e.g. provider instructions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[] $notes
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $notes
      * @return $this
      */
     public function addNotes($notes)
@@ -566,38 +591,44 @@ class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializabl
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (0 < count($this->bodySite)) {
-            $json['bodySite'] = array();
+            $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = $bodySite->jsonSerialize();
+                $json['bodySite'][] = json_encode($bodySite);
             }
         }
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept->jsonSerialize();
-        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference->jsonSerialize();
-        if (null !== $this->scheduledDateTime) $json['scheduledDateTime'] = $this->scheduledDateTime->jsonSerialize();
-        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = $this->scheduledPeriod->jsonSerialize();
-        if (null !== $this->scheduledTiming) $json['scheduledTiming'] = $this->scheduledTiming->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->performer) $json['performer'] = $this->performer->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
+        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
+        if (null !== $this->scheduledDateTime) $json['scheduledDateTime'] = json_encode($this->scheduledDateTime);
+        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = json_encode($this->scheduledPeriod);
+        if (null !== $this->scheduledTiming) $json['scheduledTiming'] = json_encode($this->scheduledTiming);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (0 < count($this->supportingInfo)) {
+            $json['supportingInfo'] = [];
+            foreach($this->supportingInfo as $supportingInfo) {
+                $json['supportingInfo'][] = json_encode($supportingInfo);
+            }
+        }
         if (0 < count($this->notes)) {
-            $json['notes'] = array();
+            $json['notes'] = [];
             foreach($this->notes as $notes) {
-                $json['notes'][] = $notes->jsonSerialize();
+                $json['notes'][] = json_encode($notes);
             }
         }
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean->jsonSerialize();
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept->jsonSerialize();
-        if (null !== $this->orderedOn) $json['orderedOn'] = $this->orderedOn->jsonSerialize();
-        if (null !== $this->orderer) $json['orderer'] = $this->orderer->jsonSerialize();
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
+        if (null !== $this->orderedOn) $json['orderedOn'] = json_encode($this->orderedOn);
+        if (null !== $this->orderer) $json['orderer'] = json_encode($this->orderer);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
         return $json;
     }
 
@@ -630,6 +661,11 @@ class FHIRProcedureRequest extends FHIRDomainResource implements JsonSerializabl
         if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
         if (null !== $this->performer) $this->performer->xmlSerialize(true, $sxe->addChild('performer'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (0 < count($this->supportingInfo)) {
+            foreach($this->supportingInfo as $supportingInfo) {
+                $supportingInfo->xmlSerialize(true, $sxe->addChild('supportingInfo'));
+            }
+        }
         if (0 < count($this->notes)) {
             foreach($this->notes as $notes) {
                 $notes->xmlSerialize(true, $sxe->addChild('notes'));

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRElementDefinitionBinding extends FHIRElement implements JsonSerializable
+class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializable
 {
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
@@ -82,13 +81,13 @@ class FHIRElementDefinitionBinding extends FHIRElement implements JsonSerializab
     public $description = null;
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $valueSetUri = null;
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueSetReference = null;
@@ -139,7 +138,7 @@ class FHIRElementDefinitionBinding extends FHIRElement implements JsonSerializab
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueSetUri()
@@ -148,7 +147,7 @@ class FHIRElementDefinitionBinding extends FHIRElement implements JsonSerializab
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $valueSetUri
      * @return $this
      */
@@ -159,7 +158,7 @@ class FHIRElementDefinitionBinding extends FHIRElement implements JsonSerializab
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueSetReference()
@@ -168,7 +167,7 @@ class FHIRElementDefinitionBinding extends FHIRElement implements JsonSerializab
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
+     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueSetReference
      * @return $this
      */
@@ -200,10 +199,10 @@ class FHIRElementDefinitionBinding extends FHIRElement implements JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->strength) $json['strength'] = $this->strength->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->valueSetUri) $json['valueSetUri'] = $this->valueSetUri->jsonSerialize();
-        if (null !== $this->valueSetReference) $json['valueSetReference'] = $this->valueSetReference->jsonSerialize();
+        if (null !== $this->strength) $json['strength'] = json_encode($this->strength);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->valueSetUri) $json['valueSetUri'] = json_encode($this->valueSetUri);
+        if (null !== $this->valueSetReference) $json['valueSetReference'] = json_encode($this->valueSetReference);
         return $json;
     }
 

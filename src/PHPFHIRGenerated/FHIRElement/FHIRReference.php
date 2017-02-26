@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,19 +61,24 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A reference from one resource to another.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRReference extends FHIRElement implements JsonSerializable
+class FHIRReference extends FHIRElement implements \JsonSerializable
 {
     /**
      * A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $reference = null;
+
+    /**
+     * An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public $identifier = null;
 
     /**
      * Plain text narrative that identifies the resource in addition to the resource reference.
@@ -103,6 +108,26 @@ class FHIRReference extends FHIRElement implements JsonSerializable
     public function setReference($reference)
     {
         $this->reference = $reference;
+        return $this;
+    }
+
+    /**
+     * An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * An identifier for the other resource. This is used when there is no way to reference the other resource directly, either because the entity is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -148,8 +173,9 @@ class FHIRReference extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->reference) $json['reference'] = $this->reference->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
+        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
         return $json;
     }
 
@@ -163,6 +189,7 @@ class FHIRReference extends FHIRElement implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Reference xmlns="http://hl7.org/fhir"></Reference>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->reference) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
+        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
         if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

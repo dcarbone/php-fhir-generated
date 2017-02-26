@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A curated namespace that issues unique symbols within that namespace for the identification of concepts, people, devices, etc.  Represents a "System" used within the Identifier and Coding data types.
  */
-class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements JsonSerializable
+class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Identifies the unique identifier scheme used for this particular identifier.
@@ -85,6 +84,12 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements JsonSerial
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $preferred = null;
+
+    /**
+     * Notes about the past or intended usage of this identifier.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $comment = null;
 
     /**
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
@@ -158,6 +163,26 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
+     * Notes about the past or intended usage of this identifier.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Notes about the past or intended usage of this identifier.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
+     * @return $this
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+        return $this;
+    }
+
+    /**
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
@@ -199,10 +224,11 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
-        if (null !== $this->preferred) $json['preferred'] = $this->preferred->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (null !== $this->preferred) $json['preferred'] = json_encode($this->preferred);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
 
@@ -218,6 +244,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements JsonSerial
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if (null !== $this->preferred) $this->preferred->xmlSerialize(true, $sxe->addChild('preferred'));
+        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal agreement between parties regarding the conduct of business, exchange of information or other matters.
  */
-class FHIRContractSigner extends FHIRBackboneElement implements JsonSerializable
+class FHIRContractSigner extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Role of this Contract signer, e.g. notary, grantee.
@@ -82,9 +81,9 @@ class FHIRContractSigner extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Legally binding Contract DSIG signature contents in Base64.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature[]
      */
-    public $signature = null;
+    public $signature = array();
 
     /**
      * @var string
@@ -133,7 +132,7 @@ class FHIRContractSigner extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Legally binding Contract DSIG signature contents in Base64.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature[]
      */
     public function getSignature()
     {
@@ -142,12 +141,12 @@ class FHIRContractSigner extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Legally binding Contract DSIG signature contents in Base64.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $signature
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $signature
      * @return $this
      */
-    public function setSignature($signature)
+    public function addSignature($signature)
     {
-        $this->signature = $signature;
+        $this->signature[] = $signature;
         return $this;
     }
 
@@ -173,9 +172,14 @@ class FHIRContractSigner extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->party) $json['party'] = $this->party->jsonSerialize();
-        if (null !== $this->signature) $json['signature'] = $this->signature->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->party) $json['party'] = json_encode($this->party);
+        if (0 < count($this->signature)) {
+            $json['signature'] = [];
+            foreach($this->signature as $signature) {
+                $json['signature'][] = json_encode($signature);
+            }
+        }
         return $json;
     }
 
@@ -190,7 +194,11 @@ class FHIRContractSigner extends FHIRBackboneElement implements JsonSerializable
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->party) $this->party->xmlSerialize(true, $sxe->addChild('party'));
-        if (null !== $this->signature) $this->signature->xmlSerialize(true, $sxe->addChild('signature'));
+        if (0 < count($this->signature)) {
+            foreach($this->signature as $signature) {
+                $signature->xmlSerialize(true, $sxe->addChild('signature'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

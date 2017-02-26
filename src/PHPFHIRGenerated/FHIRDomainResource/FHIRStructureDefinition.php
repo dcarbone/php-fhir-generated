@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,52 +61,51 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions, and constraints on resources and data types.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializable
+class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published.
+     * An absolute URL that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
-     * Formal identifier that is used to identify this StructureDefinition when it is represented in other formats, or referenced in a specification, model, design or an instance  (should be globally unique OID, UUID, or URI), (if it's not possible to use the literal URI).
+     * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
 
     /**
-     * The identifier that is used to identify this version of the StructureDefinition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the StructureDefinition author manually.
+     * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
-     * A free text natural language name identifying the StructureDefinition.
+     * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
-     * Defined so that applications can use this name when displaying the value of the extension to the user.
+     * A short, descriptive, user-friendly title for the structure definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $display = null;
+    public $title = null;
 
     /**
-     * The status of the StructureDefinition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this structure definition. Enables tracking the life-cycle of the content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
-     * This StructureDefinition was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
@@ -118,49 +117,55 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     public $publisher = null;
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public $contact = array();
 
     /**
-     * The date this version of the structure definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
+     * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the StructureDefinition and its use.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the structure definition from the consumer's perspective.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of structure definitions.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * Explains why this structure definition is needed and why it's been constrained as it has.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A jurisdiction in which the structure definition is intended to be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $requirements = null;
+    public $jurisdiction = array();
 
     /**
-     * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the details of the constraints and mappings.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Explains why this structure definition is needed and why it has been designed as it has.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public $purpose = null;
+
+    /**
+     * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
     /**
-     * A set of terms from external terminologies that may be used to assist with indexing and searching of templates.
+     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $code = array();
+    public $keyword = array();
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.0.2 for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.8.0 for this version.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $fhirVersion = null;
@@ -178,13 +183,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     public $kind = null;
 
     /**
-     * The type of type that is being constrained - a data type, an extension, a resource, including abstract ones. If this field is present, it indicates that the structure definition is a constraint. If it is not present, then the structure definition is the definition of a base structure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public $constrainedType = null;
-
-    /**
-     * Whether structure this definition describes is abstract or not  - that is, whether an actual exchanged item can ever be of this type.
+     * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $abstract = null;
@@ -202,10 +201,28 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     public $context = array();
 
     /**
-     * An absolute URI that is the base structure from which this set of constraints is derived.
+     * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurance variants for the extension).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
+     */
+    public $contextInvariant = array();
+
+    /**
+     * The type this structure is describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public $type = null;
+
+    /**
+     * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $base = null;
+    public $baseDefinition = null;
+
+    /**
+     * How the type relates to the baseDefinition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTypeDerivationRule
+     */
+    public $derivation = null;
 
     /**
      * A snapshot view is expressed in a stand alone form that can be used and interpreted without considering the base StructureDefinition.
@@ -225,7 +242,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     private $_fhirElementName = 'StructureDefinition';
 
     /**
-     * An absolute URL that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published.
+     * An absolute URL that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -234,7 +251,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * An absolute URL that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published.
+     * An absolute URL that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -245,7 +262,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Formal identifier that is used to identify this StructureDefinition when it is represented in other formats, or referenced in a specification, model, design or an instance  (should be globally unique OID, UUID, or URI), (if it's not possible to use the literal URI).
+     * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
@@ -254,8 +271,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Formal identifier that is used to identify this StructureDefinition when it is represented in other formats, or referenced in a specification, model, design or an instance  (should be globally unique OID, UUID, or URI), (if it's not possible to use the literal URI).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -265,7 +282,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the StructureDefinition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the StructureDefinition author manually.
+     * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -274,7 +291,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the StructureDefinition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the StructureDefinition author manually.
+     * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -285,7 +302,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language name identifying the StructureDefinition.
+     * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -294,7 +311,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language name identifying the StructureDefinition.
+     * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
@@ -305,28 +322,28 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Defined so that applications can use this name when displaying the value of the extension to the user.
+     * A short, descriptive, user-friendly title for the structure definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDisplay()
+    public function getTitle()
     {
-        return $this->display;
+        return $this->title;
     }
 
     /**
-     * Defined so that applications can use this name when displaying the value of the extension to the user.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
+     * A short, descriptive, user-friendly title for the structure definition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setDisplay($display)
+    public function setTitle($title)
     {
-        $this->display = $display;
+        $this->title = $title;
         return $this;
     }
 
     /**
-     * The status of the StructureDefinition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The status of this structure definition. Enables tracking the life-cycle of the content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -334,8 +351,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The status of the StructureDefinition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * The status of this structure definition. Enables tracking the life-cycle of the content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -345,7 +362,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * This StructureDefinition was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -354,7 +371,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * This StructureDefinition was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -385,8 +402,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -394,8 +411,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionContact[] $contact
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -405,7 +422,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The date this version of the structure definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
+     * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -414,7 +431,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The date this version of the structure definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
+     * The date  (and optionally time) when the structure definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -425,8 +442,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language description of the StructureDefinition and its use.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the structure definition from the consumer's perspective.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -434,8 +451,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A free text natural language description of the StructureDefinition and its use.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * A free text natural language description of the structure definition from the consumer's perspective.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -445,8 +462,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of structure definitions.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -454,8 +471,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of structure definitions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -465,28 +482,48 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Explains why this structure definition is needed and why it's been constrained as it has.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A jurisdiction in which the structure definition is intended to be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getRequirements()
+    public function getJurisdiction()
     {
-        return $this->requirements;
+        return $this->jurisdiction;
     }
 
     /**
-     * Explains why this structure definition is needed and why it's been constrained as it has.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $requirements
+     * A jurisdiction in which the structure definition is intended to be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function setRequirements($requirements)
+    public function addJurisdiction($jurisdiction)
     {
-        $this->requirements = $requirements;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
-     * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the details of the constraints and mappings.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Explains why this structure definition is needed and why it has been designed as it has.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getPurpose()
+    {
+        return $this->purpose;
+    }
+
+    /**
+     * Explains why this structure definition is needed and why it has been designed as it has.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
+     * @return $this
+     */
+    public function setPurpose($purpose)
+    {
+        $this->purpose = $purpose;
+        return $this;
+    }
+
+    /**
+     * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -494,8 +531,8 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the details of the constraints and mappings.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $copyright
+     * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -505,27 +542,27 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * A set of terms from external terminologies that may be used to assist with indexing and searching of templates.
+     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getCode()
+    public function getKeyword()
     {
-        return $this->code;
+        return $this->keyword;
     }
 
     /**
-     * A set of terms from external terminologies that may be used to assist with indexing and searching of templates.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $code
+     * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $keyword
      * @return $this
      */
-    public function addCode($code)
+    public function addKeyword($keyword)
     {
-        $this->code[] = $code;
+        $this->keyword[] = $keyword;
         return $this;
     }
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.0.2 for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.8.0 for this version.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getFhirVersion()
@@ -534,7 +571,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.0.2 for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 1.8.0 for this version.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $fhirVersion
      * @return $this
      */
@@ -555,7 +592,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * An external specification that the content is mapped to.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping[] $mapping
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping $mapping
      * @return $this
      */
     public function addMapping($mapping)
@@ -585,27 +622,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * The type of type that is being constrained - a data type, an extension, a resource, including abstract ones. If this field is present, it indicates that the structure definition is a constraint. If it is not present, then the structure definition is the definition of a base structure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public function getConstrainedType()
-    {
-        return $this->constrainedType;
-    }
-
-    /**
-     * The type of type that is being constrained - a data type, an extension, a resource, including abstract ones. If this field is present, it indicates that the structure definition is a constraint. If it is not present, then the structure definition is the definition of a base structure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $constrainedType
-     * @return $this
-     */
-    public function setConstrainedType($constrainedType)
-    {
-        $this->constrainedType = $constrainedType;
-        return $this;
-    }
-
-    /**
-     * Whether structure this definition describes is abstract or not  - that is, whether an actual exchanged item can ever be of this type.
+     * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAbstract()
@@ -614,7 +631,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Whether structure this definition describes is abstract or not  - that is, whether an actual exchanged item can ever be of this type.
+     * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $abstract
      * @return $this
      */
@@ -655,7 +672,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $context
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $context
      * @return $this
      */
     public function addContext($context)
@@ -665,22 +682,82 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * An absolute URI that is the base structure from which this set of constraints is derived.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurance variants for the extension).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getBase()
+    public function getContextInvariant()
     {
-        return $this->base;
+        return $this->contextInvariant;
     }
 
     /**
-     * An absolute URI that is the base structure from which this set of constraints is derived.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $base
+     * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurance variants for the extension).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $contextInvariant
      * @return $this
      */
-    public function setBase($base)
+    public function addContextInvariant($contextInvariant)
     {
-        $this->base = $base;
+        $this->contextInvariant[] = $contextInvariant;
+        return $this;
+    }
+
+    /**
+     * The type this structure is describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * The type this structure is describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getBaseDefinition()
+    {
+        return $this->baseDefinition;
+    }
+
+    /**
+     * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $baseDefinition
+     * @return $this
+     */
+    public function setBaseDefinition($baseDefinition)
+    {
+        $this->baseDefinition = $baseDefinition;
+        return $this;
+    }
+
+    /**
+     * How the type relates to the baseDefinition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRTypeDerivationRule
+     */
+    public function getDerivation()
+    {
+        return $this->derivation;
+    }
+
+    /**
+     * How the type relates to the baseDefinition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTypeDerivationRule $derivation
+     * @return $this
+     */
+    public function setDerivation($derivation)
+    {
+        $this->derivation = $derivation;
         return $this;
     }
 
@@ -747,61 +824,74 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (0 < count($this->code)) {
-            $json['code'] = array();
-            foreach($this->code as $code) {
-                $json['code'][] = $code->jsonSerialize();
+        if (0 < count($this->jurisdiction)) {
+            $json['jurisdiction'] = [];
+            foreach($this->jurisdiction as $jurisdiction) {
+                $json['jurisdiction'][] = json_encode($jurisdiction);
             }
         }
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion->jsonSerialize();
+        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (0 < count($this->keyword)) {
+            $json['keyword'] = [];
+            foreach($this->keyword as $keyword) {
+                $json['keyword'][] = json_encode($keyword);
+            }
+        }
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
         if (0 < count($this->mapping)) {
-            $json['mapping'] = array();
+            $json['mapping'] = [];
             foreach($this->mapping as $mapping) {
-                $json['mapping'][] = $mapping->jsonSerialize();
+                $json['mapping'][] = json_encode($mapping);
             }
         }
-        if (null !== $this->kind) $json['kind'] = $this->kind->jsonSerialize();
-        if (null !== $this->constrainedType) $json['constrainedType'] = $this->constrainedType->jsonSerialize();
-        if (null !== $this->abstract) $json['abstract'] = $this->abstract->jsonSerialize();
-        if (null !== $this->contextType) $json['contextType'] = $this->contextType->jsonSerialize();
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
+        if (null !== $this->abstract) $json['abstract'] = json_encode($this->abstract);
+        if (null !== $this->contextType) $json['contextType'] = json_encode($this->contextType);
         if (0 < count($this->context)) {
-            $json['context'] = array();
+            $json['context'] = [];
             foreach($this->context as $context) {
-                $json['context'][] = $context->jsonSerialize();
+                $json['context'][] = json_encode($context);
             }
         }
-        if (null !== $this->base) $json['base'] = $this->base->jsonSerialize();
-        if (null !== $this->snapshot) $json['snapshot'] = $this->snapshot->jsonSerialize();
-        if (null !== $this->differential) $json['differential'] = $this->differential->jsonSerialize();
+        if (0 < count($this->contextInvariant)) {
+            $json['contextInvariant'] = [];
+            foreach($this->contextInvariant as $contextInvariant) {
+                $json['contextInvariant'][] = json_encode($contextInvariant);
+            }
+        }
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->baseDefinition) $json['baseDefinition'] = json_encode($this->baseDefinition);
+        if (null !== $this->derivation) $json['derivation'] = json_encode($this->derivation);
+        if (null !== $this->snapshot) $json['snapshot'] = json_encode($this->snapshot);
+        if (null !== $this->differential) $json['differential'] = json_encode($this->differential);
         return $json;
     }
 
@@ -822,7 +912,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
         }
         if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
+        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
@@ -838,11 +928,16 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
             }
         }
-        if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
+        if (0 < count($this->jurisdiction)) {
+            foreach($this->jurisdiction as $jurisdiction) {
+                $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+            }
+        }
+        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
-        if (0 < count($this->code)) {
-            foreach($this->code as $code) {
-                $code->xmlSerialize(true, $sxe->addChild('code'));
+        if (0 < count($this->keyword)) {
+            foreach($this->keyword as $keyword) {
+                $keyword->xmlSerialize(true, $sxe->addChild('keyword'));
             }
         }
         if (null !== $this->fhirVersion) $this->fhirVersion->xmlSerialize(true, $sxe->addChild('fhirVersion'));
@@ -852,7 +947,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
             }
         }
         if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
-        if (null !== $this->constrainedType) $this->constrainedType->xmlSerialize(true, $sxe->addChild('constrainedType'));
         if (null !== $this->abstract) $this->abstract->xmlSerialize(true, $sxe->addChild('abstract'));
         if (null !== $this->contextType) $this->contextType->xmlSerialize(true, $sxe->addChild('contextType'));
         if (0 < count($this->context)) {
@@ -860,7 +954,14 @@ class FHIRStructureDefinition extends FHIRDomainResource implements JsonSerializ
                 $context->xmlSerialize(true, $sxe->addChild('context'));
             }
         }
-        if (null !== $this->base) $this->base->xmlSerialize(true, $sxe->addChild('base'));
+        if (0 < count($this->contextInvariant)) {
+            foreach($this->contextInvariant as $contextInvariant) {
+                $contextInvariant->xmlSerialize(true, $sxe->addChild('contextInvariant'));
+            }
+        }
+        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->baseDefinition) $this->baseDefinition->xmlSerialize(true, $sxe->addChild('baseDefinition'));
+        if (null !== $this->derivation) $this->derivation->xmlSerialize(true, $sxe->addChild('derivation'));
         if (null !== $this->snapshot) $this->snapshot->xmlSerialize(true, $sxe->addChild('snapshot'));
         if (null !== $this->differential) $this->differential->xmlSerialize(true, $sxe->addChild('differential'));
         if ($returnSXE) return $sxe;

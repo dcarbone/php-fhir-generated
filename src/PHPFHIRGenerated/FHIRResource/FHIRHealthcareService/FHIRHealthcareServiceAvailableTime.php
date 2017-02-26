@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The details of a healthcare service available at a location.
  */
-class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements JsonSerializable
+class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Indicates which days of the week are available between the start and end Times.
@@ -108,7 +107,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
 
     /**
      * Indicates which days of the week are available between the start and end Times.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek[] $daysOfWeek
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek $daysOfWeek
      * @return $this
      */
     public function addDaysOfWeek($daysOfWeek)
@@ -200,14 +199,14 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->daysOfWeek)) {
-            $json['daysOfWeek'] = array();
+            $json['daysOfWeek'] = [];
             foreach($this->daysOfWeek as $daysOfWeek) {
-                $json['daysOfWeek'][] = $daysOfWeek->jsonSerialize();
+                $json['daysOfWeek'][] = json_encode($daysOfWeek);
             }
         }
-        if (null !== $this->allDay) $json['allDay'] = $this->allDay->jsonSerialize();
-        if (null !== $this->availableStartTime) $json['availableStartTime'] = $this->availableStartTime->jsonSerialize();
-        if (null !== $this->availableEndTime) $json['availableEndTime'] = $this->availableEndTime->jsonSerialize();
+        if (null !== $this->allDay) $json['allDay'] = json_encode($this->allDay);
+        if (null !== $this->availableStartTime) $json['availableStartTime'] = json_encode($this->availableStartTime);
+        if (null !== $this->availableEndTime) $json['availableEndTime'] = json_encode($this->availableEndTime);
         return $json;
     }
 

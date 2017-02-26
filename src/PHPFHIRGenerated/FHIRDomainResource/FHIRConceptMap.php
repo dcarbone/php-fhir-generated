@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,46 +61,51 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
+class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published.
+     * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published. The URL SHOULD include the major version of the concept map. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
-     * Formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * A formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
-     * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the concept map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
 
     /**
-     * A free text natural language name describing the concept map.
+     * A natural language name identifying the concept map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $name = null;
 
     /**
-     * The status of the concept map.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A short, descriptive, user-friendly title for the concept map.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $title = null;
+
+    /**
+     * The status of this concept map. Enables tracking the life-cycle of the content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
-     * This ConceptMap was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
@@ -112,38 +117,44 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     public $publisher = null;
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public $contact = array();
 
     /**
-     * The date this version of the concept map was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
+     * The date  (and optionally time) when the concept map was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the use of the concept map - reason for definition, conditions of use, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the concept map from the consumer's perspective.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of concept map instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * Explains why this concept map is needed and why it has been constrained as it has.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A jurisdiction in which the concept map is intended to be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $requirements = null;
+    public $jurisdiction = array();
 
     /**
-     * A copyright statement relating to the concept map and/or its contents.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Explains why this concept map is needed and why it has been designed as it has.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public $purpose = null;
+
+    /**
+     * A copyright statement relating to the concept map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the concept map.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $copyright = null;
 
@@ -172,10 +183,10 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     public $targetReference = null;
 
     /**
-     * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
+     * A group of mappings that all have the same source and target system.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapGroup[]
      */
-    public $element = array();
+    public $group = array();
 
     /**
      * @var string
@@ -183,7 +194,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     private $_fhirElementName = 'ConceptMap';
 
     /**
-     * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published.
+     * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published. The URL SHOULD include the major version of the concept map. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -192,7 +203,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published.
+     * An absolute URL that is used to identify this concept map when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this concept map is (or will be) published. The URL SHOULD include the major version of the concept map. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -203,7 +214,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * A formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
@@ -212,7 +223,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * A formal identifier that is used to identify this concept map when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
@@ -223,7 +234,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the concept map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -232,7 +243,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the profile author manually and the value should be a timestamp.
+     * The identifier that is used to identify this version of the concept map when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the concept map author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -243,7 +254,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A free text natural language name describing the concept map.
+     * A natural language name identifying the concept map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -252,7 +263,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A free text natural language name describing the concept map.
+     * A natural language name identifying the concept map. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
@@ -263,8 +274,28 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The status of the concept map.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A short, descriptive, user-friendly title for the concept map.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * A short, descriptive, user-friendly title for the concept map.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * The status of this concept map. Enables tracking the life-cycle of the content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public function getStatus()
     {
@@ -272,8 +303,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The status of the concept map.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * The status of this concept map. Enables tracking the life-cycle of the content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -283,7 +314,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * This ConceptMap was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -292,7 +323,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * This ConceptMap was authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A flag to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -323,8 +354,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapContact[]
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
     public function getContact()
     {
@@ -332,8 +363,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapContact[] $contact
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
     public function addContact($contact)
@@ -343,7 +374,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date this version of the concept map was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
+     * The date  (and optionally time) when the concept map was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -352,7 +383,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date this version of the concept map was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
+     * The date  (and optionally time) when the concept map was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -363,8 +394,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A free text natural language description of the use of the concept map - reason for definition, conditions of use, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A free text natural language description of the concept map from the consumer's perspective.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -372,8 +403,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A free text natural language description of the use of the concept map - reason for definition, conditions of use, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * A free text natural language description of the concept map from the consumer's perspective.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -383,8 +414,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of concept map instances.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
     {
@@ -392,8 +423,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of concept map instances.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -403,28 +434,48 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Explains why this concept map is needed and why it has been constrained as it has.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * A jurisdiction in which the concept map is intended to be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getRequirements()
+    public function getJurisdiction()
     {
-        return $this->requirements;
+        return $this->jurisdiction;
     }
 
     /**
-     * Explains why this concept map is needed and why it has been constrained as it has.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $requirements
+     * A jurisdiction in which the concept map is intended to be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function setRequirements($requirements)
+    public function addJurisdiction($jurisdiction)
     {
-        $this->requirements = $requirements;
+        $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
 
     /**
-     * A copyright statement relating to the concept map and/or its contents.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Explains why this concept map is needed and why it has been designed as it has.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getPurpose()
+    {
+        return $this->purpose;
+    }
+
+    /**
+     * Explains why this concept map is needed and why it has been designed as it has.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
+     * @return $this
+     */
+    public function setPurpose($purpose)
+    {
+        $this->purpose = $purpose;
+        return $this;
+    }
+
+    /**
+     * A copyright statement relating to the concept map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the concept map.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getCopyright()
     {
@@ -432,8 +483,8 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A copyright statement relating to the concept map and/or its contents.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $copyright
+     * A copyright statement relating to the concept map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the concept map.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
     public function setCopyright($copyright)
@@ -523,22 +574,22 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
+     * A group of mappings that all have the same source and target system.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapGroup[]
      */
-    public function getElement()
+    public function getGroup()
     {
-        return $this->element;
+        return $this->group;
     }
 
     /**
-     * Mappings for an individual concept in the source to one or more concepts in the target.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[] $element
+     * A group of mappings that all have the same source and target system.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapGroup $group
      * @return $this
      */
-    public function addElement($element)
+    public function addGroup($group)
     {
-        $this->element[] = $element;
+        $this->group[] = $group;
         return $this;
     }
 
@@ -565,37 +616,44 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->sourceUri) $json['sourceUri'] = $this->sourceUri->jsonSerialize();
-        if (null !== $this->sourceReference) $json['sourceReference'] = $this->sourceReference->jsonSerialize();
-        if (null !== $this->targetUri) $json['targetUri'] = $this->targetUri->jsonSerialize();
-        if (null !== $this->targetReference) $json['targetReference'] = $this->targetReference->jsonSerialize();
-        if (0 < count($this->element)) {
-            $json['element'] = array();
-            foreach($this->element as $element) {
-                $json['element'][] = $element->jsonSerialize();
+        if (0 < count($this->jurisdiction)) {
+            $json['jurisdiction'] = [];
+            foreach($this->jurisdiction as $jurisdiction) {
+                $json['jurisdiction'][] = json_encode($jurisdiction);
+            }
+        }
+        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->sourceUri) $json['sourceUri'] = json_encode($this->sourceUri);
+        if (null !== $this->sourceReference) $json['sourceReference'] = json_encode($this->sourceReference);
+        if (null !== $this->targetUri) $json['targetUri'] = json_encode($this->targetUri);
+        if (null !== $this->targetReference) $json['targetReference'] = json_encode($this->targetReference);
+        if (0 < count($this->group)) {
+            $json['group'] = [];
+            foreach($this->group as $group) {
+                $json['group'][] = json_encode($group);
             }
         }
         return $json;
@@ -614,6 +672,7 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
         if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
@@ -629,15 +688,20 @@ class FHIRConceptMap extends FHIRDomainResource implements JsonSerializable
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
             }
         }
-        if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
+        if (0 < count($this->jurisdiction)) {
+            foreach($this->jurisdiction as $jurisdiction) {
+                $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+            }
+        }
+        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
         if (null !== $this->sourceUri) $this->sourceUri->xmlSerialize(true, $sxe->addChild('sourceUri'));
         if (null !== $this->sourceReference) $this->sourceReference->xmlSerialize(true, $sxe->addChild('sourceReference'));
         if (null !== $this->targetUri) $this->targetUri->xmlSerialize(true, $sxe->addChild('targetUri'));
         if (null !== $this->targetReference) $this->targetReference->xmlSerialize(true, $sxe->addChild('targetReference'));
-        if (0 < count($this->element)) {
-            foreach($this->element as $element) {
-                $element->xmlSerialize(true, $sxe->addChild('element'));
+        if (0 < count($this->group)) {
+            foreach($this->group as $group) {
+                $group->xmlSerialize(true, $sxe->addChild('group'));
             }
         }
         if ($returnSXE) return $sxe;

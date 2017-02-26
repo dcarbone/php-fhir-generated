@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to a patient which is provided to an insurer for payment recovery.
  */
-class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A service line number.
@@ -75,16 +74,10 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     public $sequence = null;
 
     /**
-     * The type of product or service.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * CareTeam applicable for this service or product line.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
-    public $type = null;
-
-    /**
-     * The practitioner who is responsible for the services rendered to the patient.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $provider = null;
+    public $careTeamLinkId = array();
 
     /**
      * Diagnosis applicable for this service or product line.
@@ -93,26 +86,86 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     public $diagnosisLinkId = array();
 
     /**
-     * If a grouping item then 'GROUP' otherwise it is a node therefore a code to indicate the Professional Service or Product supplied.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Procedures applicable for this service or product line.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    public $procedureLinkId = array();
+
+    /**
+     * Exceptions, special conditions and supporting information pplicable for this service or product line.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    public $informationLinkId = array();
+
+    /**
+     * The type of reveneu or cost center providing the product and/or service.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $revenue = null;
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $category = null;
+
+    /**
+     * If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,RXNorm,ACHI,CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $service = null;
 
     /**
-     * The date when the enclosed suite of services were performed or completed.
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $modifier = array();
+
+    /**
+     * For programs which require reason codes for the inclusion or covering of this billed item under the program or sub-program.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $programCode = array();
+
+    /**
+     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $serviceDate = null;
+    public $servicedDate = null;
+
+    /**
+     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $servicedPeriod = null;
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $locationCodeableConcept = null;
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
+     */
+    public $locationAddress = null;
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $locationReference = null;
 
     /**
      * The number of repetitions of a service or product.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $unitPrice = null;
 
@@ -123,40 +176,28 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     public $factor = null;
 
     /**
-     * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the good or service delivered. The concept of Points allows for assignment of point values for services and/or goods, such that a monetary amount can be assigned to each point.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public $points = null;
-
-    /**
-     * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $net = null;
 
     /**
      * List of Unique Device Identifiers associated with this line item.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $udi = null;
+    public $udi = array();
 
     /**
-     * Physical service site on the patient (limb, tooth, etc.).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Physical service site on the patient (limb, tooth, etc).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $bodySite = null;
 
     /**
-     * A region or surface of the site, e.g. limb region or tooth surface(s).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     * A region or surface of the site, eg. limb region or tooth surface(s).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $subSite = array();
-
-    /**
-     * Item typification or modifiers codes, e.g. for Oral whether the treatment is cosmetic or associated with TMJ, or an appliance was lost or stolen.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
-     */
-    public $modifier = array();
 
     /**
      * Second tier of goods and services.
@@ -196,42 +237,22 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The type of product or service.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * CareTeam applicable for this service or product line.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
-    public function getType()
+    public function getCareTeamLinkId()
     {
-        return $this->type;
+        return $this->careTeamLinkId;
     }
 
     /**
-     * The type of product or service.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
+     * CareTeam applicable for this service or product line.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $careTeamLinkId
      * @return $this
      */
-    public function setType($type)
+    public function addCareTeamLinkId($careTeamLinkId)
     {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * The practitioner who is responsible for the services rendered to the patient.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getProvider()
-    {
-        return $this->provider;
-    }
-
-    /**
-     * The practitioner who is responsible for the services rendered to the patient.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $provider
-     * @return $this
-     */
-    public function setProvider($provider)
-    {
-        $this->provider = $provider;
+        $this->careTeamLinkId[] = $careTeamLinkId;
         return $this;
     }
 
@@ -246,7 +267,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Diagnosis applicable for this service or product line.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[] $diagnosisLinkId
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $diagnosisLinkId
      * @return $this
      */
     public function addDiagnosisLinkId($diagnosisLinkId)
@@ -256,8 +277,88 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * If a grouping item then 'GROUP' otherwise it is a node therefore a code to indicate the Professional Service or Product supplied.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Procedures applicable for this service or product line.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    public function getProcedureLinkId()
+    {
+        return $this->procedureLinkId;
+    }
+
+    /**
+     * Procedures applicable for this service or product line.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $procedureLinkId
+     * @return $this
+     */
+    public function addProcedureLinkId($procedureLinkId)
+    {
+        $this->procedureLinkId[] = $procedureLinkId;
+        return $this;
+    }
+
+    /**
+     * Exceptions, special conditions and supporting information pplicable for this service or product line.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
+     */
+    public function getInformationLinkId()
+    {
+        return $this->informationLinkId;
+    }
+
+    /**
+     * Exceptions, special conditions and supporting information pplicable for this service or product line.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $informationLinkId
+     * @return $this
+     */
+    public function addInformationLinkId($informationLinkId)
+    {
+        $this->informationLinkId[] = $informationLinkId;
+        return $this;
+    }
+
+    /**
+     * The type of reveneu or cost center providing the product and/or service.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getRevenue()
+    {
+        return $this->revenue;
+    }
+
+    /**
+     * The type of reveneu or cost center providing the product and/or service.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $revenue
+     * @return $this
+     */
+    public function setRevenue($revenue)
+    {
+        $this->revenue = $revenue;
+        return $this;
+    }
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,RXNorm,ACHI,CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getService()
     {
@@ -265,8 +366,8 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * If a grouping item then 'GROUP' otherwise it is a node therefore a code to indicate the Professional Service or Product supplied.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $service
+     * If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,RXNorm,ACHI,CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $service
      * @return $this
      */
     public function setService($service)
@@ -276,28 +377,148 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The date when the enclosed suite of services were performed or completed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getServiceDate()
+    public function getModifier()
     {
-        return $this->serviceDate;
+        return $this->modifier;
     }
 
     /**
-     * The date when the enclosed suite of services were performed or completed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $serviceDate
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
-    public function setServiceDate($serviceDate)
+    public function addModifier($modifier)
     {
-        $this->serviceDate = $serviceDate;
+        $this->modifier[] = $modifier;
+        return $this;
+    }
+
+    /**
+     * For programs which require reason codes for the inclusion or covering of this billed item under the program or sub-program.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getProgramCode()
+    {
+        return $this->programCode;
+    }
+
+    /**
+     * For programs which require reason codes for the inclusion or covering of this billed item under the program or sub-program.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $programCode
+     * @return $this
+     */
+    public function addProgramCode($programCode)
+    {
+        $this->programCode[] = $programCode;
+        return $this;
+    }
+
+    /**
+     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
+     */
+    public function getServicedDate()
+    {
+        return $this->servicedDate;
+    }
+
+    /**
+     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $servicedDate
+     * @return $this
+     */
+    public function setServicedDate($servicedDate)
+    {
+        $this->servicedDate = $servicedDate;
+        return $this;
+    }
+
+    /**
+     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getServicedPeriod()
+    {
+        return $this->servicedPeriod;
+    }
+
+    /**
+     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $servicedPeriod
+     * @return $this
+     */
+    public function setServicedPeriod($servicedPeriod)
+    {
+        $this->servicedPeriod = $servicedPeriod;
+        return $this;
+    }
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getLocationCodeableConcept()
+    {
+        return $this->locationCodeableConcept;
+    }
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
+     * @return $this
+     */
+    public function setLocationCodeableConcept($locationCodeableConcept)
+    {
+        $this->locationCodeableConcept = $locationCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
+     */
+    public function getLocationAddress()
+    {
+        return $this->locationAddress;
+    }
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $locationAddress
+     * @return $this
+     */
+    public function setLocationAddress($locationAddress)
+    {
+        $this->locationAddress = $locationAddress;
+        return $this;
+    }
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getLocationReference()
+    {
+        return $this->locationReference;
+    }
+
+    /**
+     * Where the service was provided. (choose any one of location*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $locationReference
+     * @return $this
+     */
+    public function setLocationReference($locationReference)
+    {
+        $this->locationReference = $locationReference;
         return $this;
     }
 
     /**
      * The number of repetitions of a service or product.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -306,7 +527,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The number of repetitions of a service or product.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -317,7 +538,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -326,7 +547,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @param \PHPFHIRGenerated\FHIRMoney $unitPrice
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -356,28 +577,8 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the good or service delivered. The concept of Points allows for assignment of point values for services and/or goods, such that a monetary amount can be assigned to each point.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public function getPoints()
-    {
-        return $this->points;
-    }
-
-    /**
-     * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the good or service delivered. The concept of Points allows for assignment of point values for services and/or goods, such that a monetary amount can be assigned to each point.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $points
-     * @return $this
-     */
-    public function setPoints($points)
-    {
-        $this->points = $points;
-        return $this;
-    }
-
-    /**
-     * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getNet()
     {
@@ -385,8 +586,8 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @param \PHPFHIRGenerated\FHIRMoney $net
+     * The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $net
      * @return $this
      */
     public function setNet($net)
@@ -397,7 +598,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * List of Unique Device Identifiers associated with this line item.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getUdi()
     {
@@ -406,18 +607,18 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * List of Unique Device Identifiers associated with this line item.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $udi
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $udi
      * @return $this
      */
-    public function setUdi($udi)
+    public function addUdi($udi)
     {
-        $this->udi = $udi;
+        $this->udi[] = $udi;
         return $this;
     }
 
     /**
-     * Physical service site on the patient (limb, tooth, etc.).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Physical service site on the patient (limb, tooth, etc).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySite()
     {
@@ -425,8 +626,8 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * Physical service site on the patient (limb, tooth, etc.).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $bodySite
+     * Physical service site on the patient (limb, tooth, etc).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
     public function setBodySite($bodySite)
@@ -436,8 +637,8 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * A region or surface of the site, e.g. limb region or tooth surface(s).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     * A region or surface of the site, eg. limb region or tooth surface(s).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSubSite()
     {
@@ -445,33 +646,13 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * A region or surface of the site, e.g. limb region or tooth surface(s).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $subSite
+     * A region or surface of the site, eg. limb region or tooth surface(s).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $subSite
      * @return $this
      */
     public function addSubSite($subSite)
     {
         $this->subSite[] = $subSite;
-        return $this;
-    }
-
-    /**
-     * Item typification or modifiers codes, e.g. for Oral whether the treatment is cosmetic or associated with TMJ, or an appliance was lost or stolen.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
-     */
-    public function getModifier()
-    {
-        return $this->modifier;
-    }
-
-    /**
-     * Item typification or modifiers codes, e.g. for Oral whether the treatment is cosmetic or associated with TMJ, or an appliance was lost or stolen.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $modifier
-     * @return $this
-     */
-    public function addModifier($modifier)
-    {
-        $this->modifier[] = $modifier;
         return $this;
     }
 
@@ -486,7 +667,7 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Second tier of goods and services.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimDetail[] $detail
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimDetail $detail
      * @return $this
      */
     public function addDetail($detail)
@@ -537,43 +718,75 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = $this->sequence->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->provider) $json['provider'] = $this->provider->jsonSerialize();
+        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
+        if (0 < count($this->careTeamLinkId)) {
+            $json['careTeamLinkId'] = [];
+            foreach($this->careTeamLinkId as $careTeamLinkId) {
+                $json['careTeamLinkId'][] = json_encode($careTeamLinkId);
+            }
+        }
         if (0 < count($this->diagnosisLinkId)) {
-            $json['diagnosisLinkId'] = array();
+            $json['diagnosisLinkId'] = [];
             foreach($this->diagnosisLinkId as $diagnosisLinkId) {
-                $json['diagnosisLinkId'][] = $diagnosisLinkId->jsonSerialize();
+                $json['diagnosisLinkId'][] = json_encode($diagnosisLinkId);
             }
         }
-        if (null !== $this->service) $json['service'] = $this->service->jsonSerialize();
-        if (null !== $this->serviceDate) $json['serviceDate'] = $this->serviceDate->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice->jsonSerialize();
-        if (null !== $this->factor) $json['factor'] = $this->factor->jsonSerialize();
-        if (null !== $this->points) $json['points'] = $this->points->jsonSerialize();
-        if (null !== $this->net) $json['net'] = $this->net->jsonSerialize();
-        if (null !== $this->udi) $json['udi'] = $this->udi->jsonSerialize();
-        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite->jsonSerialize();
-        if (0 < count($this->subSite)) {
-            $json['subSite'] = array();
-            foreach($this->subSite as $subSite) {
-                $json['subSite'][] = $subSite->jsonSerialize();
+        if (0 < count($this->procedureLinkId)) {
+            $json['procedureLinkId'] = [];
+            foreach($this->procedureLinkId as $procedureLinkId) {
+                $json['procedureLinkId'][] = json_encode($procedureLinkId);
             }
         }
+        if (0 < count($this->informationLinkId)) {
+            $json['informationLinkId'] = [];
+            foreach($this->informationLinkId as $informationLinkId) {
+                $json['informationLinkId'][] = json_encode($informationLinkId);
+            }
+        }
+        if (null !== $this->revenue) $json['revenue'] = json_encode($this->revenue);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->service) $json['service'] = json_encode($this->service);
         if (0 < count($this->modifier)) {
-            $json['modifier'] = array();
+            $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = $modifier->jsonSerialize();
+                $json['modifier'][] = json_encode($modifier);
+            }
+        }
+        if (0 < count($this->programCode)) {
+            $json['programCode'] = [];
+            foreach($this->programCode as $programCode) {
+                $json['programCode'][] = json_encode($programCode);
+            }
+        }
+        if (null !== $this->servicedDate) $json['servicedDate'] = json_encode($this->servicedDate);
+        if (null !== $this->servicedPeriod) $json['servicedPeriod'] = json_encode($this->servicedPeriod);
+        if (null !== $this->locationCodeableConcept) $json['locationCodeableConcept'] = json_encode($this->locationCodeableConcept);
+        if (null !== $this->locationAddress) $json['locationAddress'] = json_encode($this->locationAddress);
+        if (null !== $this->locationReference) $json['locationReference'] = json_encode($this->locationReference);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
+        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
+        if (null !== $this->net) $json['net'] = json_encode($this->net);
+        if (0 < count($this->udi)) {
+            $json['udi'] = [];
+            foreach($this->udi as $udi) {
+                $json['udi'][] = json_encode($udi);
+            }
+        }
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (0 < count($this->subSite)) {
+            $json['subSite'] = [];
+            foreach($this->subSite as $subSite) {
+                $json['subSite'][] = json_encode($subSite);
             }
         }
         if (0 < count($this->detail)) {
-            $json['detail'] = array();
+            $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = $detail->jsonSerialize();
+                $json['detail'][] = json_encode($detail);
             }
         }
-        if (null !== $this->prosthesis) $json['prosthesis'] = $this->prosthesis->jsonSerialize();
+        if (null !== $this->prosthesis) $json['prosthesis'] = json_encode($this->prosthesis);
         return $json;
     }
 
@@ -587,30 +800,57 @@ class FHIRClaimItem extends FHIRBackboneElement implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimItem xmlns="http://hl7.org/fhir"></ClaimItem>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->provider) $this->provider->xmlSerialize(true, $sxe->addChild('provider'));
+        if (0 < count($this->careTeamLinkId)) {
+            foreach($this->careTeamLinkId as $careTeamLinkId) {
+                $careTeamLinkId->xmlSerialize(true, $sxe->addChild('careTeamLinkId'));
+            }
+        }
         if (0 < count($this->diagnosisLinkId)) {
             foreach($this->diagnosisLinkId as $diagnosisLinkId) {
                 $diagnosisLinkId->xmlSerialize(true, $sxe->addChild('diagnosisLinkId'));
             }
         }
+        if (0 < count($this->procedureLinkId)) {
+            foreach($this->procedureLinkId as $procedureLinkId) {
+                $procedureLinkId->xmlSerialize(true, $sxe->addChild('procedureLinkId'));
+            }
+        }
+        if (0 < count($this->informationLinkId)) {
+            foreach($this->informationLinkId as $informationLinkId) {
+                $informationLinkId->xmlSerialize(true, $sxe->addChild('informationLinkId'));
+            }
+        }
+        if (null !== $this->revenue) $this->revenue->xmlSerialize(true, $sxe->addChild('revenue'));
+        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
         if (null !== $this->service) $this->service->xmlSerialize(true, $sxe->addChild('service'));
-        if (null !== $this->serviceDate) $this->serviceDate->xmlSerialize(true, $sxe->addChild('serviceDate'));
+        if (0 < count($this->modifier)) {
+            foreach($this->modifier as $modifier) {
+                $modifier->xmlSerialize(true, $sxe->addChild('modifier'));
+            }
+        }
+        if (0 < count($this->programCode)) {
+            foreach($this->programCode as $programCode) {
+                $programCode->xmlSerialize(true, $sxe->addChild('programCode'));
+            }
+        }
+        if (null !== $this->servicedDate) $this->servicedDate->xmlSerialize(true, $sxe->addChild('servicedDate'));
+        if (null !== $this->servicedPeriod) $this->servicedPeriod->xmlSerialize(true, $sxe->addChild('servicedPeriod'));
+        if (null !== $this->locationCodeableConcept) $this->locationCodeableConcept->xmlSerialize(true, $sxe->addChild('locationCodeableConcept'));
+        if (null !== $this->locationAddress) $this->locationAddress->xmlSerialize(true, $sxe->addChild('locationAddress'));
+        if (null !== $this->locationReference) $this->locationReference->xmlSerialize(true, $sxe->addChild('locationReference'));
         if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
         if (null !== $this->unitPrice) $this->unitPrice->xmlSerialize(true, $sxe->addChild('unitPrice'));
         if (null !== $this->factor) $this->factor->xmlSerialize(true, $sxe->addChild('factor'));
-        if (null !== $this->points) $this->points->xmlSerialize(true, $sxe->addChild('points'));
         if (null !== $this->net) $this->net->xmlSerialize(true, $sxe->addChild('net'));
-        if (null !== $this->udi) $this->udi->xmlSerialize(true, $sxe->addChild('udi'));
+        if (0 < count($this->udi)) {
+            foreach($this->udi as $udi) {
+                $udi->xmlSerialize(true, $sxe->addChild('udi'));
+            }
+        }
         if (null !== $this->bodySite) $this->bodySite->xmlSerialize(true, $sxe->addChild('bodySite'));
         if (0 < count($this->subSite)) {
             foreach($this->subSite as $subSite) {
                 $subSite->xmlSerialize(true, $sxe->addChild('subSite'));
-            }
-        }
-        if (0 < count($this->modifier)) {
-            foreach($this->modifier as $modifier) {
-                $modifier->xmlSerialize(true, $sxe->addChild('modifier'));
             }
         }
         if (0 < count($this->detail)) {

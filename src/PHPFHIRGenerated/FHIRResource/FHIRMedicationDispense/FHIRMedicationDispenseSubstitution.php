@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Indicates that a medication product is to be or has been dispensed for a named person/patient.  This includes a description of the medication product (supply) provided and the instructions for administering the medication.  The medication dispense is the result of a pharmacy system responding to a medication order.
  */
-class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A code signifying whether a different drug was dispensed from what was prescribed.
@@ -122,7 +121,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * Indicates the reason for the substitution of (or lack of substitution) from what was prescribed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -142,7 +141,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
 
     /**
      * The person or organization that has primary responsibility for the substitution.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $responsibleParty
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $responsibleParty
      * @return $this
      */
     public function addResponsibleParty($responsibleParty)
@@ -173,17 +172,17 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (0 < count($this->reason)) {
-            $json['reason'] = array();
+            $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = $reason->jsonSerialize();
+                $json['reason'][] = json_encode($reason);
             }
         }
         if (0 < count($this->responsibleParty)) {
-            $json['responsibleParty'] = array();
+            $json['responsibleParty'] = [];
             foreach($this->responsibleParty as $responsibleParty) {
-                $json['responsibleParty'][] = $responsibleParty->jsonSerialize();
+                $json['responsibleParty'][] = json_encode($responsibleParty);
             }
         }
         return $json;

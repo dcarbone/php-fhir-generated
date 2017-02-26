@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A  text note which also  contains information about who made the statement and when.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRAnnotation extends FHIRElement implements JsonSerializable
+class FHIRAnnotation extends FHIRElement implements \JsonSerializable
 {
     /**
      * The individual responsible for making the annotation. (choose any one of author*, but only one)
@@ -200,10 +199,10 @@ class FHIRAnnotation extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->authorReference) $json['authorReference'] = $this->authorReference->jsonSerialize();
-        if (null !== $this->authorString) $json['authorString'] = $this->authorString->jsonSerialize();
-        if (null !== $this->time) $json['time'] = $this->time->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->authorReference) $json['authorReference'] = json_encode($this->authorReference);
+        if (null !== $this->authorString) $json['authorString'] = json_encode($this->authorString);
+        if (null !== $this->time) $json['time'] = json_encode($this->time);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         return $json;
     }
 

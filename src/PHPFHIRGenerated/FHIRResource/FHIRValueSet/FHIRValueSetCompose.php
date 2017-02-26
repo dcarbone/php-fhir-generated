@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,27 +61,32 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetCompose extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetCompose extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Includes the contents of the referenced value set as a part of the contents of this value set. This is an absolute URI that is a reference to ValueSet.uri.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version as of the locked date for referenced code system(s) and value set instances where ValueSet.compose.include.version is not defined.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public $import = array();
+    public $lockedDate = null;
 
     /**
-     * Include one or more codes from a code system.
+     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable ExpansionProfile (but generally, inactive codes would be expected to be included).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $inactive = null;
+
+    /**
+     * Include one or more codes from a code system or other value set(s).
      * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public $include = array();
 
     /**
-     * Exclude one or more codes from the value set.
+     * Exclude one or more codes from the value set based on code system filters and/or other value sets.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public $exclude = array();
@@ -92,27 +97,47 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements JsonSerializabl
     private $_fhirElementName = 'ValueSet.Compose';
 
     /**
-     * Includes the contents of the referenced value set as a part of the contents of this value set. This is an absolute URI that is a reference to ValueSet.uri.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version as of the locked date for referenced code system(s) and value set instances where ValueSet.compose.include.version is not defined.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getImport()
+    public function getLockedDate()
     {
-        return $this->import;
+        return $this->lockedDate;
     }
 
     /**
-     * Includes the contents of the referenced value set as a part of the contents of this value set. This is an absolute URI that is a reference to ValueSet.uri.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $import
+     * If a locked date is defined, then the Content Logical Definition must be evaluated using the current version as of the locked date for referenced code system(s) and value set instances where ValueSet.compose.include.version is not defined.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lockedDate
      * @return $this
      */
-    public function addImport($import)
+    public function setLockedDate($lockedDate)
     {
-        $this->import[] = $import;
+        $this->lockedDate = $lockedDate;
         return $this;
     }
 
     /**
-     * Include one or more codes from a code system.
+     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable ExpansionProfile (but generally, inactive codes would be expected to be included).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getInactive()
+    {
+        return $this->inactive;
+    }
+
+    /**
+     * Whether inactive codes - codes that are not approved for current use - are in the value set. If inactive = true, inactive codes are to be included in the expansion, if inactive = false, the inactive codes will not be included in the expansion. If absent, the behavior is determined by the implementation, or by the applicable ExpansionProfile (but generally, inactive codes would be expected to be included).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $inactive
+     * @return $this
+     */
+    public function setInactive($inactive)
+    {
+        $this->inactive = $inactive;
+        return $this;
+    }
+
+    /**
+     * Include one or more codes from a code system or other value set(s).
      * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public function getInclude()
@@ -121,8 +146,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * Include one or more codes from a code system.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude[] $include
+     * Include one or more codes from a code system or other value set(s).
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude $include
      * @return $this
      */
     public function addInclude($include)
@@ -132,7 +157,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * Exclude one or more codes from the value set.
+     * Exclude one or more codes from the value set based on code system filters and/or other value sets.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude[]
      */
     public function getExclude()
@@ -141,8 +166,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * Exclude one or more codes from the value set.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude[] $exclude
+     * Exclude one or more codes from the value set based on code system filters and/or other value sets.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetInclude $exclude
      * @return $this
      */
     public function addExclude($exclude)
@@ -173,22 +198,18 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (0 < count($this->import)) {
-            $json['import'] = array();
-            foreach($this->import as $import) {
-                $json['import'][] = $import->jsonSerialize();
-            }
-        }
+        if (null !== $this->lockedDate) $json['lockedDate'] = json_encode($this->lockedDate);
+        if (null !== $this->inactive) $json['inactive'] = json_encode($this->inactive);
         if (0 < count($this->include)) {
-            $json['include'] = array();
+            $json['include'] = [];
             foreach($this->include as $include) {
-                $json['include'][] = $include->jsonSerialize();
+                $json['include'][] = json_encode($include);
             }
         }
         if (0 < count($this->exclude)) {
-            $json['exclude'] = array();
+            $json['exclude'] = [];
             foreach($this->exclude as $exclude) {
-                $json['exclude'][] = $exclude->jsonSerialize();
+                $json['exclude'][] = json_encode($exclude);
             }
         }
         return $json;
@@ -203,11 +224,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement implements JsonSerializabl
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ValueSetCompose xmlns="http://hl7.org/fhir"></ValueSetCompose>');
         parent::xmlSerialize(true, $sxe);
-        if (0 < count($this->import)) {
-            foreach($this->import as $import) {
-                $import->xmlSerialize(true, $sxe->addChild('import'));
-            }
-        }
+        if (null !== $this->lockedDate) $this->lockedDate->xmlSerialize(true, $sxe->addChild('lockedDate'));
+        if (null !== $this->inactive) $this->inactive->xmlSerialize(true, $sxe->addChild('inactive'));
         if (0 < count($this->include)) {
             foreach($this->include as $include) {
                 $include->xmlSerialize(true, $sxe->addChild('include'));

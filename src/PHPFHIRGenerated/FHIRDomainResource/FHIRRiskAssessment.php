@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,14 +61,43 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An assessment of the likely outcome(s) for a patient or other subject as well as the likelihood of each outcome.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
+class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 {
+    /**
+     * Business identifier assigned to the risk assessment.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public $identifier = null;
+
+    /**
+     * A reference to the request that is fulfilled by this risk assessment.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $basedOn = null;
+
+    /**
+     * A reference to a resource that this risk assessment is part of, such as a Procedure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $parent = null;
+
+    /**
+     * The status of the RiskAssessment, using the same statuses as an Observation.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public $status = null;
+
+    /**
+     * The type of the risk assessment performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $code = null;
+
     /**
      * The patient or group the risk assessment applies to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
@@ -76,10 +105,22 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     public $subject = null;
 
     /**
-     * The date (and possibly time) the risk assessment was performed.
+     * The encounter where the assessment was performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $context = null;
+
+    /**
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $date = null;
+    public $occurrenceDateTime = null;
+
+    /**
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $occurrencePeriod = null;
 
     /**
      * For assessments or prognosis specific to a particular condition, indicates the condition being assessed.
@@ -88,22 +129,22 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     public $condition = null;
 
     /**
-     * The encounter where the assessment was performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $encounter = null;
-
-    /**
      * The provider or software application that performed the assessment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $performer = null;
 
     /**
-     * Business identifier assigned to the risk assessment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $identifier = null;
+    public $reasonCodeableConcept = null;
+
+    /**
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $reasonReference = null;
 
     /**
      * The algorithm, process or mechanism used to evaluate the risk.
@@ -130,9 +171,115 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     public $mitigation = null;
 
     /**
+     * Additional comments about the risk assessment.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     */
+    public $note = null;
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'RiskAssessment';
+
+    /**
+     * Business identifier assigned to the risk assessment.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * Business identifier assigned to the risk assessment.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * A reference to the request that is fulfilled by this risk assessment.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A reference to the request that is fulfilled by this risk assessment.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function setBasedOn($basedOn)
+    {
+        $this->basedOn = $basedOn;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource that this risk assessment is part of, such as a Procedure.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * A reference to a resource that this risk assessment is part of, such as a Procedure.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $parent
+     * @return $this
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+        return $this;
+    }
+
+    /**
+     * The status of the RiskAssessment, using the same statuses as an Observation.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The status of the RiskAssessment, using the same statuses as an Observation.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * The type of the risk assessment performed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * The type of the risk assessment performed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+        return $this;
+    }
 
     /**
      * The patient or group the risk assessment applies to.
@@ -155,22 +302,62 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * The encounter where the assessment was performed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getDate()
+    public function getContext()
     {
-        return $this->date;
+        return $this->context;
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
+     * The encounter where the assessment was performed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setDate($date)
+    public function setContext($context)
     {
-        $this->date = $date;
+        $this->context = $context;
+        return $this;
+    }
+
+    /**
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getOccurrenceDateTime()
+    {
+        return $this->occurrenceDateTime;
+    }
+
+    /**
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @return $this
+     */
+    public function setOccurrenceDateTime($occurrenceDateTime)
+    {
+        $this->occurrenceDateTime = $occurrenceDateTime;
+        return $this;
+    }
+
+    /**
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getOccurrencePeriod()
+    {
+        return $this->occurrencePeriod;
+    }
+
+    /**
+     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @return $this
+     */
+    public function setOccurrencePeriod($occurrencePeriod)
+    {
+        $this->occurrencePeriod = $occurrencePeriod;
         return $this;
     }
 
@@ -195,26 +382,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The encounter where the assessment was performed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getEncounter()
-    {
-        return $this->encounter;
-    }
-
-    /**
-     * The encounter where the assessment was performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
-     * @return $this
-     */
-    public function setEncounter($encounter)
-    {
-        $this->encounter = $encounter;
-        return $this;
-    }
-
-    /**
      * The provider or software application that performed the assessment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -235,22 +402,42 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Business identifier assigned to the risk assessment.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getIdentifier()
+    public function getReasonCodeableConcept()
     {
-        return $this->identifier;
+        return $this->reasonCodeableConcept;
     }
 
     /**
-     * Business identifier assigned to the risk assessment.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
-    public function setIdentifier($identifier)
+    public function setReasonCodeableConcept($reasonCodeableConcept)
     {
-        $this->identifier = $identifier;
+        $this->reasonCodeableConcept = $reasonCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getReasonReference()
+    {
+        return $this->reasonReference;
+    }
+
+    /**
+     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
+     * @return $this
+     */
+    public function setReasonReference($reasonReference)
+    {
+        $this->reasonReference = $reasonReference;
         return $this;
     }
 
@@ -285,7 +472,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $basis
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basis
      * @return $this
      */
     public function addBasis($basis)
@@ -305,7 +492,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Describes the expected outcome for the subject.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[] $prediction
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $prediction
      * @return $this
      */
     public function addPrediction($prediction)
@@ -335,6 +522,26 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
+     * Additional comments about the risk assessment.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Additional comments about the risk assessment.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
+     * @return $this
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -357,26 +564,34 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->condition) $json['condition'] = $this->condition->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->performer) $json['performer'] = $this->performer->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->method) $json['method'] = $this->method->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->basedOn) $json['basedOn'] = json_encode($this->basedOn);
+        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
+        if (null !== $this->condition) $json['condition'] = json_encode($this->condition);
+        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
+        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
         if (0 < count($this->basis)) {
-            $json['basis'] = array();
+            $json['basis'] = [];
             foreach($this->basis as $basis) {
-                $json['basis'][] = $basis->jsonSerialize();
+                $json['basis'][] = json_encode($basis);
             }
         }
         if (0 < count($this->prediction)) {
-            $json['prediction'] = array();
+            $json['prediction'] = [];
             foreach($this->prediction as $prediction) {
-                $json['prediction'][] = $prediction->jsonSerialize();
+                $json['prediction'][] = json_encode($prediction);
             }
         }
-        if (null !== $this->mitigation) $json['mitigation'] = $this->mitigation->jsonSerialize();
+        if (null !== $this->mitigation) $json['mitigation'] = json_encode($this->mitigation);
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
         return $json;
     }
 
@@ -389,12 +604,19 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<RiskAssessment xmlns="http://hl7.org/fhir"></RiskAssessment>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->condition) $this->condition->xmlSerialize(true, $sxe->addChild('condition'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
-        if (null !== $this->performer) $this->performer->xmlSerialize(true, $sxe->addChild('performer'));
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (null !== $this->basedOn) $this->basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+        if (null !== $this->parent) $this->parent->xmlSerialize(true, $sxe->addChild('parent'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (null !== $this->occurrencePeriod) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        if (null !== $this->condition) $this->condition->xmlSerialize(true, $sxe->addChild('condition'));
+        if (null !== $this->performer) $this->performer->xmlSerialize(true, $sxe->addChild('performer'));
+        if (null !== $this->reasonCodeableConcept) $this->reasonCodeableConcept->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
+        if (null !== $this->reasonReference) $this->reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
         if (null !== $this->method) $this->method->xmlSerialize(true, $sxe->addChild('method'));
         if (0 < count($this->basis)) {
             foreach($this->basis as $basis) {
@@ -407,6 +629,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements JsonSerializable
             }
         }
         if (null !== $this->mitigation) $this->mitigation->xmlSerialize(true, $sxe->addChild('mitigation'));
+        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

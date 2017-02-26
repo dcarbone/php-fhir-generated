@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRElementDefinitionConstraint extends FHIRElement implements JsonSerializable
+class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerializable
 {
     /**
      * Allows identification of which elements have their cardinalities impacted by the constraint.  Will not be referenced for constraints that do not affect cardinality.
@@ -94,10 +93,22 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements JsonSeriali
     public $human = null;
 
     /**
+     * A [FluentPath](http://hl7.org/fluentpath) expression of constraint that can be executed to see if this constraint is met.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $expression = null;
+
+    /**
      * An XPath expression of constraint that can be executed to see if this constraint is met.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $xpath = null;
+
+    /**
+     * A reference to the original source of the constraint, for traceability purposes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $source = null;
 
     /**
      * @var string
@@ -185,6 +196,26 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements JsonSeriali
     }
 
     /**
+     * A [FluentPath](http://hl7.org/fluentpath) expression of constraint that can be executed to see if this constraint is met.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getExpression()
+    {
+        return $this->expression;
+    }
+
+    /**
+     * A [FluentPath](http://hl7.org/fluentpath) expression of constraint that can be executed to see if this constraint is met.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
+     * @return $this
+     */
+    public function setExpression($expression)
+    {
+        $this->expression = $expression;
+        return $this;
+    }
+
+    /**
      * An XPath expression of constraint that can be executed to see if this constraint is met.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -201,6 +232,26 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements JsonSeriali
     public function setXpath($xpath)
     {
         $this->xpath = $xpath;
+        return $this;
+    }
+
+    /**
+     * A reference to the original source of the constraint, for traceability purposes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getSource()
+    {
+        return $this->source;
+    }
+
+    /**
+     * A reference to the original source of the constraint, for traceability purposes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $source
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->source = $source;
         return $this;
     }
 
@@ -226,11 +277,13 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->key) $json['key'] = $this->key->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->severity) $json['severity'] = $this->severity->jsonSerialize();
-        if (null !== $this->human) $json['human'] = $this->human->jsonSerialize();
-        if (null !== $this->xpath) $json['xpath'] = $this->xpath->jsonSerialize();
+        if (null !== $this->key) $json['key'] = json_encode($this->key);
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
+        if (null !== $this->human) $json['human'] = json_encode($this->human);
+        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
+        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
         return $json;
     }
 
@@ -247,7 +300,9 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements JsonSeriali
         if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
         if (null !== $this->severity) $this->severity->xmlSerialize(true, $sxe->addChild('severity'));
         if (null !== $this->human) $this->human->xmlSerialize(true, $sxe->addChild('human'));
+        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
         if (null !== $this->xpath) $this->xpath->xmlSerialize(true, $sxe->addChild('xpath'));
+        if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

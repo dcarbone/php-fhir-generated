@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,24 +61,29 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of a clinical assessment performed to determine what problem(s) may affect the patient and before planning the treatments or management strategies that are best to manage a patient's condition. Assessments are often 1:1 with a clinical consultation / encounter,  but this varies greatly depending on the clinical workflow. This resource is called "ClinicalImpression" rather than "ClinicalAssessment" to avoid confusion with the recording of assessment tools such as Apgar score.
  */
-class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements JsonSerializable
+class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Specific text of code for finding or diagnosis.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $item = null;
+    public $itemCodeableConcept = null;
+
+    /**
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $itemReference = null;
 
     /**
      * Which investigations support finding or diagnosis.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $cause = null;
+    public $basis = null;
 
     /**
      * @var string
@@ -86,22 +91,42 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements JsonS
     private $_fhirElementName = 'ClinicalImpression.Finding';
 
     /**
-     * Specific text of code for finding or diagnosis.
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getItem()
+    public function getItemCodeableConcept()
     {
-        return $this->item;
+        return $this->itemCodeableConcept;
     }
 
     /**
-     * Specific text of code for finding or diagnosis.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $item
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
-    public function setItem($item)
+    public function setItemCodeableConcept($itemCodeableConcept)
     {
-        $this->item = $item;
+        $this->itemCodeableConcept = $itemCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getItemReference()
+    {
+        return $this->itemReference;
+    }
+
+    /**
+     * Specific text, code or reference for finding or diagnosis, which may include ruled-out or resolved conditions. (choose any one of item*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $itemReference
+     * @return $this
+     */
+    public function setItemReference($itemReference)
+    {
+        $this->itemReference = $itemReference;
         return $this;
     }
 
@@ -109,19 +134,19 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements JsonS
      * Which investigations support finding or diagnosis.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCause()
+    public function getBasis()
     {
-        return $this->cause;
+        return $this->basis;
     }
 
     /**
      * Which investigations support finding or diagnosis.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $cause
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $basis
      * @return $this
      */
-    public function setCause($cause)
+    public function setBasis($basis)
     {
-        $this->cause = $cause;
+        $this->basis = $basis;
         return $this;
     }
 
@@ -147,8 +172,9 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->item) $json['item'] = $this->item->jsonSerialize();
-        if (null !== $this->cause) $json['cause'] = $this->cause->jsonSerialize();
+        if (null !== $this->itemCodeableConcept) $json['itemCodeableConcept'] = json_encode($this->itemCodeableConcept);
+        if (null !== $this->itemReference) $json['itemReference'] = json_encode($this->itemReference);
+        if (null !== $this->basis) $json['basis'] = json_encode($this->basis);
         return $json;
     }
 
@@ -161,8 +187,9 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement implements JsonS
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClinicalImpressionFinding xmlns="http://hl7.org/fhir"></ClinicalImpressionFinding>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->item) $this->item->xmlSerialize(true, $sxe->addChild('item'));
-        if (null !== $this->cause) $this->cause->xmlSerialize(true, $sxe->addChild('cause'));
+        if (null !== $this->itemCodeableConcept) $this->itemCodeableConcept->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
+        if (null !== $this->itemReference) $this->itemReference->xmlSerialize(true, $sxe->addChild('itemReference'));
+        if (null !== $this->basis) $this->basis->xmlSerialize(true, $sxe->addChild('basis'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

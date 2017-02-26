@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
  */
-class FHIRAuditEventNetwork extends FHIRBackboneElement implements JsonSerializable
+class FHIRAuditEventNetwork extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An identifier for the network access point of the user device for the audit event.
@@ -76,7 +75,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * An identifier for the type of network access point that originated the audit event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAuditEventParticipantNetworkType
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAuditEventAgentNetworkType
      */
     public $type = null;
 
@@ -107,7 +106,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * An identifier for the type of network access point that originated the audit event.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAuditEventParticipantNetworkType
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAuditEventAgentNetworkType
      */
     public function getType()
     {
@@ -116,7 +115,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * An identifier for the type of network access point that originated the audit event.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAuditEventParticipantNetworkType $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAuditEventAgentNetworkType $type
      * @return $this
      */
     public function setType($type)
@@ -147,8 +146,8 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->address) $json['address'] = $this->address->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
+        if (null !== $this->address) $json['address'] = json_encode($this->address);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         return $json;
     }
 

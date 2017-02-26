@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,16 +61,15 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A formal computable definition of an operation (on the RESTful interface) or a named query (using the search interaction).
  */
-class FHIROperationDefinitionBinding extends FHIRBackboneElement implements JsonSerializable
+class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBindingStrength
      */
     public $strength = null;
 
@@ -93,7 +92,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements Json
 
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBindingStrength
      */
     public function getStrength()
     {
@@ -102,7 +101,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements Json
 
     /**
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $strength
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBindingStrength $strength
      * @return $this
      */
     public function setStrength($strength)
@@ -173,9 +172,9 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->strength) $json['strength'] = $this->strength->jsonSerialize();
-        if (null !== $this->valueSetUri) $json['valueSetUri'] = $this->valueSetUri->jsonSerialize();
-        if (null !== $this->valueSetReference) $json['valueSetReference'] = $this->valueSetReference->jsonSerialize();
+        if (null !== $this->strength) $json['strength'] = json_encode($this->strength);
+        if (null !== $this->valueSetUri) $json['valueSetUri'] = json_encode($this->valueSetUri);
+        if (null !== $this->valueSetReference) $json['valueSetReference'] = json_encode($this->valueSetReference);
         return $json;
     }
 

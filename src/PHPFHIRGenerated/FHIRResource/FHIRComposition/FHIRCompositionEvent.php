@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
  */
-class FHIRCompositionEvent extends FHIRBackboneElement implements JsonSerializable
+class FHIRCompositionEvent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a "History and Physical Report" in which the procedure being documented is necessarily a "History and Physical" act.
@@ -102,7 +101,7 @@ class FHIRCompositionEvent extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a "History and Physical Report" in which the procedure being documented is necessarily a "History and Physical" act.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $code
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
     public function addCode($code)
@@ -142,7 +141,7 @@ class FHIRCompositionEvent extends FHIRBackboneElement implements JsonSerializab
 
     /**
      * The description and/or reference of the event(s) being documented. For example, this could be used to document such a colonoscopy or an appendectomy.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $detail
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $detail
      * @return $this
      */
     public function addDetail($detail)
@@ -174,16 +173,16 @@ class FHIRCompositionEvent extends FHIRBackboneElement implements JsonSerializab
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->code)) {
-            $json['code'] = array();
+            $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = $code->jsonSerialize();
+                $json['code'][] = json_encode($code);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (0 < count($this->detail)) {
-            $json['detail'] = array();
+            $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = $detail->jsonSerialize();
+                $json['detail'][] = json_encode($detail);
             }
         }
         return $json;

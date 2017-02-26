@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
- * There is a variety of postal address formats defined around the world. This format defines a superset that is the basis for all addresses around the world.
+ * An address expressed using postal conventions (as opposed to GPS or other location definition formats).  This data type may be used to convey addresses for use in delivering mail as well as for visiting locations and which might not be valid for mail delivery.  There are a variety of postal address formats defined around the world.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRAddress extends FHIRElement implements JsonSerializable
+class FHIRAddress extends FHIRElement implements \JsonSerializable
 {
     /**
      * The purpose of this address.
@@ -205,7 +204,7 @@ class FHIRAddress extends FHIRElement implements JsonSerializable
 
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $line
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $line
      * @return $this
      */
     public function addLine($line)
@@ -356,21 +355,21 @@ class FHIRAddress extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->use) $json['use'] = $this->use->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->use) $json['use'] = json_encode($this->use);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         if (0 < count($this->line)) {
-            $json['line'] = array();
+            $json['line'] = [];
             foreach($this->line as $line) {
-                $json['line'][] = $line->jsonSerialize();
+                $json['line'][] = json_encode($line);
             }
         }
-        if (null !== $this->city) $json['city'] = $this->city->jsonSerialize();
-        if (null !== $this->district) $json['district'] = $this->district->jsonSerialize();
-        if (null !== $this->state) $json['state'] = $this->state->jsonSerialize();
-        if (null !== $this->postalCode) $json['postalCode'] = $this->postalCode->jsonSerialize();
-        if (null !== $this->country) $json['country'] = $this->country->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->city) $json['city'] = json_encode($this->city);
+        if (null !== $this->district) $json['district'] = json_encode($this->district);
+        if (null !== $this->state) $json['state'] = json_encode($this->state);
+        if (null !== $this->postalCode) $json['postalCode'] = json_encode($this->postalCode);
+        if (null !== $this->country) $json['country'] = json_encode($this->country);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
 

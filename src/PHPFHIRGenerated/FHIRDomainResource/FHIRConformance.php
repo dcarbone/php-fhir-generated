@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRConformance extends FHIRDomainResource implements JsonSerializable
+class FHIRConformance extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this conformance statement when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this conformance statement is (or will be) published.
@@ -89,7 +88,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The status of this conformance statement.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \
      */
     public $status = null;
 
@@ -98,6 +97,12 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
+
+    /**
+     * The date  (and optionally time) when the conformance statement was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the conformance statement changes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $date = null;
 
     /**
      * The name of the individual or organization that published the conformance.
@@ -112,20 +117,20 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
     public $contact = array();
 
     /**
-     * The date  (and optionally time) when the conformance statement was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the conformance statement changes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $date = null;
-
-    /**
      * A free text natural language description of the conformance statement and its use. Typically, this is used when the conformance statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of conformance statements.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $useContext = array();
+
+    /**
      * Explains why this conformance statement is needed and why it's been constrained as it has.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $requirements = null;
 
@@ -140,6 +145,12 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRConformanceStatementKind
      */
     public $kind = null;
+
+    /**
+     * Reference to a canonical URL of another conformance that this software implements or uses. This conformance statement is a published API description that corresponds to a business service. The rest of the conformance statement does not need to repeat the details of the referenced Conformance resource, but can do so.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public $instantiates = array();
 
     /**
      * Software that is covered by this conformance statement.  It is used when the conformance statement describes the capabilities of a particular software version, independent of an installation.
@@ -262,7 +273,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The status of this conformance statement.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \
      */
     public function getStatus()
     {
@@ -271,7 +282,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The status of this conformance statement.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @param \ $status
      * @return $this
      */
     public function setStatus($status)
@@ -297,6 +308,26 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
     public function setExperimental($experimental)
     {
         $this->experimental = $experimental;
+        return $this;
+    }
+
+    /**
+     * The date  (and optionally time) when the conformance statement was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the conformance statement changes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * The date  (and optionally time) when the conformance statement was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the conformance statement changes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
         return $this;
     }
 
@@ -331,7 +362,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -341,28 +372,8 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the conformance statement was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the conformance statement changes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * The date  (and optionally time) when the conformance statement was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the conformance statement changes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
      * A free text natural language description of the conformance statement and its use. Typically, this is used when the conformance statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
     {
@@ -371,7 +382,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A free text natural language description of the conformance statement and its use. Typically, this is used when the conformance statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
     public function setDescription($description)
@@ -381,8 +392,28 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of conformance statements.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getUseContext()
+    {
+        return $this->useContext;
+    }
+
+    /**
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of conformance statements.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $useContext
+     * @return $this
+     */
+    public function addUseContext($useContext)
+    {
+        $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
      * Explains why this conformance statement is needed and why it's been constrained as it has.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getRequirements()
     {
@@ -391,7 +422,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Explains why this conformance statement is needed and why it's been constrained as it has.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $requirements
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $requirements
      * @return $this
      */
     public function setRequirements($requirements)
@@ -437,6 +468,26 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
     public function setKind($kind)
     {
         $this->kind = $kind;
+        return $this;
+    }
+
+    /**
+     * Reference to a canonical URL of another conformance that this software implements or uses. This conformance statement is a published API description that corresponds to a business service. The rest of the conformance statement does not need to repeat the details of the referenced Conformance resource, but can do so.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public function getInstantiates()
+    {
+        return $this->instantiates;
+    }
+
+    /**
+     * Reference to a canonical URL of another conformance that this software implements or uses. This conformance statement is a published API description that corresponds to a business service. The rest of the conformance statement does not need to repeat the details of the referenced Conformance resource, but can do so.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $instantiates
+     * @return $this
+     */
+    public function addInstantiates($instantiates)
+    {
+        $this->instantiates[] = $instantiates;
         return $this;
     }
 
@@ -531,7 +582,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of the formats supported by this implementation using their content types.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $format
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $format
      * @return $this
      */
     public function addFormat($format)
@@ -551,7 +602,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles]{profiling.html#profile-uses}.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $profile
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
      * @return $this
      */
     public function addProfile($profile)
@@ -571,7 +622,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A definition of the restful capabilities of the solution, if any.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceRest[] $rest
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceRest $rest
      * @return $this
      */
     public function addRest($rest)
@@ -591,7 +642,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A description of the messaging capabilities of the solution.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceMessaging[] $messaging
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceMessaging $messaging
      * @return $this
      */
     public function addMessaging($messaging)
@@ -611,7 +662,7 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
 
     /**
      * A document definition.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceDocument[] $document
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceDocument $document
      * @return $this
      */
     public function addDocument($document)
@@ -643,55 +694,67 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->requirements) $json['requirements'] = $this->requirements->jsonSerialize();
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->kind) $json['kind'] = $this->kind->jsonSerialize();
-        if (null !== $this->software) $json['software'] = $this->software->jsonSerialize();
-        if (null !== $this->implementation) $json['implementation'] = $this->implementation->jsonSerialize();
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion->jsonSerialize();
-        if (null !== $this->acceptUnknown) $json['acceptUnknown'] = $this->acceptUnknown->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (0 < count($this->useContext)) {
+            $json['useContext'] = [];
+            foreach($this->useContext as $useContext) {
+                $json['useContext'][] = json_encode($useContext);
+            }
+        }
+        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
+        if (0 < count($this->instantiates)) {
+            $json['instantiates'] = [];
+            foreach($this->instantiates as $instantiates) {
+                $json['instantiates'][] = json_encode($instantiates);
+            }
+        }
+        if (null !== $this->software) $json['software'] = json_encode($this->software);
+        if (null !== $this->implementation) $json['implementation'] = json_encode($this->implementation);
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
+        if (null !== $this->acceptUnknown) $json['acceptUnknown'] = json_encode($this->acceptUnknown);
         if (0 < count($this->format)) {
-            $json['format'] = array();
+            $json['format'] = [];
             foreach($this->format as $format) {
-                $json['format'][] = $format->jsonSerialize();
+                $json['format'][] = json_encode($format);
             }
         }
         if (0 < count($this->profile)) {
-            $json['profile'] = array();
+            $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = $profile->jsonSerialize();
+                $json['profile'][] = json_encode($profile);
             }
         }
         if (0 < count($this->rest)) {
-            $json['rest'] = array();
+            $json['rest'] = [];
             foreach($this->rest as $rest) {
-                $json['rest'][] = $rest->jsonSerialize();
+                $json['rest'][] = json_encode($rest);
             }
         }
         if (0 < count($this->messaging)) {
-            $json['messaging'] = array();
+            $json['messaging'] = [];
             foreach($this->messaging as $messaging) {
-                $json['messaging'][] = $messaging->jsonSerialize();
+                $json['messaging'][] = json_encode($messaging);
             }
         }
         if (0 < count($this->document)) {
-            $json['document'] = array();
+            $json['document'] = [];
             foreach($this->document as $document) {
-                $json['document'][] = $document->jsonSerialize();
+                $json['document'][] = json_encode($document);
             }
         }
         return $json;
@@ -711,17 +774,27 @@ class FHIRConformance extends FHIRDomainResource implements JsonSerializable
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (0 < count($this->useContext)) {
+            foreach($this->useContext as $useContext) {
+                $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
+            }
+        }
         if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
         if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
         if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
+        if (0 < count($this->instantiates)) {
+            foreach($this->instantiates as $instantiates) {
+                $instantiates->xmlSerialize(true, $sxe->addChild('instantiates'));
+            }
+        }
         if (null !== $this->software) $this->software->xmlSerialize(true, $sxe->addChild('software'));
         if (null !== $this->implementation) $this->implementation->xmlSerialize(true, $sxe->addChild('implementation'));
         if (null !== $this->fhirVersion) $this->fhirVersion->xmlSerialize(true, $sxe->addChild('fhirVersion'));

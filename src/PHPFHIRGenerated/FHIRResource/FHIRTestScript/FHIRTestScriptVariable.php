@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Descriptive name for this variable.
@@ -75,13 +74,37 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializ
     public $name = null;
 
     /**
+     * A default, hard-coded, or user-defined value for this variable.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $defaultValue = null;
+
+    /**
+     * A free text natural language description of the variable and its purpose.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $description = null;
+
+    /**
+     * The fhirpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $expression = null;
+
+    /**
      * Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $headerField = null;
 
     /**
-     * XPath or JSONPath against the fixture body.  When variables are defined, either headerField must be specified or path, but not both.
+     * Displayable text string with hint help information to the user when entering a default value.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $hint = null;
+
+    /**
+     * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $path = null;
@@ -118,6 +141,66 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializ
     }
 
     /**
+     * A default, hard-coded, or user-defined value for this variable.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * A default, hard-coded, or user-defined value for this variable.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $defaultValue
+     * @return $this
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+        return $this;
+    }
+
+    /**
+     * A free text natural language description of the variable and its purpose.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * A free text natural language description of the variable and its purpose.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * The fhirpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getExpression()
+    {
+        return $this->expression;
+    }
+
+    /**
+     * The fhirpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
+     * @return $this
+     */
+    public function setExpression($expression)
+    {
+        $this->expression = $expression;
+        return $this;
+    }
+
+    /**
      * Will be used to grab the HTTP header field value from the headers that sourceId is pointing to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -138,7 +221,27 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializ
     }
 
     /**
-     * XPath or JSONPath against the fixture body.  When variables are defined, either headerField must be specified or path, but not both.
+     * Displayable text string with hint help information to the user when entering a default value.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getHint()
+    {
+        return $this->hint;
+    }
+
+    /**
+     * Displayable text string with hint help information to the user when entering a default value.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $hint
+     * @return $this
+     */
+    public function setHint($hint)
+    {
+        $this->hint = $hint;
+        return $this;
+    }
+
+    /**
+     * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPath()
@@ -147,7 +250,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializ
     }
 
     /**
-     * XPath or JSONPath against the fixture body.  When variables are defined, either headerField must be specified or path, but not both.
+     * XPath or JSONPath to evaluate against the fixture body.  When variables are defined, only one of either expression, headerField or path must be specified.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $path
      * @return $this
      */
@@ -199,10 +302,14 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->headerField) $json['headerField'] = $this->headerField->jsonSerialize();
-        if (null !== $this->path) $json['path'] = $this->path->jsonSerialize();
-        if (null !== $this->sourceId) $json['sourceId'] = $this->sourceId->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->defaultValue) $json['defaultValue'] = json_encode($this->defaultValue);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
+        if (null !== $this->headerField) $json['headerField'] = json_encode($this->headerField);
+        if (null !== $this->hint) $json['hint'] = json_encode($this->hint);
+        if (null !== $this->path) $json['path'] = json_encode($this->path);
+        if (null !== $this->sourceId) $json['sourceId'] = json_encode($this->sourceId);
         return $json;
     }
 
@@ -216,7 +323,11 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements JsonSerializ
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptVariable xmlns="http://hl7.org/fhir"></TestScriptVariable>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (null !== $this->defaultValue) $this->defaultValue->xmlSerialize(true, $sxe->addChild('defaultValue'));
+        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
         if (null !== $this->headerField) $this->headerField->xmlSerialize(true, $sxe->addChild('headerField'));
+        if (null !== $this->hint) $this->hint->xmlSerialize(true, $sxe->addChild('hint'));
         if (null !== $this->path) $this->path->xmlSerialize(true, $sxe->addChild('path'));
         if (null !== $this->sourceId) $this->sourceId->xmlSerialize(true, $sxe->addChild('sourceId'));
         if ($returnSXE) return $sxe;

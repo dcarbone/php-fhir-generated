@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,19 +61,30 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerializable
+class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * A business identifier assigned to a particular completed (or partially completed) questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
+
+    /**
+     * Identifies the order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
+
+    /**
+     * Identifies a procedure or observation that this questionnaire was performed as part of the execution of.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $parent = array();
 
     /**
      * Indicates the Questionnaire resource that defines the form for which answers are being provided.
@@ -94,6 +105,12 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerial
     public $subject = null;
 
     /**
+     * The encounter or episode of care with primary association to the questionnaire.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $context = null;
+
+    /**
      * Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -112,16 +129,10 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerial
     public $source = null;
 
     /**
-     * Encounter during which this set of questionnaire response were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Corresponds to a group or question item from the original questionnaire.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public $encounter = null;
-
-    /**
-     * A group of questions to a possibly similarly grouped set of questions in the questionnaire response.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup
-     */
-    public $group = null;
+    public $item = array();
 
     /**
      * @var string
@@ -145,6 +156,46 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerial
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * Identifies the order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * Identifies the order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * Identifies a procedure or observation that this questionnaire was performed as part of the execution of.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * Identifies a procedure or observation that this questionnaire was performed as part of the execution of.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $parent
+     * @return $this
+     */
+    public function addParent($parent)
+    {
+        $this->parent[] = $parent;
         return $this;
     }
 
@@ -209,6 +260,26 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerial
     }
 
     /**
+     * The encounter or episode of care with primary association to the questionnaire.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getContext()
+    {
+        return $this->context;
+    }
+
+    /**
+     * The encounter or episode of care with primary association to the questionnaire.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
+     * @return $this
+     */
+    public function setContext($context)
+    {
+        $this->context = $context;
+        return $this;
+    }
+
+    /**
      * Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -269,42 +340,22 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerial
     }
 
     /**
-     * Encounter during which this set of questionnaire response were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Corresponds to a group or question item from the original questionnaire.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public function getEncounter()
+    public function getItem()
     {
-        return $this->encounter;
+        return $this->item;
     }
 
     /**
-     * Encounter during which this set of questionnaire response were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
+     * Corresponds to a group or question item from the original questionnaire.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
      * @return $this
      */
-    public function setEncounter($encounter)
+    public function addItem($item)
     {
-        $this->encounter = $encounter;
-        return $this;
-    }
-
-    /**
-     * A group of questions to a possibly similarly grouped set of questions in the questionnaire response.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup
-     */
-    public function getGroup()
-    {
-        return $this->group;
-    }
-
-    /**
-     * A group of questions to a possibly similarly grouped set of questions in the questionnaire response.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup $group
-     * @return $this
-     */
-    public function setGroup($group)
-    {
-        $this->group = $group;
+        $this->item[] = $item;
         return $this;
     }
 
@@ -331,15 +382,32 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerial
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->questionnaire) $json['questionnaire'] = $this->questionnaire->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->author) $json['author'] = $this->author->jsonSerialize();
-        if (null !== $this->authored) $json['authored'] = $this->authored->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->group) $json['group'] = $this->group->jsonSerialize();
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
+        if (0 < count($this->parent)) {
+            $json['parent'] = [];
+            foreach($this->parent as $parent) {
+                $json['parent'][] = json_encode($parent);
+            }
+        }
+        if (null !== $this->questionnaire) $json['questionnaire'] = json_encode($this->questionnaire);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (null !== $this->author) $json['author'] = json_encode($this->author);
+        if (null !== $this->authored) $json['authored'] = json_encode($this->authored);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (0 < count($this->item)) {
+            $json['item'] = [];
+            foreach($this->item as $item) {
+                $json['item'][] = json_encode($item);
+            }
+        }
         return $json;
     }
 
@@ -353,14 +421,28 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements JsonSerial
         if (null === $sxe) $sxe = new \SimpleXMLElement('<QuestionnaireResponse xmlns="http://hl7.org/fhir"></QuestionnaireResponse>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
+        if (0 < count($this->parent)) {
+            foreach($this->parent as $parent) {
+                $parent->xmlSerialize(true, $sxe->addChild('parent'));
+            }
+        }
         if (null !== $this->questionnaire) $this->questionnaire->xmlSerialize(true, $sxe->addChild('questionnaire'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (null !== $this->authored) $this->authored->xmlSerialize(true, $sxe->addChild('authored'));
         if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
-        if (null !== $this->group) $this->group->xmlSerialize(true, $sxe->addChild('group'));
+        if (0 < count($this->item)) {
+            foreach($this->item as $item) {
+                $item->xmlSerialize(true, $sxe->addChild('item'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
  */
-class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimResponseNote extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * An integer associated with each note which may be referred to from each service line item.
@@ -76,7 +75,7 @@ class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The note purpose: Print/Display.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $type = null;
 
@@ -85,6 +84,12 @@ class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializa
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $text = null;
+
+    /**
+     * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $language = null;
 
     /**
      * @var string
@@ -113,7 +118,7 @@ class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The note purpose: Print/Display.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getType()
     {
@@ -122,7 +127,7 @@ class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * The note purpose: Print/Display.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function setType($type)
@@ -152,6 +157,26 @@ class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializa
     }
 
     /**
+     * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. "en" for English, or "en-US" for American English versus "en-EN" for England English.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $language
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -173,9 +198,10 @@ class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->number) $json['number'] = $this->number->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->number) $json['number'] = json_encode($this->number);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->language) $json['language'] = json_encode($this->language);
         return $json;
     }
 
@@ -191,6 +217,7 @@ class FHIRClaimResponseNote extends FHIRBackboneElement implements JsonSerializa
         if (null !== $this->number) $this->number->xmlSerialize(true, $sxe->addChild('number'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (null !== $this->language) $this->language->xmlSerialize(true, $sxe->addChild('language'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

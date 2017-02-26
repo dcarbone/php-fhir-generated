@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  */
-class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements JsonSerializable
+class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
@@ -147,10 +146,10 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements Jso
     public $valueReference = null;
 
     /**
-     * Nested group, containing nested question for this question. The order of groups within the question is relevant.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup[]
+     * Nested groups and/or questions found within this particular answer.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public $group = array();
+    public $item = array();
 
     /**
      * @var string
@@ -418,22 +417,22 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements Jso
     }
 
     /**
-     * Nested group, containing nested question for this question. The order of groups within the question is relevant.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup[]
+     * Nested groups and/or questions found within this particular answer.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public function getGroup()
+    public function getItem()
     {
-        return $this->group;
+        return $this->item;
     }
 
     /**
-     * Nested group, containing nested question for this question. The order of groups within the question is relevant.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup[] $group
+     * Nested groups and/or questions found within this particular answer.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
      * @return $this
      */
-    public function addGroup($group)
+    public function addItem($item)
     {
-        $this->group[] = $group;
+        $this->item[] = $item;
         return $this;
     }
 
@@ -459,23 +458,23 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements Jso
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = $this->valueBoolean->jsonSerialize();
-        if (null !== $this->valueDecimal) $json['valueDecimal'] = $this->valueDecimal->jsonSerialize();
-        if (null !== $this->valueInteger) $json['valueInteger'] = $this->valueInteger->jsonSerialize();
-        if (null !== $this->valueDate) $json['valueDate'] = $this->valueDate->jsonSerialize();
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime->jsonSerialize();
-        if (null !== $this->valueInstant) $json['valueInstant'] = $this->valueInstant->jsonSerialize();
-        if (null !== $this->valueTime) $json['valueTime'] = $this->valueTime->jsonSerialize();
-        if (null !== $this->valueString) $json['valueString'] = $this->valueString->jsonSerialize();
-        if (null !== $this->valueUri) $json['valueUri'] = $this->valueUri->jsonSerialize();
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment->jsonSerialize();
-        if (null !== $this->valueCoding) $json['valueCoding'] = $this->valueCoding->jsonSerialize();
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity->jsonSerialize();
-        if (null !== $this->valueReference) $json['valueReference'] = $this->valueReference->jsonSerialize();
-        if (0 < count($this->group)) {
-            $json['group'] = array();
-            foreach($this->group as $group) {
-                $json['group'][] = $group->jsonSerialize();
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
+        if (null !== $this->valueDecimal) $json['valueDecimal'] = json_encode($this->valueDecimal);
+        if (null !== $this->valueInteger) $json['valueInteger'] = json_encode($this->valueInteger);
+        if (null !== $this->valueDate) $json['valueDate'] = json_encode($this->valueDate);
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
+        if (null !== $this->valueInstant) $json['valueInstant'] = json_encode($this->valueInstant);
+        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
+        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
+        if (null !== $this->valueUri) $json['valueUri'] = json_encode($this->valueUri);
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
+        if (null !== $this->valueCoding) $json['valueCoding'] = json_encode($this->valueCoding);
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
+        if (null !== $this->valueReference) $json['valueReference'] = json_encode($this->valueReference);
+        if (0 < count($this->item)) {
+            $json['item'] = [];
+            foreach($this->item as $item) {
+                $json['item'][] = json_encode($item);
             }
         }
         return $json;
@@ -503,9 +502,9 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements Jso
         if (null !== $this->valueCoding) $this->valueCoding->xmlSerialize(true, $sxe->addChild('valueCoding'));
         if (null !== $this->valueQuantity) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
         if (null !== $this->valueReference) $this->valueReference->xmlSerialize(true, $sxe->addChild('valueReference'));
-        if (0 < count($this->group)) {
-            foreach($this->group as $group) {
-                $group->xmlSerialize(true, $sxe->addChild('group'));
+        if (0 < count($this->item)) {
+            foreach($this->item as $item) {
+                $item->xmlSerialize(true, $sxe->addChild('item'));
             }
         }
         if ($returnSXE) return $sxe;

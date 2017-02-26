@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
  */
-class FHIRConformanceResource extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceResource extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A type of resource exposed via the restful interface.
@@ -79,6 +78,12 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $profile = null;
+
+    /**
+     * Additional information about the resource type is used by the system.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public $documentation = null;
 
     /**
      * Identifies a restful operation supported by the solution.
@@ -111,6 +116,12 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
     public $conditionalCreate = null;
 
     /**
+     * A code that indicates how the server supports conditional read.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRConditionalReadStatus
+     */
+    public $conditionalRead = null;
+
+    /**
      * A flag that indicates that the server supports conditional update.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
@@ -121,6 +132,12 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
      * @var \PHPFHIRGenerated\FHIRElement\FHIRConditionalDeleteStatus
      */
     public $conditionalDelete = null;
+
+    /**
+     * A set of flags that defines how references are supported.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReferenceHandlingPolicy[]
+     */
+    public $referencePolicy = array();
 
     /**
      * A list of _include values supported by the server.
@@ -186,6 +203,26 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
+     * Additional information about the resource type is used by the system.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getDocumentation()
+    {
+        return $this->documentation;
+    }
+
+    /**
+     * Additional information about the resource type is used by the system.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $documentation
+     * @return $this
+     */
+    public function setDocumentation($documentation)
+    {
+        $this->documentation = $documentation;
+        return $this;
+    }
+
+    /**
      * Identifies a restful operation supported by the solution.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceInteraction[]
      */
@@ -196,7 +233,7 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Identifies a restful operation supported by the solution.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceInteraction[] $interaction
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceInteraction $interaction
      * @return $this
      */
     public function addInteraction($interaction)
@@ -286,6 +323,26 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
+     * A code that indicates how the server supports conditional read.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRConditionalReadStatus
+     */
+    public function getConditionalRead()
+    {
+        return $this->conditionalRead;
+    }
+
+    /**
+     * A code that indicates how the server supports conditional read.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRConditionalReadStatus $conditionalRead
+     * @return $this
+     */
+    public function setConditionalRead($conditionalRead)
+    {
+        $this->conditionalRead = $conditionalRead;
+        return $this;
+    }
+
+    /**
      * A flag that indicates that the server supports conditional update.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
@@ -326,6 +383,26 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
+     * A set of flags that defines how references are supported.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReferenceHandlingPolicy[]
+     */
+    public function getReferencePolicy()
+    {
+        return $this->referencePolicy;
+    }
+
+    /**
+     * A set of flags that defines how references are supported.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReferenceHandlingPolicy $referencePolicy
+     * @return $this
+     */
+    public function addReferencePolicy($referencePolicy)
+    {
+        $this->referencePolicy[] = $referencePolicy;
+        return $this;
+    }
+
+    /**
      * A list of _include values supported by the server.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
@@ -336,7 +413,7 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * A list of _include values supported by the server.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $searchInclude
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $searchInclude
      * @return $this
      */
     public function addSearchInclude($searchInclude)
@@ -356,7 +433,7 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * A list of _revinclude (reverse include) values supported by the server.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $searchRevInclude
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $searchRevInclude
      * @return $this
      */
     public function addSearchRevInclude($searchRevInclude)
@@ -376,7 +453,7 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Search parameters for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceSearchParam[] $searchParam
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConformance\FHIRConformanceSearchParam $searchParam
      * @return $this
      */
     public function addSearchParam($searchParam)
@@ -407,36 +484,44 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->profile) $json['profile'] = $this->profile->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
         if (0 < count($this->interaction)) {
-            $json['interaction'] = array();
+            $json['interaction'] = [];
             foreach($this->interaction as $interaction) {
-                $json['interaction'][] = $interaction->jsonSerialize();
+                $json['interaction'][] = json_encode($interaction);
             }
         }
-        if (null !== $this->versioning) $json['versioning'] = $this->versioning->jsonSerialize();
-        if (null !== $this->readHistory) $json['readHistory'] = $this->readHistory->jsonSerialize();
-        if (null !== $this->updateCreate) $json['updateCreate'] = $this->updateCreate->jsonSerialize();
-        if (null !== $this->conditionalCreate) $json['conditionalCreate'] = $this->conditionalCreate->jsonSerialize();
-        if (null !== $this->conditionalUpdate) $json['conditionalUpdate'] = $this->conditionalUpdate->jsonSerialize();
-        if (null !== $this->conditionalDelete) $json['conditionalDelete'] = $this->conditionalDelete->jsonSerialize();
+        if (null !== $this->versioning) $json['versioning'] = json_encode($this->versioning);
+        if (null !== $this->readHistory) $json['readHistory'] = json_encode($this->readHistory);
+        if (null !== $this->updateCreate) $json['updateCreate'] = json_encode($this->updateCreate);
+        if (null !== $this->conditionalCreate) $json['conditionalCreate'] = json_encode($this->conditionalCreate);
+        if (null !== $this->conditionalRead) $json['conditionalRead'] = json_encode($this->conditionalRead);
+        if (null !== $this->conditionalUpdate) $json['conditionalUpdate'] = json_encode($this->conditionalUpdate);
+        if (null !== $this->conditionalDelete) $json['conditionalDelete'] = json_encode($this->conditionalDelete);
+        if (0 < count($this->referencePolicy)) {
+            $json['referencePolicy'] = [];
+            foreach($this->referencePolicy as $referencePolicy) {
+                $json['referencePolicy'][] = json_encode($referencePolicy);
+            }
+        }
         if (0 < count($this->searchInclude)) {
-            $json['searchInclude'] = array();
+            $json['searchInclude'] = [];
             foreach($this->searchInclude as $searchInclude) {
-                $json['searchInclude'][] = $searchInclude->jsonSerialize();
+                $json['searchInclude'][] = json_encode($searchInclude);
             }
         }
         if (0 < count($this->searchRevInclude)) {
-            $json['searchRevInclude'] = array();
+            $json['searchRevInclude'] = [];
             foreach($this->searchRevInclude as $searchRevInclude) {
-                $json['searchRevInclude'][] = $searchRevInclude->jsonSerialize();
+                $json['searchRevInclude'][] = json_encode($searchRevInclude);
             }
         }
         if (0 < count($this->searchParam)) {
-            $json['searchParam'] = array();
+            $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = $searchParam->jsonSerialize();
+                $json['searchParam'][] = json_encode($searchParam);
             }
         }
         return $json;
@@ -453,6 +538,7 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
+        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if (0 < count($this->interaction)) {
             foreach($this->interaction as $interaction) {
                 $interaction->xmlSerialize(true, $sxe->addChild('interaction'));
@@ -462,8 +548,14 @@ class FHIRConformanceResource extends FHIRBackboneElement implements JsonSeriali
         if (null !== $this->readHistory) $this->readHistory->xmlSerialize(true, $sxe->addChild('readHistory'));
         if (null !== $this->updateCreate) $this->updateCreate->xmlSerialize(true, $sxe->addChild('updateCreate'));
         if (null !== $this->conditionalCreate) $this->conditionalCreate->xmlSerialize(true, $sxe->addChild('conditionalCreate'));
+        if (null !== $this->conditionalRead) $this->conditionalRead->xmlSerialize(true, $sxe->addChild('conditionalRead'));
         if (null !== $this->conditionalUpdate) $this->conditionalUpdate->xmlSerialize(true, $sxe->addChild('conditionalUpdate'));
         if (null !== $this->conditionalDelete) $this->conditionalDelete->xmlSerialize(true, $sxe->addChild('conditionalDelete'));
+        if (0 < count($this->referencePolicy)) {
+            foreach($this->referencePolicy as $referencePolicy) {
+                $referencePolicy->xmlSerialize(true, $sxe->addChild('referencePolicy'));
+            }
+        }
         if (0 < count($this->searchInclude)) {
             foreach($this->searchInclude as $searchInclude) {
                 $searchInclude->xmlSerialize(true, $sxe->addChild('searchInclude'));

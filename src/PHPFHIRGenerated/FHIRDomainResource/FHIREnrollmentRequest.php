@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the insurance enrollment details to the insurer regarding a specified coverage.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializable
+class FHIREnrollmentRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Response business identifier.
@@ -76,16 +75,10 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
     public $identifier = array();
 
     /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The status of the resource instance.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $ruleset = null;
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $originalRuleset = null;
+    public $status = null;
 
     /**
      * The date when this resource was created.
@@ -97,7 +90,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
      * The Insurer who is target  of the request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $target = null;
+    public $insurer = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
@@ -124,12 +117,6 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
     public $coverage = null;
 
     /**
-     * The relationship of the patient to the subscriber.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $relationship = null;
-
-    /**
      * @var string
      */
     private $_fhirElementName = 'EnrollmentRequest';
@@ -145,7 +132,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
 
     /**
      * The Response business identifier.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -155,42 +142,22 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
     }
 
     /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The status of the resource instance.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getRuleset()
+    public function getStatus()
     {
-        return $this->ruleset;
+        return $this->status;
     }
 
     /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $ruleset
+     * The status of the resource instance.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
      * @return $this
      */
-    public function setRuleset($ruleset)
+    public function setStatus($status)
     {
-        $this->ruleset = $ruleset;
-        return $this;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getOriginalRuleset()
-    {
-        return $this->originalRuleset;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $originalRuleset
-     * @return $this
-     */
-    public function setOriginalRuleset($originalRuleset)
-    {
-        $this->originalRuleset = $originalRuleset;
+        $this->status = $status;
         return $this;
     }
 
@@ -218,19 +185,19 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
      * The Insurer who is target  of the request.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getTarget()
+    public function getInsurer()
     {
-        return $this->target;
+        return $this->insurer;
     }
 
     /**
      * The Insurer who is target  of the request.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $target
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $insurer
      * @return $this
      */
-    public function setTarget($target)
+    public function setInsurer($insurer)
     {
-        $this->target = $target;
+        $this->insurer = $insurer;
         return $this;
     }
 
@@ -315,26 +282,6 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
     }
 
     /**
-     * The relationship of the patient to the subscriber.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getRelationship()
-    {
-        return $this->relationship;
-    }
-
-    /**
-     * The relationship of the patient to the subscriber.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $relationship
-     * @return $this
-     */
-    public function setRelationship($relationship)
-    {
-        $this->relationship = $relationship;
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -358,20 +305,18 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->target) $json['target'] = $this->target->jsonSerialize();
-        if (null !== $this->provider) $json['provider'] = $this->provider->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->coverage) $json['coverage'] = $this->coverage->jsonSerialize();
-        if (null !== $this->relationship) $json['relationship'] = $this->relationship->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->insurer) $json['insurer'] = json_encode($this->insurer);
+        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->coverage) $json['coverage'] = json_encode($this->coverage);
         return $json;
     }
 
@@ -389,15 +334,13 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements JsonSerializab
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->ruleset) $this->ruleset->xmlSerialize(true, $sxe->addChild('ruleset'));
-        if (null !== $this->originalRuleset) $this->originalRuleset->xmlSerialize(true, $sxe->addChild('originalRuleset'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
-        if (null !== $this->target) $this->target->xmlSerialize(true, $sxe->addChild('target'));
+        if (null !== $this->insurer) $this->insurer->xmlSerialize(true, $sxe->addChild('insurer'));
         if (null !== $this->provider) $this->provider->xmlSerialize(true, $sxe->addChild('provider'));
         if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->coverage) $this->coverage->xmlSerialize(true, $sxe->addChild('coverage'));
-        if (null !== $this->relationship) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

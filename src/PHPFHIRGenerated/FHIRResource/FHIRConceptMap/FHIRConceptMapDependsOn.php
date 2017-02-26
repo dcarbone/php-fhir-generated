@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,24 +61,23 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A statement of relationships from one set of concepts to one or more other concepts - either code systems or data elements, or classes in class models.
  */
-class FHIRConceptMapDependsOn extends FHIRBackboneElement implements JsonSerializable
+class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * A reference to a specific concept that holds a coded value. This can be an element in a FHIR resource, or a specific reference to a data element in a different specification (e.g. HL7 v2) or a general reference to a kind of data field, or a reference to a value set with an appropriately narrow definition.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labelled to correspond with a code system property.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $element = null;
+    public $property = null;
 
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $codeSystem = null;
+    public $system = null;
 
     /**
      * Identity (code or path) or the element/item/ValueSet that the map depends on / refers to.
@@ -92,22 +91,22 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements JsonSeriali
     private $_fhirElementName = 'ConceptMap.DependsOn';
 
     /**
-     * A reference to a specific concept that holds a coded value. This can be an element in a FHIR resource, or a specific reference to a data element in a different specification (e.g. HL7 v2) or a general reference to a kind of data field, or a reference to a value set with an appropriately narrow definition.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labelled to correspond with a code system property.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getElement()
+    public function getProperty()
     {
-        return $this->element;
+        return $this->property;
     }
 
     /**
-     * A reference to a specific concept that holds a coded value. This can be an element in a FHIR resource, or a specific reference to a data element in a different specification (e.g. HL7 v2) or a general reference to a kind of data field, or a reference to a value set with an appropriately narrow definition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $element
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labelled to correspond with a code system property.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $property
      * @return $this
      */
-    public function setElement($element)
+    public function setProperty($property)
     {
-        $this->element = $element;
+        $this->property = $property;
         return $this;
     }
 
@@ -115,19 +114,19 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements JsonSeriali
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getCodeSystem()
+    public function getSystem()
     {
-        return $this->codeSystem;
+        return $this->system;
     }
 
     /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $codeSystem
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $system
      * @return $this
      */
-    public function setCodeSystem($codeSystem)
+    public function setSystem($system)
     {
-        $this->codeSystem = $codeSystem;
+        $this->system = $system;
         return $this;
     }
 
@@ -173,9 +172,9 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->element) $json['element'] = $this->element->jsonSerialize();
-        if (null !== $this->codeSystem) $json['codeSystem'] = $this->codeSystem->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->property) $json['property'] = json_encode($this->property);
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         return $json;
     }
 
@@ -188,8 +187,8 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements JsonSeriali
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConceptMapDependsOn xmlns="http://hl7.org/fhir"></ConceptMapDependsOn>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->element) $this->element->xmlSerialize(true, $sxe->addChild('element'));
-        if (null !== $this->codeSystem) $this->codeSystem->xmlSerialize(true, $sxe->addChild('codeSystem'));
+        if (null !== $this->property) $this->property->xmlSerialize(true, $sxe->addChild('property'));
+        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,19 +61,42 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides payment details and claim references supporting a bulk payment.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerializable
+class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Response business identifier.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * The status of the resource instance.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public $status = null;
+
+    /**
+     * The period of time for which payments have been gathered into this bulk payment for settlement.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $period = null;
+
+    /**
+     * The date when the enclosed suite of services were performed or completed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $created = null;
+
+    /**
+     * The Insurer who produced this adjudicated response.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $organization = null;
 
     /**
      * Original request resource reference.
@@ -83,7 +106,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Transaction status: error, complete.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $outcome = null;
 
@@ -92,36 +115,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $disposition = null;
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $ruleset = null;
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $originalRuleset = null;
-
-    /**
-     * The date when the enclosed suite of services were performed or completed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $created = null;
-
-    /**
-     * The period of time for which payments have been gathered into this bulk payment for settlement.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public $period = null;
-
-    /**
-     * The Insurer who produced this adjudicated response.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $organization = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
@@ -143,13 +136,13 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * The form to be used for printing the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $form = null;
 
     /**
      * Total payment amount.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $total = null;
 
@@ -175,12 +168,92 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * The Response business identifier.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * The status of the resource instance.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The status of the resource instance.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * The period of time for which payments have been gathered into this bulk payment for settlement.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * The period of time for which payments have been gathered into this bulk payment for settlement.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->period = $period;
+        return $this;
+    }
+
+    /**
+     * The date when the enclosed suite of services were performed or completed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * The date when the enclosed suite of services were performed or completed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $created
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+        return $this;
+    }
+
+    /**
+     * The Insurer who produced this adjudicated response.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+
+    /**
+     * The Insurer who produced this adjudicated response.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $organization
+     * @return $this
+     */
+    public function setOrganization($organization)
+    {
+        $this->organization = $organization;
         return $this;
     }
 
@@ -206,7 +279,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Transaction status: error, complete.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getOutcome()
     {
@@ -215,7 +288,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Transaction status: error, complete.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $outcome
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $outcome
      * @return $this
      */
     public function setOutcome($outcome)
@@ -241,106 +314,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
     public function setDisposition($disposition)
     {
         $this->disposition = $disposition;
-        return $this;
-    }
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getRuleset()
-    {
-        return $this->ruleset;
-    }
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $ruleset
-     * @return $this
-     */
-    public function setRuleset($ruleset)
-    {
-        $this->ruleset = $ruleset;
-        return $this;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getOriginalRuleset()
-    {
-        return $this->originalRuleset;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $originalRuleset
-     * @return $this
-     */
-    public function setOriginalRuleset($originalRuleset)
-    {
-        $this->originalRuleset = $originalRuleset;
-        return $this;
-    }
-
-    /**
-     * The date when the enclosed suite of services were performed or completed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * The date when the enclosed suite of services were performed or completed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $created
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-        return $this;
-    }
-
-    /**
-     * The period of time for which payments have been gathered into this bulk payment for settlement.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getPeriod()
-    {
-        return $this->period;
-    }
-
-    /**
-     * The period of time for which payments have been gathered into this bulk payment for settlement.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
-     * @return $this
-     */
-    public function setPeriod($period)
-    {
-        $this->period = $period;
-        return $this;
-    }
-
-    /**
-     * The Insurer who produced this adjudicated response.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getOrganization()
-    {
-        return $this->organization;
-    }
-
-    /**
-     * The Insurer who produced this adjudicated response.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $organization
-     * @return $this
-     */
-    public function setOrganization($organization)
-    {
-        $this->organization = $organization;
         return $this;
     }
 
@@ -395,7 +368,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * List of individual settlement amounts and the corresponding transaction.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[] $detail
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $detail
      * @return $this
      */
     public function addDetail($detail)
@@ -406,7 +379,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * The form to be used for printing the content.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getForm()
     {
@@ -415,7 +388,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * The form to be used for printing the content.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $form
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $form
      * @return $this
      */
     public function setForm($form)
@@ -426,7 +399,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Total payment amount.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getTotal()
     {
@@ -435,7 +408,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Total payment amount.
-     * @param \PHPFHIRGenerated\FHIRMoney $total
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $total
      * @return $this
      */
     public function setTotal($total)
@@ -455,7 +428,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
 
     /**
      * Suite of notes.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote[] $note
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote $note
      * @return $this
      */
     public function addNote($note)
@@ -488,33 +461,32 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
-        if (null !== $this->disposition) $json['disposition'] = $this->disposition->jsonSerialize();
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->requestProvider) $json['requestProvider'] = $this->requestProvider->jsonSerialize();
-        if (null !== $this->requestOrganization) $json['requestOrganization'] = $this->requestOrganization->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->disposition) $json['disposition'] = json_encode($this->disposition);
+        if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
+        if (null !== $this->requestOrganization) $json['requestOrganization'] = json_encode($this->requestOrganization);
         if (0 < count($this->detail)) {
-            $json['detail'] = array();
+            $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = $detail->jsonSerialize();
+                $json['detail'][] = json_encode($detail);
             }
         }
-        if (null !== $this->form) $json['form'] = $this->form->jsonSerialize();
-        if (null !== $this->total) $json['total'] = $this->total->jsonSerialize();
+        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (null !== $this->total) $json['total'] = json_encode($this->total);
         if (0 < count($this->note)) {
-            $json['note'] = array();
+            $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = $note->jsonSerialize();
+                $json['note'][] = json_encode($note);
             }
         }
         return $json;
@@ -534,14 +506,13 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements JsonSerial
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
+        if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
         if (null !== $this->request) $this->request->xmlSerialize(true, $sxe->addChild('request'));
         if (null !== $this->outcome) $this->outcome->xmlSerialize(true, $sxe->addChild('outcome'));
         if (null !== $this->disposition) $this->disposition->xmlSerialize(true, $sxe->addChild('disposition'));
-        if (null !== $this->ruleset) $this->ruleset->xmlSerialize(true, $sxe->addChild('ruleset'));
-        if (null !== $this->originalRuleset) $this->originalRuleset->xmlSerialize(true, $sxe->addChild('originalRuleset'));
-        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
         if (null !== $this->requestProvider) $this->requestProvider->xmlSerialize(true, $sxe->addChild('requestProvider'));
         if (null !== $this->requestOrganization) $this->requestOrganization->xmlSerialize(true, $sxe->addChild('requestOrganization'));
         if (0 < count($this->detail)) {

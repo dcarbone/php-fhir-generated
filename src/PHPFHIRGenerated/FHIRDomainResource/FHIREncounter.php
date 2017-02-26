@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIREncounter extends FHIRDomainResource implements JsonSerializable
+class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier(s) by which this encounter is known.
@@ -76,8 +75,8 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
     public $identifier = array();
 
     /**
-     * planned | arrived | in-progress | onleave | finished | cancelled.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIREncounterState
+     * planned | arrived | in-progress | onleave | finished | cancelled | entered-in-error.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIREncounterStatus
      */
     public $status = null;
 
@@ -89,7 +88,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * inpatient | outpatient | ambulatory | emergency +.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIREncounterClass
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $class = null;
 
@@ -143,7 +142,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @var \PHPFHIRGenerated\FHIRDuration
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $length = null;
 
@@ -158,6 +157,12 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $indication = array();
+
+    /**
+     * The set of accounts that may be used for billing for this Encounter.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $account = array();
 
     /**
      * Details about the admission to a healthcare service.
@@ -199,7 +204,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifier(s) by which this encounter is known.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -209,8 +214,8 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * planned | arrived | in-progress | onleave | finished | cancelled.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIREncounterState
+     * planned | arrived | in-progress | onleave | finished | cancelled | entered-in-error.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIREncounterStatus
      */
     public function getStatus()
     {
@@ -218,8 +223,8 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * planned | arrived | in-progress | onleave | finished | cancelled.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIREncounterState $status
+     * planned | arrived | in-progress | onleave | finished | cancelled | entered-in-error.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIREncounterStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -239,7 +244,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The status history permits the encounter resource to contain the status history without needing to read through the historical versions of the resource, or even have the server store them.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterStatusHistory[] $statusHistory
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterStatusHistory $statusHistory
      * @return $this
      */
     public function addStatusHistory($statusHistory)
@@ -250,7 +255,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * inpatient | outpatient | ambulatory | emergency +.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIREncounterClass
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getClass()
     {
@@ -259,7 +264,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * inpatient | outpatient | ambulatory | emergency +.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIREncounterClass $class
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $class
      * @return $this
      */
     public function setClass($class)
@@ -279,7 +284,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -339,7 +344,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $episodeOfCare
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $episodeOfCare
      * @return $this
      */
     public function addEpisodeOfCare($episodeOfCare)
@@ -359,7 +364,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The referral request this encounter satisfies (incoming referral).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $incomingReferral
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $incomingReferral
      * @return $this
      */
     public function addIncomingReferral($incomingReferral)
@@ -379,7 +384,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The list of people responsible for providing the service.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterParticipant[] $participant
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterParticipant $participant
      * @return $this
      */
     public function addParticipant($participant)
@@ -430,7 +435,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @return \PHPFHIRGenerated\FHIRDuration
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getLength()
     {
@@ -439,7 +444,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Quantity of time the encounter lasted. This excludes the time during leaves of absence.
-     * @param \PHPFHIRGenerated\FHIRDuration $length
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $length
      * @return $this
      */
     public function setLength($length)
@@ -459,7 +464,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $reason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
     public function addReason($reason)
@@ -479,12 +484,32 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $indication
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $indication
      * @return $this
      */
     public function addIndication($indication)
     {
         $this->indication[] = $indication;
+        return $this;
+    }
+
+    /**
+     * The set of accounts that may be used for billing for this Encounter.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }
+
+    /**
+     * The set of accounts that may be used for billing for this Encounter.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $account
+     * @return $this
+     */
+    public function addAccount($account)
+    {
+        $this->account[] = $account;
         return $this;
     }
 
@@ -519,7 +544,7 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
 
     /**
      * List of locations where  the patient has been during this encounter.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterLocation[] $location
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterLocation $location
      * @return $this
      */
     public function addLocation($location)
@@ -592,69 +617,75 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->statusHistory)) {
-            $json['statusHistory'] = array();
+            $json['statusHistory'] = [];
             foreach($this->statusHistory as $statusHistory) {
-                $json['statusHistory'][] = $statusHistory->jsonSerialize();
+                $json['statusHistory'][] = json_encode($statusHistory);
             }
         }
-        if (null !== $this->class) $json['class'] = $this->class->jsonSerialize();
+        if (null !== $this->class) $json['class'] = json_encode($this->class);
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (0 < count($this->episodeOfCare)) {
-            $json['episodeOfCare'] = array();
+            $json['episodeOfCare'] = [];
             foreach($this->episodeOfCare as $episodeOfCare) {
-                $json['episodeOfCare'][] = $episodeOfCare->jsonSerialize();
+                $json['episodeOfCare'][] = json_encode($episodeOfCare);
             }
         }
         if (0 < count($this->incomingReferral)) {
-            $json['incomingReferral'] = array();
+            $json['incomingReferral'] = [];
             foreach($this->incomingReferral as $incomingReferral) {
-                $json['incomingReferral'][] = $incomingReferral->jsonSerialize();
+                $json['incomingReferral'][] = json_encode($incomingReferral);
             }
         }
         if (0 < count($this->participant)) {
-            $json['participant'] = array();
+            $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = $participant->jsonSerialize();
+                $json['participant'][] = json_encode($participant);
             }
         }
-        if (null !== $this->appointment) $json['appointment'] = $this->appointment->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->length) $json['length'] = $this->length->jsonSerialize();
+        if (null !== $this->appointment) $json['appointment'] = json_encode($this->appointment);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->length) $json['length'] = json_encode($this->length);
         if (0 < count($this->reason)) {
-            $json['reason'] = array();
+            $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = $reason->jsonSerialize();
+                $json['reason'][] = json_encode($reason);
             }
         }
         if (0 < count($this->indication)) {
-            $json['indication'] = array();
+            $json['indication'] = [];
             foreach($this->indication as $indication) {
-                $json['indication'][] = $indication->jsonSerialize();
+                $json['indication'][] = json_encode($indication);
             }
         }
-        if (null !== $this->hospitalization) $json['hospitalization'] = $this->hospitalization->jsonSerialize();
+        if (0 < count($this->account)) {
+            $json['account'] = [];
+            foreach($this->account as $account) {
+                $json['account'][] = json_encode($account);
+            }
+        }
+        if (null !== $this->hospitalization) $json['hospitalization'] = json_encode($this->hospitalization);
         if (0 < count($this->location)) {
-            $json['location'] = array();
+            $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = $location->jsonSerialize();
+                $json['location'][] = json_encode($location);
             }
         }
-        if (null !== $this->serviceProvider) $json['serviceProvider'] = $this->serviceProvider->jsonSerialize();
-        if (null !== $this->partOf) $json['partOf'] = $this->partOf->jsonSerialize();
+        if (null !== $this->serviceProvider) $json['serviceProvider'] = json_encode($this->serviceProvider);
+        if (null !== $this->partOf) $json['partOf'] = json_encode($this->partOf);
         return $json;
     }
 
@@ -712,6 +743,11 @@ class FHIREncounter extends FHIRDomainResource implements JsonSerializable
         if (0 < count($this->indication)) {
             foreach($this->indication as $indication) {
                 $indication->xmlSerialize(true, $sxe->addChild('indication'));
+            }
+        }
+        if (0 < count($this->account)) {
+            foreach($this->account as $account) {
+                $account->xmlSerialize(true, $sxe->addChild('account'));
             }
         }
         if (null !== $this->hospitalization) $this->hospitalization->xmlSerialize(true, $sxe->addChild('hospitalization'));

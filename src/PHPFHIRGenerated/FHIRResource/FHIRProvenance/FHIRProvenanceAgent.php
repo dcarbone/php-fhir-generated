@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Provenance of a resource is a record that describes entities and processes involved in producing and delivering or otherwise influencing that resource. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. Provenance assertions are a form of contextual metadata and can themselves become important records with their own provenance. Provenance statement indicates clinical significance in terms of confidence in authenticity, reliability, and trustworthiness, integrity, and stage in lifecycle (e.g. Document Completion - has the artifact been legally authenticated), all of which may impact security, privacy, and trust policies.
  */
-class FHIRProvenanceAgent extends FHIRBackboneElement implements JsonSerializable
+class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The function of the agent with respect to the activity.
@@ -75,22 +74,34 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements JsonSerializabl
     public $role = null;
 
     /**
-     * The individual, device or organization that participated in the event.
+     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $whoUri = null;
+
+    /**
+     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $actor = null;
+    public $whoReference = null;
 
     /**
-     * The identity of the agent as known by the authorization system.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $userId = null;
+    public $onBehalfOfUri = null;
 
     /**
-     * A relationship between two the agents referenced in this resource. This is defined to allow for explicit description of the delegation between agents.  For example, this human author used this device, or one person acted on another's behest.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceRelatedAgent[]
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $relatedAgent = array();
+    public $onBehalfOfReference = null;
+
+    /**
+     * The type of relationship between agents.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $relatedAgentType = null;
 
     /**
      * @var string
@@ -118,62 +129,102 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * The individual, device or organization that participated in the event.
+     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getWhoUri()
+    {
+        return $this->whoUri;
+    }
+
+    /**
+     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whoUri
+     * @return $this
+     */
+    public function setWhoUri($whoUri)
+    {
+        $this->whoUri = $whoUri;
+        return $this;
+    }
+
+    /**
+     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getActor()
+    public function getWhoReference()
     {
-        return $this->actor;
+        return $this->whoReference;
     }
 
     /**
-     * The individual, device or organization that participated in the event.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $actor
+     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whoReference
      * @return $this
      */
-    public function setActor($actor)
+    public function setWhoReference($whoReference)
     {
-        $this->actor = $actor;
+        $this->whoReference = $whoReference;
         return $this;
     }
 
     /**
-     * The identity of the agent as known by the authorization system.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUserId()
+    public function getOnBehalfOfUri()
     {
-        return $this->userId;
+        return $this->onBehalfOfUri;
     }
 
     /**
-     * The identity of the agent as known by the authorization system.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $userId
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $onBehalfOfUri
      * @return $this
      */
-    public function setUserId($userId)
+    public function setOnBehalfOfUri($onBehalfOfUri)
     {
-        $this->userId = $userId;
+        $this->onBehalfOfUri = $onBehalfOfUri;
         return $this;
     }
 
     /**
-     * A relationship between two the agents referenced in this resource. This is defined to allow for explicit description of the delegation between agents.  For example, this human author used this device, or one person acted on another's behest.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceRelatedAgent[]
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getRelatedAgent()
+    public function getOnBehalfOfReference()
     {
-        return $this->relatedAgent;
+        return $this->onBehalfOfReference;
     }
 
     /**
-     * A relationship between two the agents referenced in this resource. This is defined to allow for explicit description of the delegation between agents.  For example, this human author used this device, or one person acted on another's behest.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProvenance\FHIRProvenanceRelatedAgent[] $relatedAgent
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOfReference
      * @return $this
      */
-    public function addRelatedAgent($relatedAgent)
+    public function setOnBehalfOfReference($onBehalfOfReference)
     {
-        $this->relatedAgent[] = $relatedAgent;
+        $this->onBehalfOfReference = $onBehalfOfReference;
+        return $this;
+    }
+
+    /**
+     * The type of relationship between agents.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getRelatedAgentType()
+    {
+        return $this->relatedAgentType;
+    }
+
+    /**
+     * The type of relationship between agents.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $relatedAgentType
+     * @return $this
+     */
+    public function setRelatedAgentType($relatedAgentType)
+    {
+        $this->relatedAgentType = $relatedAgentType;
         return $this;
     }
 
@@ -199,15 +250,12 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = $this->role->jsonSerialize();
-        if (null !== $this->actor) $json['actor'] = $this->actor->jsonSerialize();
-        if (null !== $this->userId) $json['userId'] = $this->userId->jsonSerialize();
-        if (0 < count($this->relatedAgent)) {
-            $json['relatedAgent'] = array();
-            foreach($this->relatedAgent as $relatedAgent) {
-                $json['relatedAgent'][] = $relatedAgent->jsonSerialize();
-            }
-        }
+        if (null !== $this->role) $json['role'] = json_encode($this->role);
+        if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
+        if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
+        if (null !== $this->onBehalfOfUri) $json['onBehalfOfUri'] = json_encode($this->onBehalfOfUri);
+        if (null !== $this->onBehalfOfReference) $json['onBehalfOfReference'] = json_encode($this->onBehalfOfReference);
+        if (null !== $this->relatedAgentType) $json['relatedAgentType'] = json_encode($this->relatedAgentType);
         return $json;
     }
 
@@ -221,13 +269,11 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements JsonSerializabl
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProvenanceAgent xmlns="http://hl7.org/fhir"></ProvenanceAgent>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->actor) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
-        if (null !== $this->userId) $this->userId->xmlSerialize(true, $sxe->addChild('userId'));
-        if (0 < count($this->relatedAgent)) {
-            foreach($this->relatedAgent as $relatedAgent) {
-                $relatedAgent->xmlSerialize(true, $sxe->addChild('relatedAgent'));
-            }
-        }
+        if (null !== $this->whoUri) $this->whoUri->xmlSerialize(true, $sxe->addChild('whoUri'));
+        if (null !== $this->whoReference) $this->whoReference->xmlSerialize(true, $sxe->addChild('whoReference'));
+        if (null !== $this->onBehalfOfUri) $this->onBehalfOfUri->xmlSerialize(true, $sxe->addChild('onBehalfOfUri'));
+        if (null !== $this->onBehalfOfReference) $this->onBehalfOfReference->xmlSerialize(true, $sxe->addChild('onBehalfOfReference'));
+        if (null !== $this->relatedAgentType) $this->relatedAgentType->xmlSerialize(true, $sxe->addChild('relatedAgentType'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

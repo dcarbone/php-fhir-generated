@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined "channel" so that another system is able to take an appropriate action.
  */
-class FHIRSubscriptionChannel extends FHIRBackboneElement implements JsonSerializable
+class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The type of channel to send notifications on.
@@ -81,7 +80,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements JsonSeriali
     public $endpoint = null;
 
     /**
-     * The mime type to send the payload in - either application/xml+fhir, or application/json+fhir. If the mime type is blank, then there is no payload in the notification, just a notification.
+     * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $payload = null;
@@ -138,7 +137,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
-     * The mime type to send the payload in - either application/xml+fhir, or application/json+fhir. If the mime type is blank, then there is no payload in the notification, just a notification.
+     * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPayload()
@@ -147,7 +146,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
-     * The mime type to send the payload in - either application/xml+fhir, or application/json+fhir. If the mime type is blank, then there is no payload in the notification, just a notification.
+     * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $payload
      * @return $this
      */
@@ -199,10 +198,10 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->endpoint) $json['endpoint'] = $this->endpoint->jsonSerialize();
-        if (null !== $this->payload) $json['payload'] = $this->payload->jsonSerialize();
-        if (null !== $this->header) $json['header'] = $this->header->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->endpoint) $json['endpoint'] = json_encode($this->endpoint);
+        if (null !== $this->payload) $json['payload'] = json_encode($this->payload);
+        if (null !== $this->header) $json['header'] = json_encode($this->header);
         return $json;
     }
 

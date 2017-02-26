@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A digital signature along with supporting context. The signature may be electronic/cryptographic in nature, or a graphical image representing a hand-written signature, or a signature process. Different Signature approaches have different utilities.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRSignature extends FHIRElement implements JsonSerializable
+class FHIRSignature extends FHIRElement implements \JsonSerializable
 {
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
@@ -82,25 +81,37 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     public $when = null;
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $whoUri = null;
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $whoReference = null;
 
     /**
-     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature.
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $onBehalfOfUri = null;
+
+    /**
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $onBehalfOfReference = null;
+
+    /**
+     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $contentType = null;
 
     /**
-     * The base64 encoding of the Signature content.
+     * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $blob = null;
@@ -121,7 +132,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
 
     /**
      * An indication of the reason that the entity signed this document. This may be explicitly included as part of the signature information and can be used when determining accountability for various actions concerning the document.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
      * @return $this
      */
     public function addType($type)
@@ -151,7 +162,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getWhoUri()
@@ -160,7 +171,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whoUri
      * @return $this
      */
@@ -171,7 +182,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getWhoReference()
@@ -180,7 +191,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
+     * A reference to an application-usable description of the identity that signed  (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whoReference
      * @return $this
      */
@@ -191,7 +202,47 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature.
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getOnBehalfOfUri()
+    {
+        return $this->onBehalfOfUri;
+    }
+
+    /**
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $onBehalfOfUri
+     * @return $this
+     */
+    public function setOnBehalfOfUri($onBehalfOfUri)
+    {
+        $this->onBehalfOfUri = $onBehalfOfUri;
+        return $this;
+    }
+
+    /**
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getOnBehalfOfReference()
+    {
+        return $this->onBehalfOfReference;
+    }
+
+    /**
+     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOfReference
+     * @return $this
+     */
+    public function setOnBehalfOfReference($onBehalfOfReference)
+    {
+        $this->onBehalfOfReference = $onBehalfOfReference;
+        return $this;
+    }
+
+    /**
+     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getContentType()
@@ -200,7 +251,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature.
+     * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jwt for JWT, and image/* for a graphical image of a signature, etc.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $contentType
      * @return $this
      */
@@ -211,7 +262,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * The base64 encoding of the Signature content.
+     * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getBlob()
@@ -220,7 +271,7 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * The base64 encoding of the Signature content.
+     * The base64 encoding of the Signature content. When signature is not recorded electronically this element would be empty.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $blob
      * @return $this
      */
@@ -253,16 +304,18 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
-        if (null !== $this->when) $json['when'] = $this->when->jsonSerialize();
-        if (null !== $this->whoUri) $json['whoUri'] = $this->whoUri->jsonSerialize();
-        if (null !== $this->whoReference) $json['whoReference'] = $this->whoReference->jsonSerialize();
-        if (null !== $this->contentType) $json['contentType'] = $this->contentType->jsonSerialize();
-        if (null !== $this->blob) $json['blob'] = $this->blob->jsonSerialize();
+        if (null !== $this->when) $json['when'] = json_encode($this->when);
+        if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
+        if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
+        if (null !== $this->onBehalfOfUri) $json['onBehalfOfUri'] = json_encode($this->onBehalfOfUri);
+        if (null !== $this->onBehalfOfReference) $json['onBehalfOfReference'] = json_encode($this->onBehalfOfReference);
+        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
+        if (null !== $this->blob) $json['blob'] = json_encode($this->blob);
         return $json;
     }
 
@@ -283,6 +336,8 @@ class FHIRSignature extends FHIRElement implements JsonSerializable
         if (null !== $this->when) $this->when->xmlSerialize(true, $sxe->addChild('when'));
         if (null !== $this->whoUri) $this->whoUri->xmlSerialize(true, $sxe->addChild('whoUri'));
         if (null !== $this->whoReference) $this->whoReference->xmlSerialize(true, $sxe->addChild('whoReference'));
+        if (null !== $this->onBehalfOfUri) $this->onBehalfOfUri->xmlSerialize(true, $sxe->addChild('onBehalfOfUri'));
+        if (null !== $this->onBehalfOfReference) $this->onBehalfOfReference->xmlSerialize(true, $sxe->addChild('onBehalfOfReference'));
         if (null !== $this->contentType) $this->contentType->xmlSerialize(true, $sxe->addChild('contentType'));
         if (null !== $this->blob) $this->blob->xmlSerialize(true, $sxe->addChild('blob'));
         if ($returnSXE) return $sxe;

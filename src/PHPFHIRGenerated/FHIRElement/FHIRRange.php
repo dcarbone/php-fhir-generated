@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,23 +61,22 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A set of ordered Quantities defined by a low and high limit.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRRange extends FHIRElement implements JsonSerializable
+class FHIRRange extends FHIRElement implements \JsonSerializable
 {
     /**
      * The low limit. The boundary is inclusive.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $low = null;
 
     /**
      * The high limit. The boundary is inclusive.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $high = null;
 
@@ -88,7 +87,7 @@ class FHIRRange extends FHIRElement implements JsonSerializable
 
     /**
      * The low limit. The boundary is inclusive.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getLow()
     {
@@ -97,7 +96,7 @@ class FHIRRange extends FHIRElement implements JsonSerializable
 
     /**
      * The low limit. The boundary is inclusive.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $low
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $low
      * @return $this
      */
     public function setLow($low)
@@ -108,7 +107,7 @@ class FHIRRange extends FHIRElement implements JsonSerializable
 
     /**
      * The high limit. The boundary is inclusive.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getHigh()
     {
@@ -117,7 +116,7 @@ class FHIRRange extends FHIRElement implements JsonSerializable
 
     /**
      * The high limit. The boundary is inclusive.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $high
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $high
      * @return $this
      */
     public function setHigh($high)
@@ -148,8 +147,8 @@ class FHIRRange extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->low) $json['low'] = $this->low->jsonSerialize();
-        if (null !== $this->high) $json['high'] = $this->high->jsonSerialize();
+        if (null !== $this->low) $json['low'] = json_encode($this->low);
+        if (null !== $this->high) $json['high'] = json_encode($this->high);
         return $json;
     }
 

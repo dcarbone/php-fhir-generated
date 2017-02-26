@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions, and constraints on resources and data types.
  */
-class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements JsonSerializable
+class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Captures constraints on each element within the resource.
@@ -90,7 +89,7 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements Jso
 
     /**
      * Captures constraints on each element within the resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition[] $element
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition $element
      * @return $this
      */
     public function addElement($element)
@@ -122,9 +121,9 @@ class FHIRStructureDefinitionSnapshot extends FHIRBackboneElement implements Jso
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->element)) {
-            $json['element'] = array();
+            $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = $element->jsonSerialize();
+                $json['element'][] = json_encode($element);
             }
         }
         return $json;

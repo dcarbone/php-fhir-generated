@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,15 +61,14 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A conformance statement is a set of capabilities of a FHIR Server that may be used as a statement of actual server functionality or a statement of required or desired server implementation.
  */
-class FHIRConformanceOperation extends FHIRBackboneElement implements JsonSerializable
+class FHIRConformanceOperation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The name of a query, which is used in the _query parameter when the query is called.
+     * The name of the operation or query. For an operation, this is the name  prefixed with $ and used in the url. For a query, this is the name used in the _query parameter when the query is called.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $name = null;
@@ -86,7 +85,7 @@ class FHIRConformanceOperation extends FHIRBackboneElement implements JsonSerial
     private $_fhirElementName = 'Conformance.Operation';
 
     /**
-     * The name of a query, which is used in the _query parameter when the query is called.
+     * The name of the operation or query. For an operation, this is the name  prefixed with $ and used in the url. For a query, this is the name used in the _query parameter when the query is called.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getName()
@@ -95,7 +94,7 @@ class FHIRConformanceOperation extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
-     * The name of a query, which is used in the _query parameter when the query is called.
+     * The name of the operation or query. For an operation, this is the name  prefixed with $ and used in the url. For a query, this is the name used in the _query parameter when the query is called.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
@@ -147,8 +146,8 @@ class FHIRConformanceOperation extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->definition) $json['definition'] = $this->definition->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
         return $json;
     }
 

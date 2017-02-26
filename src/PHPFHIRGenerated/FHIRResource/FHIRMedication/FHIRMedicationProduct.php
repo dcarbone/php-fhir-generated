@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,15 +61,14 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
  */
-class FHIRMedicationProduct extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationProduct extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Describes the form of the item.  Powder; tablets; carton.
+     * Describes the form of the item.  Powder; tablets; capsule.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $form = null;
@@ -92,7 +91,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement implements JsonSerializa
     private $_fhirElementName = 'Medication.Product';
 
     /**
-     * Describes the form of the item.  Powder; tablets; carton.
+     * Describes the form of the item.  Powder; tablets; capsule.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getForm()
@@ -101,7 +100,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement implements JsonSerializa
     }
 
     /**
-     * Describes the form of the item.  Powder; tablets; carton.
+     * Describes the form of the item.  Powder; tablets; capsule.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $form
      * @return $this
      */
@@ -122,7 +121,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Identifies a particular constituent of interest in the product.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient[] $ingredient
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient $ingredient
      * @return $this
      */
     public function addIngredient($ingredient)
@@ -142,7 +141,7 @@ class FHIRMedicationProduct extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Information about a group of medication produced or packaged from one production run.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch[] $batch
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch $batch
      * @return $this
      */
     public function addBatch($batch)
@@ -173,17 +172,17 @@ class FHIRMedicationProduct extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->form) $json['form'] = $this->form->jsonSerialize();
+        if (null !== $this->form) $json['form'] = json_encode($this->form);
         if (0 < count($this->ingredient)) {
-            $json['ingredient'] = array();
+            $json['ingredient'] = [];
             foreach($this->ingredient as $ingredient) {
-                $json['ingredient'][] = $ingredient->jsonSerialize();
+                $json['ingredient'][] = json_encode($ingredient);
             }
         }
         if (0 < count($this->batch)) {
-            $json['batch'] = array();
+            $json['batch'] = [];
             foreach($this->batch as $batch) {
-                $json['batch'][] = $batch->jsonSerialize();
+                $json['batch'][] = json_encode($batch);
             }
         }
         return $json;

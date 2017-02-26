@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A resource that includes narrative, extensions, and contained resources.
  */
-class FHIRDomainResource extends FHIRResource implements JsonSerializable
+class FHIRDomainResource extends FHIRResource implements \JsonSerializable
 {
     /**
      * A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
@@ -128,7 +127,7 @@ class FHIRDomainResource extends FHIRResource implements JsonSerializable
 
     /**
      * These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.
-     * @param \PHPFHIRGenerated\FHIRResourceContainer[] $contained
+     * @param \PHPFHIRGenerated\FHIRResourceContainer $contained
      * @return $this
      */
     public function addContained($contained)
@@ -148,7 +147,7 @@ class FHIRDomainResource extends FHIRResource implements JsonSerializable
 
     /**
      * May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $extension
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $extension
      * @return $this
      */
     public function addExtension($extension)
@@ -168,7 +167,7 @@ class FHIRDomainResource extends FHIRResource implements JsonSerializable
 
     /**
      * May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $modifierExtension
      * @return $this
      */
     public function addModifierExtension($modifierExtension)
@@ -200,23 +199,23 @@ class FHIRDomainResource extends FHIRResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->text) $json['text'] = $this->text->jsonSerialize();
+        if (null !== $this->text) $json['text'] = json_encode($this->text);
         if (0 < count($this->contained)) {
-            $json['contained'] = array();
+            $json['contained'] = [];
             foreach($this->contained as $contained) {
-                $json['contained'][] = $contained->jsonSerialize();
+                $json['contained'][] = json_encode($contained);
             }
         }
         if (0 < count($this->extension)) {
-            $json['extension'] = array();
+            $json['extension'] = [];
             foreach($this->extension as $extension) {
-                $json['extension'][] = $extension->jsonSerialize();
+                $json['extension'][] = json_encode($extension);
             }
         }
         if (0 < count($this->modifierExtension)) {
-            $json['modifierExtension'] = array();
+            $json['modifierExtension'] = [];
             foreach($this->modifierExtension as $modifierExtension) {
-                $json['modifierExtension'][] = $modifierExtension->jsonSerialize();
+                $json['modifierExtension'][] = json_encode($modifierExtension);
             }
         }
         return $json;

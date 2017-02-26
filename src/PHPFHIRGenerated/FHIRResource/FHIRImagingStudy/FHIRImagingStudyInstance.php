@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,24 +61,23 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
  */
-class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerializable
+class FHIRImagingStudyInstance extends FHIRBackboneElement implements \JsonSerializable
 {
-    /**
-     * The number of instance in the series.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
-     */
-    public $number = null;
-
     /**
      * Formal identifier for this image or other content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $uid = null;
+
+    /**
+     * The number of instance in the series.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
+     */
+    public $number = null;
 
     /**
      * DICOM instance  type.
@@ -87,47 +86,15 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
     public $sopClass = null;
 
     /**
-     * A human-friendly SOP Class name.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $type = null;
-
-    /**
      * The description of the instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $title = null;
 
     /**
-     * Content of the instance or a rendering thereof (e.g. a JPEG of an image, or an XML of a structured report). May be represented for example by inline encoding; by a URL reference to a WADO-RS service that makes the instance available; or to a FHIR Resource (e.g. Media, Document, etc.). Multiple content attachments may be used for alternate representations of the instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
-     */
-    public $content = array();
-
-    /**
      * @var string
      */
     private $_fhirElementName = 'ImagingStudy.Instance';
-
-    /**
-     * The number of instance in the series.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
-     * The number of instance in the series.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $number
-     * @return $this
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-        return $this;
-    }
 
     /**
      * Formal identifier for this image or other content.
@@ -146,6 +113,26 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
     public function setUid($uid)
     {
         $this->uid = $uid;
+        return $this;
+    }
+
+    /**
+     * The number of instance in the series.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * The number of instance in the series.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $number
+     * @return $this
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
         return $this;
     }
 
@@ -170,26 +157,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
-     * A human-friendly SOP Class name.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A human-friendly SOP Class name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $type
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
      * The description of the instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -206,26 +173,6 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
     public function setTitle($title)
     {
         $this->title = $title;
-        return $this;
-    }
-
-    /**
-     * Content of the instance or a rendering thereof (e.g. a JPEG of an image, or an XML of a structured report). May be represented for example by inline encoding; by a URL reference to a WADO-RS service that makes the instance available; or to a FHIR Resource (e.g. Media, Document, etc.). Multiple content attachments may be used for alternate representations of the instance.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * Content of the instance or a rendering thereof (e.g. a JPEG of an image, or an XML of a structured report). May be represented for example by inline encoding; by a URL reference to a WADO-RS service that makes the instance available; or to a FHIR Resource (e.g. Media, Document, etc.). Multiple content attachments may be used for alternate representations of the instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $content
-     * @return $this
-     */
-    public function addContent($content)
-    {
-        $this->content[] = $content;
         return $this;
     }
 
@@ -251,17 +198,10 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->number) $json['number'] = $this->number->jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = $this->uid->jsonSerialize();
-        if (null !== $this->sopClass) $json['sopClass'] = $this->sopClass->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->title) $json['title'] = $this->title->jsonSerialize();
-        if (0 < count($this->content)) {
-            $json['content'] = array();
-            foreach($this->content as $content) {
-                $json['content'][] = $content->jsonSerialize();
-            }
-        }
+        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->number) $json['number'] = json_encode($this->number);
+        if (null !== $this->sopClass) $json['sopClass'] = json_encode($this->sopClass);
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
         return $json;
     }
 
@@ -274,16 +214,10 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement implements JsonSerial
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImagingStudyInstance xmlns="http://hl7.org/fhir"></ImagingStudyInstance>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->number) $this->number->xmlSerialize(true, $sxe->addChild('number'));
         if (null !== $this->uid) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
+        if (null !== $this->number) $this->number->xmlSerialize(true, $sxe->addChild('number'));
         if (null !== $this->sopClass) $this->sopClass->xmlSerialize(true, $sxe->addChild('sopClass'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (0 < count($this->content)) {
-            foreach($this->content as $content) {
-                $content->xmlSerialize(true, $sxe->addChild('content'));
-            }
-        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

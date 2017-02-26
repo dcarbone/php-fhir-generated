@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
- * A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centres, etc.
+ * A financial tool for tracking value accrued for a particular purpose.  In the healthcare field, used to track charges for a patient, cost centers, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRAccount extends FHIRDomainResource implements JsonSerializable
+class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Unique identifier used to reference the account.  May or may not be intended for human use (e.g. credit card number).
@@ -94,10 +93,11 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
     public $status = null;
 
     /**
-     * Indicates the period of time over which the account is allowed.
+     * Indicates the period of time over which the account is allowed to have transactions posted to it.
+This period may be different to the coveragePeriod which is the duration of time that services may occur.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $activePeriod = null;
+    public $active = null;
 
     /**
      * Identifies the currency to which transactions must be converted when crediting or debiting the account.
@@ -107,9 +107,17 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $balance = null;
+
+    /**
+     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
+
+A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $coverage = array();
 
     /**
      * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
@@ -136,6 +144,12 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
     public $description = null;
 
     /**
+     * Parties financially responsible for the account.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRAccount\FHIRAccountGuarantor[]
+     */
+    public $guarantor = array();
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'Account';
@@ -151,7 +165,7 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Unique identifier used to reference the account.  May or may not be intended for human use (e.g. credit card number).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -221,22 +235,24 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Indicates the period of time over which the account is allowed.
+     * Indicates the period of time over which the account is allowed to have transactions posted to it.
+This period may be different to the coveragePeriod which is the duration of time that services may occur.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getActivePeriod()
+    public function getActive()
     {
-        return $this->activePeriod;
+        return $this->active;
     }
 
     /**
-     * Indicates the period of time over which the account is allowed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $activePeriod
+     * Indicates the period of time over which the account is allowed to have transactions posted to it.
+This period may be different to the coveragePeriod which is the duration of time that services may occur.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $active
      * @return $this
      */
-    public function setActivePeriod($activePeriod)
+    public function setActive($active)
     {
-        $this->activePeriod = $activePeriod;
+        $this->active = $active;
         return $this;
     }
 
@@ -262,7 +278,7 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getBalance()
     {
@@ -271,12 +287,36 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
-     * @param \PHPFHIRGenerated\FHIRMoney $balance
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $balance
      * @return $this
      */
     public function setBalance($balance)
     {
         $this->balance = $balance;
+        return $this;
+    }
+
+    /**
+     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
+
+A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getCoverage()
+    {
+        return $this->coverage;
+    }
+
+    /**
+     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
+
+A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $coverage
+     * @return $this
+     */
+    public function addCoverage($coverage)
+    {
+        $this->coverage[] = $coverage;
         return $this;
     }
 
@@ -361,6 +401,26 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
+     * Parties financially responsible for the account.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRAccount\FHIRAccountGuarantor[]
+     */
+    public function getGuarantor()
+    {
+        return $this->guarantor;
+    }
+
+    /**
+     * Parties financially responsible for the account.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRAccount\FHIRAccountGuarantor $guarantor
+     * @return $this
+     */
+    public function addGuarantor($guarantor)
+    {
+        $this->guarantor[] = $guarantor;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -384,21 +444,33 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->activePeriod) $json['activePeriod'] = $this->activePeriod->jsonSerialize();
-        if (null !== $this->currency) $json['currency'] = $this->currency->jsonSerialize();
-        if (null !== $this->balance) $json['balance'] = $this->balance->jsonSerialize();
-        if (null !== $this->coveragePeriod) $json['coveragePeriod'] = $this->coveragePeriod->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->owner) $json['owner'] = $this->owner->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->active) $json['active'] = json_encode($this->active);
+        if (null !== $this->currency) $json['currency'] = json_encode($this->currency);
+        if (null !== $this->balance) $json['balance'] = json_encode($this->balance);
+        if (0 < count($this->coverage)) {
+            $json['coverage'] = [];
+            foreach($this->coverage as $coverage) {
+                $json['coverage'][] = json_encode($coverage);
+            }
+        }
+        if (null !== $this->coveragePeriod) $json['coveragePeriod'] = json_encode($this->coveragePeriod);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->owner) $json['owner'] = json_encode($this->owner);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (0 < count($this->guarantor)) {
+            $json['guarantor'] = [];
+            foreach($this->guarantor as $guarantor) {
+                $json['guarantor'][] = json_encode($guarantor);
+            }
+        }
         return $json;
     }
 
@@ -419,13 +491,23 @@ class FHIRAccount extends FHIRDomainResource implements JsonSerializable
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->activePeriod) $this->activePeriod->xmlSerialize(true, $sxe->addChild('activePeriod'));
+        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
         if (null !== $this->currency) $this->currency->xmlSerialize(true, $sxe->addChild('currency'));
         if (null !== $this->balance) $this->balance->xmlSerialize(true, $sxe->addChild('balance'));
+        if (0 < count($this->coverage)) {
+            foreach($this->coverage as $coverage) {
+                $coverage->xmlSerialize(true, $sxe->addChild('coverage'));
+            }
+        }
         if (null !== $this->coveragePeriod) $this->coveragePeriod->xmlSerialize(true, $sxe->addChild('coveragePeriod'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->owner) $this->owner->xmlSerialize(true, $sxe->addChild('owner'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (0 < count($this->guarantor)) {
+            foreach($this->guarantor as $guarantor) {
+                $guarantor->xmlSerialize(true, $sxe->addChild('guarantor'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

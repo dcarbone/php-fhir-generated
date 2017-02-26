@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Record details about the anatomical location of a specimen or body part.  This resource may be used when a coded concept does not provide the necessary detail needed for the use case.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRBodySite extends FHIRDomainResource implements JsonSerializable
+class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The person to which the body site belongs.
@@ -141,7 +140,7 @@ class FHIRBodySite extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifier for this instance of the anatomical location.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -181,7 +180,7 @@ class FHIRBodySite extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Modifier to refine the anatomical location.  These include modifiers for laterality, relative location, directionality, number, and plane.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $modifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $modifier
      * @return $this
      */
     public function addModifier($modifier)
@@ -221,7 +220,7 @@ class FHIRBodySite extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Image or images used to identify a location.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment[] $image
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $image
      * @return $this
      */
     public function addImage($image)
@@ -253,25 +252,25 @@ class FHIRBodySite extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = $this->patient->jsonSerialize();
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (0 < count($this->modifier)) {
-            $json['modifier'] = array();
+            $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = $modifier->jsonSerialize();
+                $json['modifier'][] = json_encode($modifier);
             }
         }
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->image)) {
-            $json['image'] = array();
+            $json['image'] = [];
             foreach($this->image as $image) {
-                $json['image'][] = $image->jsonSerialize();
+                $json['image'][] = json_encode($image);
             }
         }
         return $json;

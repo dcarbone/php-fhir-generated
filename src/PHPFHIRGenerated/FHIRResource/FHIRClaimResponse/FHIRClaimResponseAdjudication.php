@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,22 +61,27 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim resource.
  */
-class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Code indicating: Co-Pay, deductible, eligible, benefit, tax, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $code = null;
+    public $category = null;
+
+    /**
+     * Adjudication reason such as limit reached.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $reason = null;
 
     /**
      * Monetary amount associated with the code.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $amount = null;
 
@@ -93,27 +98,47 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements JsonS
 
     /**
      * Code indicating: Co-Pay, deductible, eligible, benefit, tax, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
+    public function getCategory()
     {
-        return $this->code;
+        return $this->category;
     }
 
     /**
      * Code indicating: Co-Pay, deductible, eligible, benefit, tax, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function setCode($code)
+    public function setCategory($category)
     {
-        $this->code = $code;
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * Adjudication reason such as limit reached.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getReason()
+    {
+        return $this->reason;
+    }
+
+    /**
+     * Adjudication reason such as limit reached.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->reason = $reason;
         return $this;
     }
 
     /**
      * Monetary amount associated with the code.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAmount()
     {
@@ -122,7 +147,7 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements JsonS
 
     /**
      * Monetary amount associated with the code.
-     * @param \PHPFHIRGenerated\FHIRMoney $amount
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $amount
      * @return $this
      */
     public function setAmount($amount)
@@ -173,9 +198,10 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->amount) $json['amount'] = $this->amount->jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
         return $json;
     }
 
@@ -188,7 +214,8 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement implements JsonS
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimResponseAdjudication xmlns="http://hl7.org/fhir"></ClaimResponseAdjudication>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (null !== $this->reason) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
         if (null !== $this->amount) $this->amount->xmlSerialize(true, $sxe->addChild('amount'));
         if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if ($returnSXE) return $sxe;

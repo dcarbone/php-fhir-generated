@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,14 +61,19 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A structured set of questions intended to guide the collection of answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
+class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
 {
+    /**
+     * An absolute URL that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $url = null;
+
     /**
      * This records identifiers associated with this question set that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
@@ -106,21 +111,59 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
     public $telecom = array();
 
     /**
+     * A code that identifies the questionnaire as falling into a particular group of like questionnaires; e.g. "Pediatric", "Admissions", "Research", "Demographic", "Opinion Survey", etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $useContext = array();
+
+    /**
+     * The name or label associated with this questionnaire.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $title = null;
+
+    /**
+     * Identifies how this question or group of questions is known in a particular terminology such as LOINC.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    public $concept = array();
+
+    /**
      * Identifies the types of subjects that can be the subject of the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
      */
     public $subjectType = array();
 
     /**
-     * A collection of related questions (or further groupings of questions).
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup
+     * The questions and groupings of questions that make up the questionnaire.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public $group = null;
+    public $item = array();
 
     /**
      * @var string
      */
     private $_fhirElementName = 'Questionnaire';
+
+    /**
+     * An absolute URL that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * An absolute URL that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+        return $this;
+    }
 
     /**
      * This records identifiers associated with this question set that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
@@ -133,7 +176,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This records identifiers associated with this question set that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -233,12 +276,72 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[] $telecom
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
     public function addTelecom($telecom)
     {
         $this->telecom[] = $telecom;
+        return $this;
+    }
+
+    /**
+     * A code that identifies the questionnaire as falling into a particular group of like questionnaires; e.g. "Pediatric", "Admissions", "Research", "Demographic", "Opinion Survey", etc.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getUseContext()
+    {
+        return $this->useContext;
+    }
+
+    /**
+     * A code that identifies the questionnaire as falling into a particular group of like questionnaires; e.g. "Pediatric", "Admissions", "Research", "Demographic", "Opinion Survey", etc.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $useContext
+     * @return $this
+     */
+    public function addUseContext($useContext)
+    {
+        $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * The name or label associated with this questionnaire.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * The name or label associated with this questionnaire.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * Identifies how this question or group of questions is known in a particular terminology such as LOINC.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    public function getConcept()
+    {
+        return $this->concept;
+    }
+
+    /**
+     * Identifies how this question or group of questions is known in a particular terminology such as LOINC.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $concept
+     * @return $this
+     */
+    public function addConcept($concept)
+    {
+        $this->concept[] = $concept;
         return $this;
     }
 
@@ -253,7 +356,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifies the types of subjects that can be the subject of the questionnaire.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode[] $subjectType
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $subjectType
      * @return $this
      */
     public function addSubjectType($subjectType)
@@ -263,22 +366,22 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * A collection of related questions (or further groupings of questions).
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup
+     * The questions and groupings of questions that make up the questionnaire.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public function getGroup()
+    public function getItem()
     {
-        return $this->group;
+        return $this->item;
     }
 
     /**
-     * A collection of related questions (or further groupings of questions).
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireGroup $group
+     * The questions and groupings of questions that make up the questionnaire.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem $item
      * @return $this
      */
-    public function setGroup($group)
+    public function addItem($item)
     {
-        $this->group = $group;
+        $this->item[] = $item;
         return $this;
     }
 
@@ -305,29 +408,48 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->telecom)) {
-            $json['telecom'] = array();
+            $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = $telecom->jsonSerialize();
+                $json['telecom'][] = json_encode($telecom);
+            }
+        }
+        if (0 < count($this->useContext)) {
+            $json['useContext'] = [];
+            foreach($this->useContext as $useContext) {
+                $json['useContext'][] = json_encode($useContext);
+            }
+        }
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (0 < count($this->concept)) {
+            $json['concept'] = [];
+            foreach($this->concept as $concept) {
+                $json['concept'][] = json_encode($concept);
             }
         }
         if (0 < count($this->subjectType)) {
-            $json['subjectType'] = array();
+            $json['subjectType'] = [];
             foreach($this->subjectType as $subjectType) {
-                $json['subjectType'][] = $subjectType->jsonSerialize();
+                $json['subjectType'][] = json_encode($subjectType);
             }
         }
-        if (null !== $this->group) $json['group'] = $this->group->jsonSerialize();
+        if (0 < count($this->item)) {
+            $json['item'] = [];
+            foreach($this->item as $item) {
+                $json['item'][] = json_encode($item);
+            }
+        }
         return $json;
     }
 
@@ -340,6 +462,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Questionnaire xmlns="http://hl7.org/fhir"></Questionnaire>');
         parent::xmlSerialize(true, $sxe);
+        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
         if (0 < count($this->identifier)) {
             foreach($this->identifier as $identifier) {
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
@@ -354,12 +477,27 @@ class FHIRQuestionnaire extends FHIRDomainResource implements JsonSerializable
                 $telecom->xmlSerialize(true, $sxe->addChild('telecom'));
             }
         }
+        if (0 < count($this->useContext)) {
+            foreach($this->useContext as $useContext) {
+                $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
+            }
+        }
+        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (0 < count($this->concept)) {
+            foreach($this->concept as $concept) {
+                $concept->xmlSerialize(true, $sxe->addChild('concept'));
+            }
+        }
         if (0 < count($this->subjectType)) {
             foreach($this->subjectType as $subjectType) {
                 $subjectType->xmlSerialize(true, $sxe->addChild('subjectType'));
             }
         }
-        if (null !== $this->group) $this->group->xmlSerialize(true, $sxe->addChild('group'));
+        if (0 < count($this->item)) {
+            foreach($this->item as $item) {
+                $item->xmlSerialize(true, $sxe->addChild('item'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

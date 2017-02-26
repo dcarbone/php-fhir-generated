@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRContactPoint extends FHIRElement implements JsonSerializable
+class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 {
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
@@ -226,11 +225,11 @@ class FHIRContactPoint extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = $this->system->jsonSerialize();
-        if (null !== $this->value) $json['value'] = $this->value->jsonSerialize();
-        if (null !== $this->use) $json['use'] = $this->use->jsonSerialize();
-        if (null !== $this->rank) $json['rank'] = $this->rank->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
+        if (null !== $this->system) $json['system'] = json_encode($this->system);
+        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (null !== $this->use) $json['use'] = json_encode($this->use);
+        if (null !== $this->rank) $json['rank'] = json_encode($this->rank);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A collection of error, warning or information messages that result from a system action.
  */
-class FHIROperationOutcomeIssue extends FHIRBackboneElement implements JsonSerializable
+class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Indicates whether the issue indicates a variation from successful processing.
@@ -97,6 +96,12 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements JsonSeria
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public $location = array();
+
+    /**
+     * A simple FluentPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
+     */
+    public $expression = array();
 
     /**
      * @var string
@@ -194,12 +199,32 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements JsonSeria
 
     /**
      * A simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString[] $location
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $location
      * @return $this
      */
     public function addLocation($location)
     {
         $this->location[] = $location;
+        return $this;
+    }
+
+    /**
+     * A simple FluentPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
+     */
+    public function getExpression()
+    {
+        return $this->expression;
+    }
+
+    /**
+     * A simple FluentPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
+     * @return $this
+     */
+    public function addExpression($expression)
+    {
+        $this->expression[] = $expression;
         return $this;
     }
 
@@ -225,14 +250,20 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->severity) $json['severity'] = $this->severity->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->details) $json['details'] = $this->details->jsonSerialize();
-        if (null !== $this->diagnostics) $json['diagnostics'] = $this->diagnostics->jsonSerialize();
+        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->details) $json['details'] = json_encode($this->details);
+        if (null !== $this->diagnostics) $json['diagnostics'] = json_encode($this->diagnostics);
         if (0 < count($this->location)) {
-            $json['location'] = array();
+            $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = $location->jsonSerialize();
+                $json['location'][] = json_encode($location);
+            }
+        }
+        if (0 < count($this->expression)) {
+            $json['expression'] = [];
+            foreach($this->expression as $expression) {
+                $json['expression'][] = json_encode($expression);
             }
         }
         return $json;
@@ -254,6 +285,11 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements JsonSeria
         if (0 < count($this->location)) {
             foreach($this->location as $location) {
                 $location->xmlSerialize(true, $sxe->addChild('location'));
+            }
+        }
+        if (0 < count($this->expression)) {
+            foreach($this->expression as $expression) {
+                $expression->xmlSerialize(true, $sxe->addChild('expression'));
             }
         }
         if ($returnSXE) return $sxe;

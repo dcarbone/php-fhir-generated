@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,48 +61,29 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
  */
-class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializable
+class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * A code - a text symbol - that uniquely identifies the concept within the code system.
+     * Specifies a code for the concept to be included or excluded.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $code = null;
 
     /**
-     * If this code is not for use as a real concept.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $abstract = null;
-
-    /**
-     * A human readable string that is the recommended default way to present this concept to a user.
+     * The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $display = null;
 
     /**
-     * The formal definition of the concept. The value set resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $definition = null;
-
-    /**
-     * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
+     * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
     public $designation = array();
-
-    /**
-     * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) and can only be determined by examining the definitions of the concepts.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
-     */
-    public $concept = array();
 
     /**
      * @var string
@@ -110,7 +91,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     private $_fhirElementName = 'ValueSet.Concept';
 
     /**
-     * A code - a text symbol - that uniquely identifies the concept within the code system.
+     * Specifies a code for the concept to be included or excluded.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getCode()
@@ -119,7 +100,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * A code - a text symbol - that uniquely identifies the concept within the code system.
+     * Specifies a code for the concept to be included or excluded.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
@@ -130,27 +111,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * If this code is not for use as a real concept.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getAbstract()
-    {
-        return $this->abstract;
-    }
-
-    /**
-     * If this code is not for use as a real concept.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $abstract
-     * @return $this
-     */
-    public function setAbstract($abstract)
-    {
-        $this->abstract = $abstract;
-        return $this;
-    }
-
-    /**
-     * A human readable string that is the recommended default way to present this concept to a user.
+     * The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDisplay()
@@ -159,7 +120,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * A human readable string that is the recommended default way to present this concept to a user.
+     * The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
      * @return $this
      */
@@ -170,27 +131,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * The formal definition of the concept. The value set resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDefinition()
-    {
-        return $this->definition;
-    }
-
-    /**
-     * The formal definition of the concept. The value set resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $definition
-     * @return $this
-     */
-    public function setDefinition($definition)
-    {
-        $this->definition = $definition;
-        return $this;
-    }
-
-    /**
-     * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
+     * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
     public function getDesignation()
@@ -199,33 +140,13 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     }
 
     /**
-     * Additional representations for the concept - other languages, aliases, specialized purposes, used for particular purposes, etc.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[] $designation
+     * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
      * @return $this
      */
     public function addDesignation($designation)
     {
         $this->designation[] = $designation;
-        return $this;
-    }
-
-    /**
-     * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) and can only be determined by examining the definitions of the concepts.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept[]
-     */
-    public function getConcept()
-    {
-        return $this->concept;
-    }
-
-    /**
-     * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) and can only be determined by examining the definitions of the concepts.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetConcept[] $concept
-     * @return $this
-     */
-    public function addConcept($concept)
-    {
-        $this->concept[] = $concept;
         return $this;
     }
 
@@ -251,20 +172,12 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->abstract) $json['abstract'] = $this->abstract->jsonSerialize();
-        if (null !== $this->display) $json['display'] = $this->display->jsonSerialize();
-        if (null !== $this->definition) $json['definition'] = $this->definition->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
         if (0 < count($this->designation)) {
-            $json['designation'] = array();
+            $json['designation'] = [];
             foreach($this->designation as $designation) {
-                $json['designation'][] = $designation->jsonSerialize();
-            }
-        }
-        if (0 < count($this->concept)) {
-            $json['concept'] = array();
-            foreach($this->concept as $concept) {
-                $json['concept'][] = $concept->jsonSerialize();
+                $json['designation'][] = json_encode($designation);
             }
         }
         return $json;
@@ -280,17 +193,10 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements JsonSerializabl
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ValueSetConcept xmlns="http://hl7.org/fhir"></ValueSetConcept>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->abstract) $this->abstract->xmlSerialize(true, $sxe->addChild('abstract'));
         if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
-        if (null !== $this->definition) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
         if (0 < count($this->designation)) {
             foreach($this->designation as $designation) {
                 $designation->xmlSerialize(true, $sxe->addChild('designation'));
-            }
-        }
-        if (0 < count($this->concept)) {
-            foreach($this->concept as $concept) {
-                $concept->xmlSerialize(true, $sxe->addChild('concept'));
             }
         }
         if ($returnSXE) return $sxe;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to a patient which is provided to an insurer for payment recovery.
  */
-class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
+class FHIRClaimDetail extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A service line number.
@@ -75,26 +74,44 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     public $sequence = null;
 
     /**
-     * The type of product or service.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The type of reveneu or cost center providing the product and/or service.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    public $revenue = null;
 
     /**
-     * If a grouping item then 'GROUP' otherwise it is a node therefore a code to indicate the Professional Service or Product supplied.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $category = null;
+
+    /**
+     * If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $service = null;
 
     /**
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $modifier = array();
+
+    /**
+     * For programs which require reson codes for the inclusion, covering, of this billed item under the program or sub-program.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $programCode = array();
+
+    /**
      * The number of repetitions of a service or product.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $unitPrice = null;
 
@@ -105,22 +122,16 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     public $factor = null;
 
     /**
-     * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the good or service delivered. The concept of Points allows for assignment of point values for services and/or goods, such that a monetary amount can be assigned to each point.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public $points = null;
-
-    /**
-     * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @var \PHPFHIRGenerated\FHIRMoney
+     * The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $net = null;
 
     /**
      * List of Unique Device Identifiers associated with this line item.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $udi = null;
+    public $udi = array();
 
     /**
      * Third tier of goods and services.
@@ -154,28 +165,48 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The type of product or service.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The type of reveneu or cost center providing the product and/or service.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
+    public function getRevenue()
     {
-        return $this->type;
+        return $this->revenue;
     }
 
     /**
-     * The type of product or service.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
+     * The type of reveneu or cost center providing the product and/or service.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $revenue
      * @return $this
      */
-    public function setType($type)
+    public function setRevenue($revenue)
     {
-        $this->type = $type;
+        $this->revenue = $revenue;
         return $this;
     }
 
     /**
-     * If a grouping item then 'GROUP' otherwise it is a node therefore a code to indicate the Professional Service or Product supplied.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Health Care Service Type Codes  to identify the classification of service or benefits.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getService()
     {
@@ -183,8 +214,8 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * If a grouping item then 'GROUP' otherwise it is a node therefore a code to indicate the Professional Service or Product supplied.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $service
+     * If this is an actual service or product line, ie. not a Group, then use code to indicate the Professional Service or Product supplied (eg. CTP, HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $service
      * @return $this
      */
     public function setService($service)
@@ -194,8 +225,48 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getModifier()
+    {
+        return $this->modifier;
+    }
+
+    /**
+     * Item typification or modifiers codes, eg for Oral whether the treatment is cosmetic or associated with TMJ, or for medical whether the treatment was outside the clinic or out of office hours.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $modifier
+     * @return $this
+     */
+    public function addModifier($modifier)
+    {
+        $this->modifier[] = $modifier;
+        return $this;
+    }
+
+    /**
+     * For programs which require reson codes for the inclusion, covering, of this billed item under the program or sub-program.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getProgramCode()
+    {
+        return $this->programCode;
+    }
+
+    /**
+     * For programs which require reson codes for the inclusion, covering, of this billed item under the program or sub-program.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $programCode
+     * @return $this
+     */
+    public function addProgramCode($programCode)
+    {
+        $this->programCode[] = $programCode;
+        return $this;
+    }
+
+    /**
      * The number of repetitions of a service or product.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -204,7 +275,7 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * The number of repetitions of a service or product.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -215,7 +286,7 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUnitPrice()
     {
@@ -224,7 +295,7 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * If the item is a node then this is the fee for the product or service, otherwise this is the total of the fees for the children of the group.
-     * @param \PHPFHIRGenerated\FHIRMoney $unitPrice
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $unitPrice
      * @return $this
      */
     public function setUnitPrice($unitPrice)
@@ -254,28 +325,8 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the good or service delivered. The concept of Points allows for assignment of point values for services and/or goods, such that a monetary amount can be assigned to each point.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public function getPoints()
-    {
-        return $this->points;
-    }
-
-    /**
-     * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the good or service delivered. The concept of Points allows for assignment of point values for services and/or goods, such that a monetary amount can be assigned to each point.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $points
-     * @return $this
-     */
-    public function setPoints($points)
-    {
-        $this->points = $points;
-        return $this;
-    }
-
-    /**
-     * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @return \PHPFHIRGenerated\FHIRMoney
+     * The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getNet()
     {
@@ -283,8 +334,8 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * The quantity times the unit price for an additional  service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
-     * @param \PHPFHIRGenerated\FHIRMoney $net
+     * The quantity times the unit price for an addittional service or product or charge. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $net
      * @return $this
      */
     public function setNet($net)
@@ -295,7 +346,7 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * List of Unique Device Identifiers associated with this line item.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getUdi()
     {
@@ -304,12 +355,12 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * List of Unique Device Identifiers associated with this line item.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $udi
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $udi
      * @return $this
      */
-    public function setUdi($udi)
+    public function addUdi($udi)
     {
-        $this->udi = $udi;
+        $this->udi[] = $udi;
         return $this;
     }
 
@@ -324,7 +375,7 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Third tier of goods and services.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimSubDetail[] $subDetail
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaim\FHIRClaimSubDetail $subDetail
      * @return $this
      */
     public function addSubDetail($subDetail)
@@ -355,19 +406,36 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = $this->sequence->jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->service) $json['service'] = $this->service->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice->jsonSerialize();
-        if (null !== $this->factor) $json['factor'] = $this->factor->jsonSerialize();
-        if (null !== $this->points) $json['points'] = $this->points->jsonSerialize();
-        if (null !== $this->net) $json['net'] = $this->net->jsonSerialize();
-        if (null !== $this->udi) $json['udi'] = $this->udi->jsonSerialize();
+        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
+        if (null !== $this->revenue) $json['revenue'] = json_encode($this->revenue);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->service) $json['service'] = json_encode($this->service);
+        if (0 < count($this->modifier)) {
+            $json['modifier'] = [];
+            foreach($this->modifier as $modifier) {
+                $json['modifier'][] = json_encode($modifier);
+            }
+        }
+        if (0 < count($this->programCode)) {
+            $json['programCode'] = [];
+            foreach($this->programCode as $programCode) {
+                $json['programCode'][] = json_encode($programCode);
+            }
+        }
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
+        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
+        if (null !== $this->net) $json['net'] = json_encode($this->net);
+        if (0 < count($this->udi)) {
+            $json['udi'] = [];
+            foreach($this->udi as $udi) {
+                $json['udi'][] = json_encode($udi);
+            }
+        }
         if (0 < count($this->subDetail)) {
-            $json['subDetail'] = array();
+            $json['subDetail'] = [];
             foreach($this->subDetail as $subDetail) {
-                $json['subDetail'][] = $subDetail->jsonSerialize();
+                $json['subDetail'][] = json_encode($subDetail);
             }
         }
         return $json;
@@ -383,14 +451,28 @@ class FHIRClaimDetail extends FHIRBackboneElement implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimDetail xmlns="http://hl7.org/fhir"></ClaimDetail>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->revenue) $this->revenue->xmlSerialize(true, $sxe->addChild('revenue'));
+        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
         if (null !== $this->service) $this->service->xmlSerialize(true, $sxe->addChild('service'));
+        if (0 < count($this->modifier)) {
+            foreach($this->modifier as $modifier) {
+                $modifier->xmlSerialize(true, $sxe->addChild('modifier'));
+            }
+        }
+        if (0 < count($this->programCode)) {
+            foreach($this->programCode as $programCode) {
+                $programCode->xmlSerialize(true, $sxe->addChild('programCode'));
+            }
+        }
         if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
         if (null !== $this->unitPrice) $this->unitPrice->xmlSerialize(true, $sxe->addChild('unitPrice'));
         if (null !== $this->factor) $this->factor->xmlSerialize(true, $sxe->addChild('factor'));
-        if (null !== $this->points) $this->points->xmlSerialize(true, $sxe->addChild('points'));
         if (null !== $this->net) $this->net->xmlSerialize(true, $sxe->addChild('net'));
-        if (null !== $this->udi) $this->udi->xmlSerialize(true, $sxe->addChild('udi'));
+        if (0 < count($this->udi)) {
+            foreach($this->udi as $udi) {
+                $udi->xmlSerialize(true, $sxe->addChild('udi'));
+            }
+        }
         if (0 < count($this->subDetail)) {
             foreach($this->subDetail as $subDetail) {
                 $subDetail->xmlSerialize(true, $sxe->addChild('subDetail'));

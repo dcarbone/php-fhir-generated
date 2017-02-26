@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the characteristics, operational status and capabilities of a medical-related component of a medical device.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRDeviceComponent extends FHIRDomainResource implements JsonSerializable
+class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Describes the specific component type as defined in the object-oriented or metric nomenclature partition.
@@ -113,7 +112,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Describes the physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeasmnt_Principle
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple
      */
     public $measurementPrinciple = null;
 
@@ -245,7 +244,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates current operational status of the device. For example: On, Off, Standby, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $operationalStatus
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $operationalStatus
      * @return $this
      */
     public function addOperationalStatus($operationalStatus)
@@ -276,7 +275,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Describes the physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasmnt_Principle
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple
      */
     public function getMeasurementPrinciple()
     {
@@ -285,7 +284,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Describes the physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasmnt_Principle $measurementPrinciple
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple $measurementPrinciple
      * @return $this
      */
     public function setMeasurementPrinciple($measurementPrinciple)
@@ -305,7 +304,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Describes the production specification such as component revision, serial number, etc.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification[] $productionSpecification
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $productionSpecification
      * @return $this
      */
     public function addProductionSpecification($productionSpecification)
@@ -357,26 +356,26 @@ class FHIRDeviceComponent extends FHIRDomainResource implements JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = $this->identifier->jsonSerialize();
-        if (null !== $this->lastSystemChange) $json['lastSystemChange'] = $this->lastSystemChange->jsonSerialize();
-        if (null !== $this->source) $json['source'] = $this->source->jsonSerialize();
-        if (null !== $this->parent) $json['parent'] = $this->parent->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->lastSystemChange) $json['lastSystemChange'] = json_encode($this->lastSystemChange);
+        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
         if (0 < count($this->operationalStatus)) {
-            $json['operationalStatus'] = array();
+            $json['operationalStatus'] = [];
             foreach($this->operationalStatus as $operationalStatus) {
-                $json['operationalStatus'][] = $operationalStatus->jsonSerialize();
+                $json['operationalStatus'][] = json_encode($operationalStatus);
             }
         }
-        if (null !== $this->parameterGroup) $json['parameterGroup'] = $this->parameterGroup->jsonSerialize();
-        if (null !== $this->measurementPrinciple) $json['measurementPrinciple'] = $this->measurementPrinciple->jsonSerialize();
+        if (null !== $this->parameterGroup) $json['parameterGroup'] = json_encode($this->parameterGroup);
+        if (null !== $this->measurementPrinciple) $json['measurementPrinciple'] = json_encode($this->measurementPrinciple);
         if (0 < count($this->productionSpecification)) {
-            $json['productionSpecification'] = array();
+            $json['productionSpecification'] = [];
             foreach($this->productionSpecification as $productionSpecification) {
-                $json['productionSpecification'][] = $productionSpecification->jsonSerialize();
+                $json['productionSpecification'][] = json_encode($productionSpecification);
             }
         }
-        if (null !== $this->languageCode) $json['languageCode'] = $this->languageCode->jsonSerialize();
+        if (null !== $this->languageCode) $json['languageCode'] = json_encode($this->languageCode);
         return $json;
     }
 

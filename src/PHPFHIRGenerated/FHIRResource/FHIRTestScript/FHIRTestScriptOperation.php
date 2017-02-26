@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Server interaction or operation type.
@@ -75,7 +74,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     public $type = null;
 
     /**
-     * The type of the resource.  See http://hl7-fhir.github.io/resourcelist.html.
+     * The type of the resource.  See http://build.fhir.org/resourcelist.html.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $resource = null;
@@ -105,7 +104,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     public $contentType = null;
 
     /**
-     * Which server to perform the operation on.
+     * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $destination = null;
@@ -115,6 +114,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $encodeRequestUrl = null;
+
+    /**
+     * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    public $origin = null;
 
     /**
      * Path plus parameters after [type].  Used to set parts of the request URL explicitly.
@@ -127,6 +132,12 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader[]
      */
     public $requestHeader = array();
+
+    /**
+     * The fixture id (maybe new) to map to the request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRId
+     */
+    public $requestId = null;
 
     /**
      * The fixture id (maybe new) to map to the response.
@@ -178,7 +189,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
-     * The type of the resource.  See http://hl7-fhir.github.io/resourcelist.html.
+     * The type of the resource.  See http://build.fhir.org/resourcelist.html.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getResource()
@@ -187,7 +198,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
-     * The type of the resource.  See http://hl7-fhir.github.io/resourcelist.html.
+     * The type of the resource.  See http://build.fhir.org/resourcelist.html.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $resource
      * @return $this
      */
@@ -278,7 +289,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
-     * Which server to perform the operation on.
+     * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getDestination()
@@ -287,7 +298,7 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     }
 
     /**
-     * Which server to perform the operation on.
+     * The server where the request message is destined for.  Must be one of the server numbers listed in TestScript.destination section.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $destination
      * @return $this
      */
@@ -314,6 +325,26 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     public function setEncodeRequestUrl($encodeRequestUrl)
     {
         $this->encodeRequestUrl = $encodeRequestUrl;
+        return $this;
+    }
+
+    /**
+     * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * The server where the request message originates from.  Must be one of the server numbers listed in TestScript.origin section.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $origin
+     * @return $this
+     */
+    public function setOrigin($origin)
+    {
+        $this->origin = $origin;
         return $this;
     }
 
@@ -348,12 +379,32 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
 
     /**
      * Header elements would be used to set HTTP headers.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader[] $requestHeader
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRequestHeader $requestHeader
      * @return $this
      */
     public function addRequestHeader($requestHeader)
     {
         $this->requestHeader[] = $requestHeader;
+        return $this;
+    }
+
+    /**
+     * The fixture id (maybe new) to map to the request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRId
+     */
+    public function getRequestId()
+    {
+        return $this->requestId;
+    }
+
+    /**
+     * The fixture id (maybe new) to map to the request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRId $requestId
+     * @return $this
+     */
+    public function setRequestId($requestId)
+    {
+        $this->requestId = $requestId;
         return $this;
     }
 
@@ -459,25 +510,27 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->resource) $json['resource'] = $this->resource->jsonSerialize();
-        if (null !== $this->label) $json['label'] = $this->label->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->accept) $json['accept'] = $this->accept->jsonSerialize();
-        if (null !== $this->contentType) $json['contentType'] = $this->contentType->jsonSerialize();
-        if (null !== $this->destination) $json['destination'] = $this->destination->jsonSerialize();
-        if (null !== $this->encodeRequestUrl) $json['encodeRequestUrl'] = $this->encodeRequestUrl->jsonSerialize();
-        if (null !== $this->params) $json['params'] = $this->params->jsonSerialize();
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (null !== $this->label) $json['label'] = json_encode($this->label);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->accept) $json['accept'] = json_encode($this->accept);
+        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
+        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
+        if (null !== $this->encodeRequestUrl) $json['encodeRequestUrl'] = json_encode($this->encodeRequestUrl);
+        if (null !== $this->origin) $json['origin'] = json_encode($this->origin);
+        if (null !== $this->params) $json['params'] = json_encode($this->params);
         if (0 < count($this->requestHeader)) {
-            $json['requestHeader'] = array();
+            $json['requestHeader'] = [];
             foreach($this->requestHeader as $requestHeader) {
-                $json['requestHeader'][] = $requestHeader->jsonSerialize();
+                $json['requestHeader'][] = json_encode($requestHeader);
             }
         }
-        if (null !== $this->responseId) $json['responseId'] = $this->responseId->jsonSerialize();
-        if (null !== $this->sourceId) $json['sourceId'] = $this->sourceId->jsonSerialize();
-        if (null !== $this->targetId) $json['targetId'] = $this->targetId->jsonSerialize();
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
+        if (null !== $this->requestId) $json['requestId'] = json_encode($this->requestId);
+        if (null !== $this->responseId) $json['responseId'] = json_encode($this->responseId);
+        if (null !== $this->sourceId) $json['sourceId'] = json_encode($this->sourceId);
+        if (null !== $this->targetId) $json['targetId'] = json_encode($this->targetId);
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
         return $json;
     }
 
@@ -498,12 +551,14 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements JsonSeriali
         if (null !== $this->contentType) $this->contentType->xmlSerialize(true, $sxe->addChild('contentType'));
         if (null !== $this->destination) $this->destination->xmlSerialize(true, $sxe->addChild('destination'));
         if (null !== $this->encodeRequestUrl) $this->encodeRequestUrl->xmlSerialize(true, $sxe->addChild('encodeRequestUrl'));
+        if (null !== $this->origin) $this->origin->xmlSerialize(true, $sxe->addChild('origin'));
         if (null !== $this->params) $this->params->xmlSerialize(true, $sxe->addChild('params'));
         if (0 < count($this->requestHeader)) {
             foreach($this->requestHeader as $requestHeader) {
                 $requestHeader->xmlSerialize(true, $sxe->addChild('requestHeader'));
             }
         }
+        if (null !== $this->requestId) $this->requestId->xmlSerialize(true, $sxe->addChild('requestId'));
         if (null !== $this->responseId) $this->responseId->xmlSerialize(true, $sxe->addChild('responseId'));
         if (null !== $this->sourceId) $this->sourceId->xmlSerialize(true, $sxe->addChild('sourceId'));
         if (null !== $this->targetId) $this->targetId->xmlSerialize(true, $sxe->addChild('targetId'));

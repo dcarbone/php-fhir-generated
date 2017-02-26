@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,25 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An order for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called "MedicationOrder" rather than "MedicationPrescription" to generalize the use across inpatient and outpatient settings as well as for care plans, etc.
  */
-class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements JsonSerializable
+class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements \JsonSerializable
 {
-    /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $medicationCodeableConcept = null;
-
-    /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $medicationReference = null;
-
     /**
      * This indicates the validity period of a prescription (stale dating the Prescription).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
@@ -87,20 +74,20 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
     public $validityPeriod = null;
 
     /**
-     * An integer indicating the number of additional times (aka refills or repeats) the patient can receive the prescribed medication.   Usage Notes: This integer does NOT include the original order dispense.   This means that if an order indicates dispense 30 tablets plus  "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.
+     * An integer indicating the number of times, in addition to the original dispense, (aka refills or repeats) that the patient can receive the prescribed medication. Usage Notes: This integer does NOT include the original order dispense. This means that if an order indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $numberOfRepeatsAllowed = null;
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @var \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $quantity = null;
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.
-     * @var \PHPFHIRGenerated\FHIRDuration
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $expectedSupplyDuration = null;
 
@@ -108,46 +95,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
      * @var string
      */
     private $_fhirElementName = 'MedicationOrder.DispenseRequest';
-
-    /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getMedicationCodeableConcept()
-    {
-        return $this->medicationCodeableConcept;
-    }
-
-    /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @return $this
-     */
-    public function setMedicationCodeableConcept($medicationCodeableConcept)
-    {
-        $this->medicationCodeableConcept = $medicationCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getMedicationReference()
-    {
-        return $this->medicationReference;
-    }
-
-    /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $medicationReference
-     * @return $this
-     */
-    public function setMedicationReference($medicationReference)
-    {
-        $this->medicationReference = $medicationReference;
-        return $this;
-    }
 
     /**
      * This indicates the validity period of a prescription (stale dating the Prescription).
@@ -170,7 +117,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
     }
 
     /**
-     * An integer indicating the number of additional times (aka refills or repeats) the patient can receive the prescribed medication.   Usage Notes: This integer does NOT include the original order dispense.   This means that if an order indicates dispense 30 tablets plus  "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.
+     * An integer indicating the number of times, in addition to the original dispense, (aka refills or repeats) that the patient can receive the prescribed medication. Usage Notes: This integer does NOT include the original order dispense. This means that if an order indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getNumberOfRepeatsAllowed()
@@ -179,7 +126,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
     }
 
     /**
-     * An integer indicating the number of additional times (aka refills or repeats) the patient can receive the prescribed medication.   Usage Notes: This integer does NOT include the original order dispense.   This means that if an order indicates dispense 30 tablets plus  "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.
+     * An integer indicating the number of times, in addition to the original dispense, (aka refills or repeats) that the patient can receive the prescribed medication. Usage Notes: This integer does NOT include the original order dispense. This means that if an order indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed a total of 4 times and the patient can receive a total of 120 tablets.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $numberOfRepeatsAllowed
      * @return $this
      */
@@ -191,7 +138,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @return \PHPFHIRGenerated\FHIRSimpleQuantity
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getQuantity()
     {
@@ -200,7 +147,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
 
     /**
      * The amount that is to be dispensed for one fill.
-     * @param \PHPFHIRGenerated\FHIRSimpleQuantity $quantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
     public function setQuantity($quantity)
@@ -211,7 +158,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.
-     * @return \PHPFHIRGenerated\FHIRDuration
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getExpectedSupplyDuration()
     {
@@ -220,7 +167,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
 
     /**
      * Identifies the period time over which the supplied product is expected to be used, or the length of time the dispense is expected to last.
-     * @param \PHPFHIRGenerated\FHIRDuration $expectedSupplyDuration
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @return $this
      */
     public function setExpectedSupplyDuration($expectedSupplyDuration)
@@ -251,12 +198,10 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept->jsonSerialize();
-        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference->jsonSerialize();
-        if (null !== $this->validityPeriod) $json['validityPeriod'] = $this->validityPeriod->jsonSerialize();
-        if (null !== $this->numberOfRepeatsAllowed) $json['numberOfRepeatsAllowed'] = $this->numberOfRepeatsAllowed->jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = $this->quantity->jsonSerialize();
-        if (null !== $this->expectedSupplyDuration) $json['expectedSupplyDuration'] = $this->expectedSupplyDuration->jsonSerialize();
+        if (null !== $this->validityPeriod) $json['validityPeriod'] = json_encode($this->validityPeriod);
+        if (null !== $this->numberOfRepeatsAllowed) $json['numberOfRepeatsAllowed'] = json_encode($this->numberOfRepeatsAllowed);
+        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->expectedSupplyDuration) $json['expectedSupplyDuration'] = json_encode($this->expectedSupplyDuration);
         return $json;
     }
 
@@ -269,8 +214,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement implements 
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationOrderDispenseRequest xmlns="http://hl7.org/fhir"></MedicationOrderDispenseRequest>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->medicationCodeableConcept) $this->medicationCodeableConcept->xmlSerialize(true, $sxe->addChild('medicationCodeableConcept'));
-        if (null !== $this->medicationReference) $this->medicationReference->xmlSerialize(true, $sxe->addChild('medicationReference'));
         if (null !== $this->validityPeriod) $this->validityPeriod->xmlSerialize(true, $sxe->addChild('validityPeriod'));
         if (null !== $this->numberOfRepeatsAllowed) $this->numberOfRepeatsAllowed->xmlSerialize(true, $sxe->addChild('numberOfRepeatsAllowed'));
         if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));

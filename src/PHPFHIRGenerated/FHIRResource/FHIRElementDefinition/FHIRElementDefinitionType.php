@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,25 +61,30 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Captures constraints on each element within the resource, profile, or extension.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
-class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
+class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
 {
     /**
-     * Name of Data type or Resource that is a(or the) type used for this element.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * URL of Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $code = null;
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for resources or datatypes referenced as the type of this element. Can be a local reference - to another structure in this profile, or a reference to a structure in another profile. When more than one profile is specified, the content must conform to all of them. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $profile = array();
+    public $profile = null;
+
+    /**
+     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $targetProfile = null;
 
     /**
      * If the type is a reference to another resource, how the resource is or can be aggregated - is it a contained resource, or a reference, and if the context is a bundle, is it included in the bundle.
@@ -88,13 +93,19 @@ class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
     public $aggregation = array();
 
     /**
+     * Whether this reference needs to be version specific or version independent, or whetehr either can be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReferenceVersionRules
+     */
+    public $versioning = null;
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'ElementDefinition.Type';
 
     /**
-     * Name of Data type or Resource that is a(or the) type used for this element.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * URL of Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getCode()
     {
@@ -102,8 +113,8 @@ class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * Name of Data type or Resource that is a(or the) type used for this element.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
+     * URL of Data type or Resource that is a(or the) type used for this element. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string. Absolute URLs are only allowed in logical models.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $code
      * @return $this
      */
     public function setCode($code)
@@ -113,8 +124,8 @@ class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for resources or datatypes referenced as the type of this element. Can be a local reference - to another structure in this profile, or a reference to a structure in another profile. When more than one profile is specified, the content must conform to all of them. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getProfile()
     {
@@ -122,13 +133,33 @@ class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
     }
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for resources or datatypes referenced as the type of this element. Can be a local reference - to another structure in this profile, or a reference to a structure in another profile. When more than one profile is specified, the content must conform to all of them. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri[] $profile
+     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $profile
      * @return $this
      */
-    public function addProfile($profile)
+    public function setProfile($profile)
     {
-        $this->profile[] = $profile;
+        $this->profile = $profile;
+        return $this;
+    }
+
+    /**
+     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getTargetProfile()
+    {
+        return $this->targetProfile;
+    }
+
+    /**
+     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $targetProfile
+     * @return $this
+     */
+    public function setTargetProfile($targetProfile)
+    {
+        $this->targetProfile = $targetProfile;
         return $this;
     }
 
@@ -143,12 +174,32 @@ class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
 
     /**
      * If the type is a reference to another resource, how the resource is or can be aggregated - is it a contained resource, or a reference, and if the context is a bundle, is it included in the bundle.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAggregationMode[] $aggregation
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAggregationMode $aggregation
      * @return $this
      */
     public function addAggregation($aggregation)
     {
         $this->aggregation[] = $aggregation;
+        return $this;
+    }
+
+    /**
+     * Whether this reference needs to be version specific or version independent, or whetehr either can be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReferenceVersionRules
+     */
+    public function getVersioning()
+    {
+        return $this->versioning;
+    }
+
+    /**
+     * Whether this reference needs to be version specific or version independent, or whetehr either can be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReferenceVersionRules $versioning
+     * @return $this
+     */
+    public function setVersioning($versioning)
+    {
+        $this->versioning = $versioning;
         return $this;
     }
 
@@ -174,19 +225,16 @@ class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (0 < count($this->profile)) {
-            $json['profile'] = array();
-            foreach($this->profile as $profile) {
-                $json['profile'][] = $profile->jsonSerialize();
-            }
-        }
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (null !== $this->targetProfile) $json['targetProfile'] = json_encode($this->targetProfile);
         if (0 < count($this->aggregation)) {
-            $json['aggregation'] = array();
+            $json['aggregation'] = [];
             foreach($this->aggregation as $aggregation) {
-                $json['aggregation'][] = $aggregation->jsonSerialize();
+                $json['aggregation'][] = json_encode($aggregation);
             }
         }
+        if (null !== $this->versioning) $json['versioning'] = json_encode($this->versioning);
         return $json;
     }
 
@@ -200,16 +248,14 @@ class FHIRElementDefinitionType extends FHIRElement implements JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ElementDefinitionType xmlns="http://hl7.org/fhir"></ElementDefinitionType>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (0 < count($this->profile)) {
-            foreach($this->profile as $profile) {
-                $profile->xmlSerialize(true, $sxe->addChild('profile'));
-            }
-        }
+        if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
+        if (null !== $this->targetProfile) $this->targetProfile->xmlSerialize(true, $sxe->addChild('targetProfile'));
         if (0 < count($this->aggregation)) {
             foreach($this->aggregation as $aggregation) {
                 $aggregation->xmlSerialize(true, $sxe->addChild('aggregation'));
             }
         }
+        if (null !== $this->versioning) $this->versioning->xmlSerialize(true, $sxe->addChild('versioning'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

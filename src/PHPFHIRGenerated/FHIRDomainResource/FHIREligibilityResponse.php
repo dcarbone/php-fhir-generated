@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides eligibility and plan details from the processing of an Eligibility resource.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializable
+class FHIREligibilityResponse extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Response business identifier.
@@ -76,46 +75,16 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
     public $identifier = array();
 
     /**
-     * Original request resource reference.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $request = null;
-
-    /**
-     * Transaction status: error, complete.
+     * The status of the resource instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $outcome = null;
-
-    /**
-     * A description of the status of the adjudication.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $disposition = null;
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $ruleset = null;
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $originalRuleset = null;
+    public $status = null;
 
     /**
      * The date when the enclosed suite of services were performed or completed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $created = null;
-
-    /**
-     * The Insurer who produced this adjudicated response.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $organization = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
@@ -128,6 +97,54 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $requestOrganization = null;
+
+    /**
+     * Original request resource reference.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $request = null;
+
+    /**
+     * Transaction status: error, complete.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $outcome = null;
+
+    /**
+     * A description of the status of the adjudication.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $disposition = null;
+
+    /**
+     * The Insurer who produced this adjudicated response.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $insurer = null;
+
+    /**
+     * Flag indicating if the coverage provided is inforce currently  if no service date(s) specified or for the whole duration of the service dates.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $inforce = null;
+
+    /**
+     * The insurer may provide both the details for the requested coverage as well as details for additional coverages known to the insurer.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIREligibilityResponse\FHIREligibilityResponseInsurance[]
+     */
+    public $insurance = array();
+
+    /**
+     * The form to be used for printing the content.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $form = null;
+
+    /**
+     * Mutually exclusive with Services Provided (Item).
+     * @var \PHPFHIRGenerated\FHIRResource\FHIREligibilityResponse\FHIREligibilityResponseError[]
+     */
+    public $error = array();
 
     /**
      * @var string
@@ -145,7 +162,7 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The Response business identifier.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -155,102 +172,22 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
-     * Original request resource reference.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * Original request resource reference.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
-     * @return $this
-     */
-    public function setRequest($request)
-    {
-        $this->request = $request;
-        return $this;
-    }
-
-    /**
-     * Transaction status: error, complete.
+     * The status of the resource instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getOutcome()
+    public function getStatus()
     {
-        return $this->outcome;
+        return $this->status;
     }
 
     /**
-     * Transaction status: error, complete.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $outcome
+     * The status of the resource instance.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
      * @return $this
      */
-    public function setOutcome($outcome)
+    public function setStatus($status)
     {
-        $this->outcome = $outcome;
-        return $this;
-    }
-
-    /**
-     * A description of the status of the adjudication.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDisposition()
-    {
-        return $this->disposition;
-    }
-
-    /**
-     * A description of the status of the adjudication.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $disposition
-     * @return $this
-     */
-    public function setDisposition($disposition)
-    {
-        $this->disposition = $disposition;
-        return $this;
-    }
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getRuleset()
-    {
-        return $this->ruleset;
-    }
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $ruleset
-     * @return $this
-     */
-    public function setRuleset($ruleset)
-    {
-        $this->ruleset = $ruleset;
-        return $this;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getOriginalRuleset()
-    {
-        return $this->originalRuleset;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $originalRuleset
-     * @return $this
-     */
-    public function setOriginalRuleset($originalRuleset)
-    {
-        $this->originalRuleset = $originalRuleset;
+        $this->status = $status;
         return $this;
     }
 
@@ -271,26 +208,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
     public function setCreated($created)
     {
         $this->created = $created;
-        return $this;
-    }
-
-    /**
-     * The Insurer who produced this adjudicated response.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getOrganization()
-    {
-        return $this->organization;
-    }
-
-    /**
-     * The Insurer who produced this adjudicated response.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $organization
-     * @return $this
-     */
-    public function setOrganization($organization)
-    {
-        $this->organization = $organization;
         return $this;
     }
 
@@ -335,6 +252,166 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
     }
 
     /**
+     * Original request resource reference.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * Original request resource reference.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
+     * @return $this
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
+        return $this;
+    }
+
+    /**
+     * Transaction status: error, complete.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getOutcome()
+    {
+        return $this->outcome;
+    }
+
+    /**
+     * Transaction status: error, complete.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $outcome
+     * @return $this
+     */
+    public function setOutcome($outcome)
+    {
+        $this->outcome = $outcome;
+        return $this;
+    }
+
+    /**
+     * A description of the status of the adjudication.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDisposition()
+    {
+        return $this->disposition;
+    }
+
+    /**
+     * A description of the status of the adjudication.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $disposition
+     * @return $this
+     */
+    public function setDisposition($disposition)
+    {
+        $this->disposition = $disposition;
+        return $this;
+    }
+
+    /**
+     * The Insurer who produced this adjudicated response.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getInsurer()
+    {
+        return $this->insurer;
+    }
+
+    /**
+     * The Insurer who produced this adjudicated response.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $insurer
+     * @return $this
+     */
+    public function setInsurer($insurer)
+    {
+        $this->insurer = $insurer;
+        return $this;
+    }
+
+    /**
+     * Flag indicating if the coverage provided is inforce currently  if no service date(s) specified or for the whole duration of the service dates.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getInforce()
+    {
+        return $this->inforce;
+    }
+
+    /**
+     * Flag indicating if the coverage provided is inforce currently  if no service date(s) specified or for the whole duration of the service dates.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $inforce
+     * @return $this
+     */
+    public function setInforce($inforce)
+    {
+        $this->inforce = $inforce;
+        return $this;
+    }
+
+    /**
+     * The insurer may provide both the details for the requested coverage as well as details for additional coverages known to the insurer.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIREligibilityResponse\FHIREligibilityResponseInsurance[]
+     */
+    public function getInsurance()
+    {
+        return $this->insurance;
+    }
+
+    /**
+     * The insurer may provide both the details for the requested coverage as well as details for additional coverages known to the insurer.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREligibilityResponse\FHIREligibilityResponseInsurance $insurance
+     * @return $this
+     */
+    public function addInsurance($insurance)
+    {
+        $this->insurance[] = $insurance;
+        return $this;
+    }
+
+    /**
+     * The form to be used for printing the content.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getForm()
+    {
+        return $this->form;
+    }
+
+    /**
+     * The form to be used for printing the content.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $form
+     * @return $this
+     */
+    public function setForm($form)
+    {
+        $this->form = $form;
+        return $this;
+    }
+
+    /**
+     * Mutually exclusive with Services Provided (Item).
+     * @return \PHPFHIRGenerated\FHIRResource\FHIREligibilityResponse\FHIREligibilityResponseError[]
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
+    /**
+     * Mutually exclusive with Services Provided (Item).
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREligibilityResponse\FHIREligibilityResponseError $error
+     * @return $this
+     */
+    public function addError($error)
+    {
+        $this->error[] = $error;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -358,20 +435,33 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
-        if (null !== $this->disposition) $json['disposition'] = $this->disposition->jsonSerialize();
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->requestProvider) $json['requestProvider'] = $this->requestProvider->jsonSerialize();
-        if (null !== $this->requestOrganization) $json['requestOrganization'] = $this->requestOrganization->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
+        if (null !== $this->requestOrganization) $json['requestOrganization'] = json_encode($this->requestOrganization);
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->disposition) $json['disposition'] = json_encode($this->disposition);
+        if (null !== $this->insurer) $json['insurer'] = json_encode($this->insurer);
+        if (null !== $this->inforce) $json['inforce'] = json_encode($this->inforce);
+        if (0 < count($this->insurance)) {
+            $json['insurance'] = [];
+            foreach($this->insurance as $insurance) {
+                $json['insurance'][] = json_encode($insurance);
+            }
+        }
+        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (0 < count($this->error)) {
+            $json['error'] = [];
+            foreach($this->error as $error) {
+                $json['error'][] = json_encode($error);
+            }
+        }
         return $json;
     }
 
@@ -389,15 +479,26 @@ class FHIREligibilityResponse extends FHIRDomainResource implements JsonSerializ
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
+        if (null !== $this->requestProvider) $this->requestProvider->xmlSerialize(true, $sxe->addChild('requestProvider'));
+        if (null !== $this->requestOrganization) $this->requestOrganization->xmlSerialize(true, $sxe->addChild('requestOrganization'));
         if (null !== $this->request) $this->request->xmlSerialize(true, $sxe->addChild('request'));
         if (null !== $this->outcome) $this->outcome->xmlSerialize(true, $sxe->addChild('outcome'));
         if (null !== $this->disposition) $this->disposition->xmlSerialize(true, $sxe->addChild('disposition'));
-        if (null !== $this->ruleset) $this->ruleset->xmlSerialize(true, $sxe->addChild('ruleset'));
-        if (null !== $this->originalRuleset) $this->originalRuleset->xmlSerialize(true, $sxe->addChild('originalRuleset'));
-        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
-        if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
-        if (null !== $this->requestProvider) $this->requestProvider->xmlSerialize(true, $sxe->addChild('requestProvider'));
-        if (null !== $this->requestOrganization) $this->requestOrganization->xmlSerialize(true, $sxe->addChild('requestOrganization'));
+        if (null !== $this->insurer) $this->insurer->xmlSerialize(true, $sxe->addChild('insurer'));
+        if (null !== $this->inforce) $this->inforce->xmlSerialize(true, $sxe->addChild('inforce'));
+        if (0 < count($this->insurance)) {
+            foreach($this->insurance as $insurance) {
+                $insurance->xmlSerialize(true, $sxe->addChild('insurance'));
+            }
+        }
+        if (null !== $this->form) $this->form->xmlSerialize(true, $sxe->addChild('form'));
+        if (0 < count($this->error)) {
+            foreach($this->error as $error) {
+                $error->xmlSerialize(true, $sxe->addChild('error'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

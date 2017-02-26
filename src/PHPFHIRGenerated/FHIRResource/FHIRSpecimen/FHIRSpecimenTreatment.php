@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A sample to be used for analysis.
  */
-class FHIRSpecimenTreatment extends FHIRBackboneElement implements JsonSerializable
+class FHIRSpecimenTreatment extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Textual description of procedure.
@@ -85,6 +84,18 @@ class FHIRSpecimenTreatment extends FHIRBackboneElement implements JsonSerializa
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $additive = array();
+
+    /**
+     * A record of the time or period when the specimen treatment occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $timeDateTime = null;
+
+    /**
+     * A record of the time or period when the specimen treatment occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $timePeriod = null;
 
     /**
      * @var string
@@ -142,12 +153,52 @@ class FHIRSpecimenTreatment extends FHIRBackboneElement implements JsonSerializa
 
     /**
      * Material used in the processing step.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $additive
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $additive
      * @return $this
      */
     public function addAdditive($additive)
     {
         $this->additive[] = $additive;
+        return $this;
+    }
+
+    /**
+     * A record of the time or period when the specimen treatment occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getTimeDateTime()
+    {
+        return $this->timeDateTime;
+    }
+
+    /**
+     * A record of the time or period when the specimen treatment occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $timeDateTime
+     * @return $this
+     */
+    public function setTimeDateTime($timeDateTime)
+    {
+        $this->timeDateTime = $timeDateTime;
+        return $this;
+    }
+
+    /**
+     * A record of the time or period when the specimen treatment occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getTimePeriod()
+    {
+        return $this->timePeriod;
+    }
+
+    /**
+     * A record of the time or period when the specimen treatment occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timePeriod
+     * @return $this
+     */
+    public function setTimePeriod($timePeriod)
+    {
+        $this->timePeriod = $timePeriod;
         return $this;
     }
 
@@ -173,14 +224,16 @@ class FHIRSpecimenTreatment extends FHIRBackboneElement implements JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->procedure) $json['procedure'] = $this->procedure->jsonSerialize();
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->procedure) $json['procedure'] = json_encode($this->procedure);
         if (0 < count($this->additive)) {
-            $json['additive'] = array();
+            $json['additive'] = [];
             foreach($this->additive as $additive) {
-                $json['additive'][] = $additive->jsonSerialize();
+                $json['additive'][] = json_encode($additive);
             }
         }
+        if (null !== $this->timeDateTime) $json['timeDateTime'] = json_encode($this->timeDateTime);
+        if (null !== $this->timePeriod) $json['timePeriod'] = json_encode($this->timePeriod);
         return $json;
     }
 
@@ -200,6 +253,8 @@ class FHIRSpecimenTreatment extends FHIRBackboneElement implements JsonSerializa
                 $additive->xmlSerialize(true, $sxe->addChild('additive'));
             }
         }
+        if (null !== $this->timeDateTime) $this->timeDateTime->xmlSerialize(true, $sxe->addChild('timeDateTime'));
+        if (null !== $this->timePeriod) $this->timePeriod->xmlSerialize(true, $sxe->addChild('timePeriod'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

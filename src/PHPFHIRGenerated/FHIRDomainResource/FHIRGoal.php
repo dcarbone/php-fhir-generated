@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,19 +61,42 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Describes the intended objective(s) for a patient, group or organization care, for example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRGoal extends FHIRDomainResource implements JsonSerializable
+class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * Indicates whether the goal has been reached and is still considered relevant.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus
+     */
+    public $status = null;
+
+    /**
+     * Indicates a category the goal falls within.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $category = array();
+
+    /**
+     * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $priority = null;
+
+    /**
+     * Code and/or human-readable description of a specific desired objective of care.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $description = null;
 
     /**
      * Identifies the patient, group or organization for whom the goal is being established.
@@ -101,27 +124,9 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates either the date or the duration after start by which the goal should be met. (choose any one of target*, but only one)
-     * @var \PHPFHIRGenerated\FHIRDuration
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public $targetQuantity = null;
-
-    /**
-     * Indicates a category the goal falls within.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
-     */
-    public $category = array();
-
-    /**
-     * Human-readable description of a specific desired objective of care.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $description = null;
-
-    /**
-     * Indicates whether the goal has been reached and is still considered relevant.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus
-     */
-    public $status = null;
+    public $targetDuration = null;
 
     /**
      * Identifies when the current status.  I.e. When initially created, when achieved, when cancelled, etc.
@@ -131,21 +136,15 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Captures the reason for the current status.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $statusReason = null;
+    public $statusReason = array();
 
     /**
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $author = null;
-
-    /**
-     * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $priority = null;
+    public $expressedBy = null;
 
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
@@ -160,7 +159,7 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
     public $note = array();
 
     /**
-     * Identifies the change (or lack of change) at the point where the goal was deepmed to be cancelled or achieved.
+     * Identifies the change (or lack of change) at the point where the goal was deemed to be cancelled or achieved.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRGoal\FHIRGoalOutcome[]
      */
     public $outcome = array();
@@ -181,12 +180,92 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
 
     /**
      * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * Indicates whether the goal has been reached and is still considered relevant.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Indicates whether the goal has been reached and is still considered relevant.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Indicates a category the goal falls within.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Indicates a category the goal falls within.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
+     * @return $this
+     */
+    public function addCategory($category)
+    {
+        $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    /**
+     * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $priority
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->priority = $priority;
+        return $this;
+    }
+
+    /**
+     * Code and/or human-readable description of a specific desired objective of care.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Code and/or human-readable description of a specific desired objective of care.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $description
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
         return $this;
     }
 
@@ -272,81 +351,21 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Indicates either the date or the duration after start by which the goal should be met. (choose any one of target*, but only one)
-     * @return \PHPFHIRGenerated\FHIRDuration
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public function getTargetQuantity()
+    public function getTargetDuration()
     {
-        return $this->targetQuantity;
+        return $this->targetDuration;
     }
 
     /**
      * Indicates either the date or the duration after start by which the goal should be met. (choose any one of target*, but only one)
-     * @param \PHPFHIRGenerated\FHIRDuration $targetQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $targetDuration
      * @return $this
      */
-    public function setTargetQuantity($targetQuantity)
+    public function setTargetDuration($targetDuration)
     {
-        $this->targetQuantity = $targetQuantity;
-        return $this;
-    }
-
-    /**
-     * Indicates a category the goal falls within.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
-     * Indicates a category the goal falls within.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $category
-     * @return $this
-     */
-    public function addCategory($category)
-    {
-        $this->category[] = $category;
-        return $this;
-    }
-
-    /**
-     * Human-readable description of a specific desired objective of care.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Human-readable description of a specific desired objective of care.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-        return $this;
-    }
-
-    /**
-     * Indicates whether the goal has been reached and is still considered relevant.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Indicates whether the goal has been reached and is still considered relevant.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRGoalStatus $status
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
+        $this->targetDuration = $targetDuration;
         return $this;
     }
 
@@ -372,7 +391,7 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Captures the reason for the current status.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getStatusReason()
     {
@@ -384,9 +403,9 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $statusReason
      * @return $this
      */
-    public function setStatusReason($statusReason)
+    public function addStatusReason($statusReason)
     {
-        $this->statusReason = $statusReason;
+        $this->statusReason[] = $statusReason;
         return $this;
     }
 
@@ -394,39 +413,19 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAuthor()
+    public function getExpressedBy()
     {
-        return $this->author;
+        return $this->expressedBy;
     }
 
     /**
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $expressedBy
      * @return $this
      */
-    public function setAuthor($author)
+    public function setExpressedBy($expressedBy)
     {
-        $this->author = $author;
-        return $this;
-    }
-
-    /**
-     * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getPriority()
-    {
-        return $this->priority;
-    }
-
-    /**
-     * Identifies the mutually agreed level of importance associated with reaching/sustaining the goal.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $priority
-     * @return $this
-     */
-    public function setPriority($priority)
-    {
-        $this->priority = $priority;
+        $this->expressedBy = $expressedBy;
         return $this;
     }
 
@@ -441,7 +440,7 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The identified conditions and other health record elements that are intended to be addressed by the goal.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $addresses
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $addresses
      * @return $this
      */
     public function addAddresses($addresses)
@@ -461,7 +460,7 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Any comments related to the goal.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[] $note
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
     public function addNote($note)
@@ -471,7 +470,7 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Identifies the change (or lack of change) at the point where the goal was deepmed to be cancelled or achieved.
+     * Identifies the change (or lack of change) at the point where the goal was deemed to be cancelled or achieved.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRGoal\FHIRGoalOutcome[]
      */
     public function getOutcome()
@@ -480,8 +479,8 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Identifies the change (or lack of change) at the point where the goal was deepmed to be cancelled or achieved.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRGoal\FHIRGoalOutcome[] $outcome
+     * Identifies the change (or lack of change) at the point where the goal was deemed to be cancelled or achieved.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRGoal\FHIRGoalOutcome $outcome
      * @return $this
      */
     public function addOutcome($outcome)
@@ -514,44 +513,49 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->startDate) $json['startDate'] = $this->startDate->jsonSerialize();
-        if (null !== $this->startCodeableConcept) $json['startCodeableConcept'] = $this->startCodeableConcept->jsonSerialize();
-        if (null !== $this->targetDate) $json['targetDate'] = $this->targetDate->jsonSerialize();
-        if (null !== $this->targetQuantity) $json['targetQuantity'] = $this->targetQuantity->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->category)) {
-            $json['category'] = array();
+            $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = $category->jsonSerialize();
+                $json['category'][] = json_encode($category);
             }
         }
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->statusDate) $json['statusDate'] = $this->statusDate->jsonSerialize();
-        if (null !== $this->statusReason) $json['statusReason'] = $this->statusReason->jsonSerialize();
-        if (null !== $this->author) $json['author'] = $this->author->jsonSerialize();
-        if (null !== $this->priority) $json['priority'] = $this->priority->jsonSerialize();
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->startDate) $json['startDate'] = json_encode($this->startDate);
+        if (null !== $this->startCodeableConcept) $json['startCodeableConcept'] = json_encode($this->startCodeableConcept);
+        if (null !== $this->targetDate) $json['targetDate'] = json_encode($this->targetDate);
+        if (null !== $this->targetDuration) $json['targetDuration'] = json_encode($this->targetDuration);
+        if (null !== $this->statusDate) $json['statusDate'] = json_encode($this->statusDate);
+        if (0 < count($this->statusReason)) {
+            $json['statusReason'] = [];
+            foreach($this->statusReason as $statusReason) {
+                $json['statusReason'][] = json_encode($statusReason);
+            }
+        }
+        if (null !== $this->expressedBy) $json['expressedBy'] = json_encode($this->expressedBy);
         if (0 < count($this->addresses)) {
-            $json['addresses'] = array();
+            $json['addresses'] = [];
             foreach($this->addresses as $addresses) {
-                $json['addresses'][] = $addresses->jsonSerialize();
+                $json['addresses'][] = json_encode($addresses);
             }
         }
         if (0 < count($this->note)) {
-            $json['note'] = array();
+            $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = $note->jsonSerialize();
+                $json['note'][] = json_encode($note);
             }
         }
         if (0 < count($this->outcome)) {
-            $json['outcome'] = array();
+            $json['outcome'] = [];
             foreach($this->outcome as $outcome) {
-                $json['outcome'][] = $outcome->jsonSerialize();
+                $json['outcome'][] = json_encode($outcome);
             }
         }
         return $json;
@@ -571,22 +575,26 @@ class FHIRGoal extends FHIRDomainResource implements JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->startDate) $this->startDate->xmlSerialize(true, $sxe->addChild('startDate'));
-        if (null !== $this->startCodeableConcept) $this->startCodeableConcept->xmlSerialize(true, $sxe->addChild('startCodeableConcept'));
-        if (null !== $this->targetDate) $this->targetDate->xmlSerialize(true, $sxe->addChild('targetDate'));
-        if (null !== $this->targetQuantity) $this->targetQuantity->xmlSerialize(true, $sxe->addChild('targetQuantity'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (0 < count($this->category)) {
             foreach($this->category as $category) {
                 $category->xmlSerialize(true, $sxe->addChild('category'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->statusDate) $this->statusDate->xmlSerialize(true, $sxe->addChild('statusDate'));
-        if (null !== $this->statusReason) $this->statusReason->xmlSerialize(true, $sxe->addChild('statusReason'));
-        if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (null !== $this->priority) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
+        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->startDate) $this->startDate->xmlSerialize(true, $sxe->addChild('startDate'));
+        if (null !== $this->startCodeableConcept) $this->startCodeableConcept->xmlSerialize(true, $sxe->addChild('startCodeableConcept'));
+        if (null !== $this->targetDate) $this->targetDate->xmlSerialize(true, $sxe->addChild('targetDate'));
+        if (null !== $this->targetDuration) $this->targetDuration->xmlSerialize(true, $sxe->addChild('targetDuration'));
+        if (null !== $this->statusDate) $this->statusDate->xmlSerialize(true, $sxe->addChild('statusDate'));
+        if (0 < count($this->statusReason)) {
+            foreach($this->statusReason as $statusReason) {
+                $statusReason->xmlSerialize(true, $sxe->addChild('statusReason'));
+            }
+        }
+        if (null !== $this->expressedBy) $this->expressedBy->xmlSerialize(true, $sxe->addChild('expressedBy'));
         if (0 < count($this->addresses)) {
             foreach($this->addresses as $addresses) {
                 $addresses->xmlSerialize(true, $sxe->addChild('addresses'));

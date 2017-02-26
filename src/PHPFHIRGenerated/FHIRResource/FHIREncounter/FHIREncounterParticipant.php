@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.
  */
-class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerializable
+class FHIREncounterParticipant extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * Role of participant in encounter.
@@ -75,7 +74,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerial
     public $type = array();
 
     /**
-     * The period of time that the specified participant was present during the encounter. These can overlap or be sub-sets of the overall encounters period.
+     * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $period = null;
@@ -102,7 +101,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerial
 
     /**
      * Role of participant in encounter.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -112,7 +111,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
-     * The period of time that the specified participant was present during the encounter. These can overlap or be sub-sets of the overall encounters period.
+     * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
@@ -121,7 +120,7 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerial
     }
 
     /**
-     * The period of time that the specified participant was present during the encounter. These can overlap or be sub-sets of the overall encounters period.
+     * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
@@ -174,13 +173,13 @@ class FHIREncounterParticipant extends FHIRBackboneElement implements JsonSerial
     {
         $json = parent::jsonSerialize();
         if (0 < count($this->type)) {
-            $json['type'] = array();
+            $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = $type->jsonSerialize();
+                $json['type'][] = json_encode($type);
             }
         }
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->individual) $json['individual'] = $this->individual->jsonSerialize();
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->individual) $json['individual'] = json_encode($this->individual);
         return $json;
     }
 

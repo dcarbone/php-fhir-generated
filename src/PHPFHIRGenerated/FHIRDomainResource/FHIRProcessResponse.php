@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * This resource provides processing status, errors and notes from the processing of a resource.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
+class FHIRProcessResponse extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * The Response business identifier.
@@ -76,34 +75,10 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
     public $identifier = array();
 
     /**
-     * Original request resource reference.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The status of the resource instance.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public $request = null;
-
-    /**
-     * Transaction status: error, complete, held.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $outcome = null;
-
-    /**
-     * A description of the status of the adjudication or processing.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $disposition = null;
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $ruleset = null;
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $originalRuleset = null;
+    public $status = null;
 
     /**
      * The date when the enclosed suite of services were performed or completed.
@@ -116,6 +91,24 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $organization = null;
+
+    /**
+     * Original request resource reference.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $request = null;
+
+    /**
+     * Transaction status: error, complete, held.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $outcome = null;
+
+    /**
+     * A description of the status of the adjudication or processing.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $disposition = null;
 
     /**
      * The practitioner who is responsible for the services rendered to the patient.
@@ -131,21 +124,27 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The form to be used for printing the content.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $form = null;
 
     /**
      * Suite of processing note or additional requirements is the processing has been held.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRProcessResponse\FHIRProcessResponseNotes[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRProcessResponse\FHIRProcessResponseNote[]
      */
-    public $notes = array();
+    public $note = array();
 
     /**
      * Processing errors.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $error = array();
+
+    /**
+     * Request for additional supporting or authorizing information, such as: documents, images or resources.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $communicationRequest = array();
 
     /**
      * @var string
@@ -163,7 +162,7 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The Response business identifier.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -173,102 +172,22 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * Original request resource reference.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The status of the resource instance.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getRequest()
+    public function getStatus()
     {
-        return $this->request;
+        return $this->status;
     }
 
     /**
-     * Original request resource reference.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
+     * The status of the resource instance.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
      * @return $this
      */
-    public function setRequest($request)
+    public function setStatus($status)
     {
-        $this->request = $request;
-        return $this;
-    }
-
-    /**
-     * Transaction status: error, complete, held.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getOutcome()
-    {
-        return $this->outcome;
-    }
-
-    /**
-     * Transaction status: error, complete, held.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $outcome
-     * @return $this
-     */
-    public function setOutcome($outcome)
-    {
-        $this->outcome = $outcome;
-        return $this;
-    }
-
-    /**
-     * A description of the status of the adjudication or processing.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDisposition()
-    {
-        return $this->disposition;
-    }
-
-    /**
-     * A description of the status of the adjudication or processing.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $disposition
-     * @return $this
-     */
-    public function setDisposition($disposition)
-    {
-        $this->disposition = $disposition;
-        return $this;
-    }
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getRuleset()
-    {
-        return $this->ruleset;
-    }
-
-    /**
-     * The version of the style of resource contents. This should be mapped to the allowable profiles for this and supporting resources.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $ruleset
-     * @return $this
-     */
-    public function setRuleset($ruleset)
-    {
-        $this->ruleset = $ruleset;
-        return $this;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getOriginalRuleset()
-    {
-        return $this->originalRuleset;
-    }
-
-    /**
-     * The style (standard) and version of the original material which was converted into this resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $originalRuleset
-     * @return $this
-     */
-    public function setOriginalRuleset($originalRuleset)
-    {
-        $this->originalRuleset = $originalRuleset;
+        $this->status = $status;
         return $this;
     }
 
@@ -309,6 +228,66 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
     public function setOrganization($organization)
     {
         $this->organization = $organization;
+        return $this;
+    }
+
+    /**
+     * Original request resource reference.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * Original request resource reference.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
+     * @return $this
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
+        return $this;
+    }
+
+    /**
+     * Transaction status: error, complete, held.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getOutcome()
+    {
+        return $this->outcome;
+    }
+
+    /**
+     * Transaction status: error, complete, held.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $outcome
+     * @return $this
+     */
+    public function setOutcome($outcome)
+    {
+        $this->outcome = $outcome;
+        return $this;
+    }
+
+    /**
+     * A description of the status of the adjudication or processing.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDisposition()
+    {
+        return $this->disposition;
+    }
+
+    /**
+     * A description of the status of the adjudication or processing.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $disposition
+     * @return $this
+     */
+    public function setDisposition($disposition)
+    {
+        $this->disposition = $disposition;
         return $this;
     }
 
@@ -354,7 +333,7 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The form to be used for printing the content.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getForm()
     {
@@ -363,7 +342,7 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * The form to be used for printing the content.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $form
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $form
      * @return $this
      */
     public function setForm($form)
@@ -374,27 +353,27 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Suite of processing note or additional requirements is the processing has been held.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRProcessResponse\FHIRProcessResponseNotes[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRProcessResponse\FHIRProcessResponseNote[]
      */
-    public function getNotes()
+    public function getNote()
     {
-        return $this->notes;
+        return $this->note;
     }
 
     /**
      * Suite of processing note or additional requirements is the processing has been held.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRProcessResponse\FHIRProcessResponseNotes[] $notes
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRProcessResponse\FHIRProcessResponseNote $note
      * @return $this
      */
-    public function addNotes($notes)
+    public function addNote($note)
     {
-        $this->notes[] = $notes;
+        $this->note[] = $note;
         return $this;
     }
 
     /**
      * Processing errors.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getError()
     {
@@ -403,12 +382,32 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Processing errors.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding[] $error
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $error
      * @return $this
      */
     public function addError($error)
     {
         $this->error[] = $error;
+        return $this;
+    }
+
+    /**
+     * Request for additional supporting or authorizing information, such as: documents, images or resources.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getCommunicationRequest()
+    {
+        return $this->communicationRequest;
+    }
+
+    /**
+     * Request for additional supporting or authorizing information, such as: documents, images or resources.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $communicationRequest
+     * @return $this
+     */
+    public function addCommunicationRequest($communicationRequest)
+    {
+        $this->communicationRequest[] = $communicationRequest;
         return $this;
     }
 
@@ -436,31 +435,36 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->request) $json['request'] = $this->request->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
-        if (null !== $this->disposition) $json['disposition'] = $this->disposition->jsonSerialize();
-        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset->jsonSerialize();
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset->jsonSerialize();
-        if (null !== $this->created) $json['created'] = $this->created->jsonSerialize();
-        if (null !== $this->organization) $json['organization'] = $this->organization->jsonSerialize();
-        if (null !== $this->requestProvider) $json['requestProvider'] = $this->requestProvider->jsonSerialize();
-        if (null !== $this->requestOrganization) $json['requestOrganization'] = $this->requestOrganization->jsonSerialize();
-        if (null !== $this->form) $json['form'] = $this->form->jsonSerialize();
-        if (0 < count($this->notes)) {
-            $json['notes'] = array();
-            foreach($this->notes as $notes) {
-                $json['notes'][] = $notes->jsonSerialize();
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->request) $json['request'] = json_encode($this->request);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->disposition) $json['disposition'] = json_encode($this->disposition);
+        if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
+        if (null !== $this->requestOrganization) $json['requestOrganization'] = json_encode($this->requestOrganization);
+        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
             }
         }
         if (0 < count($this->error)) {
-            $json['error'] = array();
+            $json['error'] = [];
             foreach($this->error as $error) {
-                $json['error'][] = $error->jsonSerialize();
+                $json['error'][] = json_encode($error);
+            }
+        }
+        if (0 < count($this->communicationRequest)) {
+            $json['communicationRequest'] = [];
+            foreach($this->communicationRequest as $communicationRequest) {
+                $json['communicationRequest'][] = json_encode($communicationRequest);
             }
         }
         return $json;
@@ -480,24 +484,28 @@ class FHIRProcessResponse extends FHIRDomainResource implements JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
+        if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
         if (null !== $this->request) $this->request->xmlSerialize(true, $sxe->addChild('request'));
         if (null !== $this->outcome) $this->outcome->xmlSerialize(true, $sxe->addChild('outcome'));
         if (null !== $this->disposition) $this->disposition->xmlSerialize(true, $sxe->addChild('disposition'));
-        if (null !== $this->ruleset) $this->ruleset->xmlSerialize(true, $sxe->addChild('ruleset'));
-        if (null !== $this->originalRuleset) $this->originalRuleset->xmlSerialize(true, $sxe->addChild('originalRuleset'));
-        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
-        if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
         if (null !== $this->requestProvider) $this->requestProvider->xmlSerialize(true, $sxe->addChild('requestProvider'));
         if (null !== $this->requestOrganization) $this->requestOrganization->xmlSerialize(true, $sxe->addChild('requestOrganization'));
         if (null !== $this->form) $this->form->xmlSerialize(true, $sxe->addChild('form'));
-        if (0 < count($this->notes)) {
-            foreach($this->notes as $notes) {
-                $notes->xmlSerialize(true, $sxe->addChild('notes'));
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
             }
         }
         if (0 < count($this->error)) {
             foreach($this->error as $error) {
                 $error->xmlSerialize(true, $sxe->addChild('error'));
+            }
+        }
+        if (0 < count($this->communicationRequest)) {
+            foreach($this->communicationRequest as $communicationRequest) {
+                $communicationRequest->xmlSerialize(true, $sxe->addChild('communicationRequest'));
             }
         }
         if ($returnSXE) return $sxe;

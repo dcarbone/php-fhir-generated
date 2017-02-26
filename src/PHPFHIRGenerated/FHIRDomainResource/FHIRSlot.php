@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A slot of time on a schedule that may be available for booking appointments.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRSlot extends FHIRDomainResource implements JsonSerializable
+class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * External Ids for this item.
@@ -76,10 +75,28 @@ class FHIRSlot extends FHIRDomainResource implements JsonSerializable
     public $identifier = array();
 
     /**
-     * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
+     * A broad categorisation of the service that is to be performed during this appointment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $type = null;
+    public $serviceCategory = null;
+
+    /**
+     * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $serviceType = array();
+
+    /**
+     * The specialty of a practitioner that would be required to perform the service requested in this appointment.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $specialty = array();
+
+    /**
+     * The style of appointment or patient that has been booked in the slot (not service type).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $appointmentType = null;
 
     /**
      * The schedule resource that this slot defines an interval of status information.
@@ -88,10 +105,10 @@ class FHIRSlot extends FHIRDomainResource implements JsonSerializable
     public $schedule = null;
 
     /**
-     * busy | free | busy-unavailable | busy-tentative.
+     * busy | free | busy-unavailable | busy-tentative | entered-in-error.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSlotStatus
      */
-    public $freeBusyType = null;
+    public $status = null;
 
     /**
      * Date/Time that the slot is to begin.
@@ -133,7 +150,7 @@ class FHIRSlot extends FHIRDomainResource implements JsonSerializable
 
     /**
      * External Ids for this item.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -143,22 +160,82 @@ class FHIRSlot extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
+     * A broad categorisation of the service that is to be performed during this appointment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
+    public function getServiceCategory()
     {
-        return $this->type;
+        return $this->serviceCategory;
+    }
+
+    /**
+     * A broad categorisation of the service that is to be performed during this appointment.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceCategory
+     * @return $this
+     */
+    public function setServiceCategory($serviceCategory)
+    {
+        $this->serviceCategory = $serviceCategory;
+        return $this;
     }
 
     /**
      * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getServiceType()
+    {
+        return $this->serviceType;
+    }
+
+    /**
+     * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceType
      * @return $this
      */
-    public function setType($type)
+    public function addServiceType($serviceType)
     {
-        $this->type = $type;
+        $this->serviceType[] = $serviceType;
+        return $this;
+    }
+
+    /**
+     * The specialty of a practitioner that would be required to perform the service requested in this appointment.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getSpecialty()
+    {
+        return $this->specialty;
+    }
+
+    /**
+     * The specialty of a practitioner that would be required to perform the service requested in this appointment.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specialty
+     * @return $this
+     */
+    public function addSpecialty($specialty)
+    {
+        $this->specialty[] = $specialty;
+        return $this;
+    }
+
+    /**
+     * The style of appointment or patient that has been booked in the slot (not service type).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getAppointmentType()
+    {
+        return $this->appointmentType;
+    }
+
+    /**
+     * The style of appointment or patient that has been booked in the slot (not service type).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $appointmentType
+     * @return $this
+     */
+    public function setAppointmentType($appointmentType)
+    {
+        $this->appointmentType = $appointmentType;
         return $this;
     }
 
@@ -183,22 +260,22 @@ class FHIRSlot extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * busy | free | busy-unavailable | busy-tentative.
+     * busy | free | busy-unavailable | busy-tentative | entered-in-error.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSlotStatus
      */
-    public function getFreeBusyType()
+    public function getStatus()
     {
-        return $this->freeBusyType;
+        return $this->status;
     }
 
     /**
-     * busy | free | busy-unavailable | busy-tentative.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRSlotStatus $freeBusyType
+     * busy | free | busy-unavailable | busy-tentative | entered-in-error.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRSlotStatus $status
      * @return $this
      */
-    public function setFreeBusyType($freeBusyType)
+    public function setStatus($status)
     {
-        $this->freeBusyType = $freeBusyType;
+        $this->status = $status;
         return $this;
     }
 
@@ -306,18 +383,31 @@ class FHIRSlot extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->type) $json['type'] = $this->type->jsonSerialize();
-        if (null !== $this->schedule) $json['schedule'] = $this->schedule->jsonSerialize();
-        if (null !== $this->freeBusyType) $json['freeBusyType'] = $this->freeBusyType->jsonSerialize();
-        if (null !== $this->start) $json['start'] = $this->start->jsonSerialize();
-        if (null !== $this->end) $json['end'] = $this->end->jsonSerialize();
-        if (null !== $this->overbooked) $json['overbooked'] = $this->overbooked->jsonSerialize();
-        if (null !== $this->comment) $json['comment'] = $this->comment->jsonSerialize();
+        if (null !== $this->serviceCategory) $json['serviceCategory'] = json_encode($this->serviceCategory);
+        if (0 < count($this->serviceType)) {
+            $json['serviceType'] = [];
+            foreach($this->serviceType as $serviceType) {
+                $json['serviceType'][] = json_encode($serviceType);
+            }
+        }
+        if (0 < count($this->specialty)) {
+            $json['specialty'] = [];
+            foreach($this->specialty as $specialty) {
+                $json['specialty'][] = json_encode($specialty);
+            }
+        }
+        if (null !== $this->appointmentType) $json['appointmentType'] = json_encode($this->appointmentType);
+        if (null !== $this->schedule) $json['schedule'] = json_encode($this->schedule);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->start) $json['start'] = json_encode($this->start);
+        if (null !== $this->end) $json['end'] = json_encode($this->end);
+        if (null !== $this->overbooked) $json['overbooked'] = json_encode($this->overbooked);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         return $json;
     }
 
@@ -335,9 +425,20 @@ class FHIRSlot extends FHIRDomainResource implements JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->serviceCategory) $this->serviceCategory->xmlSerialize(true, $sxe->addChild('serviceCategory'));
+        if (0 < count($this->serviceType)) {
+            foreach($this->serviceType as $serviceType) {
+                $serviceType->xmlSerialize(true, $sxe->addChild('serviceType'));
+            }
+        }
+        if (0 < count($this->specialty)) {
+            foreach($this->specialty as $specialty) {
+                $specialty->xmlSerialize(true, $sxe->addChild('specialty'));
+            }
+        }
+        if (null !== $this->appointmentType) $this->appointmentType->xmlSerialize(true, $sxe->addChild('appointmentType'));
         if (null !== $this->schedule) $this->schedule->xmlSerialize(true, $sxe->addChild('schedule'));
-        if (null !== $this->freeBusyType) $this->freeBusyType->xmlSerialize(true, $sxe->addChild('freeBusyType'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->start) $this->start->xmlSerialize(true, $sxe->addChild('start'));
         if (null !== $this->end) $this->end->xmlSerialize(true, $sxe->addChild('end'));
         if (null !== $this->overbooked) $this->overbooked->xmlSerialize(true, $sxe->addChild('overbooked'));

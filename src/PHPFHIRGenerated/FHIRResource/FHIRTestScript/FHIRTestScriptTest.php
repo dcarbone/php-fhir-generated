@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
-class FHIRTestScriptTest extends FHIRBackboneElement implements JsonSerializable
+class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The name of this test used for tracking/logging purposes by test engines.
@@ -79,12 +78,6 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $description = null;
-
-    /**
-     * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata
-     */
-    public $metadata = null;
 
     /**
      * Action would contain either an operation or an assertion.
@@ -138,26 +131,6 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements JsonSerializable
     }
 
     /**
-     * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata
-     */
-    public function getMetadata()
-    {
-        return $this->metadata;
-    }
-
-    /**
-     * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata $metadata
-     * @return $this
-     */
-    public function setMetadata($metadata)
-    {
-        $this->metadata = $metadata;
-        return $this;
-    }
-
-    /**
      * Action would contain either an operation or an assertion.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction1[]
      */
@@ -168,7 +141,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements JsonSerializable
 
     /**
      * Action would contain either an operation or an assertion.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction1[] $action
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction1 $action
      * @return $this
      */
     public function addAction($action)
@@ -199,13 +172,12 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->description) $json['description'] = $this->description->jsonSerialize();
-        if (null !== $this->metadata) $json['metadata'] = $this->metadata->jsonSerialize();
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->action)) {
-            $json['action'] = array();
+            $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = $action->jsonSerialize();
+                $json['action'][] = json_encode($action);
             }
         }
         return $json;
@@ -222,7 +194,6 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements JsonSerializable
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->metadata) $this->metadata->xmlSerialize(true, $sxe->addChild('metadata'));
         if (0 < count($this->action)) {
             foreach($this->action as $action) {
                 $action->xmlSerialize(true, $sxe->addChild('action'));

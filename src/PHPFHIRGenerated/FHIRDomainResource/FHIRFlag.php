@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Prospective warnings of potential issues when providing care to the patient.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRFlag extends FHIRDomainResource implements JsonSerializable
+class FHIRFlag extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * Identifier assigned to the flag for external use (outside the FHIR environment).
@@ -94,7 +93,7 @@ class FHIRFlag extends FHIRDomainResource implements JsonSerializable
     public $period = null;
 
     /**
-     * The patient, location, group , organization , or practitioner this is about record this flag is associated with.
+     * The patient, location, group , organization , or practitioner, etc. this is about record this flag is associated with.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $subject = null;
@@ -133,7 +132,7 @@ class FHIRFlag extends FHIRDomainResource implements JsonSerializable
 
     /**
      * Identifier assigned to the flag for external use (outside the FHIR environment).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -203,7 +202,7 @@ class FHIRFlag extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The patient, location, group , organization , or practitioner this is about record this flag is associated with.
+     * The patient, location, group , organization , or practitioner, etc. this is about record this flag is associated with.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSubject()
@@ -212,7 +211,7 @@ class FHIRFlag extends FHIRDomainResource implements JsonSerializable
     }
 
     /**
-     * The patient, location, group , organization , or practitioner this is about record this flag is associated with.
+     * The patient, location, group , organization , or practitioner, etc. this is about record this flag is associated with.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
@@ -306,18 +305,18 @@ class FHIRFlag extends FHIRDomainResource implements JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->category) $json['category'] = $this->category->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->period) $json['period'] = $this->period->jsonSerialize();
-        if (null !== $this->subject) $json['subject'] = $this->subject->jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = $this->encounter->jsonSerialize();
-        if (null !== $this->author) $json['author'] = $this->author->jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->author) $json['author'] = json_encode($this->author);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         return $json;
     }
 

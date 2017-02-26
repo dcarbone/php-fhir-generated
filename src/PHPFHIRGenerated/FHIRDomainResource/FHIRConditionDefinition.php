@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,13 +61,12 @@
  */
 
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * A definition of a condition.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
-class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializable
+class FHIRConditionDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
      * An absolute URL that is used to identify this condition definition. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this condition definition is (or will be) published.
@@ -207,7 +206,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Formal identifier that is used to identify this condition definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[] $identifier
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
@@ -327,7 +326,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Contacts to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConditionDefinition\FHIRConditionDefinitionContact[] $contact
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConditionDefinition\FHIRConditionDefinitionContact $contact
      * @return $this
      */
     public function addContact($contact)
@@ -367,7 +366,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of condition definition definitions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $useContext
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $useContext
      * @return $this
      */
     public function addUseContext($useContext)
@@ -427,7 +426,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * The temporal Occurance of this condition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[] $occurance
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $occurance
      * @return $this
      */
     public function addOccurance($occurance)
@@ -447,7 +446,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Where on the body condition arises.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $findingSite
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $findingSite
      * @return $this
      */
     public function addFindingSite($findingSite)
@@ -467,7 +466,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Common morphological consequences of the condition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $morphology
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $morphology
      * @return $this
      */
     public function addMorphology($morphology)
@@ -487,7 +486,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Common causes of this condition, whether other conditions, substances, medications etc (still do the etc).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $causedBy
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $causedBy
      * @return $this
      */
     public function addCausedBy($causedBy)
@@ -507,7 +506,7 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
 
     /**
      * Common co-morbidities of this condition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference[] $associated
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $associated
      * @return $this
      */
     public function addAssociated($associated)
@@ -539,61 +538,61 @@ class FHIRConditionDefinition extends FHIRDomainResource implements JsonSerializ
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = $this->url->jsonSerialize();
+        if (null !== $this->url) $json['url'] = json_encode($this->url);
         if (0 < count($this->identifier)) {
-            $json['identifier'] = array();
+            $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = $identifier->jsonSerialize();
+                $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->version) $json['version'] = $this->version->jsonSerialize();
-        if (null !== $this->name) $json['name'] = $this->name->jsonSerialize();
-        if (null !== $this->status) $json['status'] = $this->status->jsonSerialize();
-        if (null !== $this->experimental) $json['experimental'] = $this->experimental->jsonSerialize();
-        if (null !== $this->publisher) $json['publisher'] = $this->publisher->jsonSerialize();
+        if (null !== $this->version) $json['version'] = json_encode($this->version);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
-            $json['contact'] = array();
+            $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = $contact->jsonSerialize();
+                $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = $this->date->jsonSerialize();
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (0 < count($this->useContext)) {
-            $json['useContext'] = array();
+            $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = $useContext->jsonSerialize();
+                $json['useContext'][] = json_encode($useContext);
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = $this->copyright->jsonSerialize();
-        if (null !== $this->severity) $json['severity'] = $this->severity->jsonSerialize();
+        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
         if (0 < count($this->occurance)) {
-            $json['occurance'] = array();
+            $json['occurance'] = [];
             foreach($this->occurance as $occurance) {
-                $json['occurance'][] = $occurance->jsonSerialize();
+                $json['occurance'][] = json_encode($occurance);
             }
         }
         if (0 < count($this->findingSite)) {
-            $json['findingSite'] = array();
+            $json['findingSite'] = [];
             foreach($this->findingSite as $findingSite) {
-                $json['findingSite'][] = $findingSite->jsonSerialize();
+                $json['findingSite'][] = json_encode($findingSite);
             }
         }
         if (0 < count($this->morphology)) {
-            $json['morphology'] = array();
+            $json['morphology'] = [];
             foreach($this->morphology as $morphology) {
-                $json['morphology'][] = $morphology->jsonSerialize();
+                $json['morphology'][] = json_encode($morphology);
             }
         }
         if (0 < count($this->causedBy)) {
-            $json['causedBy'] = array();
+            $json['causedBy'] = [];
             foreach($this->causedBy as $causedBy) {
-                $json['causedBy'][] = $causedBy->jsonSerialize();
+                $json['causedBy'][] = json_encode($causedBy);
             }
         }
         if (0 < count($this->associated)) {
-            $json['associated'] = array();
+            $json['associated'] = [];
             foreach($this->associated as $associated) {
-                $json['associated'][] = $associated->jsonSerialize();
+                $json['associated'][] = json_encode($associated);
             }
         }
         return $json;

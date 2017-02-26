@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 28th, 2016
+ * Class creation date: February 26th, 2017
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Oct 24, 2015 07:41+1100 for FHIR v1.0.2
+ *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,12 +61,11 @@
  */
 
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
-use PHPFHIRGenerated\JsonSerializable;
 
 /**
  * Significant health events and conditions for a person related to the patient relevant in the context of care for the patient.
  */
-class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements JsonSerializable
+class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.
@@ -82,9 +81,9 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements Js
 
     /**
      * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
-     * @var \PHPFHIRGenerated\FHIRAge
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public $onsetQuantity = null;
+    public $onsetAge = null;
 
     /**
      * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
@@ -157,21 +156,21 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements Js
 
     /**
      * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
-     * @return \PHPFHIRGenerated\FHIRAge
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public function getOnsetQuantity()
+    public function getOnsetAge()
     {
-        return $this->onsetQuantity;
+        return $this->onsetAge;
     }
 
     /**
      * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence. (choose any one of onset*, but only one)
-     * @param \PHPFHIRGenerated\FHIRAge $onsetQuantity
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return $this
      */
-    public function setOnsetQuantity($onsetQuantity)
+    public function setOnsetAge($onsetAge)
     {
-        $this->onsetQuantity = $onsetQuantity;
+        $this->onsetAge = $onsetAge;
         return $this;
     }
 
@@ -277,13 +276,13 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = $this->code->jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = $this->outcome->jsonSerialize();
-        if (null !== $this->onsetQuantity) $json['onsetQuantity'] = $this->onsetQuantity->jsonSerialize();
-        if (null !== $this->onsetRange) $json['onsetRange'] = $this->onsetRange->jsonSerialize();
-        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = $this->onsetPeriod->jsonSerialize();
-        if (null !== $this->onsetString) $json['onsetString'] = $this->onsetString->jsonSerialize();
-        if (null !== $this->note) $json['note'] = $this->note->jsonSerialize();
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->onsetAge) $json['onsetAge'] = json_encode($this->onsetAge);
+        if (null !== $this->onsetRange) $json['onsetRange'] = json_encode($this->onsetRange);
+        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = json_encode($this->onsetPeriod);
+        if (null !== $this->onsetString) $json['onsetString'] = json_encode($this->onsetString);
+        if (null !== $this->note) $json['note'] = json_encode($this->note);
         return $json;
     }
 
@@ -298,7 +297,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements Js
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->outcome) $this->outcome->xmlSerialize(true, $sxe->addChild('outcome'));
-        if (null !== $this->onsetQuantity) $this->onsetQuantity->xmlSerialize(true, $sxe->addChild('onsetQuantity'));
+        if (null !== $this->onsetAge) $this->onsetAge->xmlSerialize(true, $sxe->addChild('onsetAge'));
         if (null !== $this->onsetRange) $this->onsetRange->xmlSerialize(true, $sxe->addChild('onsetRange'));
         if (null !== $this->onsetPeriod) $this->onsetPeriod->xmlSerialize(true, $sxe->addChild('onsetPeriod'));
         if (null !== $this->onsetString) $this->onsetString->xmlSerialize(true, $sxe->addChild('onsetString'));
