@@ -1,7 +1,7 @@
 # php-fhir-generated
 Pre-generated classes from dcarbone/php-fhir
 
-# VERSION: DSTU3
+# VERSION: STU3
 
 - Homepage: http://hl7.org/fhir/2017Jan/index.html
 - Resources: http://hl7.org/fhir/2017Jan/resourcelist.html
