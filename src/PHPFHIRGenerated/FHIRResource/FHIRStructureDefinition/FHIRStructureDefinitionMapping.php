@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions, and constraints on resources and data types.
+ * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
  */
 class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -89,7 +89,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
      * Comments about this mapping, including version notes, issues, scope limitations, and other important notes for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $comments = null;
+    public $comment = null;
 
     /**
      * @var string
@@ -160,19 +160,19 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
      * Comments about this mapping, including version notes, issues, scope limitations, and other important notes for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getComments()
+    public function getComment()
     {
-        return $this->comments;
+        return $this->comment;
     }
 
     /**
      * Comments about this mapping, including version notes, issues, scope limitations, and other important notes for usage.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comments
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setComments($comments)
+    public function setComment($comment)
     {
-        $this->comments = $comments;
+        $this->comment = $comment;
         return $this;
     }
 
@@ -201,7 +201,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
         if (null !== $this->identity) $json['identity'] = json_encode($this->identity);
         if (null !== $this->uri) $json['uri'] = json_encode($this->uri);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->comments) $json['comments'] = json_encode($this->comments);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         return $json;
     }
 
@@ -217,7 +217,7 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement implements \Jso
         if (null !== $this->identity) $this->identity->xmlSerialize(true, $sxe->addChild('identity'));
         if (null !== $this->uri) $this->uri->xmlSerialize(true, $sxe->addChild('uri'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->comments) $this->comments->xmlSerialize(true, $sxe->addChild('comments'));
+        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

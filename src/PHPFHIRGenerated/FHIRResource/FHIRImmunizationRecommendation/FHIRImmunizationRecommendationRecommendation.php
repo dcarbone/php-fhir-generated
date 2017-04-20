@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,7 +80,13 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     public $vaccineCode = null;
 
     /**
-     * This indicates the next recommended dose number (e.g. dose 2 is the next recommended dose).
+     * The targeted disease for the recommendation.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $targetDisease = null;
+
+    /**
+     * The next recommended dose number (e.g. dose 2 is the next recommended dose).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $doseNumber = null;
@@ -161,7 +167,27 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * This indicates the next recommended dose number (e.g. dose 2 is the next recommended dose).
+     * The targeted disease for the recommendation.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getTargetDisease()
+    {
+        return $this->targetDisease;
+    }
+
+    /**
+     * The targeted disease for the recommendation.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $targetDisease
+     * @return $this
+     */
+    public function setTargetDisease($targetDisease)
+    {
+        $this->targetDisease = $targetDisease;
+        return $this;
+    }
+
+    /**
+     * The next recommended dose number (e.g. dose 2 is the next recommended dose).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getDoseNumber()
@@ -170,7 +196,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     }
 
     /**
-     * This indicates the next recommended dose number (e.g. dose 2 is the next recommended dose).
+     * The next recommended dose number (e.g. dose 2 is the next recommended dose).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $doseNumber
      * @return $this
      */
@@ -304,6 +330,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
         $json = parent::jsonSerialize();
         if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (null !== $this->vaccineCode) $json['vaccineCode'] = json_encode($this->vaccineCode);
+        if (null !== $this->targetDisease) $json['targetDisease'] = json_encode($this->targetDisease);
         if (null !== $this->doseNumber) $json['doseNumber'] = json_encode($this->doseNumber);
         if (null !== $this->forecastStatus) $json['forecastStatus'] = json_encode($this->forecastStatus);
         if (0 < count($this->dateCriterion)) {
@@ -339,6 +366,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->vaccineCode) $this->vaccineCode->xmlSerialize(true, $sxe->addChild('vaccineCode'));
+        if (null !== $this->targetDisease) $this->targetDisease->xmlSerialize(true, $sxe->addChild('targetDisease'));
         if (null !== $this->doseNumber) $this->doseNumber->xmlSerialize(true, $sxe->addChild('doseNumber'));
         if (null !== $this->forecastStatus) $this->forecastStatus->xmlSerialize(true, $sxe->addChild('forecastStatus'));
         if (0 < count($this->dateCriterion)) {

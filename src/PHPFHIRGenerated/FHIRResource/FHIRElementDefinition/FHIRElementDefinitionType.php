@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,13 +75,13 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     public $code = null;
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $profile = null;
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $targetProfile = null;
@@ -93,7 +93,7 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     public $aggregation = array();
 
     /**
-     * Whether this reference needs to be version specific or version independent, or whetehr either can be used.
+     * Whether this reference needs to be version specific or version independent, or whether either can be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReferenceVersionRules
      */
     public $versioning = null;
@@ -124,7 +124,7 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getProfile()
@@ -133,7 +133,7 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * Identifies a profile structure or implementation Guide that SHALL hold for the datatype this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $profile
      * @return $this
      */
@@ -144,7 +144,7 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getTargetProfile()
@@ -153,7 +153,7 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition in another profile. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
+     * Identifies a profile structure or implementation Guide that SHALL hold for the target of the reference this element refers to. Can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the resource SHALL conform to at least one profile defined in the implementation guide.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $targetProfile
      * @return $this
      */
@@ -184,7 +184,7 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Whether this reference needs to be version specific or version independent, or whetehr either can be used.
+     * Whether this reference needs to be version specific or version independent, or whether either can be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReferenceVersionRules
      */
     public function getVersioning()
@@ -193,7 +193,7 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Whether this reference needs to be version specific or version independent, or whetehr either can be used.
+     * Whether this reference needs to be version specific or version independent, or whether either can be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReferenceVersionRules $versioning
      * @return $this
      */

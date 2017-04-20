@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,7 +75,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * The eye for which the lens applies.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes
      */
     public $eye = null;
 
@@ -105,7 +105,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRVisionBase
      */
     public $base = null;
 
@@ -153,9 +153,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    public $note = array();
 
     /**
      * @var string
@@ -184,7 +184,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * The eye for which the lens applies.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes
      */
     public function getEye()
     {
@@ -193,7 +193,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * The eye for which the lens applies.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $eye
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRVisionEyes $eye
      * @return $this
      */
     public function setEye($eye)
@@ -284,7 +284,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRVisionBase
      */
     public function getBase()
     {
@@ -293,7 +293,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * The relative base, or reference lens edge, for the prism.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $base
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRVisionBase $base
      * @return $this
      */
     public function setBase($base)
@@ -444,7 +444,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -453,12 +453,12 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
 
     /**
      * Notes for special requirements such as coatings and lens materials.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $note
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function setNote($note)
+    public function addNote($note)
     {
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
@@ -498,7 +498,12 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
         if (null !== $this->color) $json['color'] = json_encode($this->color);
         if (null !== $this->brand) $json['brand'] = json_encode($this->brand);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
+            }
+        }
         return $json;
     }
 
@@ -525,7 +530,11 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement implements \Jso
         if (null !== $this->duration) $this->duration->xmlSerialize(true, $sxe->addChild('duration'));
         if (null !== $this->color) $this->color->xmlSerialize(true, $sxe->addChild('color'));
         if (null !== $this->brand) $this->brand->xmlSerialize(true, $sxe->addChild('brand'));
-        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

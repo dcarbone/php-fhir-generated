@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -81,7 +81,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -105,25 +105,31 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     public $status = null;
 
     /**
-     * A flag to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * The date  (and optionally time) when the measure was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.
+     * The date  (and optionally time) when the measure was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the measure from the consumer's perspective.
+     * The name of the individual or organization that published the measure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $publisher = null;
+
+    /**
+     * A free text natural language description of the measure from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * Explains why this measure is needed and why it has been designed as it has.
+     * Explaination of why this measure is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -135,37 +141,37 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     public $usage = null;
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
-     * The period during which the measure content was or is planned to be effective.
+     * The period during which the measure content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate measure instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the measure is intended to be used.
+     * A legal or geographic region in which the measure is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Clinical topics related to the content of the measure.
+     * Descriptive topics related to the content of the measure. Topics provide a high-level categorization of the type of the measure that can be useful for filtering and searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = array();
@@ -175,12 +181,6 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
     public $contributor = array();
-
-    /**
-     * The name of the individual or organization that published the measure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
@@ -207,26 +207,26 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     public $library = array();
 
     /**
-     * A disclaimer for the use of the measure.
+     * Notices and disclaimers regarding the use of the measure, or related to intellectual property (such as code systems) referenced by the measure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $disclaimer = null;
 
     /**
-     * The measure scoring type, e.g. proportion, CV.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeasureScoring
+     * Indicates how the calculation is performed for the measure, including proportion, ratio, continuous variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $scoring = null;
 
     /**
      * If this is a composite measure, the scoring method used to combine the component measures to determine the composite score.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCompositeMeasureScoring
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $compositeScoring = null;
 
     /**
-     * The measure type, e.g. process, outcome.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeasureType[]
+     * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $type = array();
 
@@ -237,34 +237,34 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     public $riskAdjustment = null;
 
     /**
-     * A description of the rate aggregation for the measure.
+     * Describes how to combine the information calculated, based on logic in each of several populations, into one summarized result.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $rateAggregation = null;
 
     /**
-     * The rationale for the measure.
+     * Provides a succint statement of the need for the measure. Usually includes statements pertaining to importance criterion: impact, gap in care, and evidence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $rationale = null;
 
     /**
-     * The clinical recommendation statement for the measure.
+     * Provides a summary of relevant clinical guidelines or other clinical recommendations supporting the measure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $clinicalRecommendationStatement = null;
 
     /**
-     * Improvement notation for the measure, e.g. higher score indicates better quality.
+     * Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is whthin a range).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $improvementNotation = null;
 
     /**
-     * A narrative description of the complete measure calculation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * Provides a description of an individual term used within the measure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown[]
      */
-    public $definition = null;
+    public $definition = array();
 
     /**
      * Additional guidance for the measure including how it can be used in a clinical context, and the intent of the measure.
@@ -296,7 +296,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'Measure';
 
     /**
-     * An absolute URL that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -305,7 +305,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URL that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -336,7 +336,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -345,7 +345,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -416,7 +416,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -425,7 +425,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -436,7 +436,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the measure was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.
+     * The date  (and optionally time) when the measure was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -445,7 +445,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the measure was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.
+     * The date  (and optionally time) when the measure was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -456,7 +456,27 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A free text natural language description of the measure from the consumer's perspective.
+     * The name of the individual or organization that published the measure.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPublisher()
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * The name of the individual or organization that published the measure.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
+     * @return $this
+     */
+    public function setPublisher($publisher)
+    {
+        $this->publisher = $publisher;
+        return $this;
+    }
+
+    /**
+     * A free text natural language description of the measure from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -465,7 +485,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A free text natural language description of the measure from the consumer's perspective.
+     * A free text natural language description of the measure from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -476,7 +496,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this measure is needed and why it has been designed as it has.
+     * Explaination of why this measure is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -485,7 +505,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this measure is needed and why it has been designed as it has.
+     * Explaination of why this measure is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -516,7 +536,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
@@ -525,7 +545,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
@@ -536,7 +556,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
@@ -545,7 +565,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
@@ -556,7 +576,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The period during which the measure content was or is planned to be effective.
+     * The period during which the measure content was or is planned to be in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -565,7 +585,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The period during which the measure content was or is planned to be effective.
+     * The period during which the measure content was or is planned to be in active use.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -576,7 +596,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate measure instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -585,7 +605,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate measure instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -596,7 +616,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the measure is intended to be used.
+     * A legal or geographic region in which the measure is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -605,7 +625,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the measure is intended to be used.
+     * A legal or geographic region in which the measure is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -616,7 +636,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Clinical topics related to the content of the measure.
+     * Descriptive topics related to the content of the measure. Topics provide a high-level categorization of the type of the measure that can be useful for filtering and searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
@@ -625,7 +645,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Clinical topics related to the content of the measure.
+     * Descriptive topics related to the content of the measure. Topics provide a high-level categorization of the type of the measure that can be useful for filtering and searching.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
@@ -652,26 +672,6 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     public function addContributor($contributor)
     {
         $this->contributor[] = $contributor;
-        return $this;
-    }
-
-    /**
-     * The name of the individual or organization that published the measure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublisher()
-    {
-        return $this->publisher;
-    }
-
-    /**
-     * The name of the individual or organization that published the measure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
-     * @return $this
-     */
-    public function setPublisher($publisher)
-    {
-        $this->publisher = $publisher;
         return $this;
     }
 
@@ -756,7 +756,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A disclaimer for the use of the measure.
+     * Notices and disclaimers regarding the use of the measure, or related to intellectual property (such as code systems) referenced by the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDisclaimer()
@@ -765,7 +765,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A disclaimer for the use of the measure.
+     * Notices and disclaimers regarding the use of the measure, or related to intellectual property (such as code systems) referenced by the measure.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $disclaimer
      * @return $this
      */
@@ -776,8 +776,8 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The measure scoring type, e.g. proportion, CV.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasureScoring
+     * Indicates how the calculation is performed for the measure, including proportion, ratio, continuous variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getScoring()
     {
@@ -785,8 +785,8 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The measure scoring type, e.g. proportion, CV.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasureScoring $scoring
+     * Indicates how the calculation is performed for the measure, including proportion, ratio, continuous variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $scoring
      * @return $this
      */
     public function setScoring($scoring)
@@ -797,7 +797,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If this is a composite measure, the scoring method used to combine the component measures to determine the composite score.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCompositeMeasureScoring
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getCompositeScoring()
     {
@@ -806,7 +806,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * If this is a composite measure, the scoring method used to combine the component measures to determine the composite score.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCompositeMeasureScoring $compositeScoring
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $compositeScoring
      * @return $this
      */
     public function setCompositeScoring($compositeScoring)
@@ -816,8 +816,8 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The measure type, e.g. process, outcome.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasureType[]
+     * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -825,8 +825,8 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The measure type, e.g. process, outcome.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasureType $type
+     * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
     public function addType($type)
@@ -856,7 +856,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A description of the rate aggregation for the measure.
+     * Describes how to combine the information calculated, based on logic in each of several populations, into one summarized result.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getRateAggregation()
@@ -865,7 +865,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A description of the rate aggregation for the measure.
+     * Describes how to combine the information calculated, based on logic in each of several populations, into one summarized result.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $rateAggregation
      * @return $this
      */
@@ -876,7 +876,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The rationale for the measure.
+     * Provides a succint statement of the need for the measure. Usually includes statements pertaining to importance criterion: impact, gap in care, and evidence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getRationale()
@@ -885,7 +885,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The rationale for the measure.
+     * Provides a succint statement of the need for the measure. Usually includes statements pertaining to importance criterion: impact, gap in care, and evidence.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $rationale
      * @return $this
      */
@@ -896,7 +896,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The clinical recommendation statement for the measure.
+     * Provides a summary of relevant clinical guidelines or other clinical recommendations supporting the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getClinicalRecommendationStatement()
@@ -905,7 +905,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The clinical recommendation statement for the measure.
+     * Provides a summary of relevant clinical guidelines or other clinical recommendations supporting the measure.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $clinicalRecommendationStatement
      * @return $this
      */
@@ -916,7 +916,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Improvement notation for the measure, e.g. higher score indicates better quality.
+     * Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is whthin a range).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getImprovementNotation()
@@ -925,7 +925,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Improvement notation for the measure, e.g. higher score indicates better quality.
+     * Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is whthin a range).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $improvementNotation
      * @return $this
      */
@@ -936,8 +936,8 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A narrative description of the complete measure calculation.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * Provides a description of an individual term used within the measure.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown[]
      */
     public function getDefinition()
     {
@@ -945,13 +945,13 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A narrative description of the complete measure calculation.
+     * Provides a description of an individual term used within the measure.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $definition
      * @return $this
      */
-    public function setDefinition($definition)
+    public function addDefinition($definition)
     {
-        $this->definition = $definition;
+        $this->definition[] = $definition;
         return $this;
     }
 
@@ -1071,6 +1071,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
         if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
         if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
@@ -1101,7 +1102,6 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
                 $json['contributor'][] = json_encode($contributor);
             }
         }
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
@@ -1135,7 +1135,12 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->rationale) $json['rationale'] = json_encode($this->rationale);
         if (null !== $this->clinicalRecommendationStatement) $json['clinicalRecommendationStatement'] = json_encode($this->clinicalRecommendationStatement);
         if (null !== $this->improvementNotation) $json['improvementNotation'] = json_encode($this->improvementNotation);
-        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
+        if (0 < count($this->definition)) {
+            $json['definition'] = [];
+            foreach($this->definition as $definition) {
+                $json['definition'][] = json_encode($definition);
+            }
+        }
         if (null !== $this->guidance) $json['guidance'] = json_encode($this->guidance);
         if (null !== $this->set) $json['set'] = json_encode($this->set);
         if (0 < count($this->group)) {
@@ -1174,6 +1179,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
@@ -1200,7 +1206,6 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
                 $contributor->xmlSerialize(true, $sxe->addChild('contributor'));
             }
         }
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
@@ -1230,7 +1235,11 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->rationale) $this->rationale->xmlSerialize(true, $sxe->addChild('rationale'));
         if (null !== $this->clinicalRecommendationStatement) $this->clinicalRecommendationStatement->xmlSerialize(true, $sxe->addChild('clinicalRecommendationStatement'));
         if (null !== $this->improvementNotation) $this->improvementNotation->xmlSerialize(true, $sxe->addChild('improvementNotation'));
-        if (null !== $this->definition) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
+        if (0 < count($this->definition)) {
+            foreach($this->definition as $definition) {
+                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+            }
+        }
         if (null !== $this->guidance) $this->guidance->xmlSerialize(true, $sxe->addChild('guidance'));
         if (null !== $this->set) $this->set->xmlSerialize(true, $sxe->addChild('set'));
         if (0 < count($this->group)) {

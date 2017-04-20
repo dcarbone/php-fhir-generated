@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -76,7 +76,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContractResourceStatusCodes
      */
     public $status = null;
 
@@ -139,6 +139,24 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $actionReason = array();
+
+    /**
+     * The type of decision made by a grantor with respect to an offer made by a grantee.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $decisionType = null;
+
+    /**
+     * The minimal content derived from the basal information source at a specific stage in its lifecycle.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $contentDerivative = null;
+
+    /**
+     * A set of security labels that define which resources are controlled by this consent. If more than one label is specified, all resources must have all the specified labels.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    public $securityLabel = array();
 
     /**
      * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
@@ -221,7 +239,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContractResourceStatusCodes
      */
     public function getStatus()
     {
@@ -230,7 +248,7 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContractResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -436,6 +454,66 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     public function addActionReason($actionReason)
     {
         $this->actionReason[] = $actionReason;
+        return $this;
+    }
+
+    /**
+     * The type of decision made by a grantor with respect to an offer made by a grantee.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDecisionType()
+    {
+        return $this->decisionType;
+    }
+
+    /**
+     * The type of decision made by a grantor with respect to an offer made by a grantee.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $decisionType
+     * @return $this
+     */
+    public function setDecisionType($decisionType)
+    {
+        $this->decisionType = $decisionType;
+        return $this;
+    }
+
+    /**
+     * The minimal content derived from the basal information source at a specific stage in its lifecycle.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getContentDerivative()
+    {
+        return $this->contentDerivative;
+    }
+
+    /**
+     * The minimal content derived from the basal information source at a specific stage in its lifecycle.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $contentDerivative
+     * @return $this
+     */
+    public function setContentDerivative($contentDerivative)
+    {
+        $this->contentDerivative = $contentDerivative;
+        return $this;
+    }
+
+    /**
+     * A set of security labels that define which resources are controlled by this consent. If more than one label is specified, all resources must have all the specified labels.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    public function getSecurityLabel()
+    {
+        return $this->securityLabel;
+    }
+
+    /**
+     * A set of security labels that define which resources are controlled by this consent. If more than one label is specified, all resources must have all the specified labels.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $securityLabel
+     * @return $this
+     */
+    public function addSecurityLabel($securityLabel)
+    {
+        $this->securityLabel[] = $securityLabel;
         return $this;
     }
 
@@ -689,6 +767,14 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
                 $json['actionReason'][] = json_encode($actionReason);
             }
         }
+        if (null !== $this->decisionType) $json['decisionType'] = json_encode($this->decisionType);
+        if (null !== $this->contentDerivative) $json['contentDerivative'] = json_encode($this->contentDerivative);
+        if (0 < count($this->securityLabel)) {
+            $json['securityLabel'] = [];
+            foreach($this->securityLabel as $securityLabel) {
+                $json['securityLabel'][] = json_encode($securityLabel);
+            }
+        }
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
@@ -783,6 +869,13 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->actionReason)) {
             foreach($this->actionReason as $actionReason) {
                 $actionReason->xmlSerialize(true, $sxe->addChild('actionReason'));
+            }
+        }
+        if (null !== $this->decisionType) $this->decisionType->xmlSerialize(true, $sxe->addChild('decisionType'));
+        if (null !== $this->contentDerivative) $this->contentDerivative->xmlSerialize(true, $sxe->addChild('contentDerivative'));
+        if (0 < count($this->securityLabel)) {
+            foreach($this->securityLabel as $securityLabel) {
+                $securityLabel->xmlSerialize(true, $sxe->addChild('securityLabel'));
             }
         }
         if (0 < count($this->agent)) {

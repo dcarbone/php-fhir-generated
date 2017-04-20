@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -116,12 +116,6 @@ Work addresses are not typically entered in this property as they are usually ro
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
     public $photo = array();
-
-    /**
-     * The list of roles/organizations that the practitioner is associated with.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerRole[]
-     */
-    public $role = array();
 
     /**
      * Qualifications obtained by training and certification.
@@ -303,26 +297,6 @@ Work addresses are not typically entered in this property as they are usually ro
     }
 
     /**
-     * The list of roles/organizations that the practitioner is associated with.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerRole[]
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * The list of roles/organizations that the practitioner is associated with.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerRole $role
-     * @return $this
-     */
-    public function addRole($role)
-    {
-        $this->role[] = $role;
-        return $this;
-    }
-
-    /**
      * Qualifications obtained by training and certification.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRPractitioner\FHIRPractitionerQualification[]
      */
@@ -418,12 +392,6 @@ Work addresses are not typically entered in this property as they are usually ro
                 $json['photo'][] = json_encode($photo);
             }
         }
-        if (0 < count($this->role)) {
-            $json['role'] = [];
-            foreach($this->role as $role) {
-                $json['role'][] = json_encode($role);
-            }
-        }
         if (0 < count($this->qualification)) {
             $json['qualification'] = [];
             foreach($this->qualification as $qualification) {
@@ -474,11 +442,6 @@ Work addresses are not typically entered in this property as they are usually ro
         if (0 < count($this->photo)) {
             foreach($this->photo as $photo) {
                 $photo->xmlSerialize(true, $sxe->addChild('photo'));
-            }
-        }
-        if (0 < count($this->role)) {
-            foreach($this->role as $role) {
-                $role->xmlSerialize(true, $sxe->addChild('role'));
             }
         }
         if (0 < count($this->qualification)) {

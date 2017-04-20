@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -93,7 +93,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
     public $specialty = array();
 
     /**
-     * The style of appointment or patient that has been booked in the slot (not service type).
+     * The style of appointment or patient that may be booked in the slot (not service type).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $appointmentType = null;
@@ -220,7 +220,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The style of appointment or patient that has been booked in the slot (not service type).
+     * The style of appointment or patient that may be booked in the slot (not service type).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getAppointmentType()
@@ -229,7 +229,7 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The style of appointment or patient that has been booked in the slot (not service type).
+     * The style of appointment or patient that may be booked in the slot (not service type).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $appointmentType
      * @return $this
      */

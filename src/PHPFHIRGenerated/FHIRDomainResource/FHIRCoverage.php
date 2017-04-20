@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * Financial instrument which may be used to pay for or reimburse health care products and services.
+ * Financial instrument which may be used to reimburse or pay for health care products and services.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
@@ -76,7 +76,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
@@ -130,9 +130,9 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGroup
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGrouping
      */
-    public $group = null;
+    public $grouping = null;
 
     /**
      * A unique identifier for a dependent under the coverage.
@@ -191,7 +191,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -200,7 +200,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -371,21 +371,21 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGroup
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGrouping
      */
-    public function getGroup()
+    public function getGrouping()
     {
-        return $this->group;
+        return $this->grouping;
     }
 
     /**
      * A suite of underwrite specific classifiers, for example may be used to identify a class of coverage or employer group, Policy, Plan.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGroup $group
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRCoverage\FHIRCoverageGrouping $grouping
      * @return $this
      */
-    public function setGroup($group)
+    public function setGrouping($grouping)
     {
-        $this->group = $group;
+        $this->grouping = $grouping;
         return $this;
     }
 
@@ -532,7 +532,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
                 $json['payor'][] = json_encode($payor);
             }
         }
-        if (null !== $this->group) $json['group'] = json_encode($this->group);
+        if (null !== $this->grouping) $json['grouping'] = json_encode($this->grouping);
         if (null !== $this->dependent) $json['dependent'] = json_encode($this->dependent);
         if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
         if (null !== $this->order) $json['order'] = json_encode($this->order);
@@ -573,7 +573,7 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
                 $payor->xmlSerialize(true, $sxe->addChild('payor'));
             }
         }
-        if (null !== $this->group) $this->group->xmlSerialize(true, $sxe->addChild('group'));
+        if (null !== $this->grouping) $this->grouping->xmlSerialize(true, $sxe->addChild('grouping'));
         if (null !== $this->dependent) $this->dependent->xmlSerialize(true, $sxe->addChild('dependent'));
         if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
         if (null !== $this->order) $this->order->xmlSerialize(true, $sxe->addChild('order'));

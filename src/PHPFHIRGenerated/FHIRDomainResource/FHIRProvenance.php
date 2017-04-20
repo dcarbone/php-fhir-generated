@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -87,6 +87,18 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
     public $recorded = null;
 
     /**
+     * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public $policy = array();
+
+    /**
+     * Where the activity occurred, if relevant.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $location = null;
+
+    /**
      * The reason that the activity was taking place.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
@@ -97,18 +109,6 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $activity = null;
-
-    /**
-     * Where the activity occurred, if relevant.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $location = null;
-
-    /**
-     * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
-     */
-    public $policy = array();
 
     /**
      * An actor taking a role in an activity  for which it can be assigned some degree of responsibility for the activity taking place.
@@ -194,6 +194,46 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public function getPolicy()
+    {
+        return $this->policy;
+    }
+
+    /**
+     * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $policy
+     * @return $this
+     */
+    public function addPolicy($policy)
+    {
+        $this->policy[] = $policy;
+        return $this;
+    }
+
+    /**
+     * Where the activity occurred, if relevant.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * Where the activity occurred, if relevant.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $location
+     * @return $this
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
+        return $this;
+    }
+
+    /**
      * The reason that the activity was taking place.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
@@ -230,46 +270,6 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
     public function setActivity($activity)
     {
         $this->activity = $activity;
-        return $this;
-    }
-
-    /**
-     * Where the activity occurred, if relevant.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-    /**
-     * Where the activity occurred, if relevant.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $location
-     * @return $this
-     */
-    public function setLocation($location)
-    {
-        $this->location = $location;
-        return $this;
-    }
-
-    /**
-     * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
-     */
-    public function getPolicy()
-    {
-        return $this->policy;
-    }
-
-    /**
-     * Policy or plan the activity was defined by. Typically, a single activity may have multiple applicable policy documents, such as patient consent, guarantor funding, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $policy
-     * @return $this
-     */
-    public function addPolicy($policy)
-    {
-        $this->policy[] = $policy;
         return $this;
     }
 
@@ -364,6 +364,13 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (null !== $this->recorded) $json['recorded'] = json_encode($this->recorded);
+        if (0 < count($this->policy)) {
+            $json['policy'] = [];
+            foreach($this->policy as $policy) {
+                $json['policy'][] = json_encode($policy);
+            }
+        }
+        if (null !== $this->location) $json['location'] = json_encode($this->location);
         if (0 < count($this->reason)) {
             $json['reason'] = [];
             foreach($this->reason as $reason) {
@@ -371,13 +378,6 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->activity) $json['activity'] = json_encode($this->activity);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (0 < count($this->policy)) {
-            $json['policy'] = [];
-            foreach($this->policy as $policy) {
-                $json['policy'][] = json_encode($policy);
-            }
-        }
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
@@ -415,18 +415,18 @@ class FHIRProvenance extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (null !== $this->recorded) $this->recorded->xmlSerialize(true, $sxe->addChild('recorded'));
+        if (0 < count($this->policy)) {
+            foreach($this->policy as $policy) {
+                $policy->xmlSerialize(true, $sxe->addChild('policy'));
+            }
+        }
+        if (null !== $this->location) $this->location->xmlSerialize(true, $sxe->addChild('location'));
         if (0 < count($this->reason)) {
             foreach($this->reason as $reason) {
                 $reason->xmlSerialize(true, $sxe->addChild('reason'));
             }
         }
         if (null !== $this->activity) $this->activity->xmlSerialize(true, $sxe->addChild('activity'));
-        if (null !== $this->location) $this->location->xmlSerialize(true, $sxe->addChild('location'));
-        if (0 < count($this->policy)) {
-            foreach($this->policy as $policy) {
-                $policy->xmlSerialize(true, $sxe->addChild('policy'));
-            }
-        }
         if (0 < count($this->agent)) {
             foreach($this->agent as $agent) {
                 $agent->xmlSerialize(true, $sxe->addChild('agent'));

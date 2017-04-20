@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -488,6 +488,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'ActivityDefinition',
         'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRActivityDefinition',
       ),
+      'AdverseEvent' => 
+      array (
+        'setter' => 'setAdverseEvent',
+        'element' => 'AdverseEvent',
+        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRAdverseEvent',
+      ),
       'AllergyIntolerance' => 
       array (
         'setter' => 'setAllergyIntolerance',
@@ -553,6 +559,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setCareTeam',
         'element' => 'CareTeam',
         'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRCareTeam',
+      ),
+      'ChargeItem' => 
+      array (
+        'setter' => 'setChargeItem',
+        'element' => 'ChargeItem',
+        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRChargeItem',
       ),
       'Claim' => 
       array (
@@ -662,11 +674,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'DeviceMetric',
         'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRDeviceMetric',
       ),
-      'DeviceUseRequest' => 
+      'DeviceRequest' => 
       array (
-        'setter' => 'setDeviceUseRequest',
-        'element' => 'DeviceUseRequest',
-        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRDeviceUseRequest',
+        'setter' => 'setDeviceRequest',
+        'element' => 'DeviceRequest',
+        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRDeviceRequest',
       ),
       'DeviceUseStatement' => 
       array (
@@ -679,12 +691,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setDiagnosticReport',
         'element' => 'DiagnosticReport',
         'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRDiagnosticReport',
-      ),
-      'DiagnosticRequest' => 
-      array (
-        'setter' => 'setDiagnosticRequest',
-        'element' => 'DiagnosticRequest',
-        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRDiagnosticRequest',
       ),
       'DocumentManifest' => 
       array (
@@ -769,6 +775,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setGoal',
         'element' => 'Goal',
         'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRGoal',
+      ),
+      'GraphDefinition' => 
+      array (
+        'setter' => 'setGraphDefinition',
+        'element' => 'GraphDefinition',
+        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRGraphDefinition',
       ),
       'Group' => 
       array (
@@ -908,11 +920,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'NamingSystem',
         'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRNamingSystem',
       ),
-      'NutritionRequest' => 
+      'NutritionOrder' => 
       array (
-        'setter' => 'setNutritionRequest',
-        'element' => 'NutritionRequest',
-        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRNutritionRequest',
+        'setter' => 'setNutritionOrder',
+        'element' => 'NutritionOrder',
+        'type' => 'PHPFHIRGenerated\\FHIRDomainResource\\FHIRNutritionOrder',
       ),
       'Observation' => 
       array (
@@ -2902,6 +2914,134 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'Dosage' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRDosage',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'sequence' => 
+      array (
+        'setter' => 'setSequence',
+        'element' => 'integer',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
+      ),
+      'text' => 
+      array (
+        'setter' => 'setText',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'additionalInstruction' => 
+      array (
+        'setter' => 'addAdditionalInstruction',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'patientInstruction' => 
+      array (
+        'setter' => 'setPatientInstruction',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'timing' => 
+      array (
+        'setter' => 'setTiming',
+        'element' => 'Timing',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
+      ),
+      'asNeededBoolean' => 
+      array (
+        'setter' => 'setAsNeededBoolean',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'asNeededCodeableConcept' => 
+      array (
+        'setter' => 'setAsNeededCodeableConcept',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'site' => 
+      array (
+        'setter' => 'setSite',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'route' => 
+      array (
+        'setter' => 'setRoute',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'method' => 
+      array (
+        'setter' => 'setMethod',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'doseRange' => 
+      array (
+        'setter' => 'setDoseRange',
+        'element' => 'Range',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
+      ),
+      'doseQuantity' => 
+      array (
+        'setter' => 'setDoseQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'maxDosePerPeriod' => 
+      array (
+        'setter' => 'setMaxDosePerPeriod',
+        'element' => 'Ratio',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRatio',
+      ),
+      'maxDosePerAdministration' => 
+      array (
+        'setter' => 'setMaxDosePerAdministration',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'maxDosePerLifetime' => 
+      array (
+        'setter' => 'setMaxDosePerLifetime',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'rateRatio' => 
+      array (
+        'setter' => 'setRateRatio',
+        'element' => 'Ratio',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRatio',
+      ),
+      'rateRange' => 
+      array (
+        'setter' => 'setRateRange',
+        'element' => 'Range',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
+      ),
+      'rateQuantity' => 
+      array (
+        'setter' => 'setRateQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+    ),
+  ),
   'RelatedArtifact' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRRelatedArtifact',
@@ -3398,7 +3538,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'when' => 
       array (
-        'setter' => 'setWhen',
+        'setter' => 'addWhen',
         'element' => 'EventTiming',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIREventTiming',
       ),
@@ -3528,9 +3668,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'markdown',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
       ),
-      'comments' => 
+      'comment' => 
       array (
-        'setter' => 'setComments',
+        'setter' => 'setComment',
         'element' => 'markdown',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
       ),
@@ -3549,8 +3689,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'min' => 
       array (
         'setter' => 'setMin',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
+        'element' => 'unsignedInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
       ),
       'max' => 
       array (
@@ -3809,6 +3949,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setMeaningWhenMissing',
         'element' => 'markdown',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
+      ),
+      'orderMeaning' => 
+      array (
+        'setter' => 'setOrderMeaning',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'fixedBase64Binary' => 
       array (
@@ -4528,6 +4674,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
+      'comment' => 
+      array (
+        'setter' => 'setComment',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
     ),
   ),
   'ElementDefinition.Base' => 
@@ -4557,8 +4709,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'min' => 
       array (
         'setter' => 'setMin',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
+        'element' => 'unsignedInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
       ),
       'max' => 
       array (
@@ -4893,8 +5045,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'discriminator' => 
       array (
         'setter' => 'addDiscriminator',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'element' => 'ElementDefinition.Discriminator',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRElementDefinition\\FHIRElementDefinitionDiscriminator',
       ),
       'description' => 
       array (
@@ -4957,6 +5109,38 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setValueSetReference',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'ElementDefinition.Discriminator' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRElementDefinition\\FHIRElementDefinitionDiscriminator',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'DiscriminatorType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDiscriminatorType',
+      ),
+      'path' => 
+      array (
+        'setter' => 'setPath',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
     ),
   ),
@@ -5116,9 +5300,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'DosageInstruction' => 
+  'DiscriminatorType' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRDosageInstruction',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRDiscriminatorType',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -5134,107 +5318,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string-primitive',
         'type' => 'string',
       ),
-      'sequence' => 
+      'value' => 
       array (
-        'setter' => 'setSequence',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
-      ),
-      'text' => 
-      array (
-        'setter' => 'setText',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-      'additionalInstructions' => 
-      array (
-        'setter' => 'addAdditionalInstructions',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'timing' => 
-      array (
-        'setter' => 'setTiming',
-        'element' => 'Timing',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
-      ),
-      'asNeededBoolean' => 
-      array (
-        'setter' => 'setAsNeededBoolean',
-        'element' => 'boolean',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
-      ),
-      'asNeededCodeableConcept' => 
-      array (
-        'setter' => 'setAsNeededCodeableConcept',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'site' => 
-      array (
-        'setter' => 'setSite',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'route' => 
-      array (
-        'setter' => 'setRoute',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'method' => 
-      array (
-        'setter' => 'setMethod',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'doseRange' => 
-      array (
-        'setter' => 'setDoseRange',
-        'element' => 'Range',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
-      ),
-      'doseQuantity' => 
-      array (
-        'setter' => 'setDoseQuantity',
-        'element' => 'Quantity',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
-      ),
-      'maxDosePerPeriod' => 
-      array (
-        'setter' => 'setMaxDosePerPeriod',
-        'element' => 'Ratio',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRatio',
-      ),
-      'maxDosePerAdministration' => 
-      array (
-        'setter' => 'setMaxDosePerAdministration',
-        'element' => 'Quantity',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
-      ),
-      'maxDosePerLifetime' => 
-      array (
-        'setter' => 'setMaxDosePerLifetime',
-        'element' => 'Quantity',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
-      ),
-      'rateRatio' => 
-      array (
-        'setter' => 'setRateRatio',
-        'element' => 'Ratio',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRatio',
-      ),
-      'rateRange' => 
-      array (
-        'setter' => 'setRateRange',
-        'element' => 'Range',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
-      ),
-      'rateQuantity' => 
-      array (
-        'setter' => 'setRateQuantity',
-        'element' => 'Quantity',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+        'setter' => 'setValue',
+        'element' => 'DiscriminatorType-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -5630,11 +5718,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'name' => 
+      'status' => 
       array (
-        'setter' => 'setName',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'setter' => 'setStatus',
+        'element' => 'AccountStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAccountStatus',
       ),
       'type' => 
       array (
@@ -5642,23 +5730,29 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'status' => 
+      'name' => 
       array (
-        'setter' => 'setStatus',
-        'element' => 'AccountStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAccountStatus',
+        'setter' => 'setName',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'subject' => 
+      array (
+        'setter' => 'setSubject',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'period' => 
+      array (
+        'setter' => 'setPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
       'active' => 
       array (
         'setter' => 'setActive',
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
-      ),
-      'currency' => 
-      array (
-        'setter' => 'setCurrency',
-        'element' => 'Coding',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
       'balance' => 
       array (
@@ -5669,20 +5763,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'coverage' => 
       array (
         'setter' => 'addCoverage',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'coveragePeriod' => 
-      array (
-        'setter' => 'setCoveragePeriod',
-        'element' => 'Period',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
-      ),
-      'subject' => 
-      array (
-        'setter' => 'setSubject',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'element' => 'Account.Coverage',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRAccount\\FHIRAccountCoverage',
       ),
       'owner' => 
       array (
@@ -5701,6 +5783,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addGuarantor',
         'element' => 'Account.Guarantor',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRAccount\\FHIRAccountGuarantor',
+      ),
+    ),
+  ),
+  'Account.Coverage' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRAccount\\FHIRAccountCoverage',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'coverage' => 
+      array (
+        'setter' => 'setCoverage',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'priority' => 
+      array (
+        'setter' => 'setPriority',
+        'element' => 'positiveInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPositiveInt',
       ),
     ),
   ),
@@ -5876,6 +5996,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
+      'publisher' => 
+      array (
+        'setter' => 'setPublisher',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
       'description' => 
       array (
         'setter' => 'setDescription',
@@ -5936,12 +6062,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Contributor',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContributor',
       ),
-      'publisher' => 
-      array (
-        'setter' => 'setPublisher',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
       'contact' => 
       array (
         'setter' => 'addContact',
@@ -5966,21 +6086,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'category' => 
+      'kind' => 
       array (
-        'setter' => 'setCategory',
-        'element' => 'ActivityDefinitionCategory',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActivityDefinitionCategory',
+        'setter' => 'setKind',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'code' => 
       array (
         'setter' => 'setCode',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'timingCodeableConcept' => 
-      array (
-        'setter' => 'setTimingCodeableConcept',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -5990,17 +6104,35 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Timing',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
       ),
+      'timingDateTime' => 
+      array (
+        'setter' => 'setTimingDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'timingPeriod' => 
+      array (
+        'setter' => 'setTimingPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+      'timingRange' => 
+      array (
+        'setter' => 'setTimingRange',
+        'element' => 'Range',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
+      ),
       'location' => 
       array (
         'setter' => 'setLocation',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'participantType' => 
+      'participant' => 
       array (
-        'setter' => 'addParticipantType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'setter' => 'addParticipant',
+        'element' => 'ActivityDefinition.Participant',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRActivityDefinition\\FHIRActivityDefinitionParticipant',
       ),
       'productReference' => 
       array (
@@ -6020,11 +6152,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Quantity',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
       ),
-      'dosageInstruction' => 
+      'dosage' => 
       array (
-        'setter' => 'addDosageInstruction',
-        'element' => 'DosageInstruction',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosageInstruction',
+        'setter' => 'addDosage',
+        'element' => 'Dosage',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosage',
       ),
       'bodySite' => 
       array (
@@ -6043,6 +6175,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addDynamicValue',
         'element' => 'ActivityDefinition.DynamicValue',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRActivityDefinition\\FHIRActivityDefinitionDynamicValue',
+      ),
+    ),
+  ),
+  'ActivityDefinition.Participant' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRActivityDefinition\\FHIRActivityDefinitionParticipant',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'ActionParticipantType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionParticipantType',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
     ),
   ),
@@ -6096,9 +6266,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ActivityDefinitionCategory' => 
+  'ActionParticipantType' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActivityDefinitionCategory',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionParticipantType',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -6117,7 +6287,33 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'ActivityDefinitionCategory-list',
+        'element' => 'ActionParticipantType-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'ResourceType' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ResourceType-list',
         'type' => 'string',
       ),
     ),
@@ -6440,6 +6636,278 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'AdverseEvent' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRAdverseEvent',
+    'extendedElementName' => 'DomainResource',
+    'properties' => 
+    array (
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+      ),
+      'meta' => 
+      array (
+        'setter' => 'setMeta',
+        'element' => 'Meta',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeta',
+      ),
+      'implicitRules' => 
+      array (
+        'setter' => 'setImplicitRules',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'language' => 
+      array (
+        'setter' => 'setLanguage',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'text' => 
+      array (
+        'setter' => 'setText',
+        'element' => 'Narrative',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRNarrative',
+      ),
+      'contained' => 
+      array (
+        'setter' => 'addContained',
+        'element' => 'ResourceContainer',
+        'type' => 'PHPFHIRGenerated\\FHIRResourceContainer',
+      ),
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'category' => 
+      array (
+        'setter' => 'setCategory',
+        'element' => 'AdverseEventCategory',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAdverseEventCategory',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'subject' => 
+      array (
+        'setter' => 'setSubject',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'reaction' => 
+      array (
+        'setter' => 'addReaction',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'location' => 
+      array (
+        'setter' => 'setLocation',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'seriousness' => 
+      array (
+        'setter' => 'setSeriousness',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'outcome' => 
+      array (
+        'setter' => 'setOutcome',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'recorder' => 
+      array (
+        'setter' => 'setRecorder',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'eventParticipant' => 
+      array (
+        'setter' => 'setEventParticipant',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'description' => 
+      array (
+        'setter' => 'setDescription',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'suspectEntity' => 
+      array (
+        'setter' => 'addSuspectEntity',
+        'element' => 'AdverseEvent.SuspectEntity',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRAdverseEvent\\FHIRAdverseEventSuspectEntity',
+      ),
+      'subjectMedicalHistory' => 
+      array (
+        'setter' => 'addSubjectMedicalHistory',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'referenceDocument' => 
+      array (
+        'setter' => 'addReferenceDocument',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'study' => 
+      array (
+        'setter' => 'addStudy',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'AdverseEvent.SuspectEntity' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRAdverseEvent\\FHIRAdverseEventSuspectEntity',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'instance' => 
+      array (
+        'setter' => 'setInstance',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'causality' => 
+      array (
+        'setter' => 'setCausality',
+        'element' => 'AdverseEventCausality',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAdverseEventCausality',
+      ),
+      'causalityAssessment' => 
+      array (
+        'setter' => 'setCausalityAssessment',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'causalityProductRelatedness' => 
+      array (
+        'setter' => 'setCausalityProductRelatedness',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'causalityMethod' => 
+      array (
+        'setter' => 'setCausalityMethod',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'causalityAuthor' => 
+      array (
+        'setter' => 'setCausalityAuthor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'causalityResult' => 
+      array (
+        'setter' => 'setCausalityResult',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+    ),
+  ),
+  'AdverseEventCausality' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRAdverseEventCausality',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'AdverseEventCausality-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'AdverseEventCategory' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRAdverseEventCategory',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'AdverseEventCategory-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'AllergyIntolerance' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRAllergyIntolerance',
@@ -6640,12 +7108,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'certainty' => 
-      array (
-        'setter' => 'setCertainty',
-        'element' => 'AllergyIntoleranceCertainty',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAllergyIntoleranceCertainty',
-      ),
       'manifestation' => 
       array (
         'setter' => 'addManifestation',
@@ -6758,32 +7220,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'AllergyIntoleranceCategory-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'AllergyIntoleranceCertainty' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRAllergyIntoleranceCertainty',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'AllergyIntoleranceCertainty-list',
         'type' => 'string',
       ),
     ),
@@ -6958,9 +7394,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'reason' => 
       array (
-        'setter' => 'setReason',
+        'setter' => 'addReason',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'indication' => 
+      array (
+        'setter' => 'addIndication',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'priority' => 
       array (
@@ -6973,6 +7415,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setDescription',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'supportingInformation' => 
+      array (
+        'setter' => 'addSupportingInformation',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'start' => 
       array (
@@ -7009,6 +7457,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setComment',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'incomingReferral' => 
+      array (
+        'setter' => 'addIncomingReferral',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'participant' => 
       array (
@@ -7245,8 +7699,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'participantStatus' => 
       array (
         'setter' => 'setParticipantStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ParticipationStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRParticipationStatus',
       ),
       'comment' => 
       array (
@@ -7938,17 +8392,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'patient' => 
-      array (
-        'setter' => 'setPatient',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
       'identifier' => 
       array (
         'setter' => 'addIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'active' => 
+      array (
+        'setter' => 'setActive',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
       'code' => 
       array (
@@ -7956,9 +8410,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'modifier' => 
+      'qualifier' => 
       array (
-        'setter' => 'addModifier',
+        'setter' => 'addQualifier',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -7973,6 +8427,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addImage',
         'element' => 'Attachment',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAttachment',
+      ),
+      'patient' => 
+      array (
+        'setter' => 'setPatient',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -8006,17 +8466,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'code',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
       ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'BundleType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBundleType',
-      ),
       'identifier' => 
       array (
         'setter' => 'setIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'BundleType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBundleType',
       ),
       'total' => 
       array (
@@ -8867,8 +9327,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'type' => 
       array (
         'setter' => 'setType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'profile' => 
       array (
@@ -9162,6 +9622,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
+      'supportedMessage' => 
+      array (
+        'setter' => 'addSupportedMessage',
+        'element' => 'CapabilityStatement.SupportedMessage',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCapabilityStatement\\FHIRCapabilityStatementSupportedMessage',
+      ),
       'event' => 
       array (
         'setter' => 'addEvent',
@@ -9205,6 +9671,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setAddress',
         'element' => 'uri',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+    ),
+  ),
+  'CapabilityStatement.SupportedMessage' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCapabilityStatement\\FHIRCapabilityStatementSupportedMessage',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'mode' => 
+      array (
+        'setter' => 'setMode',
+        'element' => 'EventCapabilityMode',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIREventCapabilityMode',
+      ),
+      'definition' => 
+      array (
+        'setter' => 'setDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -9253,8 +9757,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'focus' => 
       array (
         'setter' => 'setFocus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'request' => 
       array (
@@ -9692,17 +10196,53 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'replaces' => 
+      array (
+        'setter' => 'addReplaces',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'partOf' => 
+      array (
+        'setter' => 'addPartOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
         'element' => 'CarePlanStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCarePlanStatus',
       ),
+      'intent' => 
+      array (
+        'setter' => 'setIntent',
+        'element' => 'CarePlanIntent',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCarePlanIntent',
+      ),
       'category' => 
       array (
         'setter' => 'addCategory',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'title' => 
+      array (
+        'setter' => 'setTitle',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'description' => 
       array (
@@ -9728,12 +10268,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
-      'modified' => 
-      array (
-        'setter' => 'setModified',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
-      ),
       'author' => 
       array (
         'setter' => 'addAuthor',
@@ -9752,23 +10286,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'support' => 
+      'supportingInfo' => 
       array (
-        'setter' => 'addSupport',
+        'setter' => 'addSupportingInfo',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'definition' => 
-      array (
-        'setter' => 'setDefinition',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'relatedPlan' => 
-      array (
-        'setter' => 'addRelatedPlan',
-        'element' => 'CarePlan.RelatedPlan',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCarePlan\\FHIRCarePlanRelatedPlan',
       ),
       'goal' => 
       array (
@@ -9784,47 +10306,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'note' => 
       array (
-        'setter' => 'setNote',
+        'setter' => 'addNote',
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
-      ),
-    ),
-  ),
-  'CarePlan.RelatedPlan' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCarePlan\\FHIRCarePlanRelatedPlan',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'code' => 
-      array (
-        'setter' => 'setCode',
-        'element' => 'CarePlanRelationship',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCarePlanRelationship',
-      ),
-      'plan' => 
-      array (
-        'setter' => 'setPlan',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -9852,17 +10336,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'actionResulting' => 
+      'outcomeCodeableConcept' => 
       array (
-        'setter' => 'addActionResulting',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'outcome' => 
-      array (
-        'setter' => 'setOutcome',
+        'setter' => 'addOutcomeCodeableConcept',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'outcomeReference' => 
+      array (
+        'setter' => 'addOutcomeReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'progress' => 
       array (
@@ -9953,8 +10437,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'statusReason' => 
       array (
         'setter' => 'setStatusReason',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'prohibited' => 
       array (
@@ -10024,32 +10508,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'CarePlanRelationship' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCarePlanRelationship',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'CarePlanRelationship-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
   'CarePlanStatus' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCarePlanStatus',
@@ -10098,6 +10556,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'CarePlanActivityStatus-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'CarePlanIntent' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCarePlanIntent',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'CarePlanIntent-list',
         'type' => 'string',
       ),
     ),
@@ -10165,8 +10649,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'element' => 'CareTeamStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCareTeamStatus',
       ),
       'category' => 
       array (
@@ -10186,6 +10670,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
+      'context' => 
+      array (
+        'setter' => 'setContext',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'period' => 
       array (
         'setter' => 'setPeriod',
@@ -10198,11 +10688,29 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CareTeam.Participant',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCareTeam\\FHIRCareTeamParticipant',
       ),
+      'reasonCode' => 
+      array (
+        'setter' => 'addReasonCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'managingOrganization' => 
       array (
         'setter' => 'addManagingOrganization',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'note' => 
+      array (
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
     ),
   ),
@@ -10242,11 +10750,609 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'period' => 
       array (
         'setter' => 'setPeriod',
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+    ),
+  ),
+  'CareTeamStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCareTeamStatus',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'CareTeamStatus-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'Catalog' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRCatalog',
+    'extendedElementName' => 'DomainResource',
+    'properties' => 
+    array (
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+      ),
+      'meta' => 
+      array (
+        'setter' => 'setMeta',
+        'element' => 'Meta',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeta',
+      ),
+      'implicitRules' => 
+      array (
+        'setter' => 'setImplicitRules',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'language' => 
+      array (
+        'setter' => 'setLanguage',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'text' => 
+      array (
+        'setter' => 'setText',
+        'element' => 'Narrative',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRNarrative',
+      ),
+      'contained' => 
+      array (
+        'setter' => 'addContained',
+        'element' => 'ResourceContainer',
+        'type' => 'PHPFHIRGenerated\\FHIRResourceContainer',
+      ),
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'document' => 
+      array (
+        'setter' => 'setDocument',
+        'element' => 'Catalog.Document',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCatalog\\FHIRCatalogDocument',
+      ),
+      'entry' => 
+      array (
+        'setter' => 'addEntry',
+        'element' => 'Catalog.Entry',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCatalog\\FHIRCatalogEntry',
+      ),
+    ),
+  ),
+  'Catalog.Document' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCatalog\\FHIRCatalogDocument',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'provider' => 
+      array (
+        'setter' => 'setProvider',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'contentType' => 
+      array (
+        'setter' => 'setContentType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'updateMode' => 
+      array (
+        'setter' => 'setUpdateMode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'contentVersion' => 
+      array (
+        'setter' => 'setContentVersion',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'issueDate' => 
+      array (
+        'setter' => 'setIssueDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'validFrom' => 
+      array (
+        'setter' => 'setValidFrom',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'validTo' => 
+      array (
+        'setter' => 'setValidTo',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+    ),
+  ),
+  'Catalog.Entry' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCatalog\\FHIRCatalogEntry',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'referencedItem' => 
+      array (
+        'setter' => 'setReferencedItem',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'additionalIdentifier' => 
+      array (
+        'setter' => 'addAdditionalIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'classification' => 
+      array (
+        'setter' => 'addClassification',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'validFrom' => 
+      array (
+        'setter' => 'setValidFrom',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'validTo' => 
+      array (
+        'setter' => 'setValidTo',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'lastUpdated' => 
+      array (
+        'setter' => 'setLastUpdated',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'additionalCharacteristic' => 
+      array (
+        'setter' => 'addAdditionalCharacteristic',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'additionalClassification' => 
+      array (
+        'setter' => 'addAdditionalClassification',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'relatedItem' => 
+      array (
+        'setter' => 'addRelatedItem',
+        'element' => 'Catalog.RelatedItem',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCatalog\\FHIRCatalogRelatedItem',
+      ),
+    ),
+  ),
+  'Catalog.RelatedItem' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCatalog\\FHIRCatalogRelatedItem',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'relationtype' => 
+      array (
+        'setter' => 'setRelationtype',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'setIdentifier',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'ChargeItem' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRChargeItem',
+    'extendedElementName' => 'DomainResource',
+    'properties' => 
+    array (
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+      ),
+      'meta' => 
+      array (
+        'setter' => 'setMeta',
+        'element' => 'Meta',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeta',
+      ),
+      'implicitRules' => 
+      array (
+        'setter' => 'setImplicitRules',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'language' => 
+      array (
+        'setter' => 'setLanguage',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'text' => 
+      array (
+        'setter' => 'setText',
+        'element' => 'Narrative',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRNarrative',
+      ),
+      'contained' => 
+      array (
+        'setter' => 'addContained',
+        'element' => 'ResourceContainer',
+        'type' => 'PHPFHIRGenerated\\FHIRResourceContainer',
+      ),
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'ChargeItemStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRChargeItemStatus',
+      ),
+      'partOf' => 
+      array (
+        'setter' => 'addPartOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'code' => 
+      array (
+        'setter' => 'setCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'subject' => 
+      array (
+        'setter' => 'setSubject',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'context' => 
+      array (
+        'setter' => 'setContext',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'occurrenceDateTime' => 
+      array (
+        'setter' => 'setOccurrenceDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'occurrencePeriod' => 
+      array (
+        'setter' => 'setOccurrencePeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+      'occurrenceTiming' => 
+      array (
+        'setter' => 'setOccurrenceTiming',
+        'element' => 'Timing',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
+      ),
+      'participant' => 
+      array (
+        'setter' => 'addParticipant',
+        'element' => 'ChargeItem.Participant',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRChargeItem\\FHIRChargeItemParticipant',
+      ),
+      'performingOrganization' => 
+      array (
+        'setter' => 'setPerformingOrganization',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'requestingOrganization' => 
+      array (
+        'setter' => 'setRequestingOrganization',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'quantity' => 
+      array (
+        'setter' => 'setQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'bodysite' => 
+      array (
+        'setter' => 'addBodysite',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'factorOverride' => 
+      array (
+        'setter' => 'setFactorOverride',
+        'element' => 'decimal',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDecimal',
+      ),
+      'priceOverride' => 
+      array (
+        'setter' => 'setPriceOverride',
+        'element' => 'Money',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
+      ),
+      'overrideReason' => 
+      array (
+        'setter' => 'setOverrideReason',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'enterer' => 
+      array (
+        'setter' => 'setEnterer',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'enteredDate' => 
+      array (
+        'setter' => 'setEnteredDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'reason' => 
+      array (
+        'setter' => 'addReason',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'service' => 
+      array (
+        'setter' => 'addService',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'account' => 
+      array (
+        'setter' => 'addAccount',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'note' => 
+      array (
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+      ),
+      'supportingInformation' => 
+      array (
+        'setter' => 'addSupportingInformation',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'ChargeItem.Participant' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRChargeItem\\FHIRChargeItemParticipant',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'actor' => 
+      array (
+        'setter' => 'setActor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'ChargeItemStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRChargeItemStatus',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ChargeItemStatus-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -10313,8 +11419,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'type' => 
       array (
@@ -10653,6 +11759,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addModifierExtension',
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'sequence' => 
+      array (
+        'setter' => 'setSequence',
+        'element' => 'positiveInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPositiveInt',
       ),
       'category' => 
       array (
@@ -11084,17 +12196,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
+      'encounter' => 
+      array (
+        'setter' => 'addEncounter',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'detail' => 
       array (
         'setter' => 'addDetail',
         'element' => 'Claim.Detail',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRClaim\\FHIRClaimDetail',
-      ),
-      'prosthesis' => 
-      array (
-        'setter' => 'setProsthesis',
-        'element' => 'Claim.Prosthesis',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRClaim\\FHIRClaimProsthesis',
       ),
     ),
   ),
@@ -11288,50 +12400,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'Claim.Prosthesis' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRClaim\\FHIRClaimProsthesis',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'initial' => 
-      array (
-        'setter' => 'setInitial',
-        'element' => 'boolean',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
-      ),
-      'priorDate' => 
-      array (
-        'setter' => 'setPriorDate',
-        'element' => 'date',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
-      ),
-      'priorMaterial' => 
-      array (
-        'setter' => 'setPriorMaterial',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-    ),
-  ),
   'Use' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRUse',
@@ -11354,6 +12422,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'Use-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'FinancialResourceStatusCodes' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'FinancialResourceStatusCodes-list',
         'type' => 'string',
       ),
     ),
@@ -11421,8 +12515,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
+      ),
+      'patient' => 
+      array (
+        'setter' => 'setPatient',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'created' => 
       array (
@@ -11526,11 +12626,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'note' => 
+      'processNote' => 
       array (
-        'setter' => 'addNote',
-        'element' => 'ClaimResponse.Note',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRClaimResponse\\FHIRClaimResponseNote',
+        'setter' => 'addProcessNote',
+        'element' => 'ClaimResponse.ProcessNote',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRClaimResponse\\FHIRClaimResponseProcessNote',
       ),
       'communicationRequest' => 
       array (
@@ -12000,9 +13100,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ClaimResponse.Note' => 
+  'ClaimResponse.ProcessNote' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRClaimResponse\\FHIRClaimResponseNote',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRClaimResponse\\FHIRClaimResponseProcessNote',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -12196,17 +13296,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'assessor' => 
+      'context' => 
       array (
-        'setter' => 'setAssessor',
+        'setter' => 'setContext',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'effectiveDateTime' => 
       array (
@@ -12220,9 +13314,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
-      'context' => 
+      'date' => 
       array (
-        'setter' => 'setContext',
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'assessor' => 
+      array (
+        'setter' => 'setAssessor',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -12492,6 +13592,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -12503,12 +13609,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -12641,8 +13741,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'operator' => 
       array (
         'setter' => 'addOperator',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FilterOperator',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFilterOperator',
       ),
       'value' => 
       array (
@@ -12876,6 +13976,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'FilterOperator' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRFilterOperator',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'FilterOperator-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'PropertyType' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPropertyType',
@@ -13014,27 +14140,45 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'basedOn' => 
       array (
         'setter' => 'addBasedOn',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'parent' => 
+      'partOf' => 
       array (
-        'setter' => 'addParent',
+        'setter' => 'addPartOf',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'CommunicationStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCommunicationStatus',
+        'element' => 'EventStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIREventStatus',
+      ),
+      'notDone' => 
+      array (
+        'setter' => 'setNotDone',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'notDoneReason' => 
+      array (
+        'setter' => 'setNotDoneReason',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'category' => 
       array (
-        'setter' => 'setCategory',
+        'setter' => 'addCategory',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -13047,6 +14191,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'subject' => 
       array (
         'setter' => 'setSubject',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'recipient' => 
+      array (
+        'setter' => 'addRecipient',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -13080,17 +14230,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'recipient' => 
+      'reasonCode' => 
       array (
-        'setter' => 'addRecipient',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'reason' => 
-      array (
-        'setter' => 'addReason',
+        'setter' => 'addReasonCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'payload' => 
       array (
@@ -13150,9 +14300,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'CommunicationStatus' => 
+  'EventStatus' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCommunicationStatus',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIREventStatus',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -13171,7 +14321,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'CommunicationStatus-list',
+        'element' => 'EventStatus-list',
         'type' => 'string',
       ),
     ),
@@ -13236,15 +14386,51 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'replaces' => 
+      array (
+        'setter' => 'addReplaces',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'groupIdentifier' => 
+      array (
+        'setter' => 'setGroupIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'RequestStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestStatus',
+      ),
       'category' => 
       array (
-        'setter' => 'setCategory',
+        'setter' => 'addCategory',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'sender' => 
+      'priority' => 
       array (
-        'setter' => 'setSender',
+        'setter' => 'setPriority',
+        'element' => 'RequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
+      ),
+      'medium' => 
+      array (
+        'setter' => 'addMedium',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'subject' => 
+      array (
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -13253,30 +14439,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addRecipient',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'payload' => 
-      array (
-        'setter' => 'addPayload',
-        'element' => 'CommunicationRequest.Payload',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCommunicationRequest\\FHIRCommunicationRequestPayload',
-      ),
-      'medium' => 
-      array (
-        'setter' => 'addMedium',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'requester' => 
-      array (
-        'setter' => 'setRequester',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'status' => 
-      array (
-        'setter' => 'setStatus',
-        'element' => 'CommunicationRequestStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCommunicationRequestStatus',
       ),
       'topic' => 
       array (
@@ -13290,41 +14452,59 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'scheduledDateTime' => 
+      'payload' => 
       array (
-        'setter' => 'setScheduledDateTime',
+        'setter' => 'addPayload',
+        'element' => 'CommunicationRequest.Payload',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCommunicationRequest\\FHIRCommunicationRequestPayload',
+      ),
+      'occurrenceDateTime' => 
+      array (
+        'setter' => 'setOccurrenceDateTime',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
-      'scheduledPeriod' => 
+      'occurrencePeriod' => 
       array (
-        'setter' => 'setScheduledPeriod',
+        'setter' => 'setOccurrencePeriod',
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
-      'reason' => 
+      'authoredOn' => 
       array (
-        'setter' => 'addReason',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'requestedOn' => 
-      array (
-        'setter' => 'setRequestedOn',
+        'setter' => 'setAuthoredOn',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
-      'subject' => 
+      'sender' => 
       array (
-        'setter' => 'setSubject',
+        'setter' => 'setSender',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'priority' => 
+      'requester' => 
       array (
-        'setter' => 'setPriority',
+        'setter' => 'setRequester',
+        'element' => 'CommunicationRequest.Requester',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCommunicationRequest\\FHIRCommunicationRequestRequester',
+      ),
+      'reasonCode' => 
+      array (
+        'setter' => 'addReasonCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'note' => 
+      array (
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
     ),
   ),
@@ -13372,9 +14552,47 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'CommunicationRequestStatus' => 
+  'CommunicationRequest.Requester' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCommunicationRequestStatus',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCommunicationRequest\\FHIRCommunicationRequestRequester',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'agent' => 
+      array (
+        'setter' => 'setAgent',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'RequestStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRRequestStatus',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -13393,7 +14611,33 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'CommunicationRequestStatus-list',
+        'element' => 'RequestStatus-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'RequestPriority' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'RequestPriority-list',
         'type' => 'string',
       ),
     ),
@@ -13482,6 +14726,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -13493,12 +14743,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -13571,8 +14815,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'code' => 
       array (
         'setter' => 'setCode',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'param' => 
       array (
@@ -13674,11 +14918,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'date' => 
+      'status' => 
       array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+        'setter' => 'setStatus',
+        'element' => 'CompositionStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCompositionStatus',
       ),
       'type' => 
       array (
@@ -13692,35 +14936,41 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'title' => 
-      array (
-        'setter' => 'setTitle',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-      'status' => 
-      array (
-        'setter' => 'setStatus',
-        'element' => 'CompositionStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCompositionStatus',
-      ),
-      'confidentiality' => 
-      array (
-        'setter' => 'setConfidentiality',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
-      ),
       'subject' => 
       array (
         'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
+      'encounter' => 
+      array (
+        'setter' => 'setEncounter',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'author' => 
       array (
         'setter' => 'addAuthor',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'title' => 
+      array (
+        'setter' => 'setTitle',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'confidentiality' => 
+      array (
+        'setter' => 'setConfidentiality',
+        'element' => 'ConfidentialityClassification',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRConfidentialityClassification',
       ),
       'attester' => 
       array (
@@ -13734,17 +14984,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
+      'relatesTo' => 
+      array (
+        'setter' => 'addRelatesTo',
+        'element' => 'Composition.RelatesTo',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRComposition\\FHIRCompositionRelatesTo',
+      ),
       'event' => 
       array (
         'setter' => 'addEvent',
         'element' => 'Composition.Event',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRComposition\\FHIRCompositionEvent',
-      ),
-      'encounter' => 
-      array (
-        'setter' => 'setEncounter',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'section' => 
       array (
@@ -13793,6 +15043,50 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'party' => 
       array (
         'setter' => 'setParty',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'Composition.RelatesTo' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRComposition\\FHIRCompositionRelatesTo',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'code' => 
+      array (
+        'setter' => 'setCode',
+        'element' => 'DocumentRelationshipType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDocumentRelationshipType',
+      ),
+      'targetIdentifier' => 
+      array (
+        'setter' => 'setTargetIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'targetReference' => 
+      array (
+        'setter' => 'setTargetReference',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -13887,8 +15181,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'mode' => 
       array (
         'setter' => 'setMode',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ListMode',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRListMode',
       ),
       'orderedBy' => 
       array (
@@ -13942,6 +15236,58 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'ConfidentialityClassification' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRConfidentialityClassification',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ConfidentialityClassification-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'DocumentRelationshipType' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRDocumentRelationshipType',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'DocumentRelationshipType-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'CompositionAttestationMode' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCompositionAttestationMode',
@@ -13964,6 +15310,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'CompositionAttestationMode-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'ListMode' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRListMode',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ListMode-list',
         'type' => 'string',
       ),
     ),
@@ -14064,6 +15436,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -14075,12 +15453,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -14198,6 +15570,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'ConceptMap.Element',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConceptMap\\FHIRConceptMapElement',
       ),
+      'unmapped' => 
+      array (
+        'setter' => 'setUnmapped',
+        'element' => 'ConceptMap.Unmapped',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConceptMap\\FHIRConceptMapUnmapped',
+      ),
     ),
   ),
   'ConceptMap.Element' => 
@@ -14229,6 +15607,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setCode',
         'element' => 'code',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'display' => 
+      array (
+        'setter' => 'setDisplay',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'target' => 
       array (
@@ -14268,15 +15652,21 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'code',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
       ),
+      'display' => 
+      array (
+        'setter' => 'setDisplay',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
       'equivalence' => 
       array (
         'setter' => 'setEquivalence',
         'element' => 'ConceptMapEquivalence',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRConceptMapEquivalence',
       ),
-      'comments' => 
+      'comment' => 
       array (
-        'setter' => 'setComments',
+        'setter' => 'setComment',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
@@ -14335,6 +15725,88 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setCode',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'display' => 
+      array (
+        'setter' => 'setDisplay',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+    ),
+  ),
+  'ConceptMap.Unmapped' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConceptMap\\FHIRConceptMapUnmapped',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'mode' => 
+      array (
+        'setter' => 'setMode',
+        'element' => 'ConceptMapGroupUnmappedMode',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRConceptMapGroupUnmappedMode',
+      ),
+      'code' => 
+      array (
+        'setter' => 'setCode',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'display' => 
+      array (
+        'setter' => 'setDisplay',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'url' => 
+      array (
+        'setter' => 'setUrl',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+    ),
+  ),
+  'ConceptMapGroupUnmappedMode' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRConceptMapGroupUnmappedMode',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ConceptMapGroupUnmappedMode-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -14401,8 +15873,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'clinicalStatus' => 
       array (
         'setter' => 'setClinicalStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ConditionClinicalStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRConditionClinicalStatusCodes',
       ),
       'verificationStatus' => 
       array (
@@ -14515,8 +15987,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'assertedDate' => 
       array (
         'setter' => 'setAssertedDate',
-        'element' => 'date',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'asserter' => 
       array (
@@ -14608,7 +16080,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'code' => 
       array (
-        'setter' => 'setCode',
+        'setter' => 'addCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -14642,6 +16114,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'ConditionVerificationStatus-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'ConditionClinicalStatusCodes' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRConditionClinicalStatusCodes',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ConditionClinicalStatusCodes-list',
         'type' => 'string',
       ),
     ),
@@ -15983,8 +17481,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'ConsentStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRConsentStatus',
+        'element' => 'ConsentState',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRConsentState',
       ),
       'category' => 
       array (
@@ -15992,11 +17490,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'dateTime' => 
+      'patient' => 
       array (
-        'setter' => 'setDateTime',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+        'setter' => 'setPatient',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'period' => 
       array (
@@ -16004,21 +17502,33 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
-      'patient' => 
+      'dateTime' => 
       array (
-        'setter' => 'setPatient',
+        'setter' => 'setDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'consentingParty' => 
+      array (
+        'setter' => 'addConsentingParty',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'consentor' => 
+      'actor' => 
       array (
-        'setter' => 'addConsentor',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'addActor',
+        'element' => 'Consent.Actor',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentActor',
+      ),
+      'action' => 
+      array (
+        'setter' => 'addAction',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'organization' => 
       array (
-        'setter' => 'setOrganization',
+        'setter' => 'addOrganization',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -16042,15 +17552,21 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'policy' => 
       array (
-        'setter' => 'setPolicy',
+        'setter' => 'addPolicy',
+        'element' => 'Consent.Policy',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentPolicy',
+      ),
+      'policyRule' => 
+      array (
+        'setter' => 'setPolicyRule',
         'element' => 'uri',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
-      'recipient' => 
+      'securityLabel' => 
       array (
-        'setter' => 'addRecipient',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'addSecurityLabel',
+        'element' => 'Coding',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
       'purpose' => 
       array (
@@ -16058,11 +17574,137 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
+      'dataPeriod' => 
+      array (
+        'setter' => 'setDataPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+      'data' => 
+      array (
+        'setter' => 'addData',
+        'element' => 'Consent.Data',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentData',
+      ),
       'except' => 
       array (
         'setter' => 'addExcept',
         'element' => 'Consent.Except',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentExcept',
+      ),
+    ),
+  ),
+  'Consent.Actor' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentActor',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reference' => 
+      array (
+        'setter' => 'setReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'Consent.Policy' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentPolicy',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'authority' => 
+      array (
+        'setter' => 'setAuthority',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'uri' => 
+      array (
+        'setter' => 'setUri',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+    ),
+  ),
+  'Consent.Data' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentData',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'meaning' => 
+      array (
+        'setter' => 'setMeaning',
+        'element' => 'ConsentDataMeaning',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRConsentDataMeaning',
+      ),
+      'reference' => 
+      array (
+        'setter' => 'setReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -16105,8 +17747,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'actor' => 
       array (
         'setter' => 'addActor',
-        'element' => 'Consent.Actor',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentActor',
+        'element' => 'Consent.Actor1',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentActor1',
       ),
       'action' => 
       array (
@@ -16138,17 +17780,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
+      'dataPeriod' => 
+      array (
+        'setter' => 'setDataPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
       'data' => 
       array (
         'setter' => 'addData',
-        'element' => 'Consent.Data',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentData',
+        'element' => 'Consent.Data1',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentData1',
       ),
     ),
   ),
-  'Consent.Actor' => 
+  'Consent.Actor1' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentActor',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentActor1',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -16184,9 +17832,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'Consent.Data' => 
+  'Consent.Data1' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentData',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRConsent\\FHIRConsentData1',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -16248,9 +17896,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ConsentStatus' => 
+  'ConsentState' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRConsentStatus',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRConsentState',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -16269,7 +17917,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'ConsentStatus-list',
+        'element' => 'ConsentState-list',
         'type' => 'string',
       ),
     ),
@@ -16363,8 +18011,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ContractResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContractResourceStatusCodes',
       ),
       'issued' => 
       array (
@@ -16425,6 +18073,24 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addActionReason',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'decisionType' => 
+      array (
+        'setter' => 'setDecisionType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'contentDerivative' => 
+      array (
+        'setter' => 'setContentDerivative',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'securityLabel' => 
+      array (
+        'setter' => 'addSecurityLabel',
+        'element' => 'Coding',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
       'agent' => 
       array (
@@ -16716,6 +18382,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
+      'securityLabel' => 
+      array (
+        'setter' => 'addSecurityLabel',
+        'element' => 'Coding',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
+      ),
       'agent' => 
       array (
         'setter' => 'addAgent',
@@ -16974,6 +18646,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'ContractResourceStatusCodes' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRContractResourceStatusCodes',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ContractResourceStatusCodes-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'Contraindication' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRContraindication',
@@ -17223,8 +18921,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'type' => 
       array (
@@ -17274,11 +18972,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'group' => 
+      'grouping' => 
       array (
-        'setter' => 'setGroup',
-        'element' => 'Coverage.Group',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCoverage\\FHIRCoverageGroup',
+        'setter' => 'setGrouping',
+        'element' => 'Coverage.Grouping',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRCoverage\\FHIRCoverageGrouping',
       ),
       'dependent' => 
       array (
@@ -17312,9 +19010,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'Coverage.Group' => 
+  'Coverage.Grouping' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCoverage\\FHIRCoverageGroup',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRCoverage\\FHIRCoverageGrouping',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -17494,17 +19192,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
-      'publisher' => 
-      array (
-        'setter' => 'setPublisher',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
       'date' => 
       array (
         'setter' => 'setDate',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'publisher' => 
+      array (
+        'setter' => 'setPublisher',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'name' => 
       array (
@@ -17984,11 +19682,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'patient' => 
+      'identifier' => 
       array (
-        'setter' => 'setPatient',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'ObservationStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRObservationStatus',
       ),
       'category' => 
       array (
@@ -18002,17 +19706,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'DetectedIssueSeverity',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDetectedIssueSeverity',
       ),
-      'implicated' => 
+      'patient' => 
       array (
-        'setter' => 'addImplicated',
+        'setter' => 'setPatient',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'detail' => 
-      array (
-        'setter' => 'setDetail',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'date' => 
       array (
@@ -18026,11 +19724,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'identifier' => 
+      'implicated' => 
       array (
-        'setter' => 'setIdentifier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+        'setter' => 'addImplicated',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'detail' => 
+      array (
+        'setter' => 'setDetail',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'reference' => 
       array (
@@ -18087,6 +19791,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setAuthor',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'ObservationStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRObservationStatus',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ObservationStatus-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -18176,17 +19906,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'udiCarrier' => 
+      'udi' => 
       array (
-        'setter' => 'setUdiCarrier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+        'setter' => 'setUdi',
+        'element' => 'Device.Udi',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRDevice\\FHIRDeviceUdi',
       ),
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'DeviceStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDeviceStatus',
+        'element' => 'FHIRDeviceStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFHIRDeviceStatus',
       ),
       'type' => 
       array (
@@ -18266,11 +19996,85 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
+      'safety' => 
+      array (
+        'setter' => 'addSafety',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
     ),
   ),
-  'DeviceStatus' => 
+  'Device.Udi' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRDeviceStatus',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRDevice\\FHIRDeviceUdi',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'deviceIdentifier' => 
+      array (
+        'setter' => 'setDeviceIdentifier',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'name' => 
+      array (
+        'setter' => 'setName',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'jurisdiction' => 
+      array (
+        'setter' => 'setJurisdiction',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'carrierHRF' => 
+      array (
+        'setter' => 'setCarrierHRF',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'carrierAIDC' => 
+      array (
+        'setter' => 'setCarrierAIDC',
+        'element' => 'base64Binary',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBase64Binary',
+      ),
+      'issuer' => 
+      array (
+        'setter' => 'setIssuer',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'entryType' => 
+      array (
+        'setter' => 'setEntryType',
+        'element' => 'UDIEntryType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUDIEntryType',
+      ),
+    ),
+  ),
+  'FHIRDeviceStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRFHIRDeviceStatus',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -18289,7 +20093,33 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'DeviceStatus-list',
+        'element' => 'FHIRDeviceStatus-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'UDIEntryType' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRUDIEntryType',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'UDIEntryType-list',
         'type' => 'string',
       ),
     ),
@@ -18348,17 +20178,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
       'identifier' => 
       array (
         'setter' => 'setIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'lastSystemChange' => 
       array (
@@ -18534,17 +20364,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
       'identifier' => 
       array (
         'setter' => 'setIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'unit' => 
       array (
@@ -18767,6 +20597,244 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setValue',
         'element' => 'DeviceMetricCategory-list',
         'type' => 'string',
+      ),
+    ),
+  ),
+  'DeviceRequest' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRDeviceRequest',
+    'extendedElementName' => 'DomainResource',
+    'properties' => 
+    array (
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+      ),
+      'meta' => 
+      array (
+        'setter' => 'setMeta',
+        'element' => 'Meta',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeta',
+      ),
+      'implicitRules' => 
+      array (
+        'setter' => 'setImplicitRules',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'language' => 
+      array (
+        'setter' => 'setLanguage',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'text' => 
+      array (
+        'setter' => 'setText',
+        'element' => 'Narrative',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRNarrative',
+      ),
+      'contained' => 
+      array (
+        'setter' => 'addContained',
+        'element' => 'ResourceContainer',
+        'type' => 'PHPFHIRGenerated\\FHIRResourceContainer',
+      ),
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'addIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'priorRequest' => 
+      array (
+        'setter' => 'addPriorRequest',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'groupIdentifier' => 
+      array (
+        'setter' => 'setGroupIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'RequestStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestStatus',
+      ),
+      'intent' => 
+      array (
+        'setter' => 'setIntent',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'priority' => 
+      array (
+        'setter' => 'setPriority',
+        'element' => 'RequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
+      ),
+      'codeReference' => 
+      array (
+        'setter' => 'setCodeReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'codeCodeableConcept' => 
+      array (
+        'setter' => 'setCodeCodeableConcept',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'subject' => 
+      array (
+        'setter' => 'setSubject',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'context' => 
+      array (
+        'setter' => 'setContext',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'occurrenceDateTime' => 
+      array (
+        'setter' => 'setOccurrenceDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'occurrencePeriod' => 
+      array (
+        'setter' => 'setOccurrencePeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+      'occurrenceTiming' => 
+      array (
+        'setter' => 'setOccurrenceTiming',
+        'element' => 'Timing',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
+      ),
+      'authoredOn' => 
+      array (
+        'setter' => 'setAuthoredOn',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'requester' => 
+      array (
+        'setter' => 'setRequester',
+        'element' => 'DeviceRequest.Requester',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRDeviceRequest\\FHIRDeviceRequestRequester',
+      ),
+      'performerType' => 
+      array (
+        'setter' => 'setPerformerType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'performer' => 
+      array (
+        'setter' => 'setPerformer',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'reasonCode' => 
+      array (
+        'setter' => 'addReasonCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'supportingInfo' => 
+      array (
+        'setter' => 'addSupportingInfo',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'note' => 
+      array (
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+      ),
+      'relevantHistory' => 
+      array (
+        'setter' => 'addRelevantHistory',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'DeviceRequest.Requester' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRDeviceRequest\\FHIRDeviceRequestRequester',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'agent' => 
+      array (
+        'setter' => 'setAgent',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -19018,53 +21086,29 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'bodySite' => 
-      array (
-        'setter' => 'setBodySite',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'whenUsed' => 
-      array (
-        'setter' => 'setWhenUsed',
-        'element' => 'Period',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
-      ),
-      'device' => 
-      array (
-        'setter' => 'setDevice',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
       'identifier' => 
       array (
         'setter' => 'addIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'indication' => 
+      'status' => 
       array (
-        'setter' => 'addIndication',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'notes' => 
-      array (
-        'setter' => 'addNotes',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-      'recordedOn' => 
-      array (
-        'setter' => 'setRecordedOn',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+        'setter' => 'setStatus',
+        'element' => 'DeviceUseStatementStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDeviceUseStatementStatus',
       ),
       'subject' => 
       array (
         'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'whenUsed' => 
+      array (
+        'setter' => 'setWhenUsed',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
       'timingTiming' => 
       array (
@@ -19083,6 +21127,68 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setTimingDateTime',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'recordedOn' => 
+      array (
+        'setter' => 'setRecordedOn',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'source' => 
+      array (
+        'setter' => 'setSource',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'device' => 
+      array (
+        'setter' => 'setDevice',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'indication' => 
+      array (
+        'setter' => 'addIndication',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'bodySite' => 
+      array (
+        'setter' => 'setBodySite',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'note' => 
+      array (
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+      ),
+    ),
+  ),
+  'DeviceUseStatementStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRDeviceUseStatementStatus',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'DeviceUseStatementStatus-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -19420,6 +21526,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
@@ -19444,9 +21556,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'encounter' => 
+      'context' => 
       array (
-        'setter' => 'setEncounter',
+        'setter' => 'setContext',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -19471,14 +21583,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'performer' => 
       array (
         'setter' => 'addPerformer',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'request' => 
-      array (
-        'setter' => 'addRequest',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'element' => 'DiagnosticReport.Performer',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRDiagnosticReport\\FHIRDiagnosticReportPerformer',
       ),
       'specimen' => 
       array (
@@ -19521,6 +21627,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addPresentedForm',
         'element' => 'Attachment',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAttachment',
+      ),
+    ),
+  ),
+  'DiagnosticReport.Performer' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRDiagnosticReport\\FHIRDiagnosticReportPerformer',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'actor' => 
+      array (
+        'setter' => 'setActor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -19735,8 +21879,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'requester' => 
       array (
         'setter' => 'setRequester',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'element' => 'DiagnosticRequest.Requester',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRDiagnosticRequest\\FHIRDiagnosticRequestRequester',
       ),
       'performerType' => 
       array (
@@ -19762,11 +21906,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'supportingInformation' => 
+      'supportingInfo' => 
       array (
-        'setter' => 'addSupportingInformation',
+        'setter' => 'addSupportingInfo',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'specimen' => 
+      array (
+        'setter' => 'addSpecimen',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'bodySIte' => 
+      array (
+        'setter' => 'setBodySIte',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'note' => 
       array (
@@ -19777,6 +21933,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'relevantHistory' => 
       array (
         'setter' => 'addRelevantHistory',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'DiagnosticRequest.Requester' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRDiagnosticRequest\\FHIRDiagnosticRequestRequester',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'agent' => 
+      array (
+        'setter' => 'setAgent',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -19848,17 +22042,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'subject' => 
+      'status' => 
       array (
-        'setter' => 'setSubject',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'recipient' => 
-      array (
-        'setter' => 'addRecipient',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setStatus',
+        'element' => 'DocumentReferenceStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDocumentReferenceStatus',
       ),
       'type' => 
       array (
@@ -19866,9 +22054,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'author' => 
+      'subject' => 
       array (
-        'setter' => 'addAuthor',
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -19878,17 +22066,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
+      'author' => 
+      array (
+        'setter' => 'addAuthor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'recipient' => 
+      array (
+        'setter' => 'addRecipient',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'source' => 
       array (
         'setter' => 'setSource',
         'element' => 'uri',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
-      ),
-      'status' => 
-      array (
-        'setter' => 'setStatus',
-        'element' => 'DocumentReferenceStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDocumentReferenceStatus',
       ),
       'description' => 
       array (
@@ -20052,11 +22246,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'subject' => 
+      'status' => 
       array (
-        'setter' => 'setSubject',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setStatus',
+        'element' => 'DocumentReferenceStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDocumentReferenceStatus',
+      ),
+      'docStatus' => 
+      array (
+        'setter' => 'setDocStatus',
+        'element' => 'CompositionStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCompositionStatus',
       ),
       'type' => 
       array (
@@ -20070,21 +22270,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'author' => 
+      'subject' => 
       array (
-        'setter' => 'addAuthor',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'custodian' => 
-      array (
-        'setter' => 'setCustodian',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'authenticator' => 
-      array (
-        'setter' => 'setAuthenticator',
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -20100,17 +22288,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'instant',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
       ),
-      'status' => 
+      'author' => 
       array (
-        'setter' => 'setStatus',
-        'element' => 'DocumentReferenceStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDocumentReferenceStatus',
+        'setter' => 'addAuthor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'docStatus' => 
+      'authenticator' => 
       array (
-        'setter' => 'setDocStatus',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'setter' => 'setAuthenticator',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'custodian' => 
+      array (
+        'setter' => 'setCustodian',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'relatesTo' => 
       array (
@@ -20214,7 +22408,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'format' => 
       array (
-        'setter' => 'addFormat',
+        'setter' => 'setFormat',
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
@@ -20326,32 +22520,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'DocumentRelationshipType' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRDocumentRelationshipType',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'DocumentRelationshipType-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
   'EligibilityRequest' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIREligibilityRequest',
@@ -20415,8 +22583,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'priority' => 
       array (
@@ -20567,8 +22735,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'created' => 
       array (
@@ -20792,33 +22960,33 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'benefitUnsignedInt' => 
+      'allowedUnsignedInt' => 
       array (
-        'setter' => 'setBenefitUnsignedInt',
+        'setter' => 'setAllowedUnsignedInt',
         'element' => 'unsignedInt',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
       ),
-      'benefitString' => 
+      'allowedString' => 
       array (
-        'setter' => 'setBenefitString',
+        'setter' => 'setAllowedString',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'benefitMoney' => 
+      'allowedMoney' => 
       array (
-        'setter' => 'setBenefitMoney',
+        'setter' => 'setAllowedMoney',
         'element' => 'Money',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
-      'benefitUsedUnsignedInt' => 
+      'usedUnsignedInt' => 
       array (
-        'setter' => 'setBenefitUsedUnsignedInt',
+        'setter' => 'setUsedUnsignedInt',
         'element' => 'unsignedInt',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
       ),
-      'benefitUsedMoney' => 
+      'usedMoney' => 
       array (
-        'setter' => 'setBenefitUsedMoney',
+        'setter' => 'setUsedMoney',
         'element' => 'Money',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
@@ -20934,6 +23102,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
+      'classHistory' => 
+      array (
+        'setter' => 'addClassHistory',
+        'element' => 'Encounter.ClassHistory',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIREncounter\\FHIREncounterClassHistory',
+      ),
       'type' => 
       array (
         'setter' => 'addType',
@@ -20946,9 +23120,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'patient' => 
+      'subject' => 
       array (
-        'setter' => 'setPatient',
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -20994,11 +23168,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'indication' => 
+      'diagnosis' => 
       array (
-        'setter' => 'addIndication',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'addDiagnosis',
+        'element' => 'Encounter.Diagnosis',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIREncounter\\FHIREncounterDiagnosis',
       ),
       'account' => 
       array (
@@ -21070,6 +23244,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'Encounter.ClassHistory' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIREncounter\\FHIREncounterClassHistory',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'class' => 
+      array (
+        'setter' => 'setClass',
+        'element' => 'Coding',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
+      ),
+      'period' => 
+      array (
+        'setter' => 'setPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+    ),
+  ),
   'Encounter.Participant' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIREncounter\\FHIREncounterParticipant',
@@ -21111,6 +23323,50 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setIndividual',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'Encounter.Diagnosis' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIREncounter\\FHIREncounterDiagnosis',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'condition' => 
+      array (
+        'setter' => 'setCondition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'rank' => 
+      array (
+        'setter' => 'setRank',
+        'element' => 'positiveInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPositiveInt',
       ),
     ),
   ),
@@ -21156,12 +23412,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'admittingDiagnosis' => 
-      array (
-        'setter' => 'addAdmittingDiagnosis',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
       'reAdmission' => 
       array (
         'setter' => 'setReAdmission',
@@ -21197,12 +23447,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setDischargeDisposition',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'dischargeDiagnosis' => 
-      array (
-        'setter' => 'addDischargeDiagnosis',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -21368,6 +23612,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'EndpointStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIREndpointStatus',
       ),
+      'connectionType' => 
+      array (
+        'setter' => 'setConnectionType',
+        'element' => 'Coding',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
+      ),
       'name' => 
       array (
         'setter' => 'setName',
@@ -21392,12 +23642,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
-      'connectionType' => 
-      array (
-        'setter' => 'setConnectionType',
-        'element' => 'Coding',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
-      ),
       'payloadType' => 
       array (
         'setter' => 'addPayloadType',
@@ -21419,12 +23663,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'header' => 
       array (
         'setter' => 'addHeader',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-      'publicKey' => 
-      array (
-        'setter' => 'setPublicKey',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
@@ -21519,8 +23757,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'created' => 
       array (
@@ -21623,8 +23861,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'request' => 
       array (
@@ -21748,11 +23986,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'condition' => 
+      'diagnosis' => 
       array (
-        'setter' => 'addCondition',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'addDiagnosis',
+        'element' => 'EpisodeOfCare.Diagnosis',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIREpisodeOfCare\\FHIREpisodeOfCareDiagnosis',
       ),
       'patient' => 
       array (
@@ -21833,6 +24071,50 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setPeriod',
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+    ),
+  ),
+  'EpisodeOfCare.Diagnosis' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIREpisodeOfCare\\FHIREpisodeOfCareDiagnosis',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'condition' => 
+      array (
+        'setter' => 'setCondition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'rank' => 
+      array (
+        'setter' => 'setRank',
+        'element' => 'positiveInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPositiveInt',
       ),
     ),
   ),
@@ -21952,6 +24234,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -21963,12 +24251,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -22618,11 +24900,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'note' => 
+      'processNote' => 
       array (
-        'setter' => 'addNote',
-        'element' => 'ExplanationOfBenefit.Note',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitNote',
+        'setter' => 'addProcessNote',
+        'element' => 'ExplanationOfBenefit.ProcessNote',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitProcessNote',
       ),
       'benefitBalance' => 
       array (
@@ -22712,15 +24994,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'partyIdentifier' => 
+      'party' => 
       array (
-        'setter' => 'setPartyIdentifier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
-      ),
-      'partyReference' => 
-      array (
-        'setter' => 'setPartyReference',
+        'setter' => 'setParty',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -22749,6 +25025,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addModifierExtension',
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'sequence' => 
+      array (
+        'setter' => 'setSequence',
+        'element' => 'positiveInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPositiveInt',
       ),
       'category' => 
       array (
@@ -23212,6 +25494,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
+      'encounter' => 
+      array (
+        'setter' => 'addEncounter',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'noteNumber' => 
       array (
         'setter' => 'addNoteNumber',
@@ -23229,12 +25517,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addDetail',
         'element' => 'ExplanationOfBenefit.Detail',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitDetail',
-      ),
-      'prosthesis' => 
-      array (
-        'setter' => 'setProsthesis',
-        'element' => 'ExplanationOfBenefit.Prosthesis',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitProsthesis',
       ),
     ),
   ),
@@ -23514,50 +25796,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ExplanationOfBenefit.Prosthesis' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitProsthesis',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'initial' => 
-      array (
-        'setter' => 'setInitial',
-        'element' => 'boolean',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
-      ),
-      'priorDate' => 
-      array (
-        'setter' => 'setPriorDate',
-        'element' => 'date',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
-      ),
-      'priorMaterial' => 
-      array (
-        'setter' => 'setPriorMaterial',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-    ),
-  ),
   'ExplanationOfBenefit.AddItem' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitAddItem',
@@ -23768,9 +26006,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ExplanationOfBenefit.Note' => 
+  'ExplanationOfBenefit.ProcessNote' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitNote',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRExplanationOfBenefit\\FHIRExplanationOfBenefitProcessNote',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -23928,33 +26166,33 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'benefitUnsignedInt' => 
+      'allowedUnsignedInt' => 
       array (
-        'setter' => 'setBenefitUnsignedInt',
+        'setter' => 'setAllowedUnsignedInt',
         'element' => 'unsignedInt',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
       ),
-      'benefitString' => 
+      'allowedString' => 
       array (
-        'setter' => 'setBenefitString',
+        'setter' => 'setAllowedString',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'benefitMoney' => 
+      'allowedMoney' => 
       array (
-        'setter' => 'setBenefitMoney',
+        'setter' => 'setAllowedMoney',
         'element' => 'Money',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
-      'benefitUsedUnsignedInt' => 
+      'usedUnsignedInt' => 
       array (
-        'setter' => 'setBenefitUsedUnsignedInt',
+        'setter' => 'setUsedUnsignedInt',
         'element' => 'unsignedInt',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
       ),
-      'benefitUsedMoney' => 
+      'usedMoney' => 
       array (
-        'setter' => 'setBenefitUsedMoney',
+        'setter' => 'setUsedMoney',
         'element' => 'Money',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
@@ -24046,6 +26284,30 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'FamilyHistoryStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFamilyHistoryStatus',
+      ),
+      'notDone' => 
+      array (
+        'setter' => 'setNotDone',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'notDoneReason' => 
+      array (
+        'setter' => 'setNotDoneReason',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
       'patient' => 
       array (
         'setter' => 'setPatient',
@@ -24057,12 +26319,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setDate',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
-      ),
-      'status' => 
-      array (
-        'setter' => 'setStatus',
-        'element' => 'FamilyHistoryStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFamilyHistoryStatus',
       ),
       'name' => 
       array (
@@ -24154,9 +26410,21 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
+      'reasonCode' => 
+      array (
+        'setter' => 'addReasonCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'note' => 
       array (
-        'setter' => 'setNote',
+        'setter' => 'addNote',
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
@@ -24230,7 +26498,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'note' => 
       array (
-        'setter' => 'setNote',
+        'setter' => 'addNote',
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
@@ -24322,29 +26590,35 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'category' => 
-      array (
-        'setter' => 'setCategory',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
       'status' => 
       array (
         'setter' => 'setStatus',
         'element' => 'FlagStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFlagStatus',
       ),
-      'period' => 
+      'category' => 
       array (
-        'setter' => 'setPeriod',
-        'element' => 'Period',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+        'setter' => 'setCategory',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'code' => 
+      array (
+        'setter' => 'setCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'subject' => 
       array (
         'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'period' => 
+      array (
+        'setter' => 'setPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
       'encounter' => 
       array (
@@ -24357,12 +26631,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setAuthor',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'code' => 
-      array (
-        'setter' => 'setCode',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
     ),
   ),
@@ -24494,17 +26762,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'targetDate' => 
+      'target' => 
       array (
-        'setter' => 'setTargetDate',
-        'element' => 'date',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
-      ),
-      'targetDuration' => 
-      array (
-        'setter' => 'setTargetDuration',
-        'element' => 'Duration',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
+        'setter' => 'setTarget',
+        'element' => 'Goal.Target',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRGoal\\FHIRGoalTarget',
       ),
       'statusDate' => 
       array (
@@ -24514,9 +26776,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'statusReason' => 
       array (
-        'setter' => 'addStatusReason',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'setter' => 'setStatusReason',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'expressedBy' => 
       array (
@@ -24536,17 +26798,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
-      'outcome' => 
+      'outcomeCode' => 
       array (
-        'setter' => 'addOutcome',
-        'element' => 'Goal.Outcome',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRGoal\\FHIRGoalOutcome',
+        'setter' => 'addOutcomeCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'outcomeReference' => 
+      array (
+        'setter' => 'addOutcomeReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
-  'Goal.Outcome' => 
+  'Goal.Target' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRGoal\\FHIRGoalOutcome',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRGoal\\FHIRGoalTarget',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -24568,17 +26836,41 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'resultCodeableConcept' => 
+      'measure' => 
       array (
-        'setter' => 'setResultCodeableConcept',
+        'setter' => 'setMeasure',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'resultReference' => 
+      'detailQuantity' => 
       array (
-        'setter' => 'setResultReference',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setDetailQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'detailRange' => 
+      array (
+        'setter' => 'setDetailRange',
+        'element' => 'Range',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
+      ),
+      'detailCodeableConcept' => 
+      array (
+        'setter' => 'setDetailCodeableConcept',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'dueDate' => 
+      array (
+        'setter' => 'setDueDate',
+        'element' => 'date',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
+      ),
+      'dueDuration' => 
+      array (
+        'setter' => 'setDueDuration',
+        'element' => 'Duration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
       ),
     ),
   ),
@@ -24604,6 +26896,340 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'GoalStatus-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'GraphDefinition' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRGraphDefinition',
+    'extendedElementName' => 'DomainResource',
+    'properties' => 
+    array (
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+      ),
+      'meta' => 
+      array (
+        'setter' => 'setMeta',
+        'element' => 'Meta',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeta',
+      ),
+      'implicitRules' => 
+      array (
+        'setter' => 'setImplicitRules',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'language' => 
+      array (
+        'setter' => 'setLanguage',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'text' => 
+      array (
+        'setter' => 'setText',
+        'element' => 'Narrative',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRNarrative',
+      ),
+      'contained' => 
+      array (
+        'setter' => 'addContained',
+        'element' => 'ResourceContainer',
+        'type' => 'PHPFHIRGenerated\\FHIRResourceContainer',
+      ),
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'url' => 
+      array (
+        'setter' => 'setUrl',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'version' => 
+      array (
+        'setter' => 'setVersion',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'name' => 
+      array (
+        'setter' => 'setName',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'PublicationStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPublicationStatus',
+      ),
+      'experimental' => 
+      array (
+        'setter' => 'setExperimental',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'publisher' => 
+      array (
+        'setter' => 'setPublisher',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'contact' => 
+      array (
+        'setter' => 'addContact',
+        'element' => 'ContactDetail',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
+      ),
+      'description' => 
+      array (
+        'setter' => 'setDescription',
+        'element' => 'markdown',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
+      ),
+      'useContext' => 
+      array (
+        'setter' => 'addUseContext',
+        'element' => 'UsageContext',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUsageContext',
+      ),
+      'jurisdiction' => 
+      array (
+        'setter' => 'addJurisdiction',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'purpose' => 
+      array (
+        'setter' => 'setPurpose',
+        'element' => 'markdown',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
+      ),
+      'start' => 
+      array (
+        'setter' => 'setStart',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
+      ),
+      'profile' => 
+      array (
+        'setter' => 'setProfile',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'link' => 
+      array (
+        'setter' => 'addLink',
+        'element' => 'GraphDefinition.Link',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRGraphDefinition\\FHIRGraphDefinitionLink',
+      ),
+    ),
+  ),
+  'GraphDefinition.Link' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRGraphDefinition\\FHIRGraphDefinitionLink',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'path' => 
+      array (
+        'setter' => 'setPath',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'sliceName' => 
+      array (
+        'setter' => 'setSliceName',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'min' => 
+      array (
+        'setter' => 'setMin',
+        'element' => 'integer',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
+      ),
+      'max' => 
+      array (
+        'setter' => 'setMax',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'description' => 
+      array (
+        'setter' => 'setDescription',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'target' => 
+      array (
+        'setter' => 'addTarget',
+        'element' => 'GraphDefinition.Target',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRGraphDefinition\\FHIRGraphDefinitionTarget',
+      ),
+    ),
+  ),
+  'GraphDefinition.Target' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRGraphDefinition\\FHIRGraphDefinitionTarget',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
+      ),
+      'profile' => 
+      array (
+        'setter' => 'setProfile',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'compartment' => 
+      array (
+        'setter' => 'addCompartment',
+        'element' => 'GraphDefinition.Compartment',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRGraphDefinition\\FHIRGraphDefinitionCompartment',
+      ),
+      'link' => 
+      array (
+        'setter' => 'addLink',
+        'element' => 'GraphDefinition.Link',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRGraphDefinition\\FHIRGraphDefinitionLink',
+      ),
+    ),
+  ),
+  'GraphDefinition.Compartment' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRGraphDefinition\\FHIRGraphDefinitionCompartment',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'code' => 
+      array (
+        'setter' => 'setCode',
+        'element' => 'CompartmentType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCompartmentType',
+      ),
+      'rule' => 
+      array (
+        'setter' => 'setRule',
+        'element' => 'GraphCompartmentRule',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRGraphCompartmentRule',
+      ),
+      'expression' => 
+      array (
+        'setter' => 'setExpression',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'description' => 
+      array (
+        'setter' => 'setDescription',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+    ),
+  ),
+  'GraphCompartmentRule' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRGraphCompartmentRule',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'GraphCompartmentRule-list',
         'type' => 'string',
       ),
     ),
@@ -24668,6 +27294,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'active' => 
+      array (
+        'setter' => 'setActive',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
       'type' => 
       array (
         'setter' => 'setType',
@@ -24677,12 +27309,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'actual' => 
       array (
         'setter' => 'setActual',
-        'element' => 'boolean',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
-      ),
-      'active' => 
-      array (
-        'setter' => 'setActive',
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
@@ -25246,15 +27872,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'serviceCategory' => 
+      'category' => 
       array (
-        'setter' => 'setServiceCategory',
+        'setter' => 'setCategory',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'serviceType' => 
+      'type' => 
       array (
-        'setter' => 'addServiceType',
+        'setter' => 'addType',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -25270,9 +27896,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'serviceName' => 
+      'name' => 
       array (
-        'setter' => 'setServiceName',
+        'setter' => 'setName',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
@@ -25341,12 +27967,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addReferralMethod',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'publicKey' => 
-      array (
-        'setter' => 'setPublicKey',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'appointmentRequired' => 
       array (
@@ -26010,11 +28630,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'uid' => 
+      'identifier' => 
       array (
-        'setter' => 'setUid',
-        'element' => 'oid',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIROid',
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
       'patient' => 
       array (
@@ -26033,12 +28653,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setAuthor',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'title' => 
-      array (
-        'setter' => 'setTitle',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'description' => 
       array (
@@ -26090,55 +28704,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'baseLocation' => 
+      'endpoint' => 
       array (
-        'setter' => 'addBaseLocation',
-        'element' => 'ImagingManifest.BaseLocation',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingManifest\\FHIRImagingManifestBaseLocation',
+        'setter' => 'addEndpoint',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'series' => 
       array (
         'setter' => 'addSeries',
         'element' => 'ImagingManifest.Series',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingManifest\\FHIRImagingManifestSeries',
-      ),
-    ),
-  ),
-  'ImagingManifest.BaseLocation' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRImagingManifest\\FHIRImagingManifestBaseLocation',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'Coding',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
-      ),
-      'url' => 
-      array (
-        'setter' => 'setUrl',
-        'element' => 'uri',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
     ),
   ),
@@ -26172,55 +28748,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'oid',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIROid',
       ),
-      'baseLocation' => 
+      'endpoint' => 
       array (
-        'setter' => 'addBaseLocation',
-        'element' => 'ImagingManifest.BaseLocation1',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingManifest\\FHIRImagingManifestBaseLocation1',
+        'setter' => 'addEndpoint',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'instance' => 
       array (
         'setter' => 'addInstance',
         'element' => 'ImagingManifest.Instance',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingManifest\\FHIRImagingManifestInstance',
-      ),
-    ),
-  ),
-  'ImagingManifest.BaseLocation1' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRImagingManifest\\FHIRImagingManifestBaseLocation1',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'Coding',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
-      ),
-      'url' => 
-      array (
-        'setter' => 'setUrl',
-        'element' => 'uri',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
     ),
   ),
@@ -26662,11 +29200,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'baseLocation' => 
+      'endpoint' => 
       array (
-        'setter' => 'addBaseLocation',
-        'element' => 'ImagingStudy.BaseLocation',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingStudy\\FHIRImagingStudyBaseLocation',
+        'setter' => 'addEndpoint',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'numberOfSeries' => 
       array (
@@ -26680,11 +29218,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'unsignedInt',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
       ),
-      'procedure' => 
+      'procedureReference' => 
       array (
-        'setter' => 'addProcedure',
+        'setter' => 'addProcedureReference',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'procedureCode' => 
+      array (
+        'setter' => 'addProcedureCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'reason' => 
       array (
@@ -26703,44 +29247,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addSeries',
         'element' => 'ImagingStudy.Series',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingStudy\\FHIRImagingStudySeries',
-      ),
-    ),
-  ),
-  'ImagingStudy.BaseLocation' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRImagingStudy\\FHIRImagingStudyBaseLocation',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'Coding',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
-      ),
-      'url' => 
-      array (
-        'setter' => 'setUrl',
-        'element' => 'uri',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
     ),
   ),
@@ -26804,11 +29310,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'InstanceAvailability',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstanceAvailability',
       ),
-      'baseLocation' => 
+      'endpoint' => 
       array (
-        'setter' => 'addBaseLocation',
-        'element' => 'ImagingStudy.BaseLocation1',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingStudy\\FHIRImagingStudyBaseLocation1',
+        'setter' => 'addEndpoint',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'bodySite' => 
       array (
@@ -26828,49 +29334,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
+      'performer' => 
+      array (
+        'setter' => 'addPerformer',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'instance' => 
       array (
         'setter' => 'addInstance',
         'element' => 'ImagingStudy.Instance',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImagingStudy\\FHIRImagingStudyInstance',
-      ),
-    ),
-  ),
-  'ImagingStudy.BaseLocation1' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRImagingStudy\\FHIRImagingStudyBaseLocation1',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'Coding',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
-      ),
-      'url' => 
-      array (
-        'setter' => 'setUrl',
-        'element' => 'uri',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
     ),
   ),
@@ -27013,14 +29487,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ImmunizationStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRImmunizationStatusCodes',
       ),
-      'date' => 
+      'notGiven' => 
       array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+        'setter' => 'setNotGiven',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
       'vaccineCode' => 
       array (
@@ -27034,11 +29508,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'wasNotGiven' => 
+      'encounter' => 
       array (
-        'setter' => 'setWasNotGiven',
-        'element' => 'boolean',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+        'setter' => 'setEncounter',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'primarySource' => 
       array (
@@ -27052,33 +29532,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'performer' => 
+      'location' => 
       array (
-        'setter' => 'setPerformer',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'requester' => 
-      array (
-        'setter' => 'setRequester',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'encounter' => 
-      array (
-        'setter' => 'setEncounter',
+        'setter' => 'setLocation',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'manufacturer' => 
       array (
         'setter' => 'setManufacturer',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'location' => 
-      array (
-        'setter' => 'setLocation',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -27112,6 +29574,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Quantity',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
       ),
+      'practitioner' => 
+      array (
+        'setter' => 'addPractitioner',
+        'element' => 'Immunization.Practitioner',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImmunization\\FHIRImmunizationPractitioner',
+      ),
       'note' => 
       array (
         'setter' => 'addNote',
@@ -27135,6 +29603,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addVaccinationProtocol',
         'element' => 'Immunization.VaccinationProtocol',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRImmunization\\FHIRImmunizationVaccinationProtocol',
+      ),
+    ),
+  ),
+  'Immunization.Practitioner' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRImmunization\\FHIRImmunizationPractitioner',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'actor' => 
+      array (
+        'setter' => 'setActor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -27294,6 +29800,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'ImmunizationStatusCodes' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRImmunizationStatusCodes',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'ImmunizationStatusCodes-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'ImmunizationRecommendation' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRImmunizationRecommendation',
@@ -27401,6 +29933,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'vaccineCode' => 
       array (
         'setter' => 'setVaccineCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'targetDisease' => 
+      array (
+        'setter' => 'setTargetDisease',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -27614,6 +30152,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -27625,12 +30169,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -27871,8 +30409,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'type' => 
       array (
         'setter' => 'setType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'profile' => 
       array (
@@ -27927,8 +30465,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'type' => 
       array (
         'setter' => 'addType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'package' => 
       array (
@@ -28086,12 +30624,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
       'status' => 
       array (
         'setter' => 'setStatus',
@@ -28104,11 +30636,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
       'date' => 
       array (
         'setter' => 'setDate',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'publisher' => 
+      array (
+        'setter' => 'setPublisher',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'description' => 
       array (
@@ -28169,12 +30713,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContributor',
         'element' => 'Contributor',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContributor',
-      ),
-      'publisher' => 
-      array (
-        'setter' => 'setPublisher',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'contact' => 
       array (
@@ -28267,6 +30805,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addModifierExtension',
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'active' => 
+      array (
+        'setter' => 'setActive',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
       'author' => 
       array (
@@ -28556,32 +31100,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ListMode' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRListMode',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'ListMode-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
   'Location' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRLocation',
@@ -28647,6 +31165,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setStatus',
         'element' => 'LocationStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRLocationStatus',
+      ),
+      'operationalStatus' => 
+      array (
+        'setter' => 'setOperationalStatus',
+        'element' => 'Coding',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
       'name' => 
       array (
@@ -28920,6 +31444,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
+      'publisher' => 
+      array (
+        'setter' => 'setPublisher',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
       'description' => 
       array (
         'setter' => 'setDescription',
@@ -28980,12 +31510,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Contributor',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContributor',
       ),
-      'publisher' => 
-      array (
-        'setter' => 'setPublisher',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
       'contact' => 
       array (
         'setter' => 'addContact',
@@ -29019,20 +31543,20 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'scoring' => 
       array (
         'setter' => 'setScoring',
-        'element' => 'MeasureScoring',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeasureScoring',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'compositeScoring' => 
       array (
         'setter' => 'setCompositeScoring',
-        'element' => 'CompositeMeasureScoring',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCompositeMeasureScoring',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'type' => 
       array (
         'setter' => 'addType',
-        'element' => 'MeasureType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeasureType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'riskAdjustment' => 
       array (
@@ -29066,7 +31590,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'definition' => 
       array (
-        'setter' => 'setDefinition',
+        'setter' => 'addDefinition',
         'element' => 'markdown',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
       ),
@@ -29176,17 +31700,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'MeasurePopulationType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeasurePopulationType',
-      ),
       'identifier' => 
       array (
         'setter' => 'setIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'code' => 
+      array (
+        'setter' => 'setCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'name' => 
       array (
@@ -29285,8 +31809,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'usage' => 
       array (
         'setter' => 'addUsage',
-        'element' => 'MeasureDataUsage',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeasureDataUsage',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'criteria' => 
       array (
@@ -29299,136 +31823,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setPath',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-    ),
-  ),
-  'CompositeMeasureScoring' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRCompositeMeasureScoring',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'CompositeMeasureScoring-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'MeasureType' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMeasureType',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'MeasureType-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'MeasureDataUsage' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMeasureDataUsage',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'MeasureDataUsage-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'MeasureScoring' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMeasureScoring',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'MeasureScoring-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'MeasurePopulationType' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMeasurePopulationType',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'MeasurePopulationType-list',
-        'type' => 'string',
       ),
     ),
   ),
@@ -29486,11 +31880,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'measure' => 
+      'identifier' => 
       array (
-        'setter' => 'setMeasure',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'MeasureReportStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeasureReportStatus',
       ),
       'type' => 
       array (
@@ -29498,23 +31898,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'MeasureReportType',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeasureReportType',
       ),
+      'measure' => 
+      array (
+        'setter' => 'setMeasure',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'patient' => 
       array (
         'setter' => 'setPatient',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'period' => 
-      array (
-        'setter' => 'setPeriod',
-        'element' => 'Period',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
-      ),
-      'status' => 
-      array (
-        'setter' => 'setStatus',
-        'element' => 'MeasureReportStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeasureReportStatus',
       ),
       'date' => 
       array (
@@ -29527,6 +31921,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setReportingOrganization',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'period' => 
+      array (
+        'setter' => 'setPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
       'group' => 
       array (
@@ -29590,12 +31990,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'MeasureReport.Stratifier',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportStratifier',
       ),
-      'supplementalData' => 
-      array (
-        'setter' => 'addSupplementalData',
-        'element' => 'MeasureReport.SupplementalData',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportSupplementalData',
-      ),
     ),
   ),
   'MeasureReport.Population' => 
@@ -29622,11 +32016,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'type' => 
+      'identifier' => 
       array (
-        'setter' => 'setType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'code' => 
+      array (
+        'setter' => 'setCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'count' => 
       array (
@@ -29672,17 +32072,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'group' => 
+      'stratum' => 
       array (
-        'setter' => 'addGroup',
-        'element' => 'MeasureReport.Group1',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportGroup1',
+        'setter' => 'addStratum',
+        'element' => 'MeasureReport.Stratum',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportStratum',
       ),
     ),
   ),
-  'MeasureReport.Group1' => 
+  'MeasureReport.Stratum' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportGroup1',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportStratum',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -29748,93 +32148,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'type' => 
-      array (
-        'setter' => 'setType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
-      ),
-      'count' => 
-      array (
-        'setter' => 'setCount',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
-      ),
-      'patients' => 
-      array (
-        'setter' => 'setPatients',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-    ),
-  ),
-  'MeasureReport.SupplementalData' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportSupplementalData',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
       'identifier' => 
       array (
         'setter' => 'setIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'group' => 
+      'code' => 
       array (
-        'setter' => 'addGroup',
-        'element' => 'MeasureReport.Group2',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportGroup2',
-      ),
-    ),
-  ),
-  'MeasureReport.Group2' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMeasureReport\\FHIRMeasureReportGroup2',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'setter' => 'setCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'count' => 
       array (
@@ -29962,6 +32286,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'type' => 
       array (
         'setter' => 'setType',
@@ -29986,17 +32316,47 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
+      'context' => 
+      array (
+        'setter' => 'setContext',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'occurrenceDateTime' => 
+      array (
+        'setter' => 'setOccurrenceDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'occurrencePeriod' => 
+      array (
+        'setter' => 'setOccurrencePeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
       'operator' => 
       array (
         'setter' => 'setOperator',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'deviceName' => 
+      'reasonCode' => 
       array (
-        'setter' => 'setDeviceName',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'setter' => 'addReasonCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'bodySite' => 
+      array (
+        'setter' => 'setBodySite',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'device' => 
+      array (
+        'setter' => 'setDevice',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'height' => 
       array (
@@ -30027,6 +32387,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setContent',
         'element' => 'Attachment',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAttachment',
+      ),
+      'note' => 
+      array (
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
     ),
   ),
@@ -30116,9 +32482,21 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'MedicationStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatus',
+      ),
       'isBrand' => 
       array (
         'setter' => 'setIsBrand',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'isOverTheCounter' => 
+      array (
+        'setter' => 'setIsOverTheCounter',
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
@@ -30127,44 +32505,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setManufacturer',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'product' => 
-      array (
-        'setter' => 'setProduct',
-        'element' => 'Medication.Product',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationProduct',
-      ),
-      'package' => 
-      array (
-        'setter' => 'setPackage',
-        'element' => 'Medication.Package',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationPackage',
-      ),
-    ),
-  ),
-  'Medication.Product' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationProduct',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
       'form' => 
       array (
@@ -30178,11 +32518,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Medication.Ingredient',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationIngredient',
       ),
-      'batch' => 
+      'package' => 
       array (
-        'setter' => 'addBatch',
-        'element' => 'Medication.Batch',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationBatch',
+        'setter' => 'setPackage',
+        'element' => 'Medication.Package',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationPackage',
+      ),
+      'image' => 
+      array (
+        'setter' => 'addImage',
+        'element' => 'Attachment',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAttachment',
       ),
     ),
   ),
@@ -30222,49 +32568,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
+      'isActive' => 
+      array (
+        'setter' => 'setIsActive',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
       'amount' => 
       array (
         'setter' => 'setAmount',
         'element' => 'Ratio',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRatio',
-      ),
-    ),
-  ),
-  'Medication.Batch' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationBatch',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'lotNumber' => 
-      array (
-        'setter' => 'setLotNumber',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-      'expirationDate' => 
-      array (
-        'setter' => 'setExpirationDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
     ),
   ),
@@ -30303,6 +32617,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContent',
         'element' => 'Medication.Content',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationContent',
+      ),
+      'batch' => 
+      array (
+        'setter' => 'addBatch',
+        'element' => 'Medication.Batch',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationBatch',
       ),
     ),
   ),
@@ -30347,6 +32667,70 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setAmount',
         'element' => 'Quantity',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+    ),
+  ),
+  'Medication.Batch' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMedication\\FHIRMedicationBatch',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'lotNumber' => 
+      array (
+        'setter' => 'setLotNumber',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'expirationDate' => 
+      array (
+        'setter' => 'setExpirationDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+    ),
+  ),
+  'MedicationStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatus',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'MedicationStatus-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -30410,11 +32794,29 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'partOf' => 
+      array (
+        'setter' => 'addPartOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
         'element' => 'MedicationAdministrationStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationAdministrationStatus',
+      ),
+      'category' => 
+      array (
+        'setter' => 'setCategory',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'medicationCodeableConcept' => 
       array (
@@ -30428,15 +32830,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'patient' => 
+      'subject' => 
       array (
-        'setter' => 'setPatient',
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'encounter' => 
+      'context' => 
       array (
-        'setter' => 'setEncounter',
+        'setter' => 'setContext',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -30460,21 +32862,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'performer' => 
       array (
-        'setter' => 'setPerformer',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'reasonReference' => 
-      array (
-        'setter' => 'addReasonReference',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'prescription' => 
-      array (
-        'setter' => 'setPrescription',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'addPerformer',
+        'element' => 'MedicationAdministration.Performer',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedicationAdministration\\FHIRMedicationAdministrationPerformer',
       ),
       'notGiven' => 
       array (
@@ -30488,11 +32878,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'reasonGiven' => 
+      'reasonCode' => 
       array (
-        'setter' => 'addReasonGiven',
+        'setter' => 'addReasonCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'prescription' => 
+      array (
+        'setter' => 'setPrescription',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'device' => 
       array (
@@ -30515,6 +32917,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'eventHistory' => 
       array (
         'setter' => 'addEventHistory',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'MedicationAdministration.Performer' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMedicationAdministration\\FHIRMedicationAdministrationPerformer',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'actor' => 
+      array (
+        'setter' => 'setActor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -30670,15 +33110,27 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'identifier' => 
       array (
-        'setter' => 'setIdentifier',
+        'setter' => 'addIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'partOf' => 
+      array (
+        'setter' => 'addPartOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'status' => 
       array (
         'setter' => 'setStatus',
         'element' => 'MedicationDispenseStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationDispenseStatus',
+      ),
+      'category' => 
+      array (
+        'setter' => 'setCategory',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'medicationCodeableConcept' => 
       array (
@@ -30692,9 +33144,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'patient' => 
+      'subject' => 
       array (
-        'setter' => 'setPatient',
+        'setter' => 'setSubject',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'context' => 
+      array (
+        'setter' => 'setContext',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -30704,17 +33162,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'dispenser' => 
+      'performer' => 
       array (
-        'setter' => 'setDispenser',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'dispensingOrganization' => 
-      array (
-        'setter' => 'setDispensingOrganization',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'addPerformer',
+        'element' => 'MedicationDispense.Performer',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedicationDispense\\FHIRMedicationDispensePerformer',
       ),
       'authorizingPrescription' => 
       array (
@@ -30773,8 +33225,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'dosageInstruction' => 
       array (
         'setter' => 'addDosageInstruction',
-        'element' => 'DosageInstruction',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosageInstruction',
+        'element' => 'Dosage',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosage',
       ),
       'substitution' => 
       array (
@@ -30782,9 +33234,71 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'MedicationDispense.Substitution',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedicationDispense\\FHIRMedicationDispenseSubstitution',
       ),
+      'detectedIssue' => 
+      array (
+        'setter' => 'addDetectedIssue',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'notDone' => 
+      array (
+        'setter' => 'setNotDone',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'notDoneReasonCodeableConcept' => 
+      array (
+        'setter' => 'setNotDoneReasonCodeableConcept',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'notDoneReasonReference' => 
+      array (
+        'setter' => 'setNotDoneReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'eventHistory' => 
       array (
         'setter' => 'addEventHistory',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'MedicationDispense.Performer' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMedicationDispense\\FHIRMedicationDispensePerformer',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'actor' => 
+      array (
+        'setter' => 'setActor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -30813,6 +33327,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addModifierExtension',
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'wasSubstituted' => 
+      array (
+        'setter' => 'setWasSubstituted',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
       'type' => 
       array (
@@ -31020,7 +33540,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'addDosageInstruction',
         'element' => 'DosageInstruction',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosageInstruction',
+        'type' => NULL,
       ),
       'dispenseRequest' => 
       array (
@@ -31654,9 +34174,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'requisition' => 
+      'groupIdentifier' => 
       array (
-        'setter' => 'setRequisition',
+        'setter' => 'setGroupIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
@@ -31666,11 +34186,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'MedicationRequestStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationRequestStatus',
       ),
-      'stage' => 
+      'intent' => 
       array (
-        'setter' => 'setStage',
+        'setter' => 'setIntent',
+        'element' => 'MedicationRequestIntent',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationRequestIntent',
+      ),
+      'category' => 
+      array (
+        'setter' => 'setCategory',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'priority' => 
+      array (
+        'setter' => 'setPriority',
+        'element' => 'MedicationRequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationRequestPriority',
       ),
       'medicationCodeableConcept' => 
       array (
@@ -31684,9 +34216,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'patient' => 
+      'subject' => 
       array (
-        'setter' => 'setPatient',
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -31702,15 +34234,21 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'dateWritten' => 
+      'authoredOn' => 
       array (
-        'setter' => 'setDateWritten',
+        'setter' => 'setAuthoredOn',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'requester' => 
       array (
         'setter' => 'setRequester',
+        'element' => 'MedicationRequest.Requester',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMedicationRequest\\FHIRMedicationRequestRequester',
+      ),
+      'recorder' => 
+      array (
+        'setter' => 'setRecorder',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -31732,17 +34270,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
-      'category' => 
-      array (
-        'setter' => 'setCategory',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
       'dosageInstruction' => 
       array (
         'setter' => 'addDosageInstruction',
-        'element' => 'DosageInstruction',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosageInstruction',
+        'element' => 'Dosage',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosage',
       ),
       'dispenseRequest' => 
       array (
@@ -31762,9 +34294,53 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
+      'detectedIssue' => 
+      array (
+        'setter' => 'addDetectedIssue',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'eventHistory' => 
       array (
         'setter' => 'addEventHistory',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'MedicationRequest.Requester' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMedicationRequest\\FHIRMedicationRequestRequester',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'agent' => 
+      array (
+        'setter' => 'setAgent',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -31890,6 +34466,58 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'MedicationRequestPriority' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMedicationRequestPriority',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'MedicationRequestPriority-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'MedicationRequestIntent' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMedicationRequestIntent',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'MedicationRequestIntent-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'MedicationStatement' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRMedicationStatement',
@@ -31950,11 +34578,35 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'partOf' => 
+      array (
+        'setter' => 'addPartOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'context' => 
+      array (
+        'setter' => 'setContext',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
         'element' => 'MedicationStatementStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatementStatus',
+      ),
+      'category' => 
+      array (
+        'setter' => 'setCategory',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'medicationCodeableConcept' => 
       array (
@@ -31965,12 +34617,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'medicationReference' => 
       array (
         'setter' => 'setMedicationReference',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'subject' => 
-      array (
-        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -31986,9 +34632,21 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
+      'dateAsserted' => 
+      array (
+        'setter' => 'setDateAsserted',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'informationSource' => 
       array (
         'setter' => 'setInformationSource',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'subject' => 
+      array (
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -31998,17 +34656,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'dateAsserted' => 
+      'taken' => 
       array (
-        'setter' => 'setDateAsserted',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
-      ),
-      'notTaken' => 
-      array (
-        'setter' => 'setNotTaken',
-        'element' => 'MedicationStatementNotTaken',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatementNotTaken',
+        'setter' => 'setTaken',
+        'element' => 'MedicationStatementTaken',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatementTaken',
       ),
       'reasonNotTaken' => 
       array (
@@ -32016,15 +34668,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'reasonForUseCodeableConcept' => 
+      'reasonCode' => 
       array (
-        'setter' => 'addReasonForUseCodeableConcept',
+        'setter' => 'addReasonCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'reasonForUseReference' => 
+      'reasonReference' => 
       array (
-        'setter' => 'addReasonForUseReference',
+        'setter' => 'addReasonReference',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -32034,17 +34686,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
-      'category' => 
-      array (
-        'setter' => 'setCategory',
-        'element' => 'MedicationStatementCategory',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatementCategory',
-      ),
       'dosage' => 
       array (
         'setter' => 'addDosage',
-        'element' => 'DosageInstruction',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosageInstruction',
+        'element' => 'Dosage',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDosage',
       ),
     ),
   ),
@@ -32074,9 +34720,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'MedicationStatementCategory' => 
+  'MedicationStatementTaken' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatementCategory',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatementTaken',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -32095,33 +34741,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'MedicationStatementCategory-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'MedicationStatementNotTaken' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRMedicationStatementNotTaken',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'MedicationStatementNotTaken-list',
+        'element' => 'MedicationStatementTaken-list',
         'type' => 'string',
       ),
     ),
@@ -32185,6 +34805,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setUrl',
         'element' => 'uri',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'identifier' => 
+      array (
+        'setter' => 'setIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
       'version' => 
       array (
@@ -32291,8 +34917,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'category' => 
       array (
         'setter' => 'setCategory',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'MessageSignificanceCategory',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMessageSignificanceCategory',
       ),
       'focus' => 
       array (
@@ -32341,8 +34967,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'code' => 
       array (
         'setter' => 'setCode',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'profile' => 
       array (
@@ -32456,35 +35082,35 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'timestamp' => 
-      array (
-        'setter' => 'setTimestamp',
-        'element' => 'instant',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
-      ),
       'event' => 
       array (
         'setter' => 'setEvent',
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
-      'response' => 
-      array (
-        'setter' => 'setResponse',
-        'element' => 'MessageHeader.Response',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderResponse',
-      ),
-      'source' => 
-      array (
-        'setter' => 'setSource',
-        'element' => 'MessageHeader.Source',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderSource',
-      ),
       'destination' => 
       array (
         'setter' => 'addDestination',
         'element' => 'MessageHeader.Destination',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderDestination',
+      ),
+      'receiver' => 
+      array (
+        'setter' => 'setReceiver',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'sender' => 
+      array (
+        'setter' => 'setSender',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'timestamp' => 
+      array (
+        'setter' => 'setTimestamp',
+        'element' => 'instant',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
       ),
       'enterer' => 
       array (
@@ -32498,11 +35124,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'receiver' => 
+      'source' => 
       array (
-        'setter' => 'setReceiver',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setSource',
+        'element' => 'MessageHeader.Source',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderSource',
       ),
       'responsible' => 
       array (
@@ -32516,17 +35142,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'data' => 
+      'response' => 
       array (
-        'setter' => 'addData',
+        'setter' => 'setResponse',
+        'element' => 'MessageHeader.Response',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderResponse',
+      ),
+      'focus' => 
+      array (
+        'setter' => 'addFocus',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
-  'MessageHeader.Response' => 
+  'MessageHeader.Destination' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderResponse',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderDestination',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -32548,23 +35180,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'identifier' => 
+      'name' => 
       array (
-        'setter' => 'setIdentifier',
-        'element' => 'id',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+        'setter' => 'setName',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'code' => 
+      'target' => 
       array (
-        'setter' => 'setCode',
-        'element' => 'ResponseType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResponseType',
-      ),
-      'details' => 
-      array (
-        'setter' => 'setDetails',
+        'setter' => 'setTarget',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'endpoint' => 
+      array (
+        'setter' => 'setEndpoint',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
     ),
   ),
@@ -32624,9 +35256,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'MessageHeader.Destination' => 
+  'MessageHeader.Response' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderDestination',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRMessageHeader\\FHIRMessageHeaderResponse',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -32648,23 +35280,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'name' => 
+      'identifier' => 
       array (
-        'setter' => 'setName',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'setter' => 'setIdentifier',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
       ),
-      'target' => 
+      'code' => 
       array (
-        'setter' => 'setTarget',
+        'setter' => 'setCode',
+        'element' => 'ResponseType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResponseType',
+      ),
+      'details' => 
+      array (
+        'setter' => 'setDetails',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'endpoint' => 
-      array (
-        'setter' => 'setEndpoint',
-        'element' => 'uri',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
     ),
   ),
@@ -34868,6 +37500,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
@@ -34892,9 +37530,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'encounter' => 
+      'context' => 
       array (
-        'setter' => 'setEncounter',
+        'setter' => 'setContext',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -34939,6 +37577,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setValueString',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'valueBoolean' => 
+      array (
+        'setter' => 'setValueBoolean',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
       'valueRange' => 
       array (
@@ -35080,9 +37724,15 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Quantity',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
       ),
-      'meaning' => 
+      'type' => 
       array (
-        'setter' => 'addMeaning',
+        'setter' => 'setType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'appliesTo' => 
+      array (
+        'setter' => 'addAppliesTo',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -35274,32 +37924,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ObservationStatus' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRObservationStatus',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'ObservationStatus-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
   'OperationDefinition' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIROperationDefinition',
@@ -35459,8 +38083,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'resource' => 
       array (
         'setter' => 'addResource',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'system' => 
       array (
@@ -35551,8 +38175,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'type' => 
       array (
         'setter' => 'setType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FHIRAllTypes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFHIRAllTypes',
       ),
       'searchType' => 
       array (
@@ -35659,6 +38283,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setComment',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+    ),
+  ),
+  'FHIRAllTypes' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRFHIRAllTypes',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'FHIRAllTypes-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -36304,7 +38954,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'type' => 
       array (
-        'setter' => 'setType',
+        'setter' => 'addType',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -37159,8 +39809,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'request' => 
       array (
@@ -37275,8 +39925,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'period' => 
       array (
@@ -37344,11 +39994,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Money',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
       ),
-      'note' => 
+      'processNote' => 
       array (
-        'setter' => 'addNote',
-        'element' => 'PaymentReconciliation.Note',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPaymentReconciliation\\FHIRPaymentReconciliationNote',
+        'setter' => 'addProcessNote',
+        'element' => 'PaymentReconciliation.ProcessNote',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPaymentReconciliation\\FHIRPaymentReconciliationProcessNote',
       ),
     ),
   ),
@@ -37420,9 +40070,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'PaymentReconciliation.Note' => 
+  'PaymentReconciliation.ProcessNote' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPaymentReconciliation\\FHIRPaymentReconciliationNote',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPaymentReconciliation\\FHIRPaymentReconciliationProcessNote',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -37746,6 +40396,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
+      'publisher' => 
+      array (
+        'setter' => 'setPublisher',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
       'description' => 
       array (
         'setter' => 'setDescription',
@@ -37806,12 +40462,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Contributor',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContributor',
       ),
-      'publisher' => 
-      array (
-        'setter' => 'setPublisher',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
       'contact' => 
       array (
         'setter' => 'addContact',
@@ -37836,17 +40486,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'actionDefinition' => 
+      'goal' => 
       array (
-        'setter' => 'addActionDefinition',
-        'element' => 'PlanDefinition.ActionDefinition',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionActionDefinition',
+        'setter' => 'addGoal',
+        'element' => 'PlanDefinition.Goal',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionGoal',
+      ),
+      'action' => 
+      array (
+        'setter' => 'addAction',
+        'element' => 'PlanDefinition.Action',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionAction',
       ),
     ),
   ),
-  'PlanDefinition.ActionDefinition' => 
+  'PlanDefinition.Goal' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionActionDefinition',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionGoal',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -37868,11 +40524,129 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'actionIdentifier' => 
+      'category' => 
       array (
-        'setter' => 'setActionIdentifier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+        'setter' => 'setCategory',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'description' => 
+      array (
+        'setter' => 'setDescription',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'priority' => 
+      array (
+        'setter' => 'setPriority',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'start' => 
+      array (
+        'setter' => 'setStart',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'addresses' => 
+      array (
+        'setter' => 'addAddresses',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'documentation' => 
+      array (
+        'setter' => 'addDocumentation',
+        'element' => 'RelatedArtifact',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRelatedArtifact',
+      ),
+      'target' => 
+      array (
+        'setter' => 'addTarget',
+        'element' => 'PlanDefinition.Target',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionTarget',
+      ),
+    ),
+  ),
+  'PlanDefinition.Target' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionTarget',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'measure' => 
+      array (
+        'setter' => 'setMeasure',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'detailQuantity' => 
+      array (
+        'setter' => 'setDetailQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'detailRange' => 
+      array (
+        'setter' => 'setDetailRange',
+        'element' => 'Range',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
+      ),
+      'detailCodeableConcept' => 
+      array (
+        'setter' => 'setDetailCodeableConcept',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'due' => 
+      array (
+        'setter' => 'setDue',
+        'element' => 'Duration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
+      ),
+    ),
+  ),
+  'PlanDefinition.Action' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionAction',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
       'label' => 
       array (
@@ -37904,11 +40678,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
+      'reason' => 
+      array (
+        'setter' => 'addReason',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
       'documentation' => 
       array (
         'setter' => 'addDocumentation',
         'element' => 'RelatedArtifact',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRelatedArtifact',
+      ),
+      'goalId' => 
+      array (
+        'setter' => 'addGoalId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
       ),
       'triggerDefinition' => 
       array (
@@ -37970,11 +40756,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Timing',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
       ),
-      'participantType' => 
+      'participant' => 
       array (
-        'setter' => 'addParticipantType',
-        'element' => 'PlanActionParticipantType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionParticipantType',
+        'setter' => 'addParticipant',
+        'element' => 'PlanDefinition.Participant',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionParticipant',
       ),
       'type' => 
       array (
@@ -37985,36 +40771,36 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'groupingBehavior' => 
       array (
         'setter' => 'setGroupingBehavior',
-        'element' => 'PlanActionGroupingBehavior',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionGroupingBehavior',
+        'element' => 'ActionGroupingBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionGroupingBehavior',
       ),
       'selectionBehavior' => 
       array (
         'setter' => 'setSelectionBehavior',
-        'element' => 'PlanActionSelectionBehavior',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionSelectionBehavior',
+        'element' => 'ActionSelectionBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionSelectionBehavior',
       ),
       'requiredBehavior' => 
       array (
         'setter' => 'setRequiredBehavior',
-        'element' => 'PlanActionRequiredBehavior',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionRequiredBehavior',
+        'element' => 'ActionRequiredBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionRequiredBehavior',
       ),
       'precheckBehavior' => 
       array (
         'setter' => 'setPrecheckBehavior',
-        'element' => 'PlanActionPrecheckBehavior',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionPrecheckBehavior',
+        'element' => 'ActionPrecheckBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionPrecheckBehavior',
       ),
       'cardinalityBehavior' => 
       array (
         'setter' => 'setCardinalityBehavior',
-        'element' => 'PlanActionCardinalityBehavior',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionCardinalityBehavior',
+        'element' => 'ActionCardinalityBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionCardinalityBehavior',
       ),
-      'activityDefinition' => 
+      'definition' => 
       array (
-        'setter' => 'setActivityDefinition',
+        'setter' => 'setDefinition',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -38030,11 +40816,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'PlanDefinition.DynamicValue',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionDynamicValue',
       ),
-      'actionDefinition' => 
+      'action' => 
       array (
-        'setter' => 'addActionDefinition',
-        'element' => 'PlanDefinition.ActionDefinition',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionActionDefinition',
+        'setter' => 'addAction',
+        'element' => 'PlanDefinition.Action',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionAction',
       ),
     ),
   ),
@@ -38065,8 +40851,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'kind' => 
       array (
         'setter' => 'setKind',
-        'element' => 'PlanActionConditionKind',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionConditionKind',
+        'element' => 'ActionConditionKind',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionConditionKind',
       ),
       'description' => 
       array (
@@ -38112,17 +40898,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'actionIdentifier' => 
+      'actionId' => 
       array (
-        'setter' => 'setActionIdentifier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+        'setter' => 'setActionId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
       ),
       'relationship' => 
       array (
         'setter' => 'setRelationship',
-        'element' => 'PlanActionRelationshipType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionRelationshipType',
+        'element' => 'ActionRelationshipType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionRelationshipType',
       ),
       'offsetDuration' => 
       array (
@@ -38135,6 +40921,44 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setOffsetRange',
         'element' => 'Range',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
+      ),
+    ),
+  ),
+  'PlanDefinition.Participant' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPlanDefinition\\FHIRPlanDefinitionParticipant',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'type' => 
+      array (
+        'setter' => 'setType',
+        'element' => 'ActionParticipantType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionParticipantType',
+      ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
     ),
   ),
@@ -38188,9 +41012,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'PlanActionSelectionBehavior' => 
+  'ActionRequiredBehavior' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionSelectionBehavior',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionRequiredBehavior',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -38209,14 +41033,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'PlanActionSelectionBehavior-list',
+        'element' => 'ActionRequiredBehavior-list',
         'type' => 'string',
       ),
     ),
   ),
-  'PlanActionCardinalityBehavior' => 
+  'ActionRelationshipType' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionCardinalityBehavior',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionRelationshipType',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -38235,14 +41059,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'PlanActionCardinalityBehavior-list',
+        'element' => 'ActionRelationshipType-list',
         'type' => 'string',
       ),
     ),
   ),
-  'PlanActionRequiredBehavior' => 
+  'ActionGroupingBehavior' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionRequiredBehavior',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionGroupingBehavior',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -38261,14 +41085,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'PlanActionRequiredBehavior-list',
+        'element' => 'ActionGroupingBehavior-list',
         'type' => 'string',
       ),
     ),
   ),
-  'PlanActionParticipantType' => 
+  'ActionSelectionBehavior' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionParticipantType',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionSelectionBehavior',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -38287,14 +41111,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'PlanActionParticipantType-list',
+        'element' => 'ActionSelectionBehavior-list',
         'type' => 'string',
       ),
     ),
   ),
-  'PlanActionGroupingBehavior' => 
+  'ActionCardinalityBehavior' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionGroupingBehavior',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionCardinalityBehavior',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -38313,14 +41137,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'PlanActionGroupingBehavior-list',
+        'element' => 'ActionCardinalityBehavior-list',
         'type' => 'string',
       ),
     ),
   ),
-  'PlanActionRelationshipType' => 
+  'ActionPrecheckBehavior' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionRelationshipType',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionPrecheckBehavior',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -38339,14 +41163,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'PlanActionRelationshipType-list',
+        'element' => 'ActionPrecheckBehavior-list',
         'type' => 'string',
       ),
     ),
   ),
-  'PlanActionConditionKind' => 
+  'ActionConditionKind' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionConditionKind',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRActionConditionKind',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -38365,33 +41189,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'PlanActionConditionKind-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'PlanActionPrecheckBehavior' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRPlanActionPrecheckBehavior',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'PlanActionPrecheckBehavior-list',
+        'element' => 'ActionConditionKind-list',
         'type' => 'string',
       ),
     ),
@@ -38498,12 +41296,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Attachment',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAttachment',
       ),
-      'role' => 
-      array (
-        'setter' => 'addRole',
-        'element' => 'Practitioner.Role',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRPractitioner\\FHIRPractitionerRole',
-      ),
       'qualification' => 
       array (
         'setter' => 'addQualification',
@@ -38515,86 +41307,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addCommunication',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-    ),
-  ),
-  'Practitioner.Role' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRPractitioner\\FHIRPractitionerRole',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'organization' => 
-      array (
-        'setter' => 'setOrganization',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'code' => 
-      array (
-        'setter' => 'setCode',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'specialty' => 
-      array (
-        'setter' => 'addSpecialty',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'identifier' => 
-      array (
-        'setter' => 'addIdentifier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
-      ),
-      'telecom' => 
-      array (
-        'setter' => 'addTelecom',
-        'element' => 'ContactPoint',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactPoint',
-      ),
-      'period' => 
-      array (
-        'setter' => 'setPeriod',
-        'element' => 'Period',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
-      ),
-      'location' => 
-      array (
-        'setter' => 'addLocation',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'healthcareService' => 
-      array (
-        'setter' => 'addHealthcareService',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'endpoint' => 
-      array (
-        'setter' => 'addEndpoint',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -38714,6 +41426,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'period' => 
+      array (
+        'setter' => 'setPeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
       'practitioner' => 
       array (
         'setter' => 'setPractitioner',
@@ -38755,12 +41473,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addTelecom',
         'element' => 'ContactPoint',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactPoint',
-      ),
-      'period' => 
-      array (
-        'setter' => 'setPeriod',
-        'element' => 'Period',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
       'availableTime' => 
       array (
@@ -38815,8 +41527,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'daysOfWeek' => 
       array (
         'setter' => 'addDaysOfWeek',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'DaysOfWeek',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDaysOfWeek',
       ),
       'allDay' => 
       array (
@@ -38936,11 +41648,41 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'partOf' => 
+      array (
+        'setter' => 'addPartOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'ProcedureStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRProcedureStatus',
+        'element' => 'EventStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIREventStatus',
+      ),
+      'notDone' => 
+      array (
+        'setter' => 'setNotDone',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'notDoneReason' => 
+      array (
+        'setter' => 'setNotDoneReason',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'category' => 
       array (
@@ -38960,9 +41702,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'encounter' => 
+      'context' => 
       array (
-        'setter' => 'setEncounter',
+        'setter' => 'setContext',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -38990,29 +41732,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'reasonReference' => 
-      array (
-        'setter' => 'addReasonReference',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
       'reasonCode' => 
       array (
         'setter' => 'addReasonCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'notPerformed' => 
+      'reasonReference' => 
       array (
-        'setter' => 'setNotPerformed',
-        'element' => 'boolean',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
-      ),
-      'reasonNotPerformed' => 
-      array (
-        'setter' => 'addReasonNotPerformed',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'bodySite' => 
       array (
@@ -39038,21 +41768,21 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
+      'complicationDetail' => 
+      array (
+        'setter' => 'addComplicationDetail',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'followUp' => 
       array (
         'setter' => 'addFollowUp',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'request' => 
+      'note' => 
       array (
-        'setter' => 'setRequest',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'notes' => 
-      array (
-        'setter' => 'addNotes',
+        'setter' => 'addNote',
         'element' => 'Annotation',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
@@ -39073,12 +41803,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addUsedCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'component' => 
-      array (
-        'setter' => 'addComponent',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -39106,17 +41830,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
+      'role' => 
+      array (
+        'setter' => 'setRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
       'actor' => 
       array (
         'setter' => 'setActor',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'role' => 
+      'onBehalfOf' => 
       array (
-        'setter' => 'setRole',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'setter' => 'setOnBehalfOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -39155,32 +41885,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setManipulated',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-    ),
-  ),
-  'ProcedureStatus' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRProcedureStatus',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'ProcedureStatus-list',
-        'type' => 'string',
       ),
     ),
   ),
@@ -39244,11 +41948,59 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
-      'subject' => 
+      'definition' => 
       array (
-        'setter' => 'setSubject',
+        'setter' => 'addDefinition',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'replaces' => 
+      array (
+        'setter' => 'addReplaces',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'requisition' => 
+      array (
+        'setter' => 'setRequisition',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'RequestStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestStatus',
+      ),
+      'intent' => 
+      array (
+        'setter' => 'setIntent',
+        'element' => 'RequestIntent',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestIntent',
+      ),
+      'priority' => 
+      array (
+        'setter' => 'setPriority',
+        'element' => 'RequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
+      ),
+      'doNotPerform' => 
+      array (
+        'setter' => 'setDoNotPerform',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'category' => 
+      array (
+        'setter' => 'addCategory',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'code' => 
       array (
@@ -39256,71 +42008,35 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'bodySite' => 
+      'subject' => 
       array (
-        'setter' => 'addBodySite',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'reasonCodeableConcept' => 
-      array (
-        'setter' => 'setReasonCodeableConcept',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
-      'reasonReference' => 
-      array (
-        'setter' => 'setReasonReference',
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'scheduledDateTime' => 
+      'context' => 
       array (
-        'setter' => 'setScheduledDateTime',
+        'setter' => 'setContext',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'occurrenceDateTime' => 
+      array (
+        'setter' => 'setOccurrenceDateTime',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
-      'scheduledPeriod' => 
+      'occurrencePeriod' => 
       array (
-        'setter' => 'setScheduledPeriod',
+        'setter' => 'setOccurrencePeriod',
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
-      'scheduledTiming' => 
+      'occurrenceTiming' => 
       array (
-        'setter' => 'setScheduledTiming',
+        'setter' => 'setOccurrenceTiming',
         'element' => 'Timing',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
-      ),
-      'encounter' => 
-      array (
-        'setter' => 'setEncounter',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'performer' => 
-      array (
-        'setter' => 'setPerformer',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'status' => 
-      array (
-        'setter' => 'setStatus',
-        'element' => 'ProcedureRequestStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRProcedureRequestStatus',
-      ),
-      'supportingInfo' => 
-      array (
-        'setter' => 'addSupportingInfo',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'notes' => 
-      array (
-        'setter' => 'addNotes',
-        'element' => 'Annotation',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
       ),
       'asNeededBoolean' => 
       array (
@@ -39334,29 +42050,115 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'orderedOn' => 
+      'authoredOn' => 
       array (
-        'setter' => 'setOrderedOn',
+        'setter' => 'setAuthoredOn',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
-      'orderer' => 
+      'requester' => 
       array (
-        'setter' => 'setOrderer',
+        'setter' => 'setRequester',
+        'element' => 'ProcedureRequest.Requester',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRProcedureRequest\\FHIRProcedureRequestRequester',
+      ),
+      'performerType' => 
+      array (
+        'setter' => 'setPerformerType',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'performer' => 
+      array (
+        'setter' => 'setPerformer',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'priority' => 
+      'reasonCode' => 
       array (
-        'setter' => 'setPriority',
-        'element' => 'ProcedureRequestPriority',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRProcedureRequestPriority',
+        'setter' => 'addReasonCode',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'supportingInfo' => 
+      array (
+        'setter' => 'addSupportingInfo',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'specimen' => 
+      array (
+        'setter' => 'addSpecimen',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'bodySite' => 
+      array (
+        'setter' => 'addBodySite',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'note' => 
+      array (
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+      ),
+      'relevantHistory' => 
+      array (
+        'setter' => 'addRelevantHistory',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
-  'ProcedureRequestStatus' => 
+  'ProcedureRequest.Requester' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRProcedureRequestStatus',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRProcedureRequest\\FHIRProcedureRequestRequester',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'agent' => 
+      array (
+        'setter' => 'setAgent',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'RequestIntent' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRRequestIntent',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -39375,33 +42177,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'ProcedureRequestStatus-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'ProcedureRequestPriority' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRProcedureRequestPriority',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'ProcedureRequestPriority-list',
+        'element' => 'RequestIntent-list',
         'type' => 'string',
       ),
     ),
@@ -39469,8 +42245,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'action' => 
       array (
@@ -39673,8 +42449,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'created' => 
       array (
@@ -39724,11 +42500,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'note' => 
+      'processNote' => 
       array (
-        'setter' => 'addNote',
-        'element' => 'ProcessResponse.Note',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRProcessResponse\\FHIRProcessResponseNote',
+        'setter' => 'addProcessNote',
+        'element' => 'ProcessResponse.ProcessNote',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRProcessResponse\\FHIRProcessResponseProcessNote',
       ),
       'error' => 
       array (
@@ -39744,9 +42520,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'ProcessResponse.Note' => 
+  'ProcessResponse.ProcessNote' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRProcessResponse\\FHIRProcessResponseNote',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRProcessResponse\\FHIRProcessResponseProcessNote',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -40452,6 +43228,18 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'instant',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
       ),
+      'policy' => 
+      array (
+        'setter' => 'addPolicy',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'location' => 
+      array (
+        'setter' => 'setLocation',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'reason' => 
       array (
         'setter' => 'addReason',
@@ -40463,18 +43251,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setActivity',
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
-      ),
-      'location' => 
-      array (
-        'setter' => 'setLocation',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'policy' => 
-      array (
-        'setter' => 'addPolicy',
-        'element' => 'uri',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
       'agent' => 
       array (
@@ -40522,9 +43298,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'role' => 
       array (
-        'setter' => 'setRole',
-        'element' => 'Coding',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
+        'setter' => 'addRole',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'whoUri' => 
       array (
@@ -40588,11 +43364,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'ProvenanceEntityRole',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRProvenanceEntityRole',
       ),
-      'reference' => 
+      'whatUri' => 
       array (
-        'setter' => 'setReference',
+        'setter' => 'setWhatUri',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'whatReference' => 
+      array (
+        'setter' => 'setWhatReference',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'whatIdentifier' => 
+      array (
+        'setter' => 'setWhatIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
       'agent' => 
       array (
@@ -40700,11 +43488,29 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
+      'name' => 
+      array (
+        'setter' => 'setName',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'title' => 
+      array (
+        'setter' => 'setTitle',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'QuestionnaireStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuestionnaireStatus',
+        'element' => 'PublicationStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPublicationStatus',
+      ),
+      'experimental' => 
+      array (
+        'setter' => 'setExperimental',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
       'date' => 
       array (
@@ -40718,35 +43524,71 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'telecom' => 
+      'description' => 
       array (
-        'setter' => 'addTelecom',
-        'element' => 'ContactPoint',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactPoint',
+        'setter' => 'setDescription',
+        'element' => 'markdown',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
+      ),
+      'purpose' => 
+      array (
+        'setter' => 'setPurpose',
+        'element' => 'markdown',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
+      ),
+      'approvalDate' => 
+      array (
+        'setter' => 'setApprovalDate',
+        'element' => 'date',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
+      ),
+      'lastReviewDate' => 
+      array (
+        'setter' => 'setLastReviewDate',
+        'element' => 'date',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
+      ),
+      'effectivePeriod' => 
+      array (
+        'setter' => 'setEffectivePeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
       'useContext' => 
       array (
         'setter' => 'addUseContext',
+        'element' => 'UsageContext',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUsageContext',
+      ),
+      'jurisdiction' => 
+      array (
+        'setter' => 'addJurisdiction',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'title' => 
+      'contact' => 
       array (
-        'setter' => 'setTitle',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'setter' => 'addContact',
+        'element' => 'ContactDetail',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
       ),
-      'concept' => 
+      'copyright' => 
       array (
-        'setter' => 'addConcept',
+        'setter' => 'setCopyright',
+        'element' => 'markdown',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
+      ),
+      'code' => 
+      array (
+        'setter' => 'addCode',
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
       'subjectType' => 
       array (
         'setter' => 'addSubjectType',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'item' => 
       array (
@@ -40792,9 +43634,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'uri',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
       ),
-      'concept' => 
+      'code' => 
       array (
-        'setter' => 'addConcept',
+        'setter' => 'addCode',
         'element' => 'Coding',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
       ),
@@ -40887,12 +43729,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setInitialDateTime',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
-      ),
-      'initialInstant' => 
-      array (
-        'setter' => 'setInitialInstant',
-        'element' => 'instant',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
       ),
       'initialTime' => 
       array (
@@ -41009,12 +43845,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setAnswerDateTime',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
-      ),
-      'answerInstant' => 
-      array (
-        'setter' => 'setAnswerInstant',
-        'element' => 'instant',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
       ),
       'answerTime' => 
       array (
@@ -41138,32 +43968,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'QuestionnaireItemType-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'QuestionnaireStatus' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRQuestionnaireStatus',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'QuestionnaireStatus-list',
         'type' => 'string',
       ),
     ),
@@ -41616,17 +44420,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'author' => 
-      array (
-        'setter' => 'setAuthor',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
       'authored' => 
       array (
         'setter' => 'setAuthored',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'author' => 
+      array (
+        'setter' => 'setAuthor',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'source' => 
       array (
@@ -41757,12 +44561,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setValueDateTime',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
-      ),
-      'valueInstant' => 
-      array (
-        'setter' => 'setValueInstant',
-        'element' => 'instant',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
       ),
       'valueTime' => 
       array (
@@ -41900,29 +44698,41 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'basedOn' => 
       array (
         'setter' => 'addBasedOn',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'parent' => 
+      'replaces' => 
       array (
-        'setter' => 'setParent',
+        'setter' => 'addReplaces',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'groupIdentifier' => 
+      array (
+        'setter' => 'setGroupIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'ReferralStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReferralStatus',
+        'element' => 'RequestStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestStatus',
       ),
-      'category' => 
+      'intent' => 
       array (
-        'setter' => 'setCategory',
-        'element' => 'ReferralCategory',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReferralCategory',
+        'setter' => 'setIntent',
+        'element' => 'RequestIntent',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestIntent',
       ),
       'type' => 
       array (
@@ -41933,12 +44743,18 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'priority' => 
       array (
         'setter' => 'setPriority',
+        'element' => 'RequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
+      ),
+      'serviceRequested' => 
+      array (
+        'setter' => 'addServiceRequested',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'patient' => 
+      'subject' => 
       array (
-        'setter' => 'setPatient',
+        'setter' => 'setSubject',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -41948,23 +44764,29 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'fulfillmentTime' => 
+      'occurrenceDateTime' => 
       array (
-        'setter' => 'setFulfillmentTime',
+        'setter' => 'setOccurrenceDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'occurrencePeriod' => 
+      array (
+        'setter' => 'setOccurrencePeriod',
         'element' => 'Period',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
       ),
-      'authored' => 
+      'authoredOn' => 
       array (
-        'setter' => 'setAuthored',
+        'setter' => 'setAuthoredOn',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'requester' => 
       array (
         'setter' => 'setRequester',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'element' => 'ReferralRequest.Requester',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRReferralRequest\\FHIRReferralRequestRequester',
       ),
       'specialty' => 
       array (
@@ -41978,11 +44800,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'reason' => 
+      'reasonCode' => 
       array (
-        'setter' => 'setReason',
+        'setter' => 'addReasonCode',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'reasonReference' => 
+      array (
+        'setter' => 'addReasonReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'description' => 
       array (
@@ -41990,24 +44818,30 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'serviceRequested' => 
+      'supportingInfo' => 
       array (
-        'setter' => 'addServiceRequested',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'setter' => 'addSupportingInfo',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'supportingInformation' => 
+      'note' => 
       array (
-        'setter' => 'addSupportingInformation',
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+      ),
+      'relevantHistory' => 
+      array (
+        'setter' => 'addRelevantHistory',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
-  'ReferralCategory' => 
+  'ReferralRequest.Requester' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRReferralCategory',
-    'extendedElementName' => 'Element',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRReferralRequest\\FHIRReferralRequestRequester',
+    'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
       'extension' => 
@@ -42022,37 +44856,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string-primitive',
         'type' => 'string',
       ),
-      'value' => 
+      'modifierExtension' => 
       array (
-        'setter' => 'setValue',
-        'element' => 'ReferralCategory-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'ReferralStatus' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRReferralStatus',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
+        'setter' => 'addModifierExtension',
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'id' => 
+      'agent' => 
       array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
+        'setter' => 'setAgent',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'value' => 
+      'onBehalfOf' => 
       array (
-        'setter' => 'setValue',
-        'element' => 'ReferralStatus-list',
-        'type' => 'string',
+        'setter' => 'setOnBehalfOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -42234,9 +45054,51 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'identifier' => 
       array (
-        'setter' => 'setIdentifier',
+        'setter' => 'addIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'definition' => 
+      array (
+        'setter' => 'addDefinition',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'replaces' => 
+      array (
+        'setter' => 'addReplaces',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'groupIdentifier' => 
+      array (
+        'setter' => 'setGroupIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'RequestStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestStatus',
+      ),
+      'intent' => 
+      array (
+        'setter' => 'setIntent',
+        'element' => 'RequestIntent',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestIntent',
+      ),
+      'priority' => 
+      array (
+        'setter' => 'setPriority',
+        'element' => 'RequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
       ),
       'subject' => 
       array (
@@ -42250,9 +45112,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'occurrenceDateTime' => 
+      'authoredOn' => 
       array (
-        'setter' => 'setOccurrenceDateTime',
+        'setter' => 'setAuthoredOn',
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
@@ -42311,12 +45173,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addModifierExtension',
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'actionIdentifier' => 
-      array (
-        'setter' => 'setActionIdentifier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
       'label' => 
       array (
@@ -42411,32 +45267,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'groupingBehavior' => 
       array (
         'setter' => 'setGroupingBehavior',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ActionGroupingBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionGroupingBehavior',
       ),
       'selectionBehavior' => 
       array (
         'setter' => 'setSelectionBehavior',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ActionSelectionBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionSelectionBehavior',
       ),
       'requiredBehavior' => 
       array (
         'setter' => 'setRequiredBehavior',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ActionRequiredBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionRequiredBehavior',
       ),
       'precheckBehavior' => 
       array (
         'setter' => 'setPrecheckBehavior',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ActionPrecheckBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionPrecheckBehavior',
       ),
       'cardinalityBehavior' => 
       array (
         'setter' => 'setCardinalityBehavior',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ActionCardinalityBehavior',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionCardinalityBehavior',
       ),
       'resource' => 
       array (
@@ -42479,8 +45335,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'kind' => 
       array (
         'setter' => 'setKind',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ActionConditionKind',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionConditionKind',
       ),
       'description' => 
       array (
@@ -42526,17 +45382,17 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'actionIdentifier' => 
+      'actionId' => 
       array (
-        'setter' => 'setActionIdentifier',
-        'element' => 'Identifier',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+        'setter' => 'setActionId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
       ),
       'relationship' => 
       array (
         'setter' => 'setRelationship',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ActionRelationshipType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRActionRelationshipType',
       ),
       'offsetDuration' => 
       array (
@@ -43003,8 +45859,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ObservationStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRObservationStatus',
+      ),
+      'method' => 
+      array (
+        'setter' => 'setMethod',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
       'code' => 
       array (
@@ -43060,12 +45922,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'method' => 
-      array (
-        'setter' => 'setMethod',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
-      ),
       'basis' => 
       array (
         'setter' => 'addBasis',
@@ -43084,11 +45940,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'note' => 
+      'comment' => 
       array (
-        'setter' => 'setNote',
-        'element' => 'Annotation',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+        'setter' => 'setComment',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
     ),
   ),
@@ -43134,9 +45990,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Range',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
       ),
-      'probabilityCodeableConcept' => 
+      'qualitativeRisk' => 
       array (
-        'setter' => 'setProbabilityCodeableConcept',
+        'setter' => 'setQualitativeRisk',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
@@ -43252,7 +46108,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'actor' => 
       array (
-        'setter' => 'setActor',
+        'setter' => 'addActor',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -43399,8 +46255,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'base' => 
       array (
         'setter' => 'addBase',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'type' => 
       array (
@@ -43441,8 +46297,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'target' => 
       array (
         'setter' => 'addTarget',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'ResourceType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRResourceType',
       ),
       'comparator' => 
       array (
@@ -43623,8 +46479,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'type' => 
       array (
         'setter' => 'setType',
-        'element' => 'sequenceType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRSequenceType',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
       ),
       'coordinateSystem' => 
       array (
@@ -43703,12 +46559,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addPointer',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'structureVariant' => 
-      array (
-        'setter' => 'addStructureVariant',
-        'element' => 'Sequence.StructureVariant',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSequence\\FHIRSequenceStructureVariant',
       ),
     ),
   ),
@@ -44020,138 +46870,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'Sequence.StructureVariant' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSequence\\FHIRSequenceStructureVariant',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'precisionOfBoundaries' => 
-      array (
-        'setter' => 'setPrecisionOfBoundaries',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-      'reportedaCGHRatio' => 
-      array (
-        'setter' => 'setReportedaCGHRatio',
-        'element' => 'decimal',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDecimal',
-      ),
-      'length' => 
-      array (
-        'setter' => 'setLength',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
-      ),
-      'outer' => 
-      array (
-        'setter' => 'setOuter',
-        'element' => 'Sequence.Outer',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSequence\\FHIRSequenceOuter',
-      ),
-      'inner' => 
-      array (
-        'setter' => 'setInner',
-        'element' => 'Sequence.Inner',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSequence\\FHIRSequenceInner',
-      ),
-    ),
-  ),
-  'Sequence.Outer' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSequence\\FHIRSequenceOuter',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'start' => 
-      array (
-        'setter' => 'setStart',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
-      ),
-      'end' => 
-      array (
-        'setter' => 'setEnd',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
-      ),
-    ),
-  ),
-  'Sequence.Inner' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSequence\\FHIRSequenceInner',
-    'extendedElementName' => 'BackboneElement',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'modifierExtension' => 
-      array (
-        'setter' => 'addModifierExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'start' => 
-      array (
-        'setter' => 'setStart',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
-      ),
-      'end' => 
-      array (
-        'setter' => 'setEnd',
-        'element' => 'integer',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
-      ),
-    ),
-  ),
   'repositoryType' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRRepositoryType',
@@ -44200,32 +46918,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       array (
         'setter' => 'setValue',
         'element' => 'qualityType-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
-  'sequenceType' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRSequenceType',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'sequenceType-list',
         'type' => 'string',
       ),
     ),
@@ -44332,6 +47024,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'dateTime',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
+      'publisher' => 
+      array (
+        'setter' => 'setPublisher',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
       'description' => 
       array (
         'setter' => 'setDescription',
@@ -44391,12 +47089,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContributor',
         'element' => 'Contributor',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContributor',
-      ),
-      'publisher' => 
-      array (
-        'setter' => 'setPublisher',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'contact' => 
       array (
@@ -44692,11 +47384,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Specimen.Collection',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSpecimen\\FHIRSpecimenCollection',
       ),
-      'treatment' => 
+      'processing' => 
       array (
-        'setter' => 'addTreatment',
-        'element' => 'Specimen.Treatment',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSpecimen\\FHIRSpecimenTreatment',
+        'setter' => 'addProcessing',
+        'element' => 'Specimen.Processing',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSpecimen\\FHIRSpecimenProcessing',
       ),
       'container' => 
       array (
@@ -44774,9 +47466,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'Specimen.Treatment' => 
+  'Specimen.Processing' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSpecimen\\FHIRSpecimenTreatment',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSpecimen\\FHIRSpecimenProcessing',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -45020,6 +47712,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -45031,12 +47729,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -45190,9 +47882,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'comments' => 
+      'comment' => 
       array (
-        'setter' => 'setComments',
+        'setter' => 'setComment',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
@@ -45436,6 +48128,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -45447,12 +48145,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -45540,6 +48232,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'StructureMapModelMode',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapModelMode',
       ),
+      'alias' => 
+      array (
+        'setter' => 'setAlias',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
       'documentation' => 
       array (
         'setter' => 'setDocumentation',
@@ -45583,6 +48281,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setExtends',
         'element' => 'id',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+      ),
+      'typeMode' => 
+      array (
+        'setter' => 'setTypeMode',
+        'element' => 'StructureMapGroupTypeMode',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapGroupTypeMode',
       ),
       'documentation' => 
       array (
@@ -45740,23 +48444,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'required' => 
-      array (
-        'setter' => 'setRequired',
-        'element' => 'boolean',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
-      ),
       'context' => 
       array (
         'setter' => 'setContext',
         'element' => 'id',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
-      ),
-      'contextType' => 
-      array (
-        'setter' => 'setContextType',
-        'element' => 'StructureMapContextType',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapContextType',
       ),
       'min' => 
       array (
@@ -45776,6 +48468,234 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
+      'defaultValueBase64Binary' => 
+      array (
+        'setter' => 'setDefaultValueBase64Binary',
+        'element' => 'base64Binary',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBase64Binary',
+      ),
+      'defaultValueBoolean' => 
+      array (
+        'setter' => 'setDefaultValueBoolean',
+        'element' => 'boolean',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
+      ),
+      'defaultValueCode' => 
+      array (
+        'setter' => 'setDefaultValueCode',
+        'element' => 'code',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+      ),
+      'defaultValueDate' => 
+      array (
+        'setter' => 'setDefaultValueDate',
+        'element' => 'date',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDate',
+      ),
+      'defaultValueDateTime' => 
+      array (
+        'setter' => 'setDefaultValueDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'defaultValueDecimal' => 
+      array (
+        'setter' => 'setDefaultValueDecimal',
+        'element' => 'decimal',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDecimal',
+      ),
+      'defaultValueId' => 
+      array (
+        'setter' => 'setDefaultValueId',
+        'element' => 'id',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRId',
+      ),
+      'defaultValueInstant' => 
+      array (
+        'setter' => 'setDefaultValueInstant',
+        'element' => 'instant',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
+      ),
+      'defaultValueInteger' => 
+      array (
+        'setter' => 'setDefaultValueInteger',
+        'element' => 'integer',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInteger',
+      ),
+      'defaultValueMarkdown' => 
+      array (
+        'setter' => 'setDefaultValueMarkdown',
+        'element' => 'markdown',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMarkdown',
+      ),
+      'defaultValueOid' => 
+      array (
+        'setter' => 'setDefaultValueOid',
+        'element' => 'oid',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIROid',
+      ),
+      'defaultValuePositiveInt' => 
+      array (
+        'setter' => 'setDefaultValuePositiveInt',
+        'element' => 'positiveInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPositiveInt',
+      ),
+      'defaultValueString' => 
+      array (
+        'setter' => 'setDefaultValueString',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+      ),
+      'defaultValueTime' => 
+      array (
+        'setter' => 'setDefaultValueTime',
+        'element' => 'time',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTime',
+      ),
+      'defaultValueUnsignedInt' => 
+      array (
+        'setter' => 'setDefaultValueUnsignedInt',
+        'element' => 'unsignedInt',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUnsignedInt',
+      ),
+      'defaultValueUri' => 
+      array (
+        'setter' => 'setDefaultValueUri',
+        'element' => 'uri',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRUri',
+      ),
+      'defaultValueAddress' => 
+      array (
+        'setter' => 'setDefaultValueAddress',
+        'element' => 'Address',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAddress',
+      ),
+      'defaultValueAge' => 
+      array (
+        'setter' => 'setDefaultValueAge',
+        'element' => 'Age',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRAge',
+      ),
+      'defaultValueAnnotation' => 
+      array (
+        'setter' => 'setDefaultValueAnnotation',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+      ),
+      'defaultValueAttachment' => 
+      array (
+        'setter' => 'setDefaultValueAttachment',
+        'element' => 'Attachment',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAttachment',
+      ),
+      'defaultValueCodeableConcept' => 
+      array (
+        'setter' => 'setDefaultValueCodeableConcept',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'defaultValueCoding' => 
+      array (
+        'setter' => 'setDefaultValueCoding',
+        'element' => 'Coding',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCoding',
+      ),
+      'defaultValueContactPoint' => 
+      array (
+        'setter' => 'setDefaultValueContactPoint',
+        'element' => 'ContactPoint',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactPoint',
+      ),
+      'defaultValueCount' => 
+      array (
+        'setter' => 'setDefaultValueCount',
+        'element' => 'Count',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRCount',
+      ),
+      'defaultValueDistance' => 
+      array (
+        'setter' => 'setDefaultValueDistance',
+        'element' => 'Distance',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDistance',
+      ),
+      'defaultValueDuration' => 
+      array (
+        'setter' => 'setDefaultValueDuration',
+        'element' => 'Duration',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRDuration',
+      ),
+      'defaultValueHumanName' => 
+      array (
+        'setter' => 'setDefaultValueHumanName',
+        'element' => 'HumanName',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRHumanName',
+      ),
+      'defaultValueIdentifier' => 
+      array (
+        'setter' => 'setDefaultValueIdentifier',
+        'element' => 'Identifier',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'defaultValueMoney' => 
+      array (
+        'setter' => 'setDefaultValueMoney',
+        'element' => 'Money',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity\\FHIRMoney',
+      ),
+      'defaultValuePeriod' => 
+      array (
+        'setter' => 'setDefaultValuePeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+      'defaultValueQuantity' => 
+      array (
+        'setter' => 'setDefaultValueQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'defaultValueRange' => 
+      array (
+        'setter' => 'setDefaultValueRange',
+        'element' => 'Range',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRange',
+      ),
+      'defaultValueRatio' => 
+      array (
+        'setter' => 'setDefaultValueRatio',
+        'element' => 'Ratio',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRatio',
+      ),
+      'defaultValueReference' => 
+      array (
+        'setter' => 'setDefaultValueReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'defaultValueSampledData' => 
+      array (
+        'setter' => 'setDefaultValueSampledData',
+        'element' => 'SampledData',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRSampledData',
+      ),
+      'defaultValueSignature' => 
+      array (
+        'setter' => 'setDefaultValueSignature',
+        'element' => 'Signature',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRSignature',
+      ),
+      'defaultValueTiming' => 
+      array (
+        'setter' => 'setDefaultValueTiming',
+        'element' => 'Timing',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
+      ),
+      'defaultValueMeta' => 
+      array (
+        'setter' => 'setDefaultValueMeta',
+        'element' => 'Meta',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRMeta',
+      ),
       'element' => 
       array (
         'setter' => 'setElement',
@@ -45785,8 +48705,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'listMode' => 
       array (
         'setter' => 'setListMode',
-        'element' => 'StructureMapListMode',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapListMode',
+        'element' => 'StructureMapSourceListMode',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapSourceListMode',
       ),
       'variable' => 
       array (
@@ -45859,8 +48779,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'listMode' => 
       array (
         'setter' => 'addListMode',
-        'element' => 'StructureMapListMode',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapListMode',
+        'element' => 'StructureMapTargetListMode',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapTargetListMode',
       ),
       'listRuleId' => 
       array (
@@ -46028,6 +48948,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'StructureMapTargetListMode' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapTargetListMode',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'StructureMapTargetListMode-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'StructureMapTransform' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapTransform',
@@ -46054,9 +49000,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'StructureMapListMode' => 
+  'StructureMapSourceListMode' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapListMode',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapSourceListMode',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -46075,7 +49021,33 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'StructureMapListMode-list',
+        'element' => 'StructureMapSourceListMode-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'StructureMapGroupTypeMode' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRStructureMapGroupTypeMode',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'StructureMapGroupTypeMode-list',
         'type' => 'string',
       ),
     ),
@@ -46160,11 +49132,11 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'criteria' => 
+      'status' => 
       array (
-        'setter' => 'setCriteria',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'setter' => 'setStatus',
+        'element' => 'SubscriptionStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRSubscriptionStatus',
       ),
       'contact' => 
       array (
@@ -46172,17 +49144,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'ContactPoint',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactPoint',
       ),
+      'end' => 
+      array (
+        'setter' => 'setEnd',
+        'element' => 'instant',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
+      ),
       'reason' => 
       array (
         'setter' => 'setReason',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
-      'status' => 
+      'criteria' => 
       array (
-        'setter' => 'setStatus',
-        'element' => 'SubscriptionStatus',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRSubscriptionStatus',
+        'setter' => 'setCriteria',
+        'element' => 'string',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
       'error' => 
       array (
@@ -46195,12 +49173,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setChannel',
         'element' => 'Subscription.Channel',
         'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSubscription\\FHIRSubscriptionChannel',
-      ),
-      'end' => 
-      array (
-        'setter' => 'setEnd',
-        'element' => 'instant',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRInstant',
       ),
       'tag' => 
       array (
@@ -46254,7 +49226,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'header' => 
       array (
-        'setter' => 'setHeader',
+        'setter' => 'addHeader',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
@@ -46371,6 +49343,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addIdentifier',
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
+      ),
+      'status' => 
+      array (
+        'setter' => 'setStatus',
+        'element' => 'FHIRSubstanceStatus',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFHIRSubstanceStatus',
       ),
       'category' => 
       array (
@@ -46489,6 +49467,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setSubstanceReference',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'FHIRSubstanceStatus' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRFHIRSubstanceStatus',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'FHIRSubstanceStatus-list',
+        'type' => 'string',
       ),
     ),
   ),
@@ -46782,6 +49786,18 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Identifier',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRIdentifier',
       ),
+      'basedOn' => 
+      array (
+        'setter' => 'addBasedOn',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'partOf' => 
+      array (
+        'setter' => 'addPartOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
       'status' => 
       array (
         'setter' => 'setStatus',
@@ -46800,41 +49816,35 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'quantity' => 
+      'suppliedItem' => 
       array (
-        'setter' => 'setQuantity',
-        'element' => 'Quantity',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+        'setter' => 'setSuppliedItem',
+        'element' => 'SupplyDelivery.SuppliedItem',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSupplyDelivery\\FHIRSupplyDeliverySuppliedItem',
       ),
-      'suppliedItemCodeableConcept' => 
+      'occurrenceDateTime' => 
       array (
-        'setter' => 'setSuppliedItemCodeableConcept',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'setter' => 'setOccurrenceDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
-      'suppliedItemReference' => 
+      'occurrencePeriod' => 
       array (
-        'setter' => 'setSuppliedItemReference',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setOccurrencePeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+      'occurrenceTiming' => 
+      array (
+        'setter' => 'setOccurrenceTiming',
+        'element' => 'Timing',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
       ),
       'supplier' => 
       array (
         'setter' => 'setSupplier',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'whenPrepared' => 
-      array (
-        'setter' => 'setWhenPrepared',
-        'element' => 'Period',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
-      ),
-      'time' => 
-      array (
-        'setter' => 'setTime',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'destination' => 
       array (
@@ -46845,6 +49855,50 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'receiver' => 
       array (
         'setter' => 'addReceiver',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'SupplyDelivery.SuppliedItem' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSupplyDelivery\\FHIRSupplyDeliverySuppliedItem',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'quantity' => 
+      array (
+        'setter' => 'setQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'itemCodeableConcept' => 
+      array (
+        'setter' => 'setItemCodeableConcept',
+        'element' => 'CodeableConcept',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+      ),
+      'itemReference' => 
+      array (
+        'setter' => 'setItemReference',
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
@@ -46930,24 +49984,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'patient' => 
-      array (
-        'setter' => 'setPatient',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'source' => 
-      array (
-        'setter' => 'setSource',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
-      ),
       'identifier' => 
       array (
         'setter' => 'setIdentifier',
@@ -46960,23 +49996,53 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'SupplyRequestStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRSupplyRequestStatus',
       ),
-      'kind' => 
+      'category' => 
       array (
-        'setter' => 'setKind',
+        'setter' => 'setCategory',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'orderedItemCodeableConcept' => 
+      'priority' => 
       array (
-        'setter' => 'setOrderedItemCodeableConcept',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'setter' => 'setPriority',
+        'element' => 'RequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
       ),
-      'orderedItemReference' => 
+      'orderedItem' => 
       array (
-        'setter' => 'setOrderedItemReference',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+        'setter' => 'setOrderedItem',
+        'element' => 'SupplyRequest.OrderedItem',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSupplyRequest\\FHIRSupplyRequestOrderedItem',
+      ),
+      'occurrenceDateTime' => 
+      array (
+        'setter' => 'setOccurrenceDateTime',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'occurrencePeriod' => 
+      array (
+        'setter' => 'setOccurrencePeriod',
+        'element' => 'Period',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRPeriod',
+      ),
+      'occurrenceTiming' => 
+      array (
+        'setter' => 'setOccurrenceTiming',
+        'element' => 'Timing',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
+      ),
+      'authoredOn' => 
+      array (
+        'setter' => 'setAuthoredOn',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
+      'requester' => 
+      array (
+        'setter' => 'setRequester',
+        'element' => 'SupplyRequest.Requester',
+        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSupplyRequest\\FHIRSupplyRequestRequester',
       ),
       'supplier' => 
       array (
@@ -46996,17 +50062,23 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Reference',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
-      'when' => 
+      'deliverFrom' => 
       array (
-        'setter' => 'setWhen',
-        'element' => 'SupplyRequest.When',
-        'type' => 'PHPFHIRGenerated\\FHIRResource\\FHIRSupplyRequest\\FHIRSupplyRequestWhen',
+        'setter' => 'setDeliverFrom',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'deliverTo' => 
+      array (
+        'setter' => 'setDeliverTo',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
-  'SupplyRequest.When' => 
+  'SupplyRequest.OrderedItem' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSupplyRequest\\FHIRSupplyRequestWhen',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSupplyRequest\\FHIRSupplyRequestOrderedItem',
     'extendedElementName' => 'BackboneElement',
     'properties' => 
     array (
@@ -47028,17 +50100,61 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'Extension',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
       ),
-      'code' => 
+      'quantity' => 
       array (
-        'setter' => 'setCode',
+        'setter' => 'setQuantity',
+        'element' => 'Quantity',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRQuantity',
+      ),
+      'itemCodeableConcept' => 
+      array (
+        'setter' => 'setItemCodeableConcept',
         'element' => 'CodeableConcept',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
       ),
-      'schedule' => 
+      'itemReference' => 
       array (
-        'setter' => 'setSchedule',
-        'element' => 'Timing',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTiming',
+        'setter' => 'setItemReference',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+    ),
+  ),
+  'SupplyRequest.Requester' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRResource\\FHIRSupplyRequest\\FHIRSupplyRequestRequester',
+    'extendedElementName' => 'BackboneElement',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'modifierExtension' => 
+      array (
+        'setter' => 'addModifierExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'agent' => 
+      array (
+        'setter' => 'setAgent',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'onBehalfOf' => 
+      array (
+        'setter' => 'setOnBehalfOf',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
     ),
   ),
@@ -47179,14 +50295,14 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'intent' => 
       array (
         'setter' => 'setIntent',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'RequestIntent',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestIntent',
       ),
       'priority' => 
       array (
         'setter' => 'setPriority',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'RequestPriority',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRRequestPriority',
       ),
       'code' => 
       array (
@@ -47992,6 +51108,18 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'TestReportStatus',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTestReportStatus',
       ),
+      'testScript' => 
+      array (
+        'setter' => 'setTestScript',
+        'element' => 'Reference',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
+      ),
+      'result' => 
+      array (
+        'setter' => 'setResult',
+        'element' => 'TestReportResult',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTestReportResult',
+      ),
       'score' => 
       array (
         'setter' => 'setScore',
@@ -48003,12 +51131,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'setTester',
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
-      ),
-      'testScript' => 
-      array (
-        'setter' => 'setTestScript',
-        'element' => 'Reference',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRReference',
       ),
       'issued' => 
       array (
@@ -48183,8 +51305,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'result' => 
       array (
         'setter' => 'setResult',
-        'element' => 'TestReportResultCodes',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTestReportResultCodes',
+        'element' => 'TestReportActionResult',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTestReportActionResult',
       ),
       'message' => 
       array (
@@ -48227,8 +51349,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'result' => 
       array (
         'setter' => 'setResult',
-        'element' => 'TestReportResultCodes',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTestReportResultCodes',
+        'element' => 'TestReportActionResult',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTestReportActionResult',
       ),
       'message' => 
       array (
@@ -48416,6 +51538,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'TestReportActionResult' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRTestReportActionResult',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'TestReportActionResult-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'TestReportParticipantType' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRTestReportParticipantType',
@@ -48442,9 +51590,9 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'TestReportResultCodes' => 
+  'TestReportResult' => 
   array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRTestReportResultCodes',
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRTestReportResult',
     'extendedElementName' => 'Element',
     'properties' => 
     array (
@@ -48463,7 +51611,7 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'value' => 
       array (
         'setter' => 'setValue',
-        'element' => 'TestReportResultCodes-list',
+        'element' => 'TestReportResult-list',
         'type' => 'string',
       ),
     ),
@@ -48564,6 +51712,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -48575,12 +51729,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -49311,8 +52459,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'resource' => 
       array (
         'setter' => 'setResource',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FHIRDefinedType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFHIRDefinedType',
       ),
       'label' => 
       array (
@@ -49540,6 +52688,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'string',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
       ),
+      'requestMethod' => 
+      array (
+        'setter' => 'setRequestMethod',
+        'element' => 'TestScriptRequestMethodCode',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRTestScriptRequestMethodCode',
+      ),
       'requestURL' => 
       array (
         'setter' => 'setRequestURL',
@@ -49549,8 +52703,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'resource' => 
       array (
         'setter' => 'setResource',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FHIRDefinedType',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFHIRDefinedType',
       ),
       'response' => 
       array (
@@ -49938,6 +53092,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'FHIRDefinedType' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRFHIRDefinedType',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'FHIRDefinedType-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'ContentType' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRContentType',
@@ -50042,6 +53222,32 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
+  'TestScriptRequestMethodCode' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRTestScriptRequestMethodCode',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'TestScriptRequestMethodCode-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
   'ValueSet' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRValueSet',
@@ -50138,6 +53344,12 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'element' => 'boolean',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRBoolean',
       ),
+      'date' => 
+      array (
+        'setter' => 'setDate',
+        'element' => 'dateTime',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
+      ),
       'publisher' => 
       array (
         'setter' => 'setPublisher',
@@ -50149,12 +53361,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
         'setter' => 'addContact',
         'element' => 'ContactDetail',
         'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRContactDetail',
-      ),
-      'date' => 
-      array (
-        'setter' => 'setDate',
-        'element' => 'dateTime',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRDateTime',
       ),
       'description' => 
       array (
@@ -50654,32 +53860,6 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
     ),
   ),
-  'FilterOperator' => 
-  array (
-    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRFilterOperator',
-    'extendedElementName' => 'Element',
-    'properties' => 
-    array (
-      'extension' => 
-      array (
-        'setter' => 'addExtension',
-        'element' => 'Extension',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
-      ),
-      'id' => 
-      array (
-        'setter' => 'setId',
-        'element' => 'string-primitive',
-        'type' => 'string',
-      ),
-      'value' => 
-      array (
-        'setter' => 'setValue',
-        'element' => 'FilterOperator-list',
-        'type' => 'string',
-      ),
-    ),
-  ),
   'VisionPrescription' => 
   array (
     'fullClassName' => '\\PHPFHIRGenerated\\FHIRDomainResource\\FHIRVisionPrescription',
@@ -50743,8 +53923,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'status' => 
       array (
         'setter' => 'setStatus',
-        'element' => 'code',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCode',
+        'element' => 'FinancialResourceStatusCodes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRFinancialResourceStatusCodes',
       ),
       'patient' => 
       array (
@@ -50823,8 +54003,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'eye' => 
       array (
         'setter' => 'setEye',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'element' => 'VisionEyes',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRVisionEyes',
       ),
       'sphere' => 
       array (
@@ -50853,8 +54033,8 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       'base' => 
       array (
         'setter' => 'setBase',
-        'element' => 'CodeableConcept',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRCodeableConcept',
+        'element' => 'VisionBase',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRVisionBase',
       ),
       'add' => 
       array (
@@ -50900,9 +54080,61 @@ class PHPFHIRParserMap implements \ArrayAccess, \Iterator
       ),
       'note' => 
       array (
-        'setter' => 'setNote',
-        'element' => 'string',
-        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRString',
+        'setter' => 'addNote',
+        'element' => 'Annotation',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRAnnotation',
+      ),
+    ),
+  ),
+  'VisionBase' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRVisionBase',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'VisionBase-list',
+        'type' => 'string',
+      ),
+    ),
+  ),
+  'VisionEyes' => 
+  array (
+    'fullClassName' => '\\PHPFHIRGenerated\\FHIRElement\\FHIRVisionEyes',
+    'extendedElementName' => 'Element',
+    'properties' => 
+    array (
+      'extension' => 
+      array (
+        'setter' => 'addExtension',
+        'element' => 'Extension',
+        'type' => 'PHPFHIRGenerated\\FHIRElement\\FHIRExtension',
+      ),
+      'id' => 
+      array (
+        'setter' => 'setId',
+        'element' => 'string-primitive',
+        'type' => 'string',
+      ),
+      'value' => 
+      array (
+        'setter' => 'setValue',
+        'element' => 'VisionEyes-list',
+        'type' => 'string',
       ),
     ),
   ),

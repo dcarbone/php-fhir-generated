@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,16 +80,10 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
     public $resourceType = null;
 
     /**
-     * Party to be reimbursed: Subscriber, provider, other. (choose any one of party*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public $partyIdentifier = null;
-
-    /**
-     * Party to be reimbursed: Subscriber, provider, other. (choose any one of party*, but only one)
+     * Party to be reimbursed: Subscriber, provider, other.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $partyReference = null;
+    public $party = null;
 
     /**
      * @var string
@@ -137,42 +131,22 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * Party to be reimbursed: Subscriber, provider, other. (choose any one of party*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public function getPartyIdentifier()
-    {
-        return $this->partyIdentifier;
-    }
-
-    /**
-     * Party to be reimbursed: Subscriber, provider, other. (choose any one of party*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $partyIdentifier
-     * @return $this
-     */
-    public function setPartyIdentifier($partyIdentifier)
-    {
-        $this->partyIdentifier = $partyIdentifier;
-        return $this;
-    }
-
-    /**
-     * Party to be reimbursed: Subscriber, provider, other. (choose any one of party*, but only one)
+     * Party to be reimbursed: Subscriber, provider, other.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPartyReference()
+    public function getParty()
     {
-        return $this->partyReference;
+        return $this->party;
     }
 
     /**
-     * Party to be reimbursed: Subscriber, provider, other. (choose any one of party*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partyReference
+     * Party to be reimbursed: Subscriber, provider, other.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $party
      * @return $this
      */
-    public function setPartyReference($partyReference)
+    public function setParty($party)
     {
-        $this->partyReference = $partyReference;
+        $this->party = $party;
         return $this;
     }
 
@@ -200,8 +174,7 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
         $json = parent::jsonSerialize();
         if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->resourceType) $json['resourceType'] = json_encode($this->resourceType);
-        if (null !== $this->partyIdentifier) $json['partyIdentifier'] = json_encode($this->partyIdentifier);
-        if (null !== $this->partyReference) $json['partyReference'] = json_encode($this->partyReference);
+        if (null !== $this->party) $json['party'] = json_encode($this->party);
         return $json;
     }
 
@@ -216,8 +189,7 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement implements \Json
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->resourceType) $this->resourceType->xmlSerialize(true, $sxe->addChild('resourceType'));
-        if (null !== $this->partyIdentifier) $this->partyIdentifier->xmlSerialize(true, $sxe->addChild('partyIdentifier'));
-        if (null !== $this->partyReference) $this->partyReference->xmlSerialize(true, $sxe->addChild('partyReference'));
+        if (null !== $this->party) $this->party->xmlSerialize(true, $sxe->addChild('party'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

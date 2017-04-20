@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,10 +75,16 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * active | suspended | inactive.
+     * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRLocationStatus
      */
     public $status = null;
+
+    /**
+     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc such as an isolation unit/dialisys chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    public $operationalStatus = null;
 
     /**
      * Name of the location as used by humans. Does not need to be unique.
@@ -178,7 +184,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * active | suspended | inactive.
+     * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRLocationStatus
      */
     public function getStatus()
@@ -187,13 +193,33 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * active | suspended | inactive.
+     * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRLocationStatus $status
      * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc such as an isolation unit/dialisys chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    public function getOperationalStatus()
+    {
+        return $this->operationalStatus;
+    }
+
+    /**
+     * The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc such as an isolation unit/dialisys chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $operationalStatus
+     * @return $this
+     */
+    public function setOperationalStatus($operationalStatus)
+    {
+        $this->operationalStatus = $operationalStatus;
         return $this;
     }
 
@@ -467,6 +493,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->operationalStatus) $json['operationalStatus'] = json_encode($this->operationalStatus);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (0 < count($this->alias)) {
             $json['alias'] = [];
@@ -512,6 +539,7 @@ class FHIRLocation extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->operationalStatus) $this->operationalStatus->xmlSerialize(true, $sxe->addChild('operationalStatus'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (0 < count($this->alias)) {
             foreach($this->alias as $alias) {

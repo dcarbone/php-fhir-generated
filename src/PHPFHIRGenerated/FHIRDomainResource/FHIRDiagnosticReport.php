@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,10 +69,16 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.
+     * Identifiers assigned to this report by the performer or other systems.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * Details concerning a test or procedure requested.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
 
     /**
      * The status of the diagnostic report as a whole.
@@ -99,10 +105,10 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     public $subject = null;
 
     /**
-     * The link to the health care event (encounter) when the order was made.
+     * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport per is about.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $encounter = null;
+    public $context = null;
 
     /**
      * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
@@ -123,16 +129,10 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     public $issued = null;
 
     /**
-     * The diagnostic service that is responsible for issuing the report.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * Indicates who or what participated in producing the report.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer[]
      */
     public $performer = array();
-
-    /**
-     * Details concerning a test or procedure requested.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $request = array();
 
     /**
      * Details about the specimens on which this diagnostic report is based.
@@ -182,7 +182,7 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     private $_fhirElementName = 'DiagnosticReport';
 
     /**
-     * The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.
+     * Identifiers assigned to this report by the performer or other systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
@@ -191,13 +191,33 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.
+     * Identifiers assigned to this report by the performer or other systems.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * Details concerning a test or procedure requested.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * Details concerning a test or procedure requested.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
@@ -282,22 +302,22 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The link to the health care event (encounter) when the order was made.
+     * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport per is about.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
+    public function getContext()
     {
-        return $this->encounter;
+        return $this->context;
     }
 
     /**
-     * The link to the health care event (encounter) when the order was made.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
+     * The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport per is about.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setEncounter($encounter)
+    public function setContext($context)
     {
-        $this->encounter = $encounter;
+        $this->context = $context;
         return $this;
     }
 
@@ -362,8 +382,8 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The diagnostic service that is responsible for issuing the report.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * Indicates who or what participated in producing the report.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer[]
      */
     public function getPerformer()
     {
@@ -371,33 +391,13 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The diagnostic service that is responsible for issuing the report.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $performer
+     * Indicates who or what participated in producing the report.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer $performer
      * @return $this
      */
     public function addPerformer($performer)
     {
         $this->performer[] = $performer;
-        return $this;
-    }
-
-    /**
-     * Details concerning a test or procedure requested.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * Details concerning a test or procedure requested.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
-     * @return $this
-     */
-    public function addRequest($request)
-    {
-        $this->request[] = $request;
         return $this;
     }
 
@@ -570,11 +570,17 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->category) $json['category'] = json_encode($this->category);
         if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
         if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
         if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
         if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
@@ -582,12 +588,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
             $json['performer'] = [];
             foreach($this->performer as $performer) {
                 $json['performer'][] = json_encode($performer);
-            }
-        }
-        if (0 < count($this->request)) {
-            $json['request'] = [];
-            foreach($this->request as $request) {
-                $json['request'][] = json_encode($request);
             }
         }
         if (0 < count($this->specimen)) {
@@ -644,22 +644,22 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (null !== $this->effectiveDateTime) $this->effectiveDateTime->xmlSerialize(true, $sxe->addChild('effectiveDateTime'));
         if (null !== $this->effectivePeriod) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
         if (null !== $this->issued) $this->issued->xmlSerialize(true, $sxe->addChild('issued'));
         if (0 < count($this->performer)) {
             foreach($this->performer as $performer) {
                 $performer->xmlSerialize(true, $sxe->addChild('performer'));
-            }
-        }
-        if (0 < count($this->request)) {
-            foreach($this->request as $request) {
-                $request->xmlSerialize(true, $sxe->addChild('request'));
             }
         }
         if (0 < count($this->specimen)) {

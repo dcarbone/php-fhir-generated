@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,10 +68,16 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The type of the population.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The identifier of the population being reported, as defined by the population element of the measure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $type = null;
+    public $identifier = null;
+
+    /**
+     * The type of the population.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $code = null;
 
     /**
      * The number of members of the population in this stratum.
@@ -91,22 +97,42 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
     private $_fhirElementName = 'MeasureReport.Population1';
 
     /**
-     * The type of the population.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The identifier of the population being reported, as defined by the population element of the measure.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getType()
+    public function getIdentifier()
     {
-        return $this->type;
+        return $this->identifier;
+    }
+
+    /**
+     * The identifier of the population being reported, as defined by the population element of the measure.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
+        return $this;
     }
 
     /**
      * The type of the population.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * The type of the population.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setType($type)
+    public function setCode($code)
     {
-        $this->type = $type;
+        $this->code = $code;
         return $this;
     }
 
@@ -172,7 +198,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->count) $json['count'] = json_encode($this->count);
         if (null !== $this->patients) $json['patients'] = json_encode($this->patients);
         return $json;
@@ -187,7 +214,8 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MeasureReportPopulation1 xmlns="http://hl7.org/fhir"></MeasureReportPopulation1>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->count) $this->count->xmlSerialize(true, $sxe->addChild('count'));
         if (null !== $this->patients) $this->patients->xmlSerialize(true, $sxe->addChild('patients'));
         if ($returnSXE) return $sxe;

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,15 +63,15 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a diagnosis during an encounter; populating a problem list or a summary statement, such as a discharge summary.
+ * A clinical condition, problem, diagnosis, or other event, situation, issue, or clinical concept that has risen to a level of concern.
  */
 class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
      * A manifestation or symptom that led to the recording of this condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $code = null;
+    public $code = array();
 
     /**
      * Links to other relevant information, including pathology reports.
@@ -86,7 +86,7 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
 
     /**
      * A manifestation or symptom that led to the recording of this condition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
     {
@@ -98,9 +98,9 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
+    public function addCode($code)
     {
-        $this->code = $code;
+        $this->code[] = $code;
         return $this;
     }
 
@@ -146,7 +146,12 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (0 < count($this->code)) {
+            $json['code'] = [];
+            foreach($this->code as $code) {
+                $json['code'][] = json_encode($code);
+            }
+        }
         if (0 < count($this->detail)) {
             $json['detail'] = [];
             foreach($this->detail as $detail) {
@@ -165,7 +170,11 @@ class FHIRConditionEvidence extends FHIRBackboneElement implements \JsonSerializ
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConditionEvidence xmlns="http://hl7.org/fhir"></ConditionEvidence>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (0 < count($this->code)) {
+            foreach($this->code as $code) {
+                $code->xmlSerialize(true, $sxe->addChild('code'));
+            }
+        }
         if (0 < count($this->detail)) {
             foreach($this->detail as $detail) {
                 $detail->xmlSerialize(true, $sxe->addChild('detail'));

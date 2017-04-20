@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,6 +78,12 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $member = null;
+
+    /**
+     * The organization of the practitioner.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $onBehalfOf = null;
 
     /**
      * Indicates when the specific member or organization did (or is intended to) come into effect and end.
@@ -131,6 +137,26 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
+     * The organization of the practitioner.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getOnBehalfOf()
+    {
+        return $this->onBehalfOf;
+    }
+
+    /**
+     * The organization of the practitioner.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOf
+     * @return $this
+     */
+    public function setOnBehalfOf($onBehalfOf)
+    {
+        $this->onBehalfOf = $onBehalfOf;
+        return $this;
+    }
+
+    /**
      * Indicates when the specific member or organization did (or is intended to) come into effect and end.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
@@ -174,6 +200,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
         $json = parent::jsonSerialize();
         if (null !== $this->role) $json['role'] = json_encode($this->role);
         if (null !== $this->member) $json['member'] = json_encode($this->member);
+        if (null !== $this->onBehalfOf) $json['onBehalfOf'] = json_encode($this->onBehalfOf);
         if (null !== $this->period) $json['period'] = json_encode($this->period);
         return $json;
     }
@@ -189,6 +216,7 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
         if (null !== $this->member) $this->member->xmlSerialize(true, $sxe->addChild('member'));
+        if (null !== $this->onBehalfOf) $this->onBehalfOf->xmlSerialize(true, $sxe->addChild('onBehalfOf'));
         if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

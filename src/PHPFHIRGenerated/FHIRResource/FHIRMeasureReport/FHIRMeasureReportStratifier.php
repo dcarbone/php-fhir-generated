@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,9 +75,9 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup1[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
-    public $group = array();
+    public $stratum = array();
 
     /**
      * @var string
@@ -106,21 +106,21 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup1[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
-    public function getGroup()
+    public function getStratum()
     {
-        return $this->group;
+        return $this->stratum;
     }
 
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportGroup1 $group
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
      * @return $this
      */
-    public function addGroup($group)
+    public function addStratum($stratum)
     {
-        $this->group[] = $group;
+        $this->stratum[] = $stratum;
         return $this;
     }
 
@@ -147,10 +147,10 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
     {
         $json = parent::jsonSerialize();
         if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (0 < count($this->group)) {
-            $json['group'] = [];
-            foreach($this->group as $group) {
-                $json['group'][] = json_encode($group);
+        if (0 < count($this->stratum)) {
+            $json['stratum'] = [];
+            foreach($this->stratum as $stratum) {
+                $json['stratum'][] = json_encode($stratum);
             }
         }
         return $json;
@@ -166,9 +166,9 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement implements \JsonSe
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MeasureReportStratifier xmlns="http://hl7.org/fhir"></MeasureReportStratifier>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (0 < count($this->group)) {
-            foreach($this->group as $group) {
-                $group->xmlSerialize(true, $sxe->addChild('group'));
+        if (0 < count($this->stratum)) {
+            foreach($this->stratum as $stratum) {
+                $stratum->xmlSerialize(true, $sxe->addChild('stratum'));
             }
         }
         if ($returnSXE) return $sxe;

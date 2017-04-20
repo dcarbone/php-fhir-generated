@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -87,7 +87,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRListMode
      */
     public $mode = null;
 
@@ -182,7 +182,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRListMode
      */
     public function getMode()
     {
@@ -191,7 +191,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $mode
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRListMode $mode
      * @return $this
      */
     public function setMode($mode)

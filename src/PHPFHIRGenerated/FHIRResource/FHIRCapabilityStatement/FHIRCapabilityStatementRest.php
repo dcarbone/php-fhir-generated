@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Identifies whether this portion of the statement is describing ability to initiate or receive restful operations.
+     * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode
      */
     public $mode = null;
@@ -104,13 +104,13 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     public $searchParam = array();
 
     /**
-     * Definition of an operation or a named query and with its parameters and their meaning and type.
+     * Definition of an operation or a named query together with its parameters and their meaning and type.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     public $operation = array();
 
     /**
-     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by it's canonical URL.
+     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public $compartment = array();
@@ -121,7 +121,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     private $_fhirElementName = 'CapabilityStatement.Rest';
 
     /**
-     * Identifies whether this portion of the statement is describing ability to initiate or receive restful operations.
+     * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode
      */
     public function getMode()
@@ -130,7 +130,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * Identifies whether this portion of the statement is describing ability to initiate or receive restful operations.
+     * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode $mode
      * @return $this
      */
@@ -241,7 +241,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * Definition of an operation or a named query and with its parameters and their meaning and type.
+     * Definition of an operation or a named query together with its parameters and their meaning and type.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     public function getOperation()
@@ -250,7 +250,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * Definition of an operation or a named query and with its parameters and their meaning and type.
+     * Definition of an operation or a named query together with its parameters and their meaning and type.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
      * @return $this
      */
@@ -261,7 +261,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by it's canonical URL.
+     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
     public function getCompartment()
@@ -270,7 +270,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by it's canonical URL.
+     * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $compartment
      * @return $this
      */

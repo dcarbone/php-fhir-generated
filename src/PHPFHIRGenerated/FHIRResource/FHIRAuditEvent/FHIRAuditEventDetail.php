@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,13 +68,13 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Name of the property.
+     * The type of extra detail provided in the value.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $type = null;
 
     /**
-     * Property value.
+     * The details, base64 encoded. Used to carry bulk information.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $value = null;
@@ -85,7 +85,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     private $_fhirElementName = 'AuditEvent.Detail';
 
     /**
-     * Name of the property.
+     * The type of extra detail provided in the value.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getType()
@@ -94,7 +94,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Name of the property.
+     * The type of extra detail provided in the value.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $type
      * @return $this
      */
@@ -105,7 +105,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Property value.
+     * The details, base64 encoded. Used to carry bulk information.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getValue()
@@ -114,7 +114,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Property value.
+     * The details, base64 encoded. Used to carry bulk information.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $value
      * @return $this
      */

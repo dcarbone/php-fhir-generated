@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -106,9 +106,15 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason that this appointment is being scheduled. This is more clinical than administrative.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reason = null;
+    public $reason = array();
+
+    /**
+     * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $indication = array();
 
     /**
      * The priority of the appointment. Can be used to make informed decisions if needing to re-prioritize appointments. (The iCal Standard specifies 0 as undefined, 1 as highest, 9 as lowest priority).
@@ -121,6 +127,12 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $description = null;
+
+    /**
+     * Additional information to support the appointment provided when making the appointment.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $supportingInformation = array();
 
     /**
      * Date/Time that the appointment is to take place.
@@ -141,7 +153,7 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     public $minutesDuration = null;
 
     /**
-     * The slot that this appointment is filling. If provided then the schedule will not be provided as slots are not recursive, and the start/end values MUST be the same as from the slot.
+     * The slots from the participants' schedules that will be filled by the appointment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $slot = array();
@@ -159,13 +171,19 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     public $comment = null;
 
     /**
+     * The referral request this appointment is allocated to assess (incoming referral).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $incomingReferral = array();
+
+    /**
      * List of participants involved in the appointment.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant[]
      */
     public $participant = array();
 
     /**
-     * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.
+     * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod[]
      */
     public $requestedPeriod = array();
@@ -297,7 +315,7 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The reason that this appointment is being scheduled. This is more clinical than administrative.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getReason()
     {
@@ -309,9 +327,29 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
-    public function setReason($reason)
+    public function addReason($reason)
     {
-        $this->reason = $reason;
+        $this->reason[] = $reason;
+        return $this;
+    }
+
+    /**
+     * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getIndication()
+    {
+        return $this->indication;
+    }
+
+    /**
+     * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $indication
+     * @return $this
+     */
+    public function addIndication($indication)
+    {
+        $this->indication[] = $indication;
         return $this;
     }
 
@@ -352,6 +390,26 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     public function setDescription($description)
     {
         $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * Additional information to support the appointment provided when making the appointment.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getSupportingInformation()
+    {
+        return $this->supportingInformation;
+    }
+
+    /**
+     * Additional information to support the appointment provided when making the appointment.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
+     * @return $this
+     */
+    public function addSupportingInformation($supportingInformation)
+    {
+        $this->supportingInformation[] = $supportingInformation;
         return $this;
     }
 
@@ -416,7 +474,7 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The slot that this appointment is filling. If provided then the schedule will not be provided as slots are not recursive, and the start/end values MUST be the same as from the slot.
+     * The slots from the participants' schedules that will be filled by the appointment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getSlot()
@@ -425,7 +483,7 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The slot that this appointment is filling. If provided then the schedule will not be provided as slots are not recursive, and the start/end values MUST be the same as from the slot.
+     * The slots from the participants' schedules that will be filled by the appointment.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $slot
      * @return $this
      */
@@ -476,6 +534,26 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * The referral request this appointment is allocated to assess (incoming referral).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getIncomingReferral()
+    {
+        return $this->incomingReferral;
+    }
+
+    /**
+     * The referral request this appointment is allocated to assess (incoming referral).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $incomingReferral
+     * @return $this
+     */
+    public function addIncomingReferral($incomingReferral)
+    {
+        $this->incomingReferral[] = $incomingReferral;
+        return $this;
+    }
+
+    /**
      * List of participants involved in the appointment.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRAppointment\FHIRAppointmentParticipant[]
      */
@@ -496,7 +574,7 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.
+     * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod[]
      */
     public function getRequestedPeriod()
@@ -505,7 +583,7 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.
+     * A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $requestedPeriod
      * @return $this
      */
@@ -559,9 +637,26 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->appointmentType) $json['appointmentType'] = json_encode($this->appointmentType);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (0 < count($this->reason)) {
+            $json['reason'] = [];
+            foreach($this->reason as $reason) {
+                $json['reason'][] = json_encode($reason);
+            }
+        }
+        if (0 < count($this->indication)) {
+            $json['indication'] = [];
+            foreach($this->indication as $indication) {
+                $json['indication'][] = json_encode($indication);
+            }
+        }
         if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (0 < count($this->supportingInformation)) {
+            $json['supportingInformation'] = [];
+            foreach($this->supportingInformation as $supportingInformation) {
+                $json['supportingInformation'][] = json_encode($supportingInformation);
+            }
+        }
         if (null !== $this->start) $json['start'] = json_encode($this->start);
         if (null !== $this->end) $json['end'] = json_encode($this->end);
         if (null !== $this->minutesDuration) $json['minutesDuration'] = json_encode($this->minutesDuration);
@@ -573,6 +668,12 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->created) $json['created'] = json_encode($this->created);
         if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (0 < count($this->incomingReferral)) {
+            $json['incomingReferral'] = [];
+            foreach($this->incomingReferral as $incomingReferral) {
+                $json['incomingReferral'][] = json_encode($incomingReferral);
+            }
+        }
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
@@ -615,9 +716,23 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->appointmentType) $this->appointmentType->xmlSerialize(true, $sxe->addChild('appointmentType'));
-        if (null !== $this->reason) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
+        if (0 < count($this->reason)) {
+            foreach($this->reason as $reason) {
+                $reason->xmlSerialize(true, $sxe->addChild('reason'));
+            }
+        }
+        if (0 < count($this->indication)) {
+            foreach($this->indication as $indication) {
+                $indication->xmlSerialize(true, $sxe->addChild('indication'));
+            }
+        }
         if (null !== $this->priority) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (0 < count($this->supportingInformation)) {
+            foreach($this->supportingInformation as $supportingInformation) {
+                $supportingInformation->xmlSerialize(true, $sxe->addChild('supportingInformation'));
+            }
+        }
         if (null !== $this->start) $this->start->xmlSerialize(true, $sxe->addChild('start'));
         if (null !== $this->end) $this->end->xmlSerialize(true, $sxe->addChild('end'));
         if (null !== $this->minutesDuration) $this->minutesDuration->xmlSerialize(true, $sxe->addChild('minutesDuration'));
@@ -628,6 +743,11 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
         if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
+        if (0 < count($this->incomingReferral)) {
+            foreach($this->incomingReferral as $incomingReferral) {
+                $incomingReferral->xmlSerialize(true, $sxe->addChild('incomingReferral'));
+            }
+        }
         if (0 < count($this->participant)) {
             foreach($this->participant as $participant) {
                 $participant->xmlSerialize(true, $sxe->addChild('participant'));

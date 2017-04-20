@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,12 +86,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     public $admitSource = null;
 
     /**
-     * The admitting diagnosis field is used to record the diagnosis codes as reported by admitting practitioner. This could be different or in addition to the conditions reported as reason-condition(s) for the encounter.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $admittingDiagnosis = array();
-
-    /**
      * Whether this hospitalization is a readmission and why if known.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
@@ -110,7 +104,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     public $specialCourtesy = array();
 
     /**
-     * Wheelchair, translator, stretcher, etc.
+     * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $specialArrangement = array();
@@ -126,12 +120,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $dischargeDisposition = null;
-
-    /**
-     * The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $dischargeDiagnosis = array();
 
     /**
      * @var string
@@ -199,26 +187,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * The admitting diagnosis field is used to record the diagnosis codes as reported by admitting practitioner. This could be different or in addition to the conditions reported as reason-condition(s) for the encounter.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getAdmittingDiagnosis()
-    {
-        return $this->admittingDiagnosis;
-    }
-
-    /**
-     * The admitting diagnosis field is used to record the diagnosis codes as reported by admitting practitioner. This could be different or in addition to the conditions reported as reason-condition(s) for the encounter.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $admittingDiagnosis
-     * @return $this
-     */
-    public function addAdmittingDiagnosis($admittingDiagnosis)
-    {
-        $this->admittingDiagnosis[] = $admittingDiagnosis;
-        return $this;
-    }
-
-    /**
      * Whether this hospitalization is a readmission and why if known.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
@@ -279,7 +247,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Wheelchair, translator, stretcher, etc.
+     * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getSpecialArrangement()
@@ -288,7 +256,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Wheelchair, translator, stretcher, etc.
+     * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specialArrangement
      * @return $this
      */
@@ -339,26 +307,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getDischargeDiagnosis()
-    {
-        return $this->dischargeDiagnosis;
-    }
-
-    /**
-     * The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $dischargeDiagnosis
-     * @return $this
-     */
-    public function addDischargeDiagnosis($dischargeDiagnosis)
-    {
-        $this->dischargeDiagnosis[] = $dischargeDiagnosis;
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -383,12 +331,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         if (null !== $this->preAdmissionIdentifier) $json['preAdmissionIdentifier'] = json_encode($this->preAdmissionIdentifier);
         if (null !== $this->origin) $json['origin'] = json_encode($this->origin);
         if (null !== $this->admitSource) $json['admitSource'] = json_encode($this->admitSource);
-        if (0 < count($this->admittingDiagnosis)) {
-            $json['admittingDiagnosis'] = [];
-            foreach($this->admittingDiagnosis as $admittingDiagnosis) {
-                $json['admittingDiagnosis'][] = json_encode($admittingDiagnosis);
-            }
-        }
         if (null !== $this->reAdmission) $json['reAdmission'] = json_encode($this->reAdmission);
         if (0 < count($this->dietPreference)) {
             $json['dietPreference'] = [];
@@ -410,12 +352,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         }
         if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
         if (null !== $this->dischargeDisposition) $json['dischargeDisposition'] = json_encode($this->dischargeDisposition);
-        if (0 < count($this->dischargeDiagnosis)) {
-            $json['dischargeDiagnosis'] = [];
-            foreach($this->dischargeDiagnosis as $dischargeDiagnosis) {
-                $json['dischargeDiagnosis'][] = json_encode($dischargeDiagnosis);
-            }
-        }
         return $json;
     }
 
@@ -431,11 +367,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         if (null !== $this->preAdmissionIdentifier) $this->preAdmissionIdentifier->xmlSerialize(true, $sxe->addChild('preAdmissionIdentifier'));
         if (null !== $this->origin) $this->origin->xmlSerialize(true, $sxe->addChild('origin'));
         if (null !== $this->admitSource) $this->admitSource->xmlSerialize(true, $sxe->addChild('admitSource'));
-        if (0 < count($this->admittingDiagnosis)) {
-            foreach($this->admittingDiagnosis as $admittingDiagnosis) {
-                $admittingDiagnosis->xmlSerialize(true, $sxe->addChild('admittingDiagnosis'));
-            }
-        }
         if (null !== $this->reAdmission) $this->reAdmission->xmlSerialize(true, $sxe->addChild('reAdmission'));
         if (0 < count($this->dietPreference)) {
             foreach($this->dietPreference as $dietPreference) {
@@ -454,11 +385,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
         }
         if (null !== $this->destination) $this->destination->xmlSerialize(true, $sxe->addChild('destination'));
         if (null !== $this->dischargeDisposition) $this->dischargeDisposition->xmlSerialize(true, $sxe->addChild('dischargeDisposition'));
-        if (0 < count($this->dischargeDiagnosis)) {
-            foreach($this->dischargeDiagnosis as $dischargeDiagnosis) {
-                $dischargeDiagnosis->xmlSerialize(true, $sxe->addChild('dischargeDiagnosis'));
-            }
-        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

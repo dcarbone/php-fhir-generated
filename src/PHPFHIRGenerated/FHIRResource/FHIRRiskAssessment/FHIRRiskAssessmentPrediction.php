@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,10 +86,10 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     public $probabilityRange = null;
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
+     * How likely is the outcome (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, high).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $probabilityCodeableConcept = null;
+    public $qualitativeRisk = null;
 
     /**
      * Indicates the risk for this particular subject (with their specific characteristics) divided by the risk of the population in general.  (Numbers greater than 1 = higher risk than the population, numbers less than 1 = lower risk.).
@@ -181,22 +181,22 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
+     * How likely is the outcome (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, high).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getProbabilityCodeableConcept()
+    public function getQualitativeRisk()
     {
-        return $this->probabilityCodeableConcept;
+        return $this->qualitativeRisk;
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $probabilityCodeableConcept
+     * How likely is the outcome (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, high).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $qualitativeRisk
      * @return $this
      */
-    public function setProbabilityCodeableConcept($probabilityCodeableConcept)
+    public function setQualitativeRisk($qualitativeRisk)
     {
-        $this->probabilityCodeableConcept = $probabilityCodeableConcept;
+        $this->qualitativeRisk = $qualitativeRisk;
         return $this;
     }
 
@@ -305,7 +305,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
         if (null !== $this->probabilityDecimal) $json['probabilityDecimal'] = json_encode($this->probabilityDecimal);
         if (null !== $this->probabilityRange) $json['probabilityRange'] = json_encode($this->probabilityRange);
-        if (null !== $this->probabilityCodeableConcept) $json['probabilityCodeableConcept'] = json_encode($this->probabilityCodeableConcept);
+        if (null !== $this->qualitativeRisk) $json['qualitativeRisk'] = json_encode($this->qualitativeRisk);
         if (null !== $this->relativeRisk) $json['relativeRisk'] = json_encode($this->relativeRisk);
         if (null !== $this->whenPeriod) $json['whenPeriod'] = json_encode($this->whenPeriod);
         if (null !== $this->whenRange) $json['whenRange'] = json_encode($this->whenRange);
@@ -325,7 +325,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
         if (null !== $this->outcome) $this->outcome->xmlSerialize(true, $sxe->addChild('outcome'));
         if (null !== $this->probabilityDecimal) $this->probabilityDecimal->xmlSerialize(true, $sxe->addChild('probabilityDecimal'));
         if (null !== $this->probabilityRange) $this->probabilityRange->xmlSerialize(true, $sxe->addChild('probabilityRange'));
-        if (null !== $this->probabilityCodeableConcept) $this->probabilityCodeableConcept->xmlSerialize(true, $sxe->addChild('probabilityCodeableConcept'));
+        if (null !== $this->qualitativeRisk) $this->qualitativeRisk->xmlSerialize(true, $sxe->addChild('qualitativeRisk'));
         if (null !== $this->relativeRisk) $this->relativeRisk->xmlSerialize(true, $sxe->addChild('relativeRisk'));
         if (null !== $this->whenPeriod) $this->whenPeriod->xmlSerialize(true, $sxe->addChild('whenPeriod'));
         if (null !== $this->whenRange) $this->whenRange->xmlSerialize(true, $sxe->addChild('whenRange'));

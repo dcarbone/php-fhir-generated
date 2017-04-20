@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A manifest that defines a set of documents.
+ * A collection of documents compiled for a purpose together with metadata that applies to the collection.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializable
@@ -81,16 +81,10 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     public $identifier = array();
 
     /**
-     * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The status of this document manifest.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
      */
-    public $subject = null;
-
-    /**
-     * A patient, practitioner, or organization for which this set of documents is intended.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $recipient = array();
+    public $status = null;
 
     /**
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
@@ -99,10 +93,10 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     public $type = null;
 
     /**
-     * Identifies who is responsible for creating the manifest, and adding  documents to it.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $author = array();
+    public $subject = null;
 
     /**
      * When the document manifest was created for submission to the server (not necessarily the same thing as the actual resource last modified time, since it may be modified, replicated, etc.).
@@ -111,16 +105,22 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     public $created = null;
 
     /**
+     * Identifies who is responsible for creating the manifest, and adding  documents to it.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $author = array();
+
+    /**
+     * A patient, practitioner, or organization for which this set of documents is intended.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $recipient = array();
+
+    /**
      * Identifies the source system, application, or software that produced the document manifest.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $source = null;
-
-    /**
-     * The status of this document manifest.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
-     */
-    public $status = null;
 
     /**
      * Human-readable description of the source document. This is sometimes known as the "title".
@@ -186,42 +186,22 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The status of this document manifest.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
      */
-    public function getSubject()
+    public function getStatus()
     {
-        return $this->subject;
+        return $this->status;
     }
 
     /**
-     * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
+     * The status of this document manifest.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus $status
      * @return $this
      */
-    public function setSubject($subject)
+    public function setStatus($status)
     {
-        $this->subject = $subject;
-        return $this;
-    }
-
-    /**
-     * A patient, practitioner, or organization for which this set of documents is intended.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getRecipient()
-    {
-        return $this->recipient;
-    }
-
-    /**
-     * A patient, practitioner, or organization for which this set of documents is intended.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $recipient
-     * @return $this
-     */
-    public function addRecipient($recipient)
-    {
-        $this->recipient[] = $recipient;
+        $this->status = $status;
         return $this;
     }
 
@@ -246,22 +226,22 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Identifies who is responsible for creating the manifest, and adding  documents to it.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAuthor()
+    public function getSubject()
     {
-        return $this->author;
+        return $this->subject;
     }
 
     /**
-     * Identifies who is responsible for creating the manifest, and adding  documents to it.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
+     * Who or what the set of documents is about. The documents can be about a person, (patient or healthcare practitioner), a device (i.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure). If the documents cross more than one subject, then more than one subject is allowed here (unusual use case).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function addAuthor($author)
+    public function setSubject($subject)
     {
-        $this->author[] = $author;
+        $this->subject = $subject;
         return $this;
     }
 
@@ -286,6 +266,46 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
+     * Identifies who is responsible for creating the manifest, and adding  documents to it.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Identifies who is responsible for creating the manifest, and adding  documents to it.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
+     * @return $this
+     */
+    public function addAuthor($author)
+    {
+        $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * A patient, practitioner, or organization for which this set of documents is intended.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getRecipient()
+    {
+        return $this->recipient;
+    }
+
+    /**
+     * A patient, practitioner, or organization for which this set of documents is intended.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $recipient
+     * @return $this
+     */
+    public function addRecipient($recipient)
+    {
+        $this->recipient[] = $recipient;
+        return $this;
+    }
+
+    /**
      * Identifies the source system, application, or software that produced the document manifest.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
@@ -302,26 +322,6 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     public function setSource($source)
     {
         $this->source = $source;
-        return $this;
-    }
-
-    /**
-     * The status of this document manifest.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * The status of this document manifest.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
         return $this;
     }
 
@@ -415,23 +415,23 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
                 $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (0 < count($this->recipient)) {
-            $json['recipient'] = [];
-            foreach($this->recipient as $recipient) {
-                $json['recipient'][] = json_encode($recipient);
-            }
-        }
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
                 $json['author'][] = json_encode($author);
             }
         }
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (0 < count($this->recipient)) {
+            $json['recipient'] = [];
+            foreach($this->recipient as $recipient) {
+                $json['recipient'][] = json_encode($recipient);
+            }
+        }
         if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->content)) {
             $json['content'] = [];
@@ -463,21 +463,21 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (0 < count($this->recipient)) {
-            foreach($this->recipient as $recipient) {
-                $recipient->xmlSerialize(true, $sxe->addChild('recipient'));
-            }
-        }
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
         if (0 < count($this->author)) {
             foreach($this->author as $author) {
                 $author->xmlSerialize(true, $sxe->addChild('author'));
             }
         }
-        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
+        if (0 < count($this->recipient)) {
+            foreach($this->recipient as $recipient) {
+                $recipient->xmlSerialize(true, $sxe->addChild('recipient'));
+            }
+        }
         if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->content)) {
             foreach($this->content as $content) {

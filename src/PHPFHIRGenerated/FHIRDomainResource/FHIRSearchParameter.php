@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,13 +69,13 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
-     * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -93,13 +93,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     public $status = null;
 
     /**
-     * A flag to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
+     * The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
@@ -117,19 +117,19 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     public $contact = array();
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the search parameter is intended to be used.
+     * A legal or geographic region in which the search parameter is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Explains why this search parameter is needed and why it has been designed as it has.
+     * Explaination of why this search parameter is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -142,7 +142,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public $base = array();
 
@@ -159,13 +159,13 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     public $derivedFrom = null;
 
     /**
-     * A free text natural language description of the search parameter from the consumer's perspective. and how it used.
+     * A free text natural language description of the search parameter from a consumer's perspective. and how it used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * A FluentPath expression that returns a set of elements for the search parameter.
+     * A FHIRPath expression that returns a set of elements for the search parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $expression = null;
@@ -184,7 +184,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Types of resource (if a resource is referenced).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public $target = array();
 
@@ -218,7 +218,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     private $_fhirElementName = 'SearchParameter';
 
     /**
-     * An absolute URL that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -227,7 +227,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * An absolute URL that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -238,7 +238,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -247,7 +247,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -298,7 +298,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A flag to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -307,7 +307,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A flag to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -318,7 +318,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
+     * The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -327,7 +327,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The date  (and optionally time) when the search parameter was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
+     * The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -378,7 +378,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -387,7 +387,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -398,7 +398,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A jurisdiction in which the search parameter is intended to be used.
+     * A legal or geographic region in which the search parameter is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -407,7 +407,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A jurisdiction in which the search parameter is intended to be used.
+     * A legal or geographic region in which the search parameter is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -418,7 +418,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Explains why this search parameter is needed and why it has been designed as it has.
+     * Explaination of why this search parameter is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -427,7 +427,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Explains why this search parameter is needed and why it has been designed as it has.
+     * Explaination of why this search parameter is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -459,7 +459,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public function getBase()
     {
@@ -468,7 +468,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The base resource type(s) that this search parameter can be used against.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $base
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $base
      * @return $this
      */
     public function addBase($base)
@@ -518,7 +518,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A free text natural language description of the search parameter from the consumer's perspective. and how it used.
+     * A free text natural language description of the search parameter from a consumer's perspective. and how it used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -527,7 +527,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A free text natural language description of the search parameter from the consumer's perspective. and how it used.
+     * A free text natural language description of the search parameter from a consumer's perspective. and how it used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -538,7 +538,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A FluentPath expression that returns a set of elements for the search parameter.
+     * A FHIRPath expression that returns a set of elements for the search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getExpression()
@@ -547,7 +547,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * A FluentPath expression that returns a set of elements for the search parameter.
+     * A FHIRPath expression that returns a set of elements for the search parameter.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
@@ -599,7 +599,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Types of resource (if a resource is referenced).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public function getTarget()
     {
@@ -608,7 +608,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Types of resource (if a resource is referenced).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $target
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $target
      * @return $this
      */
     public function addTarget($target)

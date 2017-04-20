@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -76,7 +76,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of this consent.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRConsentStatus
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRConsentState
      */
     public $status = null;
 
@@ -87,10 +87,10 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     public $category = array();
 
     /**
-     * When this  Consent was issued / created / indexed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * The patient/healthcare consumer to whom this consent applies.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $dateTime = null;
+    public $patient = null;
 
     /**
      * Relevant time or time-period when this Consent is applicable.
@@ -99,22 +99,34 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     public $period = null;
 
     /**
-     * The patient/healthcare consumer to whom this consent applies.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * When this  Consent was issued / created / indexed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $patient = null;
+    public $dateTime = null;
 
     /**
-     * The patient/consumer that is responsible for agreeing to the consent represented by this resource. This is the person (usually) that agreed to the policy, along with the exceptions, e.g. the persion who takes responsibility for the agreement. In the signature this corresponds to the role "Consent Signature".
+     * Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $consentor = array();
+    public $consentingParty = array();
+
+    /**
+     * Who or what is controlled by this consent. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor[]
+     */
+    public $actor = array();
+
+    /**
+     * Actions controlled by this consent.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $action = array();
 
     /**
      * The organization that manages the consent, and the framework within which it is executed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $organization = null;
+    public $organization = array();
 
     /**
      * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
@@ -135,22 +147,40 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     public $sourceReference = null;
 
     /**
-     * A reference to the policy that this consents to. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentPolicy[]
      */
-    public $policy = null;
+    public $policy = array();
 
     /**
-     * Actor whose access is controlled by this consent under the terms of the policy and exceptions.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * A referece to the specific computable policy.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public $recipient = array();
+    public $policyRule = null;
+
+    /**
+     * A set of security labels that define which resources are controlled by this consent. If more than one label is specified, all resources must have all the specified labels.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    public $securityLabel = array();
 
     /**
      * The context of the activities a user is taking - why the user is accessing the data - that are controlled by this consent.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public $purpose = array();
+
+    /**
+     * Clinical or Operational Relevant period of time that bounds the data controlled by this consent.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $dataPeriod = null;
+
+    /**
+     * The resources controlled by this consent, if specific resources are referenced.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData[]
+     */
+    public $data = array();
 
     /**
      * An exception to the base policy of this consent. An exception can be an addition or removal of access permissions.
@@ -185,7 +215,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of this consent.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRConsentStatus
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRConsentState
      */
     public function getStatus()
     {
@@ -194,7 +224,7 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Indicates the current state of this consent.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRConsentStatus $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRConsentState $status
      * @return $this
      */
     public function setStatus($status)
@@ -224,22 +254,22 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When this  Consent was issued / created / indexed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * The patient/healthcare consumer to whom this consent applies.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getDateTime()
+    public function getPatient()
     {
-        return $this->dateTime;
+        return $this->patient;
     }
 
     /**
-     * When this  Consent was issued / created / indexed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $dateTime
+     * The patient/healthcare consumer to whom this consent applies.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
-    public function setDateTime($dateTime)
+    public function setPatient($patient)
     {
-        $this->dateTime = $dateTime;
+        $this->patient = $patient;
         return $this;
     }
 
@@ -264,48 +294,88 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The patient/healthcare consumer to whom this consent applies.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * When this  Consent was issued / created / indexed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getPatient()
+    public function getDateTime()
     {
-        return $this->patient;
+        return $this->dateTime;
     }
 
     /**
-     * The patient/healthcare consumer to whom this consent applies.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
+     * When this  Consent was issued / created / indexed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $dateTime
      * @return $this
      */
-    public function setPatient($patient)
+    public function setDateTime($dateTime)
     {
-        $this->patient = $patient;
+        $this->dateTime = $dateTime;
         return $this;
     }
 
     /**
-     * The patient/consumer that is responsible for agreeing to the consent represented by this resource. This is the person (usually) that agreed to the policy, along with the exceptions, e.g. the persion who takes responsibility for the agreement. In the signature this corresponds to the role "Consent Signature".
+     * Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getConsentor()
+    public function getConsentingParty()
     {
-        return $this->consentor;
+        return $this->consentingParty;
     }
 
     /**
-     * The patient/consumer that is responsible for agreeing to the consent represented by this resource. This is the person (usually) that agreed to the policy, along with the exceptions, e.g. the persion who takes responsibility for the agreement. In the signature this corresponds to the role "Consent Signature".
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $consentor
+     * Either the Grantor, which is the entity responsible for granting the rights listed in a Consent Directive or the Grantee, which is the entity responsible for complying with the Consent Directive, including any obligations or limitations on authorizations and enforcement of prohibitions.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $consentingParty
      * @return $this
      */
-    public function addConsentor($consentor)
+    public function addConsentingParty($consentingParty)
     {
-        $this->consentor[] = $consentor;
+        $this->consentingParty[] = $consentingParty;
+        return $this;
+    }
+
+    /**
+     * Who or what is controlled by this consent. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor[]
+     */
+    public function getActor()
+    {
+        return $this->actor;
+    }
+
+    /**
+     * Who or what is controlled by this consent. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor $actor
+     * @return $this
+     */
+    public function addActor($actor)
+    {
+        $this->actor[] = $actor;
+        return $this;
+    }
+
+    /**
+     * Actions controlled by this consent.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * Actions controlled by this consent.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $action
+     * @return $this
+     */
+    public function addAction($action)
+    {
+        $this->action[] = $action;
         return $this;
     }
 
     /**
      * The organization that manages the consent, and the framework within which it is executed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getOrganization()
     {
@@ -317,9 +387,9 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $organization
      * @return $this
      */
-    public function setOrganization($organization)
+    public function addOrganization($organization)
     {
-        $this->organization = $organization;
+        $this->organization[] = $organization;
         return $this;
     }
 
@@ -384,8 +454,8 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A reference to the policy that this consents to. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentPolicy[]
      */
     public function getPolicy()
     {
@@ -393,33 +463,53 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A reference to the policy that this consents to. Policies may be organizational, but are often defined jurisdictionally, or in law.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $policy
+     * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentPolicy $policy
      * @return $this
      */
-    public function setPolicy($policy)
+    public function addPolicy($policy)
     {
-        $this->policy = $policy;
+        $this->policy[] = $policy;
         return $this;
     }
 
     /**
-     * Actor whose access is controlled by this consent under the terms of the policy and exceptions.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * A referece to the specific computable policy.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getRecipient()
+    public function getPolicyRule()
     {
-        return $this->recipient;
+        return $this->policyRule;
     }
 
     /**
-     * Actor whose access is controlled by this consent under the terms of the policy and exceptions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $recipient
+     * A referece to the specific computable policy.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $policyRule
      * @return $this
      */
-    public function addRecipient($recipient)
+    public function setPolicyRule($policyRule)
     {
-        $this->recipient[] = $recipient;
+        $this->policyRule = $policyRule;
+        return $this;
+    }
+
+    /**
+     * A set of security labels that define which resources are controlled by this consent. If more than one label is specified, all resources must have all the specified labels.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    public function getSecurityLabel()
+    {
+        return $this->securityLabel;
+    }
+
+    /**
+     * A set of security labels that define which resources are controlled by this consent. If more than one label is specified, all resources must have all the specified labels.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $securityLabel
+     * @return $this
+     */
+    public function addSecurityLabel($securityLabel)
+    {
+        $this->securityLabel[] = $securityLabel;
         return $this;
     }
 
@@ -440,6 +530,46 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     public function addPurpose($purpose)
     {
         $this->purpose[] = $purpose;
+        return $this;
+    }
+
+    /**
+     * Clinical or Operational Relevant period of time that bounds the data controlled by this consent.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getDataPeriod()
+    {
+        return $this->dataPeriod;
+    }
+
+    /**
+     * Clinical or Operational Relevant period of time that bounds the data controlled by this consent.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $dataPeriod
+     * @return $this
+     */
+    public function setDataPeriod($dataPeriod)
+    {
+        $this->dataPeriod = $dataPeriod;
+        return $this;
+    }
+
+    /**
+     * The resources controlled by this consent, if specific resources are referenced.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData[]
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * The resources controlled by this consent, if specific resources are referenced.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData $data
+     * @return $this
+     */
+    public function addData($data)
+    {
+        $this->data[] = $data;
         return $this;
     }
 
@@ -494,30 +624,60 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
                 $json['category'][] = json_encode($category);
             }
         }
-        if (null !== $this->dateTime) $json['dateTime'] = json_encode($this->dateTime);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (0 < count($this->consentor)) {
-            $json['consentor'] = [];
-            foreach($this->consentor as $consentor) {
-                $json['consentor'][] = json_encode($consentor);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->dateTime) $json['dateTime'] = json_encode($this->dateTime);
+        if (0 < count($this->consentingParty)) {
+            $json['consentingParty'] = [];
+            foreach($this->consentingParty as $consentingParty) {
+                $json['consentingParty'][] = json_encode($consentingParty);
             }
         }
-        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (0 < count($this->actor)) {
+            $json['actor'] = [];
+            foreach($this->actor as $actor) {
+                $json['actor'][] = json_encode($actor);
+            }
+        }
+        if (0 < count($this->action)) {
+            $json['action'] = [];
+            foreach($this->action as $action) {
+                $json['action'][] = json_encode($action);
+            }
+        }
+        if (0 < count($this->organization)) {
+            $json['organization'] = [];
+            foreach($this->organization as $organization) {
+                $json['organization'][] = json_encode($organization);
+            }
+        }
         if (null !== $this->sourceAttachment) $json['sourceAttachment'] = json_encode($this->sourceAttachment);
         if (null !== $this->sourceIdentifier) $json['sourceIdentifier'] = json_encode($this->sourceIdentifier);
         if (null !== $this->sourceReference) $json['sourceReference'] = json_encode($this->sourceReference);
-        if (null !== $this->policy) $json['policy'] = json_encode($this->policy);
-        if (0 < count($this->recipient)) {
-            $json['recipient'] = [];
-            foreach($this->recipient as $recipient) {
-                $json['recipient'][] = json_encode($recipient);
+        if (0 < count($this->policy)) {
+            $json['policy'] = [];
+            foreach($this->policy as $policy) {
+                $json['policy'][] = json_encode($policy);
+            }
+        }
+        if (null !== $this->policyRule) $json['policyRule'] = json_encode($this->policyRule);
+        if (0 < count($this->securityLabel)) {
+            $json['securityLabel'] = [];
+            foreach($this->securityLabel as $securityLabel) {
+                $json['securityLabel'][] = json_encode($securityLabel);
             }
         }
         if (0 < count($this->purpose)) {
             $json['purpose'] = [];
             foreach($this->purpose as $purpose) {
                 $json['purpose'][] = json_encode($purpose);
+            }
+        }
+        if (null !== $this->dataPeriod) $json['dataPeriod'] = json_encode($this->dataPeriod);
+        if (0 < count($this->data)) {
+            $json['data'] = [];
+            foreach($this->data as $data) {
+                $json['data'][] = json_encode($data);
             }
         }
         if (0 < count($this->except)) {
@@ -545,27 +705,52 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
                 $category->xmlSerialize(true, $sxe->addChild('category'));
             }
         }
-        if (null !== $this->dateTime) $this->dateTime->xmlSerialize(true, $sxe->addChild('dateTime'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (0 < count($this->consentor)) {
-            foreach($this->consentor as $consentor) {
-                $consentor->xmlSerialize(true, $sxe->addChild('consentor'));
+        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (null !== $this->dateTime) $this->dateTime->xmlSerialize(true, $sxe->addChild('dateTime'));
+        if (0 < count($this->consentingParty)) {
+            foreach($this->consentingParty as $consentingParty) {
+                $consentingParty->xmlSerialize(true, $sxe->addChild('consentingParty'));
             }
         }
-        if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
+        if (0 < count($this->actor)) {
+            foreach($this->actor as $actor) {
+                $actor->xmlSerialize(true, $sxe->addChild('actor'));
+            }
+        }
+        if (0 < count($this->action)) {
+            foreach($this->action as $action) {
+                $action->xmlSerialize(true, $sxe->addChild('action'));
+            }
+        }
+        if (0 < count($this->organization)) {
+            foreach($this->organization as $organization) {
+                $organization->xmlSerialize(true, $sxe->addChild('organization'));
+            }
+        }
         if (null !== $this->sourceAttachment) $this->sourceAttachment->xmlSerialize(true, $sxe->addChild('sourceAttachment'));
         if (null !== $this->sourceIdentifier) $this->sourceIdentifier->xmlSerialize(true, $sxe->addChild('sourceIdentifier'));
         if (null !== $this->sourceReference) $this->sourceReference->xmlSerialize(true, $sxe->addChild('sourceReference'));
-        if (null !== $this->policy) $this->policy->xmlSerialize(true, $sxe->addChild('policy'));
-        if (0 < count($this->recipient)) {
-            foreach($this->recipient as $recipient) {
-                $recipient->xmlSerialize(true, $sxe->addChild('recipient'));
+        if (0 < count($this->policy)) {
+            foreach($this->policy as $policy) {
+                $policy->xmlSerialize(true, $sxe->addChild('policy'));
+            }
+        }
+        if (null !== $this->policyRule) $this->policyRule->xmlSerialize(true, $sxe->addChild('policyRule'));
+        if (0 < count($this->securityLabel)) {
+            foreach($this->securityLabel as $securityLabel) {
+                $securityLabel->xmlSerialize(true, $sxe->addChild('securityLabel'));
             }
         }
         if (0 < count($this->purpose)) {
             foreach($this->purpose as $purpose) {
                 $purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+            }
+        }
+        if (null !== $this->dataPeriod) $this->dataPeriod->xmlSerialize(true, $sxe->addChild('dataPeriod'));
+        if (0 < count($this->data)) {
+            foreach($this->data as $data) {
+                $data->xmlSerialize(true, $sxe->addChild('data'));
             }
         }
         if (0 < count($this->except)) {

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -76,9 +76,15 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
+
+    /**
+     * Patient Resource.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $patient = null;
 
     /**
      * The date when the enclosed suite of services were performed or completed.
@@ -184,9 +190,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Note text.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseNote[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
      */
-    public $note = array();
+    public $processNote = array();
 
     /**
      * Request for additional supporting or authorizing information, such as: documents, images or resources.
@@ -227,7 +233,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -236,12 +242,32 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the resource instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Patient Resource.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * Patient Resource.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
+     * @return $this
+     */
+    public function setPatient($patient)
+    {
+        $this->patient = $patient;
         return $this;
     }
 
@@ -587,21 +613,21 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Note text.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseNote[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
      */
-    public function getNote()
+    public function getProcessNote()
     {
-        return $this->note;
+        return $this->processNote;
     }
 
     /**
      * Note text.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseNote $note
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRClaimResponse\FHIRClaimResponseProcessNote $processNote
      * @return $this
      */
-    public function addNote($note)
+    public function addProcessNote($processNote)
     {
-        $this->note[] = $note;
+        $this->processNote[] = $processNote;
         return $this;
     }
 
@@ -675,6 +701,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (null !== $this->created) $json['created'] = json_encode($this->created);
         if (null !== $this->insurer) $json['insurer'] = json_encode($this->insurer);
         if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
@@ -707,10 +734,10 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->payment) $json['payment'] = json_encode($this->payment);
         if (null !== $this->reserved) $json['reserved'] = json_encode($this->reserved);
         if (null !== $this->form) $json['form'] = json_encode($this->form);
-        if (0 < count($this->note)) {
-            $json['note'] = [];
-            foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+        if (0 < count($this->processNote)) {
+            $json['processNote'] = [];
+            foreach($this->processNote as $processNote) {
+                $json['processNote'][] = json_encode($processNote);
             }
         }
         if (0 < count($this->communicationRequest)) {
@@ -743,6 +770,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
         if (null !== $this->insurer) $this->insurer->xmlSerialize(true, $sxe->addChild('insurer'));
         if (null !== $this->requestProvider) $this->requestProvider->xmlSerialize(true, $sxe->addChild('requestProvider'));
@@ -772,9 +800,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->payment) $this->payment->xmlSerialize(true, $sxe->addChild('payment'));
         if (null !== $this->reserved) $this->reserved->xmlSerialize(true, $sxe->addChild('reserved'));
         if (null !== $this->form) $this->form->xmlSerialize(true, $sxe->addChild('form'));
-        if (0 < count($this->note)) {
-            foreach($this->note as $note) {
-                $note->xmlSerialize(true, $sxe->addChild('note'));
+        if (0 < count($this->processNote)) {
+            foreach($this->processNote as $processNote) {
+                $processNote->xmlSerialize(true, $sxe->addChild('processNote'));
             }
         }
         if (0 < count($this->communicationRequest)) {

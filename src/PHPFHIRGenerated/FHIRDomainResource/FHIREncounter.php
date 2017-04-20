@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,7 +75,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * planned | arrived | in-progress | onleave | finished | cancelled | entered-in-error.
+     * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
      * @var \PHPFHIRGenerated\FHIRElement\FHIREncounterStatus
      */
     public $status = null;
@@ -93,6 +93,14 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     public $class = null;
 
     /**
+     * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.
+
+This would be used for a case where an admission starts of as an emergency encounter, then transisions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kindof discharge from emergency to inpatient.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterClassHistory[]
+     */
+    public $classHistory = array();
+
+    /**
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
@@ -105,10 +113,10 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     public $priority = null;
 
     /**
-     * The patient present at the encounter.
+     * The patient ro group present at the encounter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    public $subject = null;
 
     /**
      * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care, and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
@@ -153,10 +161,10 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     public $reason = array();
 
     /**
-     * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * The list of diagnosis relevant to this encounter.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterDiagnosis[]
      */
-    public $indication = array();
+    public $diagnosis = array();
 
     /**
      * The set of accounts that may be used for billing for this Encounter.
@@ -214,7 +222,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * planned | arrived | in-progress | onleave | finished | cancelled | entered-in-error.
+     * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
      * @return \PHPFHIRGenerated\FHIRElement\FHIREncounterStatus
      */
     public function getStatus()
@@ -223,7 +231,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * planned | arrived | in-progress | onleave | finished | cancelled | entered-in-error.
+     * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
      * @param \PHPFHIRGenerated\FHIRElement\FHIREncounterStatus $status
      * @return $this
      */
@@ -274,6 +282,30 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.
+
+This would be used for a case where an admission starts of as an emergency encounter, then transisions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kindof discharge from emergency to inpatient.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterClassHistory[]
+     */
+    public function getClassHistory()
+    {
+        return $this->classHistory;
+    }
+
+    /**
+     * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.
+
+This would be used for a case where an admission starts of as an emergency encounter, then transisions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kindof discharge from emergency to inpatient.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterClassHistory $classHistory
+     * @return $this
+     */
+    public function addClassHistory($classHistory)
+    {
+        $this->classHistory[] = $classHistory;
+        return $this;
+    }
+
+    /**
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
@@ -314,22 +346,22 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The patient present at the encounter.
+     * The patient ro group present at the encounter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatient()
+    public function getSubject()
     {
-        return $this->patient;
+        return $this->subject;
     }
 
     /**
-     * The patient present at the encounter.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
+     * The patient ro group present at the encounter.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setPatient($patient)
+    public function setSubject($subject)
     {
-        $this->patient = $patient;
+        $this->subject = $subject;
         return $this;
     }
 
@@ -474,22 +506,22 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * The list of diagnosis relevant to this encounter.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterDiagnosis[]
      */
-    public function getIndication()
+    public function getDiagnosis()
     {
-        return $this->indication;
+        return $this->diagnosis;
     }
 
     /**
-     * Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $indication
+     * The list of diagnosis relevant to this encounter.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREncounter\FHIREncounterDiagnosis $diagnosis
      * @return $this
      */
-    public function addIndication($indication)
+    public function addDiagnosis($diagnosis)
     {
-        $this->indication[] = $indication;
+        $this->diagnosis[] = $diagnosis;
         return $this;
     }
 
@@ -630,6 +662,12 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->class) $json['class'] = json_encode($this->class);
+        if (0 < count($this->classHistory)) {
+            $json['classHistory'] = [];
+            foreach($this->classHistory as $classHistory) {
+                $json['classHistory'][] = json_encode($classHistory);
+            }
+        }
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
@@ -637,7 +675,7 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (0 < count($this->episodeOfCare)) {
             $json['episodeOfCare'] = [];
             foreach($this->episodeOfCare as $episodeOfCare) {
@@ -665,10 +703,10 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
                 $json['reason'][] = json_encode($reason);
             }
         }
-        if (0 < count($this->indication)) {
-            $json['indication'] = [];
-            foreach($this->indication as $indication) {
-                $json['indication'][] = json_encode($indication);
+        if (0 < count($this->diagnosis)) {
+            $json['diagnosis'] = [];
+            foreach($this->diagnosis as $diagnosis) {
+                $json['diagnosis'][] = json_encode($diagnosis);
             }
         }
         if (0 < count($this->account)) {
@@ -710,13 +748,18 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->class) $this->class->xmlSerialize(true, $sxe->addChild('class'));
+        if (0 < count($this->classHistory)) {
+            foreach($this->classHistory as $classHistory) {
+                $classHistory->xmlSerialize(true, $sxe->addChild('classHistory'));
+            }
+        }
         if (0 < count($this->type)) {
             foreach($this->type as $type) {
                 $type->xmlSerialize(true, $sxe->addChild('type'));
             }
         }
         if (null !== $this->priority) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (0 < count($this->episodeOfCare)) {
             foreach($this->episodeOfCare as $episodeOfCare) {
                 $episodeOfCare->xmlSerialize(true, $sxe->addChild('episodeOfCare'));
@@ -740,9 +783,9 @@ class FHIREncounter extends FHIRDomainResource implements \JsonSerializable
                 $reason->xmlSerialize(true, $sxe->addChild('reason'));
             }
         }
-        if (0 < count($this->indication)) {
-            foreach($this->indication as $indication) {
-                $indication->xmlSerialize(true, $sxe->addChild('indication'));
+        if (0 < count($this->diagnosis)) {
+            foreach($this->diagnosis as $diagnosis) {
+                $diagnosis->xmlSerialize(true, $sxe->addChild('diagnosis'));
             }
         }
         if (0 < count($this->account)) {

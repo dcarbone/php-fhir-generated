@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,10 +75,40 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
+     * A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this procedure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $definition = array();
+
+    /**
+     * A reference to a resource that contains details of the request for this procedure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
+
+    /**
+     * A larger event of which this particular procedure is a component or step.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $partOf = array();
+
+    /**
      * A code specifying the state of the procedure. Generally this will be in-progress or completed state.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRProcedureStatus
+     * @var \PHPFHIRGenerated\FHIRElement\FHIREventStatus
      */
     public $status = null;
+
+    /**
+     * Set this to true if the record is saying that the procedure was NOT performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $notDone = null;
+
+    /**
+     * A code indicating why the procedure was not performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $notDoneReason = null;
 
     /**
      * A code that classifies the procedure for searching, sorting and display purposes (e.g. "Surgical Procedure").
@@ -102,7 +132,7 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
      * The encounter during which the procedure was performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $encounter = null;
+    public $context = null;
 
     /**
      * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
@@ -129,28 +159,16 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     public $location = null;
 
     /**
-     * The condition that is the reason why the procedure was performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $reasonReference = array();
-
-    /**
      * The coded reason why the procedure was performed. This may be coded entity of some type, or may simply be present as text.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $reasonCode = array();
 
     /**
-     * Set this to true if the record is saying that the procedure was NOT performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * The condition that is the reason why the procedure was performed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $notPerformed = null;
-
-    /**
-     * A code indicating why the procedure was not performed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
-     */
-    public $reasonNotPerformed = array();
+    public $reasonReference = array();
 
     /**
      * Detailed and structured anatomical location information. Multiple locations are allowed - e.g. multiple punch biopsies of a lesion.
@@ -177,22 +195,22 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     public $complication = array();
 
     /**
+     * Any complications that occurred during the procedure, or in the immediate post-performance period.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $complicationDetail = array();
+
+    /**
      * If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or could potentially be more complex in which case the CarePlan resource can be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $followUp = array();
 
     /**
-     * A reference to a resource that contains details of the request for this procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $request = null;
-
-    /**
      * Any other notes about the procedure.  E.g. the operative notes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $notes = array();
+    public $note = array();
 
     /**
      * A device that is implanted, removed or otherwise manipulated (calibration, battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a focal portion of the Procedure.
@@ -211,12 +229,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $usedCode = array();
-
-    /**
-     * Identifies medication administrations, other procedures or observations that are related to this procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $component = array();
 
     /**
      * @var string
@@ -244,8 +256,68 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this procedure.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this procedure.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @return $this
+     */
+    public function addDefinition($definition)
+    {
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource that contains details of the request for this procedure.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A reference to a resource that contains details of the request for this procedure.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * A larger event of which this particular procedure is a component or step.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getPartOf()
+    {
+        return $this->partOf;
+    }
+
+    /**
+     * A larger event of which this particular procedure is a component or step.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partOf
+     * @return $this
+     */
+    public function addPartOf($partOf)
+    {
+        $this->partOf[] = $partOf;
+        return $this;
+    }
+
+    /**
      * A code specifying the state of the procedure. Generally this will be in-progress or completed state.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRProcedureStatus
+     * @return \PHPFHIRGenerated\FHIRElement\FHIREventStatus
      */
     public function getStatus()
     {
@@ -254,12 +326,52 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * A code specifying the state of the procedure. Generally this will be in-progress or completed state.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRProcedureStatus $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIREventStatus $status
      * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Set this to true if the record is saying that the procedure was NOT performed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getNotDone()
+    {
+        return $this->notDone;
+    }
+
+    /**
+     * Set this to true if the record is saying that the procedure was NOT performed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $notDone
+     * @return $this
+     */
+    public function setNotDone($notDone)
+    {
+        $this->notDone = $notDone;
+        return $this;
+    }
+
+    /**
+     * A code indicating why the procedure was not performed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getNotDoneReason()
+    {
+        return $this->notDoneReason;
+    }
+
+    /**
+     * A code indicating why the procedure was not performed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $notDoneReason
+     * @return $this
+     */
+    public function setNotDoneReason($notDoneReason)
+    {
+        $this->notDoneReason = $notDoneReason;
         return $this;
     }
 
@@ -327,19 +439,19 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
      * The encounter during which the procedure was performed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
+    public function getContext()
     {
-        return $this->encounter;
+        return $this->context;
     }
 
     /**
      * The encounter during which the procedure was performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setEncounter($encounter)
+    public function setContext($context)
     {
-        $this->encounter = $encounter;
+        $this->context = $context;
         return $this;
     }
 
@@ -424,26 +536,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The condition that is the reason why the procedure was performed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getReasonReference()
-    {
-        return $this->reasonReference;
-    }
-
-    /**
-     * The condition that is the reason why the procedure was performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
-     * @return $this
-     */
-    public function addReasonReference($reasonReference)
-    {
-        $this->reasonReference[] = $reasonReference;
-        return $this;
-    }
-
-    /**
      * The coded reason why the procedure was performed. This may be coded entity of some type, or may simply be present as text.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
@@ -464,42 +556,22 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Set this to true if the record is saying that the procedure was NOT performed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * The condition that is the reason why the procedure was performed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getNotPerformed()
+    public function getReasonReference()
     {
-        return $this->notPerformed;
+        return $this->reasonReference;
     }
 
     /**
-     * Set this to true if the record is saying that the procedure was NOT performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $notPerformed
+     * The condition that is the reason why the procedure was performed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
-    public function setNotPerformed($notPerformed)
+    public function addReasonReference($reasonReference)
     {
-        $this->notPerformed = $notPerformed;
-        return $this;
-    }
-
-    /**
-     * A code indicating why the procedure was not performed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getReasonNotPerformed()
-    {
-        return $this->reasonNotPerformed;
-    }
-
-    /**
-     * A code indicating why the procedure was not performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonNotPerformed
-     * @return $this
-     */
-    public function addReasonNotPerformed($reasonNotPerformed)
-    {
-        $this->reasonNotPerformed[] = $reasonNotPerformed;
+        $this->reasonReference[] = $reasonReference;
         return $this;
     }
 
@@ -584,6 +656,26 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Any complications that occurred during the procedure, or in the immediate post-performance period.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getComplicationDetail()
+    {
+        return $this->complicationDetail;
+    }
+
+    /**
+     * Any complications that occurred during the procedure, or in the immediate post-performance period.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $complicationDetail
+     * @return $this
+     */
+    public function addComplicationDetail($complicationDetail)
+    {
+        $this->complicationDetail[] = $complicationDetail;
+        return $this;
+    }
+
+    /**
      * If the procedure required specific follow up - e.g. removal of sutures. The followup may be represented as a simple note, or could potentially be more complex in which case the CarePlan resource can be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
@@ -604,42 +696,22 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A reference to a resource that contains details of the request for this procedure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * A reference to a resource that contains details of the request for this procedure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $request
-     * @return $this
-     */
-    public function setRequest($request)
-    {
-        $this->request = $request;
-        return $this;
-    }
-
-    /**
      * Any other notes about the procedure.  E.g. the operative notes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNotes()
+    public function getNote()
     {
-        return $this->notes;
+        return $this->note;
     }
 
     /**
      * Any other notes about the procedure.  E.g. the operative notes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $notes
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNotes($notes)
+    public function addNote($note)
     {
-        $this->notes[] = $notes;
+        $this->note[] = $note;
         return $this;
     }
 
@@ -704,26 +776,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Identifies medication administrations, other procedures or observations that are related to this procedure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getComponent()
-    {
-        return $this->component;
-    }
-
-    /**
-     * Identifies medication administrations, other procedures or observations that are related to this procedure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $component
-     * @return $this
-     */
-    public function addComponent($component)
-    {
-        $this->component[] = $component;
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -752,11 +804,31 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (0 < count($this->definition)) {
+            $json['definition'] = [];
+            foreach($this->definition as $definition) {
+                $json['definition'][] = json_encode($definition);
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
+        if (0 < count($this->partOf)) {
+            $json['partOf'] = [];
+            foreach($this->partOf as $partOf) {
+                $json['partOf'][] = json_encode($partOf);
+            }
+        }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->notDone) $json['notDone'] = json_encode($this->notDone);
+        if (null !== $this->notDoneReason) $json['notDoneReason'] = json_encode($this->notDoneReason);
         if (null !== $this->category) $json['category'] = json_encode($this->category);
         if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
         if (null !== $this->performedDateTime) $json['performedDateTime'] = json_encode($this->performedDateTime);
         if (null !== $this->performedPeriod) $json['performedPeriod'] = json_encode($this->performedPeriod);
         if (0 < count($this->performer)) {
@@ -766,23 +838,16 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (0 < count($this->reasonReference)) {
-            $json['reasonReference'] = [];
-            foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
-            }
-        }
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
                 $json['reasonCode'][] = json_encode($reasonCode);
             }
         }
-        if (null !== $this->notPerformed) $json['notPerformed'] = json_encode($this->notPerformed);
-        if (0 < count($this->reasonNotPerformed)) {
-            $json['reasonNotPerformed'] = [];
-            foreach($this->reasonNotPerformed as $reasonNotPerformed) {
-                $json['reasonNotPerformed'][] = json_encode($reasonNotPerformed);
+        if (0 < count($this->reasonReference)) {
+            $json['reasonReference'] = [];
+            foreach($this->reasonReference as $reasonReference) {
+                $json['reasonReference'][] = json_encode($reasonReference);
             }
         }
         if (0 < count($this->bodySite)) {
@@ -804,17 +869,22 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
                 $json['complication'][] = json_encode($complication);
             }
         }
+        if (0 < count($this->complicationDetail)) {
+            $json['complicationDetail'] = [];
+            foreach($this->complicationDetail as $complicationDetail) {
+                $json['complicationDetail'][] = json_encode($complicationDetail);
+            }
+        }
         if (0 < count($this->followUp)) {
             $json['followUp'] = [];
             foreach($this->followUp as $followUp) {
                 $json['followUp'][] = json_encode($followUp);
             }
         }
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (0 < count($this->notes)) {
-            $json['notes'] = [];
-            foreach($this->notes as $notes) {
-                $json['notes'][] = json_encode($notes);
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
             }
         }
         if (0 < count($this->focalDevice)) {
@@ -835,12 +905,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
                 $json['usedCode'][] = json_encode($usedCode);
             }
         }
-        if (0 < count($this->component)) {
-            $json['component'] = [];
-            foreach($this->component as $component) {
-                $json['component'][] = json_encode($component);
-            }
-        }
         return $json;
     }
 
@@ -858,11 +922,28 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (0 < count($this->definition)) {
+            foreach($this->definition as $definition) {
+                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
+        if (0 < count($this->partOf)) {
+            foreach($this->partOf as $partOf) {
+                $partOf->xmlSerialize(true, $sxe->addChild('partOf'));
+            }
+        }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->notDone) $this->notDone->xmlSerialize(true, $sxe->addChild('notDone'));
+        if (null !== $this->notDoneReason) $this->notDoneReason->xmlSerialize(true, $sxe->addChild('notDoneReason'));
         if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (null !== $this->performedDateTime) $this->performedDateTime->xmlSerialize(true, $sxe->addChild('performedDateTime'));
         if (null !== $this->performedPeriod) $this->performedPeriod->xmlSerialize(true, $sxe->addChild('performedPeriod'));
         if (0 < count($this->performer)) {
@@ -871,20 +952,14 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->location) $this->location->xmlSerialize(true, $sxe->addChild('location'));
-        if (0 < count($this->reasonReference)) {
-            foreach($this->reasonReference as $reasonReference) {
-                $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
-            }
-        }
         if (0 < count($this->reasonCode)) {
             foreach($this->reasonCode as $reasonCode) {
                 $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));
             }
         }
-        if (null !== $this->notPerformed) $this->notPerformed->xmlSerialize(true, $sxe->addChild('notPerformed'));
-        if (0 < count($this->reasonNotPerformed)) {
-            foreach($this->reasonNotPerformed as $reasonNotPerformed) {
-                $reasonNotPerformed->xmlSerialize(true, $sxe->addChild('reasonNotPerformed'));
+        if (0 < count($this->reasonReference)) {
+            foreach($this->reasonReference as $reasonReference) {
+                $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
             }
         }
         if (0 < count($this->bodySite)) {
@@ -903,15 +978,19 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
                 $complication->xmlSerialize(true, $sxe->addChild('complication'));
             }
         }
+        if (0 < count($this->complicationDetail)) {
+            foreach($this->complicationDetail as $complicationDetail) {
+                $complicationDetail->xmlSerialize(true, $sxe->addChild('complicationDetail'));
+            }
+        }
         if (0 < count($this->followUp)) {
             foreach($this->followUp as $followUp) {
                 $followUp->xmlSerialize(true, $sxe->addChild('followUp'));
             }
         }
-        if (null !== $this->request) $this->request->xmlSerialize(true, $sxe->addChild('request'));
-        if (0 < count($this->notes)) {
-            foreach($this->notes as $notes) {
-                $notes->xmlSerialize(true, $sxe->addChild('notes'));
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
             }
         }
         if (0 < count($this->focalDevice)) {
@@ -927,11 +1006,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->usedCode)) {
             foreach($this->usedCode as $usedCode) {
                 $usedCode->xmlSerialize(true, $sxe->addChild('usedCode'));
-            }
-        }
-        if (0 < count($this->component)) {
-            foreach($this->component as $component) {
-                $component->xmlSerialize(true, $sxe->addChild('component'));
             }
         }
         if ($returnSXE) return $sxe;

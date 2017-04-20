@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,6 +75,30 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public $identifier = array();
 
     /**
+     * A protocol or questionnaire that was adhered to in whole or in part by this event.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $definition = array();
+
+    /**
+     * A code specifying the status of the record of the family history of a specific family member.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus
+     */
+    public $status = null;
+
+    /**
+     * If true, indicates the taking of an individual family member's history did not occur. The notDone element should not be used to document negated conditions, such as a family member that did not have a condition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $notDone = null;
+
+    /**
+     * Describes why the family member's history is absent.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $notDoneReason = null;
+
+    /**
      * The person who this history concerns.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -85,12 +109,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
-
-    /**
-     * A code specifying the status of the record of the family history of a specific family member.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus
-     */
-    public $status = null;
 
     /**
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with the red hair".
@@ -183,10 +201,22 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public $deceasedString = null;
 
     /**
-     * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * Describes why the family member history occurred in coded or textual form.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $note = null;
+    public $reasonCode = array();
+
+    /**
+     * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $reasonReference = array();
+
+    /**
+     * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public $note = array();
 
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
@@ -216,6 +246,86 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A protocol or questionnaire that was adhered to in whole or in part by this event.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * A protocol or questionnaire that was adhered to in whole or in part by this event.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @return $this
+     */
+    public function addDefinition($definition)
+    {
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * A code specifying the status of the record of the family history of a specific family member.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * A code specifying the status of the record of the family history of a specific family member.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * If true, indicates the taking of an individual family member's history did not occur. The notDone element should not be used to document negated conditions, such as a family member that did not have a condition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getNotDone()
+    {
+        return $this->notDone;
+    }
+
+    /**
+     * If true, indicates the taking of an individual family member's history did not occur. The notDone element should not be used to document negated conditions, such as a family member that did not have a condition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $notDone
+     * @return $this
+     */
+    public function setNotDone($notDone)
+    {
+        $this->notDone = $notDone;
+        return $this;
+    }
+
+    /**
+     * Describes why the family member's history is absent.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getNotDoneReason()
+    {
+        return $this->notDoneReason;
+    }
+
+    /**
+     * Describes why the family member's history is absent.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $notDoneReason
+     * @return $this
+     */
+    public function setNotDoneReason($notDoneReason)
+    {
+        $this->notDoneReason = $notDoneReason;
         return $this;
     }
 
@@ -256,26 +366,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public function setDate($date)
     {
         $this->date = $date;
-        return $this;
-    }
-
-    /**
-     * A code specifying the status of the record of the family history of a specific family member.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * A code specifying the status of the record of the family history of a specific family member.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus $status
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
         return $this;
     }
 
@@ -580,8 +670,48 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
+     * Describes why the family member history occurred in coded or textual form.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getReasonCode()
+    {
+        return $this->reasonCode;
+    }
+
+    /**
+     * Describes why the family member history occurred in coded or textual form.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @return $this
+     */
+    public function addReasonCode($reasonCode)
+    {
+        $this->reasonCode[] = $reasonCode;
+        return $this;
+    }
+
+    /**
+     * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getReasonReference()
+    {
+        return $this->reasonReference;
+    }
+
+    /**
+     * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
+     * @return $this
+     */
+    public function addReasonReference($reasonReference)
+    {
+        $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -593,9 +723,9 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function setNote($note)
+    public function addNote($note)
     {
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
@@ -648,9 +778,17 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (0 < count($this->definition)) {
+            $json['definition'] = [];
+            foreach($this->definition as $definition) {
+                $json['definition'][] = json_encode($definition);
+            }
+        }
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->notDone) $json['notDone'] = json_encode($this->notDone);
+        if (null !== $this->notDoneReason) $json['notDoneReason'] = json_encode($this->notDoneReason);
         if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
         if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
@@ -666,7 +804,24 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
         if (null !== $this->deceasedRange) $json['deceasedRange'] = json_encode($this->deceasedRange);
         if (null !== $this->deceasedDate) $json['deceasedDate'] = json_encode($this->deceasedDate);
         if (null !== $this->deceasedString) $json['deceasedString'] = json_encode($this->deceasedString);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (0 < count($this->reasonCode)) {
+            $json['reasonCode'] = [];
+            foreach($this->reasonCode as $reasonCode) {
+                $json['reasonCode'][] = json_encode($reasonCode);
+            }
+        }
+        if (0 < count($this->reasonReference)) {
+            $json['reasonReference'] = [];
+            foreach($this->reasonReference as $reasonReference) {
+                $json['reasonReference'][] = json_encode($reasonReference);
+            }
+        }
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
+            }
+        }
         if (0 < count($this->condition)) {
             $json['condition'] = [];
             foreach($this->condition as $condition) {
@@ -690,9 +845,16 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (0 < count($this->definition)) {
+            foreach($this->definition as $definition) {
+                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+            }
+        }
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->notDone) $this->notDone->xmlSerialize(true, $sxe->addChild('notDone'));
+        if (null !== $this->notDoneReason) $this->notDoneReason->xmlSerialize(true, $sxe->addChild('notDoneReason'));
         if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->relationship) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
         if (null !== $this->gender) $this->gender->xmlSerialize(true, $sxe->addChild('gender'));
@@ -708,7 +870,21 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
         if (null !== $this->deceasedRange) $this->deceasedRange->xmlSerialize(true, $sxe->addChild('deceasedRange'));
         if (null !== $this->deceasedDate) $this->deceasedDate->xmlSerialize(true, $sxe->addChild('deceasedDate'));
         if (null !== $this->deceasedString) $this->deceasedString->xmlSerialize(true, $sxe->addChild('deceasedString'));
-        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
+        if (0 < count($this->reasonCode)) {
+            foreach($this->reasonCode as $reasonCode) {
+                $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));
+            }
+        }
+        if (0 < count($this->reasonReference)) {
+            foreach($this->reasonReference as $reasonReference) {
+                $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
+            }
+        }
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
         if (0 < count($this->condition)) {
             foreach($this->condition as $condition) {
                 $condition->xmlSerialize(true, $sxe->addChild('condition'));

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -90,13 +90,13 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
      * Identifies the broad category of service being performed or delivered.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $serviceCategory = null;
+    public $category = null;
 
     /**
      * The specific type of service that may be delivered or performed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $serviceType = array();
+    public $type = array();
 
     /**
      * Collection of specialties handled by the service site. This is more of a medical term.
@@ -114,7 +114,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
      * Further description of the service as it would be presented to a consumer while searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $serviceName = null;
+    public $name = null;
 
     /**
      * Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.
@@ -181,12 +181,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $referralMethod = array();
-
-    /**
-     * The public part of the 'keys' allocated to an Organization by an accredited body to support secure exchange of data over the internet. To be provided by the Organization, where available.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $publicKey = null;
 
     /**
      * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
@@ -287,19 +281,19 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
      * Identifies the broad category of service being performed or delivered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getServiceCategory()
+    public function getCategory()
     {
-        return $this->serviceCategory;
+        return $this->category;
     }
 
     /**
      * Identifies the broad category of service being performed or delivered.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceCategory
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function setServiceCategory($serviceCategory)
+    public function setCategory($category)
     {
-        $this->serviceCategory = $serviceCategory;
+        $this->category = $category;
         return $this;
     }
 
@@ -307,19 +301,19 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
      * The specific type of service that may be delivered or performed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getServiceType()
+    public function getType()
     {
-        return $this->serviceType;
+        return $this->type;
     }
 
     /**
      * The specific type of service that may be delivered or performed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceType
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function addServiceType($serviceType)
+    public function addType($type)
     {
-        $this->serviceType[] = $serviceType;
+        $this->type[] = $type;
         return $this;
     }
 
@@ -367,19 +361,19 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
      * Further description of the service as it would be presented to a consumer while searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getServiceName()
+    public function getName()
     {
-        return $this->serviceName;
+        return $this->name;
     }
 
     /**
      * Further description of the service as it would be presented to a consumer while searching.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $serviceName
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setServiceName($serviceName)
+    public function setName($name)
     {
-        $this->serviceName = $serviceName;
+        $this->name = $name;
         return $this;
     }
 
@@ -604,26 +598,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The public part of the 'keys' allocated to an Organization by an accredited body to support secure exchange of data over the internet. To be provided by the Organization, where available.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublicKey()
-    {
-        return $this->publicKey;
-    }
-
-    /**
-     * The public part of the 'keys' allocated to an Organization by an accredited body to support secure exchange of data over the internet. To be provided by the Organization, where available.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publicKey
-     * @return $this
-     */
-    public function setPublicKey($publicKey)
-    {
-        $this->publicKey = $publicKey;
-        return $this;
-    }
-
-    /**
      * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
@@ -754,11 +728,11 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
         }
         if (null !== $this->active) $json['active'] = json_encode($this->active);
         if (null !== $this->providedBy) $json['providedBy'] = json_encode($this->providedBy);
-        if (null !== $this->serviceCategory) $json['serviceCategory'] = json_encode($this->serviceCategory);
-        if (0 < count($this->serviceType)) {
-            $json['serviceType'] = [];
-            foreach($this->serviceType as $serviceType) {
-                $json['serviceType'][] = json_encode($serviceType);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (0 < count($this->type)) {
+            $json['type'] = [];
+            foreach($this->type as $type) {
+                $json['type'][] = json_encode($type);
             }
         }
         if (0 < count($this->specialty)) {
@@ -773,7 +747,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
                 $json['location'][] = json_encode($location);
             }
         }
-        if (null !== $this->serviceName) $json['serviceName'] = json_encode($this->serviceName);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         if (null !== $this->extraDetails) $json['extraDetails'] = json_encode($this->extraDetails);
         if (null !== $this->photo) $json['photo'] = json_encode($this->photo);
@@ -815,7 +789,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
                 $json['referralMethod'][] = json_encode($referralMethod);
             }
         }
-        if (null !== $this->publicKey) $json['publicKey'] = json_encode($this->publicKey);
         if (null !== $this->appointmentRequired) $json['appointmentRequired'] = json_encode($this->appointmentRequired);
         if (0 < count($this->availableTime)) {
             $json['availableTime'] = [];
@@ -855,10 +828,10 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
         }
         if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
         if (null !== $this->providedBy) $this->providedBy->xmlSerialize(true, $sxe->addChild('providedBy'));
-        if (null !== $this->serviceCategory) $this->serviceCategory->xmlSerialize(true, $sxe->addChild('serviceCategory'));
-        if (0 < count($this->serviceType)) {
-            foreach($this->serviceType as $serviceType) {
-                $serviceType->xmlSerialize(true, $sxe->addChild('serviceType'));
+        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (0 < count($this->type)) {
+            foreach($this->type as $type) {
+                $type->xmlSerialize(true, $sxe->addChild('type'));
             }
         }
         if (0 < count($this->specialty)) {
@@ -871,7 +844,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
                 $location->xmlSerialize(true, $sxe->addChild('location'));
             }
         }
-        if (null !== $this->serviceName) $this->serviceName->xmlSerialize(true, $sxe->addChild('serviceName'));
+        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if (null !== $this->extraDetails) $this->extraDetails->xmlSerialize(true, $sxe->addChild('extraDetails'));
         if (null !== $this->photo) $this->photo->xmlSerialize(true, $sxe->addChild('photo'));
@@ -907,7 +880,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
                 $referralMethod->xmlSerialize(true, $sxe->addChild('referralMethod'));
             }
         }
-        if (null !== $this->publicKey) $this->publicKey->xmlSerialize(true, $sxe->addChild('publicKey'));
         if (null !== $this->appointmentRequired) $this->appointmentRequired->xmlSerialize(true, $sxe->addChild('appointmentRequired'));
         if (0 < count($this->availableTime)) {
             foreach($this->availableTime as $availableTime) {

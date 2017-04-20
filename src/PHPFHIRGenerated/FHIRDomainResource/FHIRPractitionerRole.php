@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -79,6 +79,12 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $active = null;
+
+    /**
+     * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $period = null;
 
     /**
      * Practitioner that is able to provide the defined services for the organation.
@@ -121,12 +127,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
     public $telecom = array();
-
-    /**
-     * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public $period = null;
 
     /**
      * A collection of times that the Service Site is available.
@@ -194,6 +194,26 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
     public function setActive($active)
     {
         $this->active = $active;
+        return $this;
+    }
+
+    /**
+     * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->period = $period;
         return $this;
     }
 
@@ -338,26 +358,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getPeriod()
-    {
-        return $this->period;
-    }
-
-    /**
-     * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
-     * @return $this
-     */
-    public function setPeriod($period)
-    {
-        $this->period = $period;
-        return $this;
-    }
-
-    /**
      * A collection of times that the Service Site is available.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime[]
      */
@@ -467,6 +467,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
             }
         }
         if (null !== $this->active) $json['active'] = json_encode($this->active);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (null !== $this->practitioner) $json['practitioner'] = json_encode($this->practitioner);
         if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
         if (0 < count($this->code)) {
@@ -499,7 +500,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
                 $json['telecom'][] = json_encode($telecom);
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (0 < count($this->availableTime)) {
             $json['availableTime'] = [];
             foreach($this->availableTime as $availableTime) {
@@ -537,6 +537,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
             }
         }
         if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
+        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (null !== $this->practitioner) $this->practitioner->xmlSerialize(true, $sxe->addChild('practitioner'));
         if (null !== $this->organization) $this->organization->xmlSerialize(true, $sxe->addChild('organization'));
         if (0 < count($this->code)) {
@@ -564,7 +565,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
                 $telecom->xmlSerialize(true, $sxe->addChild('telecom'));
             }
         }
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (0 < count($this->availableTime)) {
             foreach($this->availableTime as $availableTime) {
                 $availableTime->xmlSerialize(true, $sxe->addChild('availableTime'));

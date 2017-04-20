@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * A service line item.
+     * Sequence of coverage which serves to provide a link and convey coordination of benefit order.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $sequence = null;
@@ -109,7 +109,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
     private $_fhirElementName = 'Claim.Insurance';
 
     /**
-     * A service line item.
+     * Sequence of coverage which serves to provide a link and convey coordination of benefit order.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getSequence()
@@ -118,7 +118,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * A service line item.
+     * Sequence of coverage which serves to provide a link and convey coordination of benefit order.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */

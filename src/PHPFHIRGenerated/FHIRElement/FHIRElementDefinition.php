@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -87,13 +87,13 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     public $sliceName = null;
 
     /**
-     * The text to display beside the element indicating its meaning or to use to prompt for the element in a user display or form.
+     * A single preferred label which is the text to display beside the element indicating its meaning or to use to prompt for the element in a user display or form.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $label = null;
 
     /**
-     * A code that provides the meaning for the element according to a particular terminology.
+     * A code that has the same meaning as the element in a particular terminology.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public $code = array();
@@ -120,7 +120,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
      * Explanatory notes and implementation guidance about the data element, including notes about how to use the data properly, exceptions to proper use, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public $comments = null;
+    public $comment = null;
 
     /**
      * This element is for traceability of why the element was created and why the constraints exist as they do. This may be used to point to source materials or specifications that drove the structure of this element.
@@ -136,7 +136,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The minimum number of times this element SHALL appear in the instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $min = null;
 
@@ -397,6 +397,12 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $meaningWhenMissing = null;
+
+    /**
+     * If present, indicates that the order of the repeating element has meaning and describes what that meaning is.  If absent, it means that the order of the element has no meaning.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $orderMeaning = null;
 
     /**
      * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
@@ -1005,7 +1011,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     public $isSummary = null;
 
     /**
-     * Binds to a value set if this element is coded (code, Coding, CodeableConcept).
+     * Binds to a value set if this element is coded (code, Coding, CodeableConcept, Quantity), or the data types (string, uri).
      * @var \PHPFHIRGenerated\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionBinding
      */
     public $binding = null;
@@ -1082,7 +1088,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The text to display beside the element indicating its meaning or to use to prompt for the element in a user display or form.
+     * A single preferred label which is the text to display beside the element indicating its meaning or to use to prompt for the element in a user display or form.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getLabel()
@@ -1091,7 +1097,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The text to display beside the element indicating its meaning or to use to prompt for the element in a user display or form.
+     * A single preferred label which is the text to display beside the element indicating its meaning or to use to prompt for the element in a user display or form.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $label
      * @return $this
      */
@@ -1102,7 +1108,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A code that provides the meaning for the element according to a particular terminology.
+     * A code that has the same meaning as the element in a particular terminology.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getCode()
@@ -1111,7 +1117,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A code that provides the meaning for the element according to a particular terminology.
+     * A code that has the same meaning as the element in a particular terminology.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
      * @return $this
      */
@@ -1185,19 +1191,19 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
      * Explanatory notes and implementation guidance about the data element, including notes about how to use the data properly, exceptions to proper use, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getComments()
+    public function getComment()
     {
-        return $this->comments;
+        return $this->comment;
     }
 
     /**
      * Explanatory notes and implementation guidance about the data element, including notes about how to use the data properly, exceptions to proper use, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $comments
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $comment
      * @return $this
      */
-    public function setComments($comments)
+    public function setComment($comment)
     {
-        $this->comments = $comments;
+        $this->comment = $comment;
         return $this;
     }
 
@@ -1243,7 +1249,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The minimum number of times this element SHALL appear in the instance.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getMin()
     {
@@ -1252,7 +1258,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
 
     /**
      * The minimum number of times this element SHALL appear in the instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $min
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $min
      * @return $this
      */
     public function setMin($min)
@@ -2118,6 +2124,26 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     public function setMeaningWhenMissing($meaningWhenMissing)
     {
         $this->meaningWhenMissing = $meaningWhenMissing;
+        return $this;
+    }
+
+    /**
+     * If present, indicates that the order of the repeating element has meaning and describes what that meaning is.  If absent, it means that the order of the element has no meaning.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getOrderMeaning()
+    {
+        return $this->orderMeaning;
+    }
+
+    /**
+     * If present, indicates that the order of the repeating element has meaning and describes what that meaning is.  If absent, it means that the order of the element has no meaning.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $orderMeaning
+     * @return $this
+     */
+    public function setOrderMeaning($orderMeaning)
+    {
+        $this->orderMeaning = $orderMeaning;
         return $this;
     }
 
@@ -4142,7 +4168,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Binds to a value set if this element is coded (code, Coding, CodeableConcept).
+     * Binds to a value set if this element is coded (code, Coding, CodeableConcept, Quantity), or the data types (string, uri).
      * @return \PHPFHIRGenerated\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionBinding
      */
     public function getBinding()
@@ -4151,7 +4177,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Binds to a value set if this element is coded (code, Coding, CodeableConcept).
+     * Binds to a value set if this element is coded (code, Coding, CodeableConcept, Quantity), or the data types (string, uri).
      * @param \PHPFHIRGenerated\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionBinding $binding
      * @return $this
      */
@@ -4221,7 +4247,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
         if (null !== $this->slicing) $json['slicing'] = json_encode($this->slicing);
         if (null !== $this->short) $json['short'] = json_encode($this->short);
         if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
-        if (null !== $this->comments) $json['comments'] = json_encode($this->comments);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
         if (0 < count($this->alias)) {
             $json['alias'] = [];
@@ -4278,6 +4304,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
         if (null !== $this->defaultValueTiming) $json['defaultValueTiming'] = json_encode($this->defaultValueTiming);
         if (null !== $this->defaultValueMeta) $json['defaultValueMeta'] = json_encode($this->defaultValueMeta);
         if (null !== $this->meaningWhenMissing) $json['meaningWhenMissing'] = json_encode($this->meaningWhenMissing);
+        if (null !== $this->orderMeaning) $json['orderMeaning'] = json_encode($this->orderMeaning);
         if (null !== $this->fixedBase64Binary) $json['fixedBase64Binary'] = json_encode($this->fixedBase64Binary);
         if (null !== $this->fixedBoolean) $json['fixedBoolean'] = json_encode($this->fixedBoolean);
         if (null !== $this->fixedCode) $json['fixedCode'] = json_encode($this->fixedCode);
@@ -4429,7 +4456,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
         if (null !== $this->slicing) $this->slicing->xmlSerialize(true, $sxe->addChild('slicing'));
         if (null !== $this->short) $this->short->xmlSerialize(true, $sxe->addChild('short'));
         if (null !== $this->definition) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
-        if (null !== $this->comments) $this->comments->xmlSerialize(true, $sxe->addChild('comments'));
+        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
         if (0 < count($this->alias)) {
             foreach($this->alias as $alias) {
@@ -4484,6 +4511,7 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
         if (null !== $this->defaultValueTiming) $this->defaultValueTiming->xmlSerialize(true, $sxe->addChild('defaultValueTiming'));
         if (null !== $this->defaultValueMeta) $this->defaultValueMeta->xmlSerialize(true, $sxe->addChild('defaultValueMeta'));
         if (null !== $this->meaningWhenMissing) $this->meaningWhenMissing->xmlSerialize(true, $sxe->addChild('meaningWhenMissing'));
+        if (null !== $this->orderMeaning) $this->orderMeaning->xmlSerialize(true, $sxe->addChild('orderMeaning'));
         if (null !== $this->fixedBase64Binary) $this->fixedBase64Binary->xmlSerialize(true, $sxe->addChild('fixedBase64Binary'));
         if (null !== $this->fixedBoolean) $this->fixedBoolean->xmlSerialize(true, $sxe->addChild('fixedBoolean'));
         if (null !== $this->fixedCode) $this->fixedCode->xmlSerialize(true, $sxe->addChild('fixedCode'));

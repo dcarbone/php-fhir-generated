@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,10 +74,22 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     public $role = null;
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $whatUri = null;
+
+    /**
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $reference = null;
+    public $whatReference = null;
+
+    /**
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public $whatIdentifier = null;
 
     /**
      * The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.
@@ -111,22 +123,62 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getReference()
+    public function getWhatUri()
     {
-        return $this->reference;
+        return $this->whatUri;
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reference
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whatUri
      * @return $this
      */
-    public function setReference($reference)
+    public function setWhatUri($whatUri)
     {
-        $this->reference = $reference;
+        $this->whatUri = $whatUri;
+        return $this;
+    }
+
+    /**
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getWhatReference()
+    {
+        return $this->whatReference;
+    }
+
+    /**
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whatReference
+     * @return $this
+     */
+    public function setWhatReference($whatReference)
+    {
+        $this->whatReference = $whatReference;
+        return $this;
+    }
+
+    /**
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getWhatIdentifier()
+    {
+        return $this->whatIdentifier;
+    }
+
+    /**
+     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $whatIdentifier
+     * @return $this
+     */
+    public function setWhatIdentifier($whatIdentifier)
+    {
+        $this->whatIdentifier = $whatIdentifier;
         return $this;
     }
 
@@ -173,7 +225,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     {
         $json = parent::jsonSerialize();
         if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (null !== $this->whatUri) $json['whatUri'] = json_encode($this->whatUri);
+        if (null !== $this->whatReference) $json['whatReference'] = json_encode($this->whatReference);
+        if (null !== $this->whatIdentifier) $json['whatIdentifier'] = json_encode($this->whatIdentifier);
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
@@ -193,7 +247,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProvenanceEntity xmlns="http://hl7.org/fhir"></ProvenanceEntity>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->reference) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
+        if (null !== $this->whatUri) $this->whatUri->xmlSerialize(true, $sxe->addChild('whatUri'));
+        if (null !== $this->whatReference) $this->whatReference->xmlSerialize(true, $sxe->addChild('whatReference'));
+        if (null !== $this->whatIdentifier) $this->whatIdentifier->xmlSerialize(true, $sxe->addChild('whatIdentifier'));
         if (0 < count($this->agent)) {
             foreach($this->agent as $agent) {
                 $agent->xmlSerialize(true, $sxe->addChild('agent'));

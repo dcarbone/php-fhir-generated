@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,16 +69,16 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * The person to which the body site belongs.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $patient = null;
-
-    /**
      * Identifier for this instance of the anatomical location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * Whether this body site is in active use.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $active = null;
 
     /**
      * Named anatomical location - ideally coded where possible.
@@ -87,13 +87,13 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     public $code = null;
 
     /**
-     * Modifier to refine the anatomical location.  These include modifiers for laterality, relative location, directionality, number, and plane.
+     * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $modifier = array();
+    public $qualifier = array();
 
     /**
-     * Description of anatomical location.
+     * A summary, charactarization or explanation of the anatomic location.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $description = null;
@@ -105,29 +105,15 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     public $image = array();
 
     /**
+     * The person to which the body site belongs.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $patient = null;
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'BodySite';
-
-    /**
-     * The person to which the body site belongs.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * The person to which the body site belongs.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
-     * @return $this
-     */
-    public function setPatient($patient)
-    {
-        $this->patient = $patient;
-        return $this;
-    }
 
     /**
      * Identifier for this instance of the anatomical location.
@@ -146,6 +132,26 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * Whether this body site is in active use.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Whether this body site is in active use.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $active
+     * @return $this
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
         return $this;
     }
 
@@ -170,27 +176,27 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Modifier to refine the anatomical location.  These include modifiers for laterality, relative location, directionality, number, and plane.
+     * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getModifier()
+    public function getQualifier()
     {
-        return $this->modifier;
+        return $this->qualifier;
     }
 
     /**
-     * Modifier to refine the anatomical location.  These include modifiers for laterality, relative location, directionality, number, and plane.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $modifier
+     * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $qualifier
      * @return $this
      */
-    public function addModifier($modifier)
+    public function addQualifier($qualifier)
     {
-        $this->modifier[] = $modifier;
+        $this->qualifier[] = $qualifier;
         return $this;
     }
 
     /**
-     * Description of anatomical location.
+     * A summary, charactarization or explanation of the anatomic location.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDescription()
@@ -199,7 +205,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Description of anatomical location.
+     * A summary, charactarization or explanation of the anatomic location.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
@@ -230,6 +236,26 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * The person to which the body site belongs.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * The person to which the body site belongs.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
+     * @return $this
+     */
+    public function setPatient($patient)
+    {
+        $this->patient = $patient;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -252,18 +278,18 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (null !== $this->active) $json['active'] = json_encode($this->active);
         if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (0 < count($this->modifier)) {
-            $json['modifier'] = [];
-            foreach($this->modifier as $modifier) {
-                $json['modifier'][] = json_encode($modifier);
+        if (0 < count($this->qualifier)) {
+            $json['qualifier'] = [];
+            foreach($this->qualifier as $qualifier) {
+                $json['qualifier'][] = json_encode($qualifier);
             }
         }
         if (null !== $this->description) $json['description'] = json_encode($this->description);
@@ -273,6 +299,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
                 $json['image'][] = json_encode($image);
             }
         }
+        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         return $json;
     }
 
@@ -285,16 +312,16 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<BodySite xmlns="http://hl7.org/fhir"></BodySite>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if (0 < count($this->identifier)) {
             foreach($this->identifier as $identifier) {
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (0 < count($this->modifier)) {
-            foreach($this->modifier as $modifier) {
-                $modifier->xmlSerialize(true, $sxe->addChild('modifier'));
+        if (0 < count($this->qualifier)) {
+            foreach($this->qualifier as $qualifier) {
+                $qualifier->xmlSerialize(true, $sxe->addChild('qualifier'));
             }
         }
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
@@ -303,6 +330,7 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
                 $image->xmlSerialize(true, $sxe->addChild('image'));
             }
         }
+        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

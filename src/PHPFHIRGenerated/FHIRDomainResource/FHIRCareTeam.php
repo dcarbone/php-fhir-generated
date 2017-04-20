@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,8 +75,8 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * Indicates whether the care team is currently active, suspended, inactive, or entered in error.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Indicates the current state of the care team.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCareTeamStatus
      */
     public $status = null;
 
@@ -99,6 +99,12 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     public $subject = null;
 
     /**
+     * The encounter or episode of care that establishes the context for this care team.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $context = null;
+
+    /**
      * Indicates when the team did (or is intended to) come into effect and end.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
@@ -111,10 +117,28 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     public $participant = array();
 
     /**
+     * Describes why the care team exists.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $reasonCode = array();
+
+    /**
+     * Condition(s) that this care team addresses.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $reasonReference = array();
+
+    /**
      * The organization responsible for the care team.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $managingOrganization = array();
+
+    /**
+     * Comments made about the CareTeam.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public $note = array();
 
     /**
      * @var string
@@ -142,8 +166,8 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the care team is currently active, suspended, inactive, or entered in error.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Indicates the current state of the care team.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCareTeamStatus
      */
     public function getStatus()
     {
@@ -151,8 +175,8 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the care team is currently active, suspended, inactive, or entered in error.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $status
+     * Indicates the current state of the care team.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCareTeamStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -222,6 +246,26 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * The encounter or episode of care that establishes the context for this care team.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getContext()
+    {
+        return $this->context;
+    }
+
+    /**
+     * The encounter or episode of care that establishes the context for this care team.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
+     * @return $this
+     */
+    public function setContext($context)
+    {
+        $this->context = $context;
+        return $this;
+    }
+
+    /**
      * Indicates when the team did (or is intended to) come into effect and end.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
@@ -262,6 +306,46 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Describes why the care team exists.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getReasonCode()
+    {
+        return $this->reasonCode;
+    }
+
+    /**
+     * Describes why the care team exists.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCode
+     * @return $this
+     */
+    public function addReasonCode($reasonCode)
+    {
+        $this->reasonCode[] = $reasonCode;
+        return $this;
+    }
+
+    /**
+     * Condition(s) that this care team addresses.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getReasonReference()
+    {
+        return $this->reasonReference;
+    }
+
+    /**
+     * Condition(s) that this care team addresses.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
+     * @return $this
+     */
+    public function addReasonReference($reasonReference)
+    {
+        $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
      * The organization responsible for the care team.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
@@ -278,6 +362,26 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
     public function addManagingOrganization($managingOrganization)
     {
         $this->managingOrganization[] = $managingOrganization;
+        return $this;
+    }
+
+    /**
+     * Comments made about the CareTeam.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Comments made about the CareTeam.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
+     * @return $this
+     */
+    public function addNote($note)
+    {
+        $this->note[] = $note;
         return $this;
     }
 
@@ -319,6 +423,7 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
         if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (0 < count($this->participant)) {
             $json['participant'] = [];
@@ -326,10 +431,28 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
                 $json['participant'][] = json_encode($participant);
             }
         }
+        if (0 < count($this->reasonCode)) {
+            $json['reasonCode'] = [];
+            foreach($this->reasonCode as $reasonCode) {
+                $json['reasonCode'][] = json_encode($reasonCode);
+            }
+        }
+        if (0 < count($this->reasonReference)) {
+            $json['reasonReference'] = [];
+            foreach($this->reasonReference as $reasonReference) {
+                $json['reasonReference'][] = json_encode($reasonReference);
+            }
+        }
         if (0 < count($this->managingOrganization)) {
             $json['managingOrganization'] = [];
             foreach($this->managingOrganization as $managingOrganization) {
                 $json['managingOrganization'][] = json_encode($managingOrganization);
+            }
+        }
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
             }
         }
         return $json;
@@ -357,15 +480,31 @@ class FHIRCareTeam extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (0 < count($this->participant)) {
             foreach($this->participant as $participant) {
                 $participant->xmlSerialize(true, $sxe->addChild('participant'));
             }
         }
+        if (0 < count($this->reasonCode)) {
+            foreach($this->reasonCode as $reasonCode) {
+                $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));
+            }
+        }
+        if (0 < count($this->reasonReference)) {
+            foreach($this->reasonReference as $reasonReference) {
+                $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
+            }
+        }
         if (0 < count($this->managingOrganization)) {
             foreach($this->managingOrganization as $managingOrganization) {
                 $managingOrganization->xmlSerialize(true, $sxe->addChild('managingOrganization'));
+            }
+        }
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
             }
         }
         if ($returnSXE) return $sxe;

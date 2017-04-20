@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A set of rules or how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole, and to publish a computable definition of all the parts.
+ * A set of rules of how FHIR is used to solve a particular problem. This resource is used to gather all the parts of an implementation guide into a logical whole and to publish a computable definition of all the parts.
  */
 class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -87,7 +87,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * For constructed pages, what kind of resources to include in the list.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public $type = array();
 
@@ -176,7 +176,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * For constructed pages, what kind of resources to include in the list.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
     public function getType()
     {
@@ -185,7 +185,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
 
     /**
      * For constructed pages, what kind of resources to include in the list.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $type
      * @return $this
      */
     public function addType($type)

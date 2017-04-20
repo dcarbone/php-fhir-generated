@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,14 +68,14 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The unique identifier of the related action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The element id of the action this is related to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public $actionIdentifier = null;
+    public $actionId = null;
 
     /**
      * The relationship of this action to the related action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRActionRelationshipType
      */
     public $relationship = null;
 
@@ -97,28 +97,28 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     private $_fhirElementName = 'RequestGroup.RelatedAction';
 
     /**
-     * The unique identifier of the related action.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The element id of the action this is related to.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getActionIdentifier()
+    public function getActionId()
     {
-        return $this->actionIdentifier;
+        return $this->actionId;
     }
 
     /**
-     * The unique identifier of the related action.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $actionIdentifier
+     * The element id of the action this is related to.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRId $actionId
      * @return $this
      */
-    public function setActionIdentifier($actionIdentifier)
+    public function setActionId($actionId)
     {
-        $this->actionIdentifier = $actionIdentifier;
+        $this->actionId = $actionId;
         return $this;
     }
 
     /**
      * The relationship of this action to the related action.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRActionRelationshipType
      */
     public function getRelationship()
     {
@@ -127,7 +127,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
 
     /**
      * The relationship of this action to the related action.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $relationship
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRActionRelationshipType $relationship
      * @return $this
      */
     public function setRelationship($relationship)
@@ -198,7 +198,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->actionIdentifier) $json['actionIdentifier'] = json_encode($this->actionIdentifier);
+        if (null !== $this->actionId) $json['actionId'] = json_encode($this->actionId);
         if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
         if (null !== $this->offsetDuration) $json['offsetDuration'] = json_encode($this->offsetDuration);
         if (null !== $this->offsetRange) $json['offsetRange'] = json_encode($this->offsetRange);
@@ -214,7 +214,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<RequestGroupRelatedAction xmlns="http://hl7.org/fhir"></RequestGroupRelatedAction>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->actionIdentifier) $this->actionIdentifier->xmlSerialize(true, $sxe->addChild('actionIdentifier'));
+        if (null !== $this->actionId) $this->actionId->xmlSerialize(true, $sxe->addChild('actionId'));
         if (null !== $this->relationship) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
         if (null !== $this->offsetDuration) $this->offsetDuration->xmlSerialize(true, $sxe->addChild('offsetDuration'));
         if (null !== $this->offsetRange) $this->offsetRange->xmlSerialize(true, $sxe->addChild('offsetRange'));

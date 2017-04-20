@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement;
 
 /**
- * Describes a required data item for evaluation in terms of the type of data, and optional code- or date-based filters of the data.
+ * Describes a required data item for evaluation in terms of the type of data, and optional code or date-based filters of the data.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
 class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
@@ -81,7 +81,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
     public $profile = array();
 
     /**
-     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available.
+     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public $mustSupport = array();
@@ -144,7 +144,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available.
+     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getMustSupport()
@@ -153,7 +153,7 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available.
+     * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. Note that the value for this element can be a path to allow references to nested elements. In that case, all the elements along the path must be supported.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $mustSupport
      * @return $this
      */

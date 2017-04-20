@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -81,7 +81,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -111,25 +111,31 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     public $status = null;
 
     /**
-     * A flag to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * The date  (and optionally time) when the plan definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
+     * The date  (and optionally time) when the plan definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the plan definition from the consumer's perspective.
+     * The name of the individual or organization that published the plan definition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $publisher = null;
+
+    /**
+     * A free text natural language description of the plan definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * Explains why this plan definition is needed and why it has been designed as it has.
+     * Explaination of why this plan definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -141,37 +147,37 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     public $usage = null;
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
-     * The period during which the plan definition content was or is planned to be effective.
+     * The period during which the plan definition content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate plan definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the plan definition is intended to be used.
+     * A legal or geographic region in which the plan definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Clinical topics related to the content of the asset.
+     * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = array();
@@ -181,12 +187,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
     public $contributor = array();
-
-    /**
-     * The name of the individual or organization that published the plan definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
@@ -213,10 +213,16 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     public $library = array();
 
     /**
-     * An action to be taken as part of the plan.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionActionDefinition[]
+     * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionGoal[]
      */
-    public $actionDefinition = array();
+    public $goal = array();
+
+    /**
+     * An action to be taken as part of the plan.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
+     */
+    public $action = array();
 
     /**
      * @var string
@@ -224,7 +230,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'PlanDefinition';
 
     /**
-     * An absolute URL that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -233,7 +239,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URL that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this plan definition is (or will be) published. The URL SHOULD include the major version of the plan definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -264,7 +270,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -273,7 +279,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the plan definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the plan definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -364,7 +370,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -373,7 +379,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -384,7 +390,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the plan definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
+     * The date  (and optionally time) when the plan definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -393,7 +399,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the plan definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
+     * The date  (and optionally time) when the plan definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -404,7 +410,27 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A free text natural language description of the plan definition from the consumer's perspective.
+     * The name of the individual or organization that published the plan definition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPublisher()
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * The name of the individual or organization that published the plan definition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
+     * @return $this
+     */
+    public function setPublisher($publisher)
+    {
+        $this->publisher = $publisher;
+        return $this;
+    }
+
+    /**
+     * A free text natural language description of the plan definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -413,7 +439,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A free text natural language description of the plan definition from the consumer's perspective.
+     * A free text natural language description of the plan definition from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -424,7 +450,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this plan definition is needed and why it has been designed as it has.
+     * Explaination of why this plan definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -433,7 +459,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this plan definition is needed and why it has been designed as it has.
+     * Explaination of why this plan definition is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -464,7 +490,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
@@ -473,7 +499,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
@@ -484,7 +510,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
@@ -493,7 +519,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
@@ -504,7 +530,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The period during which the plan definition content was or is planned to be effective.
+     * The period during which the plan definition content was or is planned to be in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -513,7 +539,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The period during which the plan definition content was or is planned to be effective.
+     * The period during which the plan definition content was or is planned to be in active use.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -524,7 +550,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate plan definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -533,7 +559,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate plan definition instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -544,7 +570,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the plan definition is intended to be used.
+     * A legal or geographic region in which the plan definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -553,7 +579,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the plan definition is intended to be used.
+     * A legal or geographic region in which the plan definition is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -564,7 +590,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Clinical topics related to the content of the asset.
+     * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
@@ -573,7 +599,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Clinical topics related to the content of the asset.
+     * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
@@ -600,26 +626,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     public function addContributor($contributor)
     {
         $this->contributor[] = $contributor;
-        return $this;
-    }
-
-    /**
-     * The name of the individual or organization that published the plan definition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublisher()
-    {
-        return $this->publisher;
-    }
-
-    /**
-     * The name of the individual or organization that published the plan definition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
-     * @return $this
-     */
-    public function setPublisher($publisher)
-    {
-        $this->publisher = $publisher;
         return $this;
     }
 
@@ -704,22 +710,42 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An action to be taken as part of the plan.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionActionDefinition[]
+     * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionGoal[]
      */
-    public function getActionDefinition()
+    public function getGoal()
     {
-        return $this->actionDefinition;
+        return $this->goal;
+    }
+
+    /**
+     * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionGoal $goal
+     * @return $this
+     */
+    public function addGoal($goal)
+    {
+        $this->goal[] = $goal;
+        return $this;
     }
 
     /**
      * An action to be taken as part of the plan.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionActionDefinition $actionDefinition
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * An action to be taken as part of the plan.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
      * @return $this
      */
-    public function addActionDefinition($actionDefinition)
+    public function addAction($action)
     {
-        $this->actionDefinition[] = $actionDefinition;
+        $this->action[] = $action;
         return $this;
     }
 
@@ -760,6 +786,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
         if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
         if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
@@ -790,7 +817,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
                 $json['contributor'][] = json_encode($contributor);
             }
         }
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
@@ -810,10 +836,16 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
                 $json['library'][] = json_encode($library);
             }
         }
-        if (0 < count($this->actionDefinition)) {
-            $json['actionDefinition'] = [];
-            foreach($this->actionDefinition as $actionDefinition) {
-                $json['actionDefinition'][] = json_encode($actionDefinition);
+        if (0 < count($this->goal)) {
+            $json['goal'] = [];
+            foreach($this->goal as $goal) {
+                $json['goal'][] = json_encode($goal);
+            }
+        }
+        if (0 < count($this->action)) {
+            $json['action'] = [];
+            foreach($this->action as $action) {
+                $json['action'][] = json_encode($action);
             }
         }
         return $json;
@@ -841,6 +873,7 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
@@ -867,7 +900,6 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
                 $contributor->xmlSerialize(true, $sxe->addChild('contributor'));
             }
         }
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
@@ -884,9 +916,14 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
                 $library->xmlSerialize(true, $sxe->addChild('library'));
             }
         }
-        if (0 < count($this->actionDefinition)) {
-            foreach($this->actionDefinition as $actionDefinition) {
-                $actionDefinition->xmlSerialize(true, $sxe->addChild('actionDefinition'));
+        if (0 < count($this->goal)) {
+            foreach($this->goal as $goal) {
+                $goal->xmlSerialize(true, $sxe->addChild('goal'));
+            }
+        }
+        if (0 < count($this->action)) {
+            foreach($this->action as $action) {
+                $action->xmlSerialize(true, $sxe->addChild('action'));
             }
         }
         if ($returnSXE) return $sxe;

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,7 +80,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
     public $population = array();
 
     /**
-     * The measure score.
+     * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $measureScore = null;
@@ -90,12 +90,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier[]
      */
     public $stratifier = array();
-
-    /**
-     * Supplemental data elements for the measure provide additional information requested by the measure for each patient involved in the populations.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportSupplementalData[]
-     */
-    public $supplementalData = array();
 
     /**
      * @var string
@@ -143,7 +137,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The measure score.
+     * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getMeasureScore()
@@ -152,7 +146,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The measure score.
+     * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $measureScore
      * @return $this
      */
@@ -179,26 +173,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
     public function addStratifier($stratifier)
     {
         $this->stratifier[] = $stratifier;
-        return $this;
-    }
-
-    /**
-     * Supplemental data elements for the measure provide additional information requested by the measure for each patient involved in the populations.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportSupplementalData[]
-     */
-    public function getSupplementalData()
-    {
-        return $this->supplementalData;
-    }
-
-    /**
-     * Supplemental data elements for the measure provide additional information requested by the measure for each patient involved in the populations.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportSupplementalData $supplementalData
-     * @return $this
-     */
-    public function addSupplementalData($supplementalData)
-    {
-        $this->supplementalData[] = $supplementalData;
         return $this;
     }
 
@@ -238,12 +212,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
                 $json['stratifier'][] = json_encode($stratifier);
             }
         }
-        if (0 < count($this->supplementalData)) {
-            $json['supplementalData'] = [];
-            foreach($this->supplementalData as $supplementalData) {
-                $json['supplementalData'][] = json_encode($supplementalData);
-            }
-        }
         return $json;
     }
 
@@ -266,11 +234,6 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
         if (0 < count($this->stratifier)) {
             foreach($this->stratifier as $stratifier) {
                 $stratifier->xmlSerialize(true, $sxe->addChild('stratifier'));
-            }
-        }
-        if (0 < count($this->supplementalData)) {
-            foreach($this->supplementalData as $supplementalData) {
-                $supplementalData->xmlSerialize(true, $sxe->addChild('supplementalData'));
             }
         }
         if ($returnSXE) return $sxe;

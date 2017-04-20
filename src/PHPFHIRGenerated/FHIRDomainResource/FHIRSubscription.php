@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,10 +69,10 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * The rules that the server should use to determine when to generate notifications for this subscription.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * The status of the subscription, which marks the server state for managing the subscription.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus
      */
-    public $criteria = null;
+    public $status = null;
 
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
@@ -81,16 +81,22 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     public $contact = array();
 
     /**
+     * The time for the server to turn the subscription off.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
+     */
+    public $end = null;
+
+    /**
      * A description of why this subscription is defined.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $reason = null;
 
     /**
-     * The status of the subscription, which marks the server state for managing the subscription.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus
+     * The rules that the server should use to determine when to generate notifications for this subscription.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $status = null;
+    public $criteria = null;
 
     /**
      * A record of the last error that occurred when the server processed a notification.
@@ -105,12 +111,6 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     public $channel = null;
 
     /**
-     * The time for the server to turn the subscription off.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public $end = null;
-
-    /**
      * A tag to add to any resource that matches the criteria, after the subscription is processed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
@@ -122,22 +122,22 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'Subscription';
 
     /**
-     * The rules that the server should use to determine when to generate notifications for this subscription.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * The status of the subscription, which marks the server state for managing the subscription.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus
      */
-    public function getCriteria()
+    public function getStatus()
     {
-        return $this->criteria;
+        return $this->status;
     }
 
     /**
-     * The rules that the server should use to determine when to generate notifications for this subscription.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $criteria
+     * The status of the subscription, which marks the server state for managing the subscription.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus $status
      * @return $this
      */
-    public function setCriteria($criteria)
+    public function setStatus($status)
     {
-        $this->criteria = $criteria;
+        $this->status = $status;
         return $this;
     }
 
@@ -162,6 +162,26 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * The time for the server to turn the subscription off.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
+     */
+    public function getEnd()
+    {
+        return $this->end;
+    }
+
+    /**
+     * The time for the server to turn the subscription off.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $end
+     * @return $this
+     */
+    public function setEnd($end)
+    {
+        $this->end = $end;
+        return $this;
+    }
+
+    /**
      * A description of why this subscription is defined.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -182,22 +202,22 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The status of the subscription, which marks the server state for managing the subscription.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus
+     * The rules that the server should use to determine when to generate notifications for this subscription.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getStatus()
+    public function getCriteria()
     {
-        return $this->status;
+        return $this->criteria;
     }
 
     /**
-     * The status of the subscription, which marks the server state for managing the subscription.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionStatus $status
+     * The rules that the server should use to determine when to generate notifications for this subscription.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $criteria
      * @return $this
      */
-    public function setStatus($status)
+    public function setCriteria($criteria)
     {
-        $this->status = $status;
+        $this->criteria = $criteria;
         return $this;
     }
 
@@ -238,26 +258,6 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     public function setChannel($channel)
     {
         $this->channel = $channel;
-        return $this;
-    }
-
-    /**
-     * The time for the server to turn the subscription off.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public function getEnd()
-    {
-        return $this->end;
-    }
-
-    /**
-     * The time for the server to turn the subscription off.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $end
-     * @return $this
-     */
-    public function setEnd($end)
-    {
-        $this->end = $end;
         return $this;
     }
 
@@ -304,18 +304,18 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->criteria) $json['criteria'] = json_encode($this->criteria);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
                 $json['contact'][] = json_encode($contact);
             }
         }
+        if (null !== $this->end) $json['end'] = json_encode($this->end);
         if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->criteria) $json['criteria'] = json_encode($this->criteria);
         if (null !== $this->error) $json['error'] = json_encode($this->error);
         if (null !== $this->channel) $json['channel'] = json_encode($this->channel);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
         if (0 < count($this->tag)) {
             $json['tag'] = [];
             foreach($this->tag as $tag) {
@@ -334,17 +334,17 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Subscription xmlns="http://hl7.org/fhir"></Subscription>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->criteria) $this->criteria->xmlSerialize(true, $sxe->addChild('criteria'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
+        if (null !== $this->end) $this->end->xmlSerialize(true, $sxe->addChild('end'));
         if (null !== $this->reason) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->criteria) $this->criteria->xmlSerialize(true, $sxe->addChild('criteria'));
         if (null !== $this->error) $this->error->xmlSerialize(true, $sxe->addChild('error'));
         if (null !== $this->channel) $this->channel->xmlSerialize(true, $sxe->addChild('channel'));
-        if (null !== $this->end) $this->end->xmlSerialize(true, $sxe->addChild('end'));
         if (0 < count($this->tag)) {
             foreach($this->tag as $tag) {
                 $tag->xmlSerialize(true, $sxe->addChild('tag'));

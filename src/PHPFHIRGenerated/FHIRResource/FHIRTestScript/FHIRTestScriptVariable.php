@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
 class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -86,7 +86,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
     public $description = null;
 
     /**
-     * The fhirpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * The fluentpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $expression = null;
@@ -181,7 +181,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The fhirpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * The fluentpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getExpression()
@@ -190,7 +190,7 @@ class FHIRTestScriptVariable extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The fhirpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
+     * The fluentpath expression to evaluate against the fixture body. When variables are defined, only one of either expression, headerField or path must be specified.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */

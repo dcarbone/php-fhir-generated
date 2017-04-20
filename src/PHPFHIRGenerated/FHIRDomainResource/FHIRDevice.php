@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * This resource identifies an instance or a type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.  Medical devices includes durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.  Non-medical devices may include items such as a machine, cellphone, computer, application, etc.
+ * This resource identifies an instance or a type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.  Medical devices include durable (reusable) medical equipment, implantable devices, as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.  Non-medical devices may include items such as a machine, cellphone, computer, application, etc.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
@@ -75,14 +75,14 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) barcode or rfid string assigned to device label or package.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) assigned to device label or package.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDevice\FHIRDeviceUdi
      */
-    public $udiCarrier = null;
+    public $udi = null;
 
     /**
      * Status of the Device availability.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDeviceStatus
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRDeviceStatus
      */
     public $status = null;
 
@@ -165,6 +165,12 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     public $note = array();
 
     /**
+     * Provides additional safety characteristics about a medical device.  For example devices containing latex.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $safety = array();
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'Device';
@@ -190,28 +196,28 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) barcode or rfid string assigned to device label or package.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) assigned to device label or package.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRDevice\FHIRDeviceUdi
      */
-    public function getUdiCarrier()
+    public function getUdi()
     {
-        return $this->udiCarrier;
+        return $this->udi;
     }
 
     /**
-     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) barcode or rfid string assigned to device label or package.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $udiCarrier
+     * [Unique device identifier (UDI)](device.html#5.11.3.2.2) assigned to device label or package.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDevice\FHIRDeviceUdi $udi
      * @return $this
      */
-    public function setUdiCarrier($udiCarrier)
+    public function setUdi($udi)
     {
-        $this->udiCarrier = $udiCarrier;
+        $this->udi = $udi;
         return $this;
     }
 
     /**
      * Status of the Device availability.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDeviceStatus
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRFHIRDeviceStatus
      */
     public function getStatus()
     {
@@ -220,7 +226,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Status of the Device availability.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDeviceStatus $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRFHIRDeviceStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -490,6 +496,26 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Provides additional safety characteristics about a medical device.  For example devices containing latex.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getSafety()
+    {
+        return $this->safety;
+    }
+
+    /**
+     * Provides additional safety characteristics about a medical device.  For example devices containing latex.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $safety
+     * @return $this
+     */
+    public function addSafety($safety)
+    {
+        $this->safety[] = $safety;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -518,7 +544,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
                 $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->udiCarrier) $json['udiCarrier'] = json_encode($this->udiCarrier);
+        if (null !== $this->udi) $json['udi'] = json_encode($this->udi);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->lotNumber) $json['lotNumber'] = json_encode($this->lotNumber);
@@ -543,6 +569,12 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
                 $json['note'][] = json_encode($note);
             }
         }
+        if (0 < count($this->safety)) {
+            $json['safety'] = [];
+            foreach($this->safety as $safety) {
+                $json['safety'][] = json_encode($safety);
+            }
+        }
         return $json;
     }
 
@@ -560,7 +592,7 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->udiCarrier) $this->udiCarrier->xmlSerialize(true, $sxe->addChild('udiCarrier'));
+        if (null !== $this->udi) $this->udi->xmlSerialize(true, $sxe->addChild('udi'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->lotNumber) $this->lotNumber->xmlSerialize(true, $sxe->addChild('lotNumber'));
@@ -581,6 +613,11 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->note)) {
             foreach($this->note as $note) {
                 $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
+        if (0 < count($this->safety)) {
+            foreach($this->safety as $safety) {
+                $safety->xmlSerialize(true, $sxe->addChild('safety'));
             }
         }
         if ($returnSXE) return $sxe;

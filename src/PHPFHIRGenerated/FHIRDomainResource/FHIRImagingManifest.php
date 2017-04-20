@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,16 +63,16 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances).  The referenced SOP Instances (images or other content) are for a single patient, and may be from one or more studies. The referenced SOP Instances may have been selected for a purpose, such as  conference, or consult.  Reflecting a range of sharing purposes, typical ImagingManifest resources may include all SOP Instances in a study (perhaps for sharing through a Health Information Exchange); key images from multiple studies (for reference by a referring or treating physician); both a multi-frame ultrasound instance ("cine" video clip) and a set of measurements taken from that instance (for inclusion in a teaching file); and so on.
+ * A text description of the DICOM SOP instances selected in the ImagingManifest; or the reason for, or significance of, the selection.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRImagingManifest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * Unique identifier of the the DICOM Key Object Selection (KOS) that this resource represents.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIROid
+     * Unique identifier of the DICOM Key Object Selection (KOS) that this resource represents.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $uid = null;
+    public $identifier = null;
 
     /**
      * A patient resource reference which is the patient subject of all DICOM SOP Instances in this ImagingManifest.
@@ -93,13 +93,8 @@ class FHIRImagingManifest extends FHIRDomainResource implements \JsonSerializabl
     public $author = null;
 
     /**
-     * The reason for, or significance of, the selection of objects referenced in the resource.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $title = null;
-
-    /**
-     * Text description of the DICOM SOP instances selected in the ImagingManifest. This should be aligned with the content of the title element, and can provide further explanation of the SOP instances in the selection.
+     * Free text narrative description of the ImagingManifest.  
+The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions (e.g. Best in Set, Complete Study Content). Note that those values cover the wide range of uses of the DICOM Key Object Selection object, several of which are not supported by ImagingManifest. Specifically, there is no expected behavior associated with descriptions that suggest referenced images be removed or not used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $description = null;
@@ -116,22 +111,22 @@ class FHIRImagingManifest extends FHIRDomainResource implements \JsonSerializabl
     private $_fhirElementName = 'ImagingManifest';
 
     /**
-     * Unique identifier of the the DICOM Key Object Selection (KOS) that this resource represents.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIROid
+     * Unique identifier of the DICOM Key Object Selection (KOS) that this resource represents.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getUid()
+    public function getIdentifier()
     {
-        return $this->uid;
+        return $this->identifier;
     }
 
     /**
-     * Unique identifier of the the DICOM Key Object Selection (KOS) that this resource represents.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIROid $uid
+     * Unique identifier of the DICOM Key Object Selection (KOS) that this resource represents.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setUid($uid)
+    public function setIdentifier($identifier)
     {
-        $this->uid = $uid;
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -196,27 +191,8 @@ class FHIRImagingManifest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The reason for, or significance of, the selection of objects referenced in the resource.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * The reason for, or significance of, the selection of objects referenced in the resource.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $title
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-        return $this;
-    }
-
-    /**
-     * Text description of the DICOM SOP instances selected in the ImagingManifest. This should be aligned with the content of the title element, and can provide further explanation of the SOP instances in the selection.
+     * Free text narrative description of the ImagingManifest.  
+The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions (e.g. Best in Set, Complete Study Content). Note that those values cover the wide range of uses of the DICOM Key Object Selection object, several of which are not supported by ImagingManifest. Specifically, there is no expected behavior associated with descriptions that suggest referenced images be removed or not used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDescription()
@@ -225,7 +201,8 @@ class FHIRImagingManifest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Text description of the DICOM SOP instances selected in the ImagingManifest. This should be aligned with the content of the title element, and can provide further explanation of the SOP instances in the selection.
+     * Free text narrative description of the ImagingManifest.  
+The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions (e.g. Best in Set, Complete Study Content). Note that those values cover the wide range of uses of the DICOM Key Object Selection object, several of which are not supported by ImagingManifest. Specifically, there is no expected behavior associated with descriptions that suggest referenced images be removed or not used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
@@ -278,11 +255,10 @@ class FHIRImagingManifest extends FHIRDomainResource implements \JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
         if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (null !== $this->authoringTime) $json['authoringTime'] = json_encode($this->authoringTime);
         if (null !== $this->author) $json['author'] = json_encode($this->author);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->study)) {
             $json['study'] = [];
@@ -302,11 +278,10 @@ class FHIRImagingManifest extends FHIRDomainResource implements \JsonSerializabl
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImagingManifest xmlns="http://hl7.org/fhir"></ImagingManifest>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->uid) $this->uid->xmlSerialize(true, $sxe->addChild('uid'));
+        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
         if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if (null !== $this->authoringTime) $this->authoringTime->xmlSerialize(true, $sxe->addChild('authoringTime'));
         if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->study)) {
             foreach($this->study as $study) {

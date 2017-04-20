@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,6 +71,11 @@ class FHIRResourceContainer implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRActivityDefinition
      */
     public $ActivityDefinition = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRAdverseEvent
+     */
+    public $AdverseEvent = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRAllergyIntolerance
@@ -126,6 +131,11 @@ class FHIRResourceContainer implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRCareTeam
      */
     public $CareTeam = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRChargeItem
+     */
+    public $ChargeItem = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRClaim
@@ -218,9 +228,9 @@ class FHIRResourceContainer implements \JsonSerializable
     public $DeviceMetric = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRDeviceUseRequest
+     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRDeviceRequest
      */
-    public $DeviceUseRequest = null;
+    public $DeviceRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRDeviceUseStatement
@@ -231,11 +241,6 @@ class FHIRResourceContainer implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRDiagnosticReport
      */
     public $DiagnosticReport = null;
-
-    /**
-     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRDiagnosticRequest
-     */
-    public $DiagnosticRequest = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRDocumentManifest
@@ -306,6 +311,11 @@ class FHIRResourceContainer implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRGoal
      */
     public $Goal = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRGraphDefinition
+     */
+    public $GraphDefinition = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRGroup
@@ -423,9 +433,9 @@ class FHIRResourceContainer implements \JsonSerializable
     public $NamingSystem = null;
 
     /**
-     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRNutritionRequest
+     * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRNutritionOrder
      */
-    public $NutritionRequest = null;
+    public $NutritionOrder = null;
 
     /**
      * @var \PHPFHIRGenerated\FHIRDomainResource\FHIRObservation
@@ -679,6 +689,24 @@ class FHIRResourceContainer implements \JsonSerializable
     }
 
     /**
+     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRAdverseEvent
+     */
+    public function getAdverseEvent()
+    {
+        return $this->AdverseEvent;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRAdverseEvent $AdverseEvent
+     * @return $this
+     */
+    public function setAdverseEvent($AdverseEvent)
+    {
+        $this->AdverseEvent = $AdverseEvent;
+        return $this;
+    }
+
+    /**
      * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRAllergyIntolerance
      */
     public function getAllergyIntolerance()
@@ -873,6 +901,24 @@ class FHIRResourceContainer implements \JsonSerializable
     public function setCareTeam($CareTeam)
     {
         $this->CareTeam = $CareTeam;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRChargeItem
+     */
+    public function getChargeItem()
+    {
+        return $this->ChargeItem;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRChargeItem $ChargeItem
+     * @return $this
+     */
+    public function setChargeItem($ChargeItem)
+    {
+        $this->ChargeItem = $ChargeItem;
         return $this;
     }
 
@@ -1201,20 +1247,20 @@ class FHIRResourceContainer implements \JsonSerializable
     }
 
     /**
-     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRDeviceUseRequest
+     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRDeviceRequest
      */
-    public function getDeviceUseRequest()
+    public function getDeviceRequest()
     {
-        return $this->DeviceUseRequest;
+        return $this->DeviceRequest;
     }
 
     /**
-     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRDeviceUseRequest $DeviceUseRequest
+     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRDeviceRequest $DeviceRequest
      * @return $this
      */
-    public function setDeviceUseRequest($DeviceUseRequest)
+    public function setDeviceRequest($DeviceRequest)
     {
-        $this->DeviceUseRequest = $DeviceUseRequest;
+        $this->DeviceRequest = $DeviceRequest;
         return $this;
     }
 
@@ -1251,24 +1297,6 @@ class FHIRResourceContainer implements \JsonSerializable
     public function setDiagnosticReport($DiagnosticReport)
     {
         $this->DiagnosticReport = $DiagnosticReport;
-        return $this;
-    }
-
-    /**
-     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRDiagnosticRequest
-     */
-    public function getDiagnosticRequest()
-    {
-        return $this->DiagnosticRequest;
-    }
-
-    /**
-     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRDiagnosticRequest $DiagnosticRequest
-     * @return $this
-     */
-    public function setDiagnosticRequest($DiagnosticRequest)
-    {
-        $this->DiagnosticRequest = $DiagnosticRequest;
         return $this;
     }
 
@@ -1521,6 +1549,24 @@ class FHIRResourceContainer implements \JsonSerializable
     public function setGoal($Goal)
     {
         $this->Goal = $Goal;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRGraphDefinition
+     */
+    public function getGraphDefinition()
+    {
+        return $this->GraphDefinition;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRGraphDefinition $GraphDefinition
+     * @return $this
+     */
+    public function setGraphDefinition($GraphDefinition)
+    {
+        $this->GraphDefinition = $GraphDefinition;
         return $this;
     }
 
@@ -1939,20 +1985,20 @@ class FHIRResourceContainer implements \JsonSerializable
     }
 
     /**
-     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRNutritionRequest
+     * @return \PHPFHIRGenerated\FHIRDomainResource\FHIRNutritionOrder
      */
-    public function getNutritionRequest()
+    public function getNutritionOrder()
     {
-        return $this->NutritionRequest;
+        return $this->NutritionOrder;
     }
 
     /**
-     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRNutritionRequest $NutritionRequest
+     * @param \PHPFHIRGenerated\FHIRDomainResource\FHIRNutritionOrder $NutritionOrder
      * @return $this
      */
-    public function setNutritionRequest($NutritionRequest)
+    public function setNutritionOrder($NutritionOrder)
     {
-        $this->NutritionRequest = $NutritionRequest;
+        $this->NutritionOrder = $NutritionOrder;
         return $this;
     }
 
@@ -2735,6 +2781,7 @@ class FHIRResourceContainer implements \JsonSerializable
     {
         if (null !== $this->Account) return json_encode($this->Account);
         if (null !== $this->ActivityDefinition) return json_encode($this->ActivityDefinition);
+        if (null !== $this->AdverseEvent) return json_encode($this->AdverseEvent);
         if (null !== $this->AllergyIntolerance) return json_encode($this->AllergyIntolerance);
         if (null !== $this->Appointment) return json_encode($this->Appointment);
         if (null !== $this->AppointmentResponse) return json_encode($this->AppointmentResponse);
@@ -2746,6 +2793,7 @@ class FHIRResourceContainer implements \JsonSerializable
         if (null !== $this->CapabilityStatement) return json_encode($this->CapabilityStatement);
         if (null !== $this->CarePlan) return json_encode($this->CarePlan);
         if (null !== $this->CareTeam) return json_encode($this->CareTeam);
+        if (null !== $this->ChargeItem) return json_encode($this->ChargeItem);
         if (null !== $this->Claim) return json_encode($this->Claim);
         if (null !== $this->ClaimResponse) return json_encode($this->ClaimResponse);
         if (null !== $this->ClinicalImpression) return json_encode($this->ClinicalImpression);
@@ -2764,10 +2812,9 @@ class FHIRResourceContainer implements \JsonSerializable
         if (null !== $this->Device) return json_encode($this->Device);
         if (null !== $this->DeviceComponent) return json_encode($this->DeviceComponent);
         if (null !== $this->DeviceMetric) return json_encode($this->DeviceMetric);
-        if (null !== $this->DeviceUseRequest) return json_encode($this->DeviceUseRequest);
+        if (null !== $this->DeviceRequest) return json_encode($this->DeviceRequest);
         if (null !== $this->DeviceUseStatement) return json_encode($this->DeviceUseStatement);
         if (null !== $this->DiagnosticReport) return json_encode($this->DiagnosticReport);
-        if (null !== $this->DiagnosticRequest) return json_encode($this->DiagnosticRequest);
         if (null !== $this->DocumentManifest) return json_encode($this->DocumentManifest);
         if (null !== $this->DocumentReference) return json_encode($this->DocumentReference);
         if (null !== $this->EligibilityRequest) return json_encode($this->EligibilityRequest);
@@ -2782,6 +2829,7 @@ class FHIRResourceContainer implements \JsonSerializable
         if (null !== $this->FamilyMemberHistory) return json_encode($this->FamilyMemberHistory);
         if (null !== $this->Flag) return json_encode($this->Flag);
         if (null !== $this->Goal) return json_encode($this->Goal);
+        if (null !== $this->GraphDefinition) return json_encode($this->GraphDefinition);
         if (null !== $this->Group) return json_encode($this->Group);
         if (null !== $this->GuidanceResponse) return json_encode($this->GuidanceResponse);
         if (null !== $this->HealthcareService) return json_encode($this->HealthcareService);
@@ -2805,7 +2853,7 @@ class FHIRResourceContainer implements \JsonSerializable
         if (null !== $this->MessageDefinition) return json_encode($this->MessageDefinition);
         if (null !== $this->MessageHeader) return json_encode($this->MessageHeader);
         if (null !== $this->NamingSystem) return json_encode($this->NamingSystem);
-        if (null !== $this->NutritionRequest) return json_encode($this->NutritionRequest);
+        if (null !== $this->NutritionOrder) return json_encode($this->NutritionOrder);
         if (null !== $this->Observation) return json_encode($this->Observation);
         if (null !== $this->OperationDefinition) return json_encode($this->OperationDefinition);
         if (null !== $this->OperationOutcome) return json_encode($this->OperationOutcome);
@@ -2861,6 +2909,7 @@ class FHIRResourceContainer implements \JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ResourceContainer xmlns="http://hl7.org/fhir"></ResourceContainer>');
         if (null !== $this->Account) $this->Account->xmlSerialize(true, $sxe->addChild('Account'));
         else if (null !== $this->ActivityDefinition) $this->ActivityDefinition->xmlSerialize(true, $sxe->addChild('ActivityDefinition'));
+        else if (null !== $this->AdverseEvent) $this->AdverseEvent->xmlSerialize(true, $sxe->addChild('AdverseEvent'));
         else if (null !== $this->AllergyIntolerance) $this->AllergyIntolerance->xmlSerialize(true, $sxe->addChild('AllergyIntolerance'));
         else if (null !== $this->Appointment) $this->Appointment->xmlSerialize(true, $sxe->addChild('Appointment'));
         else if (null !== $this->AppointmentResponse) $this->AppointmentResponse->xmlSerialize(true, $sxe->addChild('AppointmentResponse'));
@@ -2872,6 +2921,7 @@ class FHIRResourceContainer implements \JsonSerializable
         else if (null !== $this->CapabilityStatement) $this->CapabilityStatement->xmlSerialize(true, $sxe->addChild('CapabilityStatement'));
         else if (null !== $this->CarePlan) $this->CarePlan->xmlSerialize(true, $sxe->addChild('CarePlan'));
         else if (null !== $this->CareTeam) $this->CareTeam->xmlSerialize(true, $sxe->addChild('CareTeam'));
+        else if (null !== $this->ChargeItem) $this->ChargeItem->xmlSerialize(true, $sxe->addChild('ChargeItem'));
         else if (null !== $this->Claim) $this->Claim->xmlSerialize(true, $sxe->addChild('Claim'));
         else if (null !== $this->ClaimResponse) $this->ClaimResponse->xmlSerialize(true, $sxe->addChild('ClaimResponse'));
         else if (null !== $this->ClinicalImpression) $this->ClinicalImpression->xmlSerialize(true, $sxe->addChild('ClinicalImpression'));
@@ -2890,10 +2940,9 @@ class FHIRResourceContainer implements \JsonSerializable
         else if (null !== $this->Device) $this->Device->xmlSerialize(true, $sxe->addChild('Device'));
         else if (null !== $this->DeviceComponent) $this->DeviceComponent->xmlSerialize(true, $sxe->addChild('DeviceComponent'));
         else if (null !== $this->DeviceMetric) $this->DeviceMetric->xmlSerialize(true, $sxe->addChild('DeviceMetric'));
-        else if (null !== $this->DeviceUseRequest) $this->DeviceUseRequest->xmlSerialize(true, $sxe->addChild('DeviceUseRequest'));
+        else if (null !== $this->DeviceRequest) $this->DeviceRequest->xmlSerialize(true, $sxe->addChild('DeviceRequest'));
         else if (null !== $this->DeviceUseStatement) $this->DeviceUseStatement->xmlSerialize(true, $sxe->addChild('DeviceUseStatement'));
         else if (null !== $this->DiagnosticReport) $this->DiagnosticReport->xmlSerialize(true, $sxe->addChild('DiagnosticReport'));
-        else if (null !== $this->DiagnosticRequest) $this->DiagnosticRequest->xmlSerialize(true, $sxe->addChild('DiagnosticRequest'));
         else if (null !== $this->DocumentManifest) $this->DocumentManifest->xmlSerialize(true, $sxe->addChild('DocumentManifest'));
         else if (null !== $this->DocumentReference) $this->DocumentReference->xmlSerialize(true, $sxe->addChild('DocumentReference'));
         else if (null !== $this->EligibilityRequest) $this->EligibilityRequest->xmlSerialize(true, $sxe->addChild('EligibilityRequest'));
@@ -2908,6 +2957,7 @@ class FHIRResourceContainer implements \JsonSerializable
         else if (null !== $this->FamilyMemberHistory) $this->FamilyMemberHistory->xmlSerialize(true, $sxe->addChild('FamilyMemberHistory'));
         else if (null !== $this->Flag) $this->Flag->xmlSerialize(true, $sxe->addChild('Flag'));
         else if (null !== $this->Goal) $this->Goal->xmlSerialize(true, $sxe->addChild('Goal'));
+        else if (null !== $this->GraphDefinition) $this->GraphDefinition->xmlSerialize(true, $sxe->addChild('GraphDefinition'));
         else if (null !== $this->Group) $this->Group->xmlSerialize(true, $sxe->addChild('Group'));
         else if (null !== $this->GuidanceResponse) $this->GuidanceResponse->xmlSerialize(true, $sxe->addChild('GuidanceResponse'));
         else if (null !== $this->HealthcareService) $this->HealthcareService->xmlSerialize(true, $sxe->addChild('HealthcareService'));
@@ -2931,7 +2981,7 @@ class FHIRResourceContainer implements \JsonSerializable
         else if (null !== $this->MessageDefinition) $this->MessageDefinition->xmlSerialize(true, $sxe->addChild('MessageDefinition'));
         else if (null !== $this->MessageHeader) $this->MessageHeader->xmlSerialize(true, $sxe->addChild('MessageHeader'));
         else if (null !== $this->NamingSystem) $this->NamingSystem->xmlSerialize(true, $sxe->addChild('NamingSystem'));
-        else if (null !== $this->NutritionRequest) $this->NutritionRequest->xmlSerialize(true, $sxe->addChild('NutritionRequest'));
+        else if (null !== $this->NutritionOrder) $this->NutritionOrder->xmlSerialize(true, $sxe->addChild('NutritionOrder'));
         else if (null !== $this->Observation) $this->Observation->xmlSerialize(true, $sxe->addChild('Observation'));
         else if (null !== $this->OperationDefinition) $this->OperationDefinition->xmlSerialize(true, $sxe->addChild('OperationDefinition'));
         else if (null !== $this->OperationOutcome) $this->OperationOutcome->xmlSerialize(true, $sxe->addChild('OperationOutcome'));

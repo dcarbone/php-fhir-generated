@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,12 +63,12 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
+ * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.
  */
 class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Identifies the item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
+     * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $linkId = null;
@@ -109,7 +109,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
     private $_fhirElementName = 'QuestionnaireResponse.Item';
 
     /**
-     * Identifies the item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
+     * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getLinkId()
@@ -118,7 +118,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * Identifies the item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
+     * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $linkId
      * @return $this
      */

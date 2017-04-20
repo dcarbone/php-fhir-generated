@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,67 +63,67 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * Describes the characteristics, operational status and capabilities of a medical-related component of a medical device.
+ * The characteristics, operational status and capabilities of a medical-related component of a medical device.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * Describes the specific component type as defined in the object-oriented or metric nomenclature partition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $type = null;
-
-    /**
-     * Describes the local assigned unique identification by the software. For example: handle ID.
+     * The locally assigned unique identification by the software. For example: handle ID.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
 
     /**
-     * Describes the timestamp for the most recent system change which includes device configuration or setting change.
+     * The component type as defined in the object-oriented or metric nomenclature partition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $type = null;
+
+    /**
+     * The timestamp for the most recent system change which includes device configuration or setting change.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $lastSystemChange = null;
 
     /**
-     * Describes the link to the source Device that contains administrative device information such as manufacture, serial number, etc.
+     * The link to the source Device that contains administrative device information such as manufacture, serial number, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $source = null;
 
     /**
-     * Describes the link to the parent resource. For example: Channel is linked to its VMD parent.
+     * The link to the parent resource. For example: Channel is linked to its VMD parent.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $parent = null;
 
     /**
-     * Indicates current operational status of the device. For example: On, Off, Standby, etc.
+     * The current operational status of the device. For example: On, Off, Standby, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $operationalStatus = array();
 
     /**
-     * Describes the parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
+     * The parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $parameterGroup = null;
 
     /**
-     * Describes the physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
+     * The physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple
      */
     public $measurementPrinciple = null;
 
     /**
-     * Describes the production specification such as component revision, serial number, etc.
+     * The production specification such as component revision, serial number, etc.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification[]
      */
     public $productionSpecification = array();
 
     /**
-     * Describes the language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
+     * The language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $languageCode = null;
@@ -134,27 +134,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     private $_fhirElementName = 'DeviceComponent';
 
     /**
-     * Describes the specific component type as defined in the object-oriented or metric nomenclature partition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Describes the specific component type as defined in the object-oriented or metric nomenclature partition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * Describes the local assigned unique identification by the software. For example: handle ID.
+     * The locally assigned unique identification by the software. For example: handle ID.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getIdentifier()
@@ -163,7 +143,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the local assigned unique identification by the software. For example: handle ID.
+     * The locally assigned unique identification by the software. For example: handle ID.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
@@ -174,7 +154,27 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the timestamp for the most recent system change which includes device configuration or setting change.
+     * The component type as defined in the object-oriented or metric nomenclature partition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * The component type as defined in the object-oriented or metric nomenclature partition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * The timestamp for the most recent system change which includes device configuration or setting change.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getLastSystemChange()
@@ -183,7 +183,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the timestamp for the most recent system change which includes device configuration or setting change.
+     * The timestamp for the most recent system change which includes device configuration or setting change.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $lastSystemChange
      * @return $this
      */
@@ -194,7 +194,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the link to the source Device that contains administrative device information such as manufacture, serial number, etc.
+     * The link to the source Device that contains administrative device information such as manufacture, serial number, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSource()
@@ -203,7 +203,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the link to the source Device that contains administrative device information such as manufacture, serial number, etc.
+     * The link to the source Device that contains administrative device information such as manufacture, serial number, etc.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $source
      * @return $this
      */
@@ -214,7 +214,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the link to the parent resource. For example: Channel is linked to its VMD parent.
+     * The link to the parent resource. For example: Channel is linked to its VMD parent.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getParent()
@@ -223,7 +223,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the link to the parent resource. For example: Channel is linked to its VMD parent.
+     * The link to the parent resource. For example: Channel is linked to its VMD parent.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $parent
      * @return $this
      */
@@ -234,7 +234,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Indicates current operational status of the device. For example: On, Off, Standby, etc.
+     * The current operational status of the device. For example: On, Off, Standby, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getOperationalStatus()
@@ -243,7 +243,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Indicates current operational status of the device. For example: On, Off, Standby, etc.
+     * The current operational status of the device. For example: On, Off, Standby, etc.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $operationalStatus
      * @return $this
      */
@@ -254,7 +254,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
+     * The parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getParameterGroup()
@@ -263,7 +263,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
+     * The parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $parameterGroup
      * @return $this
      */
@@ -274,7 +274,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
+     * The physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple
      */
     public function getMeasurementPrinciple()
@@ -283,7 +283,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
+     * The physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple $measurementPrinciple
      * @return $this
      */
@@ -294,7 +294,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the production specification such as component revision, serial number, etc.
+     * The production specification such as component revision, serial number, etc.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification[]
      */
     public function getProductionSpecification()
@@ -303,7 +303,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the production specification such as component revision, serial number, etc.
+     * The production specification such as component revision, serial number, etc.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $productionSpecification
      * @return $this
      */
@@ -314,7 +314,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
+     * The language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getLanguageCode()
@@ -323,7 +323,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Describes the language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
+     * The language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $languageCode
      * @return $this
      */
@@ -356,8 +356,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->lastSystemChange) $json['lastSystemChange'] = json_encode($this->lastSystemChange);
         if (null !== $this->source) $json['source'] = json_encode($this->source);
         if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
@@ -388,8 +388,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DeviceComponent xmlns="http://hl7.org/fhir"></DeviceComponent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->lastSystemChange) $this->lastSystemChange->xmlSerialize(true, $sxe->addChild('lastSystemChange'));
         if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
         if (null !== $this->parent) $this->parent->xmlSerialize(true, $sxe->addChild('parent'));

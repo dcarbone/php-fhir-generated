@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of questions intended to guide the collection of answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
+ * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
  */
 class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -76,62 +76,62 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement implements \JsonSerializ
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item. If a definition is provided, then the following element values can be inferred from the definition: 
 
-* concept (ElementDefinition.code)
+* code (ElementDefinition.code)
 * type (ElementDefinition.type)
 * required (ElementDefinition.min)
 * repeats (ElementDefinition.max)
 * maxLength (ElementDefinition.maxLength)
 * options (ElementDefinition.binding)
 
-Any information provided in these elements overrides the information from the definition.
+Any information provided in these elements on a Questionnaire Item overrides the information from the definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $definition = null;
 
     /**
-     * Terminology code that corresponds to this group or question (e.g. LOINC).
+     * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $concept = array();
+    public $code = array();
 
     /**
-     * A short label for a particular group, question or set of display text within the questionnaire.
+     * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $prefix = null;
 
     /**
-     * The name of a section, the text of a question or text content for a text item.
+     * The name of a section, the text of a question or text content for a display item.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $text = null;
 
     /**
-     * Identifies the type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
+     * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType
      */
     public $type = null;
 
     /**
-     * If present, indicates that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
+     * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
     public $enableWhen = array();
 
     /**
-     * If true, indicates that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
+     * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $required = null;
 
     /**
-     * Whether the item may occur multiple times in the instance, containing multiple sets of answers.
+     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $repeats = null;
 
     /**
-     * If true, the value cannot be changed by a human respondent to the Questionnaire.
+     * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $readOnly = null;
@@ -143,97 +143,91 @@ Any information provided in these elements overrides the information from the de
     public $maxLength = null;
 
     /**
-     * Reference to a value set containing a list of codes representing permitted answers for the question.
+     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $options = null;
 
     /**
-     * For a "choice" question, identifies one of the permitted answers for the question.
+     * One of the permitted answers for a "choice" or "open-choice" question.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireOption[]
      */
     public $option = array();
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $initialBoolean = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $initialDecimal = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $initialInteger = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $initialDate = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $initialDateTime = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public $initialInstant = null;
-
-    /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $initialTime = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $initialString = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $initialUri = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $initialAttachment = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $initialCoding = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $initialQuantity = null;
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $initialReference = null;
 
     /**
-     * Allows text, questions and other groups to be nested beneath a question or group.
+     * Text, questions and other groups to be nested beneath a question or group.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
     public $item = array();
@@ -266,14 +260,14 @@ Any information provided in these elements overrides the information from the de
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item. If a definition is provided, then the following element values can be inferred from the definition: 
 
-* concept (ElementDefinition.code)
+* code (ElementDefinition.code)
 * type (ElementDefinition.type)
 * required (ElementDefinition.min)
 * repeats (ElementDefinition.max)
 * maxLength (ElementDefinition.maxLength)
 * options (ElementDefinition.binding)
 
-Any information provided in these elements overrides the information from the definition.
+Any information provided in these elements on a Questionnaire Item overrides the information from the definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDefinition()
@@ -284,14 +278,14 @@ Any information provided in these elements overrides the information from the de
     /**
      * A reference to an [[[ElementDefinition]]] that provides the details for the item. If a definition is provided, then the following element values can be inferred from the definition: 
 
-* concept (ElementDefinition.code)
+* code (ElementDefinition.code)
 * type (ElementDefinition.type)
 * required (ElementDefinition.min)
 * repeats (ElementDefinition.max)
 * maxLength (ElementDefinition.maxLength)
 * options (ElementDefinition.binding)
 
-Any information provided in these elements overrides the information from the definition.
+Any information provided in these elements on a Questionnaire Item overrides the information from the definition.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $definition
      * @return $this
      */
@@ -302,27 +296,27 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Terminology code that corresponds to this group or question (e.g. LOINC).
+     * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getConcept()
+    public function getCode()
     {
-        return $this->concept;
+        return $this->code;
     }
 
     /**
-     * Terminology code that corresponds to this group or question (e.g. LOINC).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $concept
+     * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
      * @return $this
      */
-    public function addConcept($concept)
+    public function addCode($code)
     {
-        $this->concept[] = $concept;
+        $this->code[] = $code;
         return $this;
     }
 
     /**
-     * A short label for a particular group, question or set of display text within the questionnaire.
+     * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPrefix()
@@ -331,7 +325,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * A short label for a particular group, question or set of display text within the questionnaire.
+     * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $prefix
      * @return $this
      */
@@ -342,7 +336,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The name of a section, the text of a question or text content for a text item.
+     * The name of a section, the text of a question or text content for a display item.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getText()
@@ -351,7 +345,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The name of a section, the text of a question or text content for a text item.
+     * The name of a section, the text of a question or text content for a display item.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
@@ -362,7 +356,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Identifies the type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
+     * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType
      */
     public function getType()
@@ -371,7 +365,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Identifies the type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
+     * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType $type
      * @return $this
      */
@@ -382,7 +376,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * If present, indicates that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
+     * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
     public function getEnableWhen()
@@ -391,7 +385,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * If present, indicates that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
+     * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $enableWhen
      * @return $this
      */
@@ -402,7 +396,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * If true, indicates that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
+     * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getRequired()
@@ -411,7 +405,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * If true, indicates that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
+     * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $required
      * @return $this
      */
@@ -422,7 +416,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Whether the item may occur multiple times in the instance, containing multiple sets of answers.
+     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getRepeats()
@@ -431,7 +425,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Whether the item may occur multiple times in the instance, containing multiple sets of answers.
+     * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $repeats
      * @return $this
      */
@@ -442,7 +436,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * If true, the value cannot be changed by a human respondent to the Questionnaire.
+     * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getReadOnly()
@@ -451,7 +445,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * If true, the value cannot be changed by a human respondent to the Questionnaire.
+     * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $readOnly
      * @return $this
      */
@@ -482,7 +476,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Reference to a value set containing a list of codes representing permitted answers for the question.
+     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getOptions()
@@ -491,7 +485,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Reference to a value set containing a list of codes representing permitted answers for the question.
+     * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $options
      * @return $this
      */
@@ -502,7 +496,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * For a "choice" question, identifies one of the permitted answers for the question.
+     * One of the permitted answers for a "choice" or "open-choice" question.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireOption[]
      */
     public function getOption()
@@ -511,7 +505,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * For a "choice" question, identifies one of the permitted answers for the question.
+     * One of the permitted answers for a "choice" or "open-choice" question.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireOption $option
      * @return $this
      */
@@ -522,7 +516,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getInitialBoolean()
@@ -531,7 +525,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $initialBoolean
      * @return $this
      */
@@ -542,7 +536,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getInitialDecimal()
@@ -551,7 +545,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $initialDecimal
      * @return $this
      */
@@ -562,7 +556,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getInitialInteger()
@@ -571,7 +565,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $initialInteger
      * @return $this
      */
@@ -582,7 +576,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getInitialDate()
@@ -591,7 +585,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $initialDate
      * @return $this
      */
@@ -602,7 +596,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getInitialDateTime()
@@ -611,7 +605,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $initialDateTime
      * @return $this
      */
@@ -622,27 +616,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public function getInitialInstant()
-    {
-        return $this->initialInstant;
-    }
-
-    /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $initialInstant
-     * @return $this
-     */
-    public function setInitialInstant($initialInstant)
-    {
-        $this->initialInstant = $initialInstant;
-        return $this;
-    }
-
-    /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getInitialTime()
@@ -651,7 +625,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $initialTime
      * @return $this
      */
@@ -662,7 +636,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getInitialString()
@@ -671,7 +645,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $initialString
      * @return $this
      */
@@ -682,7 +656,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getInitialUri()
@@ -691,7 +665,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $initialUri
      * @return $this
      */
@@ -702,7 +676,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getInitialAttachment()
@@ -711,7 +685,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $initialAttachment
      * @return $this
      */
@@ -722,7 +696,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getInitialCoding()
@@ -731,7 +705,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $initialCoding
      * @return $this
      */
@@ -742,7 +716,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getInitialQuantity()
@@ -751,7 +725,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $initialQuantity
      * @return $this
      */
@@ -762,7 +736,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getInitialReference()
@@ -771,7 +745,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * The value that should be defaulted when rendering the questionnaire for user input. (choose any one of initial*, but only one)
+     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $initialReference
      * @return $this
      */
@@ -782,7 +756,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Allows text, questions and other groups to be nested beneath a question or group.
+     * Text, questions and other groups to be nested beneath a question or group.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
     public function getItem()
@@ -791,7 +765,7 @@ Any information provided in these elements overrides the information from the de
     }
 
     /**
-     * Allows text, questions and other groups to be nested beneath a question or group.
+     * Text, questions and other groups to be nested beneath a question or group.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem $item
      * @return $this
      */
@@ -825,10 +799,10 @@ Any information provided in these elements overrides the information from the de
         $json = parent::jsonSerialize();
         if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
         if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
-        if (0 < count($this->concept)) {
-            $json['concept'] = [];
-            foreach($this->concept as $concept) {
-                $json['concept'][] = json_encode($concept);
+        if (0 < count($this->code)) {
+            $json['code'] = [];
+            foreach($this->code as $code) {
+                $json['code'][] = json_encode($code);
             }
         }
         if (null !== $this->prefix) $json['prefix'] = json_encode($this->prefix);
@@ -856,7 +830,6 @@ Any information provided in these elements overrides the information from the de
         if (null !== $this->initialInteger) $json['initialInteger'] = json_encode($this->initialInteger);
         if (null !== $this->initialDate) $json['initialDate'] = json_encode($this->initialDate);
         if (null !== $this->initialDateTime) $json['initialDateTime'] = json_encode($this->initialDateTime);
-        if (null !== $this->initialInstant) $json['initialInstant'] = json_encode($this->initialInstant);
         if (null !== $this->initialTime) $json['initialTime'] = json_encode($this->initialTime);
         if (null !== $this->initialString) $json['initialString'] = json_encode($this->initialString);
         if (null !== $this->initialUri) $json['initialUri'] = json_encode($this->initialUri);
@@ -884,9 +857,9 @@ Any information provided in these elements overrides the information from the de
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->linkId) $this->linkId->xmlSerialize(true, $sxe->addChild('linkId'));
         if (null !== $this->definition) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
-        if (0 < count($this->concept)) {
-            foreach($this->concept as $concept) {
-                $concept->xmlSerialize(true, $sxe->addChild('concept'));
+        if (0 < count($this->code)) {
+            foreach($this->code as $code) {
+                $code->xmlSerialize(true, $sxe->addChild('code'));
             }
         }
         if (null !== $this->prefix) $this->prefix->xmlSerialize(true, $sxe->addChild('prefix'));
@@ -912,7 +885,6 @@ Any information provided in these elements overrides the information from the de
         if (null !== $this->initialInteger) $this->initialInteger->xmlSerialize(true, $sxe->addChild('initialInteger'));
         if (null !== $this->initialDate) $this->initialDate->xmlSerialize(true, $sxe->addChild('initialDate'));
         if (null !== $this->initialDateTime) $this->initialDateTime->xmlSerialize(true, $sxe->addChild('initialDateTime'));
-        if (null !== $this->initialInstant) $this->initialInstant->xmlSerialize(true, $sxe->addChild('initialInstant'));
         if (null !== $this->initialTime) $this->initialTime->xmlSerialize(true, $sxe->addChild('initialTime'));
         if (null !== $this->initialString) $this->initialString->xmlSerialize(true, $sxe->addChild('initialString'));
         if (null !== $this->initialUri) $this->initialUri->xmlSerialize(true, $sxe->addChild('initialUri'));

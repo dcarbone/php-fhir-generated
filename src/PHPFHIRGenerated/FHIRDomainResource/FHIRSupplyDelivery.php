@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,6 +75,18 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     public $identifier = null;
 
     /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
+
+    /**
+     * A larger event of which this particular event is a component or step.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $partOf = array();
+
+    /**
      * A code specifying the state of the dispense event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSupplyDeliveryStatus
      */
@@ -93,40 +105,34 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     public $type = null;
 
     /**
-     * The amount of supply that has been dispensed. Includes unit of measure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * The item that is being delivered or has been supplied.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
      */
-    public $quantity = null;
+    public $suppliedItem = null;
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $suppliedItemCodeableConcept = null;
+    public $occurrenceDateTime = null;
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $suppliedItemReference = null;
+    public $occurrencePeriod = null;
+
+    /**
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
+     */
+    public $occurrenceTiming = null;
 
     /**
      * The individual responsible for dispensing the medication, supplier or device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $supplier = null;
-
-    /**
-     * The time the dispense event occurred.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public $whenPrepared = null;
-
-    /**
-     * The time the dispensed item was sent or handed to the patient (or agent).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $time = null;
 
     /**
      * Identification of the facility/location where the Supply was shipped to, as part of the dispense event.
@@ -162,6 +168,46 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * A larger event of which this particular event is a component or step.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getPartOf()
+    {
+        return $this->partOf;
+    }
+
+    /**
+     * A larger event of which this particular event is a component or step.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partOf
+     * @return $this
+     */
+    public function addPartOf($partOf)
+    {
+        $this->partOf[] = $partOf;
         return $this;
     }
 
@@ -226,62 +272,82 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The amount of supply that has been dispensed. Includes unit of measure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * The item that is being delivered or has been supplied.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
      */
-    public function getQuantity()
+    public function getSuppliedItem()
     {
-        return $this->quantity;
+        return $this->suppliedItem;
     }
 
     /**
-     * The amount of supply that has been dispensed. Includes unit of measure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
+     * The item that is being delivered or has been supplied.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem $suppliedItem
      * @return $this
      */
-    public function setQuantity($quantity)
+    public function setSuppliedItem($suppliedItem)
     {
-        $this->quantity = $quantity;
+        $this->suppliedItem = $suppliedItem;
         return $this;
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getSuppliedItemCodeableConcept()
+    public function getOccurrenceDateTime()
     {
-        return $this->suppliedItemCodeableConcept;
+        return $this->occurrenceDateTime;
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $suppliedItemCodeableConcept
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
-    public function setSuppliedItemCodeableConcept($suppliedItemCodeableConcept)
+    public function setOccurrenceDateTime($occurrenceDateTime)
     {
-        $this->suppliedItemCodeableConcept = $suppliedItemCodeableConcept;
+        $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getSuppliedItemReference()
+    public function getOccurrencePeriod()
     {
-        return $this->suppliedItemReference;
+        return $this->occurrencePeriod;
     }
 
     /**
-     * Identifies the medication, substance or device being dispensed. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of suppliedItem*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $suppliedItemReference
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
-    public function setSuppliedItemReference($suppliedItemReference)
+    public function setOccurrencePeriod($occurrencePeriod)
     {
-        $this->suppliedItemReference = $suppliedItemReference;
+        $this->occurrencePeriod = $occurrencePeriod;
+        return $this;
+    }
+
+    /**
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
+     */
+    public function getOccurrenceTiming()
+    {
+        return $this->occurrenceTiming;
+    }
+
+    /**
+     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
+     * @return $this
+     */
+    public function setOccurrenceTiming($occurrenceTiming)
+    {
+        $this->occurrenceTiming = $occurrenceTiming;
         return $this;
     }
 
@@ -302,46 +368,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     public function setSupplier($supplier)
     {
         $this->supplier = $supplier;
-        return $this;
-    }
-
-    /**
-     * The time the dispense event occurred.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getWhenPrepared()
-    {
-        return $this->whenPrepared;
-    }
-
-    /**
-     * The time the dispense event occurred.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $whenPrepared
-     * @return $this
-     */
-    public function setWhenPrepared($whenPrepared)
-    {
-        $this->whenPrepared = $whenPrepared;
-        return $this;
-    }
-
-    /**
-     * The time the dispensed item was sent or handed to the patient (or agent).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    /**
-     * The time the dispensed item was sent or handed to the patient (or agent).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $time
-     * @return $this
-     */
-    public function setTime($time)
-    {
-        $this->time = $time;
         return $this;
     }
 
@@ -409,15 +435,26 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
+        if (0 < count($this->partOf)) {
+            $json['partOf'] = [];
+            foreach($this->partOf as $partOf) {
+                $json['partOf'][] = json_encode($partOf);
+            }
+        }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
         if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->suppliedItemCodeableConcept) $json['suppliedItemCodeableConcept'] = json_encode($this->suppliedItemCodeableConcept);
-        if (null !== $this->suppliedItemReference) $json['suppliedItemReference'] = json_encode($this->suppliedItemReference);
+        if (null !== $this->suppliedItem) $json['suppliedItem'] = json_encode($this->suppliedItem);
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
+        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
         if (null !== $this->supplier) $json['supplier'] = json_encode($this->supplier);
-        if (null !== $this->whenPrepared) $json['whenPrepared'] = json_encode($this->whenPrepared);
-        if (null !== $this->time) $json['time'] = json_encode($this->time);
         if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
         if (0 < count($this->receiver)) {
             $json['receiver'] = [];
@@ -438,15 +475,24 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SupplyDelivery xmlns="http://hl7.org/fhir"></SupplyDelivery>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
+        if (0 < count($this->partOf)) {
+            foreach($this->partOf as $partOf) {
+                $partOf->xmlSerialize(true, $sxe->addChild('partOf'));
+            }
+        }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
-        if (null !== $this->suppliedItemCodeableConcept) $this->suppliedItemCodeableConcept->xmlSerialize(true, $sxe->addChild('suppliedItemCodeableConcept'));
-        if (null !== $this->suppliedItemReference) $this->suppliedItemReference->xmlSerialize(true, $sxe->addChild('suppliedItemReference'));
+        if (null !== $this->suppliedItem) $this->suppliedItem->xmlSerialize(true, $sxe->addChild('suppliedItem'));
+        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (null !== $this->occurrencePeriod) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        if (null !== $this->occurrenceTiming) $this->occurrenceTiming->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
         if (null !== $this->supplier) $this->supplier->xmlSerialize(true, $sxe->addChild('supplier'));
-        if (null !== $this->whenPrepared) $this->whenPrepared->xmlSerialize(true, $sxe->addChild('whenPrepared'));
-        if (null !== $this->time) $this->time->xmlSerialize(true, $sxe->addChild('time'));
         if (null !== $this->destination) $this->destination->xmlSerialize(true, $sxe->addChild('destination'));
         if (0 < count($this->receiver)) {
             foreach($this->receiver as $receiver) {

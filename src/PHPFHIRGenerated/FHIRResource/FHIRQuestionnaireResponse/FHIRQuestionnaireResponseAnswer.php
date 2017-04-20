@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
+ * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.
  */
 class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -96,12 +96,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
-
-    /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public $valueInstant = null;
 
     /**
      * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
@@ -253,26 +247,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     public function setValueDateTime($valueDateTime)
     {
         $this->valueDateTime = $valueDateTime;
-        return $this;
-    }
-
-    /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
-     */
-    public function getValueInstant()
-    {
-        return $this->valueInstant;
-    }
-
-    /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $valueInstant
-     * @return $this
-     */
-    public function setValueInstant($valueInstant)
-    {
-        $this->valueInstant = $valueInstant;
         return $this;
     }
 
@@ -463,7 +437,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         if (null !== $this->valueInteger) $json['valueInteger'] = json_encode($this->valueInteger);
         if (null !== $this->valueDate) $json['valueDate'] = json_encode($this->valueDate);
         if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
-        if (null !== $this->valueInstant) $json['valueInstant'] = json_encode($this->valueInstant);
         if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
         if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
         if (null !== $this->valueUri) $json['valueUri'] = json_encode($this->valueUri);
@@ -494,7 +467,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
         if (null !== $this->valueInteger) $this->valueInteger->xmlSerialize(true, $sxe->addChild('valueInteger'));
         if (null !== $this->valueDate) $this->valueDate->xmlSerialize(true, $sxe->addChild('valueDate'));
         if (null !== $this->valueDateTime) $this->valueDateTime->xmlSerialize(true, $sxe->addChild('valueDateTime'));
-        if (null !== $this->valueInstant) $this->valueInstant->xmlSerialize(true, $sxe->addChild('valueInstant'));
         if (null !== $this->valueTime) $this->valueTime->xmlSerialize(true, $sxe->addChild('valueTime'));
         if (null !== $this->valueString) $this->valueString->xmlSerialize(true, $sxe->addChild('valueString'));
         if (null !== $this->valueUri) $this->valueUri->xmlSerialize(true, $sxe->addChild('valueUri'));

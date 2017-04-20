@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this service definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this service definition is (or will be) published. The URL SHOULD include the major version of the service definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this service definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this service definition is (or will be) published. The URL SHOULD include the major version of the service definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -81,7 +81,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     public $identifier = array();
 
     /**
-     * The identifier that is used to identify this version of the service definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the service definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * The identifier that is used to identify this version of the service definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the service definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -105,25 +105,31 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     public $status = null;
 
     /**
-     * A flag to indicate that this service definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this service definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * The date  (and optionally time) when the service definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the service definition changes.
+     * The date  (and optionally time) when the service definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the service definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the service definition from the consumer's perspective.
+     * The name of the individual or organization that published the service definition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $publisher = null;
+
+    /**
+     * A free text natural language description of the service definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * Explains why this service definition is needed and why it has been designed as it has.
+     * Explaination of why this service definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -135,37 +141,37 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     public $usage = null;
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
-     * The period during which the service definition content was or is planned to be effective.
+     * The period during which the service definition content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate service definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the service definition is intended to be used.
+     * A legal or geographic region in which the service definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Clinical topics related to the content of the module.
+     * Descriptive topics related to the module. Topics provide a high-level categorization of the module that can be useful for filtering and searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = array();
@@ -175,12 +181,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
     public $contributor = array();
-
-    /**
-     * The name of the individual or organization that published the service definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
@@ -224,7 +224,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     private $_fhirElementName = 'ServiceDefinition';
 
     /**
-     * An absolute URL that is used to identify this service definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this service definition is (or will be) published. The URL SHOULD include the major version of the service definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this service definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this service definition is (or will be) published. The URL SHOULD include the major version of the service definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -233,7 +233,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * An absolute URL that is used to identify this service definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this service definition is (or will be) published. The URL SHOULD include the major version of the service definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this service definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this service definition is (or will be) published. The URL SHOULD include the major version of the service definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -264,7 +264,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The identifier that is used to identify this version of the service definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the service definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * The identifier that is used to identify this version of the service definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the service definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -273,7 +273,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The identifier that is used to identify this version of the service definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the service definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * The identifier that is used to identify this version of the service definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the service definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -344,7 +344,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A flag to indicate that this service definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this service definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -353,7 +353,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A flag to indicate that this service definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this service definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -364,7 +364,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date  (and optionally time) when the service definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the service definition changes.
+     * The date  (and optionally time) when the service definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the service definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -373,7 +373,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date  (and optionally time) when the service definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the service definition changes.
+     * The date  (and optionally time) when the service definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the service definition changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -384,7 +384,27 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A free text natural language description of the service definition from the consumer's perspective.
+     * The name of the individual or organization that published the service definition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPublisher()
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * The name of the individual or organization that published the service definition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
+     * @return $this
+     */
+    public function setPublisher($publisher)
+    {
+        $this->publisher = $publisher;
+        return $this;
+    }
+
+    /**
+     * A free text natural language description of the service definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -393,7 +413,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A free text natural language description of the service definition from the consumer's perspective.
+     * A free text natural language description of the service definition from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -404,7 +424,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Explains why this service definition is needed and why it has been designed as it has.
+     * Explaination of why this service definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -413,7 +433,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Explains why this service definition is needed and why it has been designed as it has.
+     * Explaination of why this service definition is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -444,7 +464,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
@@ -453,7 +473,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
@@ -464,7 +484,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
@@ -473,7 +493,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
@@ -484,7 +504,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The period during which the service definition content was or is planned to be effective.
+     * The period during which the service definition content was or is planned to be in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -493,7 +513,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The period during which the service definition content was or is planned to be effective.
+     * The period during which the service definition content was or is planned to be in active use.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -504,7 +524,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate service definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -513,7 +533,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate service definition instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -524,7 +544,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A jurisdiction in which the service definition is intended to be used.
+     * A legal or geographic region in which the service definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -533,7 +553,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A jurisdiction in which the service definition is intended to be used.
+     * A legal or geographic region in which the service definition is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -544,7 +564,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Clinical topics related to the content of the module.
+     * Descriptive topics related to the module. Topics provide a high-level categorization of the module that can be useful for filtering and searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
@@ -553,7 +573,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Clinical topics related to the content of the module.
+     * Descriptive topics related to the module. Topics provide a high-level categorization of the module that can be useful for filtering and searching.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
@@ -580,26 +600,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
     public function addContributor($contributor)
     {
         $this->contributor[] = $contributor;
-        return $this;
-    }
-
-    /**
-     * The name of the individual or organization that published the service definition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublisher()
-    {
-        return $this->publisher;
-    }
-
-    /**
-     * The name of the individual or organization that published the service definition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
-     * @return $this
-     */
-    public function setPublisher($publisher)
-    {
-        $this->publisher = $publisher;
         return $this;
     }
 
@@ -759,6 +759,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
         if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
         if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
@@ -789,7 +790,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
                 $json['contributor'][] = json_encode($contributor);
             }
         }
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
@@ -840,6 +840,7 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
@@ -866,7 +867,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements \JsonSerializa
                 $contributor->xmlSerialize(true, $sxe->addChild('contributor'));
             }
         }
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));

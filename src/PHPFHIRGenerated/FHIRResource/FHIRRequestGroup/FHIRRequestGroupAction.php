@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,12 +67,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
  */
 class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSerializable
 {
-    /**
-     * A unique identifier for the action. The identifier SHALL be unique within the container in which it appears, and MAY be universally unique.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public $actionIdentifier = null;
-
     /**
      * A user-visible label for the action.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
@@ -98,7 +92,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     public $textEquivalent = null;
 
     /**
-     * The concept represented by this action or its sub-actions.
+     * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a the section of a documentation template.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $code = array();
@@ -152,7 +146,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     public $timingTiming = null;
 
     /**
-     * The participant in the action.
+     * The participant that should perform or be responsible for this action.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $participant = array();
@@ -165,31 +159,31 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRActionGroupingBehavior
      */
     public $groupingBehavior = null;
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRActionSelectionBehavior
      */
     public $selectionBehavior = null;
 
     /**
      * Defines the requiredness behavior for the action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRActionRequiredBehavior
      */
     public $requiredBehavior = null;
 
     /**
      * Defines whether the action should usually be preselected.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRActionPrecheckBehavior
      */
     public $precheckBehavior = null;
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRActionCardinalityBehavior
      */
     public $cardinalityBehavior = null;
 
@@ -209,26 +203,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
      * @var string
      */
     private $_fhirElementName = 'RequestGroup.Action';
-
-    /**
-     * A unique identifier for the action. The identifier SHALL be unique within the container in which it appears, and MAY be universally unique.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public function getActionIdentifier()
-    {
-        return $this->actionIdentifier;
-    }
-
-    /**
-     * A unique identifier for the action. The identifier SHALL be unique within the container in which it appears, and MAY be universally unique.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $actionIdentifier
-     * @return $this
-     */
-    public function setActionIdentifier($actionIdentifier)
-    {
-        $this->actionIdentifier = $actionIdentifier;
-        return $this;
-    }
 
     /**
      * A user-visible label for the action.
@@ -311,7 +285,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The concept represented by this action or its sub-actions.
+     * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a the section of a documentation template.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getCode()
@@ -320,7 +294,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The concept represented by this action or its sub-actions.
+     * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a the section of a documentation template.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
@@ -491,7 +465,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The participant in the action.
+     * The participant that should perform or be responsible for this action.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getParticipant()
@@ -500,7 +474,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The participant in the action.
+     * The participant that should perform or be responsible for this action.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $participant
      * @return $this
      */
@@ -532,7 +506,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRActionGroupingBehavior
      */
     public function getGroupingBehavior()
     {
@@ -541,7 +515,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the grouping behavior for the action and its children.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $groupingBehavior
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
      * @return $this
      */
     public function setGroupingBehavior($groupingBehavior)
@@ -552,7 +526,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRActionSelectionBehavior
      */
     public function getSelectionBehavior()
     {
@@ -561,7 +535,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the selection behavior for the action and its children.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $selectionBehavior
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
      * @return $this
      */
     public function setSelectionBehavior($selectionBehavior)
@@ -572,7 +546,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the requiredness behavior for the action.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRActionRequiredBehavior
      */
     public function getRequiredBehavior()
     {
@@ -581,7 +555,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines the requiredness behavior for the action.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $requiredBehavior
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
      * @return $this
      */
     public function setRequiredBehavior($requiredBehavior)
@@ -592,7 +566,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action should usually be preselected.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRActionPrecheckBehavior
      */
     public function getPrecheckBehavior()
     {
@@ -601,7 +575,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action should usually be preselected.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $precheckBehavior
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
      * @return $this
      */
     public function setPrecheckBehavior($precheckBehavior)
@@ -612,7 +586,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRActionCardinalityBehavior
      */
     public function getCardinalityBehavior()
     {
@@ -621,7 +595,7 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
 
     /**
      * Defines whether the action can be selected multiple times.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $cardinalityBehavior
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
      * @return $this
      */
     public function setCardinalityBehavior($cardinalityBehavior)
@@ -692,7 +666,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->actionIdentifier) $json['actionIdentifier'] = json_encode($this->actionIdentifier);
         if (null !== $this->label) $json['label'] = json_encode($this->label);
         if (null !== $this->title) $json['title'] = json_encode($this->title);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
@@ -757,7 +730,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<RequestGroupAction xmlns="http://hl7.org/fhir"></RequestGroupAction>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->actionIdentifier) $this->actionIdentifier->xmlSerialize(true, $sxe->addChild('actionIdentifier'));
         if (null !== $this->label) $this->label->xmlSerialize(true, $sxe->addChild('label'));
         if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Descriptive name for a user.
+     * A unique name for the group for the convenience of human readers.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $name = null;
@@ -80,7 +80,13 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
     public $extends = null;
 
     /**
-     * Documentation for this group.
+     * If this is the default rule set to apply for thie source type, or this combination of types.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRStructureMapGroupTypeMode
+     */
+    public $typeMode = null;
+
+    /**
+     * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $documentation = null;
@@ -103,7 +109,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
     private $_fhirElementName = 'StructureMap.Group';
 
     /**
-     * Descriptive name for a user.
+     * A unique name for the group for the convenience of human readers.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getName()
@@ -112,7 +118,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * Descriptive name for a user.
+     * A unique name for the group for the convenience of human readers.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $name
      * @return $this
      */
@@ -143,7 +149,27 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * Documentation for this group.
+     * If this is the default rule set to apply for thie source type, or this combination of types.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRStructureMapGroupTypeMode
+     */
+    public function getTypeMode()
+    {
+        return $this->typeMode;
+    }
+
+    /**
+     * If this is the default rule set to apply for thie source type, or this combination of types.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
+     * @return $this
+     */
+    public function setTypeMode($typeMode)
+    {
+        $this->typeMode = $typeMode;
+        return $this;
+    }
+
+    /**
+     * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDocumentation()
@@ -152,7 +178,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * Documentation for this group.
+     * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
@@ -226,6 +252,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
         $json = parent::jsonSerialize();
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->extends) $json['extends'] = json_encode($this->extends);
+        if (null !== $this->typeMode) $json['typeMode'] = json_encode($this->typeMode);
         if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
         if (0 < count($this->input)) {
             $json['input'] = [];
@@ -253,6 +280,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement implements \JsonSerializ
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->extends) $this->extends->xmlSerialize(true, $sxe->addChild('extends'));
+        if (null !== $this->typeMode) $this->typeMode->xmlSerialize(true, $sxe->addChild('typeMode'));
         if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if (0 < count($this->input)) {
             foreach($this->input as $input) {
