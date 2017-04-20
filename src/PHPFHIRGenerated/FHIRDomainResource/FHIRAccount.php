@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,10 +75,10 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * Name used for the account when displaying it to humans in reports, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Indicates whether the account is presently used/usable or not.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus
      */
-    public $name = null;
+    public $status = null;
 
     /**
      * Categorizes the account for reporting and searching purposes.
@@ -87,10 +87,22 @@ class FHIRAccount extends FHIRDomainResource implements \JsonSerializable
     public $type = null;
 
     /**
-     * Indicates whether the account is presently used/useable or not.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus
+     * Name used for the account when displaying it to humans in reports, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $status = null;
+    public $name = null;
+
+    /**
+     * Identifies the patient, device, practitioner, location or other object the account is associated with.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $subject = null;
+
+    /**
+     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $period = null;
 
     /**
      * Indicates the period of time over which the account is allowed to have transactions posted to it.
@@ -100,36 +112,16 @@ This period may be different to the coveragePeriod which is the duration of time
     public $active = null;
 
     /**
-     * Identifies the currency to which transactions must be converted when crediting or debiting the account.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $currency = null;
-
-    /**
      * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $balance = null;
 
     /**
-     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
-
-A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRAccount\FHIRAccountCoverage[]
      */
     public $coverage = array();
-
-    /**
-     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public $coveragePeriod = null;
-
-    /**
-     * Identifies the patient, device, practitioner, location or other object the account is associated with.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $subject = null;
 
     /**
      * Indicates the organization, department, etc. with responsibility for the account.
@@ -175,22 +167,22 @@ A coverage may only be resposible for specific types of charges, and the sequenc
     }
 
     /**
-     * Name used for the account when displaying it to humans in reports, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Indicates whether the account is presently used/usable or not.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus
      */
-    public function getName()
+    public function getStatus()
     {
-        return $this->name;
+        return $this->status;
     }
 
     /**
-     * Name used for the account when displaying it to humans in reports, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
+     * Indicates whether the account is presently used/usable or not.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus $status
      * @return $this
      */
-    public function setName($name)
+    public function setStatus($status)
     {
-        $this->name = $name;
+        $this->status = $status;
         return $this;
     }
 
@@ -215,22 +207,62 @@ A coverage may only be resposible for specific types of charges, and the sequenc
     }
 
     /**
-     * Indicates whether the account is presently used/useable or not.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus
+     * Name used for the account when displaying it to humans in reports, etc.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getStatus()
+    public function getName()
     {
-        return $this->status;
+        return $this->name;
     }
 
     /**
-     * Indicates whether the account is presently used/useable or not.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAccountStatus $status
+     * Name used for the account when displaying it to humans in reports, etc.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setStatus($status)
+    public function setName($name)
     {
-        $this->status = $status;
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * Identifies the patient, device, practitioner, location or other object the account is associated with.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * Identifies the patient, device, practitioner, location or other object the account is associated with.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
+     * @return $this
+     */
+    public function setSubject($subject)
+    {
+        $this->subject = $subject;
+        return $this;
+    }
+
+    /**
+     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->period = $period;
         return $this;
     }
 
@@ -257,26 +289,6 @@ This period may be different to the coveragePeriod which is the duration of time
     }
 
     /**
-     * Identifies the currency to which transactions must be converted when crediting or debiting the account.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getCurrency()
-    {
-        return $this->currency;
-    }
-
-    /**
-     * Identifies the currency to which transactions must be converted when crediting or debiting the account.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $currency
-     * @return $this
-     */
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
-        return $this;
-    }
-
-    /**
      * Represents the sum of all credits less all debits associated with the account.  Might be positive, zero or negative.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
@@ -297,10 +309,8 @@ This period may be different to the coveragePeriod which is the duration of time
     }
 
     /**
-     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
-
-A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRAccount\FHIRAccountCoverage[]
      */
     public function getCoverage()
     {
@@ -308,55 +318,13 @@ A coverage may only be resposible for specific types of charges, and the sequenc
     }
 
     /**
-     * The party(s) that are responsible for payment (or part of) of charges applied to this account (including self-pay).
-
-A coverage may only be resposible for specific types of charges, and the sequence of the coverages in the account could be important when processing billing.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $coverage
+     * The party(s) that are responsible for covering the payment of this account, and what order should they be applied to the account.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRAccount\FHIRAccountCoverage $coverage
      * @return $this
      */
     public function addCoverage($coverage)
     {
         $this->coverage[] = $coverage;
-        return $this;
-    }
-
-    /**
-     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getCoveragePeriod()
-    {
-        return $this->coveragePeriod;
-    }
-
-    /**
-     * Identifies the period of time the account applies to; e.g. accounts created per fiscal year, quarter, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $coveragePeriod
-     * @return $this
-     */
-    public function setCoveragePeriod($coveragePeriod)
-    {
-        $this->coveragePeriod = $coveragePeriod;
-        return $this;
-    }
-
-    /**
-     * Identifies the patient, device, practitioner, location or other object the account is associated with.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * Identifies the patient, device, practitioner, location or other object the account is associated with.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
         return $this;
     }
 
@@ -449,11 +417,12 @@ A coverage may only be resposible for specific types of charges, and the sequenc
                 $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->period) $json['period'] = json_encode($this->period);
         if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->currency) $json['currency'] = json_encode($this->currency);
         if (null !== $this->balance) $json['balance'] = json_encode($this->balance);
         if (0 < count($this->coverage)) {
             $json['coverage'] = [];
@@ -461,8 +430,6 @@ A coverage may only be resposible for specific types of charges, and the sequenc
                 $json['coverage'][] = json_encode($coverage);
             }
         }
-        if (null !== $this->coveragePeriod) $json['coveragePeriod'] = json_encode($this->coveragePeriod);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (null !== $this->owner) $json['owner'] = json_encode($this->owner);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->guarantor)) {
@@ -488,19 +455,18 @@ A coverage may only be resposible for specific types of charges, and the sequenc
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
-        if (null !== $this->currency) $this->currency->xmlSerialize(true, $sxe->addChild('currency'));
         if (null !== $this->balance) $this->balance->xmlSerialize(true, $sxe->addChild('balance'));
         if (0 < count($this->coverage)) {
             foreach($this->coverage as $coverage) {
                 $coverage->xmlSerialize(true, $sxe->addChild('coverage'));
             }
         }
-        if (null !== $this->coveragePeriod) $this->coveragePeriod->xmlSerialize(true, $sxe->addChild('coveragePeriod'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->owner) $this->owner->xmlSerialize(true, $sxe->addChild('owner'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->guarantor)) {

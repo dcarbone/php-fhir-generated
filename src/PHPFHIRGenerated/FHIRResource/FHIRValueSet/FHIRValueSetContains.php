@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,7 +80,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
     public $abstract = null;
 
     /**
-     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understnading legacy data.
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $inactive = null;
@@ -161,7 +161,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understnading legacy data.
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getInactive()
@@ -170,7 +170,7 @@ class FHIRValueSetContains extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understnading legacy data.
+     * If the concept is inactive in the code system that defines it. Inactive codes are those that are no longer to be used, but are maintained by the code system for understanding legacy data.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $inactive
      * @return $this
      */

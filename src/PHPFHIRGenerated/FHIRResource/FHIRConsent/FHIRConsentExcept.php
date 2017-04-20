@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,14 +74,14 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     public $type = null;
 
     /**
-     * The timeframe in which data is controlled by this exception.
+     * The timeframe in this exception is valid.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $period = null;
 
     /**
      * Who or what is controlled by this Exception. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor1[]
      */
     public $actor = array();
 
@@ -110,14 +110,20 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     public $class = array();
 
     /**
-     * If this code is found in an instance, then the exception applies. TODO: where do you not have to look? This is a problematic element.
+     * If this code is found in an instance, then the exception applies.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public $code = array();
 
     /**
+     * Clinical or Operational Relevant period of time that bounds the data controlled by this exception.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $dataPeriod = null;
+
+    /**
      * The resources controlled by this exception, if specific resources are referenced.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData1[]
      */
     public $data = array();
 
@@ -147,7 +153,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The timeframe in which data is controlled by this exception.
+     * The timeframe in this exception is valid.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getPeriod()
@@ -156,7 +162,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The timeframe in which data is controlled by this exception.
+     * The timeframe in this exception is valid.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
@@ -168,7 +174,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Who or what is controlled by this Exception. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor1[]
      */
     public function getActor()
     {
@@ -177,7 +183,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * Who or what is controlled by this Exception. Use group to identify a set of actors by some property they share (e.g. 'admitting officers').
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor $actor
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentActor1 $actor
      * @return $this
      */
     public function addActor($actor)
@@ -267,7 +273,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * If this code is found in an instance, then the exception applies. TODO: where do you not have to look? This is a problematic element.
+     * If this code is found in an instance, then the exception applies.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getCode()
@@ -276,7 +282,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * If this code is found in an instance, then the exception applies. TODO: where do you not have to look? This is a problematic element.
+     * If this code is found in an instance, then the exception applies.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
      * @return $this
      */
@@ -287,8 +293,28 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
+     * Clinical or Operational Relevant period of time that bounds the data controlled by this exception.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getDataPeriod()
+    {
+        return $this->dataPeriod;
+    }
+
+    /**
+     * Clinical or Operational Relevant period of time that bounds the data controlled by this exception.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $dataPeriod
+     * @return $this
+     */
+    public function setDataPeriod($dataPeriod)
+    {
+        $this->dataPeriod = $dataPeriod;
+        return $this;
+    }
+
+    /**
      * The resources controlled by this exception, if specific resources are referenced.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData1[]
      */
     public function getData()
     {
@@ -297,7 +323,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The resources controlled by this exception, if specific resources are referenced.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData $data
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRConsent\FHIRConsentData1 $data
      * @return $this
      */
     public function addData($data)
@@ -366,6 +392,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
                 $json['code'][] = json_encode($code);
             }
         }
+        if (null !== $this->dataPeriod) $json['dataPeriod'] = json_encode($this->dataPeriod);
         if (0 < count($this->data)) {
             $json['data'] = [];
             foreach($this->data as $data) {
@@ -416,6 +443,7 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
                 $code->xmlSerialize(true, $sxe->addChild('code'));
             }
         }
+        if (null !== $this->dataPeriod) $this->dataPeriod->xmlSerialize(true, $sxe->addChild('dataPeriod'));
         if (0 < count($this->data)) {
             foreach($this->data as $data) {
                 $data->xmlSerialize(true, $sxe->addChild('data'));

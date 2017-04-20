@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
+     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -81,7 +81,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     public $identifier = null;
 
     /**
-     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. This is used in [Coding]{datatypes.html#Coding}.version.
+     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding]{datatypes.html#Coding}.version.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -105,10 +105,16 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     public $status = null;
 
     /**
-     * A flag to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
+
+    /**
+     * The date  (and optionally time) when the code system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $date = null;
 
     /**
      * The name of the individual or organization that published the code system.
@@ -123,31 +129,25 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     public $contact = array();
 
     /**
-     * The date  (and optionally time) when the code system was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $date = null;
-
-    /**
-     * A free text natural language description of the code system from the consumer's perspective.
+     * A free text natural language description of the code system from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate code system instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the code system is intended to be used.
+     * A legal or geographic region in which the code system is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Explains why this code system is needed and why it has been designed as it has.
+     * Explaination of why this code system is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -171,7 +171,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     public $valueSet = null;
 
     /**
-     * The meaning of the heirarchy of concepts.
+     * The meaning of the hierarchy of concepts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
     public $hierarchyMeaning = null;
@@ -224,7 +224,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'CodeSystem';
 
     /**
-     * An absolute URL that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
+     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -233,7 +233,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URL that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
+     * An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this code system is (or will be) published. The URL SHOULD include the major version of the code system. For more information see [Technical and Business Versions](resource.html#versions). This is used in [Coding]{datatypes.html#Coding}.system.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -264,7 +264,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. This is used in [Coding]{datatypes.html#Coding}.version.
+     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding]{datatypes.html#Coding}.version.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -273,7 +273,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. This is used in [Coding]{datatypes.html#Coding}.version.
+     * The identifier that is used to identify this version of the code system when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the code system author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. This is used in [Coding]{datatypes.html#Coding}.version.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -344,7 +344,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -353,13 +353,33 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
     {
         $this->experimental = $experimental;
+        return $this;
+    }
+
+    /**
+     * The date  (and optionally time) when the code system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * The date  (and optionally time) when the code system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
         return $this;
     }
 
@@ -404,27 +424,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the code system was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * The date  (and optionally time) when the code system was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
-     * A free text natural language description of the code system from the consumer's perspective.
+     * A free text natural language description of the code system from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -433,7 +433,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A free text natural language description of the code system from the consumer's perspective.
+     * A free text natural language description of the code system from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -444,7 +444,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate code system instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -453,7 +453,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate code system instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -464,7 +464,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the code system is intended to be used.
+     * A legal or geographic region in which the code system is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -473,7 +473,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the code system is intended to be used.
+     * A legal or geographic region in which the code system is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -484,7 +484,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this code system is needed and why it has been designed as it has.
+     * Explaination of why this code system is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -493,7 +493,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this code system is needed and why it has been designed as it has.
+     * Explaination of why this code system is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -564,7 +564,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The meaning of the heirarchy of concepts.
+     * The meaning of the hierarchy of concepts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
     public function getHierarchyMeaning()
@@ -573,7 +573,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The meaning of the heirarchy of concepts.
+     * The meaning of the hierarchy of concepts.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeSystemHierarchyMeaning $hierarchyMeaning
      * @return $this
      */
@@ -753,6 +753,7 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->title) $json['title'] = json_encode($this->title);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
@@ -760,7 +761,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
                 $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
@@ -820,13 +820,13 @@ class FHIRCodeSystem extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {

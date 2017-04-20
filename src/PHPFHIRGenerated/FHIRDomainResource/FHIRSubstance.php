@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -73,6 +73,12 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * A code to indicate if the substance is actively used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRSubstanceStatus
+     */
+    public $status = null;
 
     /**
      * A code that classifies the general type of substance.  This is used  for searching, sorting and display purposes.
@@ -126,6 +132,26 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A code to indicate if the substance is actively used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRFHIRSubstanceStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * A code to indicate if the substance is actively used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRFHIRSubstanceStatus $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
         return $this;
     }
 
@@ -258,6 +284,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
@@ -295,6 +322,7 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (0 < count($this->category)) {
             foreach($this->category as $category) {
                 $category->xmlSerialize(true, $sxe->addChild('category'));

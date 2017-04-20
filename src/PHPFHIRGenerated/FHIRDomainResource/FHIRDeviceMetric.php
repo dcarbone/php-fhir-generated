@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,16 +69,16 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $type = null;
-
-    /**
      * Describes the unique identification of this metric that has been assigned by the device or gateway software. For example: handle ID.  It should be noted that in order to make the identifier unique, the system element of the identifier should be set to the unique identifier of the device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
+
+    /**
+     * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $type = null;
 
     /**
      * Describes the unit that an observed value determined for this metric will have. For example: Percent, Seconds, etc.
@@ -87,7 +87,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     public $unit = null;
 
     /**
-     * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacture, serial number, etc.
+     * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacturer, serial number, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $source = null;
@@ -134,26 +134,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'DeviceMetric';
 
     /**
-     * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
      * Describes the unique identification of this metric that has been assigned by the device or gateway software. For example: handle ID.  It should be noted that in order to make the identifier unique, the system element of the identifier should be set to the unique identifier of the device.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
@@ -170,6 +150,26 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
         return $this;
     }
 
@@ -194,7 +194,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacture, serial number, etc.
+     * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacturer, serial number, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSource()
@@ -203,7 +203,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacture, serial number, etc.
+     * Describes the link to the  Device that this DeviceMetric belongs to and that contains administrative device information such as manufacturer, serial number, etc.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $source
      * @return $this
      */
@@ -356,8 +356,8 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->unit) $json['unit'] = json_encode($this->unit);
         if (null !== $this->source) $json['source'] = json_encode($this->source);
         if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
@@ -383,8 +383,8 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DeviceMetric xmlns="http://hl7.org/fhir"></DeviceMetric>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->unit) $this->unit->xmlSerialize(true, $sxe->addChild('unit'));
         if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
         if (null !== $this->parent) $this->parent->xmlSerialize(true, $sxe->addChild('parent'));

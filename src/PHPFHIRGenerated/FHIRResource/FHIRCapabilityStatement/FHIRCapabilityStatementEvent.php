@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,14 +80,14 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
     public $category = null;
 
     /**
-     * The mode of this event declaration - whether application is sender or receiver.
+     * The mode of this event declaration - whether an application is a sender or receiver.
      * @var \PHPFHIRGenerated\FHIRElement\FHIREventCapabilityMode
      */
     public $mode = null;
 
     /**
      * A resource associated with the event.  This is the resource that defines the event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public $focus = null;
 
@@ -155,7 +155,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * The mode of this event declaration - whether application is sender or receiver.
+     * The mode of this event declaration - whether an application is a sender or receiver.
      * @return \PHPFHIRGenerated\FHIRElement\FHIREventCapabilityMode
      */
     public function getMode()
@@ -164,7 +164,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * The mode of this event declaration - whether application is sender or receiver.
+     * The mode of this event declaration - whether an application is a sender or receiver.
      * @param \PHPFHIRGenerated\FHIRElement\FHIREventCapabilityMode $mode
      * @return $this
      */
@@ -176,7 +176,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
 
     /**
      * A resource associated with the event.  This is the resource that defines the event.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public function getFocus()
     {
@@ -185,7 +185,7 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement implements \JsonS
 
     /**
      * A resource associated with the event.  This is the resource that defines the event.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $focus
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $focus
      * @return $this
      */
     public function setFocus($focus)

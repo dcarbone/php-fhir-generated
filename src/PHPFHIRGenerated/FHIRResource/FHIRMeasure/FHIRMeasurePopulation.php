@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,16 +68,16 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The type of population criteria.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeasurePopulationType
-     */
-    public $type = null;
-
-    /**
      * A unique identifier for the population criteria. This identifier is used to report data against this criteria within the measure report.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $identifier = null;
+
+    /**
+     * The type of population criteria.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $code = null;
 
     /**
      * Optional name or short description of this population.
@@ -103,26 +103,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
     private $_fhirElementName = 'Measure.Population';
 
     /**
-     * The type of population criteria.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasurePopulationType
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * The type of population criteria.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasurePopulationType $type
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
      * A unique identifier for the population criteria. This identifier is used to report data against this criteria within the measure report.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
@@ -139,6 +119,26 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
     public function setIdentifier($identifier)
     {
         $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * The type of population criteria.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * The type of population criteria.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
         return $this;
     }
 
@@ -224,8 +224,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->criteria) $json['criteria'] = json_encode($this->criteria);
@@ -241,8 +241,8 @@ class FHIRMeasurePopulation extends FHIRBackboneElement implements \JsonSerializ
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MeasurePopulation xmlns="http://hl7.org/fhir"></MeasurePopulation>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->criteria) $this->criteria->xmlSerialize(true, $sxe->addChild('criteria'));

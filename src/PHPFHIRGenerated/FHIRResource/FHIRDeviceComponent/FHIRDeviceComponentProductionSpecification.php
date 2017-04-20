@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,24 +63,24 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * Describes the characteristics, operational status and capabilities of a medical-related component of a medical device.
+ * The characteristics, operational status and capabilities of a medical-related component of a medical device.
  */
 class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Describes the specification type, such as, serial number, part number, hardware revision, software revision, etc.
+     * The specification type, such as, serial number, part number, hardware revision, software revision, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $specType = null;
 
     /**
-     * Describes the internal component unique identification. This is a provision for manufacture specific standard components using a private OID. 11073-10101 has a partition for private OID semantic that the manufacture can make use of.
+     * The internal component unique identification. This is a provision for manufacture specific standard components using a private OID. 11073-10101 has a partition for private OID semantic that the manufacturer can make use of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $componentId = null;
 
     /**
-     * Describes the printable string defining the component.
+     * The printable string defining the component.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $productionSpec = null;
@@ -91,7 +91,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     private $_fhirElementName = 'DeviceComponent.ProductionSpecification';
 
     /**
-     * Describes the specification type, such as, serial number, part number, hardware revision, software revision, etc.
+     * The specification type, such as, serial number, part number, hardware revision, software revision, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getSpecType()
@@ -100,7 +100,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     }
 
     /**
-     * Describes the specification type, such as, serial number, part number, hardware revision, software revision, etc.
+     * The specification type, such as, serial number, part number, hardware revision, software revision, etc.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specType
      * @return $this
      */
@@ -111,7 +111,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     }
 
     /**
-     * Describes the internal component unique identification. This is a provision for manufacture specific standard components using a private OID. 11073-10101 has a partition for private OID semantic that the manufacture can make use of.
+     * The internal component unique identification. This is a provision for manufacture specific standard components using a private OID. 11073-10101 has a partition for private OID semantic that the manufacturer can make use of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getComponentId()
@@ -120,7 +120,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     }
 
     /**
-     * Describes the internal component unique identification. This is a provision for manufacture specific standard components using a private OID. 11073-10101 has a partition for private OID semantic that the manufacture can make use of.
+     * The internal component unique identification. This is a provision for manufacture specific standard components using a private OID. 11073-10101 has a partition for private OID semantic that the manufacturer can make use of.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $componentId
      * @return $this
      */
@@ -131,7 +131,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     }
 
     /**
-     * Describes the printable string defining the component.
+     * The printable string defining the component.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getProductionSpec()
@@ -140,7 +140,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     }
 
     /**
-     * Describes the printable string defining the component.
+     * The printable string defining the component.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $productionSpec
      * @return $this
      */

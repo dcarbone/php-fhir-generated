@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,10 +81,10 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
     public $active = null;
 
     /**
-     * The kind of organization that this is.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The kind(s) of organization that this is.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $type = null;
+    public $type = array();
 
     /**
      * A name associated with the organization.
@@ -174,8 +174,8 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The kind of organization that this is.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The kind(s) of organization that this is.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getType()
     {
@@ -183,13 +183,13 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The kind of organization that this is.
+     * The kind(s) of organization that this is.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
+    public function addType($type)
     {
-        $this->type = $type;
+        $this->type[] = $type;
         return $this;
     }
 
@@ -363,7 +363,12 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (0 < count($this->type)) {
+            $json['type'] = [];
+            foreach($this->type as $type) {
+                $json['type'][] = json_encode($type);
+            }
+        }
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (0 < count($this->alias)) {
             $json['alias'] = [];
@@ -414,7 +419,11 @@ class FHIROrganization extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (0 < count($this->type)) {
+            foreach($this->type as $type) {
+                $type->xmlSerialize(true, $sxe->addChild('type'));
+            }
+        }
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (0 < count($this->alias)) {
             foreach($this->alias as $alias) {

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,7 +74,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     public $uid = null;
 
     /**
-     * The Numeric identifier of this series in the study.
+     * The numeric identifier of this series in the study.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $number = null;
@@ -92,7 +92,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     public $description = null;
 
     /**
-     * Number of SOP Instances in Series.
+     * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $numberOfInstances = null;
@@ -104,19 +104,19 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     public $availability = null;
 
     /**
-     * Methods of accessing (e.g. retrieving) the series.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation1[]
+     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $baseLocation = array();
+    public $endpoint = array();
 
     /**
-     * Body part examined. See  DICOM Part 16 Annex L for the mapping from DICOM to Snomed CT.
+     * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $bodySite = null;
 
     /**
-     * Laterality if body site is paired anatomic structure and laterality is not pre-coordinated in body site code.
+     * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $laterality = null;
@@ -128,7 +128,13 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     public $started = null;
 
     /**
-     * A single SOP Instance within the series, e.g. an image, or presentation state.
+     * The physician or operator (often the radiology technician)  who performed the series. The performer is recorded at the series level, since each series in a study may be performed by a different practitioner, at different times, and using different devices. A series may be performed by multiple practitioners.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $performer = array();
+
+    /**
+     * A single SOP instance within the series, e.g. an image, or presentation state.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
     public $instance = array();
@@ -159,7 +165,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The Numeric identifier of this series in the study.
+     * The numeric identifier of this series in the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getNumber()
@@ -168,7 +174,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * The Numeric identifier of this series in the study.
+     * The numeric identifier of this series in the study.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $number
      * @return $this
      */
@@ -219,7 +225,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Number of SOP Instances in Series.
+     * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getNumberOfInstances()
@@ -228,7 +234,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Number of SOP Instances in Series.
+     * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $numberOfInstances
      * @return $this
      */
@@ -259,27 +265,27 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Methods of accessing (e.g. retrieving) the series.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation1[]
+     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getBaseLocation()
+    public function getEndpoint()
     {
-        return $this->baseLocation;
+        return $this->endpoint;
     }
 
     /**
-     * Methods of accessing (e.g. retrieving) the series.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyBaseLocation1 $baseLocation
+     * The network service providing access (e.g., query, view, or retrieval) for this series. See implementation notes for information about using DICOM endpoints. A series-level endpoint, if present, has precedence over a study-level endpoint with the same Endpoint.type.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $endpoint
      * @return $this
      */
-    public function addBaseLocation($baseLocation)
+    public function addEndpoint($endpoint)
     {
-        $this->baseLocation[] = $baseLocation;
+        $this->endpoint[] = $endpoint;
         return $this;
     }
 
     /**
-     * Body part examined. See  DICOM Part 16 Annex L for the mapping from DICOM to Snomed CT.
+     * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getBodySite()
@@ -288,7 +294,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Body part examined. See  DICOM Part 16 Annex L for the mapping from DICOM to Snomed CT.
+     * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $bodySite
      * @return $this
      */
@@ -299,7 +305,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Laterality if body site is paired anatomic structure and laterality is not pre-coordinated in body site code.
+     * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getLaterality()
@@ -308,7 +314,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Laterality if body site is paired anatomic structure and laterality is not pre-coordinated in body site code.
+     * The laterality of the (possibly paired) anatomic structures examined. E.g., the left knee, both lungs, or unpaired abdomen. If present, shall be consistent with any laterality information indicated in ImagingStudy.series.bodySite.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $laterality
      * @return $this
      */
@@ -339,7 +345,27 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A single SOP Instance within the series, e.g. an image, or presentation state.
+     * The physician or operator (often the radiology technician)  who performed the series. The performer is recorded at the series level, since each series in a study may be performed by a different practitioner, at different times, and using different devices. A series may be performed by multiple practitioners.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getPerformer()
+    {
+        return $this->performer;
+    }
+
+    /**
+     * The physician or operator (often the radiology technician)  who performed the series. The performer is recorded at the series level, since each series in a study may be performed by a different practitioner, at different times, and using different devices. A series may be performed by multiple practitioners.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $performer
+     * @return $this
+     */
+    public function addPerformer($performer)
+    {
+        $this->performer[] = $performer;
+        return $this;
+    }
+
+    /**
+     * A single SOP instance within the series, e.g. an image, or presentation state.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
     public function getInstance()
@@ -348,7 +374,7 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A single SOP Instance within the series, e.g. an image, or presentation state.
+     * A single SOP instance within the series, e.g. an image, or presentation state.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImagingStudy\FHIRImagingStudyInstance $instance
      * @return $this
      */
@@ -386,15 +412,21 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->numberOfInstances) $json['numberOfInstances'] = json_encode($this->numberOfInstances);
         if (null !== $this->availability) $json['availability'] = json_encode($this->availability);
-        if (0 < count($this->baseLocation)) {
-            $json['baseLocation'] = [];
-            foreach($this->baseLocation as $baseLocation) {
-                $json['baseLocation'][] = json_encode($baseLocation);
+        if (0 < count($this->endpoint)) {
+            $json['endpoint'] = [];
+            foreach($this->endpoint as $endpoint) {
+                $json['endpoint'][] = json_encode($endpoint);
             }
         }
         if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
         if (null !== $this->laterality) $json['laterality'] = json_encode($this->laterality);
         if (null !== $this->started) $json['started'] = json_encode($this->started);
+        if (0 < count($this->performer)) {
+            $json['performer'] = [];
+            foreach($this->performer as $performer) {
+                $json['performer'][] = json_encode($performer);
+            }
+        }
         if (0 < count($this->instance)) {
             $json['instance'] = [];
             foreach($this->instance as $instance) {
@@ -419,14 +451,19 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->numberOfInstances) $this->numberOfInstances->xmlSerialize(true, $sxe->addChild('numberOfInstances'));
         if (null !== $this->availability) $this->availability->xmlSerialize(true, $sxe->addChild('availability'));
-        if (0 < count($this->baseLocation)) {
-            foreach($this->baseLocation as $baseLocation) {
-                $baseLocation->xmlSerialize(true, $sxe->addChild('baseLocation'));
+        if (0 < count($this->endpoint)) {
+            foreach($this->endpoint as $endpoint) {
+                $endpoint->xmlSerialize(true, $sxe->addChild('endpoint'));
             }
         }
         if (null !== $this->bodySite) $this->bodySite->xmlSerialize(true, $sxe->addChild('bodySite'));
         if (null !== $this->laterality) $this->laterality->xmlSerialize(true, $sxe->addChild('laterality'));
         if (null !== $this->started) $this->started->xmlSerialize(true, $sxe->addChild('started'));
+        if (0 < count($this->performer)) {
+            foreach($this->performer as $performer) {
+                $performer->xmlSerialize(true, $sxe->addChild('performer'));
+            }
+        }
         if (0 < count($this->instance)) {
             foreach($this->instance as $instance) {
                 $instance->xmlSerialize(true, $sxe->addChild('instance'));

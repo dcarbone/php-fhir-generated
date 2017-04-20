@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,28 +75,52 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     public $code = null;
 
     /**
+     * A code to indicate if the medication is in active use.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMedicationStatus
+     */
+    public $status = null;
+
+    /**
      * Set to true if the item is attributable to a specific manufacturer.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $isBrand = null;
 
     /**
-     * Describes the details of the manufacturer.
+     * Set to true if the medication can be obtained without an order from a prescriber.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $isOverTheCounter = null;
+
+    /**
+     * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $manufacturer = null;
 
     /**
-     * Information that only applies to products (not packages).
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationProduct
+     * Describes the form of the item.  Powder; tablets; capsule.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $product = null;
+    public $form = null;
+
+    /**
+     * Identifies a particular constituent of interest in the product.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
+     */
+    public $ingredient = array();
 
     /**
      * Information that only applies to packages (not products).
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationPackage
      */
     public $package = null;
+
+    /**
+     * Photo(s) or graphic representation(s) of the medication.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
+     */
+    public $image = array();
 
     /**
      * @var string
@@ -124,6 +148,26 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * A code to indicate if the medication is in active use.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMedicationStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * A code to indicate if the medication is in active use.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMedicationStatus $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
      * Set to true if the item is attributable to a specific manufacturer.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
@@ -144,7 +188,27 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Describes the details of the manufacturer.
+     * Set to true if the medication can be obtained without an order from a prescriber.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getIsOverTheCounter()
+    {
+        return $this->isOverTheCounter;
+    }
+
+    /**
+     * Set to true if the medication can be obtained without an order from a prescriber.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $isOverTheCounter
+     * @return $this
+     */
+    public function setIsOverTheCounter($isOverTheCounter)
+    {
+        $this->isOverTheCounter = $isOverTheCounter;
+        return $this;
+    }
+
+    /**
+     * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getManufacturer()
@@ -153,7 +217,7 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Describes the details of the manufacturer.
+     * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
@@ -164,22 +228,42 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Information that only applies to products (not packages).
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationProduct
+     * Describes the form of the item.  Powder; tablets; capsule.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getProduct()
+    public function getForm()
     {
-        return $this->product;
+        return $this->form;
     }
 
     /**
-     * Information that only applies to products (not packages).
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationProduct $product
+     * Describes the form of the item.  Powder; tablets; capsule.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $form
      * @return $this
      */
-    public function setProduct($product)
+    public function setForm($form)
     {
-        $this->product = $product;
+        $this->form = $form;
+        return $this;
+    }
+
+    /**
+     * Identifies a particular constituent of interest in the product.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient[]
+     */
+    public function getIngredient()
+    {
+        return $this->ingredient;
+    }
+
+    /**
+     * Identifies a particular constituent of interest in the product.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationIngredient $ingredient
+     * @return $this
+     */
+    public function addIngredient($ingredient)
+    {
+        $this->ingredient[] = $ingredient;
         return $this;
     }
 
@@ -200,6 +284,26 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     public function setPackage($package)
     {
         $this->package = $package;
+        return $this;
+    }
+
+    /**
+     * Photo(s) or graphic representation(s) of the medication.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Photo(s) or graphic representation(s) of the medication.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $image
+     * @return $this
+     */
+    public function addImage($image)
+    {
+        $this->image[] = $image;
         return $this;
     }
 
@@ -227,10 +331,24 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->isBrand) $json['isBrand'] = json_encode($this->isBrand);
+        if (null !== $this->isOverTheCounter) $json['isOverTheCounter'] = json_encode($this->isOverTheCounter);
         if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
-        if (null !== $this->product) $json['product'] = json_encode($this->product);
+        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (0 < count($this->ingredient)) {
+            $json['ingredient'] = [];
+            foreach($this->ingredient as $ingredient) {
+                $json['ingredient'][] = json_encode($ingredient);
+            }
+        }
         if (null !== $this->package) $json['package'] = json_encode($this->package);
+        if (0 < count($this->image)) {
+            $json['image'] = [];
+            foreach($this->image as $image) {
+                $json['image'][] = json_encode($image);
+            }
+        }
         return $json;
     }
 
@@ -244,10 +362,22 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Medication xmlns="http://hl7.org/fhir"></Medication>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->isBrand) $this->isBrand->xmlSerialize(true, $sxe->addChild('isBrand'));
+        if (null !== $this->isOverTheCounter) $this->isOverTheCounter->xmlSerialize(true, $sxe->addChild('isOverTheCounter'));
         if (null !== $this->manufacturer) $this->manufacturer->xmlSerialize(true, $sxe->addChild('manufacturer'));
-        if (null !== $this->product) $this->product->xmlSerialize(true, $sxe->addChild('product'));
+        if (null !== $this->form) $this->form->xmlSerialize(true, $sxe->addChild('form'));
+        if (0 < count($this->ingredient)) {
+            foreach($this->ingredient as $ingredient) {
+                $ingredient->xmlSerialize(true, $sxe->addChild('ingredient'));
+            }
+        }
         if (null !== $this->package) $this->package->xmlSerialize(true, $sxe->addChild('package'));
+        if (0 < count($this->image)) {
+            foreach($this->image as $image) {
+                $image->xmlSerialize(true, $sxe->addChild('image'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

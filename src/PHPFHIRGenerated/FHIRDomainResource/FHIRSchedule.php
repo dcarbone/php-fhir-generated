@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A container for slot(s) of time that may be available for booking appointments.
+ * A container for slots of time that may be available for booking appointments.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
@@ -99,10 +99,10 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
     public $specialty = array();
 
     /**
-     * The resource this Schedule resource is providing availability information for. These are expected to usually be one of HealthcareService, Location, Practitioner, Device, Patient or RelatedPerson.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The resource this Schedule resource is providing availability information for. These are expected to usually be one of HealthcareService, Location, Practitioner, PractitionerRole, Device, Patient or RelatedPerson.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $actor = null;
+    public $actor = array();
 
     /**
      * The period of time that the slots that are attached to this Schedule resource cover (even if none exist). These  cover the amount of time that an organization's planning horizon; the interval for which they are currently accepting appointments. This does not define a "template" for planning outside these dates.
@@ -111,7 +111,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
     public $planningHorizon = null;
 
     /**
-     * Comments on the availability to describe any extended information. Such as custom constraints on the slot(s) that may be associated.
+     * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $comment = null;
@@ -222,8 +222,8 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The resource this Schedule resource is providing availability information for. These are expected to usually be one of HealthcareService, Location, Practitioner, Device, Patient or RelatedPerson.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The resource this Schedule resource is providing availability information for. These are expected to usually be one of HealthcareService, Location, Practitioner, PractitionerRole, Device, Patient or RelatedPerson.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getActor()
     {
@@ -231,13 +231,13 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The resource this Schedule resource is providing availability information for. These are expected to usually be one of HealthcareService, Location, Practitioner, Device, Patient or RelatedPerson.
+     * The resource this Schedule resource is providing availability information for. These are expected to usually be one of HealthcareService, Location, Practitioner, PractitionerRole, Device, Patient or RelatedPerson.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $actor
      * @return $this
      */
-    public function setActor($actor)
+    public function addActor($actor)
     {
-        $this->actor = $actor;
+        $this->actor[] = $actor;
         return $this;
     }
 
@@ -262,7 +262,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Comments on the availability to describe any extended information. Such as custom constraints on the slot(s) that may be associated.
+     * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getComment()
@@ -271,7 +271,7 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Comments on the availability to describe any extended information. Such as custom constraints on the slot(s) that may be associated.
+     * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
@@ -324,7 +324,12 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
                 $json['specialty'][] = json_encode($specialty);
             }
         }
-        if (null !== $this->actor) $json['actor'] = json_encode($this->actor);
+        if (0 < count($this->actor)) {
+            $json['actor'] = [];
+            foreach($this->actor as $actor) {
+                $json['actor'][] = json_encode($actor);
+            }
+        }
         if (null !== $this->planningHorizon) $json['planningHorizon'] = json_encode($this->planningHorizon);
         if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         return $json;
@@ -356,7 +361,11 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
                 $specialty->xmlSerialize(true, $sxe->addChild('specialty'));
             }
         }
-        if (null !== $this->actor) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
+        if (0 < count($this->actor)) {
+            foreach($this->actor as $actor) {
+                $actor->xmlSerialize(true, $sxe->addChild('actor'));
+            }
+        }
         if (null !== $this->planningHorizon) $this->planningHorizon->xmlSerialize(true, $sxe->addChild('planningHorizon'));
         if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if ($returnSXE) return $sxe;

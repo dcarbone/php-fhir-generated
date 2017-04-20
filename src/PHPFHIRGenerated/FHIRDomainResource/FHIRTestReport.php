@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * TestReport is a resource that includes summary information on the results of executing a TestScript.
+ * A summary of information based on the results of executing a TestScript.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
@@ -81,10 +81,22 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     public $name = null;
 
     /**
-     * The status of the TestReport.
+     * The current state of this test report.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTestReportStatus
      */
     public $status = null;
+
+    /**
+     * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $testScript = null;
+
+    /**
+     * The overall result from the execution of the TestScript.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTestReportResult
+     */
+    public $result = null;
 
     /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
@@ -97,12 +109,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $tester = null;
-
-    /**
-     * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $testScript = null;
 
     /**
      * When the TestScript was executed and this TestReport was generated.
@@ -180,7 +186,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The status of the TestReport.
+     * The current state of this test report.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTestReportStatus
      */
     public function getStatus()
@@ -189,13 +195,53 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The status of the TestReport.
+     * The current state of this test report.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTestReportStatus $status
      * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getTestScript()
+    {
+        return $this->testScript;
+    }
+
+    /**
+     * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $testScript
+     * @return $this
+     */
+    public function setTestScript($testScript)
+    {
+        $this->testScript = $testScript;
+        return $this;
+    }
+
+    /**
+     * The overall result from the execution of the TestScript.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRTestReportResult
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+    /**
+     * The overall result from the execution of the TestScript.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTestReportResult $result
+     * @return $this
+     */
+    public function setResult($result)
+    {
+        $this->result = $result;
         return $this;
     }
 
@@ -236,26 +282,6 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     public function setTester($tester)
     {
         $this->tester = $tester;
-        return $this;
-    }
-
-    /**
-     * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getTestScript()
-    {
-        return $this->testScript;
-    }
-
-    /**
-     * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $testScript
-     * @return $this
-     */
-    public function setTestScript($testScript)
-    {
-        $this->testScript = $testScript;
         return $this;
     }
 
@@ -385,9 +411,10 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->testScript) $json['testScript'] = json_encode($this->testScript);
+        if (null !== $this->result) $json['result'] = json_encode($this->result);
         if (null !== $this->score) $json['score'] = json_encode($this->score);
         if (null !== $this->tester) $json['tester'] = json_encode($this->tester);
-        if (null !== $this->testScript) $json['testScript'] = json_encode($this->testScript);
         if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
         if (0 < count($this->participant)) {
             $json['participant'] = [];
@@ -418,9 +445,10 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->testScript) $this->testScript->xmlSerialize(true, $sxe->addChild('testScript'));
+        if (null !== $this->result) $this->result->xmlSerialize(true, $sxe->addChild('result'));
         if (null !== $this->score) $this->score->xmlSerialize(true, $sxe->addChild('score'));
         if (null !== $this->tester) $this->tester->xmlSerialize(true, $sxe->addChild('tester'));
-        if (null !== $this->testScript) $this->testScript->xmlSerialize(true, $sxe->addChild('testScript'));
         if (null !== $this->issued) $this->issued->xmlSerialize(true, $sxe->addChild('issued'));
         if (0 < count($this->participant)) {
             foreach($this->participant as $participant) {

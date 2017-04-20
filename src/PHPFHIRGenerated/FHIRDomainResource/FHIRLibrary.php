@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,13 +63,13 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * The Library resource is a general-purpose container for knowledge asset definitions. It can be used to describe and expose exist knowledge assets such as logic libraries and information model descriptions, as well as to describe a collection of knowledge assets.
+ * The Library resource is a general-purpose container for knowledge asset definitions. It can be used to describe and expose existing knowledge assets such as logic libraries and information model descriptions, as well as to describe a collection of knowledge assets.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -81,7 +81,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -99,37 +99,43 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     public $title = null;
 
     /**
-     * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $type = null;
-
-    /**
      * The status of this library. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
     public $status = null;
 
     /**
-     * A flag to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * The date  (and optionally time) when the library was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
+     * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $type = null;
+
+    /**
+     * The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the library from the consumer's perspective.
+     * The name of the individual or organization that published the library.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $publisher = null;
+
+    /**
+     * A free text natural language description of the library from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * Explains why this library is needed and why it has been designed as it has.
+     * Explaination of why this library is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -141,37 +147,37 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     public $usage = null;
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
-     * The period during which the library content was or is planned to be effective.
+     * The period during which the library content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the library is intended to be used.
+     * A legal or geographic region in which the library is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Clinical topics related to the content of the library.
+     * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = array();
@@ -181,12 +187,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
     public $contributor = array();
-
-    /**
-     * The name of the individual or organization that published the library.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
@@ -230,7 +230,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'Library';
 
     /**
-     * An absolute URL that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -239,7 +239,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * An absolute URL that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -270,7 +270,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -279,7 +279,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
+     * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -330,26 +330,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
      * The status of this library. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
@@ -370,7 +350,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -379,7 +359,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A flag to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -390,7 +370,27 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the library was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
+     * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -399,7 +399,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date  (and optionally time) when the library was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
+     * The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -410,7 +410,27 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A free text natural language description of the library from the consumer's perspective.
+     * The name of the individual or organization that published the library.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPublisher()
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * The name of the individual or organization that published the library.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
+     * @return $this
+     */
+    public function setPublisher($publisher)
+    {
+        $this->publisher = $publisher;
+        return $this;
+    }
+
+    /**
+     * A free text natural language description of the library from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -419,7 +439,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A free text natural language description of the library from the consumer's perspective.
+     * A free text natural language description of the library from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -430,7 +450,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this library is needed and why it has been designed as it has.
+     * Explaination of why this library is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -439,7 +459,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Explains why this library is needed and why it has been designed as it has.
+     * Explaination of why this library is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -470,7 +490,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
@@ -479,7 +499,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
@@ -490,7 +510,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
@@ -499,7 +519,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
@@ -510,7 +530,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The period during which the library content was or is planned to be effective.
+     * The period during which the library content was or is planned to be in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -519,7 +539,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The period during which the library content was or is planned to be effective.
+     * The period during which the library content was or is planned to be in active use.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -530,7 +550,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -539,7 +559,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -550,7 +570,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the library is intended to be used.
+     * A legal or geographic region in which the library is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -559,7 +579,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A jurisdiction in which the library is intended to be used.
+     * A legal or geographic region in which the library is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -570,7 +590,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Clinical topics related to the content of the library.
+     * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
@@ -579,7 +599,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Clinical topics related to the content of the library.
+     * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
@@ -606,26 +626,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     public function addContributor($contributor)
     {
         $this->contributor[] = $contributor;
-        return $this;
-    }
-
-    /**
-     * The name of the individual or organization that published the library.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublisher()
-    {
-        return $this->publisher;
-    }
-
-    /**
-     * The name of the individual or organization that published the library.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
-     * @return $this
-     */
-    public function setPublisher($publisher)
-    {
-        $this->publisher = $publisher;
         return $this;
     }
 
@@ -782,10 +782,11 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->version) $json['version'] = json_encode($this->version);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
         if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
@@ -816,7 +817,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
                 $json['contributor'][] = json_encode($contributor);
             }
         }
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
@@ -869,10 +869,11 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
@@ -899,7 +900,6 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
                 $contributor->xmlSerialize(true, $sxe->addChild('contributor'));
             }
         }
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));

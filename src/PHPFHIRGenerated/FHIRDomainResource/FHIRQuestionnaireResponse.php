@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
+ * A structured set of questions and their answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the questionnaire being responded to.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSerializable
@@ -75,25 +75,25 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     public $identifier = null;
 
     /**
-     * Identifies the order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.
+     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ProcedureRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $basedOn = array();
 
     /**
-     * Identifies a procedure or observation that this questionnaire was performed as part of the execution of.
+     * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $parent = array();
 
     /**
-     * Indicates the Questionnaire resource that defines the form for which answers are being provided.
+     * The Questionnaire that defines and organizes the questions for which answers are being provided.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $questionnaire = null;
 
     /**
-     * The lifecycle status of the questionnaire response as a whole.
+     * The position of the questionnaire response within its overall lifecycle.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     public $status = null;
@@ -105,10 +105,16 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     public $subject = null;
 
     /**
-     * The encounter or episode of care with primary association to the questionnaire.
+     * The encounter or episode of care with primary association to the questionnaire response.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $context = null;
+
+    /**
+     * The date and/or time that this set of answers were last changed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $authored = null;
 
     /**
      * Person who received the answers to the questions in the QuestionnaireResponse and recorded them in the system.
@@ -117,19 +123,13 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     public $author = null;
 
     /**
-     * The date and/or time that this version of the questionnaire response was authored.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $authored = null;
-
-    /**
      * The person who answered the questions about the subject.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $source = null;
 
     /**
-     * Corresponds to a group or question item from the original questionnaire.
+     * A group or question item from the original questionnaire for which answers are provided.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public $item = array();
@@ -160,7 +160,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Identifies the order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.
+     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ProcedureRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getBasedOn()
@@ -169,7 +169,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Identifies the order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.
+     * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ProcedureRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
@@ -180,7 +180,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Identifies a procedure or observation that this questionnaire was performed as part of the execution of.
+     * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public function getParent()
@@ -189,7 +189,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Identifies a procedure or observation that this questionnaire was performed as part of the execution of.
+     * A procedure or observation that this questionnaire was performed as part of the execution of.  For example, the surgery a checklist was executed as part of.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $parent
      * @return $this
      */
@@ -200,7 +200,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Indicates the Questionnaire resource that defines the form for which answers are being provided.
+     * The Questionnaire that defines and organizes the questions for which answers are being provided.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getQuestionnaire()
@@ -209,7 +209,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Indicates the Questionnaire resource that defines the form for which answers are being provided.
+     * The Questionnaire that defines and organizes the questions for which answers are being provided.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $questionnaire
      * @return $this
      */
@@ -220,7 +220,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The lifecycle status of the questionnaire response as a whole.
+     * The position of the questionnaire response within its overall lifecycle.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     public function getStatus()
@@ -229,7 +229,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The lifecycle status of the questionnaire response as a whole.
+     * The position of the questionnaire response within its overall lifecycle.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireResponseStatus $status
      * @return $this
      */
@@ -260,7 +260,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The encounter or episode of care with primary association to the questionnaire.
+     * The encounter or episode of care with primary association to the questionnaire response.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getContext()
@@ -269,13 +269,33 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The encounter or episode of care with primary association to the questionnaire.
+     * The encounter or episode of care with primary association to the questionnaire response.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
     public function setContext($context)
     {
         $this->context = $context;
+        return $this;
+    }
+
+    /**
+     * The date and/or time that this set of answers were last changed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getAuthored()
+    {
+        return $this->authored;
+    }
+
+    /**
+     * The date and/or time that this set of answers were last changed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authored
+     * @return $this
+     */
+    public function setAuthored($authored)
+    {
+        $this->authored = $authored;
         return $this;
     }
 
@@ -300,26 +320,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The date and/or time that this version of the questionnaire response was authored.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getAuthored()
-    {
-        return $this->authored;
-    }
-
-    /**
-     * The date and/or time that this version of the questionnaire response was authored.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authored
-     * @return $this
-     */
-    public function setAuthored($authored)
-    {
-        $this->authored = $authored;
-        return $this;
-    }
-
-    /**
      * The person who answered the questions about the subject.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -340,7 +340,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Corresponds to a group or question item from the original questionnaire.
+     * A group or question item from the original questionnaire for which answers are provided.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     public function getItem()
@@ -349,7 +349,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Corresponds to a group or question item from the original questionnaire.
+     * A group or question item from the original questionnaire for which answers are provided.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
      * @return $this
      */
@@ -399,8 +399,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
         if (null !== $this->authored) $json['authored'] = json_encode($this->authored);
+        if (null !== $this->author) $json['author'] = json_encode($this->author);
         if (null !== $this->source) $json['source'] = json_encode($this->source);
         if (0 < count($this->item)) {
             $json['item'] = [];
@@ -435,8 +435,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
-        if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (null !== $this->authored) $this->authored->xmlSerialize(true, $sxe->addChild('authored'));
+        if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
         if (0 < count($this->item)) {
             foreach($this->item as $item) {

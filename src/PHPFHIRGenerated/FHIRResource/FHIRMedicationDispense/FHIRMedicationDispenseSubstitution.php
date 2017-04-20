@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,6 +67,12 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
  */
 class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements \JsonSerializable
 {
+    /**
+     * True if the dispenser dispensed a different drug or product from what was prescribed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $wasSubstituted = null;
+
     /**
      * A code signifying whether a different drug was dispensed from what was prescribed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
@@ -89,6 +95,26 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * @var string
      */
     private $_fhirElementName = 'MedicationDispense.Substitution';
+
+    /**
+     * True if the dispenser dispensed a different drug or product from what was prescribed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getWasSubstituted()
+    {
+        return $this->wasSubstituted;
+    }
+
+    /**
+     * True if the dispenser dispensed a different drug or product from what was prescribed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $wasSubstituted
+     * @return $this
+     */
+    public function setWasSubstituted($wasSubstituted)
+    {
+        $this->wasSubstituted = $wasSubstituted;
+        return $this;
+    }
 
     /**
      * A code signifying whether a different drug was dispensed from what was prescribed.
@@ -172,6 +198,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
+        if (null !== $this->wasSubstituted) $json['wasSubstituted'] = json_encode($this->wasSubstituted);
         if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (0 < count($this->reason)) {
             $json['reason'] = [];
@@ -197,6 +224,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationDispenseSubstitution xmlns="http://hl7.org/fhir"></MedicationDispenseSubstitution>');
         parent::xmlSerialize(true, $sxe);
+        if (null !== $this->wasSubstituted) $this->wasSubstituted->xmlSerialize(true, $sxe->addChild('wasSubstituted'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (0 < count($this->reason)) {
             foreach($this->reason as $reason) {

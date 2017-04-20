@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,6 +74,12 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
     public $code = null;
 
     /**
+     * The display for the code. The display is only provided to help editors when editing the concept map.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $display = null;
+
+    /**
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence
      */
@@ -83,7 +89,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $comments = null;
+    public $comment = null;
 
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
@@ -123,6 +129,26 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
+     * The display for the code. The display is only provided to help editors when editing the concept map.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDisplay()
+    {
+        return $this->display;
+    }
+
+    /**
+     * The display for the code. The display is only provided to help editors when editing the concept map.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
+     * @return $this
+     */
+    public function setDisplay($display)
+    {
+        $this->display = $display;
+        return $this;
+    }
+
+    /**
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence
      */
@@ -146,19 +172,19 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getComments()
+    public function getComment()
     {
-        return $this->comments;
+        return $this->comment;
     }
 
     /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comments
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setComments($comments)
+    public function setComment($comment)
     {
-        $this->comments = $comments;
+        $this->comment = $comment;
         return $this;
     }
 
@@ -225,8 +251,9 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
     {
         $json = parent::jsonSerialize();
         if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
         if (null !== $this->equivalence) $json['equivalence'] = json_encode($this->equivalence);
-        if (null !== $this->comments) $json['comments'] = json_encode($this->comments);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         if (0 < count($this->dependsOn)) {
             $json['dependsOn'] = [];
             foreach($this->dependsOn as $dependsOn) {
@@ -252,8 +279,9 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConceptMapTarget xmlns="http://hl7.org/fhir"></ConceptMapTarget>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
         if (null !== $this->equivalence) $this->equivalence->xmlSerialize(true, $sxe->addChild('equivalence'));
-        if (null !== $this->comments) $this->comments->xmlSerialize(true, $sxe->addChild('comments'));
+        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if (0 < count($this->dependsOn)) {
             foreach($this->dependsOn as $dependsOn) {
                 $dependsOn->xmlSerialize(true, $sxe->addChild('dependsOn'));

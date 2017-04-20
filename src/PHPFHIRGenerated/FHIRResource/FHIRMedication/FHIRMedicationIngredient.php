@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,6 +78,12 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $itemReference = null;
+
+    /**
+     * Indication of whether this ingredient affects the therapeutic action of the drug.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $isActive = null;
 
     /**
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
@@ -131,6 +137,26 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
+     * Indication of whether this ingredient affects the therapeutic action of the drug.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Indication of whether this ingredient affects the therapeutic action of the drug.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $isActive
+     * @return $this
+     */
+    public function setIsActive($isActive)
+    {
+        $this->isActive = $isActive;
+        return $this;
+    }
+
+    /**
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
@@ -174,6 +200,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
         $json = parent::jsonSerialize();
         if (null !== $this->itemCodeableConcept) $json['itemCodeableConcept'] = json_encode($this->itemCodeableConcept);
         if (null !== $this->itemReference) $json['itemReference'] = json_encode($this->itemReference);
+        if (null !== $this->isActive) $json['isActive'] = json_encode($this->isActive);
         if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
         return $json;
     }
@@ -189,6 +216,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->itemCodeableConcept) $this->itemCodeableConcept->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
         if (null !== $this->itemReference) $this->itemReference->xmlSerialize(true, $sxe->addChild('itemReference'));
+        if (null !== $this->isActive) $this->isActive->xmlSerialize(true, $sxe->addChild('isActive'));
         if (null !== $this->amount) $this->amount->xmlSerialize(true, $sxe->addChild('amount'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

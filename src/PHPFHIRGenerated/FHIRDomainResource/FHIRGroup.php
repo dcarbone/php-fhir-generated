@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,6 +75,12 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
+     * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $active = null;
+
+    /**
      * Identifies the broad classification of the kind of resources the group includes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRGroupType
      */
@@ -85,12 +91,6 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $actual = null;
-
-    /**
-     * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $active = null;
 
     /**
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe", etc.
@@ -148,6 +148,26 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $active
+     * @return $this
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+        return $this;
+    }
+
+    /**
      * Identifies the broad classification of the kind of resources the group includes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRGroupType
      */
@@ -184,26 +204,6 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
     public function setActual($actual)
     {
         $this->actual = $actual;
-        return $this;
-    }
-
-    /**
-     * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
-
-    /**
-     * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $active
-     * @return $this
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
         return $this;
     }
 
@@ -336,9 +336,9 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (null !== $this->active) $json['active'] = json_encode($this->active);
         if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->actual) $json['actual'] = json_encode($this->actual);
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
         if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
@@ -371,9 +371,9 @@ class FHIRGroup extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->actual) $this->actual->xmlSerialize(true, $sxe->addChild('actual'));
-        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));

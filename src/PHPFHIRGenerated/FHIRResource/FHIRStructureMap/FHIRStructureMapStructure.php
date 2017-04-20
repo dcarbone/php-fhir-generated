@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,6 +78,12 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
      * @var \PHPFHIRGenerated\FHIRElement\FHIRStructureMapModelMode
      */
     public $mode = null;
+
+    /**
+     * The name used for this type in the map.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $alias = null;
 
     /**
      * Documentation that describes how the structure is used in the mapping.
@@ -131,6 +137,26 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
     }
 
     /**
+     * The name used for this type in the map.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getAlias()
+    {
+        return $this->alias;
+    }
+
+    /**
+     * The name used for this type in the map.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $alias
+     * @return $this
+     */
+    public function setAlias($alias)
+    {
+        $this->alias = $alias;
+        return $this;
+    }
+
+    /**
      * Documentation that describes how the structure is used in the mapping.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -174,6 +200,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
         $json = parent::jsonSerialize();
         if (null !== $this->url) $json['url'] = json_encode($this->url);
         if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
+        if (null !== $this->alias) $json['alias'] = json_encode($this->alias);
         if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
         return $json;
     }
@@ -189,6 +216,7 @@ class FHIRStructureMapStructure extends FHIRBackboneElement implements \JsonSeri
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
         if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (null !== $this->alias) $this->alias->xmlSerialize(true, $sxe->addChild('alias'));
         if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

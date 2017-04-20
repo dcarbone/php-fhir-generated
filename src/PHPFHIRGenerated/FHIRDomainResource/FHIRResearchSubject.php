@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  ResearchStudies involve the gathering of information about human or animal subjects.
+ * A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  A ResearchStudy involves the gathering of information about human or animal subjects.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializable
@@ -75,7 +75,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     public $identifier = null;
 
     /**
-     * The current state of the event.
+     * The current state of the subject.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRResearchSubjectStatus
      */
     public $status = null;
@@ -142,7 +142,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The current state of the event.
+     * The current state of the subject.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResearchSubjectStatus
      */
     public function getStatus()
@@ -151,7 +151,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The current state of the event.
+     * The current state of the subject.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResearchSubjectStatus $status
      * @return $this
      */

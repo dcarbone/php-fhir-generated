@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,21 +68,47 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The practitioner who was involved in the procedure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $actor = null;
-
-    /**
      * For example: surgeon, anaethetist, endoscopist.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $role = null;
 
     /**
+     * The practitioner who was involved in the procedure.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $actor = null;
+
+    /**
+     * The organization the device or practitioner was acting on behalf of.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $onBehalfOf = null;
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'Procedure.Performer';
+
+    /**
+     * For example: surgeon, anaethetist, endoscopist.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * For example: surgeon, anaethetist, endoscopist.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
+     * @return $this
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+        return $this;
+    }
 
     /**
      * The practitioner who was involved in the procedure.
@@ -105,22 +131,22 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * For example: surgeon, anaethetist, endoscopist.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * The organization the device or practitioner was acting on behalf of.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getRole()
+    public function getOnBehalfOf()
     {
-        return $this->role;
+        return $this->onBehalfOf;
     }
 
     /**
-     * For example: surgeon, anaethetist, endoscopist.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
+     * The organization the device or practitioner was acting on behalf of.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOf
      * @return $this
      */
-    public function setRole($role)
+    public function setOnBehalfOf($onBehalfOf)
     {
-        $this->role = $role;
+        $this->onBehalfOf = $onBehalfOf;
         return $this;
     }
 
@@ -146,8 +172,9 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->actor) $json['actor'] = json_encode($this->actor);
         if (null !== $this->role) $json['role'] = json_encode($this->role);
+        if (null !== $this->actor) $json['actor'] = json_encode($this->actor);
+        if (null !== $this->onBehalfOf) $json['onBehalfOf'] = json_encode($this->onBehalfOf);
         return $json;
     }
 
@@ -160,8 +187,9 @@ class FHIRProcedurePerformer extends FHIRBackboneElement implements \JsonSeriali
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProcedurePerformer xmlns="http://hl7.org/fhir"></ProcedurePerformer>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->actor) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
         if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
+        if (null !== $this->actor) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
+        if (null !== $this->onBehalfOf) $this->onBehalfOf->xmlSerialize(true, $sxe->addChild('onBehalfOf'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

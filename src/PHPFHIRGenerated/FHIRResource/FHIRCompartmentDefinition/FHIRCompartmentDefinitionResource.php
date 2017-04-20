@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,18 +69,18 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 {
     /**
      * The name of a resource supported by the server.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public $code = null;
 
     /**
-     * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment more than one way.
+     * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public $param = array();
 
     /**
-     * Additional doco about the resource and compartment.
+     * Additional documentation about the resource and compartment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $documentation = null;
@@ -92,7 +92,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a resource supported by the server.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
     public function getCode()
     {
@@ -101,7 +101,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
 
     /**
      * The name of a resource supported by the server.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $code
      * @return $this
      */
     public function setCode($code)
@@ -111,7 +111,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
     }
 
     /**
-     * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment more than one way.
+     * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public function getParam()
@@ -120,7 +120,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
     }
 
     /**
-     * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment more than one way.
+     * The name of a search parameter that represents the link to the compartment. More than one may be listed because a resource may be linked to a compartment in more than one way,.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $param
      * @return $this
      */
@@ -131,7 +131,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
     }
 
     /**
-     * Additional doco about the resource and compartment.
+     * Additional documentation about the resource and compartment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDocumentation()
@@ -140,7 +140,7 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement implements \
     }
 
     /**
-     * Additional doco about the resource and compartment.
+     * Additional documentation about the resource and compartment.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */

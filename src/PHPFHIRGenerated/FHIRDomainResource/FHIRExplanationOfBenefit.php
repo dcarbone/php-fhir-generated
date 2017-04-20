@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -292,9 +292,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Note text.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitNote[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote[]
      */
-    public $note = array();
+    public $processNote = array();
 
     /**
      * Balance by Benefit Category.
@@ -1049,21 +1049,21 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements \JsonSerial
 
     /**
      * Note text.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitNote[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote[]
      */
-    public function getNote()
+    public function getProcessNote()
     {
-        return $this->note;
+        return $this->processNote;
     }
 
     /**
      * Note text.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitNote $note
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote $processNote
      * @return $this
      */
-    public function addNote($note)
+    public function addProcessNote($processNote)
     {
-        $this->note[] = $note;
+        $this->processNote[] = $processNote;
         return $this;
     }
 
@@ -1192,10 +1192,10 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements \JsonSerial
         if (null !== $this->totalBenefit) $json['totalBenefit'] = json_encode($this->totalBenefit);
         if (null !== $this->payment) $json['payment'] = json_encode($this->payment);
         if (null !== $this->form) $json['form'] = json_encode($this->form);
-        if (0 < count($this->note)) {
-            $json['note'] = [];
-            foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+        if (0 < count($this->processNote)) {
+            $json['processNote'] = [];
+            foreach($this->processNote as $processNote) {
+                $json['processNote'][] = json_encode($processNote);
             }
         }
         if (0 < count($this->benefitBalance)) {
@@ -1289,9 +1289,9 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements \JsonSerial
         if (null !== $this->totalBenefit) $this->totalBenefit->xmlSerialize(true, $sxe->addChild('totalBenefit'));
         if (null !== $this->payment) $this->payment->xmlSerialize(true, $sxe->addChild('payment'));
         if (null !== $this->form) $this->form->xmlSerialize(true, $sxe->addChild('form'));
-        if (0 < count($this->note)) {
-            foreach($this->note as $note) {
-                $note->xmlSerialize(true, $sxe->addChild('note'));
+        if (0 < count($this->processNote)) {
+            foreach($this->processNote as $processNote) {
+                $processNote->xmlSerialize(true, $sxe->addChild('processNote'));
             }
         }
         if (0 < count($this->benefitBalance)) {

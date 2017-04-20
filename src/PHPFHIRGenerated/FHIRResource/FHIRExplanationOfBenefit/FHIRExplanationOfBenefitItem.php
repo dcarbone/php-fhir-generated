@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -200,6 +200,12 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
     public $subSite = array();
 
     /**
+     * A billed item may include goods or services provided in multiple encounters.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $encounter = array();
+
+    /**
      * A list of note references to the notes provided below.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
@@ -216,12 +222,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
      * @var \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail[]
      */
     public $detail = array();
-
-    /**
-     * The materials and placement date of prior fixed prosthesis.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProsthesis
-     */
-    public $prosthesis = null;
 
     /**
      * @var string
@@ -669,6 +669,26 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
     }
 
     /**
+     * A billed item may include goods or services provided in multiple encounters.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getEncounter()
+    {
+        return $this->encounter;
+    }
+
+    /**
+     * A billed item may include goods or services provided in multiple encounters.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
+     * @return $this
+     */
+    public function addEncounter($encounter)
+    {
+        $this->encounter[] = $encounter;
+        return $this;
+    }
+
+    /**
      * A list of note references to the notes provided below.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt[]
      */
@@ -725,26 +745,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
     public function addDetail($detail)
     {
         $this->detail[] = $detail;
-        return $this;
-    }
-
-    /**
-     * The materials and placement date of prior fixed prosthesis.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProsthesis
-     */
-    public function getProsthesis()
-    {
-        return $this->prosthesis;
-    }
-
-    /**
-     * The materials and placement date of prior fixed prosthesis.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProsthesis $prosthesis
-     * @return $this
-     */
-    public function setProsthesis($prosthesis)
-    {
-        $this->prosthesis = $prosthesis;
         return $this;
     }
 
@@ -832,6 +832,12 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
                 $json['subSite'][] = json_encode($subSite);
             }
         }
+        if (0 < count($this->encounter)) {
+            $json['encounter'] = [];
+            foreach($this->encounter as $encounter) {
+                $json['encounter'][] = json_encode($encounter);
+            }
+        }
         if (0 < count($this->noteNumber)) {
             $json['noteNumber'] = [];
             foreach($this->noteNumber as $noteNumber) {
@@ -850,7 +856,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
                 $json['detail'][] = json_encode($detail);
             }
         }
-        if (null !== $this->prosthesis) $json['prosthesis'] = json_encode($this->prosthesis);
         return $json;
     }
 
@@ -917,6 +922,11 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
                 $subSite->xmlSerialize(true, $sxe->addChild('subSite'));
             }
         }
+        if (0 < count($this->encounter)) {
+            foreach($this->encounter as $encounter) {
+                $encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+            }
+        }
         if (0 < count($this->noteNumber)) {
             foreach($this->noteNumber as $noteNumber) {
                 $noteNumber->xmlSerialize(true, $sxe->addChild('noteNumber'));
@@ -932,7 +942,6 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement implements \JsonS
                 $detail->xmlSerialize(true, $sxe->addChild('detail'));
             }
         }
-        if (null !== $this->prosthesis) $this->prosthesis->xmlSerialize(true, $sxe->addChild('prosthesis'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

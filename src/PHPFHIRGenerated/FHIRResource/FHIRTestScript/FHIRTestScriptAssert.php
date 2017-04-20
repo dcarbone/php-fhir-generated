@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * TestScript is a resource that specifies a suite of tests against a FHIR server implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
  */
 class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -92,7 +92,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     public $compareToSourceId = null;
 
     /**
-     * The fhirpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * The fluentpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $compareToSourceExpression = null;
@@ -110,7 +110,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     public $contentType = null;
 
     /**
-     * The fhirpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * The fluentpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $expression = null;
@@ -146,6 +146,12 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     public $path = null;
 
     /**
+     * The request method or HTTP operation code to compare against that used by the client system under test.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTestScriptRequestMethodCode
+     */
+    public $requestMethod = null;
+
+    /**
      * The value to use in a comparison against the request URL path string.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -153,7 +159,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      */
     public $resource = null;
 
@@ -291,7 +297,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The fhirpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * The fluentpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getCompareToSourceExpression()
@@ -300,7 +306,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The fhirpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
+     * The fluentpath expression to evaluate against the source fixture. When compareToSourceId is defined, either compareToSourceExpression or compareToSourcePath must be defined, but not both.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $compareToSourceExpression
      * @return $this
      */
@@ -351,7 +357,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The fhirpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * The fluentpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getExpression()
@@ -360,7 +366,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * The fhirpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
+     * The fluentpath expression to be evaluated against the request or response message contents - HTTP headers and payload.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
@@ -471,6 +477,26 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
+     * The request method or HTTP operation code to compare against that used by the client system under test.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRTestScriptRequestMethodCode
+     */
+    public function getRequestMethod()
+    {
+        return $this->requestMethod;
+    }
+
+    /**
+     * The request method or HTTP operation code to compare against that used by the client system under test.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTestScriptRequestMethodCode $requestMethod
+     * @return $this
+     */
+    public function setRequestMethod($requestMethod)
+    {
+        $this->requestMethod = $requestMethod;
+        return $this;
+    }
+
+    /**
      * The value to use in a comparison against the request URL path string.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -492,7 +518,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType
      */
     public function getResource()
     {
@@ -501,7 +527,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
 
     /**
      * The type of the resource.  See http://build.fhir.org/resourcelist.html.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $resource
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRFHIRDefinedType $resource
      * @return $this
      */
     public function setResource($resource)
@@ -705,6 +731,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         if (null !== $this->navigationLinks) $json['navigationLinks'] = json_encode($this->navigationLinks);
         if (null !== $this->operator) $json['operator'] = json_encode($this->operator);
         if (null !== $this->path) $json['path'] = json_encode($this->path);
+        if (null !== $this->requestMethod) $json['requestMethod'] = json_encode($this->requestMethod);
         if (null !== $this->requestURL) $json['requestURL'] = json_encode($this->requestURL);
         if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
         if (null !== $this->response) $json['response'] = json_encode($this->response);
@@ -740,6 +767,7 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
         if (null !== $this->navigationLinks) $this->navigationLinks->xmlSerialize(true, $sxe->addChild('navigationLinks'));
         if (null !== $this->operator) $this->operator->xmlSerialize(true, $sxe->addChild('operator'));
         if (null !== $this->path) $this->path->xmlSerialize(true, $sxe->addChild('path'));
+        if (null !== $this->requestMethod) $this->requestMethod->xmlSerialize(true, $sxe->addChild('requestMethod'));
         if (null !== $this->requestURL) $this->requestURL->xmlSerialize(true, $sxe->addChild('requestURL'));
         if (null !== $this->resource) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
         if (null !== $this->response) $this->response->xmlSerialize(true, $sxe->addChild('response'));

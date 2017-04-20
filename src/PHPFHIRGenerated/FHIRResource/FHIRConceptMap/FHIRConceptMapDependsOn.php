@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labelled to correspond with a code system property.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labeled to correspond with a code system property.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $property = null;
@@ -86,12 +86,18 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
     public $code = null;
 
     /**
+     * The display for the code. The display is only provided to help editors when editing the concept map.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $display = null;
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'ConceptMap.DependsOn';
 
     /**
-     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labelled to correspond with a code system property.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labeled to correspond with a code system property.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getProperty()
@@ -100,7 +106,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labelled to correspond with a code system property.
+     * A reference to an element that holds a coded value that corresponds to a code system property. The idea is that the information model carries an element somwhere that is labeled to correspond with a code system property.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $property
      * @return $this
      */
@@ -151,6 +157,26 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
+     * The display for the code. The display is only provided to help editors when editing the concept map.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDisplay()
+    {
+        return $this->display;
+    }
+
+    /**
+     * The display for the code. The display is only provided to help editors when editing the concept map.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
+     * @return $this
+     */
+    public function setDisplay($display)
+    {
+        $this->display = $display;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -175,6 +201,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
         if (null !== $this->property) $json['property'] = json_encode($this->property);
         if (null !== $this->system) $json['system'] = json_encode($this->system);
         if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->display) $json['display'] = json_encode($this->display);
         return $json;
     }
 
@@ -190,6 +217,7 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement implements \JsonSerial
         if (null !== $this->property) $this->property->xmlSerialize(true, $sxe->addChild('property'));
         if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

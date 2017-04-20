@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -123,10 +123,10 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
     public $collection = null;
 
     /**
-     * Details concerning treatment and processing steps for the specimen.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenTreatment[]
+     * Details concerning processing and processing steps for the specimen.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing[]
      */
-    public $treatment = array();
+    public $processing = array();
 
     /**
      * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
@@ -326,22 +326,22 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Details concerning treatment and processing steps for the specimen.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenTreatment[]
+     * Details concerning processing and processing steps for the specimen.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing[]
      */
-    public function getTreatment()
+    public function getProcessing()
     {
-        return $this->treatment;
+        return $this->processing;
     }
 
     /**
-     * Details concerning treatment and processing steps for the specimen.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenTreatment $treatment
+     * Details concerning processing and processing steps for the specimen.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSpecimen\FHIRSpecimenProcessing $processing
      * @return $this
      */
-    public function addTreatment($treatment)
+    public function addProcessing($processing)
     {
-        $this->treatment[] = $treatment;
+        $this->processing[] = $processing;
         return $this;
     }
 
@@ -432,10 +432,10 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->collection) $json['collection'] = json_encode($this->collection);
-        if (0 < count($this->treatment)) {
-            $json['treatment'] = [];
-            foreach($this->treatment as $treatment) {
-                $json['treatment'][] = json_encode($treatment);
+        if (0 < count($this->processing)) {
+            $json['processing'] = [];
+            foreach($this->processing as $processing) {
+                $json['processing'][] = json_encode($processing);
             }
         }
         if (0 < count($this->container)) {
@@ -483,9 +483,9 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->collection) $this->collection->xmlSerialize(true, $sxe->addChild('collection'));
-        if (0 < count($this->treatment)) {
-            foreach($this->treatment as $treatment) {
-                $treatment->xmlSerialize(true, $sxe->addChild('treatment'));
+        if (0 < count($this->processing)) {
+            foreach($this->processing as $processing) {
+                $processing->xmlSerialize(true, $sxe->addChild('processing'));
             }
         }
         if (0 < count($this->container)) {

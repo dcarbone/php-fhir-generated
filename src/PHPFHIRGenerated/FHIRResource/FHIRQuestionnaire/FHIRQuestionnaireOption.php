@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,36 +63,36 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of questions intended to guide the collection of answers. The questions are ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.
+ * A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.
  */
 class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $valueDate = null;
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
@@ -103,7 +103,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     private $_fhirElementName = 'Questionnaire.Option';
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -112,7 +112,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
@@ -123,7 +123,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getValueDate()
@@ -132,7 +132,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $valueDate
      * @return $this
      */
@@ -143,7 +143,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -152,7 +152,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
@@ -163,7 +163,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -172,7 +172,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -183,7 +183,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
@@ -192,7 +192,7 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Identifies a specific answer that's allowed as the answer to a question. (choose any one of value*, but only one)
+     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,6 +78,12 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationContent[]
      */
     public $content = array();
+
+    /**
+     * Information about a group of medication produced or packaged from one production run.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch[]
+     */
+    public $batch = array();
 
     /**
      * @var string
@@ -125,6 +131,26 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
+     * Information about a group of medication produced or packaged from one production run.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch[]
+     */
+    public function getBatch()
+    {
+        return $this->batch;
+    }
+
+    /**
+     * Information about a group of medication produced or packaged from one production run.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRMedication\FHIRMedicationBatch $batch
+     * @return $this
+     */
+    public function addBatch($batch)
+    {
+        $this->batch[] = $batch;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -153,6 +179,12 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
                 $json['content'][] = json_encode($content);
             }
         }
+        if (0 < count($this->batch)) {
+            $json['batch'] = [];
+            foreach($this->batch as $batch) {
+                $json['batch'][] = json_encode($batch);
+            }
+        }
         return $json;
     }
 
@@ -169,6 +201,11 @@ class FHIRMedicationPackage extends FHIRBackboneElement implements \JsonSerializ
         if (0 < count($this->content)) {
             foreach($this->content as $content) {
                 $content->xmlSerialize(true, $sxe->addChild('content'));
+            }
+        }
+        if (0 < count($this->batch)) {
+            foreach($this->batch as $batch) {
+                $batch->xmlSerialize(true, $sxe->addChild('batch'));
             }
         }
         if ($returnSXE) return $sxe;

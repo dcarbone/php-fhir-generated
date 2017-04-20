@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,10 +69,52 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * Allows a service to provide a unique, business identifier for the response.
+     * Allows a service to provide a unique, business identifier for the request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
+     */
+    public $identifier = array();
+
+    /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $definition = array();
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
+
+    /**
+     * Completed or terminated request(s) whose function is taken by this new request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $replaces = array();
+
+    /**
+     * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $identifier = null;
+    public $groupIdentifier = null;
+
+    /**
+     * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
+     */
+    public $status = null;
+
+    /**
+     * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
+     */
+    public $intent = null;
+
+    /**
+     * Indicates how quickly the request should be addressed with respect to other requests.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
+     */
+    public $priority = null;
 
     /**
      * The subject for which the request group was created.
@@ -90,7 +132,7 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
      * Indicates when the request group was created.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $occurrenceDateTime = null;
+    public $authoredOn = null;
 
     /**
      * Provides a reference to the author of the request group.
@@ -128,8 +170,8 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'RequestGroup';
 
     /**
-     * Allows a service to provide a unique, business identifier for the response.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Allows a service to provide a unique, business identifier for the request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
     {
@@ -137,13 +179,153 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Allows a service to provide a unique, business identifier for the response.
+     * Allows a service to provide a unique, business identifier for the request.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
+    public function addIdentifier($identifier)
     {
-        $this->identifier = $identifier;
+        $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @return $this
+     */
+    public function addDefinition($definition)
+    {
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * Completed or terminated request(s) whose function is taken by this new request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getReplaces()
+    {
+        return $this->replaces;
+    }
+
+    /**
+     * Completed or terminated request(s) whose function is taken by this new request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $replaces
+     * @return $this
+     */
+    public function addReplaces($replaces)
+    {
+        $this->replaces[] = $replaces;
+        return $this;
+    }
+
+    /**
+     * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getGroupIdentifier()
+    {
+        return $this->groupIdentifier;
+    }
+
+    /**
+     * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $groupIdentifier
+     * @return $this
+     */
+    public function setGroupIdentifier($groupIdentifier)
+    {
+        $this->groupIdentifier = $groupIdentifier;
+        return $this;
+    }
+
+    /**
+     * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The current state of the request. For request groups, the status reflects the status of all the requests in the group.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
+     */
+    public function getIntent()
+    {
+        return $this->intent;
+    }
+
+    /**
+     * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent $intent
+     * @return $this
+     */
+    public function setIntent($intent)
+    {
+        $this->intent = $intent;
+        return $this;
+    }
+
+    /**
+     * Indicates how quickly the request should be addressed with respect to other requests.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    /**
+     * Indicates how quickly the request should be addressed with respect to other requests.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority $priority
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->priority = $priority;
         return $this;
     }
 
@@ -191,19 +373,19 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
      * Indicates when the request group was created.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getOccurrenceDateTime()
+    public function getAuthoredOn()
     {
-        return $this->occurrenceDateTime;
+        return $this->authoredOn;
     }
 
     /**
      * Indicates when the request group was created.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
-    public function setOccurrenceDateTime($occurrenceDateTime)
+    public function setAuthoredOn($authoredOn)
     {
-        $this->occurrenceDateTime = $occurrenceDateTime;
+        $this->authoredOn = $authoredOn;
         return $this;
     }
 
@@ -330,10 +512,37 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (0 < count($this->identifier)) {
+            $json['identifier'] = [];
+            foreach($this->identifier as $identifier) {
+                $json['identifier'][] = json_encode($identifier);
+            }
+        }
+        if (0 < count($this->definition)) {
+            $json['definition'] = [];
+            foreach($this->definition as $definition) {
+                $json['definition'][] = json_encode($definition);
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
+        if (0 < count($this->replaces)) {
+            $json['replaces'] = [];
+            foreach($this->replaces as $replaces) {
+                $json['replaces'][] = json_encode($replaces);
+            }
+        }
+        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = json_encode($this->groupIdentifier);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
+        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
         if (null !== $this->author) $json['author'] = json_encode($this->author);
         if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
         if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
@@ -361,10 +570,33 @@ class FHIRRequestGroup extends FHIRDomainResource implements \JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<RequestGroup xmlns="http://hl7.org/fhir"></RequestGroup>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (0 < count($this->identifier)) {
+            foreach($this->identifier as $identifier) {
+                $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+            }
+        }
+        if (0 < count($this->definition)) {
+            foreach($this->definition as $definition) {
+                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
+        if (0 < count($this->replaces)) {
+            foreach($this->replaces as $replaces) {
+                $replaces->xmlSerialize(true, $sxe->addChild('replaces'));
+            }
+        }
+        if (null !== $this->groupIdentifier) $this->groupIdentifier->xmlSerialize(true, $sxe->addChild('groupIdentifier'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->intent) $this->intent->xmlSerialize(true, $sxe->addChild('intent'));
+        if (null !== $this->priority) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
-        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (null !== $this->authoredOn) $this->authoredOn->xmlSerialize(true, $sxe->addChild('authoredOn'));
         if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (null !== $this->reasonCodeableConcept) $this->reasonCodeableConcept->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
         if (null !== $this->reasonReference) $this->reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));

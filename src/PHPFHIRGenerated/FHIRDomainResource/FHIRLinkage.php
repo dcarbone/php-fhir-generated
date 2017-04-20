@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,6 +69,12 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
 {
     /**
+     * Indicates whether the asserted set of linkages are considered to be "in effect".
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $active = null;
+
+    /**
      * Identifies the user or organization responsible for asserting the linkages and who establishes the context for evaluating the nature of each linkage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -84,6 +90,26 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * @var string
      */
     private $_fhirElementName = 'Linkage';
+
+    /**
+     * Indicates whether the asserted set of linkages are considered to be "in effect".
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Indicates whether the asserted set of linkages are considered to be "in effect".
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $active
+     * @return $this
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+        return $this;
+    }
 
     /**
      * Identifies the user or organization responsible for asserting the linkages and who establishes the context for evaluating the nature of each linkage.
@@ -148,6 +174,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
+        if (null !== $this->active) $json['active'] = json_encode($this->active);
         if (null !== $this->author) $json['author'] = json_encode($this->author);
         if (0 < count($this->item)) {
             $json['item'] = [];
@@ -167,6 +194,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Linkage xmlns="http://hl7.org/fhir"></Linkage>');
         parent::xmlSerialize(true, $sxe);
+        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
         if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (0 < count($this->item)) {
             foreach($this->item as $item) {

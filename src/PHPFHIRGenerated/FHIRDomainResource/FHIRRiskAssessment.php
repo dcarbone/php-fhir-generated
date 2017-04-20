@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,9 +88,15 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRObservationStatus
      */
     public $status = null;
+
+    /**
+     * The algorithm, process or mechanism used to evaluate the risk.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $method = null;
 
     /**
      * The type of the risk assessment performed.
@@ -147,12 +153,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     public $reasonReference = null;
 
     /**
-     * The algorithm, process or mechanism used to evaluate the risk.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $method = null;
-
-    /**
      * Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
@@ -172,9 +172,9 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional comments about the risk assessment.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $note = null;
+    public $comment = null;
 
     /**
      * @var string
@@ -243,7 +243,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRObservationStatus
      */
     public function getStatus()
     {
@@ -252,12 +252,32 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The status of the RiskAssessment, using the same statuses as an Observation.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRObservationStatus $status
      * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * The algorithm, process or mechanism used to evaluate the risk.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    /**
+     * The algorithm, process or mechanism used to evaluate the risk.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $method
+     * @return $this
+     */
+    public function setMethod($method)
+    {
+        $this->method = $method;
         return $this;
     }
 
@@ -442,26 +462,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The algorithm, process or mechanism used to evaluate the risk.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    /**
-     * The algorithm, process or mechanism used to evaluate the risk.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $method
-     * @return $this
-     */
-    public function setMethod($method)
-    {
-        $this->method = $method;
-        return $this;
-    }
-
-    /**
      * Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
@@ -523,21 +523,21 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * Additional comments about the risk assessment.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getNote()
+    public function getComment()
     {
-        return $this->note;
+        return $this->comment;
     }
 
     /**
      * Additional comments about the risk assessment.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setNote($note)
+    public function setComment($comment)
     {
-        $this->note = $note;
+        $this->comment = $comment;
         return $this;
     }
 
@@ -568,6 +568,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->basedOn) $json['basedOn'] = json_encode($this->basedOn);
         if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->method) $json['method'] = json_encode($this->method);
         if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (null !== $this->context) $json['context'] = json_encode($this->context);
@@ -577,7 +578,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
         if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
         if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
         if (0 < count($this->basis)) {
             $json['basis'] = [];
             foreach($this->basis as $basis) {
@@ -591,7 +591,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->mitigation) $json['mitigation'] = json_encode($this->mitigation);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         return $json;
     }
 
@@ -608,6 +608,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->basedOn) $this->basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
         if (null !== $this->parent) $this->parent->xmlSerialize(true, $sxe->addChild('parent'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->method) $this->method->xmlSerialize(true, $sxe->addChild('method'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
@@ -617,7 +618,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->performer) $this->performer->xmlSerialize(true, $sxe->addChild('performer'));
         if (null !== $this->reasonCodeableConcept) $this->reasonCodeableConcept->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
         if (null !== $this->reasonReference) $this->reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
-        if (null !== $this->method) $this->method->xmlSerialize(true, $sxe->addChild('method'));
         if (0 < count($this->basis)) {
             foreach($this->basis as $basis) {
                 $basis->xmlSerialize(true, $sxe->addChild('basis'));
@@ -629,7 +629,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->mitigation) $this->mitigation->xmlSerialize(true, $sxe->addChild('mitigation'));
-        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
+        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -159,8 +159,8 @@ class FHIRDiagnosticRequest extends FHIRDomainResource implements \JsonSerializa
     public $authoredOn = null;
 
     /**
-     * Who/what is requesting diagnostics.  The practitioner that holds legal responsibility for ordering the investigation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The individual who initiated the request and has responsibility for its activation.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticRequest\FHIRDiagnosticRequestRequester
      */
     public $requester = null;
 
@@ -192,7 +192,19 @@ class FHIRDiagnosticRequest extends FHIRDomainResource implements \JsonSerializa
      * Additional clinical information about the patient or specimen that may influence test interpretations.  This includes observations explicitly requested by the producer(filler) to provide context or supporting information needed to complete the order.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInformation = array();
+    public $supportingInfo = array();
+
+    /**
+     * One or more specimens that the diagnostic investigation is about.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $specimen = array();
+
+    /**
+     * Anatomical location where the requested test should be performed.  This is the target site.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $bodySIte = null;
 
     /**
      * Any other notes and comments made about the service request. (e.g. "patient hates needles").
@@ -512,8 +524,8 @@ class FHIRDiagnosticRequest extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Who/what is requesting diagnostics.  The practitioner that holds legal responsibility for ordering the investigation.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The individual who initiated the request and has responsibility for its activation.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticRequest\FHIRDiagnosticRequestRequester
      */
     public function getRequester()
     {
@@ -521,8 +533,8 @@ class FHIRDiagnosticRequest extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Who/what is requesting diagnostics.  The practitioner that holds legal responsibility for ordering the investigation.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $requester
+     * The individual who initiated the request and has responsibility for its activation.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDiagnosticRequest\FHIRDiagnosticRequestRequester $requester
      * @return $this
      */
     public function setRequester($requester)
@@ -615,19 +627,59 @@ class FHIRDiagnosticRequest extends FHIRDomainResource implements \JsonSerializa
      * Additional clinical information about the patient or specimen that may influence test interpretations.  This includes observations explicitly requested by the producer(filler) to provide context or supporting information needed to complete the order.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupportingInformation()
+    public function getSupportingInfo()
     {
-        return $this->supportingInformation;
+        return $this->supportingInfo;
     }
 
     /**
      * Additional clinical information about the patient or specimen that may influence test interpretations.  This includes observations explicitly requested by the producer(filler) to provide context or supporting information needed to complete the order.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
-    public function addSupportingInformation($supportingInformation)
+    public function addSupportingInfo($supportingInfo)
     {
-        $this->supportingInformation[] = $supportingInformation;
+        $this->supportingInfo[] = $supportingInfo;
+        return $this;
+    }
+
+    /**
+     * One or more specimens that the diagnostic investigation is about.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getSpecimen()
+    {
+        return $this->specimen;
+    }
+
+    /**
+     * One or more specimens that the diagnostic investigation is about.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $specimen
+     * @return $this
+     */
+    public function addSpecimen($specimen)
+    {
+        $this->specimen[] = $specimen;
+        return $this;
+    }
+
+    /**
+     * Anatomical location where the requested test should be performed.  This is the target site.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getBodySIte()
+    {
+        return $this->bodySIte;
+    }
+
+    /**
+     * Anatomical location where the requested test should be performed.  This is the target site.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySIte
+     * @return $this
+     */
+    public function setBodySIte($bodySIte)
+    {
+        $this->bodySIte = $bodySIte;
         return $this;
     }
 
@@ -744,12 +796,19 @@ class FHIRDiagnosticRequest extends FHIRDomainResource implements \JsonSerializa
                 $json['reasonReference'][] = json_encode($reasonReference);
             }
         }
-        if (0 < count($this->supportingInformation)) {
-            $json['supportingInformation'] = [];
-            foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = json_encode($supportingInformation);
+        if (0 < count($this->supportingInfo)) {
+            $json['supportingInfo'] = [];
+            foreach($this->supportingInfo as $supportingInfo) {
+                $json['supportingInfo'][] = json_encode($supportingInfo);
             }
         }
+        if (0 < count($this->specimen)) {
+            $json['specimen'] = [];
+            foreach($this->specimen as $specimen) {
+                $json['specimen'][] = json_encode($specimen);
+            }
+        }
+        if (null !== $this->bodySIte) $json['bodySIte'] = json_encode($this->bodySIte);
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
@@ -818,11 +877,17 @@ class FHIRDiagnosticRequest extends FHIRDomainResource implements \JsonSerializa
                 $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
             }
         }
-        if (0 < count($this->supportingInformation)) {
-            foreach($this->supportingInformation as $supportingInformation) {
-                $supportingInformation->xmlSerialize(true, $sxe->addChild('supportingInformation'));
+        if (0 < count($this->supportingInfo)) {
+            foreach($this->supportingInfo as $supportingInfo) {
+                $supportingInfo->xmlSerialize(true, $sxe->addChild('supportingInfo'));
             }
         }
+        if (0 < count($this->specimen)) {
+            foreach($this->specimen as $specimen) {
+                $specimen->xmlSerialize(true, $sxe->addChild('specimen'));
+            }
+        }
+        if (null !== $this->bodySIte) $this->bodySIte->xmlSerialize(true, $sxe->addChild('bodySIte'));
         if (0 < count($this->note)) {
             foreach($this->note as $note) {
                 $note->xmlSerialize(true, $sxe->addChild('note'));

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A reference to a document .
+ * A reference to a document.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializable
@@ -81,10 +81,16 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     public $identifier = array();
 
     /**
-     * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The status of this document reference.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
      */
-    public $subject = null;
+    public $status = null;
+
+    /**
+     * The status of the underlying document.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus
+     */
+    public $docStatus = null;
 
     /**
      * Specifies the particular kind of document referenced  (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the document referenced.
@@ -99,22 +105,10 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     public $class = null;
 
     /**
-     * Identifies who is responsible for adding the information to the document.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public $author = array();
-
-    /**
-     * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
+     * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $custodian = null;
-
-    /**
-     * Which person or organization authenticates that this document is valid.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $authenticator = null;
+    public $subject = null;
 
     /**
      * When the document was created.
@@ -129,16 +123,22 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     public $indexed = null;
 
     /**
-     * The status of this document reference.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
+     * Identifies who is responsible for adding the information to the document.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $status = null;
+    public $author = array();
 
     /**
-     * The status of the underlying document.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Which person or organization authenticates that this document is valid.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $docStatus = null;
+    public $authenticator = null;
+
+    /**
+     * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $custodian = null;
 
     /**
      * Relationships that this document has with other document references that already exist.
@@ -216,22 +216,42 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The status of this document reference.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
      */
-    public function getSubject()
+    public function getStatus()
     {
-        return $this->subject;
+        return $this->status;
     }
 
     /**
-     * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
+     * The status of this document reference.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus $status
      * @return $this
      */
-    public function setSubject($subject)
+    public function setStatus($status)
     {
-        $this->subject = $subject;
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * The status of the underlying document.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus
+     */
+    public function getDocStatus()
+    {
+        return $this->docStatus;
+    }
+
+    /**
+     * The status of the underlying document.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus $docStatus
+     * @return $this
+     */
+    public function setDocStatus($docStatus)
+    {
+        $this->docStatus = $docStatus;
         return $this;
     }
 
@@ -276,62 +296,22 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Identifies who is responsible for adding the information to the document.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * Identifies who is responsible for adding the information to the document.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
-     * @return $this
-     */
-    public function addAuthor($author)
-    {
-        $this->author[] = $author;
-        return $this;
-    }
-
-    /**
-     * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
+     * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getCustodian()
+    public function getSubject()
     {
-        return $this->custodian;
+        return $this->subject;
     }
 
     /**
-     * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $custodian
+     * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setCustodian($custodian)
+    public function setSubject($subject)
     {
-        $this->custodian = $custodian;
-        return $this;
-    }
-
-    /**
-     * Which person or organization authenticates that this document is valid.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getAuthenticator()
-    {
-        return $this->authenticator;
-    }
-
-    /**
-     * Which person or organization authenticates that this document is valid.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $authenticator
-     * @return $this
-     */
-    public function setAuthenticator($authenticator)
-    {
-        $this->authenticator = $authenticator;
+        $this->subject = $subject;
         return $this;
     }
 
@@ -376,42 +356,62 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The status of this document reference.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus
+     * Identifies who is responsible for adding the information to the document.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getStatus()
+    public function getAuthor()
     {
-        return $this->status;
+        return $this->author;
     }
 
     /**
-     * The status of this document reference.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDocumentReferenceStatus $status
+     * Identifies who is responsible for adding the information to the document.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
      * @return $this
      */
-    public function setStatus($status)
+    public function addAuthor($author)
     {
-        $this->status = $status;
+        $this->author[] = $author;
         return $this;
     }
 
     /**
-     * The status of the underlying document.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Which person or organization authenticates that this document is valid.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getDocStatus()
+    public function getAuthenticator()
     {
-        return $this->docStatus;
+        return $this->authenticator;
     }
 
     /**
-     * The status of the underlying document.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $docStatus
+     * Which person or organization authenticates that this document is valid.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $authenticator
      * @return $this
      */
-    public function setDocStatus($docStatus)
+    public function setAuthenticator($authenticator)
     {
-        $this->docStatus = $docStatus;
+        $this->authenticator = $authenticator;
+        return $this;
+    }
+
+    /**
+     * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getCustodian()
+    {
+        return $this->custodian;
+    }
+
+    /**
+     * Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $custodian
+     * @return $this
+     */
+    public function setCustodian($custodian)
+    {
+        $this->custodian = $custodian;
         return $this;
     }
 
@@ -545,21 +545,21 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
                 $json['identifier'][] = json_encode($identifier);
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->docStatus) $json['docStatus'] = json_encode($this->docStatus);
         if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->class) $json['class'] = json_encode($this->class);
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->indexed) $json['indexed'] = json_encode($this->indexed);
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
                 $json['author'][] = json_encode($author);
             }
         }
-        if (null !== $this->custodian) $json['custodian'] = json_encode($this->custodian);
         if (null !== $this->authenticator) $json['authenticator'] = json_encode($this->authenticator);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
-        if (null !== $this->indexed) $json['indexed'] = json_encode($this->indexed);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->docStatus) $json['docStatus'] = json_encode($this->docStatus);
+        if (null !== $this->custodian) $json['custodian'] = json_encode($this->custodian);
         if (0 < count($this->relatesTo)) {
             $json['relatesTo'] = [];
             foreach($this->relatesTo as $relatesTo) {
@@ -598,20 +598,20 @@ class FHIRDocumentReference extends FHIRDomainResource implements \JsonSerializa
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->docStatus) $this->docStatus->xmlSerialize(true, $sxe->addChild('docStatus'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->class) $this->class->xmlSerialize(true, $sxe->addChild('class'));
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
+        if (null !== $this->indexed) $this->indexed->xmlSerialize(true, $sxe->addChild('indexed'));
         if (0 < count($this->author)) {
             foreach($this->author as $author) {
                 $author->xmlSerialize(true, $sxe->addChild('author'));
             }
         }
-        if (null !== $this->custodian) $this->custodian->xmlSerialize(true, $sxe->addChild('custodian'));
         if (null !== $this->authenticator) $this->authenticator->xmlSerialize(true, $sxe->addChild('authenticator'));
-        if (null !== $this->created) $this->created->xmlSerialize(true, $sxe->addChild('created'));
-        if (null !== $this->indexed) $this->indexed->xmlSerialize(true, $sxe->addChild('indexed'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->docStatus) $this->docStatus->xmlSerialize(true, $sxe->addChild('docStatus'));
+        if (null !== $this->custodian) $this->custodian->xmlSerialize(true, $sxe->addChild('custodian'));
         if (0 < count($this->relatesTo)) {
             foreach($this->relatesTo as $relatesTo) {
                 $relatesTo->xmlSerialize(true, $sxe->addChild('relatesTo'));

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,28 +75,40 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     public $identifier = array();
 
     /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $definition = array();
+
+    /**
      * Indicates any plans, proposals or orders that this request is intended to satisfy - in whole or in part.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
     public $basedOn = array();
 
     /**
+     * Completed or terminated request(s) whose function is taken by this new request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $replaces = array();
+
+    /**
      * The business identifier of the logical "grouping" request/order that this referral is a part of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $parent = null;
+    public $groupIdentifier = null;
 
     /**
      * The status of the authorization/intention reflected by the referral request record.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReferralStatus
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
      */
     public $status = null;
 
     /**
      * Distinguishes the "level" of authorization/demand implicit in this request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReferralCategory
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
      */
-    public $category = null;
+    public $intent = null;
 
     /**
      * An indication of the type of referral (or where applicable the type of transfer of care) request.
@@ -106,15 +118,21 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An indication of the urgency of referral (or where applicable the type of transfer of care) request.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
     public $priority = null;
+
+    /**
+     * The service(s) that is/are requested to be provided to the patient.  For example: cardiac pacemaker insertion.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $serviceRequested = array();
 
     /**
      * The patient who is the subject of a referral or transfer of care request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patient = null;
+    public $subject = null;
 
     /**
      * The encounter at which the request for referral or transfer of care is initiated.
@@ -123,20 +141,26 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     public $context = null;
 
     /**
-     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur.
+     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $occurrenceDateTime = null;
+
+    /**
+     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public $fulfillmentTime = null;
+    public $occurrencePeriod = null;
 
     /**
      * Date/DateTime of creation for draft requests and date of activation for active requests.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public $authored = null;
+    public $authoredOn = null;
 
     /**
-     * The healthcare provider or provider organization who/which initiated the referral/transfer of care request. Can also be  Patient (a self referral).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The individual who initiated the request and has responsibility for its activation.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRReferralRequest\FHIRReferralRequestRequester
      */
     public $requester = null;
 
@@ -154,9 +178,15 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Description of clinical condition indicating why referral/transfer of care is requested.  For example:  Pathological Anomalies, Disabled (physical or mental),  Behavioral Management.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reason = null;
+    public $reasonCode = array();
+
+    /**
+     * Indicates another resource whose existence justifies this request.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $reasonReference = array();
 
     /**
      * The reason element gives a short description of why the referral is being made, the description expands on this to support a more complete clinical summary.
@@ -165,16 +195,22 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     public $description = null;
 
     /**
-     * The service(s) that is/are requested to be provided to the patient.  For example: cardiac pacemaker insertion.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
-     */
-    public $serviceRequested = array();
-
-    /**
      * Any additional (administrative, financial or clinical) information required to support request for referral or transfer of care.  For example: Presenting problems/chief complaints Medical History Family History Alerts Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInformation = array();
+    public $supportingInfo = array();
+
+    /**
+     * Comments made about the referral request by any of the participants.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public $note = array();
+
+    /**
+     * Links to Provenance records for past versions of this resource or fulfilling request or event resources that identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the resource.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $relevantHistory = array();
 
     /**
      * @var string
@@ -202,6 +238,26 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * A protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @return $this
+     */
+    public function addDefinition($definition)
+    {
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
      * Indicates any plans, proposals or orders that this request is intended to satisfy - in whole or in part.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
@@ -222,28 +278,48 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The business identifier of the logical "grouping" request/order that this referral is a part of.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Completed or terminated request(s) whose function is taken by this new request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getParent()
+    public function getReplaces()
     {
-        return $this->parent;
+        return $this->replaces;
+    }
+
+    /**
+     * Completed or terminated request(s) whose function is taken by this new request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $replaces
+     * @return $this
+     */
+    public function addReplaces($replaces)
+    {
+        $this->replaces[] = $replaces;
+        return $this;
     }
 
     /**
      * The business identifier of the logical "grouping" request/order that this referral is a part of.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $parent
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getGroupIdentifier()
+    {
+        return $this->groupIdentifier;
+    }
+
+    /**
+     * The business identifier of the logical "grouping" request/order that this referral is a part of.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $groupIdentifier
      * @return $this
      */
-    public function setParent($parent)
+    public function setGroupIdentifier($groupIdentifier)
     {
-        $this->parent = $parent;
+        $this->groupIdentifier = $groupIdentifier;
         return $this;
     }
 
     /**
      * The status of the authorization/intention reflected by the referral request record.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReferralStatus
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
      */
     public function getStatus()
     {
@@ -252,7 +328,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * The status of the authorization/intention reflected by the referral request record.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReferralStatus $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus $status
      * @return $this
      */
     public function setStatus($status)
@@ -263,21 +339,21 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Distinguishes the "level" of authorization/demand implicit in this request.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReferralCategory
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent
      */
-    public function getCategory()
+    public function getIntent()
     {
-        return $this->category;
+        return $this->intent;
     }
 
     /**
      * Distinguishes the "level" of authorization/demand implicit in this request.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReferralCategory $category
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestIntent $intent
      * @return $this
      */
-    public function setCategory($category)
+    public function setIntent($intent)
     {
-        $this->category = $category;
+        $this->intent = $intent;
         return $this;
     }
 
@@ -303,7 +379,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An indication of the urgency of referral (or where applicable the type of transfer of care) request.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
     public function getPriority()
     {
@@ -312,7 +388,7 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * An indication of the urgency of referral (or where applicable the type of transfer of care) request.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $priority
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
     public function setPriority($priority)
@@ -322,22 +398,42 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The patient who is the subject of a referral or transfer of care request.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The service(s) that is/are requested to be provided to the patient.  For example: cardiac pacemaker insertion.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getPatient()
+    public function getServiceRequested()
     {
-        return $this->patient;
+        return $this->serviceRequested;
+    }
+
+    /**
+     * The service(s) that is/are requested to be provided to the patient.  For example: cardiac pacemaker insertion.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceRequested
+     * @return $this
+     */
+    public function addServiceRequested($serviceRequested)
+    {
+        $this->serviceRequested[] = $serviceRequested;
+        return $this;
     }
 
     /**
      * The patient who is the subject of a referral or transfer of care request.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * The patient who is the subject of a referral or transfer of care request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setPatient($patient)
+    public function setSubject($subject)
     {
-        $this->patient = $patient;
+        $this->subject = $subject;
         return $this;
     }
 
@@ -362,22 +458,42 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getFulfillmentTime()
+    public function getOccurrenceDateTime()
     {
-        return $this->fulfillmentTime;
+        return $this->occurrenceDateTime;
     }
 
     /**
-     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $fulfillmentTime
+     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
-    public function setFulfillmentTime($fulfillmentTime)
+    public function setOccurrenceDateTime($occurrenceDateTime)
     {
-        $this->fulfillmentTime = $fulfillmentTime;
+        $this->occurrenceDateTime = $occurrenceDateTime;
+        return $this;
+    }
+
+    /**
+     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getOccurrencePeriod()
+    {
+        return $this->occurrencePeriod;
+    }
+
+    /**
+     * The period of time within which the services identified in the referral/transfer of care is specified or required to occur. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @return $this
+     */
+    public function setOccurrencePeriod($occurrencePeriod)
+    {
+        $this->occurrencePeriod = $occurrencePeriod;
         return $this;
     }
 
@@ -385,25 +501,25 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
      * Date/DateTime of creation for draft requests and date of activation for active requests.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getAuthored()
+    public function getAuthoredOn()
     {
-        return $this->authored;
+        return $this->authoredOn;
     }
 
     /**
      * Date/DateTime of creation for draft requests and date of activation for active requests.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authored
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
-    public function setAuthored($authored)
+    public function setAuthoredOn($authoredOn)
     {
-        $this->authored = $authored;
+        $this->authoredOn = $authoredOn;
         return $this;
     }
 
     /**
-     * The healthcare provider or provider organization who/which initiated the referral/transfer of care request. Can also be  Patient (a self referral).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The individual who initiated the request and has responsibility for its activation.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRReferralRequest\FHIRReferralRequestRequester
      */
     public function getRequester()
     {
@@ -411,8 +527,8 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The healthcare provider or provider organization who/which initiated the referral/transfer of care request. Can also be  Patient (a self referral).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $requester
+     * The individual who initiated the request and has responsibility for its activation.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRReferralRequest\FHIRReferralRequestRequester $requester
      * @return $this
      */
     public function setRequester($requester)
@@ -463,21 +579,41 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
 
     /**
      * Description of clinical condition indicating why referral/transfer of care is requested.  For example:  Pathological Anomalies, Disabled (physical or mental),  Behavioral Management.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getReason()
+    public function getReasonCode()
     {
-        return $this->reason;
+        return $this->reasonCode;
     }
 
     /**
      * Description of clinical condition indicating why referral/transfer of care is requested.  For example:  Pathological Anomalies, Disabled (physical or mental),  Behavioral Management.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
-    public function setReason($reason)
+    public function addReasonCode($reasonCode)
     {
-        $this->reason = $reason;
+        $this->reasonCode[] = $reasonCode;
+        return $this;
+    }
+
+    /**
+     * Indicates another resource whose existence justifies this request.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getReasonReference()
+    {
+        return $this->reasonReference;
+    }
+
+    /**
+     * Indicates another resource whose existence justifies this request.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
+     * @return $this
+     */
+    public function addReasonReference($reasonReference)
+    {
+        $this->reasonReference[] = $reasonReference;
         return $this;
     }
 
@@ -502,42 +638,62 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * The service(s) that is/are requested to be provided to the patient.  For example: cardiac pacemaker insertion.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     * Any additional (administrative, financial or clinical) information required to support request for referral or transfer of care.  For example: Presenting problems/chief complaints Medical History Family History Alerts Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getServiceRequested()
+    public function getSupportingInfo()
     {
-        return $this->serviceRequested;
+        return $this->supportingInfo;
     }
 
     /**
-     * The service(s) that is/are requested to be provided to the patient.  For example: cardiac pacemaker insertion.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $serviceRequested
+     * Any additional (administrative, financial or clinical) information required to support request for referral or transfer of care.  For example: Presenting problems/chief complaints Medical History Family History Alerts Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
-    public function addServiceRequested($serviceRequested)
+    public function addSupportingInfo($supportingInfo)
     {
-        $this->serviceRequested[] = $serviceRequested;
+        $this->supportingInfo[] = $supportingInfo;
         return $this;
     }
 
     /**
-     * Any additional (administrative, financial or clinical) information required to support request for referral or transfer of care.  For example: Presenting problems/chief complaints Medical History Family History Alerts Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * Comments made about the referral request by any of the participants.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getSupportingInformation()
+    public function getNote()
     {
-        return $this->supportingInformation;
+        return $this->note;
     }
 
     /**
-     * Any additional (administrative, financial or clinical) information required to support request for referral or transfer of care.  For example: Presenting problems/chief complaints Medical History Family History Alerts Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
+     * Comments made about the referral request by any of the participants.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addSupportingInformation($supportingInformation)
+    public function addNote($note)
     {
-        $this->supportingInformation[] = $supportingInformation;
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * Links to Provenance records for past versions of this resource or fulfilling request or event resources that identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the resource.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getRelevantHistory()
+    {
+        return $this->relevantHistory;
+    }
+
+    /**
+     * Links to Provenance records for past versions of this resource or fulfilling request or event resources that identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the resource.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $relevantHistory
+     * @return $this
+     */
+    public function addRelevantHistory($relevantHistory)
+    {
+        $this->relevantHistory[] = $relevantHistory;
         return $this;
     }
 
@@ -570,21 +726,40 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (0 < count($this->definition)) {
+            $json['definition'] = [];
+            foreach($this->definition as $definition) {
+                $json['definition'][] = json_encode($definition);
+            }
+        }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
                 $json['basedOn'][] = json_encode($basedOn);
             }
         }
-        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
+        if (0 < count($this->replaces)) {
+            $json['replaces'] = [];
+            foreach($this->replaces as $replaces) {
+                $json['replaces'][] = json_encode($replaces);
+            }
+        }
+        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = json_encode($this->groupIdentifier);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
         if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (0 < count($this->serviceRequested)) {
+            $json['serviceRequested'] = [];
+            foreach($this->serviceRequested as $serviceRequested) {
+                $json['serviceRequested'][] = json_encode($serviceRequested);
+            }
+        }
+        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->fulfillmentTime) $json['fulfillmentTime'] = json_encode($this->fulfillmentTime);
-        if (null !== $this->authored) $json['authored'] = json_encode($this->authored);
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
+        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
         if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
         if (null !== $this->specialty) $json['specialty'] = json_encode($this->specialty);
         if (0 < count($this->recipient)) {
@@ -593,18 +768,35 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
                 $json['recipient'][] = json_encode($recipient);
             }
         }
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (0 < count($this->serviceRequested)) {
-            $json['serviceRequested'] = [];
-            foreach($this->serviceRequested as $serviceRequested) {
-                $json['serviceRequested'][] = json_encode($serviceRequested);
+        if (0 < count($this->reasonCode)) {
+            $json['reasonCode'] = [];
+            foreach($this->reasonCode as $reasonCode) {
+                $json['reasonCode'][] = json_encode($reasonCode);
             }
         }
-        if (0 < count($this->supportingInformation)) {
-            $json['supportingInformation'] = [];
-            foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = json_encode($supportingInformation);
+        if (0 < count($this->reasonReference)) {
+            $json['reasonReference'] = [];
+            foreach($this->reasonReference as $reasonReference) {
+                $json['reasonReference'][] = json_encode($reasonReference);
+            }
+        }
+        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (0 < count($this->supportingInfo)) {
+            $json['supportingInfo'] = [];
+            foreach($this->supportingInfo as $supportingInfo) {
+                $json['supportingInfo'][] = json_encode($supportingInfo);
+            }
+        }
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
+            }
+        }
+        if (0 < count($this->relevantHistory)) {
+            $json['relevantHistory'] = [];
+            foreach($this->relevantHistory as $relevantHistory) {
+                $json['relevantHistory'][] = json_encode($relevantHistory);
             }
         }
         return $json;
@@ -624,20 +816,36 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (0 < count($this->definition)) {
+            foreach($this->definition as $definition) {
+                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+            }
+        }
         if (0 < count($this->basedOn)) {
             foreach($this->basedOn as $basedOn) {
                 $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
             }
         }
-        if (null !== $this->parent) $this->parent->xmlSerialize(true, $sxe->addChild('parent'));
+        if (0 < count($this->replaces)) {
+            foreach($this->replaces as $replaces) {
+                $replaces->xmlSerialize(true, $sxe->addChild('replaces'));
+            }
+        }
+        if (null !== $this->groupIdentifier) $this->groupIdentifier->xmlSerialize(true, $sxe->addChild('groupIdentifier'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (null !== $this->intent) $this->intent->xmlSerialize(true, $sxe->addChild('intent'));
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->priority) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (0 < count($this->serviceRequested)) {
+            foreach($this->serviceRequested as $serviceRequested) {
+                $serviceRequested->xmlSerialize(true, $sxe->addChild('serviceRequested'));
+            }
+        }
+        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
-        if (null !== $this->fulfillmentTime) $this->fulfillmentTime->xmlSerialize(true, $sxe->addChild('fulfillmentTime'));
-        if (null !== $this->authored) $this->authored->xmlSerialize(true, $sxe->addChild('authored'));
+        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (null !== $this->occurrencePeriod) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        if (null !== $this->authoredOn) $this->authoredOn->xmlSerialize(true, $sxe->addChild('authoredOn'));
         if (null !== $this->requester) $this->requester->xmlSerialize(true, $sxe->addChild('requester'));
         if (null !== $this->specialty) $this->specialty->xmlSerialize(true, $sxe->addChild('specialty'));
         if (0 < count($this->recipient)) {
@@ -645,16 +853,30 @@ class FHIRReferralRequest extends FHIRDomainResource implements \JsonSerializabl
                 $recipient->xmlSerialize(true, $sxe->addChild('recipient'));
             }
         }
-        if (null !== $this->reason) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (0 < count($this->serviceRequested)) {
-            foreach($this->serviceRequested as $serviceRequested) {
-                $serviceRequested->xmlSerialize(true, $sxe->addChild('serviceRequested'));
+        if (0 < count($this->reasonCode)) {
+            foreach($this->reasonCode as $reasonCode) {
+                $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));
             }
         }
-        if (0 < count($this->supportingInformation)) {
-            foreach($this->supportingInformation as $supportingInformation) {
-                $supportingInformation->xmlSerialize(true, $sxe->addChild('supportingInformation'));
+        if (0 < count($this->reasonReference)) {
+            foreach($this->reasonReference as $reasonReference) {
+                $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
+            }
+        }
+        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (0 < count($this->supportingInfo)) {
+            foreach($this->supportingInfo as $supportingInfo) {
+                $supportingInfo->xmlSerialize(true, $sxe->addChild('supportingInfo'));
+            }
+        }
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
+        if (0 < count($this->relevantHistory)) {
+            foreach($this->relevantHistory as $relevantHistory) {
+                $relevantHistory->xmlSerialize(true, $sxe->addChild('relevantHistory'));
             }
         }
         if ($returnSXE) return $sxe;

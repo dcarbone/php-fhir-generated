@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,24 +69,6 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * A link to a resource representing the person whom the ordered item is for.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $patient = null;
-
-    /**
-     * The Practitioner , Organization or Patient who initiated this order for the supply.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $source = null;
-
-    /**
-     * When the request was made.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $date = null;
-
-    /**
      * Unique identifier for this supply request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
@@ -102,19 +84,49 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $kind = null;
+    public $category = null;
 
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of orderedItem*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
-    public $orderedItemCodeableConcept = null;
+    public $priority = null;
 
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of orderedItem*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The item being requested.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      */
-    public $orderedItemReference = null;
+    public $orderedItem = null;
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $occurrenceDateTime = null;
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $occurrencePeriod = null;
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
+     */
+    public $occurrenceTiming = null;
+
+    /**
+     * When the request was made.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $authoredOn = null;
+
+    /**
+     * The individual who initiated the request and has responsibility for its activation.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestRequester
+     */
+    public $requester = null;
 
     /**
      * Who is intended to fulfill the request.
@@ -135,75 +147,21 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     public $reasonReference = null;
 
     /**
-     * When the request should be fulfilled.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestWhen
+     * Where the supply is expected to come from.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $when = null;
+    public $deliverFrom = null;
+
+    /**
+     * Where the supply is destined to go.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $deliverTo = null;
 
     /**
      * @var string
      */
     private $_fhirElementName = 'SupplyRequest';
-
-    /**
-     * A link to a resource representing the person whom the ordered item is for.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * A link to a resource representing the person whom the ordered item is for.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
-     * @return $this
-     */
-    public function setPatient($patient)
-    {
-        $this->patient = $patient;
-        return $this;
-    }
-
-    /**
-     * The Practitioner , Organization or Patient who initiated this order for the supply.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getSource()
-    {
-        return $this->source;
-    }
-
-    /**
-     * The Practitioner , Organization or Patient who initiated this order for the supply.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $source
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->source = $source;
-        return $this;
-    }
-
-    /**
-     * When the request was made.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * When the request was made.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
 
     /**
      * Unique identifier for this supply request.
@@ -249,59 +207,159 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getKind()
+    public function getCategory()
     {
-        return $this->kind;
+        return $this->category;
     }
 
     /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $kind
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function setKind($kind)
+    public function setCategory($category)
     {
-        $this->kind = $kind;
+        $this->category = $category;
         return $this;
     }
 
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of orderedItem*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
-    public function getOrderedItemCodeableConcept()
+    public function getPriority()
     {
-        return $this->orderedItemCodeableConcept;
+        return $this->priority;
     }
 
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of orderedItem*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $orderedItemCodeableConcept
+     * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
-    public function setOrderedItemCodeableConcept($orderedItemCodeableConcept)
+    public function setPriority($priority)
     {
-        $this->orderedItemCodeableConcept = $orderedItemCodeableConcept;
+        $this->priority = $priority;
         return $this;
     }
 
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of orderedItem*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The item being requested.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      */
-    public function getOrderedItemReference()
+    public function getOrderedItem()
     {
-        return $this->orderedItemReference;
+        return $this->orderedItem;
     }
 
     /**
-     * The item that is requested to be supplied. This is either a link to a resource representing the details of the item or a code that identifies the item from a known list. (choose any one of orderedItem*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $orderedItemReference
+     * The item being requested.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem $orderedItem
      * @return $this
      */
-    public function setOrderedItemReference($orderedItemReference)
+    public function setOrderedItem($orderedItem)
     {
-        $this->orderedItemReference = $orderedItemReference;
+        $this->orderedItem = $orderedItem;
+        return $this;
+    }
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getOccurrenceDateTime()
+    {
+        return $this->occurrenceDateTime;
+    }
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @return $this
+     */
+    public function setOccurrenceDateTime($occurrenceDateTime)
+    {
+        $this->occurrenceDateTime = $occurrenceDateTime;
+        return $this;
+    }
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getOccurrencePeriod()
+    {
+        return $this->occurrencePeriod;
+    }
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @return $this
+     */
+    public function setOccurrencePeriod($occurrencePeriod)
+    {
+        $this->occurrencePeriod = $occurrencePeriod;
+        return $this;
+    }
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
+     */
+    public function getOccurrenceTiming()
+    {
+        return $this->occurrenceTiming;
+    }
+
+    /**
+     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
+     * @return $this
+     */
+    public function setOccurrenceTiming($occurrenceTiming)
+    {
+        $this->occurrenceTiming = $occurrenceTiming;
+        return $this;
+    }
+
+    /**
+     * When the request was made.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getAuthoredOn()
+    {
+        return $this->authoredOn;
+    }
+
+    /**
+     * When the request was made.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authoredOn
+     * @return $this
+     */
+    public function setAuthoredOn($authoredOn)
+    {
+        $this->authoredOn = $authoredOn;
+        return $this;
+    }
+
+    /**
+     * The individual who initiated the request and has responsibility for its activation.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestRequester
+     */
+    public function getRequester()
+    {
+        return $this->requester;
+    }
+
+    /**
+     * The individual who initiated the request and has responsibility for its activation.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestRequester $requester
+     * @return $this
+     */
+    public function setRequester($requester)
+    {
+        $this->requester = $requester;
         return $this;
     }
 
@@ -366,22 +424,42 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestWhen
+     * Where the supply is expected to come from.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getWhen()
+    public function getDeliverFrom()
     {
-        return $this->when;
+        return $this->deliverFrom;
     }
 
     /**
-     * When the request should be fulfilled.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRSupplyRequest\FHIRSupplyRequestWhen $when
+     * Where the supply is expected to come from.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $deliverFrom
      * @return $this
      */
-    public function setWhen($when)
+    public function setDeliverFrom($deliverFrom)
     {
-        $this->when = $when;
+        $this->deliverFrom = $deliverFrom;
+        return $this;
+    }
+
+    /**
+     * Where the supply is destined to go.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getDeliverTo()
+    {
+        return $this->deliverTo;
+    }
+
+    /**
+     * Where the supply is destined to go.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $deliverTo
+     * @return $this
+     */
+    public function setDeliverTo($deliverTo)
+    {
+        $this->deliverTo = $deliverTo;
         return $this;
     }
 
@@ -408,14 +486,16 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
-        if (null !== $this->orderedItemCodeableConcept) $json['orderedItemCodeableConcept'] = json_encode($this->orderedItemCodeableConcept);
-        if (null !== $this->orderedItemReference) $json['orderedItemReference'] = json_encode($this->orderedItemReference);
+        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->orderedItem) $json['orderedItem'] = json_encode($this->orderedItem);
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
+        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
+        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
+        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
         if (0 < count($this->supplier)) {
             $json['supplier'] = [];
             foreach($this->supplier as $supplier) {
@@ -424,7 +504,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
         if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
-        if (null !== $this->when) $json['when'] = json_encode($this->when);
+        if (null !== $this->deliverFrom) $json['deliverFrom'] = json_encode($this->deliverFrom);
+        if (null !== $this->deliverTo) $json['deliverTo'] = json_encode($this->deliverTo);
         return $json;
     }
 
@@ -437,14 +518,16 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SupplyRequest xmlns="http://hl7.org/fhir"></SupplyRequest>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
-        if (null !== $this->orderedItemCodeableConcept) $this->orderedItemCodeableConcept->xmlSerialize(true, $sxe->addChild('orderedItemCodeableConcept'));
-        if (null !== $this->orderedItemReference) $this->orderedItemReference->xmlSerialize(true, $sxe->addChild('orderedItemReference'));
+        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (null !== $this->priority) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
+        if (null !== $this->orderedItem) $this->orderedItem->xmlSerialize(true, $sxe->addChild('orderedItem'));
+        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (null !== $this->occurrencePeriod) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        if (null !== $this->occurrenceTiming) $this->occurrenceTiming->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
+        if (null !== $this->authoredOn) $this->authoredOn->xmlSerialize(true, $sxe->addChild('authoredOn'));
+        if (null !== $this->requester) $this->requester->xmlSerialize(true, $sxe->addChild('requester'));
         if (0 < count($this->supplier)) {
             foreach($this->supplier as $supplier) {
                 $supplier->xmlSerialize(true, $sxe->addChild('supplier'));
@@ -452,7 +535,8 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->reasonCodeableConcept) $this->reasonCodeableConcept->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
         if (null !== $this->reasonReference) $this->reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
-        if (null !== $this->when) $this->when->xmlSerialize(true, $sxe->addChild('when'));
+        if (null !== $this->deliverFrom) $this->deliverFrom->xmlSerialize(true, $sxe->addChild('deliverFrom'));
+        if (null !== $this->deliverTo) $this->deliverTo->xmlSerialize(true, $sxe->addChild('deliverTo'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

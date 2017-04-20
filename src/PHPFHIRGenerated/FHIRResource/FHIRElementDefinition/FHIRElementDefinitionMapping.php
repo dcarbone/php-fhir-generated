@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -85,6 +85,12 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $map = null;
+
+    /**
+     * Comments that provide information about the mapping or its use.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $comment = null;
 
     /**
      * @var string
@@ -152,6 +158,26 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
     }
 
     /**
+     * Comments that provide information about the mapping or its use.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Comments that provide information about the mapping or its use.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
+     * @return $this
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -176,6 +202,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
         if (null !== $this->identity) $json['identity'] = json_encode($this->identity);
         if (null !== $this->language) $json['language'] = json_encode($this->language);
         if (null !== $this->map) $json['map'] = json_encode($this->map);
+        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
         return $json;
     }
 
@@ -191,6 +218,7 @@ class FHIRElementDefinitionMapping extends FHIRElement implements \JsonSerializa
         if (null !== $this->identity) $this->identity->xmlSerialize(true, $sxe->addChild('identity'));
         if (null !== $this->language) $this->language->xmlSerialize(true, $sxe->addChild('language'));
         if (null !== $this->map) $this->map->xmlSerialize(true, $sxe->addChild('map'));
+        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

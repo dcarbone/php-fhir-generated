@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -73,6 +73,12 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * A procedure that is fulfilled in whole or in part by the creation of this media.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
 
     /**
      * Whether the media is a photo (still image), an audio recording, or a video recording.
@@ -99,16 +105,46 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     public $subject = null;
 
     /**
+     * The encounter or episode of care that establishes the context for this media.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $context = null;
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $occurrenceDateTime = null;
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $occurrencePeriod = null;
+
+    /**
      * The person who administered the collection of the image.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $operator = null;
 
     /**
-     * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Describes why the event occurred in coded or textual form.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $deviceName = null;
+    public $reasonCode = array();
+
+    /**
+     * Indicates the site on the subject's body where the media was collected (i.e. the target site).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $bodySite = null;
+
+    /**
+     * The device used to collect the media.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $device = null;
 
     /**
      * Height of the image in pixels (photo/video).
@@ -141,6 +177,12 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     public $content = null;
 
     /**
+     * Comments made about the media by the performer, subject or other participants.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public $note = array();
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'Media';
@@ -162,6 +204,26 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A procedure that is fulfilled in whole or in part by the creation of this media.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A procedure that is fulfilled in whole or in part by the creation of this media.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
@@ -246,6 +308,66 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * The encounter or episode of care that establishes the context for this media.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getContext()
+    {
+        return $this->context;
+    }
+
+    /**
+     * The encounter or episode of care that establishes the context for this media.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
+     * @return $this
+     */
+    public function setContext($context)
+    {
+        $this->context = $context;
+        return $this;
+    }
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getOccurrenceDateTime()
+    {
+        return $this->occurrenceDateTime;
+    }
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @return $this
+     */
+    public function setOccurrenceDateTime($occurrenceDateTime)
+    {
+        $this->occurrenceDateTime = $occurrenceDateTime;
+        return $this;
+    }
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getOccurrencePeriod()
+    {
+        return $this->occurrencePeriod;
+    }
+
+    /**
+     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
+     * @return $this
+     */
+    public function setOccurrencePeriod($occurrencePeriod)
+    {
+        $this->occurrencePeriod = $occurrencePeriod;
+        return $this;
+    }
+
+    /**
      * The person who administered the collection of the image.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
@@ -266,22 +388,62 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Describes why the event occurred in coded or textual form.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getDeviceName()
+    public function getReasonCode()
     {
-        return $this->deviceName;
+        return $this->reasonCode;
     }
 
     /**
-     * The name of the device / manufacturer of the device  that was used to make the recording.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $deviceName
+     * Describes why the event occurred in coded or textual form.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
-    public function setDeviceName($deviceName)
+    public function addReasonCode($reasonCode)
     {
-        $this->deviceName = $deviceName;
+        $this->reasonCode[] = $reasonCode;
+        return $this;
+    }
+
+    /**
+     * Indicates the site on the subject's body where the media was collected (i.e. the target site).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getBodySite()
+    {
+        return $this->bodySite;
+    }
+
+    /**
+     * Indicates the site on the subject's body where the media was collected (i.e. the target site).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySite
+     * @return $this
+     */
+    public function setBodySite($bodySite)
+    {
+        $this->bodySite = $bodySite;
+        return $this;
+    }
+
+    /**
+     * The device used to collect the media.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getDevice()
+    {
+        return $this->device;
+    }
+
+    /**
+     * The device used to collect the media.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $device
+     * @return $this
+     */
+    public function setDevice($device)
+    {
+        $this->device = $device;
         return $this;
     }
 
@@ -386,6 +548,26 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Comments made about the media by the performer, subject or other participants.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Comments made about the media by the performer, subject or other participants.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
+     * @return $this
+     */
+    public function addNote($note)
+    {
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function get_fhirElementName()
@@ -414,17 +596,39 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
         if (null !== $this->type) $json['type'] = json_encode($this->type);
         if (null !== $this->subtype) $json['subtype'] = json_encode($this->subtype);
         if (null !== $this->view) $json['view'] = json_encode($this->view);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
         if (null !== $this->operator) $json['operator'] = json_encode($this->operator);
-        if (null !== $this->deviceName) $json['deviceName'] = json_encode($this->deviceName);
+        if (0 < count($this->reasonCode)) {
+            $json['reasonCode'] = [];
+            foreach($this->reasonCode as $reasonCode) {
+                $json['reasonCode'][] = json_encode($reasonCode);
+            }
+        }
+        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->device) $json['device'] = json_encode($this->device);
         if (null !== $this->height) $json['height'] = json_encode($this->height);
         if (null !== $this->width) $json['width'] = json_encode($this->width);
         if (null !== $this->frames) $json['frames'] = json_encode($this->frames);
         if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
         if (null !== $this->content) $json['content'] = json_encode($this->content);
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
+            }
+        }
         return $json;
     }
 
@@ -442,17 +646,36 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
         if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (null !== $this->subtype) $this->subtype->xmlSerialize(true, $sxe->addChild('subtype'));
         if (null !== $this->view) $this->view->xmlSerialize(true, $sxe->addChild('view'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (null !== $this->occurrencePeriod) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
         if (null !== $this->operator) $this->operator->xmlSerialize(true, $sxe->addChild('operator'));
-        if (null !== $this->deviceName) $this->deviceName->xmlSerialize(true, $sxe->addChild('deviceName'));
+        if (0 < count($this->reasonCode)) {
+            foreach($this->reasonCode as $reasonCode) {
+                $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));
+            }
+        }
+        if (null !== $this->bodySite) $this->bodySite->xmlSerialize(true, $sxe->addChild('bodySite'));
+        if (null !== $this->device) $this->device->xmlSerialize(true, $sxe->addChild('device'));
         if (null !== $this->height) $this->height->xmlSerialize(true, $sxe->addChild('height'));
         if (null !== $this->width) $this->width->xmlSerialize(true, $sxe->addChild('width'));
         if (null !== $this->frames) $this->frames->xmlSerialize(true, $sxe->addChild('frames'));
         if (null !== $this->duration) $this->duration->xmlSerialize(true, $sxe->addChild('duration'));
         if (null !== $this->content) $this->content->xmlSerialize(true, $sxe->addChild('content'));
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

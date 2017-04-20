@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,21 +63,21 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A reference to a document .
+ * A reference to a document.
  */
 class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The document or url of the document along with critical metadata to prove content has integrity.
+     * The document or URL of the document along with critical metadata to prove content has integrity.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $attachment = null;
 
     /**
      * An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $format = array();
+    public $format = null;
 
     /**
      * @var string
@@ -85,7 +85,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
     private $_fhirElementName = 'DocumentReference.Content';
 
     /**
-     * The document or url of the document along with critical metadata to prove content has integrity.
+     * The document or URL of the document along with critical metadata to prove content has integrity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getAttachment()
@@ -94,7 +94,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * The document or url of the document along with critical metadata to prove content has integrity.
+     * The document or URL of the document along with critical metadata to prove content has integrity.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $attachment
      * @return $this
      */
@@ -106,7 +106,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
 
     /**
      * An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getFormat()
     {
@@ -118,9 +118,9 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $format
      * @return $this
      */
-    public function addFormat($format)
+    public function setFormat($format)
     {
-        $this->format[] = $format;
+        $this->format = $format;
         return $this;
     }
 
@@ -147,12 +147,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
     {
         $json = parent::jsonSerialize();
         if (null !== $this->attachment) $json['attachment'] = json_encode($this->attachment);
-        if (0 < count($this->format)) {
-            $json['format'] = [];
-            foreach($this->format as $format) {
-                $json['format'][] = json_encode($format);
-            }
-        }
+        if (null !== $this->format) $json['format'] = json_encode($this->format);
         return $json;
     }
 
@@ -166,11 +161,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement implements \JsonS
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DocumentReferenceContent xmlns="http://hl7.org/fhir"></DocumentReferenceContent>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->attachment) $this->attachment->xmlSerialize(true, $sxe->addChild('attachment'));
-        if (0 < count($this->format)) {
-            foreach($this->format as $format) {
-                $format->xmlSerialize(true, $sxe->addChild('format'));
-            }
-        }
+        if (null !== $this->format) $this->format->xmlSerialize(true, $sxe->addChild('format'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

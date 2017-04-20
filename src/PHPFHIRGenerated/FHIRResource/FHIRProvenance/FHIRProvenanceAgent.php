@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,10 +68,10 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The function of the agent with respect to the activity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $role = null;
+    public $role = array();
 
     /**
      * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
@@ -86,13 +86,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     public $whoReference = null;
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $onBehalfOfUri = null;
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $onBehalfOfReference = null;
@@ -109,8 +109,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     private $_fhirElementName = 'Provenance.Agent';
 
     /**
-     * The function of the agent with respect to the activity.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getRole()
     {
@@ -118,13 +118,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The function of the agent with respect to the activity.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $role
+     * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
-    public function setRole($role)
+    public function addRole($role)
     {
-        $this->role = $role;
+        $this->role[] = $role;
         return $this;
     }
 
@@ -169,7 +169,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getOnBehalfOfUri()
@@ -178,7 +178,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $onBehalfOfUri
      * @return $this
      */
@@ -189,7 +189,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getOnBehalfOfReference()
@@ -198,7 +198,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * A reference to an application-usable description of the identity that is represented by the signature. (choose any one of onBehalfOf*, but only one)
+     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOfReference
      * @return $this
      */
@@ -250,7 +250,12 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
+        if (0 < count($this->role)) {
+            $json['role'] = [];
+            foreach($this->role as $role) {
+                $json['role'][] = json_encode($role);
+            }
+        }
         if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
         if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
         if (null !== $this->onBehalfOfUri) $json['onBehalfOfUri'] = json_encode($this->onBehalfOfUri);
@@ -268,7 +273,11 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProvenanceAgent xmlns="http://hl7.org/fhir"></ProvenanceAgent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
+        if (0 < count($this->role)) {
+            foreach($this->role as $role) {
+                $role->xmlSerialize(true, $sxe->addChild('role'));
+            }
+        }
         if (null !== $this->whoUri) $this->whoUri->xmlSerialize(true, $sxe->addChild('whoUri'));
         if (null !== $this->whoReference) $this->whoReference->xmlSerialize(true, $sxe->addChild('whoReference'));
         if (null !== $this->onBehalfOfUri) $this->onBehalfOfUri->xmlSerialize(true, $sxe->addChild('onBehalfOfUri'));

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -105,9 +105,9 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * An area where general notes can be placed about this specific condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    public $note = array();
 
     /**
      * @var string
@@ -236,7 +236,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
 
     /**
      * An area where general notes can be placed about this specific condition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -248,9 +248,9 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function setNote($note)
+    public function addNote($note)
     {
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
@@ -282,7 +282,12 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         if (null !== $this->onsetRange) $json['onsetRange'] = json_encode($this->onsetRange);
         if (null !== $this->onsetPeriod) $json['onsetPeriod'] = json_encode($this->onsetPeriod);
         if (null !== $this->onsetString) $json['onsetString'] = json_encode($this->onsetString);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
+            }
+        }
         return $json;
     }
 
@@ -301,7 +306,11 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement implements \J
         if (null !== $this->onsetRange) $this->onsetRange->xmlSerialize(true, $sxe->addChild('onsetRange'));
         if (null !== $this->onsetPeriod) $this->onsetPeriod->xmlSerialize(true, $sxe->addChild('onsetPeriod'));
         if (null !== $this->onsetString) $this->onsetString->xmlSerialize(true, $sxe->addChild('onsetString'));
-        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

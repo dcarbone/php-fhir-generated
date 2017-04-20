@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement;
 
 /**
- * Specifies an event that may occur multiple times. Timing schedules are used to record when things are expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds.
+ * Specifies an event that may occur multiple times. Timing schedules are used to record when things are planned, expected or requested to occur. The most common usage is in dosage instructions for medications. They are also used when planning care of various kinds, and may be used for reporting the schedule to which past regular activities were carried out.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
 class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
@@ -123,7 +123,7 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     public $frequency = null;
 
     /**
-     * If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range.
+     * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $frequencyMax = null;
@@ -159,10 +159,10 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     public $timeOfDay = array();
 
     /**
-     * A real world event that the occurrence of the event should be tied to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIREventTiming
+     * Real world events that the occurrence of the event should be tied to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIREventTiming[]
      */
-    public $when = null;
+    public $when = array();
 
     /**
      * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
@@ -356,7 +356,7 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range.
+     * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getFrequencyMax()
@@ -365,7 +365,7 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * If present, indicates that the frequency is a range - so repeat between [frequency] and [frequencyMax] times within the period or period range.
+     * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $frequencyMax
      * @return $this
      */
@@ -476,8 +476,8 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A real world event that the occurrence of the event should be tied to.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIREventTiming
+     * Real world events that the occurrence of the event should be tied to.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIREventTiming[]
      */
     public function getWhen()
     {
@@ -485,13 +485,13 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A real world event that the occurrence of the event should be tied to.
+     * Real world events that the occurrence of the event should be tied to.
      * @param \PHPFHIRGenerated\FHIRElement\FHIREventTiming $when
      * @return $this
      */
-    public function setWhen($when)
+    public function addWhen($when)
     {
-        $this->when = $when;
+        $this->when[] = $when;
         return $this;
     }
 
@@ -562,7 +562,12 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
                 $json['timeOfDay'][] = json_encode($timeOfDay);
             }
         }
-        if (null !== $this->when) $json['when'] = json_encode($this->when);
+        if (0 < count($this->when)) {
+            $json['when'] = [];
+            foreach($this->when as $when) {
+                $json['when'][] = json_encode($when);
+            }
+        }
         if (null !== $this->offset) $json['offset'] = json_encode($this->offset);
         return $json;
     }
@@ -599,7 +604,11 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
                 $timeOfDay->xmlSerialize(true, $sxe->addChild('timeOfDay'));
             }
         }
-        if (null !== $this->when) $this->when->xmlSerialize(true, $sxe->addChild('when'));
+        if (0 < count($this->when)) {
+            foreach($this->when as $when) {
+                $when->xmlSerialize(true, $sxe->addChild('when'));
+            }
+        }
         if (null !== $this->offset) $this->offset->xmlSerialize(true, $sxe->addChild('offset'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();

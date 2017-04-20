@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -87,7 +87,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     public $code = null;
 
     /**
-     * A summary of the context and/or cause of the assessment - why / where was it peformed, and what patient events/status prompted it.
+     * A summary of the context and/or cause of the assessment - why / where was it performed, and what patient events/status prompted it.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $description = null;
@@ -99,16 +99,10 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     public $subject = null;
 
     /**
-     * The clinician performing the assessment.
+     * The encounter or episode of care this impression was created as part of.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $assessor = null;
-
-    /**
-     * Indicates when the documentation of the assessment was complete.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $date = null;
+    public $context = null;
 
     /**
      * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
@@ -123,10 +117,16 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     public $effectivePeriod = null;
 
     /**
-     * The encounter or episode of care this impression was created as part of.
+     * Indicates when the documentation of the assessment was complete.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $date = null;
+
+    /**
+     * The clinician performing the assessment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $context = null;
+    public $assessor = null;
 
     /**
      * A reference to the last assesment that was conducted bon this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.
@@ -254,7 +254,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A summary of the context and/or cause of the assessment - why / where was it peformed, and what patient events/status prompted it.
+     * A summary of the context and/or cause of the assessment - why / where was it performed, and what patient events/status prompted it.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDescription()
@@ -263,7 +263,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A summary of the context and/or cause of the assessment - why / where was it peformed, and what patient events/status prompted it.
+     * A summary of the context and/or cause of the assessment - why / where was it performed, and what patient events/status prompted it.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
@@ -294,42 +294,22 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The clinician performing the assessment.
+     * The encounter or episode of care this impression was created as part of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAssessor()
+    public function getContext()
     {
-        return $this->assessor;
+        return $this->context;
     }
 
     /**
-     * The clinician performing the assessment.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $assessor
+     * The encounter or episode of care this impression was created as part of.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setAssessor($assessor)
+    public function setContext($context)
     {
-        $this->assessor = $assessor;
-        return $this;
-    }
-
-    /**
-     * Indicates when the documentation of the assessment was complete.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * Indicates when the documentation of the assessment was complete.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
+        $this->context = $context;
         return $this;
     }
 
@@ -374,22 +354,42 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The encounter or episode of care this impression was created as part of.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * Indicates when the documentation of the assessment was complete.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getContext()
+    public function getDate()
     {
-        return $this->context;
+        return $this->date;
     }
 
     /**
-     * The encounter or episode of care this impression was created as part of.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
+     * Indicates when the documentation of the assessment was complete.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setContext($context)
+    public function setDate($date)
     {
-        $this->context = $context;
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * The clinician performing the assessment.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getAssessor()
+    {
+        return $this->assessor;
+    }
+
+    /**
+     * The clinician performing the assessment.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $assessor
+     * @return $this
+     */
+    public function setAssessor($assessor)
+    {
+        $this->assessor = $assessor;
         return $this;
     }
 
@@ -626,11 +626,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->assessor) $json['assessor'] = json_encode($this->assessor);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
         if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
         if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->assessor) $json['assessor'] = json_encode($this->assessor);
         if (null !== $this->previous) $json['previous'] = json_encode($this->previous);
         if (0 < count($this->problem)) {
             $json['problem'] = [];
@@ -702,11 +702,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->assessor) $this->assessor->xmlSerialize(true, $sxe->addChild('assessor'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (null !== $this->effectiveDateTime) $this->effectiveDateTime->xmlSerialize(true, $sxe->addChild('effectiveDateTime'));
         if (null !== $this->effectivePeriod) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
-        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (null !== $this->assessor) $this->assessor->xmlSerialize(true, $sxe->addChild('assessor'));
         if (null !== $this->previous) $this->previous->xmlSerialize(true, $sxe->addChild('previous'));
         if (0 < count($this->problem)) {
             foreach($this->problem as $problem) {

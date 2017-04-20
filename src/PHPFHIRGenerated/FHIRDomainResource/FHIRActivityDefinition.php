@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this activity definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this activity definition is (or will be) published. The URL SHOULD include the major version of the activity definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this activity definition is (or will be) published. The URL SHOULD include the major version of the activity definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -81,7 +81,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public $identifier = array();
 
     /**
-     * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
+     * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -105,25 +105,31 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public $status = null;
 
     /**
-     * A flag to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * The date  (and optionally time) when the activity definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
+     * The date  (and optionally time) when the activity definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
 
     /**
-     * A free text natural language description of the activity definition from the consumer's perspective.
+     * The name of the individual or organization that published the activity definition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $publisher = null;
+
+    /**
+     * A free text natural language description of the activity definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * Explains why this activity definition is needed and why it has been designed as it has.
+     * Explaination of why this activity definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -135,37 +141,37 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public $usage = null;
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $approvalDate = null;
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $lastReviewDate = null;
 
     /**
-     * The period during which the activity definition content was or is planned to be effective.
+     * The period during which the activity definition content was or is planned to be in active use.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate activity definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the activity definition is intended to be used.
+     * A legal or geographic region in which the activity definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Clinical topics related to the content of the asset.
+     * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $topic = array();
@@ -175,12 +181,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
     public $contributor = array();
-
-    /**
-     * The name of the individual or organization that published the activity definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $publisher = null;
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
@@ -207,10 +207,10 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public $library = array();
 
     /**
-     * High-level categorization of the type of activity.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRActivityDefinitionCategory
+     * A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest. Typically, but not always, this is a Request resource.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public $category = null;
+    public $kind = null;
 
     /**
      * Detailed description of the type of activity; e.g. What lab test, what procedure, what kind of encounter.
@@ -220,15 +220,27 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $timingCodeableConcept = null;
-
-    /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $timingTiming = null;
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $timingDateTime = null;
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public $timingPeriod = null;
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
+     */
+    public $timingRange = null;
 
     /**
      * Identifies the facility where the activity will occur; e.g. home, hospital, specific clinic, etc.
@@ -237,10 +249,10 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public $location = null;
 
     /**
-     * The type of participant in the action.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * Indicates who should participate in performing the action described.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
      */
-    public $participantType = array();
+    public $participant = array();
 
     /**
      * Identifies the food, drug or other product being consumed or supplied in the activity. (choose any one of product*, but only one)
@@ -262,9 +274,9 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Provides detailed dosage instructions in the same way that they are described for MedicationRequest resources.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDosageInstruction[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDosage[]
      */
-    public $dosageInstruction = array();
+    public $dosage = array();
 
     /**
      * Indicates the sites on the subject's body where the procedure should be performed (I.e. the target sites).
@@ -290,7 +302,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     private $_fhirElementName = 'ActivityDefinition';
 
     /**
-     * An absolute URL that is used to identify this activity definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this activity definition is (or will be) published. The URL SHOULD include the major version of the activity definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this activity definition is (or will be) published. The URL SHOULD include the major version of the activity definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -299,7 +311,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * An absolute URL that is used to identify this activity definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this activity definition is (or will be) published. The URL SHOULD include the major version of the activity definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this activity definition is (or will be) published. The URL SHOULD include the major version of the activity definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -330,7 +342,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
+     * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -339,7 +351,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
+     * The identifier that is used to identify this version of the activity definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the activity definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active assets.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -410,7 +422,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A flag to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -419,7 +431,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A flag to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -430,7 +442,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date  (and optionally time) when the activity definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
+     * The date  (and optionally time) when the activity definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -439,7 +451,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date  (and optionally time) when the activity definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
+     * The date  (and optionally time) when the activity definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -450,7 +462,27 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A free text natural language description of the activity definition from the consumer's perspective.
+     * The name of the individual or organization that published the activity definition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPublisher()
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * The name of the individual or organization that published the activity definition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
+     * @return $this
+     */
+    public function setPublisher($publisher)
+    {
+        $this->publisher = $publisher;
+        return $this;
+    }
+
+    /**
+     * A free text natural language description of the activity definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -459,7 +491,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A free text natural language description of the activity definition from the consumer's perspective.
+     * A free text natural language description of the activity definition from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -470,7 +502,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Explains why this activity definition is needed and why it has been designed as it has.
+     * Explaination of why this activity definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -479,7 +511,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Explains why this activity definition is needed and why it has been designed as it has.
+     * Explaination of why this activity definition is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -510,7 +542,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getApprovalDate()
@@ -519,7 +551,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
@@ -530,7 +562,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getLastReviewDate()
@@ -539,7 +571,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
@@ -550,7 +582,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period during which the activity definition content was or is planned to be effective.
+     * The period during which the activity definition content was or is planned to be in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -559,7 +591,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period during which the activity definition content was or is planned to be effective.
+     * The period during which the activity definition content was or is planned to be in active use.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -570,7 +602,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate activity definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -579,7 +611,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate activity definition instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -590,7 +622,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A jurisdiction in which the activity definition is intended to be used.
+     * A legal or geographic region in which the activity definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -599,7 +631,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * A jurisdiction in which the activity definition is intended to be used.
+     * A legal or geographic region in which the activity definition is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -610,7 +642,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Clinical topics related to the content of the asset.
+     * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getTopic()
@@ -619,7 +651,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Clinical topics related to the content of the asset.
+     * Descriptive topics related to the content of the activity. Topics provide a high-level categorization of the activity that can be useful for filtering and searching.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
@@ -646,26 +678,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public function addContributor($contributor)
     {
         $this->contributor[] = $contributor;
-        return $this;
-    }
-
-    /**
-     * The name of the individual or organization that published the activity definition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublisher()
-    {
-        return $this->publisher;
-    }
-
-    /**
-     * The name of the individual or organization that published the activity definition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
-     * @return $this
-     */
-    public function setPublisher($publisher)
-    {
-        $this->publisher = $publisher;
         return $this;
     }
 
@@ -750,22 +762,22 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * High-level categorization of the type of activity.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRActivityDefinitionCategory
+     * A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest. Typically, but not always, this is a Request resource.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public function getCategory()
+    public function getKind()
     {
-        return $this->category;
+        return $this->kind;
     }
 
     /**
-     * High-level categorization of the type of activity.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRActivityDefinitionCategory $category
+     * A description of the kind of resource the activity definition is representing. For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest. Typically, but not always, this is a Request resource.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $kind
      * @return $this
      */
-    public function setCategory($category)
+    public function setKind($kind)
     {
-        $this->category = $category;
+        $this->kind = $kind;
         return $this;
     }
 
@@ -791,26 +803,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getTimingCodeableConcept()
-    {
-        return $this->timingCodeableConcept;
-    }
-
-    /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $timingCodeableConcept
-     * @return $this
-     */
-    public function setTimingCodeableConcept($timingCodeableConcept)
-    {
-        $this->timingCodeableConcept = $timingCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getTimingTiming()
@@ -826,6 +818,66 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public function setTimingTiming($timingTiming)
     {
         $this->timingTiming = $timingTiming;
+        return $this;
+    }
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getTimingDateTime()
+    {
+        return $this->timingDateTime;
+    }
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $timingDateTime
+     * @return $this
+     */
+    public function setTimingDateTime($timingDateTime)
+    {
+        $this->timingDateTime = $timingDateTime;
+        return $this;
+    }
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getTimingPeriod()
+    {
+        return $this->timingPeriod;
+    }
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timingPeriod
+     * @return $this
+     */
+    public function setTimingPeriod($timingPeriod)
+    {
+        $this->timingPeriod = $timingPeriod;
+        return $this;
+    }
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
+     */
+    public function getTimingRange()
+    {
+        return $this->timingRange;
+    }
+
+    /**
+     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $timingRange
+     * @return $this
+     */
+    public function setTimingRange($timingRange)
+    {
+        $this->timingRange = $timingRange;
         return $this;
     }
 
@@ -850,22 +902,22 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The type of participant in the action.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode[]
+     * Indicates who should participate in performing the action described.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
      */
-    public function getParticipantType()
+    public function getParticipant()
     {
-        return $this->participantType;
+        return $this->participant;
     }
 
     /**
-     * The type of participant in the action.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $participantType
+     * Indicates who should participate in performing the action described.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRActivityDefinition\FHIRActivityDefinitionParticipant $participant
      * @return $this
      */
-    public function addParticipantType($participantType)
+    public function addParticipant($participant)
     {
-        $this->participantType[] = $participantType;
+        $this->participant[] = $participant;
         return $this;
     }
 
@@ -931,21 +983,21 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
 
     /**
      * Provides detailed dosage instructions in the same way that they are described for MedicationRequest resources.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDosageInstruction[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDosage[]
      */
-    public function getDosageInstruction()
+    public function getDosage()
     {
-        return $this->dosageInstruction;
+        return $this->dosage;
     }
 
     /**
      * Provides detailed dosage instructions in the same way that they are described for MedicationRequest resources.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDosageInstruction $dosageInstruction
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDosage $dosage
      * @return $this
      */
-    public function addDosageInstruction($dosageInstruction)
+    public function addDosage($dosage)
     {
-        $this->dosageInstruction[] = $dosageInstruction;
+        $this->dosage[] = $dosage;
         return $this;
     }
 
@@ -1045,6 +1097,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
         if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
         if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
@@ -1075,7 +1128,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
                 $json['contributor'][] = json_encode($contributor);
             }
         }
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
@@ -1095,24 +1147,26 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
                 $json['library'][] = json_encode($library);
             }
         }
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
         if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->timingCodeableConcept) $json['timingCodeableConcept'] = json_encode($this->timingCodeableConcept);
         if (null !== $this->timingTiming) $json['timingTiming'] = json_encode($this->timingTiming);
+        if (null !== $this->timingDateTime) $json['timingDateTime'] = json_encode($this->timingDateTime);
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
+        if (null !== $this->timingRange) $json['timingRange'] = json_encode($this->timingRange);
         if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (0 < count($this->participantType)) {
-            $json['participantType'] = [];
-            foreach($this->participantType as $participantType) {
-                $json['participantType'][] = json_encode($participantType);
+        if (0 < count($this->participant)) {
+            $json['participant'] = [];
+            foreach($this->participant as $participant) {
+                $json['participant'][] = json_encode($participant);
             }
         }
         if (null !== $this->productReference) $json['productReference'] = json_encode($this->productReference);
         if (null !== $this->productCodeableConcept) $json['productCodeableConcept'] = json_encode($this->productCodeableConcept);
         if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (0 < count($this->dosageInstruction)) {
-            $json['dosageInstruction'] = [];
-            foreach($this->dosageInstruction as $dosageInstruction) {
-                $json['dosageInstruction'][] = json_encode($dosageInstruction);
+        if (0 < count($this->dosage)) {
+            $json['dosage'] = [];
+            foreach($this->dosage as $dosage) {
+                $json['dosage'][] = json_encode($dosage);
             }
         }
         if (0 < count($this->bodySite)) {
@@ -1152,6 +1206,7 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
         if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
@@ -1178,7 +1233,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
                 $contributor->xmlSerialize(true, $sxe->addChild('contributor'));
             }
         }
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
@@ -1195,22 +1249,24 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
                 $library->xmlSerialize(true, $sxe->addChild('library'));
             }
         }
-        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->timingCodeableConcept) $this->timingCodeableConcept->xmlSerialize(true, $sxe->addChild('timingCodeableConcept'));
         if (null !== $this->timingTiming) $this->timingTiming->xmlSerialize(true, $sxe->addChild('timingTiming'));
+        if (null !== $this->timingDateTime) $this->timingDateTime->xmlSerialize(true, $sxe->addChild('timingDateTime'));
+        if (null !== $this->timingPeriod) $this->timingPeriod->xmlSerialize(true, $sxe->addChild('timingPeriod'));
+        if (null !== $this->timingRange) $this->timingRange->xmlSerialize(true, $sxe->addChild('timingRange'));
         if (null !== $this->location) $this->location->xmlSerialize(true, $sxe->addChild('location'));
-        if (0 < count($this->participantType)) {
-            foreach($this->participantType as $participantType) {
-                $participantType->xmlSerialize(true, $sxe->addChild('participantType'));
+        if (0 < count($this->participant)) {
+            foreach($this->participant as $participant) {
+                $participant->xmlSerialize(true, $sxe->addChild('participant'));
             }
         }
         if (null !== $this->productReference) $this->productReference->xmlSerialize(true, $sxe->addChild('productReference'));
         if (null !== $this->productCodeableConcept) $this->productCodeableConcept->xmlSerialize(true, $sxe->addChild('productCodeableConcept'));
         if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
-        if (0 < count($this->dosageInstruction)) {
-            foreach($this->dosageInstruction as $dosageInstruction) {
-                $dosageInstruction->xmlSerialize(true, $sxe->addChild('dosageInstruction'));
+        if (0 < count($this->dosage)) {
+            foreach($this->dosage as $dosage) {
+                $dosage->xmlSerialize(true, $sxe->addChild('dosage'));
             }
         }
         if (0 < count($this->bodySite)) {

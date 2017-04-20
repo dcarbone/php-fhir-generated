@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,10 +69,16 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * A unique identifier for the simple observation instance.
+     * A unique identifier assigned to this observation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
 
     /**
      * The status of the result value.
@@ -102,7 +108,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $encounter = null;
+    public $context = null;
 
     /**
      * The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the "physiologically relevant time". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
@@ -145,6 +151,12 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
+
+    /**
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $valueBoolean = null;
 
     /**
      * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
@@ -254,7 +266,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'Observation';
 
     /**
-     * A unique identifier for the simple observation instance.
+     * A unique identifier assigned to this observation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
@@ -263,13 +275,33 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A unique identifier for the simple observation instance.
+     * A unique identifier assigned to this observation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
     public function addIdentifier($identifier)
     {
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
         return $this;
     }
 
@@ -357,19 +389,19 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
+    public function getContext()
     {
-        return $this->encounter;
+        return $this->context;
     }
 
     /**
      * The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setEncounter($encounter)
+    public function setContext($context)
     {
-        $this->encounter = $encounter;
+        $this->context = $context;
         return $this;
     }
 
@@ -510,6 +542,26 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     public function setValueString($valueString)
     {
         $this->valueString = $valueString;
+        return $this;
+    }
+
+    /**
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getValueBoolean()
+    {
+        return $this->valueBoolean;
+    }
+
+    /**
+     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $valueBoolean
+     * @return $this
+     */
+    public function setValueBoolean($valueBoolean)
+    {
+        $this->valueBoolean = $valueBoolean;
         return $this;
     }
 
@@ -882,6 +934,12 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (0 < count($this->category)) {
             $json['category'] = [];
@@ -891,7 +949,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->code) $json['code'] = json_encode($this->code);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->context) $json['context'] = json_encode($this->context);
         if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
         if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
         if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
@@ -904,6 +962,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
         if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
         if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
         if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
         if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
         if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
@@ -953,6 +1012,11 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (0 < count($this->category)) {
             foreach($this->category as $category) {
@@ -961,7 +1025,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
         }
         if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (null !== $this->effectiveDateTime) $this->effectiveDateTime->xmlSerialize(true, $sxe->addChild('effectiveDateTime'));
         if (null !== $this->effectivePeriod) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
         if (null !== $this->issued) $this->issued->xmlSerialize(true, $sxe->addChild('issued'));
@@ -973,6 +1037,7 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
         if (null !== $this->valueQuantity) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
         if (null !== $this->valueCodeableConcept) $this->valueCodeableConcept->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
         if (null !== $this->valueString) $this->valueString->xmlSerialize(true, $sxe->addChild('valueString'));
+        if (null !== $this->valueBoolean) $this->valueBoolean->xmlSerialize(true, $sxe->addChild('valueBoolean'));
         if (null !== $this->valueRange) $this->valueRange->xmlSerialize(true, $sxe->addChild('valueRange'));
         if (null !== $this->valueRatio) $this->valueRatio->xmlSerialize(true, $sxe->addChild('valueRatio'));
         if (null !== $this->valueSampledData) $this->valueSampledData->xmlSerialize(true, $sxe->addChild('valueSampledData'));

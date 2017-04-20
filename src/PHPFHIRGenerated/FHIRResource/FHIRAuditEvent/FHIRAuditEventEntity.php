@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -98,7 +98,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     public $lifecycle = null;
 
     /**
-     * Denotes security labels for the identified entity.
+     * Security labels for the identified entity.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public $securityLabel = array();
@@ -122,7 +122,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     public $query = null;
 
     /**
-     * Additional Information about the entity.
+     * Tagged value pairs for conveying additional information about the entity.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     public $detail = array();
@@ -233,7 +233,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Denotes security labels for the identified entity.
+     * Security labels for the identified entity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
     public function getSecurityLabel()
@@ -242,7 +242,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Denotes security labels for the identified entity.
+     * Security labels for the identified entity.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $securityLabel
      * @return $this
      */
@@ -313,7 +313,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Additional Information about the entity.
+     * Tagged value pairs for conveying additional information about the entity.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     public function getDetail()
@@ -322,7 +322,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Additional Information about the entity.
+     * Tagged value pairs for conveying additional information about the entity.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail $detail
      * @return $this
      */

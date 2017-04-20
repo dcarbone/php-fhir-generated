@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,13 +69,19 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
 
     /**
-     * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public $identifier = null;
+
+    /**
+     * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -99,13 +105,13 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     public $status = null;
 
     /**
-     * A flag to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
 
     /**
-     * The date  (and optionally time) when the message definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
+     * The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $date = null;
@@ -123,25 +129,25 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     public $contact = array();
 
     /**
-     * A free text natural language description of the message definition from the consumer's perspective.
+     * A free text natural language description of the message definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the message definition is intended to be used.
+     * A legal or geographic region in which the message definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
 
     /**
-     * Explains why this message definition is needed and why it has been designed as it has.
+     * Explaination of why this message definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
@@ -153,7 +159,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     public $copyright = null;
 
     /**
-     * The MessageDefinition this new definition is a profile of.
+     * The MessageDefinition that is the basis for the contents of this resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $base = null;
@@ -178,7 +184,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The impact of the content of the message.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory
      */
     public $category = null;
 
@@ -206,7 +212,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     private $_fhirElementName = 'MessageDefinition';
 
     /**
-     * An absolute URL that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -215,7 +221,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * An absolute URL that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -226,7 +232,27 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getVersion()
@@ -235,7 +261,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.
+     * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
@@ -306,7 +332,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A flag to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -315,7 +341,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A flag to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
@@ -326,7 +352,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date  (and optionally time) when the message definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
+     * The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDate()
@@ -335,7 +361,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The date  (and optionally time) when the message definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
+     * The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
@@ -386,7 +412,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A free text natural language description of the message definition from the consumer's perspective.
+     * A free text natural language description of the message definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -395,7 +421,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A free text natural language description of the message definition from the consumer's perspective.
+     * A free text natural language description of the message definition from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -406,7 +432,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -415,7 +441,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -426,7 +452,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A jurisdiction in which the message definition is intended to be used.
+     * A legal or geographic region in which the message definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -435,7 +461,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * A jurisdiction in which the message definition is intended to be used.
+     * A legal or geographic region in which the message definition is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -446,7 +472,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Explains why this message definition is needed and why it has been designed as it has.
+     * Explaination of why this message definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -455,7 +481,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * Explains why this message definition is needed and why it has been designed as it has.
+     * Explaination of why this message definition is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -486,7 +512,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The MessageDefinition this new definition is a profile of.
+     * The MessageDefinition that is the basis for the contents of this resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getBase()
@@ -495,7 +521,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     }
 
     /**
-     * The MessageDefinition this new definition is a profile of.
+     * The MessageDefinition that is the basis for the contents of this resource.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $base
      * @return $this
      */
@@ -567,7 +593,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The impact of the content of the message.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory
      */
     public function getCategory()
     {
@@ -576,7 +602,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
 
     /**
      * The impact of the content of the message.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $category
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory $category
      * @return $this
      */
     public function setCategory($category)
@@ -669,6 +695,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
         if (null !== $this->version) $json['version'] = json_encode($this->version);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->title) $json['title'] = json_encode($this->title);
@@ -738,6 +765,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MessageDefinition xmlns="http://hl7.org/fhir"></MessageDefinition>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
         if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));

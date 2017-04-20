@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 {
     /**
      * The kind of condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRActionConditionKind
      */
     public $kind = null;
 
@@ -98,7 +98,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The kind of condition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRActionConditionKind
      */
     public function getKind()
     {
@@ -107,7 +107,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
 
     /**
      * The kind of condition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $kind
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRActionConditionKind $kind
      * @return $this
      */
     public function setKind($kind)

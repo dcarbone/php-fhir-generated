@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -76,7 +76,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of the resource instance.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public $status = null;
 
@@ -148,9 +148,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Suite of notes.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
      */
-    public $note = array();
+    public $processNote = array();
 
     /**
      * @var string
@@ -179,7 +179,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of the resource instance.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     public function getStatus()
     {
@@ -188,7 +188,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * The status of the resource instance.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $status
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
     public function setStatus($status)
@@ -419,21 +419,21 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
 
     /**
      * Suite of notes.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
      */
-    public function getNote()
+    public function getProcessNote()
     {
-        return $this->note;
+        return $this->processNote;
     }
 
     /**
      * Suite of notes.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote $note
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote $processNote
      * @return $this
      */
-    public function addNote($note)
+    public function addProcessNote($processNote)
     {
-        $this->note[] = $note;
+        $this->processNote[] = $processNote;
         return $this;
     }
 
@@ -483,10 +483,10 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
         }
         if (null !== $this->form) $json['form'] = json_encode($this->form);
         if (null !== $this->total) $json['total'] = json_encode($this->total);
-        if (0 < count($this->note)) {
-            $json['note'] = [];
-            foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+        if (0 < count($this->processNote)) {
+            $json['processNote'] = [];
+            foreach($this->processNote as $processNote) {
+                $json['processNote'][] = json_encode($processNote);
             }
         }
         return $json;
@@ -522,9 +522,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
         }
         if (null !== $this->form) $this->form->xmlSerialize(true, $sxe->addChild('form'));
         if (null !== $this->total) $this->total->xmlSerialize(true, $sxe->addChild('total'));
-        if (0 < count($this->note)) {
-            foreach($this->note as $note) {
-                $note->xmlSerialize(true, $sxe->addChild('note'));
+        if (0 < count($this->processNote)) {
+            foreach($this->processNote as $processNote) {
+                $processNote->xmlSerialize(true, $sxe->addChild('processNote'));
             }
         }
         if ($returnSXE) return $sxe;

@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * Identifier(s) by which this EpisodeOfCare is known.
+     * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public $identifier = array();
@@ -93,13 +93,13 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
     public $type = array();
 
     /**
-     * A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * The list of diagnosis relevant to this episode of care.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
      */
-    public $condition = array();
+    public $diagnosis = array();
 
     /**
-     * The patient that this EpisodeOfCare applies to.
+     * The patient who is the focus of this episode of care.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $patient = null;
@@ -146,7 +146,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'EpisodeOfCare';
 
     /**
-     * Identifier(s) by which this EpisodeOfCare is known.
+     * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
     public function getIdentifier()
@@ -155,7 +155,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Identifier(s) by which this EpisodeOfCare is known.
+     * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
@@ -226,27 +226,27 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * The list of diagnosis relevant to this episode of care.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
      */
-    public function getCondition()
+    public function getDiagnosis()
     {
-        return $this->condition;
+        return $this->diagnosis;
     }
 
     /**
-     * A list of conditions/problems/diagnoses that this episode of care is intended to be providing care for.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $condition
+     * The list of diagnosis relevant to this episode of care.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis $diagnosis
      * @return $this
      */
-    public function addCondition($condition)
+    public function addDiagnosis($diagnosis)
     {
-        $this->condition[] = $condition;
+        $this->diagnosis[] = $diagnosis;
         return $this;
     }
 
     /**
-     * The patient that this EpisodeOfCare applies to.
+     * The patient who is the focus of this episode of care.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPatient()
@@ -255,7 +255,7 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The patient that this EpisodeOfCare applies to.
+     * The patient who is the focus of this episode of care.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
@@ -427,10 +427,10 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
                 $json['type'][] = json_encode($type);
             }
         }
-        if (0 < count($this->condition)) {
-            $json['condition'] = [];
-            foreach($this->condition as $condition) {
-                $json['condition'][] = json_encode($condition);
+        if (0 < count($this->diagnosis)) {
+            $json['diagnosis'] = [];
+            foreach($this->diagnosis as $diagnosis) {
+                $json['diagnosis'][] = json_encode($diagnosis);
             }
         }
         if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
@@ -483,9 +483,9 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
                 $type->xmlSerialize(true, $sxe->addChild('type'));
             }
         }
-        if (0 < count($this->condition)) {
-            foreach($this->condition as $condition) {
-                $condition->xmlSerialize(true, $sxe->addChild('condition'));
+        if (0 < count($this->diagnosis)) {
+            foreach($this->diagnosis as $diagnosis) {
+                $diagnosis->xmlSerialize(true, $sxe->addChild('diagnosis'));
             }
         }
         if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));

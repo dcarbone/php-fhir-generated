@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,7 +75,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMeasureDataUsage[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $usage = array();
 
@@ -118,7 +118,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasureDataUsage[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getUsage()
     {
@@ -127,7 +127,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
 
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasureDataUsage $usage
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $usage
      * @return $this
      */
     public function addUsage($usage)

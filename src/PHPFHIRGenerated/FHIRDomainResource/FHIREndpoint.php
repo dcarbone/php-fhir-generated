@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,6 +81,12 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     public $status = null;
 
     /**
+     * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    public $connectionType = null;
+
+    /**
      * A friendly name that this endpoint can be referred to with.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
@@ -105,12 +111,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     public $period = null;
 
     /**
-     * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public $connectionType = null;
-
-    /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
@@ -123,7 +123,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     public $payloadMimeType = array();
 
     /**
-     * The uri that describes the actual end-point to send messages to.
+     * The uri that describes the actual end-point to connect to.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $address = null;
@@ -133,12 +133,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
     public $header = array();
-
-    /**
-     * The public part of the 'keys' allocated to an Organization by an accredited body to support secure exchange of data over the internet. To be provided by the Organization, where available.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $publicKey = null;
 
     /**
      * @var string
@@ -182,6 +176,26 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
+     */
+    public function getConnectionType()
+    {
+        return $this->connectionType;
+    }
+
+    /**
+     * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $connectionType
+     * @return $this
+     */
+    public function setConnectionType($connectionType)
+    {
+        $this->connectionType = $connectionType;
         return $this;
     }
 
@@ -266,26 +280,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
-     */
-    public function getConnectionType()
-    {
-        return $this->connectionType;
-    }
-
-    /**
-     * A coded value that represents the technical details of the usage of this endpoint, such as what WSDLs should be used in what way. (e.g. XDS.b/DICOM/cds-hook).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $connectionType
-     * @return $this
-     */
-    public function setConnectionType($connectionType)
-    {
-        $this->connectionType = $connectionType;
-        return $this;
-    }
-
-    /**
      * The payload type describes the acceptable content that can be communicated on the endpoint.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
@@ -326,7 +320,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The uri that describes the actual end-point to send messages to.
+     * The uri that describes the actual end-point to connect to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getAddress()
@@ -335,7 +329,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The uri that describes the actual end-point to send messages to.
+     * The uri that describes the actual end-point to connect to.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $address
      * @return $this
      */
@@ -362,26 +356,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
     public function addHeader($header)
     {
         $this->header[] = $header;
-        return $this;
-    }
-
-    /**
-     * The public part of the 'keys' allocated to an Organization by an accredited body to support secure exchange of data over the internet. To be provided by the Organization, where available.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublicKey()
-    {
-        return $this->publicKey;
-    }
-
-    /**
-     * The public part of the 'keys' allocated to an Organization by an accredited body to support secure exchange of data over the internet. To be provided by the Organization, where available.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publicKey
-     * @return $this
-     */
-    public function setPublicKey($publicKey)
-    {
-        $this->publicKey = $publicKey;
         return $this;
     }
 
@@ -415,6 +389,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->connectionType) $json['connectionType'] = json_encode($this->connectionType);
         if (null !== $this->name) $json['name'] = json_encode($this->name);
         if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
         if (0 < count($this->contact)) {
@@ -424,7 +399,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->connectionType) $json['connectionType'] = json_encode($this->connectionType);
         if (0 < count($this->payloadType)) {
             $json['payloadType'] = [];
             foreach($this->payloadType as $payloadType) {
@@ -444,7 +418,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
                 $json['header'][] = json_encode($header);
             }
         }
-        if (null !== $this->publicKey) $json['publicKey'] = json_encode($this->publicKey);
         return $json;
     }
 
@@ -463,6 +436,7 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->connectionType) $this->connectionType->xmlSerialize(true, $sxe->addChild('connectionType'));
         if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (null !== $this->managingOrganization) $this->managingOrganization->xmlSerialize(true, $sxe->addChild('managingOrganization'));
         if (0 < count($this->contact)) {
@@ -471,7 +445,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
             }
         }
         if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if (null !== $this->connectionType) $this->connectionType->xmlSerialize(true, $sxe->addChild('connectionType'));
         if (0 < count($this->payloadType)) {
             foreach($this->payloadType as $payloadType) {
                 $payloadType->xmlSerialize(true, $sxe->addChild('payloadType'));
@@ -488,7 +461,6 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
                 $header->xmlSerialize(true, $sxe->addChild('header'));
             }
         }
-        if (null !== $this->publicKey) $this->publicKey->xmlSerialize(true, $sxe->addChild('publicKey'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

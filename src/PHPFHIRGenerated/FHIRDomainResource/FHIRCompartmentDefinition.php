@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URL that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -93,10 +93,16 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     public $status = null;
 
     /**
-     * A flag to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
+
+    /**
+     * The date  (and optionally time) when the compartment definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $date = null;
 
     /**
      * The name of the individual or organization that published the compartment definition.
@@ -111,31 +117,25 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     public $contact = array();
 
     /**
-     * The date  (and optionally time) when the compartment definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $date = null;
-
-    /**
-     * A free text natural language description of the compartment definition from the consumer's perspective.
+     * A free text natural language description of the compartment definition from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $description = null;
 
     /**
-     * Explains why this compartment definition is needed and why it has been designed as it has.
+     * Explaination of why this compartment definition is needed and why it has been designed as it has.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate compartment definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public $useContext = array();
 
     /**
-     * A jurisdiction in which the compartment definition is intended to be used.
+     * A legal or geographic region in which the compartment definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $jurisdiction = array();
@@ -147,13 +147,13 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     public $code = null;
 
     /**
-     * Whether the search syntax is supported.
+     * Whether the search syntax is supported,.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $search = null;
 
     /**
-     * Information about how a resource it related to the compartment.
+     * Information about how a resource is related to the compartment.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
      */
     public $resource = array();
@@ -164,7 +164,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     private $_fhirElementName = 'CompartmentDefinition';
 
     /**
-     * An absolute URL that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getUrl()
@@ -173,7 +173,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * An absolute URL that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
@@ -244,7 +244,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * A flag to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExperimental()
@@ -253,13 +253,33 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * A flag to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
+     * A boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
     public function setExperimental($experimental)
     {
         $this->experimental = $experimental;
+        return $this;
+    }
+
+    /**
+     * The date  (and optionally time) when the compartment definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * The date  (and optionally time) when the compartment definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
         return $this;
     }
 
@@ -304,27 +324,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The date  (and optionally time) when the compartment definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * The date  (and optionally time) when the compartment definition was published. The date must change when the business version changes, if it does, and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
-     * A free text natural language description of the compartment definition from the consumer's perspective.
+     * A free text natural language description of the compartment definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDescription()
@@ -333,7 +333,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * A free text natural language description of the compartment definition from the consumer's perspective.
+     * A free text natural language description of the compartment definition from a consumer's perspective.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
@@ -344,7 +344,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Explains why this compartment definition is needed and why it has been designed as it has.
+     * Explaination of why this compartment definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPurpose()
@@ -353,7 +353,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Explains why this compartment definition is needed and why it has been designed as it has.
+     * Explaination of why this compartment definition is needed and why it has been designed as it has.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
@@ -364,7 +364,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate compartment definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
     public function getUseContext()
@@ -373,7 +373,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate compartment definition instances.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
@@ -384,7 +384,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * A jurisdiction in which the compartment definition is intended to be used.
+     * A legal or geographic region in which the compartment definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public function getJurisdiction()
@@ -393,7 +393,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * A jurisdiction in which the compartment definition is intended to be used.
+     * A legal or geographic region in which the compartment definition is intended to be used.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
@@ -424,7 +424,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Whether the search syntax is supported.
+     * Whether the search syntax is supported,.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getSearch()
@@ -433,7 +433,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Whether the search syntax is supported.
+     * Whether the search syntax is supported,.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $search
      * @return $this
      */
@@ -444,7 +444,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Information about how a resource it related to the compartment.
+     * Information about how a resource is related to the compartment.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
      */
     public function getResource()
@@ -453,7 +453,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     }
 
     /**
-     * Information about how a resource it related to the compartment.
+     * Information about how a resource is related to the compartment.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource $resource
      * @return $this
      */
@@ -491,6 +491,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
         if (null !== $this->title) $json['title'] = json_encode($this->title);
         if (null !== $this->status) $json['status'] = json_encode($this->status);
         if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
+        if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
         if (0 < count($this->contact)) {
             $json['contact'] = [];
@@ -498,7 +499,6 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
                 $json['contact'][] = json_encode($contact);
             }
         }
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
         if (0 < count($this->useContext)) {
@@ -538,13 +538,13 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
         if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (0 < count($this->useContext)) {

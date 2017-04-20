@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,16 +75,52 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
+     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $definition = array();
+
+    /**
+     * A care plan that is fulfilled in whole or in part by this care plan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $basedOn = array();
+
+    /**
+     * Completed or terminated care plan whose function is taken by this new care plan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $replaces = array();
+
+    /**
+     * A larger care plan of which this particular care plan is a component or step.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $partOf = array();
+
+    /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus
      */
     public $status = null;
 
     /**
+     * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent
+     */
+    public $intent = null;
+
+    /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
     public $category = array();
+
+    /**
+     * Human-friendly name for the CarePlan.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $title = null;
 
     /**
      * A description of the scope and nature of the plan.
@@ -111,12 +147,6 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     public $period = null;
 
     /**
-     * Identifies the most recent date on which the plan has been revised.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public $modified = null;
-
-    /**
      * Identifies the individual(s) or ogranization who is responsible for the content of the care plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
@@ -138,19 +168,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $support = array();
-
-    /**
-     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $definition = null;
-
-    /**
-     * Identifies CarePlans with some sort of formal relationship to the current plan.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanRelatedPlan[]
-     */
-    public $relatedPlan = array();
+    public $supportingInfo = array();
 
     /**
      * Describes the intended objective(s) of carrying out the care plan.
@@ -166,9 +184,9 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * General notes about the care plan not covered elsewhere.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = null;
+    public $note = array();
 
     /**
      * @var string
@@ -196,6 +214,86 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @return $this
+     */
+    public function addDefinition($definition)
+    {
+        $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * A care plan that is fulfilled in whole or in part by this care plan.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getBasedOn()
+    {
+        return $this->basedOn;
+    }
+
+    /**
+     * A care plan that is fulfilled in whole or in part by this care plan.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
+     * @return $this
+     */
+    public function addBasedOn($basedOn)
+    {
+        $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * Completed or terminated care plan whose function is taken by this new care plan.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getReplaces()
+    {
+        return $this->replaces;
+    }
+
+    /**
+     * Completed or terminated care plan whose function is taken by this new care plan.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $replaces
+     * @return $this
+     */
+    public function addReplaces($replaces)
+    {
+        $this->replaces[] = $replaces;
+        return $this;
+    }
+
+    /**
+     * A larger care plan of which this particular care plan is a component or step.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getPartOf()
+    {
+        return $this->partOf;
+    }
+
+    /**
+     * A larger care plan of which this particular care plan is a component or step.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partOf
+     * @return $this
+     */
+    public function addPartOf($partOf)
+    {
+        $this->partOf[] = $partOf;
+        return $this;
+    }
+
+    /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus
      */
@@ -216,6 +314,26 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
+     * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent
+     */
+    public function getIntent()
+    {
+        return $this->intent;
+    }
+
+    /**
+     * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent $intent
+     * @return $this
+     */
+    public function setIntent($intent)
+    {
+        $this->intent = $intent;
+        return $this;
+    }
+
+    /**
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
@@ -232,6 +350,26 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     public function addCategory($category)
     {
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * Human-friendly name for the CarePlan.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Human-friendly name for the CarePlan.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
         return $this;
     }
 
@@ -316,26 +454,6 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Identifies the most recent date on which the plan has been revised.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getModified()
-    {
-        return $this->modified;
-    }
-
-    /**
-     * Identifies the most recent date on which the plan has been revised.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $modified
-     * @return $this
-     */
-    public function setModified($modified)
-    {
-        $this->modified = $modified;
-        return $this;
-    }
-
-    /**
      * Identifies the individual(s) or ogranization who is responsible for the content of the care plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
@@ -399,59 +517,19 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupport()
+    public function getSupportingInfo()
     {
-        return $this->support;
+        return $this->supportingInfo;
     }
 
     /**
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $support
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
-    public function addSupport($support)
+    public function addSupportingInfo($supportingInfo)
     {
-        $this->support[] = $support;
-        return $this;
-    }
-
-    /**
-     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getDefinition()
-    {
-        return $this->definition;
-    }
-
-    /**
-     * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
-     * @return $this
-     */
-    public function setDefinition($definition)
-    {
-        $this->definition = $definition;
-        return $this;
-    }
-
-    /**
-     * Identifies CarePlans with some sort of formal relationship to the current plan.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanRelatedPlan[]
-     */
-    public function getRelatedPlan()
-    {
-        return $this->relatedPlan;
-    }
-
-    /**
-     * Identifies CarePlans with some sort of formal relationship to the current plan.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanRelatedPlan $relatedPlan
-     * @return $this
-     */
-    public function addRelatedPlan($relatedPlan)
-    {
-        $this->relatedPlan[] = $relatedPlan;
+        $this->supportingInfo[] = $supportingInfo;
         return $this;
     }
 
@@ -497,7 +575,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * General notes about the care plan not covered elsewhere.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
     public function getNote()
     {
@@ -509,9 +587,9 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function setNote($note)
+    public function addNote($note)
     {
-        $this->note = $note;
+        $this->note[] = $note;
         return $this;
     }
 
@@ -544,18 +622,43 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $json['identifier'][] = json_encode($identifier);
             }
         }
+        if (0 < count($this->definition)) {
+            $json['definition'] = [];
+            foreach($this->definition as $definition) {
+                $json['definition'][] = json_encode($definition);
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            $json['basedOn'] = [];
+            foreach($this->basedOn as $basedOn) {
+                $json['basedOn'][] = json_encode($basedOn);
+            }
+        }
+        if (0 < count($this->replaces)) {
+            $json['replaces'] = [];
+            foreach($this->replaces as $replaces) {
+                $json['replaces'][] = json_encode($replaces);
+            }
+        }
+        if (0 < count($this->partOf)) {
+            $json['partOf'] = [];
+            foreach($this->partOf as $partOf) {
+                $json['partOf'][] = json_encode($partOf);
+            }
+        }
         if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
                 $json['category'][] = json_encode($category);
             }
         }
+        if (null !== $this->title) $json['title'] = json_encode($this->title);
         if (null !== $this->description) $json['description'] = json_encode($this->description);
         if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
         if (null !== $this->context) $json['context'] = json_encode($this->context);
         if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->modified) $json['modified'] = json_encode($this->modified);
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
@@ -574,17 +677,10 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $json['addresses'][] = json_encode($addresses);
             }
         }
-        if (0 < count($this->support)) {
-            $json['support'] = [];
-            foreach($this->support as $support) {
-                $json['support'][] = json_encode($support);
-            }
-        }
-        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
-        if (0 < count($this->relatedPlan)) {
-            $json['relatedPlan'] = [];
-            foreach($this->relatedPlan as $relatedPlan) {
-                $json['relatedPlan'][] = json_encode($relatedPlan);
+        if (0 < count($this->supportingInfo)) {
+            $json['supportingInfo'] = [];
+            foreach($this->supportingInfo as $supportingInfo) {
+                $json['supportingInfo'][] = json_encode($supportingInfo);
             }
         }
         if (0 < count($this->goal)) {
@@ -599,7 +695,12 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $json['activity'][] = json_encode($activity);
             }
         }
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (0 < count($this->note)) {
+            $json['note'] = [];
+            foreach($this->note as $note) {
+                $json['note'][] = json_encode($note);
+            }
+        }
         return $json;
     }
 
@@ -617,17 +718,38 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
+        if (0 < count($this->definition)) {
+            foreach($this->definition as $definition) {
+                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+            }
+        }
+        if (0 < count($this->basedOn)) {
+            foreach($this->basedOn as $basedOn) {
+                $basedOn->xmlSerialize(true, $sxe->addChild('basedOn'));
+            }
+        }
+        if (0 < count($this->replaces)) {
+            foreach($this->replaces as $replaces) {
+                $replaces->xmlSerialize(true, $sxe->addChild('replaces'));
+            }
+        }
+        if (0 < count($this->partOf)) {
+            foreach($this->partOf as $partOf) {
+                $partOf->xmlSerialize(true, $sxe->addChild('partOf'));
+            }
+        }
         if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (null !== $this->intent) $this->intent->xmlSerialize(true, $sxe->addChild('intent'));
         if (0 < count($this->category)) {
             foreach($this->category as $category) {
                 $category->xmlSerialize(true, $sxe->addChild('category'));
             }
         }
+        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
         if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
         if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if (null !== $this->modified) $this->modified->xmlSerialize(true, $sxe->addChild('modified'));
         if (0 < count($this->author)) {
             foreach($this->author as $author) {
                 $author->xmlSerialize(true, $sxe->addChild('author'));
@@ -643,15 +765,9 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $addresses->xmlSerialize(true, $sxe->addChild('addresses'));
             }
         }
-        if (0 < count($this->support)) {
-            foreach($this->support as $support) {
-                $support->xmlSerialize(true, $sxe->addChild('support'));
-            }
-        }
-        if (null !== $this->definition) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
-        if (0 < count($this->relatedPlan)) {
-            foreach($this->relatedPlan as $relatedPlan) {
-                $relatedPlan->xmlSerialize(true, $sxe->addChild('relatedPlan'));
+        if (0 < count($this->supportingInfo)) {
+            foreach($this->supportingInfo as $supportingInfo) {
+                $supportingInfo->xmlSerialize(true, $sxe->addChild('supportingInfo'));
             }
         }
         if (0 < count($this->goal)) {
@@ -664,7 +780,11 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $activity->xmlSerialize(true, $sxe->addChild('activity'));
             }
         }
-        if (null !== $this->note) $this->note->xmlSerialize(true, $sxe->addChild('note'));
+        if (0 < count($this->note)) {
+            foreach($this->note as $note) {
+                $note->xmlSerialize(true, $sxe->addChild('note'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

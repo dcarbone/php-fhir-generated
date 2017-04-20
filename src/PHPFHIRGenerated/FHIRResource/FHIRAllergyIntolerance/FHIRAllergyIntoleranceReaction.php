@@ -4,7 +4,7 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: April 20th, 2017
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Tue, Dec 6, 2016 12:22+1100 for FHIR v1.8.0
+ *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,12 +72,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $substance = null;
-
-    /**
-     * Statement about the degree of clinical certainty that the specific substance was the cause of the manifestation in this reaction event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCertainty
-     */
-    public $certainty = null;
 
     /**
      * Clinical symptoms and/or signs that are observed or associated with the adverse reaction event.
@@ -137,26 +131,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
     public function setSubstance($substance)
     {
         $this->substance = $substance;
-        return $this;
-    }
-
-    /**
-     * Statement about the degree of clinical certainty that the specific substance was the cause of the manifestation in this reaction event.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCertainty
-     */
-    public function getCertainty()
-    {
-        return $this->certainty;
-    }
-
-    /**
-     * Statement about the degree of clinical certainty that the specific substance was the cause of the manifestation in this reaction event.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceCertainty $certainty
-     * @return $this
-     */
-    public function setCertainty($certainty)
-    {
-        $this->certainty = $certainty;
         return $this;
     }
 
@@ -303,7 +277,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
     {
         $json = parent::jsonSerialize();
         if (null !== $this->substance) $json['substance'] = json_encode($this->substance);
-        if (null !== $this->certainty) $json['certainty'] = json_encode($this->certainty);
         if (0 < count($this->manifestation)) {
             $json['manifestation'] = [];
             foreach($this->manifestation as $manifestation) {
@@ -333,7 +306,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
         if (null === $sxe) $sxe = new \SimpleXMLElement('<AllergyIntoleranceReaction xmlns="http://hl7.org/fhir"></AllergyIntoleranceReaction>');
         parent::xmlSerialize(true, $sxe);
         if (null !== $this->substance) $this->substance->xmlSerialize(true, $sxe->addChild('substance'));
-        if (null !== $this->certainty) $this->certainty->xmlSerialize(true, $sxe->addChild('certainty'));
         if (0 < count($this->manifestation)) {
             foreach($this->manifestation as $manifestation) {
                 $manifestation->xmlSerialize(true, $sxe->addChild('manifestation'));
