@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,23 +276,23 @@ class FHIRAdverseReaction extends FHIRResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->didNotOccurFlag) $json['didNotOccurFlag'] = json_encode($this->didNotOccurFlag);
-        if (null !== $this->recorder) $json['recorder'] = json_encode($this->recorder);
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->didNotOccurFlag) $json['didNotOccurFlag'] = $this->didNotOccurFlag;
+        if (null !== $this->recorder) $json['recorder'] = $this->recorder;
         if (0 < count($this->symptom)) {
             $json['symptom'] = [];
             foreach($this->symptom as $symptom) {
-                $json['symptom'][] = json_encode($symptom);
+                $json['symptom'][] = $symptom;
             }
         }
         if (0 < count($this->exposure)) {
             $json['exposure'] = [];
             foreach($this->exposure as $exposure) {
-                $json['exposure'][] = json_encode($exposure);
+                $json['exposure'][] = $exposure;
             }
         }
         return $json;

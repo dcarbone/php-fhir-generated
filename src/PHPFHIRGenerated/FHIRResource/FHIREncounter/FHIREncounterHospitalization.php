@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -401,33 +401,33 @@ class FHIREncounterHospitalization extends FHIRBackboneElement implements \JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->preAdmissionIdentifier) $json['preAdmissionIdentifier'] = json_encode($this->preAdmissionIdentifier);
-        if (null !== $this->origin) $json['origin'] = json_encode($this->origin);
-        if (null !== $this->admitSource) $json['admitSource'] = json_encode($this->admitSource);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->preAdmissionIdentifier) $json['preAdmissionIdentifier'] = $this->preAdmissionIdentifier;
+        if (null !== $this->origin) $json['origin'] = $this->origin;
+        if (null !== $this->admitSource) $json['admitSource'] = $this->admitSource;
+        if (null !== $this->period) $json['period'] = $this->period;
         if (0 < count($this->accomodation)) {
             $json['accomodation'] = [];
             foreach($this->accomodation as $accomodation) {
-                $json['accomodation'][] = json_encode($accomodation);
+                $json['accomodation'][] = $accomodation;
             }
         }
-        if (null !== $this->diet) $json['diet'] = json_encode($this->diet);
+        if (null !== $this->diet) $json['diet'] = $this->diet;
         if (0 < count($this->specialCourtesy)) {
             $json['specialCourtesy'] = [];
             foreach($this->specialCourtesy as $specialCourtesy) {
-                $json['specialCourtesy'][] = json_encode($specialCourtesy);
+                $json['specialCourtesy'][] = $specialCourtesy;
             }
         }
         if (0 < count($this->specialArrangement)) {
             $json['specialArrangement'] = [];
             foreach($this->specialArrangement as $specialArrangement) {
-                $json['specialArrangement'][] = json_encode($specialArrangement);
+                $json['specialArrangement'][] = $specialArrangement;
             }
         }
-        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
-        if (null !== $this->dischargeDisposition) $json['dischargeDisposition'] = json_encode($this->dischargeDisposition);
-        if (null !== $this->dischargeDiagnosis) $json['dischargeDiagnosis'] = json_encode($this->dischargeDiagnosis);
-        if (null !== $this->reAdmission) $json['reAdmission'] = json_encode($this->reAdmission);
+        if (null !== $this->destination) $json['destination'] = $this->destination;
+        if (null !== $this->dischargeDisposition) $json['dischargeDisposition'] = $this->dischargeDisposition;
+        if (null !== $this->dischargeDiagnosis) $json['dischargeDiagnosis'] = $this->dischargeDiagnosis;
+        if (null !== $this->reAdmission) $json['reAdmission'] = $this->reAdmission;
         return $json;
     }
 

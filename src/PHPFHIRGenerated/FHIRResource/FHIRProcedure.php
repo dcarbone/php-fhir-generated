@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -458,52 +458,52 @@ class FHIRProcedure extends FHIRResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->type) $json['type'] = $this->type;
         if (0 < count($this->bodySite)) {
             $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = json_encode($bodySite);
+                $json['bodySite'][] = $bodySite;
             }
         }
         if (0 < count($this->indication)) {
             $json['indication'] = [];
             foreach($this->indication as $indication) {
-                $json['indication'][] = json_encode($indication);
+                $json['indication'][] = $indication;
             }
         }
         if (0 < count($this->performer)) {
             $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = json_encode($performer);
+                $json['performer'][] = $performer;
             }
         }
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
         if (0 < count($this->report)) {
             $json['report'] = [];
             foreach($this->report as $report) {
-                $json['report'][] = json_encode($report);
+                $json['report'][] = $report;
             }
         }
         if (0 < count($this->complication)) {
             $json['complication'] = [];
             foreach($this->complication as $complication) {
-                $json['complication'][] = json_encode($complication);
+                $json['complication'][] = $complication;
             }
         }
-        if (null !== $this->followUp) $json['followUp'] = json_encode($this->followUp);
+        if (null !== $this->followUp) $json['followUp'] = $this->followUp;
         if (0 < count($this->relatedItem)) {
             $json['relatedItem'] = [];
             foreach($this->relatedItem as $relatedItem) {
-                $json['relatedItem'][] = json_encode($relatedItem);
+                $json['relatedItem'][] = $relatedItem;
             }
         }
-        if (null !== $this->notes) $json['notes'] = json_encode($this->notes);
+        if (null !== $this->notes) $json['notes'] = $this->notes;
         return $json;
     }
 

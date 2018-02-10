@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -274,20 +274,20 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
         if (0 < count($this->goal)) {
             $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = json_encode($goal);
+                $json['goal'][] = $goal;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->prohibited) $json['prohibited'] = json_encode($this->prohibited);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->prohibited) $json['prohibited'] = $this->prohibited;
         if (0 < count($this->actionResulting)) {
             $json['actionResulting'] = [];
             foreach($this->actionResulting as $actionResulting) {
-                $json['actionResulting'][] = json_encode($actionResulting);
+                $json['actionResulting'][] = $actionResulting;
             }
         }
-        if (null !== $this->notes) $json['notes'] = json_encode($this->notes);
-        if (null !== $this->detail) $json['detail'] = json_encode($this->detail);
-        if (null !== $this->simple) $json['simple'] = json_encode($this->simple);
+        if (null !== $this->notes) $json['notes'] = $this->notes;
+        if (null !== $this->detail) $json['detail'] = $this->detail;
+        if (null !== $this->simple) $json['simple'] = $this->simple;
         return $json;
     }
 

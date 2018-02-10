@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -271,26 +271,26 @@ class FHIRConformanceResource extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->profile) $json['profile'] = $this->profile;
         if (0 < count($this->operation)) {
             $json['operation'] = [];
             foreach($this->operation as $operation) {
-                $json['operation'][] = json_encode($operation);
+                $json['operation'][] = $operation;
             }
         }
-        if (null !== $this->readHistory) $json['readHistory'] = json_encode($this->readHistory);
-        if (null !== $this->updateCreate) $json['updateCreate'] = json_encode($this->updateCreate);
+        if (null !== $this->readHistory) $json['readHistory'] = $this->readHistory;
+        if (null !== $this->updateCreate) $json['updateCreate'] = $this->updateCreate;
         if (0 < count($this->searchInclude)) {
             $json['searchInclude'] = [];
             foreach($this->searchInclude as $searchInclude) {
-                $json['searchInclude'][] = json_encode($searchInclude);
+                $json['searchInclude'][] = $searchInclude;
             }
         }
         if (0 < count($this->searchParam)) {
             $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = json_encode($searchParam);
+                $json['searchParam'][] = $searchParam;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -366,22 +366,22 @@ class FHIRCarePlanSimple extends FHIRBackboneElement implements \JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->timingSchedule) $json['timingSchedule'] = json_encode($this->timingSchedule);
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
-        if (null !== $this->timingString) $json['timingString'] = json_encode($this->timingString);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->timingSchedule) $json['timingSchedule'] = $this->timingSchedule;
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = $this->timingPeriod;
+        if (null !== $this->timingString) $json['timingString'] = $this->timingString;
+        if (null !== $this->location) $json['location'] = $this->location;
         if (0 < count($this->performer)) {
             $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = json_encode($performer);
+                $json['performer'][] = $performer;
             }
         }
-        if (null !== $this->product) $json['product'] = json_encode($this->product);
-        if (null !== $this->dailyAmount) $json['dailyAmount'] = json_encode($this->dailyAmount);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->details) $json['details'] = json_encode($this->details);
+        if (null !== $this->product) $json['product'] = $this->product;
+        if (null !== $this->dailyAmount) $json['dailyAmount'] = $this->dailyAmount;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->details) $json['details'] = $this->details;
         return $json;
     }
 

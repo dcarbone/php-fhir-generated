@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -272,33 +272,33 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->use) $json['use'] = json_encode($this->use);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->use) $json['use'] = $this->use;
+        if (null !== $this->text) $json['text'] = $this->text;
         if (0 < count($this->family)) {
             $json['family'] = [];
             foreach($this->family as $family) {
-                $json['family'][] = json_encode($family);
+                $json['family'][] = $family;
             }
         }
         if (0 < count($this->given)) {
             $json['given'] = [];
             foreach($this->given as $given) {
-                $json['given'][] = json_encode($given);
+                $json['given'][] = $given;
             }
         }
         if (0 < count($this->prefix)) {
             $json['prefix'] = [];
             foreach($this->prefix as $prefix) {
-                $json['prefix'][] = json_encode($prefix);
+                $json['prefix'][] = $prefix;
             }
         }
         if (0 < count($this->suffix)) {
             $json['suffix'] = [];
             foreach($this->suffix as $suffix) {
-                $json['suffix'][] = json_encode($suffix);
+                $json['suffix'][] = $suffix;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->period) $json['period'] = $this->period;
         return $json;
     }
 

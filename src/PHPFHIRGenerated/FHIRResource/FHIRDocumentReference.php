@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -715,55 +715,55 @@ class FHIRDocumentReference extends FHIRResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->masterIdentifier) $json['masterIdentifier'] = json_encode($this->masterIdentifier);
+        if (null !== $this->masterIdentifier) $json['masterIdentifier'] = $this->masterIdentifier;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->class) $json['class'] = json_encode($this->class);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->class) $json['class'] = $this->class;
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = json_encode($author);
+                $json['author'][] = $author;
             }
         }
-        if (null !== $this->custodian) $json['custodian'] = json_encode($this->custodian);
-        if (null !== $this->policyManager) $json['policyManager'] = json_encode($this->policyManager);
-        if (null !== $this->authenticator) $json['authenticator'] = json_encode($this->authenticator);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
-        if (null !== $this->indexed) $json['indexed'] = json_encode($this->indexed);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->docStatus) $json['docStatus'] = json_encode($this->docStatus);
+        if (null !== $this->custodian) $json['custodian'] = $this->custodian;
+        if (null !== $this->policyManager) $json['policyManager'] = $this->policyManager;
+        if (null !== $this->authenticator) $json['authenticator'] = $this->authenticator;
+        if (null !== $this->created) $json['created'] = $this->created;
+        if (null !== $this->indexed) $json['indexed'] = $this->indexed;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->docStatus) $json['docStatus'] = $this->docStatus;
         if (0 < count($this->relatesTo)) {
             $json['relatesTo'] = [];
             foreach($this->relatesTo as $relatesTo) {
-                $json['relatesTo'][] = json_encode($relatesTo);
+                $json['relatesTo'][] = $relatesTo;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->confidentiality)) {
             $json['confidentiality'] = [];
             foreach($this->confidentiality as $confidentiality) {
-                $json['confidentiality'][] = json_encode($confidentiality);
+                $json['confidentiality'][] = $confidentiality;
             }
         }
-        if (null !== $this->primaryLanguage) $json['primaryLanguage'] = json_encode($this->primaryLanguage);
-        if (null !== $this->mimeType) $json['mimeType'] = json_encode($this->mimeType);
+        if (null !== $this->primaryLanguage) $json['primaryLanguage'] = $this->primaryLanguage;
+        if (null !== $this->mimeType) $json['mimeType'] = $this->mimeType;
         if (0 < count($this->format)) {
             $json['format'] = [];
             foreach($this->format as $format) {
-                $json['format'][] = json_encode($format);
+                $json['format'][] = $format;
             }
         }
-        if (null !== $this->size) $json['size'] = json_encode($this->size);
-        if (null !== $this->hash) $json['hash'] = json_encode($this->hash);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (null !== $this->service) $json['service'] = json_encode($this->service);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (null !== $this->size) $json['size'] = $this->size;
+        if (null !== $this->hash) $json['hash'] = $this->hash;
+        if (null !== $this->location) $json['location'] = $this->location;
+        if (null !== $this->service) $json['service'] = $this->service;
+        if (null !== $this->context) $json['context'] = $this->context;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -273,23 +273,23 @@ class FHIRMedicationDispense extends FHIRResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->dispenser) $json['dispenser'] = json_encode($this->dispenser);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->dispenser) $json['dispenser'] = $this->dispenser;
         if (0 < count($this->authorizingPrescription)) {
             $json['authorizingPrescription'] = [];
             foreach($this->authorizingPrescription as $authorizingPrescription) {
-                $json['authorizingPrescription'][] = json_encode($authorizingPrescription);
+                $json['authorizingPrescription'][] = $authorizingPrescription;
             }
         }
         if (0 < count($this->dispense)) {
             $json['dispense'] = [];
             foreach($this->dispense as $dispense) {
-                $json['dispense'][] = json_encode($dispense);
+                $json['dispense'][] = $dispense;
             }
         }
-        if (null !== $this->substitution) $json['substitution'] = json_encode($this->substitution);
+        if (null !== $this->substitution) $json['substitution'] = $this->substitution;
         return $json;
     }
 

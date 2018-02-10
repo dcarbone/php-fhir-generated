@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,32 +328,32 @@ class FHIRProvenance extends FHIRResource implements \JsonSerializable
         if (0 < count($this->target)) {
             $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = json_encode($target);
+                $json['target'][] = $target;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->recorded) $json['recorded'] = json_encode($this->recorded);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->recorded) $json['recorded'] = $this->recorded;
+        if (null !== $this->reason) $json['reason'] = $this->reason;
+        if (null !== $this->location) $json['location'] = $this->location;
         if (0 < count($this->policy)) {
             $json['policy'] = [];
             foreach($this->policy as $policy) {
-                $json['policy'][] = json_encode($policy);
+                $json['policy'][] = $policy;
             }
         }
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
-                $json['agent'][] = json_encode($agent);
+                $json['agent'][] = $agent;
             }
         }
         if (0 < count($this->entity)) {
             $json['entity'] = [];
             foreach($this->entity as $entity) {
-                $json['entity'][] = json_encode($entity);
+                $json['entity'][] = $entity;
             }
         }
-        if (null !== $this->integritySignature) $json['integritySignature'] = json_encode($this->integritySignature);
+        if (null !== $this->integritySignature) $json['integritySignature'] = $this->integritySignature;
         return $json;
     }
 

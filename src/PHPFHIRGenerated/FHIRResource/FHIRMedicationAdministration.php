@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -408,33 +408,33 @@ class FHIRMedicationAdministration extends FHIRResource implements \JsonSerializ
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->practitioner) $json['practitioner'] = json_encode($this->practitioner);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->prescription) $json['prescription'] = json_encode($this->prescription);
-        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = json_encode($this->wasNotGiven);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->practitioner) $json['practitioner'] = $this->practitioner;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->prescription) $json['prescription'] = $this->prescription;
+        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = $this->wasNotGiven;
         if (0 < count($this->reasonNotGiven)) {
             $json['reasonNotGiven'] = [];
             foreach($this->reasonNotGiven as $reasonNotGiven) {
-                $json['reasonNotGiven'][] = json_encode($reasonNotGiven);
+                $json['reasonNotGiven'][] = $reasonNotGiven;
             }
         }
-        if (null !== $this->whenGiven) $json['whenGiven'] = json_encode($this->whenGiven);
-        if (null !== $this->medication) $json['medication'] = json_encode($this->medication);
+        if (null !== $this->whenGiven) $json['whenGiven'] = $this->whenGiven;
+        if (null !== $this->medication) $json['medication'] = $this->medication;
         if (0 < count($this->device)) {
             $json['device'] = [];
             foreach($this->device as $device) {
-                $json['device'][] = json_encode($device);
+                $json['device'][] = $device;
             }
         }
         if (0 < count($this->dosage)) {
             $json['dosage'] = [];
             foreach($this->dosage as $dosage) {
-                $json['dosage'][] = json_encode($dosage);
+                $json['dosage'][] = $dosage;
             }
         }
         return $json;

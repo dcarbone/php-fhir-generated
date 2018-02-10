@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -246,12 +246,12 @@ class FHIRScheduleRepeat extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->frequency) $json['frequency'] = json_encode($this->frequency);
-        if (null !== $this->when) $json['when'] = json_encode($this->when);
-        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
-        if (null !== $this->units) $json['units'] = json_encode($this->units);
-        if (null !== $this->count) $json['count'] = json_encode($this->count);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
+        if (null !== $this->frequency) $json['frequency'] = $this->frequency;
+        if (null !== $this->when) $json['when'] = $this->when;
+        if (null !== $this->duration) $json['duration'] = $this->duration;
+        if (null !== $this->units) $json['units'] = $this->units;
+        if (null !== $this->count) $json['count'] = $this->count;
+        if (null !== $this->end) $json['end'] = $this->end;
         return $json;
     }
 

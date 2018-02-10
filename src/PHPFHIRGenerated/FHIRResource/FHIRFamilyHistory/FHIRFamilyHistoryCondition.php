@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,12 +236,12 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement implements \JsonSer
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
-        if (null !== $this->onsetAge) $json['onsetAge'] = json_encode($this->onsetAge);
-        if (null !== $this->onsetRange) $json['onsetRange'] = json_encode($this->onsetRange);
-        if (null !== $this->onsetString) $json['onsetString'] = json_encode($this->onsetString);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
+        if (null !== $this->onsetAge) $json['onsetAge'] = $this->onsetAge;
+        if (null !== $this->onsetRange) $json['onsetRange'] = $this->onsetRange;
+        if (null !== $this->onsetString) $json['onsetString'] = $this->onsetString;
+        if (null !== $this->note) $json['note'] = $this->note;
         return $json;
     }
 

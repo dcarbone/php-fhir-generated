@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -322,20 +322,20 @@ class FHIROrderResponse extends FHIRResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->who) $json['who'] = json_encode($this->who);
-        if (null !== $this->authorityCodeableConcept) $json['authorityCodeableConcept'] = json_encode($this->authorityCodeableConcept);
-        if (null !== $this->authorityResource) $json['authorityResource'] = json_encode($this->authorityResource);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->request) $json['request'] = $this->request;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->who) $json['who'] = $this->who;
+        if (null !== $this->authorityCodeableConcept) $json['authorityCodeableConcept'] = $this->authorityCodeableConcept;
+        if (null !== $this->authorityResource) $json['authorityResource'] = $this->authorityResource;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->fulfillment)) {
             $json['fulfillment'] = [];
             foreach($this->fulfillment as $fulfillment) {
-                $json['fulfillment'][] = json_encode($fulfillment);
+                $json['fulfillment'][] = $fulfillment;
             }
         }
         return $json;

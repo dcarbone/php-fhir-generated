@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -323,43 +323,43 @@ class FHIRQueryResponse extends FHIRBackboneElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
-        if (null !== $this->total) $json['total'] = json_encode($this->total);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
+        if (null !== $this->total) $json['total'] = $this->total;
         if (0 < count($this->parameter)) {
             $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = json_encode($parameter);
+                $json['parameter'][] = $parameter;
             }
         }
         if (0 < count($this->first)) {
             $json['first'] = [];
             foreach($this->first as $first) {
-                $json['first'][] = json_encode($first);
+                $json['first'][] = $first;
             }
         }
         if (0 < count($this->previous)) {
             $json['previous'] = [];
             foreach($this->previous as $previous) {
-                $json['previous'][] = json_encode($previous);
+                $json['previous'][] = $previous;
             }
         }
         if (0 < count($this->next)) {
             $json['next'] = [];
             foreach($this->next as $next) {
-                $json['next'][] = json_encode($next);
+                $json['next'][] = $next;
             }
         }
         if (0 < count($this->last)) {
             $json['last'] = [];
             foreach($this->last as $last) {
-                $json['last'][] = json_encode($last);
+                $json['last'][] = $last;
             }
         }
         if (0 < count($this->reference)) {
             $json['reference'] = [];
             foreach($this->reference as $reference) {
-                $json['reference'][] = json_encode($reference);
+                $json['reference'][] = $reference;
             }
         }
         return $json;

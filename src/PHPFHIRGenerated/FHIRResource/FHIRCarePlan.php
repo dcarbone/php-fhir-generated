@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -354,38 +354,38 @@ class FHIRCarePlan extends FHIRResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->modified) $json['modified'] = json_encode($this->modified);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->modified) $json['modified'] = $this->modified;
         if (0 < count($this->concern)) {
             $json['concern'] = [];
             foreach($this->concern as $concern) {
-                $json['concern'][] = json_encode($concern);
+                $json['concern'][] = $concern;
             }
         }
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                $json['participant'][] = $participant;
             }
         }
         if (0 < count($this->goal)) {
             $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = json_encode($goal);
+                $json['goal'][] = $goal;
             }
         }
         if (0 < count($this->activity)) {
             $json['activity'] = [];
             foreach($this->activity as $activity) {
-                $json['activity'][] = json_encode($activity);
+                $json['activity'][] = $activity;
             }
         }
-        if (null !== $this->notes) $json['notes'] = json_encode($this->notes);
+        if (null !== $this->notes) $json['notes'] = $this->notes;
         return $json;
     }
 

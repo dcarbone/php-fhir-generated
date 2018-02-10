@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -507,50 +507,50 @@ class FHIRProfile extends FHIRResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                $json['code'][] = $code;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->requirements) $json['requirements'] = $this->requirements;
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion;
         if (0 < count($this->mapping)) {
             $json['mapping'] = [];
             foreach($this->mapping as $mapping) {
-                $json['mapping'][] = json_encode($mapping);
+                $json['mapping'][] = $mapping;
             }
         }
         if (0 < count($this->structure)) {
             $json['structure'] = [];
             foreach($this->structure as $structure) {
-                $json['structure'][] = json_encode($structure);
+                $json['structure'][] = $structure;
             }
         }
         if (0 < count($this->extensionDefn)) {
             $json['extensionDefn'] = [];
             foreach($this->extensionDefn as $extensionDefn) {
-                $json['extensionDefn'][] = json_encode($extensionDefn);
+                $json['extensionDefn'][] = $extensionDefn;
             }
         }
         if (0 < count($this->query)) {
             $json['query'] = [];
             foreach($this->query as $query) {
-                $json['query'][] = json_encode($query);
+                $json['query'][] = $query;
             }
         }
         return $json;

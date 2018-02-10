@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -599,43 +599,43 @@ class FHIRCondition extends FHIRResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->asserter) $json['asserter'] = json_encode($this->asserter);
-        if (null !== $this->dateAsserted) $json['dateAsserted'] = json_encode($this->dateAsserted);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->certainty) $json['certainty'] = json_encode($this->certainty);
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
-        if (null !== $this->onsetDate) $json['onsetDate'] = json_encode($this->onsetDate);
-        if (null !== $this->onsetAge) $json['onsetAge'] = json_encode($this->onsetAge);
-        if (null !== $this->abatementDate) $json['abatementDate'] = json_encode($this->abatementDate);
-        if (null !== $this->abatementAge) $json['abatementAge'] = json_encode($this->abatementAge);
-        if (null !== $this->abatementBoolean) $json['abatementBoolean'] = json_encode($this->abatementBoolean);
-        if (null !== $this->stage) $json['stage'] = json_encode($this->stage);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->asserter) $json['asserter'] = $this->asserter;
+        if (null !== $this->dateAsserted) $json['dateAsserted'] = $this->dateAsserted;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->certainty) $json['certainty'] = $this->certainty;
+        if (null !== $this->severity) $json['severity'] = $this->severity;
+        if (null !== $this->onsetDate) $json['onsetDate'] = $this->onsetDate;
+        if (null !== $this->onsetAge) $json['onsetAge'] = $this->onsetAge;
+        if (null !== $this->abatementDate) $json['abatementDate'] = $this->abatementDate;
+        if (null !== $this->abatementAge) $json['abatementAge'] = $this->abatementAge;
+        if (null !== $this->abatementBoolean) $json['abatementBoolean'] = $this->abatementBoolean;
+        if (null !== $this->stage) $json['stage'] = $this->stage;
         if (0 < count($this->evidence)) {
             $json['evidence'] = [];
             foreach($this->evidence as $evidence) {
-                $json['evidence'][] = json_encode($evidence);
+                $json['evidence'][] = $evidence;
             }
         }
         if (0 < count($this->location)) {
             $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = json_encode($location);
+                $json['location'][] = $location;
             }
         }
         if (0 < count($this->relatedItem)) {
             $json['relatedItem'] = [];
             foreach($this->relatedItem as $relatedItem) {
-                $json['relatedItem'][] = json_encode($relatedItem);
+                $json['relatedItem'][] = $relatedItem;
             }
         }
-        if (null !== $this->notes) $json['notes'] = json_encode($this->notes);
+        if (null !== $this->notes) $json['notes'] = $this->notes;
         return $json;
     }
 

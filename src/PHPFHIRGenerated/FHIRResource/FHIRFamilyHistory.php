@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,15 +198,15 @@ class FHIRFamilyHistory extends FHIRResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->note) $json['note'] = $this->note;
         if (0 < count($this->relation)) {
             $json['relation'] = [];
             foreach($this->relation as $relation) {
-                $json['relation'][] = json_encode($relation);
+                $json['relation'][] = $relation;
             }
         }
         return $json;

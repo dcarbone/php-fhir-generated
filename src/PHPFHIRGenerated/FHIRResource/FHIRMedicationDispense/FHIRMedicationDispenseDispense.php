@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -349,24 +349,24 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement implements \Jso
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->medication) $json['medication'] = json_encode($this->medication);
-        if (null !== $this->whenPrepared) $json['whenPrepared'] = json_encode($this->whenPrepared);
-        if (null !== $this->whenHandedOver) $json['whenHandedOver'] = json_encode($this->whenHandedOver);
-        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->medication) $json['medication'] = $this->medication;
+        if (null !== $this->whenPrepared) $json['whenPrepared'] = $this->whenPrepared;
+        if (null !== $this->whenHandedOver) $json['whenHandedOver'] = $this->whenHandedOver;
+        if (null !== $this->destination) $json['destination'] = $this->destination;
         if (0 < count($this->receiver)) {
             $json['receiver'] = [];
             foreach($this->receiver as $receiver) {
-                $json['receiver'][] = json_encode($receiver);
+                $json['receiver'][] = $receiver;
             }
         }
         if (0 < count($this->dosage)) {
             $json['dosage'] = [];
             foreach($this->dosage as $dosage) {
-                $json['dosage'][] = json_encode($dosage);
+                $json['dosage'][] = $dosage;
             }
         }
         return $json;

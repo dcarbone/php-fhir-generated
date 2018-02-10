@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -400,25 +400,25 @@ class FHIRMedicationPrescription extends FHIRResource implements \JsonSerializab
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->dateWritten) $json['dateWritten'] = json_encode($this->dateWritten);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->prescriber) $json['prescriber'] = json_encode($this->prescriber);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonResource) $json['reasonResource'] = json_encode($this->reasonResource);
-        if (null !== $this->medication) $json['medication'] = json_encode($this->medication);
+        if (null !== $this->dateWritten) $json['dateWritten'] = $this->dateWritten;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->prescriber) $json['prescriber'] = $this->prescriber;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (null !== $this->reasonResource) $json['reasonResource'] = $this->reasonResource;
+        if (null !== $this->medication) $json['medication'] = $this->medication;
         if (0 < count($this->dosageInstruction)) {
             $json['dosageInstruction'] = [];
             foreach($this->dosageInstruction as $dosageInstruction) {
-                $json['dosageInstruction'][] = json_encode($dosageInstruction);
+                $json['dosageInstruction'][] = $dosageInstruction;
             }
         }
-        if (null !== $this->dispense) $json['dispense'] = json_encode($this->dispense);
-        if (null !== $this->substitution) $json['substitution'] = json_encode($this->substitution);
+        if (null !== $this->dispense) $json['dispense'] = $this->dispense;
+        if (null !== $this->substitution) $json['substitution'] = $this->substitution;
         return $json;
     }
 

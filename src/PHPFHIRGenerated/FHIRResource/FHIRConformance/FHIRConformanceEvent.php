@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -297,19 +297,19 @@ class FHIRConformanceEvent extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->mode) $json['mode'] = $this->mode;
         if (0 < count($this->protocol)) {
             $json['protocol'] = [];
             foreach($this->protocol as $protocol) {
-                $json['protocol'][] = json_encode($protocol);
+                $json['protocol'][] = $protocol;
             }
         }
-        if (null !== $this->focus) $json['focus'] = json_encode($this->focus);
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (null !== $this->response) $json['response'] = json_encode($this->response);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->focus) $json['focus'] = $this->focus;
+        if (null !== $this->request) $json['request'] = $this->request;
+        if (null !== $this->response) $json['response'] = $this->response;
+        if (null !== $this->documentation) $json['documentation'] = $this->documentation;
         return $json;
     }
 

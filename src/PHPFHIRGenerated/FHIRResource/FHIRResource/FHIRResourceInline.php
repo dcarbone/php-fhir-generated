@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1210,55 +1210,55 @@ class FHIRResourceInline implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        if (null !== $this->Binary) return json_encode($this->Binary);
-        if (null !== $this->Provenance) return json_encode($this->Provenance);
-        if (null !== $this->Condition) return json_encode($this->Condition);
-        if (null !== $this->CarePlan) return json_encode($this->CarePlan);
-        if (null !== $this->Supply) return json_encode($this->Supply);
-        if (null !== $this->Device) return json_encode($this->Device);
-        if (null !== $this->Query) return json_encode($this->Query);
-        if (null !== $this->Order) return json_encode($this->Order);
-        if (null !== $this->Organization) return json_encode($this->Organization);
-        if (null !== $this->Procedure) return json_encode($this->Procedure);
-        if (null !== $this->Substance) return json_encode($this->Substance);
-        if (null !== $this->DiagnosticReport) return json_encode($this->DiagnosticReport);
-        if (null !== $this->Group) return json_encode($this->Group);
-        if (null !== $this->ValueSet) return json_encode($this->ValueSet);
-        if (null !== $this->Medication) return json_encode($this->Medication);
-        if (null !== $this->MessageHeader) return json_encode($this->MessageHeader);
-        if (null !== $this->ImmunizationRecommendation) return json_encode($this->ImmunizationRecommendation);
-        if (null !== $this->DocumentManifest) return json_encode($this->DocumentManifest);
-        if (null !== $this->MedicationDispense) return json_encode($this->MedicationDispense);
-        if (null !== $this->MedicationPrescription) return json_encode($this->MedicationPrescription);
-        if (null !== $this->MedicationAdministration) return json_encode($this->MedicationAdministration);
-        if (null !== $this->Encounter) return json_encode($this->Encounter);
-        if (null !== $this->SecurityEvent) return json_encode($this->SecurityEvent);
-        if (null !== $this->MedicationStatement) return json_encode($this->MedicationStatement);
-        if (null !== $this->List) return json_encode($this->List);
-        if (null !== $this->Questionnaire) return json_encode($this->Questionnaire);
-        if (null !== $this->Composition) return json_encode($this->Composition);
-        if (null !== $this->DeviceObservationReport) return json_encode($this->DeviceObservationReport);
-        if (null !== $this->OperationOutcome) return json_encode($this->OperationOutcome);
-        if (null !== $this->Conformance) return json_encode($this->Conformance);
-        if (null !== $this->Media) return json_encode($this->Media);
-        if (null !== $this->FamilyHistory) return json_encode($this->FamilyHistory);
-        if (null !== $this->Other) return json_encode($this->Other);
-        if (null !== $this->Profile) return json_encode($this->Profile);
-        if (null !== $this->Location) return json_encode($this->Location);
-        if (null !== $this->Observation) return json_encode($this->Observation);
-        if (null !== $this->AllergyIntolerance) return json_encode($this->AllergyIntolerance);
-        if (null !== $this->DocumentReference) return json_encode($this->DocumentReference);
-        if (null !== $this->Immunization) return json_encode($this->Immunization);
-        if (null !== $this->RelatedPerson) return json_encode($this->RelatedPerson);
-        if (null !== $this->Specimen) return json_encode($this->Specimen);
-        if (null !== $this->OrderResponse) return json_encode($this->OrderResponse);
-        if (null !== $this->Alert) return json_encode($this->Alert);
-        if (null !== $this->ConceptMap) return json_encode($this->ConceptMap);
-        if (null !== $this->Patient) return json_encode($this->Patient);
-        if (null !== $this->Practitioner) return json_encode($this->Practitioner);
-        if (null !== $this->AdverseReaction) return json_encode($this->AdverseReaction);
-        if (null !== $this->ImagingStudy) return json_encode($this->ImagingStudy);
-        if (null !== $this->DiagnosticOrder) return json_encode($this->DiagnosticOrder);
+        if (null !== $this->Binary) return $this->Binary;
+        if (null !== $this->Provenance) return $this->Provenance;
+        if (null !== $this->Condition) return $this->Condition;
+        if (null !== $this->CarePlan) return $this->CarePlan;
+        if (null !== $this->Supply) return $this->Supply;
+        if (null !== $this->Device) return $this->Device;
+        if (null !== $this->Query) return $this->Query;
+        if (null !== $this->Order) return $this->Order;
+        if (null !== $this->Organization) return $this->Organization;
+        if (null !== $this->Procedure) return $this->Procedure;
+        if (null !== $this->Substance) return $this->Substance;
+        if (null !== $this->DiagnosticReport) return $this->DiagnosticReport;
+        if (null !== $this->Group) return $this->Group;
+        if (null !== $this->ValueSet) return $this->ValueSet;
+        if (null !== $this->Medication) return $this->Medication;
+        if (null !== $this->MessageHeader) return $this->MessageHeader;
+        if (null !== $this->ImmunizationRecommendation) return $this->ImmunizationRecommendation;
+        if (null !== $this->DocumentManifest) return $this->DocumentManifest;
+        if (null !== $this->MedicationDispense) return $this->MedicationDispense;
+        if (null !== $this->MedicationPrescription) return $this->MedicationPrescription;
+        if (null !== $this->MedicationAdministration) return $this->MedicationAdministration;
+        if (null !== $this->Encounter) return $this->Encounter;
+        if (null !== $this->SecurityEvent) return $this->SecurityEvent;
+        if (null !== $this->MedicationStatement) return $this->MedicationStatement;
+        if (null !== $this->List) return $this->List;
+        if (null !== $this->Questionnaire) return $this->Questionnaire;
+        if (null !== $this->Composition) return $this->Composition;
+        if (null !== $this->DeviceObservationReport) return $this->DeviceObservationReport;
+        if (null !== $this->OperationOutcome) return $this->OperationOutcome;
+        if (null !== $this->Conformance) return $this->Conformance;
+        if (null !== $this->Media) return $this->Media;
+        if (null !== $this->FamilyHistory) return $this->FamilyHistory;
+        if (null !== $this->Other) return $this->Other;
+        if (null !== $this->Profile) return $this->Profile;
+        if (null !== $this->Location) return $this->Location;
+        if (null !== $this->Observation) return $this->Observation;
+        if (null !== $this->AllergyIntolerance) return $this->AllergyIntolerance;
+        if (null !== $this->DocumentReference) return $this->DocumentReference;
+        if (null !== $this->Immunization) return $this->Immunization;
+        if (null !== $this->RelatedPerson) return $this->RelatedPerson;
+        if (null !== $this->Specimen) return $this->Specimen;
+        if (null !== $this->OrderResponse) return $this->OrderResponse;
+        if (null !== $this->Alert) return $this->Alert;
+        if (null !== $this->ConceptMap) return $this->ConceptMap;
+        if (null !== $this->Patient) return $this->Patient;
+        if (null !== $this->Practitioner) return $this->Practitioner;
+        if (null !== $this->AdverseReaction) return $this->AdverseReaction;
+        if (null !== $this->ImagingStudy) return $this->ImagingStudy;
+        if (null !== $this->DiagnosticOrder) return $this->DiagnosticOrder;
         return [];
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,12 +168,12 @@ class FHIRResource extends FHIRBackboneElement implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->language) $json['language'] = json_encode($this->language);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->language) $json['language'] = $this->language;
+        if (null !== $this->text) $json['text'] = $this->text;
         if (0 < count($this->contained)) {
             $json['contained'] = [];
             foreach($this->contained as $contained) {
-                $json['contained'][] = json_encode($contained);
+                $json['contained'][] = $contained;
             }
         }
         return $json;

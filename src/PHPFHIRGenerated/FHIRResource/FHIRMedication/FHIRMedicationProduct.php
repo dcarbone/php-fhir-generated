@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,11 +141,11 @@ class FHIRMedicationProduct extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (null !== $this->form) $json['form'] = $this->form;
         if (0 < count($this->ingredient)) {
             $json['ingredient'] = [];
             foreach($this->ingredient as $ingredient) {
-                $json['ingredient'][] = json_encode($ingredient);
+                $json['ingredient'][] = $ingredient;
             }
         }
         return $json;
