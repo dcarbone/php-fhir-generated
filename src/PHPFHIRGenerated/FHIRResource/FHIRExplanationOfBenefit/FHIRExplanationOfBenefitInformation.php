@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,37 +86,31 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     public $code = null;
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $timingDate = null;
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueReference = null;
@@ -193,7 +187,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getTimingDate()
@@ -202,7 +195,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $timingDate
      * @return $this
      */
@@ -213,7 +205,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
@@ -222,7 +213,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
@@ -233,7 +223,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -242,7 +231,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -253,7 +241,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -262,7 +249,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
@@ -273,7 +259,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -282,7 +267,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
@@ -293,7 +277,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueReference()
@@ -302,7 +285,6 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
@@ -354,16 +336,16 @@ class FHIRExplanationOfBenefitInformation extends FHIRBackboneElement implements
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->timingDate) $json['timingDate'] = json_encode($this->timingDate);
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
-        if (null !== $this->valueReference) $json['valueReference'] = json_encode($this->valueReference);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->timingDate) $json['timingDate'] = $this->timingDate;
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = $this->timingPeriod;
+        if (null !== $this->valueString) $json['valueString'] = $this->valueString;
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity;
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment;
+        if (null !== $this->valueReference) $json['valueReference'] = $this->valueReference;
+        if (null !== $this->reason) $json['reason'] = $this->reason;
         return $json;
     }
 

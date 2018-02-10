@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,25 +81,21 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     public $eventName = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $eventTimingTiming = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $eventTimingReference = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $eventTimingDate = null;
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $eventTimingDateTime = null;
@@ -156,7 +152,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getEventTimingTiming()
@@ -165,7 +160,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $eventTimingTiming
      * @return $this
      */
@@ -176,7 +170,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getEventTimingReference()
@@ -185,7 +178,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $eventTimingReference
      * @return $this
      */
@@ -196,7 +188,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getEventTimingDate()
@@ -205,7 +196,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $eventTimingDate
      * @return $this
      */
@@ -216,7 +206,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getEventTimingDateTime()
@@ -225,7 +214,6 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The timing of the event (if this is a period trigger). (choose any one of eventTiming*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $eventTimingDateTime
      * @return $this
      */
@@ -277,13 +265,13 @@ class FHIRTriggerDefinition extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->eventName) $json['eventName'] = json_encode($this->eventName);
-        if (null !== $this->eventTimingTiming) $json['eventTimingTiming'] = json_encode($this->eventTimingTiming);
-        if (null !== $this->eventTimingReference) $json['eventTimingReference'] = json_encode($this->eventTimingReference);
-        if (null !== $this->eventTimingDate) $json['eventTimingDate'] = json_encode($this->eventTimingDate);
-        if (null !== $this->eventTimingDateTime) $json['eventTimingDateTime'] = json_encode($this->eventTimingDateTime);
-        if (null !== $this->eventData) $json['eventData'] = json_encode($this->eventData);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->eventName) $json['eventName'] = $this->eventName;
+        if (null !== $this->eventTimingTiming) $json['eventTimingTiming'] = $this->eventTimingTiming;
+        if (null !== $this->eventTimingReference) $json['eventTimingReference'] = $this->eventTimingReference;
+        if (null !== $this->eventTimingDate) $json['eventTimingDate'] = $this->eventTimingDate;
+        if (null !== $this->eventTimingDateTime) $json['eventTimingDateTime'] = $this->eventTimingDateTime;
+        if (null !== $this->eventData) $json['eventData'] = $this->eventData;
         return $json;
     }
 

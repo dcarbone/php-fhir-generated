@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -356,19 +356,19 @@ class FHIRDeviceMetric extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->unit) $json['unit'] = json_encode($this->unit);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
-        if (null !== $this->operationalStatus) $json['operationalStatus'] = json_encode($this->operationalStatus);
-        if (null !== $this->color) $json['color'] = json_encode($this->color);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->measurementPeriod) $json['measurementPeriod'] = json_encode($this->measurementPeriod);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->unit) $json['unit'] = $this->unit;
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->parent) $json['parent'] = $this->parent;
+        if (null !== $this->operationalStatus) $json['operationalStatus'] = $this->operationalStatus;
+        if (null !== $this->color) $json['color'] = $this->color;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->measurementPeriod) $json['measurementPeriod'] = $this->measurementPeriod;
         if (0 < count($this->calibration)) {
             $json['calibration'] = [];
             foreach($this->calibration as $calibration) {
-                $json['calibration'][] = json_encode($calibration);
+                $json['calibration'][] = $calibration;
             }
         }
         return $json;

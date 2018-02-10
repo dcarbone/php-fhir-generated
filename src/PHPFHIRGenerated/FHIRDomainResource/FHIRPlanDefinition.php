@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -772,80 +772,80 @@ class FHIRPlanDefinition extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->url) $json['url'] = $this->url;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
-        if (null !== $this->approvalDate) $json['approvalDate'] = json_encode($this->approvalDate);
-        if (null !== $this->lastReviewDate) $json['lastReviewDate'] = json_encode($this->lastReviewDate);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->purpose) $json['purpose'] = $this->purpose;
+        if (null !== $this->usage) $json['usage'] = $this->usage;
+        if (null !== $this->approvalDate) $json['approvalDate'] = $this->approvalDate;
+        if (null !== $this->lastReviewDate) $json['lastReviewDate'] = $this->lastReviewDate;
+        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = $this->effectivePeriod;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                $json['jurisdiction'][] = $jurisdiction;
             }
         }
         if (0 < count($this->topic)) {
             $json['topic'] = [];
             foreach($this->topic as $topic) {
-                $json['topic'][] = json_encode($topic);
+                $json['topic'][] = $topic;
             }
         }
         if (0 < count($this->contributor)) {
             $json['contributor'] = [];
             foreach($this->contributor as $contributor) {
-                $json['contributor'][] = json_encode($contributor);
+                $json['contributor'][] = $contributor;
             }
         }
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->copyright) $json['copyright'] = $this->copyright;
         if (0 < count($this->relatedArtifact)) {
             $json['relatedArtifact'] = [];
             foreach($this->relatedArtifact as $relatedArtifact) {
-                $json['relatedArtifact'][] = json_encode($relatedArtifact);
+                $json['relatedArtifact'][] = $relatedArtifact;
             }
         }
         if (0 < count($this->library)) {
             $json['library'] = [];
             foreach($this->library as $library) {
-                $json['library'][] = json_encode($library);
+                $json['library'][] = $library;
             }
         }
         if (0 < count($this->goal)) {
             $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = json_encode($goal);
+                $json['goal'][] = $goal;
             }
         }
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         return $json;

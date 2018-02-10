@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,14 +172,14 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (null !== $this->value) $json['value'] = $this->value;
         if (0 < count($this->population)) {
             $json['population'] = [];
             foreach($this->population as $population) {
-                $json['population'][] = json_encode($population);
+                $json['population'][] = $population;
             }
         }
-        if (null !== $this->measureScore) $json['measureScore'] = json_encode($this->measureScore);
+        if (null !== $this->measureScore) $json['measureScore'] = $this->measureScore;
         return $json;
     }
 

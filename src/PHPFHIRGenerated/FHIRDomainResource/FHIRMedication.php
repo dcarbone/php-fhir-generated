@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -330,23 +330,23 @@ class FHIRMedication extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->isBrand) $json['isBrand'] = json_encode($this->isBrand);
-        if (null !== $this->isOverTheCounter) $json['isOverTheCounter'] = json_encode($this->isOverTheCounter);
-        if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
-        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->isBrand) $json['isBrand'] = $this->isBrand;
+        if (null !== $this->isOverTheCounter) $json['isOverTheCounter'] = $this->isOverTheCounter;
+        if (null !== $this->manufacturer) $json['manufacturer'] = $this->manufacturer;
+        if (null !== $this->form) $json['form'] = $this->form;
         if (0 < count($this->ingredient)) {
             $json['ingredient'] = [];
             foreach($this->ingredient as $ingredient) {
-                $json['ingredient'][] = json_encode($ingredient);
+                $json['ingredient'][] = $ingredient;
             }
         }
-        if (null !== $this->package) $json['package'] = json_encode($this->package);
+        if (null !== $this->package) $json['package'] = $this->package;
         if (0 < count($this->image)) {
             $json['image'] = [];
             foreach($this->image as $image) {
-                $json['image'][] = json_encode($image);
+                $json['image'][] = $image;
             }
         }
         return $json;

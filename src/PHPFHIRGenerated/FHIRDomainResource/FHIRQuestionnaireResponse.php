@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -382,30 +382,30 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements \JsonSeria
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->parent)) {
             $json['parent'] = [];
             foreach($this->parent as $parent) {
-                $json['parent'][] = json_encode($parent);
+                $json['parent'][] = $parent;
             }
         }
-        if (null !== $this->questionnaire) $json['questionnaire'] = json_encode($this->questionnaire);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->authored) $json['authored'] = json_encode($this->authored);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (null !== $this->questionnaire) $json['questionnaire'] = $this->questionnaire;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->authored) $json['authored'] = $this->authored;
+        if (null !== $this->author) $json['author'] = $this->author;
+        if (null !== $this->source) $json['source'] = $this->source;
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                $json['item'][] = $item;
             }
         }
         return $json;

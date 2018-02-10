@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,13 +147,11 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     public $payload = array();
 
     /**
-     * The time when this communication is to occur. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * The time when this communication is to occur. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
@@ -460,7 +458,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -469,7 +466,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -480,7 +476,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -489,7 +484,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -645,77 +639,77 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->replaces)) {
             $json['replaces'] = [];
             foreach($this->replaces as $replaces) {
-                $json['replaces'][] = json_encode($replaces);
+                $json['replaces'][] = $replaces;
             }
         }
-        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = json_encode($this->groupIdentifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = $this->groupIdentifier;
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->priority) $json['priority'] = $this->priority;
         if (0 < count($this->medium)) {
             $json['medium'] = [];
             foreach($this->medium as $medium) {
-                $json['medium'][] = json_encode($medium);
+                $json['medium'][] = $medium;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
         if (0 < count($this->recipient)) {
             $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = json_encode($recipient);
+                $json['recipient'][] = $recipient;
             }
         }
         if (0 < count($this->topic)) {
             $json['topic'] = [];
             foreach($this->topic as $topic) {
-                $json['topic'][] = json_encode($topic);
+                $json['topic'][] = $topic;
             }
         }
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
+        if (null !== $this->context) $json['context'] = $this->context;
         if (0 < count($this->payload)) {
             $json['payload'] = [];
             foreach($this->payload as $payload) {
-                $json['payload'][] = json_encode($payload);
+                $json['payload'][] = $payload;
             }
         }
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
-        if (null !== $this->sender) $json['sender'] = json_encode($this->sender);
-        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->authoredOn) $json['authoredOn'] = $this->authoredOn;
+        if (null !== $this->sender) $json['sender'] = $this->sender;
+        if (null !== $this->requester) $json['requester'] = $this->requester;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                $json['reasonReference'][] = $reasonReference;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

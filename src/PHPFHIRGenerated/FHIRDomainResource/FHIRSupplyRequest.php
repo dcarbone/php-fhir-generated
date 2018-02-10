@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,19 +99,16 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     public $orderedItem = null;
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $occurrenceTiming = null;
@@ -135,13 +132,11 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     public $supplier = array();
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCodeableConcept = null;
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
@@ -264,7 +259,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -273,7 +267,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -284,7 +277,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -293,7 +285,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -304,7 +295,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
@@ -313,7 +303,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * When the request should be fulfilled. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
      * @return $this
      */
@@ -384,7 +373,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept()
@@ -393,7 +381,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
@@ -404,7 +391,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -413,7 +399,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
@@ -486,26 +471,26 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->orderedItem) $json['orderedItem'] = json_encode($this->orderedItem);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
-        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
-        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->orderedItem) $json['orderedItem'] = $this->orderedItem;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = $this->occurrenceTiming;
+        if (null !== $this->authoredOn) $json['authoredOn'] = $this->authoredOn;
+        if (null !== $this->requester) $json['requester'] = $this->requester;
         if (0 < count($this->supplier)) {
             $json['supplier'] = [];
             foreach($this->supplier as $supplier) {
-                $json['supplier'][] = json_encode($supplier);
+                $json['supplier'][] = $supplier;
             }
         }
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
-        if (null !== $this->deliverFrom) $json['deliverFrom'] = json_encode($this->deliverFrom);
-        if (null !== $this->deliverTo) $json['deliverTo'] = json_encode($this->deliverTo);
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference;
+        if (null !== $this->deliverFrom) $json['deliverFrom'] = $this->deliverFrom;
+        if (null !== $this->deliverTo) $json['deliverTo'] = $this->deliverTo;
         return $json;
     }
 

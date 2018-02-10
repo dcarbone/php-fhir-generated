@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -619,86 +619,86 @@ class FHIRResearchStudy extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
+        if (null !== $this->title) $json['title'] = $this->title;
         if (0 < count($this->protocol)) {
             $json['protocol'] = [];
             foreach($this->protocol as $protocol) {
-                $json['protocol'][] = json_encode($protocol);
+                $json['protocol'][] = $protocol;
             }
         }
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
         if (0 < count($this->focus)) {
             $json['focus'] = [];
             foreach($this->focus as $focus) {
-                $json['focus'][] = json_encode($focus);
+                $json['focus'][] = $focus;
             }
         }
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
         if (0 < count($this->relatedArtifact)) {
             $json['relatedArtifact'] = [];
             foreach($this->relatedArtifact as $relatedArtifact) {
-                $json['relatedArtifact'][] = json_encode($relatedArtifact);
+                $json['relatedArtifact'][] = $relatedArtifact;
             }
         }
         if (0 < count($this->keyword)) {
             $json['keyword'] = [];
             foreach($this->keyword as $keyword) {
-                $json['keyword'][] = json_encode($keyword);
+                $json['keyword'][] = $keyword;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->enrollment)) {
             $json['enrollment'] = [];
             foreach($this->enrollment as $enrollment) {
-                $json['enrollment'][] = json_encode($enrollment);
+                $json['enrollment'][] = $enrollment;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->sponsor) $json['sponsor'] = json_encode($this->sponsor);
-        if (null !== $this->principalInvestigator) $json['principalInvestigator'] = json_encode($this->principalInvestigator);
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->sponsor) $json['sponsor'] = $this->sponsor;
+        if (null !== $this->principalInvestigator) $json['principalInvestigator'] = $this->principalInvestigator;
         if (0 < count($this->site)) {
             $json['site'] = [];
             foreach($this->site as $site) {
-                $json['site'][] = json_encode($site);
+                $json['site'][] = $site;
             }
         }
-        if (null !== $this->reasonStopped) $json['reasonStopped'] = json_encode($this->reasonStopped);
+        if (null !== $this->reasonStopped) $json['reasonStopped'] = $this->reasonStopped;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->arm)) {
             $json['arm'] = [];
             foreach($this->arm as $arm) {
-                $json['arm'][] = json_encode($arm);
+                $json['arm'][] = $arm;
             }
         }
         return $json;

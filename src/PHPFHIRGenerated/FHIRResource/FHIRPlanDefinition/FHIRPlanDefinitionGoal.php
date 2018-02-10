@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,26 +276,26 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->start) $json['start'] = $this->start;
         if (0 < count($this->addresses)) {
             $json['addresses'] = [];
             foreach($this->addresses as $addresses) {
-                $json['addresses'][] = json_encode($addresses);
+                $json['addresses'][] = $addresses;
             }
         }
         if (0 < count($this->documentation)) {
             $json['documentation'] = [];
             foreach($this->documentation as $documentation) {
-                $json['documentation'][] = json_encode($documentation);
+                $json['documentation'][] = $documentation;
             }
         }
         if (0 < count($this->target)) {
             $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = json_encode($target);
+                $json['target'][] = $target;
             }
         }
         return $json;

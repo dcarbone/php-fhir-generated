@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,11 +146,11 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement implements \
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->coverage) $json['coverage'] = json_encode($this->coverage);
+        if (null !== $this->coverage) $json['coverage'] = $this->coverage;
         if (0 < count($this->preAuthRef)) {
             $json['preAuthRef'] = [];
             foreach($this->preAuthRef as $preAuthRef) {
-                $json['preAuthRef'][] = json_encode($preAuthRef);
+                $json['preAuthRef'][] = $preAuthRef;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,13 +105,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     public $context = null;
 
     /**
-     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
@@ -314,7 +312,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
@@ -323,7 +320,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
@@ -334,7 +330,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -343,7 +338,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The point in time or period over which the subject was assessed. (choose any one of effective*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -619,66 +613,66 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->assessor) $json['assessor'] = json_encode($this->assessor);
-        if (null !== $this->previous) $json['previous'] = json_encode($this->previous);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = $this->effectiveDateTime;
+        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = $this->effectivePeriod;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->assessor) $json['assessor'] = $this->assessor;
+        if (null !== $this->previous) $json['previous'] = $this->previous;
         if (0 < count($this->problem)) {
             $json['problem'] = [];
             foreach($this->problem as $problem) {
-                $json['problem'][] = json_encode($problem);
+                $json['problem'][] = $problem;
             }
         }
         if (0 < count($this->investigation)) {
             $json['investigation'] = [];
             foreach($this->investigation as $investigation) {
-                $json['investigation'][] = json_encode($investigation);
+                $json['investigation'][] = $investigation;
             }
         }
         if (0 < count($this->protocol)) {
             $json['protocol'] = [];
             foreach($this->protocol as $protocol) {
-                $json['protocol'][] = json_encode($protocol);
+                $json['protocol'][] = $protocol;
             }
         }
-        if (null !== $this->summary) $json['summary'] = json_encode($this->summary);
+        if (null !== $this->summary) $json['summary'] = $this->summary;
         if (0 < count($this->finding)) {
             $json['finding'] = [];
             foreach($this->finding as $finding) {
-                $json['finding'][] = json_encode($finding);
+                $json['finding'][] = $finding;
             }
         }
         if (0 < count($this->prognosisCodeableConcept)) {
             $json['prognosisCodeableConcept'] = [];
             foreach($this->prognosisCodeableConcept as $prognosisCodeableConcept) {
-                $json['prognosisCodeableConcept'][] = json_encode($prognosisCodeableConcept);
+                $json['prognosisCodeableConcept'][] = $prognosisCodeableConcept;
             }
         }
         if (0 < count($this->prognosisReference)) {
             $json['prognosisReference'] = [];
             foreach($this->prognosisReference as $prognosisReference) {
-                $json['prognosisReference'][] = json_encode($prognosisReference);
+                $json['prognosisReference'][] = $prognosisReference;
             }
         }
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

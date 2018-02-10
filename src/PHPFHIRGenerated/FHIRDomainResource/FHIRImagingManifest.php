@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -255,15 +255,15 @@ The value may be derived from the DICOM Standard Part 16, CID-7010 descriptions 
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->authoringTime) $json['authoringTime'] = json_encode($this->authoringTime);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->authoringTime) $json['authoringTime'] = $this->authoringTime;
+        if (null !== $this->author) $json['author'] = $this->author;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->study)) {
             $json['study'] = [];
             foreach($this->study as $study) {
-                $json['study'][] = json_encode($study);
+                $json['study'][] = $study;
             }
         }
         return $json;

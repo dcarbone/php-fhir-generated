@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,31 +74,26 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     public $type = null;
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $allowedUnsignedInt = null;
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $allowedString = null;
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $allowedMoney = null;
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $usedUnsignedInt = null;
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $usedMoney = null;
@@ -129,7 +124,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getAllowedUnsignedInt()
@@ -138,7 +132,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
      * @return $this
      */
@@ -149,7 +142,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getAllowedString()
@@ -158,7 +150,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $allowedString
      * @return $this
      */
@@ -169,7 +160,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getAllowedMoney()
@@ -178,7 +168,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
      * @return $this
      */
@@ -189,7 +178,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getUsedUnsignedInt()
@@ -198,7 +186,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
      * @return $this
      */
@@ -209,7 +196,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getUsedMoney()
@@ -218,7 +204,6 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
      * @return $this
      */
@@ -250,12 +235,12 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->allowedUnsignedInt) $json['allowedUnsignedInt'] = json_encode($this->allowedUnsignedInt);
-        if (null !== $this->allowedString) $json['allowedString'] = json_encode($this->allowedString);
-        if (null !== $this->allowedMoney) $json['allowedMoney'] = json_encode($this->allowedMoney);
-        if (null !== $this->usedUnsignedInt) $json['usedUnsignedInt'] = json_encode($this->usedUnsignedInt);
-        if (null !== $this->usedMoney) $json['usedMoney'] = json_encode($this->usedMoney);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->allowedUnsignedInt) $json['allowedUnsignedInt'] = $this->allowedUnsignedInt;
+        if (null !== $this->allowedString) $json['allowedString'] = $this->allowedString;
+        if (null !== $this->allowedMoney) $json['allowedMoney'] = $this->allowedMoney;
+        if (null !== $this->usedUnsignedInt) $json['usedUnsignedInt'] = $this->usedUnsignedInt;
+        if (null !== $this->usedMoney) $json['usedMoney'] = $this->usedMoney;
         return $json;
     }
 

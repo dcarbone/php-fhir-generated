@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -408,41 +408,41 @@ class FHIRDocumentManifest extends FHIRDomainResource implements \JsonSerializab
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->masterIdentifier) $json['masterIdentifier'] = json_encode($this->masterIdentifier);
+        if (null !== $this->masterIdentifier) $json['masterIdentifier'] = $this->masterIdentifier;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->created) $json['created'] = $this->created;
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = json_encode($author);
+                $json['author'][] = $author;
             }
         }
         if (0 < count($this->recipient)) {
             $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = json_encode($recipient);
+                $json['recipient'][] = $recipient;
             }
         }
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->content)) {
             $json['content'] = [];
             foreach($this->content as $content) {
-                $json['content'][] = json_encode($content);
+                $json['content'][] = $content;
             }
         }
         if (0 < count($this->related)) {
             $json['related'] = [];
             foreach($this->related as $related) {
-                $json['related'][] = json_encode($related);
+                $json['related'][] = $related;
             }
         }
         return $json;

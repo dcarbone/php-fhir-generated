@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -489,41 +489,41 @@ class FHIRSequence extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->coordinateSystem) $json['coordinateSystem'] = json_encode($this->coordinateSystem);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->specimen) $json['specimen'] = json_encode($this->specimen);
-        if (null !== $this->device) $json['device'] = json_encode($this->device);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->referenceSeq) $json['referenceSeq'] = json_encode($this->referenceSeq);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->coordinateSystem) $json['coordinateSystem'] = $this->coordinateSystem;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->specimen) $json['specimen'] = $this->specimen;
+        if (null !== $this->device) $json['device'] = $this->device;
+        if (null !== $this->performer) $json['performer'] = $this->performer;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->referenceSeq) $json['referenceSeq'] = $this->referenceSeq;
         if (0 < count($this->variant)) {
             $json['variant'] = [];
             foreach($this->variant as $variant) {
-                $json['variant'][] = json_encode($variant);
+                $json['variant'][] = $variant;
             }
         }
-        if (null !== $this->observedSeq) $json['observedSeq'] = json_encode($this->observedSeq);
+        if (null !== $this->observedSeq) $json['observedSeq'] = $this->observedSeq;
         if (0 < count($this->quality)) {
             $json['quality'] = [];
             foreach($this->quality as $quality) {
-                $json['quality'][] = json_encode($quality);
+                $json['quality'][] = $quality;
             }
         }
-        if (null !== $this->readCoverage) $json['readCoverage'] = json_encode($this->readCoverage);
+        if (null !== $this->readCoverage) $json['readCoverage'] = $this->readCoverage;
         if (0 < count($this->repository)) {
             $json['repository'] = [];
             foreach($this->repository as $repository) {
-                $json['repository'][] = json_encode($repository);
+                $json['repository'][] = $repository;
             }
         }
         if (0 < count($this->pointer)) {
             $json['pointer'] = [];
             foreach($this->pointer as $pointer) {
-                $json['pointer'][] = json_encode($pointer);
+                $json['pointer'][] = $pointer;
             }
         }
         return $json;

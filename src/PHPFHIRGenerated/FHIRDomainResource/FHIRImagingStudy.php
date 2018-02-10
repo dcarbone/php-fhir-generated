@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -590,63 +590,63 @@ class FHIRImagingStudy extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
-        if (null !== $this->accession) $json['accession'] = json_encode($this->accession);
+        if (null !== $this->uid) $json['uid'] = $this->uid;
+        if (null !== $this->accession) $json['accession'] = $this->accession;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->availability) $json['availability'] = json_encode($this->availability);
+        if (null !== $this->availability) $json['availability'] = $this->availability;
         if (0 < count($this->modalityList)) {
             $json['modalityList'] = [];
             foreach($this->modalityList as $modalityList) {
-                $json['modalityList'][] = json_encode($modalityList);
+                $json['modalityList'][] = $modalityList;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->started) $json['started'] = json_encode($this->started);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->started) $json['started'] = $this->started;
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
-        if (null !== $this->referrer) $json['referrer'] = json_encode($this->referrer);
+        if (null !== $this->referrer) $json['referrer'] = $this->referrer;
         if (0 < count($this->interpreter)) {
             $json['interpreter'] = [];
             foreach($this->interpreter as $interpreter) {
-                $json['interpreter'][] = json_encode($interpreter);
+                $json['interpreter'][] = $interpreter;
             }
         }
         if (0 < count($this->endpoint)) {
             $json['endpoint'] = [];
             foreach($this->endpoint as $endpoint) {
-                $json['endpoint'][] = json_encode($endpoint);
+                $json['endpoint'][] = $endpoint;
             }
         }
-        if (null !== $this->numberOfSeries) $json['numberOfSeries'] = json_encode($this->numberOfSeries);
-        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = json_encode($this->numberOfInstances);
+        if (null !== $this->numberOfSeries) $json['numberOfSeries'] = $this->numberOfSeries;
+        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = $this->numberOfInstances;
         if (0 < count($this->procedureReference)) {
             $json['procedureReference'] = [];
             foreach($this->procedureReference as $procedureReference) {
-                $json['procedureReference'][] = json_encode($procedureReference);
+                $json['procedureReference'][] = $procedureReference;
             }
         }
         if (0 < count($this->procedureCode)) {
             $json['procedureCode'] = [];
             foreach($this->procedureCode as $procedureCode) {
-                $json['procedureCode'][] = json_encode($procedureCode);
+                $json['procedureCode'][] = $procedureCode;
             }
         }
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->reason) $json['reason'] = $this->reason;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->series)) {
             $json['series'] = [];
             foreach($this->series as $series) {
-                $json['series'][] = json_encode($series);
+                $json['series'][] = $series;
             }
         }
         return $json;

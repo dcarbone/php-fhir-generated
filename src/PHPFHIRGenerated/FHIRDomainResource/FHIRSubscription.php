@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -304,22 +304,22 @@ class FHIRSubscription extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->criteria) $json['criteria'] = json_encode($this->criteria);
-        if (null !== $this->error) $json['error'] = json_encode($this->error);
-        if (null !== $this->channel) $json['channel'] = json_encode($this->channel);
+        if (null !== $this->end) $json['end'] = $this->end;
+        if (null !== $this->reason) $json['reason'] = $this->reason;
+        if (null !== $this->criteria) $json['criteria'] = $this->criteria;
+        if (null !== $this->error) $json['error'] = $this->error;
+        if (null !== $this->channel) $json['channel'] = $this->channel;
         if (0 < count($this->tag)) {
             $json['tag'] = [];
             foreach($this->tag as $tag) {
-                $json['tag'][] = json_encode($tag);
+                $json['tag'][] = $tag;
             }
         }
         return $json;

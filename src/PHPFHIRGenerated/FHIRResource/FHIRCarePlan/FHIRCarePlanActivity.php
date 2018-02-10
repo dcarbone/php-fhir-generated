@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -227,23 +227,23 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
         if (0 < count($this->outcomeCodeableConcept)) {
             $json['outcomeCodeableConcept'] = [];
             foreach($this->outcomeCodeableConcept as $outcomeCodeableConcept) {
-                $json['outcomeCodeableConcept'][] = json_encode($outcomeCodeableConcept);
+                $json['outcomeCodeableConcept'][] = $outcomeCodeableConcept;
             }
         }
         if (0 < count($this->outcomeReference)) {
             $json['outcomeReference'] = [];
             foreach($this->outcomeReference as $outcomeReference) {
-                $json['outcomeReference'][] = json_encode($outcomeReference);
+                $json['outcomeReference'][] = $outcomeReference;
             }
         }
         if (0 < count($this->progress)) {
             $json['progress'] = [];
             foreach($this->progress as $progress) {
-                $json['progress'][] = json_encode($progress);
+                $json['progress'][] = $progress;
             }
         }
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
-        if (null !== $this->detail) $json['detail'] = json_encode($this->detail);
+        if (null !== $this->reference) $json['reference'] = $this->reference;
+        if (null !== $this->detail) $json['detail'] = $this->detail;
         return $json;
     }
 

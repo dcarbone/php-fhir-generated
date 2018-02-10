@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,26 +276,26 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->kind) $json['kind'] = $this->kind;
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
         if (0 < count($this->package)) {
             $json['package'] = [];
             foreach($this->package as $package) {
-                $json['package'][] = json_encode($package);
+                $json['package'][] = $package;
             }
         }
-        if (null !== $this->format) $json['format'] = json_encode($this->format);
+        if (null !== $this->format) $json['format'] = $this->format;
         if (0 < count($this->page)) {
             $json['page'] = [];
             foreach($this->page as $page) {
-                $json['page'][] = json_encode($page);
+                $json['page'][] = $page;
             }
         }
         return $json;

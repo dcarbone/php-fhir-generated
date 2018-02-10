@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,19 +93,16 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     public $whenUsed = null;
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
@@ -232,7 +229,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getTimingTiming()
@@ -241,7 +237,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $timingTiming
      * @return $this
      */
@@ -252,7 +247,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
@@ -261,7 +255,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
@@ -272,7 +265,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
@@ -281,7 +273,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * How often the device was used. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
@@ -437,29 +428,29 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements \JsonSerializ
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->whenUsed) $json['whenUsed'] = json_encode($this->whenUsed);
-        if (null !== $this->timingTiming) $json['timingTiming'] = json_encode($this->timingTiming);
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
-        if (null !== $this->timingDateTime) $json['timingDateTime'] = json_encode($this->timingDateTime);
-        if (null !== $this->recordedOn) $json['recordedOn'] = json_encode($this->recordedOn);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->device) $json['device'] = json_encode($this->device);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->whenUsed) $json['whenUsed'] = $this->whenUsed;
+        if (null !== $this->timingTiming) $json['timingTiming'] = $this->timingTiming;
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = $this->timingPeriod;
+        if (null !== $this->timingDateTime) $json['timingDateTime'] = $this->timingDateTime;
+        if (null !== $this->recordedOn) $json['recordedOn'] = $this->recordedOn;
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->device) $json['device'] = $this->device;
         if (0 < count($this->indication)) {
             $json['indication'] = [];
             foreach($this->indication as $indication) {
-                $json['indication'][] = json_encode($indication);
+                $json['indication'][] = $indication;
             }
         }
-        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

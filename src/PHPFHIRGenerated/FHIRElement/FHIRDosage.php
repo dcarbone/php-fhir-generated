@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,13 +99,11 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     public $timing = null;
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $asNeededBoolean = null;
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $asNeededCodeableConcept = null;
@@ -129,13 +127,11 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     public $method = null;
 
     /**
-     * Amount of medication per dose. (choose any one of dose*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $doseRange = null;
 
     /**
-     * Amount of medication per dose. (choose any one of dose*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $doseQuantity = null;
@@ -159,19 +155,16 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     public $maxDosePerLifetime = null;
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $rateRange = null;
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $rateQuantity = null;
@@ -282,7 +275,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean()
@@ -291,7 +283,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return $this
      */
@@ -302,7 +293,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept()
@@ -311,7 +301,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept). (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return $this
      */
@@ -382,7 +371,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per dose. (choose any one of dose*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getDoseRange()
@@ -391,7 +379,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per dose. (choose any one of dose*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $doseRange
      * @return $this
      */
@@ -402,7 +389,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per dose. (choose any one of dose*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getDoseQuantity()
@@ -411,7 +397,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per dose. (choose any one of dose*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $doseQuantity
      * @return $this
      */
@@ -482,7 +467,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
@@ -491,7 +475,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
@@ -502,7 +485,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getRateRange()
@@ -511,7 +493,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $rateRange
      * @return $this
      */
@@ -522,7 +503,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity()
@@ -531,7 +511,6 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $rateQuantity
      * @return $this
      */
@@ -563,29 +542,29 @@ class FHIRDosage extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
+        if (null !== $this->text) $json['text'] = $this->text;
         if (0 < count($this->additionalInstruction)) {
             $json['additionalInstruction'] = [];
             foreach($this->additionalInstruction as $additionalInstruction) {
-                $json['additionalInstruction'][] = json_encode($additionalInstruction);
+                $json['additionalInstruction'][] = $additionalInstruction;
             }
         }
-        if (null !== $this->patientInstruction) $json['patientInstruction'] = json_encode($this->patientInstruction);
-        if (null !== $this->timing) $json['timing'] = json_encode($this->timing);
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
-        if (null !== $this->site) $json['site'] = json_encode($this->site);
-        if (null !== $this->route) $json['route'] = json_encode($this->route);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->doseRange) $json['doseRange'] = json_encode($this->doseRange);
-        if (null !== $this->doseQuantity) $json['doseQuantity'] = json_encode($this->doseQuantity);
-        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = json_encode($this->maxDosePerPeriod);
-        if (null !== $this->maxDosePerAdministration) $json['maxDosePerAdministration'] = json_encode($this->maxDosePerAdministration);
-        if (null !== $this->maxDosePerLifetime) $json['maxDosePerLifetime'] = json_encode($this->maxDosePerLifetime);
-        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
-        if (null !== $this->rateRange) $json['rateRange'] = json_encode($this->rateRange);
-        if (null !== $this->rateQuantity) $json['rateQuantity'] = json_encode($this->rateQuantity);
+        if (null !== $this->patientInstruction) $json['patientInstruction'] = $this->patientInstruction;
+        if (null !== $this->timing) $json['timing'] = $this->timing;
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean;
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept;
+        if (null !== $this->site) $json['site'] = $this->site;
+        if (null !== $this->route) $json['route'] = $this->route;
+        if (null !== $this->method) $json['method'] = $this->method;
+        if (null !== $this->doseRange) $json['doseRange'] = $this->doseRange;
+        if (null !== $this->doseQuantity) $json['doseQuantity'] = $this->doseQuantity;
+        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = $this->maxDosePerPeriod;
+        if (null !== $this->maxDosePerAdministration) $json['maxDosePerAdministration'] = $this->maxDosePerAdministration;
+        if (null !== $this->maxDosePerLifetime) $json['maxDosePerLifetime'] = $this->maxDosePerLifetime;
+        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio;
+        if (null !== $this->rateRange) $json['rateRange'] = $this->rateRange;
+        if (null !== $this->rateQuantity) $json['rateQuantity'] = $this->rateQuantity;
         return $json;
     }
 

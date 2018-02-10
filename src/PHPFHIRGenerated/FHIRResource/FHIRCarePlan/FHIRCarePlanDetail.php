@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,19 +122,16 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     public $prohibited = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $scheduledTiming = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $scheduledPeriod = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $scheduledString = null;
@@ -152,13 +149,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     public $performer = array();
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $productCodeableConcept = null;
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $productReference = null;
@@ -367,7 +362,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getScheduledTiming()
@@ -376,7 +370,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $scheduledTiming
      * @return $this
      */
@@ -387,7 +380,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getScheduledPeriod()
@@ -396,7 +388,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $scheduledPeriod
      * @return $this
      */
@@ -407,7 +398,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getScheduledString()
@@ -416,7 +406,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $scheduledString
      * @return $this
      */
@@ -467,7 +456,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCodeableConcept()
@@ -476,7 +464,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return $this
      */
@@ -487,7 +474,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getProductReference()
@@ -496,7 +482,6 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     }
 
     /**
-     * Identifies the food, drug or other product to be consumed or supplied in the activity. (choose any one of product*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $productReference
      * @return $this
      */
@@ -588,45 +573,45 @@ class FHIRCarePlanDetail extends FHIRBackboneElement implements \JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->definition) $json['definition'] = $this->definition;
+        if (null !== $this->code) $json['code'] = $this->code;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                $json['reasonReference'][] = $reasonReference;
             }
         }
         if (0 < count($this->goal)) {
             $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = json_encode($goal);
+                $json['goal'][] = $goal;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->statusReason) $json['statusReason'] = json_encode($this->statusReason);
-        if (null !== $this->prohibited) $json['prohibited'] = json_encode($this->prohibited);
-        if (null !== $this->scheduledTiming) $json['scheduledTiming'] = json_encode($this->scheduledTiming);
-        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = json_encode($this->scheduledPeriod);
-        if (null !== $this->scheduledString) $json['scheduledString'] = json_encode($this->scheduledString);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->statusReason) $json['statusReason'] = $this->statusReason;
+        if (null !== $this->prohibited) $json['prohibited'] = $this->prohibited;
+        if (null !== $this->scheduledTiming) $json['scheduledTiming'] = $this->scheduledTiming;
+        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = $this->scheduledPeriod;
+        if (null !== $this->scheduledString) $json['scheduledString'] = $this->scheduledString;
+        if (null !== $this->location) $json['location'] = $this->location;
         if (0 < count($this->performer)) {
             $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = json_encode($performer);
+                $json['performer'][] = $performer;
             }
         }
-        if (null !== $this->productCodeableConcept) $json['productCodeableConcept'] = json_encode($this->productCodeableConcept);
-        if (null !== $this->productReference) $json['productReference'] = json_encode($this->productReference);
-        if (null !== $this->dailyAmount) $json['dailyAmount'] = json_encode($this->dailyAmount);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->productCodeableConcept) $json['productCodeableConcept'] = $this->productCodeableConcept;
+        if (null !== $this->productReference) $json['productReference'] = $this->productReference;
+        if (null !== $this->dailyAmount) $json['dailyAmount'] = $this->dailyAmount;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->description) $json['description'] = $this->description;
         return $json;
     }
 

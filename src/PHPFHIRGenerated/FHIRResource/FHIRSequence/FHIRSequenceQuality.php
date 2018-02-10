@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -458,20 +458,20 @@ class FHIRSequenceQuality extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->standardSequence) $json['standardSequence'] = json_encode($this->standardSequence);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
-        if (null !== $this->score) $json['score'] = json_encode($this->score);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->truthTP) $json['truthTP'] = json_encode($this->truthTP);
-        if (null !== $this->queryTP) $json['queryTP'] = json_encode($this->queryTP);
-        if (null !== $this->truthFN) $json['truthFN'] = json_encode($this->truthFN);
-        if (null !== $this->queryFP) $json['queryFP'] = json_encode($this->queryFP);
-        if (null !== $this->gtFP) $json['gtFP'] = json_encode($this->gtFP);
-        if (null !== $this->precision) $json['precision'] = json_encode($this->precision);
-        if (null !== $this->recall) $json['recall'] = json_encode($this->recall);
-        if (null !== $this->fScore) $json['fScore'] = json_encode($this->fScore);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->standardSequence) $json['standardSequence'] = $this->standardSequence;
+        if (null !== $this->start) $json['start'] = $this->start;
+        if (null !== $this->end) $json['end'] = $this->end;
+        if (null !== $this->score) $json['score'] = $this->score;
+        if (null !== $this->method) $json['method'] = $this->method;
+        if (null !== $this->truthTP) $json['truthTP'] = $this->truthTP;
+        if (null !== $this->queryTP) $json['queryTP'] = $this->queryTP;
+        if (null !== $this->truthFN) $json['truthFN'] = $this->truthFN;
+        if (null !== $this->queryFP) $json['queryFP'] = $this->queryFP;
+        if (null !== $this->gtFP) $json['gtFP'] = $this->gtFP;
+        if (null !== $this->precision) $json['precision'] = $this->precision;
+        if (null !== $this->recall) $json['recall'] = $this->recall;
+        if (null !== $this->fScore) $json['fScore'] = $this->fScore;
         return $json;
     }
 

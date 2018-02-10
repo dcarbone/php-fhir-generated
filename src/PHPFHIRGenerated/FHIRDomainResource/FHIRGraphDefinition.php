@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -486,39 +486,39 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (null !== $this->url) $json['url'] = $this->url;
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (null !== $this->purpose) $json['purpose'] = $this->purpose;
+        if (null !== $this->start) $json['start'] = $this->start;
+        if (null !== $this->profile) $json['profile'] = $this->profile;
         if (0 < count($this->link)) {
             $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = json_encode($link);
+                $json['link'][] = $link;
             }
         }
         return $json;

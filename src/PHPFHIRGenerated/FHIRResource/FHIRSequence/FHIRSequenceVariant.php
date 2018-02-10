@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,12 +250,12 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
-        if (null !== $this->observedAllele) $json['observedAllele'] = json_encode($this->observedAllele);
-        if (null !== $this->referenceAllele) $json['referenceAllele'] = json_encode($this->referenceAllele);
-        if (null !== $this->cigar) $json['cigar'] = json_encode($this->cigar);
-        if (null !== $this->variantPointer) $json['variantPointer'] = json_encode($this->variantPointer);
+        if (null !== $this->start) $json['start'] = $this->start;
+        if (null !== $this->end) $json['end'] = $this->end;
+        if (null !== $this->observedAllele) $json['observedAllele'] = $this->observedAllele;
+        if (null !== $this->referenceAllele) $json['referenceAllele'] = $this->referenceAllele;
+        if (null !== $this->cigar) $json['cigar'] = $this->cigar;
+        if (null !== $this->variantPointer) $json['variantPointer'] = $this->variantPointer;
         return $json;
     }
 

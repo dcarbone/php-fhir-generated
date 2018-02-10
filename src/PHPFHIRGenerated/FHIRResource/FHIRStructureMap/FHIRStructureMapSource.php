@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,229 +92,191 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     public $type = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $defaultValueBase64Binary = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $defaultValueBoolean = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $defaultValueCode = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $defaultValueDate = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $defaultValueDateTime = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $defaultValueDecimal = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $defaultValueId = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $defaultValueInstant = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $defaultValueInteger = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $defaultValueMarkdown = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $defaultValueOid = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $defaultValuePositiveInt = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $defaultValueString = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $defaultValueTime = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $defaultValueUnsignedInt = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $defaultValueUri = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $defaultValueAddress = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $defaultValueAge = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $defaultValueAnnotation = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $defaultValueAttachment = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $defaultValueCodeableConcept = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $defaultValueCoding = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $defaultValueContactPoint = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
     public $defaultValueCount = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public $defaultValueDistance = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $defaultValueDuration = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $defaultValueHumanName = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $defaultValueIdentifier = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $defaultValueMoney = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $defaultValuePeriod = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $defaultValueQuantity = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $defaultValueRange = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $defaultValueRatio = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $defaultValueReference = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $defaultValueSampledData = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $defaultValueSignature = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $defaultValueTiming = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $defaultValueMeta = null;
@@ -435,7 +397,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getDefaultValueBase64Binary()
@@ -444,7 +405,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
      * @return $this
      */
@@ -455,7 +415,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getDefaultValueBoolean()
@@ -464,7 +423,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $defaultValueBoolean
      * @return $this
      */
@@ -475,7 +433,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getDefaultValueCode()
@@ -484,7 +441,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $defaultValueCode
      * @return $this
      */
@@ -495,7 +451,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getDefaultValueDate()
@@ -504,7 +459,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $defaultValueDate
      * @return $this
      */
@@ -515,7 +469,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDefaultValueDateTime()
@@ -524,7 +477,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $defaultValueDateTime
      * @return $this
      */
@@ -535,7 +487,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getDefaultValueDecimal()
@@ -544,7 +495,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $defaultValueDecimal
      * @return $this
      */
@@ -555,7 +505,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getDefaultValueId()
@@ -564,7 +513,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $defaultValueId
      * @return $this
      */
@@ -575,7 +523,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getDefaultValueInstant()
@@ -584,7 +531,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $defaultValueInstant
      * @return $this
      */
@@ -595,7 +541,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getDefaultValueInteger()
@@ -604,7 +549,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $defaultValueInteger
      * @return $this
      */
@@ -615,7 +559,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDefaultValueMarkdown()
@@ -624,7 +567,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $defaultValueMarkdown
      * @return $this
      */
@@ -635,7 +577,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getDefaultValueOid()
@@ -644,7 +585,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $defaultValueOid
      * @return $this
      */
@@ -655,7 +595,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getDefaultValuePositiveInt()
@@ -664,7 +603,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
      * @return $this
      */
@@ -675,7 +613,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDefaultValueString()
@@ -684,7 +621,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $defaultValueString
      * @return $this
      */
@@ -695,7 +631,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getDefaultValueTime()
@@ -704,7 +639,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $defaultValueTime
      * @return $this
      */
@@ -715,7 +649,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getDefaultValueUnsignedInt()
@@ -724,7 +657,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
      * @return $this
      */
@@ -735,7 +667,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDefaultValueUri()
@@ -744,7 +675,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $defaultValueUri
      * @return $this
      */
@@ -755,7 +685,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getDefaultValueAddress()
@@ -764,7 +693,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $defaultValueAddress
      * @return $this
      */
@@ -775,7 +703,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDefaultValueAge()
@@ -784,7 +711,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @return $this
      */
@@ -795,7 +721,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getDefaultValueAnnotation()
@@ -804,7 +729,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @return $this
      */
@@ -815,7 +739,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getDefaultValueAttachment()
@@ -824,7 +747,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $defaultValueAttachment
      * @return $this
      */
@@ -835,7 +757,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getDefaultValueCodeableConcept()
@@ -844,7 +765,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @return $this
      */
@@ -855,7 +775,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getDefaultValueCoding()
@@ -864,7 +783,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $defaultValueCoding
      * @return $this
      */
@@ -875,7 +793,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getDefaultValueContactPoint()
@@ -884,7 +801,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @return $this
      */
@@ -895,7 +811,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
     public function getDefaultValueCount()
@@ -904,7 +819,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
      * @return $this
      */
@@ -915,7 +829,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public function getDefaultValueDistance()
@@ -924,7 +837,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
      * @return $this
      */
@@ -935,7 +847,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDefaultValueDuration()
@@ -944,7 +855,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @return $this
      */
@@ -955,7 +865,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getDefaultValueHumanName()
@@ -964,7 +873,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $defaultValueHumanName
      * @return $this
      */
@@ -975,7 +883,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getDefaultValueIdentifier()
@@ -984,7 +891,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @return $this
      */
@@ -995,7 +901,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public function getDefaultValueMoney()
@@ -1004,7 +909,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $defaultValueMoney
      * @return $this
      */
@@ -1015,7 +919,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getDefaultValuePeriod()
@@ -1024,7 +927,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $defaultValuePeriod
      * @return $this
      */
@@ -1035,7 +937,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getDefaultValueQuantity()
@@ -1044,7 +945,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return $this
      */
@@ -1055,7 +955,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getDefaultValueRange()
@@ -1064,7 +963,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $defaultValueRange
      * @return $this
      */
@@ -1075,7 +973,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getDefaultValueRatio()
@@ -1084,7 +981,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $defaultValueRatio
      * @return $this
      */
@@ -1095,7 +991,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getDefaultValueReference()
@@ -1104,7 +999,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $defaultValueReference
      * @return $this
      */
@@ -1115,7 +1009,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getDefaultValueSampledData()
@@ -1124,7 +1017,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $defaultValueSampledData
      * @return $this
      */
@@ -1135,7 +1027,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getDefaultValueSignature()
@@ -1144,7 +1035,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $defaultValueSignature
      * @return $this
      */
@@ -1155,7 +1045,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getDefaultValueTiming()
@@ -1164,7 +1053,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $defaultValueTiming
      * @return $this
      */
@@ -1175,7 +1063,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getDefaultValueMeta()
@@ -1184,7 +1071,6 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $defaultValueMeta
      * @return $this
      */
@@ -1316,53 +1202,53 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->min) $json['min'] = json_encode($this->min);
-        if (null !== $this->max) $json['max'] = json_encode($this->max);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->defaultValueBase64Binary) $json['defaultValueBase64Binary'] = json_encode($this->defaultValueBase64Binary);
-        if (null !== $this->defaultValueBoolean) $json['defaultValueBoolean'] = json_encode($this->defaultValueBoolean);
-        if (null !== $this->defaultValueCode) $json['defaultValueCode'] = json_encode($this->defaultValueCode);
-        if (null !== $this->defaultValueDate) $json['defaultValueDate'] = json_encode($this->defaultValueDate);
-        if (null !== $this->defaultValueDateTime) $json['defaultValueDateTime'] = json_encode($this->defaultValueDateTime);
-        if (null !== $this->defaultValueDecimal) $json['defaultValueDecimal'] = json_encode($this->defaultValueDecimal);
-        if (null !== $this->defaultValueId) $json['defaultValueId'] = json_encode($this->defaultValueId);
-        if (null !== $this->defaultValueInstant) $json['defaultValueInstant'] = json_encode($this->defaultValueInstant);
-        if (null !== $this->defaultValueInteger) $json['defaultValueInteger'] = json_encode($this->defaultValueInteger);
-        if (null !== $this->defaultValueMarkdown) $json['defaultValueMarkdown'] = json_encode($this->defaultValueMarkdown);
-        if (null !== $this->defaultValueOid) $json['defaultValueOid'] = json_encode($this->defaultValueOid);
-        if (null !== $this->defaultValuePositiveInt) $json['defaultValuePositiveInt'] = json_encode($this->defaultValuePositiveInt);
-        if (null !== $this->defaultValueString) $json['defaultValueString'] = json_encode($this->defaultValueString);
-        if (null !== $this->defaultValueTime) $json['defaultValueTime'] = json_encode($this->defaultValueTime);
-        if (null !== $this->defaultValueUnsignedInt) $json['defaultValueUnsignedInt'] = json_encode($this->defaultValueUnsignedInt);
-        if (null !== $this->defaultValueUri) $json['defaultValueUri'] = json_encode($this->defaultValueUri);
-        if (null !== $this->defaultValueAddress) $json['defaultValueAddress'] = json_encode($this->defaultValueAddress);
-        if (null !== $this->defaultValueAge) $json['defaultValueAge'] = json_encode($this->defaultValueAge);
-        if (null !== $this->defaultValueAnnotation) $json['defaultValueAnnotation'] = json_encode($this->defaultValueAnnotation);
-        if (null !== $this->defaultValueAttachment) $json['defaultValueAttachment'] = json_encode($this->defaultValueAttachment);
-        if (null !== $this->defaultValueCodeableConcept) $json['defaultValueCodeableConcept'] = json_encode($this->defaultValueCodeableConcept);
-        if (null !== $this->defaultValueCoding) $json['defaultValueCoding'] = json_encode($this->defaultValueCoding);
-        if (null !== $this->defaultValueContactPoint) $json['defaultValueContactPoint'] = json_encode($this->defaultValueContactPoint);
-        if (null !== $this->defaultValueCount) $json['defaultValueCount'] = json_encode($this->defaultValueCount);
-        if (null !== $this->defaultValueDistance) $json['defaultValueDistance'] = json_encode($this->defaultValueDistance);
-        if (null !== $this->defaultValueDuration) $json['defaultValueDuration'] = json_encode($this->defaultValueDuration);
-        if (null !== $this->defaultValueHumanName) $json['defaultValueHumanName'] = json_encode($this->defaultValueHumanName);
-        if (null !== $this->defaultValueIdentifier) $json['defaultValueIdentifier'] = json_encode($this->defaultValueIdentifier);
-        if (null !== $this->defaultValueMoney) $json['defaultValueMoney'] = json_encode($this->defaultValueMoney);
-        if (null !== $this->defaultValuePeriod) $json['defaultValuePeriod'] = json_encode($this->defaultValuePeriod);
-        if (null !== $this->defaultValueQuantity) $json['defaultValueQuantity'] = json_encode($this->defaultValueQuantity);
-        if (null !== $this->defaultValueRange) $json['defaultValueRange'] = json_encode($this->defaultValueRange);
-        if (null !== $this->defaultValueRatio) $json['defaultValueRatio'] = json_encode($this->defaultValueRatio);
-        if (null !== $this->defaultValueReference) $json['defaultValueReference'] = json_encode($this->defaultValueReference);
-        if (null !== $this->defaultValueSampledData) $json['defaultValueSampledData'] = json_encode($this->defaultValueSampledData);
-        if (null !== $this->defaultValueSignature) $json['defaultValueSignature'] = json_encode($this->defaultValueSignature);
-        if (null !== $this->defaultValueTiming) $json['defaultValueTiming'] = json_encode($this->defaultValueTiming);
-        if (null !== $this->defaultValueMeta) $json['defaultValueMeta'] = json_encode($this->defaultValueMeta);
-        if (null !== $this->element) $json['element'] = json_encode($this->element);
-        if (null !== $this->listMode) $json['listMode'] = json_encode($this->listMode);
-        if (null !== $this->variable) $json['variable'] = json_encode($this->variable);
-        if (null !== $this->condition) $json['condition'] = json_encode($this->condition);
-        if (null !== $this->check) $json['check'] = json_encode($this->check);
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->min) $json['min'] = $this->min;
+        if (null !== $this->max) $json['max'] = $this->max;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->defaultValueBase64Binary) $json['defaultValueBase64Binary'] = $this->defaultValueBase64Binary;
+        if (null !== $this->defaultValueBoolean) $json['defaultValueBoolean'] = $this->defaultValueBoolean;
+        if (null !== $this->defaultValueCode) $json['defaultValueCode'] = $this->defaultValueCode;
+        if (null !== $this->defaultValueDate) $json['defaultValueDate'] = $this->defaultValueDate;
+        if (null !== $this->defaultValueDateTime) $json['defaultValueDateTime'] = $this->defaultValueDateTime;
+        if (null !== $this->defaultValueDecimal) $json['defaultValueDecimal'] = $this->defaultValueDecimal;
+        if (null !== $this->defaultValueId) $json['defaultValueId'] = $this->defaultValueId;
+        if (null !== $this->defaultValueInstant) $json['defaultValueInstant'] = $this->defaultValueInstant;
+        if (null !== $this->defaultValueInteger) $json['defaultValueInteger'] = $this->defaultValueInteger;
+        if (null !== $this->defaultValueMarkdown) $json['defaultValueMarkdown'] = $this->defaultValueMarkdown;
+        if (null !== $this->defaultValueOid) $json['defaultValueOid'] = $this->defaultValueOid;
+        if (null !== $this->defaultValuePositiveInt) $json['defaultValuePositiveInt'] = $this->defaultValuePositiveInt;
+        if (null !== $this->defaultValueString) $json['defaultValueString'] = $this->defaultValueString;
+        if (null !== $this->defaultValueTime) $json['defaultValueTime'] = $this->defaultValueTime;
+        if (null !== $this->defaultValueUnsignedInt) $json['defaultValueUnsignedInt'] = $this->defaultValueUnsignedInt;
+        if (null !== $this->defaultValueUri) $json['defaultValueUri'] = $this->defaultValueUri;
+        if (null !== $this->defaultValueAddress) $json['defaultValueAddress'] = $this->defaultValueAddress;
+        if (null !== $this->defaultValueAge) $json['defaultValueAge'] = $this->defaultValueAge;
+        if (null !== $this->defaultValueAnnotation) $json['defaultValueAnnotation'] = $this->defaultValueAnnotation;
+        if (null !== $this->defaultValueAttachment) $json['defaultValueAttachment'] = $this->defaultValueAttachment;
+        if (null !== $this->defaultValueCodeableConcept) $json['defaultValueCodeableConcept'] = $this->defaultValueCodeableConcept;
+        if (null !== $this->defaultValueCoding) $json['defaultValueCoding'] = $this->defaultValueCoding;
+        if (null !== $this->defaultValueContactPoint) $json['defaultValueContactPoint'] = $this->defaultValueContactPoint;
+        if (null !== $this->defaultValueCount) $json['defaultValueCount'] = $this->defaultValueCount;
+        if (null !== $this->defaultValueDistance) $json['defaultValueDistance'] = $this->defaultValueDistance;
+        if (null !== $this->defaultValueDuration) $json['defaultValueDuration'] = $this->defaultValueDuration;
+        if (null !== $this->defaultValueHumanName) $json['defaultValueHumanName'] = $this->defaultValueHumanName;
+        if (null !== $this->defaultValueIdentifier) $json['defaultValueIdentifier'] = $this->defaultValueIdentifier;
+        if (null !== $this->defaultValueMoney) $json['defaultValueMoney'] = $this->defaultValueMoney;
+        if (null !== $this->defaultValuePeriod) $json['defaultValuePeriod'] = $this->defaultValuePeriod;
+        if (null !== $this->defaultValueQuantity) $json['defaultValueQuantity'] = $this->defaultValueQuantity;
+        if (null !== $this->defaultValueRange) $json['defaultValueRange'] = $this->defaultValueRange;
+        if (null !== $this->defaultValueRatio) $json['defaultValueRatio'] = $this->defaultValueRatio;
+        if (null !== $this->defaultValueReference) $json['defaultValueReference'] = $this->defaultValueReference;
+        if (null !== $this->defaultValueSampledData) $json['defaultValueSampledData'] = $this->defaultValueSampledData;
+        if (null !== $this->defaultValueSignature) $json['defaultValueSignature'] = $this->defaultValueSignature;
+        if (null !== $this->defaultValueTiming) $json['defaultValueTiming'] = $this->defaultValueTiming;
+        if (null !== $this->defaultValueMeta) $json['defaultValueMeta'] = $this->defaultValueMeta;
+        if (null !== $this->element) $json['element'] = $this->element;
+        if (null !== $this->listMode) $json['listMode'] = $this->listMode;
+        if (null !== $this->variable) $json['variable'] = $this->variable;
+        if (null !== $this->condition) $json['condition'] = $this->condition;
+        if (null !== $this->check) $json['check'] = $this->check;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -408,26 +408,26 @@ class FHIRMessageHeader extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->event) $json['event'] = json_encode($this->event);
+        if (null !== $this->event) $json['event'] = $this->event;
         if (0 < count($this->destination)) {
             $json['destination'] = [];
             foreach($this->destination as $destination) {
-                $json['destination'][] = json_encode($destination);
+                $json['destination'][] = $destination;
             }
         }
-        if (null !== $this->receiver) $json['receiver'] = json_encode($this->receiver);
-        if (null !== $this->sender) $json['sender'] = json_encode($this->sender);
-        if (null !== $this->timestamp) $json['timestamp'] = json_encode($this->timestamp);
-        if (null !== $this->enterer) $json['enterer'] = json_encode($this->enterer);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->responsible) $json['responsible'] = json_encode($this->responsible);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->response) $json['response'] = json_encode($this->response);
+        if (null !== $this->receiver) $json['receiver'] = $this->receiver;
+        if (null !== $this->sender) $json['sender'] = $this->sender;
+        if (null !== $this->timestamp) $json['timestamp'] = $this->timestamp;
+        if (null !== $this->enterer) $json['enterer'] = $this->enterer;
+        if (null !== $this->author) $json['author'] = $this->author;
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->responsible) $json['responsible'] = $this->responsible;
+        if (null !== $this->reason) $json['reason'] = $this->reason;
+        if (null !== $this->response) $json['response'] = $this->response;
         if (0 < count($this->focus)) {
             $json['focus'] = [];
             foreach($this->focus as $focus) {
-                $json['focus'][] = json_encode($focus);
+                $json['focus'][] = $focus;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -183,13 +183,11 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     public $term = array();
 
     /**
-     * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract. (choose any one of binding*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $bindingAttachment = null;
 
     /**
-     * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract. (choose any one of binding*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $bindingReference = null;
@@ -598,7 +596,6 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract. (choose any one of binding*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getBindingAttachment()
@@ -607,7 +604,6 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract. (choose any one of binding*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $bindingAttachment
      * @return $this
      */
@@ -618,7 +614,6 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract. (choose any one of binding*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getBindingReference()
@@ -627,7 +622,6 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract. (choose any one of binding*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $bindingReference
      * @return $this
      */
@@ -720,103 +714,103 @@ class FHIRContract extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
-        if (null !== $this->applies) $json['applies'] = json_encode($this->applies);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->issued) $json['issued'] = $this->issued;
+        if (null !== $this->applies) $json['applies'] = $this->applies;
         if (0 < count($this->subject)) {
             $json['subject'] = [];
             foreach($this->subject as $subject) {
-                $json['subject'][] = json_encode($subject);
+                $json['subject'][] = $subject;
             }
         }
         if (0 < count($this->topic)) {
             $json['topic'] = [];
             foreach($this->topic as $topic) {
-                $json['topic'][] = json_encode($topic);
+                $json['topic'][] = $topic;
             }
         }
         if (0 < count($this->authority)) {
             $json['authority'] = [];
             foreach($this->authority as $authority) {
-                $json['authority'][] = json_encode($authority);
+                $json['authority'][] = $authority;
             }
         }
         if (0 < count($this->domain)) {
             $json['domain'] = [];
             foreach($this->domain as $domain) {
-                $json['domain'][] = json_encode($domain);
+                $json['domain'][] = $domain;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->type) $json['type'] = $this->type;
         if (0 < count($this->subType)) {
             $json['subType'] = [];
             foreach($this->subType as $subType) {
-                $json['subType'][] = json_encode($subType);
+                $json['subType'][] = $subType;
             }
         }
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         if (0 < count($this->actionReason)) {
             $json['actionReason'] = [];
             foreach($this->actionReason as $actionReason) {
-                $json['actionReason'][] = json_encode($actionReason);
+                $json['actionReason'][] = $actionReason;
             }
         }
-        if (null !== $this->decisionType) $json['decisionType'] = json_encode($this->decisionType);
-        if (null !== $this->contentDerivative) $json['contentDerivative'] = json_encode($this->contentDerivative);
+        if (null !== $this->decisionType) $json['decisionType'] = $this->decisionType;
+        if (null !== $this->contentDerivative) $json['contentDerivative'] = $this->contentDerivative;
         if (0 < count($this->securityLabel)) {
             $json['securityLabel'] = [];
             foreach($this->securityLabel as $securityLabel) {
-                $json['securityLabel'][] = json_encode($securityLabel);
+                $json['securityLabel'][] = $securityLabel;
             }
         }
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
-                $json['agent'][] = json_encode($agent);
+                $json['agent'][] = $agent;
             }
         }
         if (0 < count($this->signer)) {
             $json['signer'] = [];
             foreach($this->signer as $signer) {
-                $json['signer'][] = json_encode($signer);
+                $json['signer'][] = $signer;
             }
         }
         if (0 < count($this->valuedItem)) {
             $json['valuedItem'] = [];
             foreach($this->valuedItem as $valuedItem) {
-                $json['valuedItem'][] = json_encode($valuedItem);
+                $json['valuedItem'][] = $valuedItem;
             }
         }
         if (0 < count($this->term)) {
             $json['term'] = [];
             foreach($this->term as $term) {
-                $json['term'][] = json_encode($term);
+                $json['term'][] = $term;
             }
         }
-        if (null !== $this->bindingAttachment) $json['bindingAttachment'] = json_encode($this->bindingAttachment);
-        if (null !== $this->bindingReference) $json['bindingReference'] = json_encode($this->bindingReference);
+        if (null !== $this->bindingAttachment) $json['bindingAttachment'] = $this->bindingAttachment;
+        if (null !== $this->bindingReference) $json['bindingReference'] = $this->bindingReference;
         if (0 < count($this->friendly)) {
             $json['friendly'] = [];
             foreach($this->friendly as $friendly) {
-                $json['friendly'][] = json_encode($friendly);
+                $json['friendly'][] = $friendly;
             }
         }
         if (0 < count($this->legal)) {
             $json['legal'] = [];
             foreach($this->legal as $legal) {
-                $json['legal'][] = json_encode($legal);
+                $json['legal'][] = $legal;
             }
         }
         if (0 < count($this->rule)) {
             $json['rule'] = [];
             foreach($this->rule as $rule) {
-                $json['rule'][] = json_encode($rule);
+                $json['rule'][] = $rule;
             }
         }
         return $json;

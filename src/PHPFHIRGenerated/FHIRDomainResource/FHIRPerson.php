@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -359,36 +359,36 @@ class FHIRPerson extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->name)) {
             $json['name'] = [];
             foreach($this->name as $name) {
-                $json['name'][] = json_encode($name);
+                $json['name'][] = $name;
             }
         }
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
-        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
-        if (null !== $this->birthDate) $json['birthDate'] = json_encode($this->birthDate);
+        if (null !== $this->gender) $json['gender'] = $this->gender;
+        if (null !== $this->birthDate) $json['birthDate'] = $this->birthDate;
         if (0 < count($this->address)) {
             $json['address'] = [];
             foreach($this->address as $address) {
-                $json['address'][] = json_encode($address);
+                $json['address'][] = $address;
             }
         }
-        if (null !== $this->photo) $json['photo'] = json_encode($this->photo);
-        if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
+        if (null !== $this->photo) $json['photo'] = $this->photo;
+        if (null !== $this->managingOrganization) $json['managingOrganization'] = $this->managingOrganization;
+        if (null !== $this->active) $json['active'] = $this->active;
         if (0 < count($this->link)) {
             $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = json_encode($link);
+                $json['link'][] = $link;
             }
         }
         return $json;

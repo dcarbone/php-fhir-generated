@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,17 +250,17 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->sourceVersion) $json['sourceVersion'] = json_encode($this->sourceVersion);
-        if (null !== $this->target) $json['target'] = json_encode($this->target);
-        if (null !== $this->targetVersion) $json['targetVersion'] = json_encode($this->targetVersion);
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->sourceVersion) $json['sourceVersion'] = $this->sourceVersion;
+        if (null !== $this->target) $json['target'] = $this->target;
+        if (null !== $this->targetVersion) $json['targetVersion'] = $this->targetVersion;
         if (0 < count($this->element)) {
             $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = json_encode($element);
+                $json['element'][] = $element;
             }
         }
-        if (null !== $this->unmapped) $json['unmapped'] = json_encode($this->unmapped);
+        if (null !== $this->unmapped) $json['unmapped'] = $this->unmapped;
         return $json;
     }
 

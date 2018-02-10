@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,19 +111,16 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $occurrenceTiming = null;
@@ -364,7 +361,6 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -373,7 +369,6 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -384,7 +379,6 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -393,7 +387,6 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -404,7 +397,6 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
@@ -413,7 +405,6 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
      * @return $this
      */
@@ -746,74 +737,74 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                $json['definition'][] = $definition;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = $this->occurrenceTiming;
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                $json['participant'][] = $participant;
             }
         }
-        if (null !== $this->performingOrganization) $json['performingOrganization'] = json_encode($this->performingOrganization);
-        if (null !== $this->requestingOrganization) $json['requestingOrganization'] = json_encode($this->requestingOrganization);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->performingOrganization) $json['performingOrganization'] = $this->performingOrganization;
+        if (null !== $this->requestingOrganization) $json['requestingOrganization'] = $this->requestingOrganization;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
         if (0 < count($this->bodysite)) {
             $json['bodysite'] = [];
             foreach($this->bodysite as $bodysite) {
-                $json['bodysite'][] = json_encode($bodysite);
+                $json['bodysite'][] = $bodysite;
             }
         }
-        if (null !== $this->factorOverride) $json['factorOverride'] = json_encode($this->factorOverride);
-        if (null !== $this->priceOverride) $json['priceOverride'] = json_encode($this->priceOverride);
-        if (null !== $this->overrideReason) $json['overrideReason'] = json_encode($this->overrideReason);
-        if (null !== $this->enterer) $json['enterer'] = json_encode($this->enterer);
-        if (null !== $this->enteredDate) $json['enteredDate'] = json_encode($this->enteredDate);
+        if (null !== $this->factorOverride) $json['factorOverride'] = $this->factorOverride;
+        if (null !== $this->priceOverride) $json['priceOverride'] = $this->priceOverride;
+        if (null !== $this->overrideReason) $json['overrideReason'] = $this->overrideReason;
+        if (null !== $this->enterer) $json['enterer'] = $this->enterer;
+        if (null !== $this->enteredDate) $json['enteredDate'] = $this->enteredDate;
         if (0 < count($this->reason)) {
             $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = json_encode($reason);
+                $json['reason'][] = $reason;
             }
         }
         if (0 < count($this->service)) {
             $json['service'] = [];
             foreach($this->service as $service) {
-                $json['service'][] = json_encode($service);
+                $json['service'][] = $service;
             }
         }
         if (0 < count($this->account)) {
             $json['account'] = [];
             foreach($this->account as $account) {
-                $json['account'][] = json_encode($account);
+                $json['account'][] = $account;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->supportingInformation)) {
             $json['supportingInformation'] = [];
             foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = json_encode($supportingInformation);
+                $json['supportingInformation'][] = $supportingInformation;
             }
         }
         return $json;

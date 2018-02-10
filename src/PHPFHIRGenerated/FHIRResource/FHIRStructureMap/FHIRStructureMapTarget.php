@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,22 +302,22 @@ class FHIRStructureMapTarget extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->contextType) $json['contextType'] = json_encode($this->contextType);
-        if (null !== $this->element) $json['element'] = json_encode($this->element);
-        if (null !== $this->variable) $json['variable'] = json_encode($this->variable);
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->contextType) $json['contextType'] = $this->contextType;
+        if (null !== $this->element) $json['element'] = $this->element;
+        if (null !== $this->variable) $json['variable'] = $this->variable;
         if (0 < count($this->listMode)) {
             $json['listMode'] = [];
             foreach($this->listMode as $listMode) {
-                $json['listMode'][] = json_encode($listMode);
+                $json['listMode'][] = $listMode;
             }
         }
-        if (null !== $this->listRuleId) $json['listRuleId'] = json_encode($this->listRuleId);
-        if (null !== $this->transform) $json['transform'] = json_encode($this->transform);
+        if (null !== $this->listRuleId) $json['listRuleId'] = $this->listRuleId;
+        if (null !== $this->transform) $json['transform'] = $this->transform;
         if (0 < count($this->parameter)) {
             $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = json_encode($parameter);
+                $json['parameter'][] = $parameter;
             }
         }
         return $json;

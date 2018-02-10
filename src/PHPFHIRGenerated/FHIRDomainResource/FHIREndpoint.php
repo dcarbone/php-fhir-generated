@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -385,37 +385,37 @@ class FHIREndpoint extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->connectionType) $json['connectionType'] = json_encode($this->connectionType);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->connectionType) $json['connectionType'] = $this->connectionType;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->managingOrganization) $json['managingOrganization'] = $this->managingOrganization;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->period) $json['period'] = $this->period;
         if (0 < count($this->payloadType)) {
             $json['payloadType'] = [];
             foreach($this->payloadType as $payloadType) {
-                $json['payloadType'][] = json_encode($payloadType);
+                $json['payloadType'][] = $payloadType;
             }
         }
         if (0 < count($this->payloadMimeType)) {
             $json['payloadMimeType'] = [];
             foreach($this->payloadMimeType as $payloadMimeType) {
-                $json['payloadMimeType'][] = json_encode($payloadMimeType);
+                $json['payloadMimeType'][] = $payloadMimeType;
             }
         }
-        if (null !== $this->address) $json['address'] = json_encode($this->address);
+        if (null !== $this->address) $json['address'] = $this->address;
         if (0 < count($this->header)) {
             $json['header'] = [];
             foreach($this->header as $header) {
-                $json['header'][] = json_encode($header);
+                $json['header'][] = $header;
             }
         }
         return $json;

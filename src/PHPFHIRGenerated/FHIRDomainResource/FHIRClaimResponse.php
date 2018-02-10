@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -697,59 +697,59 @@ class FHIRClaimResponse extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
-        if (null !== $this->insurer) $json['insurer'] = json_encode($this->insurer);
-        if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
-        if (null !== $this->requestOrganization) $json['requestOrganization'] = json_encode($this->requestOrganization);
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
-        if (null !== $this->disposition) $json['disposition'] = json_encode($this->disposition);
-        if (null !== $this->payeeType) $json['payeeType'] = json_encode($this->payeeType);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->created) $json['created'] = $this->created;
+        if (null !== $this->insurer) $json['insurer'] = $this->insurer;
+        if (null !== $this->requestProvider) $json['requestProvider'] = $this->requestProvider;
+        if (null !== $this->requestOrganization) $json['requestOrganization'] = $this->requestOrganization;
+        if (null !== $this->request) $json['request'] = $this->request;
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
+        if (null !== $this->disposition) $json['disposition'] = $this->disposition;
+        if (null !== $this->payeeType) $json['payeeType'] = $this->payeeType;
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                $json['item'][] = $item;
             }
         }
         if (0 < count($this->addItem)) {
             $json['addItem'] = [];
             foreach($this->addItem as $addItem) {
-                $json['addItem'][] = json_encode($addItem);
+                $json['addItem'][] = $addItem;
             }
         }
         if (0 < count($this->error)) {
             $json['error'] = [];
             foreach($this->error as $error) {
-                $json['error'][] = json_encode($error);
+                $json['error'][] = $error;
             }
         }
-        if (null !== $this->totalCost) $json['totalCost'] = json_encode($this->totalCost);
-        if (null !== $this->unallocDeductable) $json['unallocDeductable'] = json_encode($this->unallocDeductable);
-        if (null !== $this->totalBenefit) $json['totalBenefit'] = json_encode($this->totalBenefit);
-        if (null !== $this->payment) $json['payment'] = json_encode($this->payment);
-        if (null !== $this->reserved) $json['reserved'] = json_encode($this->reserved);
-        if (null !== $this->form) $json['form'] = json_encode($this->form);
+        if (null !== $this->totalCost) $json['totalCost'] = $this->totalCost;
+        if (null !== $this->unallocDeductable) $json['unallocDeductable'] = $this->unallocDeductable;
+        if (null !== $this->totalBenefit) $json['totalBenefit'] = $this->totalBenefit;
+        if (null !== $this->payment) $json['payment'] = $this->payment;
+        if (null !== $this->reserved) $json['reserved'] = $this->reserved;
+        if (null !== $this->form) $json['form'] = $this->form;
         if (0 < count($this->processNote)) {
             $json['processNote'] = [];
             foreach($this->processNote as $processNote) {
-                $json['processNote'][] = json_encode($processNote);
+                $json['processNote'][] = $processNote;
             }
         }
         if (0 < count($this->communicationRequest)) {
             $json['communicationRequest'] = [];
             foreach($this->communicationRequest as $communicationRequest) {
-                $json['communicationRequest'][] = json_encode($communicationRequest);
+                $json['communicationRequest'][] = $communicationRequest;
             }
         }
         if (0 < count($this->insurance)) {
             $json['insurance'] = [];
             foreach($this->insurance as $insurance) {
-                $json['insurance'][] = json_encode($insurance);
+                $json['insurance'][] = $insurance;
             }
         }
         return $json;

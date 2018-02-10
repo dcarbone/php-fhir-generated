@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,32 +250,32 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->name) $json['name'] = $this->name;
         if (0 < count($this->source)) {
             $json['source'] = [];
             foreach($this->source as $source) {
-                $json['source'][] = json_encode($source);
+                $json['source'][] = $source;
             }
         }
         if (0 < count($this->target)) {
             $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = json_encode($target);
+                $json['target'][] = $target;
             }
         }
         if (0 < count($this->rule)) {
             $json['rule'] = [];
             foreach($this->rule as $rule) {
-                $json['rule'][] = json_encode($rule);
+                $json['rule'][] = $rule;
             }
         }
         if (0 < count($this->dependent)) {
             $json['dependent'] = [];
             foreach($this->dependent as $dependent) {
-                $json['dependent'][] = json_encode($dependent);
+                $json['dependent'][] = $dependent;
             }
         }
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->documentation) $json['documentation'] = $this->documentation;
         return $json;
     }
 

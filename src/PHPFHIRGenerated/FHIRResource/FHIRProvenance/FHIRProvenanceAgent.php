@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,25 +74,21 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     public $role = array();
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $whoUri = null;
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $whoReference = null;
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $onBehalfOfUri = null;
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $onBehalfOfReference = null;
@@ -129,7 +125,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getWhoUri()
@@ -138,7 +133,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whoUri
      * @return $this
      */
@@ -149,7 +143,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getWhoReference()
@@ -158,7 +151,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whoReference
      * @return $this
      */
@@ -169,7 +161,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getOnBehalfOfUri()
@@ -178,7 +169,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $onBehalfOfUri
      * @return $this
      */
@@ -189,7 +179,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getOnBehalfOfReference()
@@ -198,7 +187,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOfReference
      * @return $this
      */
@@ -253,14 +241,14 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
         if (0 < count($this->role)) {
             $json['role'] = [];
             foreach($this->role as $role) {
-                $json['role'][] = json_encode($role);
+                $json['role'][] = $role;
             }
         }
-        if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
-        if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
-        if (null !== $this->onBehalfOfUri) $json['onBehalfOfUri'] = json_encode($this->onBehalfOfUri);
-        if (null !== $this->onBehalfOfReference) $json['onBehalfOfReference'] = json_encode($this->onBehalfOfReference);
-        if (null !== $this->relatedAgentType) $json['relatedAgentType'] = json_encode($this->relatedAgentType);
+        if (null !== $this->whoUri) $json['whoUri'] = $this->whoUri;
+        if (null !== $this->whoReference) $json['whoReference'] = $this->whoReference;
+        if (null !== $this->onBehalfOfUri) $json['onBehalfOfUri'] = $this->onBehalfOfUri;
+        if (null !== $this->onBehalfOfReference) $json['onBehalfOfReference'] = $this->onBehalfOfReference;
+        if (null !== $this->relatedAgentType) $json['relatedAgentType'] = $this->relatedAgentType;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -385,29 +385,29 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->serviceCategory) $json['serviceCategory'] = json_encode($this->serviceCategory);
+        if (null !== $this->serviceCategory) $json['serviceCategory'] = $this->serviceCategory;
         if (0 < count($this->serviceType)) {
             $json['serviceType'] = [];
             foreach($this->serviceType as $serviceType) {
-                $json['serviceType'][] = json_encode($serviceType);
+                $json['serviceType'][] = $serviceType;
             }
         }
         if (0 < count($this->specialty)) {
             $json['specialty'] = [];
             foreach($this->specialty as $specialty) {
-                $json['specialty'][] = json_encode($specialty);
+                $json['specialty'][] = $specialty;
             }
         }
-        if (null !== $this->appointmentType) $json['appointmentType'] = json_encode($this->appointmentType);
-        if (null !== $this->schedule) $json['schedule'] = json_encode($this->schedule);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
-        if (null !== $this->overbooked) $json['overbooked'] = json_encode($this->overbooked);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->appointmentType) $json['appointmentType'] = $this->appointmentType;
+        if (null !== $this->schedule) $json['schedule'] = $this->schedule;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->start) $json['start'] = $this->start;
+        if (null !== $this->end) $json['end'] = $this->end;
+        if (null !== $this->overbooked) $json['overbooked'] = $this->overbooked;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
         return $json;
     }
 

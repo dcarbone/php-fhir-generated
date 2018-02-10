@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,19 +74,16 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     public $measure = null;
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $detailQuantity = null;
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $detailRange = null;
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $detailCodeableConcept = null;
@@ -123,7 +120,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getDetailQuantity()
@@ -132,7 +128,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $detailQuantity
      * @return $this
      */
@@ -143,7 +138,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getDetailRange()
@@ -152,7 +146,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $detailRange
      * @return $this
      */
@@ -163,7 +156,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getDetailCodeableConcept()
@@ -172,7 +164,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
      * @return $this
      */
@@ -224,11 +215,11 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->measure) $json['measure'] = json_encode($this->measure);
-        if (null !== $this->detailQuantity) $json['detailQuantity'] = json_encode($this->detailQuantity);
-        if (null !== $this->detailRange) $json['detailRange'] = json_encode($this->detailRange);
-        if (null !== $this->detailCodeableConcept) $json['detailCodeableConcept'] = json_encode($this->detailCodeableConcept);
-        if (null !== $this->due) $json['due'] = json_encode($this->due);
+        if (null !== $this->measure) $json['measure'] = $this->measure;
+        if (null !== $this->detailQuantity) $json['detailQuantity'] = $this->detailQuantity;
+        if (null !== $this->detailRange) $json['detailRange'] = $this->detailRange;
+        if (null !== $this->detailCodeableConcept) $json['detailCodeableConcept'] = $this->detailCodeableConcept;
+        if (null !== $this->due) $json['due'] = $this->due;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,31 +68,26 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $valueDate = null;
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
@@ -103,7 +98,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     private $_fhirElementName = 'Questionnaire.Option';
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -112,7 +106,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
@@ -123,7 +116,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getValueDate()
@@ -132,7 +124,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $valueDate
      * @return $this
      */
@@ -143,7 +134,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -152,7 +142,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
@@ -163,7 +152,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -172,7 +160,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -183,7 +170,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
@@ -192,7 +178,6 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
@@ -224,11 +209,11 @@ class FHIRQuestionnaireOption extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->valueInteger) $json['valueInteger'] = json_encode($this->valueInteger);
-        if (null !== $this->valueDate) $json['valueDate'] = json_encode($this->valueDate);
-        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueCoding) $json['valueCoding'] = json_encode($this->valueCoding);
+        if (null !== $this->valueInteger) $json['valueInteger'] = $this->valueInteger;
+        if (null !== $this->valueDate) $json['valueDate'] = $this->valueDate;
+        if (null !== $this->valueTime) $json['valueTime'] = $this->valueTime;
+        if (null !== $this->valueString) $json['valueString'] = $this->valueString;
+        if (null !== $this->valueCoding) $json['valueCoding'] = $this->valueCoding;
         return $json;
     }
 

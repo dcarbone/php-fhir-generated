@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,13 +100,11 @@ The dosage instructions should reflect the dosage of the medication that was adm
     public $dose = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $rateQuantity = null;
@@ -221,7 +219,6 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
@@ -230,7 +227,6 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
@@ -241,7 +237,6 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getRateQuantity()
@@ -250,7 +245,6 @@ The dosage instructions should reflect the dosage of the medication that was adm
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $rateQuantity
      * @return $this
      */
@@ -282,13 +276,13 @@ The dosage instructions should reflect the dosage of the medication that was adm
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->site) $json['site'] = json_encode($this->site);
-        if (null !== $this->route) $json['route'] = json_encode($this->route);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->dose) $json['dose'] = json_encode($this->dose);
-        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
-        if (null !== $this->rateQuantity) $json['rateQuantity'] = json_encode($this->rateQuantity);
+        if (null !== $this->text) $json['text'] = $this->text;
+        if (null !== $this->site) $json['site'] = $this->site;
+        if (null !== $this->route) $json['route'] = $this->route;
+        if (null !== $this->method) $json['method'] = $this->method;
+        if (null !== $this->dose) $json['dose'] = $this->dose;
+        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio;
+        if (null !== $this->rateQuantity) $json['rateQuantity'] = $this->rateQuantity;
         return $json;
     }
 

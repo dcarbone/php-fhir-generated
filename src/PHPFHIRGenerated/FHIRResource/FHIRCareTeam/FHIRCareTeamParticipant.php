@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,10 +198,10 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->member) $json['member'] = json_encode($this->member);
-        if (null !== $this->onBehalfOf) $json['onBehalfOf'] = json_encode($this->onBehalfOf);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->role) $json['role'] = $this->role;
+        if (null !== $this->member) $json['member'] = $this->member;
+        if (null !== $this->onBehalfOf) $json['onBehalfOf'] = $this->onBehalfOf;
+        if (null !== $this->period) $json['period'] = $this->period;
         return $json;
     }
 

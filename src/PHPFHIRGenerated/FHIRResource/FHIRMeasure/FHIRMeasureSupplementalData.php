@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,15 +198,15 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
         if (0 < count($this->usage)) {
             $json['usage'] = [];
             foreach($this->usage as $usage) {
-                $json['usage'][] = json_encode($usage);
+                $json['usage'][] = $usage;
             }
         }
-        if (null !== $this->criteria) $json['criteria'] = json_encode($this->criteria);
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
+        if (null !== $this->criteria) $json['criteria'] = $this->criteria;
+        if (null !== $this->path) $json['path'] = $this->path;
         return $json;
     }
 

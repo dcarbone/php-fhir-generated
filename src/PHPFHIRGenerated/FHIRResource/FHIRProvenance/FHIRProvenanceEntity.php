@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,19 +74,16 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     public $role = null;
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $whatUri = null;
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $whatReference = null;
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $whatIdentifier = null;
@@ -123,7 +120,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getWhatUri()
@@ -132,7 +128,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whatUri
      * @return $this
      */
@@ -143,7 +138,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getWhatReference()
@@ -152,7 +146,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whatReference
      * @return $this
      */
@@ -163,7 +156,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getWhatIdentifier()
@@ -172,7 +164,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $whatIdentifier
      * @return $this
      */
@@ -224,14 +215,14 @@ class FHIRProvenanceEntity extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->whatUri) $json['whatUri'] = json_encode($this->whatUri);
-        if (null !== $this->whatReference) $json['whatReference'] = json_encode($this->whatReference);
-        if (null !== $this->whatIdentifier) $json['whatIdentifier'] = json_encode($this->whatIdentifier);
+        if (null !== $this->role) $json['role'] = $this->role;
+        if (null !== $this->whatUri) $json['whatUri'] = $this->whatUri;
+        if (null !== $this->whatReference) $json['whatReference'] = $this->whatReference;
+        if (null !== $this->whatIdentifier) $json['whatIdentifier'] = $this->whatIdentifier;
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
-                $json['agent'][] = json_encode($agent);
+                $json['agent'][] = $agent;
             }
         }
         return $json;

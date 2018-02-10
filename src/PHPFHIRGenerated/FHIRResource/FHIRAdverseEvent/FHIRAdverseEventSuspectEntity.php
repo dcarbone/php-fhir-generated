@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,13 +276,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement implements \Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->instance) $json['instance'] = json_encode($this->instance);
-        if (null !== $this->causality) $json['causality'] = json_encode($this->causality);
-        if (null !== $this->causalityAssessment) $json['causalityAssessment'] = json_encode($this->causalityAssessment);
-        if (null !== $this->causalityProductRelatedness) $json['causalityProductRelatedness'] = json_encode($this->causalityProductRelatedness);
-        if (null !== $this->causalityMethod) $json['causalityMethod'] = json_encode($this->causalityMethod);
-        if (null !== $this->causalityAuthor) $json['causalityAuthor'] = json_encode($this->causalityAuthor);
-        if (null !== $this->causalityResult) $json['causalityResult'] = json_encode($this->causalityResult);
+        if (null !== $this->instance) $json['instance'] = $this->instance;
+        if (null !== $this->causality) $json['causality'] = $this->causality;
+        if (null !== $this->causalityAssessment) $json['causalityAssessment'] = $this->causalityAssessment;
+        if (null !== $this->causalityProductRelatedness) $json['causalityProductRelatedness'] = $this->causalityProductRelatedness;
+        if (null !== $this->causalityMethod) $json['causalityMethod'] = $this->causalityMethod;
+        if (null !== $this->causalityAuthor) $json['causalityAuthor'] = $this->causalityAuthor;
+        if (null !== $this->causalityResult) $json['causalityResult'] = $this->causalityResult;
         return $json;
     }
 

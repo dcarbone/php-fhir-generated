@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,31 +128,26 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     public $programCode = array();
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $servicedDate = null;
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $servicedPeriod = null;
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $locationCodeableConcept = null;
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $locationAddress = null;
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $locationReference = null;
@@ -417,7 +412,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getServicedDate()
@@ -426,7 +420,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $servicedDate
      * @return $this
      */
@@ -437,7 +430,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getServicedPeriod()
@@ -446,7 +438,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $servicedPeriod
      * @return $this
      */
@@ -457,7 +448,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getLocationCodeableConcept()
@@ -466,7 +456,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $locationCodeableConcept
      * @return $this
      */
@@ -477,7 +466,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getLocationAddress()
@@ -486,7 +474,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $locationAddress
      * @return $this
      */
@@ -497,7 +484,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getLocationReference()
@@ -506,7 +492,6 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Where the service was provided. (choose any one of location*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $locationReference
      * @return $this
      */
@@ -718,78 +703,78 @@ class FHIRClaimItem extends FHIRBackboneElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
         if (0 < count($this->careTeamLinkId)) {
             $json['careTeamLinkId'] = [];
             foreach($this->careTeamLinkId as $careTeamLinkId) {
-                $json['careTeamLinkId'][] = json_encode($careTeamLinkId);
+                $json['careTeamLinkId'][] = $careTeamLinkId;
             }
         }
         if (0 < count($this->diagnosisLinkId)) {
             $json['diagnosisLinkId'] = [];
             foreach($this->diagnosisLinkId as $diagnosisLinkId) {
-                $json['diagnosisLinkId'][] = json_encode($diagnosisLinkId);
+                $json['diagnosisLinkId'][] = $diagnosisLinkId;
             }
         }
         if (0 < count($this->procedureLinkId)) {
             $json['procedureLinkId'] = [];
             foreach($this->procedureLinkId as $procedureLinkId) {
-                $json['procedureLinkId'][] = json_encode($procedureLinkId);
+                $json['procedureLinkId'][] = $procedureLinkId;
             }
         }
         if (0 < count($this->informationLinkId)) {
             $json['informationLinkId'] = [];
             foreach($this->informationLinkId as $informationLinkId) {
-                $json['informationLinkId'][] = json_encode($informationLinkId);
+                $json['informationLinkId'][] = $informationLinkId;
             }
         }
-        if (null !== $this->revenue) $json['revenue'] = json_encode($this->revenue);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->service) $json['service'] = json_encode($this->service);
+        if (null !== $this->revenue) $json['revenue'] = $this->revenue;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->service) $json['service'] = $this->service;
         if (0 < count($this->modifier)) {
             $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = json_encode($modifier);
+                $json['modifier'][] = $modifier;
             }
         }
         if (0 < count($this->programCode)) {
             $json['programCode'] = [];
             foreach($this->programCode as $programCode) {
-                $json['programCode'][] = json_encode($programCode);
+                $json['programCode'][] = $programCode;
             }
         }
-        if (null !== $this->servicedDate) $json['servicedDate'] = json_encode($this->servicedDate);
-        if (null !== $this->servicedPeriod) $json['servicedPeriod'] = json_encode($this->servicedPeriod);
-        if (null !== $this->locationCodeableConcept) $json['locationCodeableConcept'] = json_encode($this->locationCodeableConcept);
-        if (null !== $this->locationAddress) $json['locationAddress'] = json_encode($this->locationAddress);
-        if (null !== $this->locationReference) $json['locationReference'] = json_encode($this->locationReference);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
-        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
-        if (null !== $this->net) $json['net'] = json_encode($this->net);
+        if (null !== $this->servicedDate) $json['servicedDate'] = $this->servicedDate;
+        if (null !== $this->servicedPeriod) $json['servicedPeriod'] = $this->servicedPeriod;
+        if (null !== $this->locationCodeableConcept) $json['locationCodeableConcept'] = $this->locationCodeableConcept;
+        if (null !== $this->locationAddress) $json['locationAddress'] = $this->locationAddress;
+        if (null !== $this->locationReference) $json['locationReference'] = $this->locationReference;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice;
+        if (null !== $this->factor) $json['factor'] = $this->factor;
+        if (null !== $this->net) $json['net'] = $this->net;
         if (0 < count($this->udi)) {
             $json['udi'] = [];
             foreach($this->udi as $udi) {
-                $json['udi'][] = json_encode($udi);
+                $json['udi'][] = $udi;
             }
         }
-        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite;
         if (0 < count($this->subSite)) {
             $json['subSite'] = [];
             foreach($this->subSite as $subSite) {
-                $json['subSite'][] = json_encode($subSite);
+                $json['subSite'][] = $subSite;
             }
         }
         if (0 < count($this->encounter)) {
             $json['encounter'] = [];
             foreach($this->encounter as $encounter) {
-                $json['encounter'][] = json_encode($encounter);
+                $json['encounter'][] = $encounter;
             }
         }
         if (0 < count($this->detail)) {
             $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = json_encode($detail);
+                $json['detail'][] = $detail;
             }
         }
         return $json;

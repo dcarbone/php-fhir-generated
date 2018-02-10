@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,19 +75,16 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     public $code = null;
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $valueRange = null;
@@ -118,7 +115,6 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -127,7 +123,6 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
@@ -138,7 +133,6 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -147,7 +141,6 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
@@ -158,7 +151,6 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
@@ -167,7 +159,6 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A value that defines the context specified in this context of use. The interpretation of the value is defined by the code. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
@@ -199,10 +190,10 @@ class FHIRUsageContext extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept;
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity;
+        if (null !== $this->valueRange) $json['valueRange'] = $this->valueRange;
         return $json;
     }
 

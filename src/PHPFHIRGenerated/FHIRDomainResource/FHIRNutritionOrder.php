@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -411,40 +411,40 @@ class FHIRNutritionOrder extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->dateTime) $json['dateTime'] = json_encode($this->dateTime);
-        if (null !== $this->orderer) $json['orderer'] = json_encode($this->orderer);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->dateTime) $json['dateTime'] = $this->dateTime;
+        if (null !== $this->orderer) $json['orderer'] = $this->orderer;
         if (0 < count($this->allergyIntolerance)) {
             $json['allergyIntolerance'] = [];
             foreach($this->allergyIntolerance as $allergyIntolerance) {
-                $json['allergyIntolerance'][] = json_encode($allergyIntolerance);
+                $json['allergyIntolerance'][] = $allergyIntolerance;
             }
         }
         if (0 < count($this->foodPreferenceModifier)) {
             $json['foodPreferenceModifier'] = [];
             foreach($this->foodPreferenceModifier as $foodPreferenceModifier) {
-                $json['foodPreferenceModifier'][] = json_encode($foodPreferenceModifier);
+                $json['foodPreferenceModifier'][] = $foodPreferenceModifier;
             }
         }
         if (0 < count($this->excludeFoodModifier)) {
             $json['excludeFoodModifier'] = [];
             foreach($this->excludeFoodModifier as $excludeFoodModifier) {
-                $json['excludeFoodModifier'][] = json_encode($excludeFoodModifier);
+                $json['excludeFoodModifier'][] = $excludeFoodModifier;
             }
         }
-        if (null !== $this->oralDiet) $json['oralDiet'] = json_encode($this->oralDiet);
+        if (null !== $this->oralDiet) $json['oralDiet'] = $this->oralDiet;
         if (0 < count($this->supplement)) {
             $json['supplement'] = [];
             foreach($this->supplement as $supplement) {
-                $json['supplement'][] = json_encode($supplement);
+                $json['supplement'][] = $supplement;
             }
         }
-        if (null !== $this->enteralFormula) $json['enteralFormula'] = json_encode($this->enteralFormula);
+        if (null !== $this->enteralFormula) $json['enteralFormula'] = $this->enteralFormula;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,37 +302,37 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
-        if (null !== $this->security) $json['security'] = json_encode($this->security);
+        if (null !== $this->mode) $json['mode'] = $this->mode;
+        if (null !== $this->documentation) $json['documentation'] = $this->documentation;
+        if (null !== $this->security) $json['security'] = $this->security;
         if (0 < count($this->resource)) {
             $json['resource'] = [];
             foreach($this->resource as $resource) {
-                $json['resource'][] = json_encode($resource);
+                $json['resource'][] = $resource;
             }
         }
         if (0 < count($this->interaction)) {
             $json['interaction'] = [];
             foreach($this->interaction as $interaction) {
-                $json['interaction'][] = json_encode($interaction);
+                $json['interaction'][] = $interaction;
             }
         }
         if (0 < count($this->searchParam)) {
             $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = json_encode($searchParam);
+                $json['searchParam'][] = $searchParam;
             }
         }
         if (0 < count($this->operation)) {
             $json['operation'] = [];
             foreach($this->operation as $operation) {
-                $json['operation'][] = json_encode($operation);
+                $json['operation'][] = $operation;
             }
         }
         if (0 < count($this->compartment)) {
             $json['compartment'] = [];
             foreach($this->compartment as $compartment) {
-                $json['compartment'][] = json_encode($compartment);
+                $json['compartment'][] = $compartment;
             }
         }
         return $json;

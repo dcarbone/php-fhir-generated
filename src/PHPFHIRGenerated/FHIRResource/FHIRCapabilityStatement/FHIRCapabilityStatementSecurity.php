@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,18 +198,18 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->cors) $json['cors'] = json_encode($this->cors);
+        if (null !== $this->cors) $json['cors'] = $this->cors;
         if (0 < count($this->service)) {
             $json['service'] = [];
             foreach($this->service as $service) {
-                $json['service'][] = json_encode($service);
+                $json['service'][] = $service;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->certificate)) {
             $json['certificate'] = [];
             foreach($this->certificate as $certificate) {
-                $json['certificate'][] = json_encode($certificate);
+                $json['certificate'][] = $certificate;
             }
         }
         return $json;

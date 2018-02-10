@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -458,43 +458,43 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement implements \
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->revenue) $json['revenue'] = json_encode($this->revenue);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->service) $json['service'] = json_encode($this->service);
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->revenue) $json['revenue'] = $this->revenue;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->service) $json['service'] = $this->service;
         if (0 < count($this->modifier)) {
             $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = json_encode($modifier);
+                $json['modifier'][] = $modifier;
             }
         }
         if (0 < count($this->programCode)) {
             $json['programCode'] = [];
             foreach($this->programCode as $programCode) {
-                $json['programCode'][] = json_encode($programCode);
+                $json['programCode'][] = $programCode;
             }
         }
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
-        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
-        if (null !== $this->net) $json['net'] = json_encode($this->net);
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice;
+        if (null !== $this->factor) $json['factor'] = $this->factor;
+        if (null !== $this->net) $json['net'] = $this->net;
         if (0 < count($this->udi)) {
             $json['udi'] = [];
             foreach($this->udi as $udi) {
-                $json['udi'][] = json_encode($udi);
+                $json['udi'][] = $udi;
             }
         }
         if (0 < count($this->noteNumber)) {
             $json['noteNumber'] = [];
             foreach($this->noteNumber as $noteNumber) {
-                $json['noteNumber'][] = json_encode($noteNumber);
+                $json['noteNumber'][] = $noteNumber;
             }
         }
         if (0 < count($this->adjudication)) {
             $json['adjudication'] = [];
             foreach($this->adjudication as $adjudication) {
-                $json['adjudication'][] = json_encode($adjudication);
+                $json['adjudication'][] = $adjudication;
             }
         }
         return $json;

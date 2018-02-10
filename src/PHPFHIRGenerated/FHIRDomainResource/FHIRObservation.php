@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,13 +111,11 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the "physiologically relevant time". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the "physiologically relevant time". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
@@ -135,67 +133,56 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     public $performer = array();
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $valueRatio = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $valueSampledData = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $valuePeriod = null;
@@ -406,7 +393,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the "physiologically relevant time". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
@@ -415,7 +401,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the "physiologically relevant time". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
@@ -426,7 +411,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the "physiologically relevant time". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -435,7 +419,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the "physiologically relevant time". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -486,7 +469,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -495,7 +477,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
@@ -506,7 +487,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -515,7 +495,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
@@ -526,7 +505,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -535,7 +513,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -546,7 +523,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -555,7 +531,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
@@ -566,7 +541,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
@@ -575,7 +549,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
@@ -586,7 +559,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getValueRatio()
@@ -595,7 +567,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $valueRatio
      * @return $this
      */
@@ -606,7 +577,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData()
@@ -615,7 +585,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $valueSampledData
      * @return $this
      */
@@ -626,7 +595,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -635,7 +603,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
@@ -646,7 +613,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -655,7 +621,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
@@ -666,7 +631,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -675,7 +639,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
@@ -686,7 +649,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
@@ -695,7 +657,6 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $valuePeriod
      * @return $this
      */
@@ -931,68 +892,68 @@ class FHIRObservation extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
-        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = $this->effectiveDateTime;
+        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = $this->effectivePeriod;
+        if (null !== $this->issued) $json['issued'] = $this->issued;
         if (0 < count($this->performer)) {
             $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = json_encode($performer);
+                $json['performer'][] = $performer;
             }
         }
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
-        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
-        if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
-        if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
-        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
-        if (null !== $this->dataAbsentReason) $json['dataAbsentReason'] = json_encode($this->dataAbsentReason);
-        if (null !== $this->interpretation) $json['interpretation'] = json_encode($this->interpretation);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
-        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->specimen) $json['specimen'] = json_encode($this->specimen);
-        if (null !== $this->device) $json['device'] = json_encode($this->device);
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity;
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept;
+        if (null !== $this->valueString) $json['valueString'] = $this->valueString;
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = $this->valueBoolean;
+        if (null !== $this->valueRange) $json['valueRange'] = $this->valueRange;
+        if (null !== $this->valueRatio) $json['valueRatio'] = $this->valueRatio;
+        if (null !== $this->valueSampledData) $json['valueSampledData'] = $this->valueSampledData;
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment;
+        if (null !== $this->valueTime) $json['valueTime'] = $this->valueTime;
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime;
+        if (null !== $this->valuePeriod) $json['valuePeriod'] = $this->valuePeriod;
+        if (null !== $this->dataAbsentReason) $json['dataAbsentReason'] = $this->dataAbsentReason;
+        if (null !== $this->interpretation) $json['interpretation'] = $this->interpretation;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
+        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite;
+        if (null !== $this->method) $json['method'] = $this->method;
+        if (null !== $this->specimen) $json['specimen'] = $this->specimen;
+        if (null !== $this->device) $json['device'] = $this->device;
         if (0 < count($this->referenceRange)) {
             $json['referenceRange'] = [];
             foreach($this->referenceRange as $referenceRange) {
-                $json['referenceRange'][] = json_encode($referenceRange);
+                $json['referenceRange'][] = $referenceRange;
             }
         }
         if (0 < count($this->related)) {
             $json['related'] = [];
             foreach($this->related as $related) {
-                $json['related'][] = json_encode($related);
+                $json['related'][] = $related;
             }
         }
         if (0 < count($this->component)) {
             $json['component'] = [];
             foreach($this->component as $component) {
-                $json['component'][] = json_encode($component);
+                $json['component'][] = $component;
             }
         }
         return $json;

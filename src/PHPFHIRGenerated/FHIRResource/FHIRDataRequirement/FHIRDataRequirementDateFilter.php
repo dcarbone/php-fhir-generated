@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,19 +75,16 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     public $path = null;
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $valuePeriod = null;
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $valueDuration = null;
@@ -118,7 +115,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -127,7 +123,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
@@ -138,7 +133,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
@@ -147,7 +141,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $valuePeriod
      * @return $this
      */
@@ -158,7 +151,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getValueDuration()
@@ -167,7 +159,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration from now. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
      * @return $this
      */
@@ -199,10 +190,10 @@ class FHIRDataRequirementDateFilter extends FHIRElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
-        if (null !== $this->valueDuration) $json['valueDuration'] = json_encode($this->valueDuration);
+        if (null !== $this->path) $json['path'] = $this->path;
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime;
+        if (null !== $this->valuePeriod) $json['valuePeriod'] = $this->valuePeriod;
+        if (null !== $this->valueDuration) $json['valueDuration'] = $this->valueDuration;
         return $json;
     }
 

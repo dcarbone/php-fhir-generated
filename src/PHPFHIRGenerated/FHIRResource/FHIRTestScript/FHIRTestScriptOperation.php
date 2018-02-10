@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -510,27 +510,27 @@ class FHIRTestScriptOperation extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
-        if (null !== $this->label) $json['label'] = json_encode($this->label);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->accept) $json['accept'] = json_encode($this->accept);
-        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
-        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
-        if (null !== $this->encodeRequestUrl) $json['encodeRequestUrl'] = json_encode($this->encodeRequestUrl);
-        if (null !== $this->origin) $json['origin'] = json_encode($this->origin);
-        if (null !== $this->params) $json['params'] = json_encode($this->params);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->resource) $json['resource'] = $this->resource;
+        if (null !== $this->label) $json['label'] = $this->label;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->accept) $json['accept'] = $this->accept;
+        if (null !== $this->contentType) $json['contentType'] = $this->contentType;
+        if (null !== $this->destination) $json['destination'] = $this->destination;
+        if (null !== $this->encodeRequestUrl) $json['encodeRequestUrl'] = $this->encodeRequestUrl;
+        if (null !== $this->origin) $json['origin'] = $this->origin;
+        if (null !== $this->params) $json['params'] = $this->params;
         if (0 < count($this->requestHeader)) {
             $json['requestHeader'] = [];
             foreach($this->requestHeader as $requestHeader) {
-                $json['requestHeader'][] = json_encode($requestHeader);
+                $json['requestHeader'][] = $requestHeader;
             }
         }
-        if (null !== $this->requestId) $json['requestId'] = json_encode($this->requestId);
-        if (null !== $this->responseId) $json['responseId'] = json_encode($this->responseId);
-        if (null !== $this->sourceId) $json['sourceId'] = json_encode($this->sourceId);
-        if (null !== $this->targetId) $json['targetId'] = json_encode($this->targetId);
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->requestId) $json['requestId'] = $this->requestId;
+        if (null !== $this->responseId) $json['responseId'] = $this->responseId;
+        if (null !== $this->sourceId) $json['sourceId'] = $this->sourceId;
+        if (null !== $this->targetId) $json['targetId'] = $this->targetId;
+        if (null !== $this->url) $json['url'] = $this->url;
         return $json;
     }
 

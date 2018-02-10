@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,13 +93,11 @@ class FHIREligibilityRequest extends FHIRDomainResource implements \JsonSerializ
     public $patient = null;
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $servicedDate = null;
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $servicedPeriod = null;
@@ -250,7 +248,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getServicedDate()
@@ -259,7 +256,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $servicedDate
      * @return $this
      */
@@ -270,7 +266,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getServicedPeriod()
@@ -279,7 +274,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The date or dates when the enclosed suite of services were performed or completed. (choose any one of serviced*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $servicedPeriod
      * @return $this
      */
@@ -515,24 +509,24 @@ class FHIREligibilityRequest extends FHIRDomainResource implements \JsonSerializ
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->servicedDate) $json['servicedDate'] = json_encode($this->servicedDate);
-        if (null !== $this->servicedPeriod) $json['servicedPeriod'] = json_encode($this->servicedPeriod);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
-        if (null !== $this->enterer) $json['enterer'] = json_encode($this->enterer);
-        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
-        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
-        if (null !== $this->insurer) $json['insurer'] = json_encode($this->insurer);
-        if (null !== $this->facility) $json['facility'] = json_encode($this->facility);
-        if (null !== $this->coverage) $json['coverage'] = json_encode($this->coverage);
-        if (null !== $this->businessArrangement) $json['businessArrangement'] = json_encode($this->businessArrangement);
-        if (null !== $this->benefitCategory) $json['benefitCategory'] = json_encode($this->benefitCategory);
-        if (null !== $this->benefitSubCategory) $json['benefitSubCategory'] = json_encode($this->benefitSubCategory);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->servicedDate) $json['servicedDate'] = $this->servicedDate;
+        if (null !== $this->servicedPeriod) $json['servicedPeriod'] = $this->servicedPeriod;
+        if (null !== $this->created) $json['created'] = $this->created;
+        if (null !== $this->enterer) $json['enterer'] = $this->enterer;
+        if (null !== $this->provider) $json['provider'] = $this->provider;
+        if (null !== $this->organization) $json['organization'] = $this->organization;
+        if (null !== $this->insurer) $json['insurer'] = $this->insurer;
+        if (null !== $this->facility) $json['facility'] = $this->facility;
+        if (null !== $this->coverage) $json['coverage'] = $this->coverage;
+        if (null !== $this->businessArrangement) $json['businessArrangement'] = $this->businessArrangement;
+        if (null !== $this->benefitCategory) $json['benefitCategory'] = $this->benefitCategory;
+        if (null !== $this->benefitSubCategory) $json['benefitSubCategory'] = $this->benefitSubCategory;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,13 +117,11 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
@@ -141,13 +139,11 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     public $performer = null;
 
     /**
-     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCodeableConcept = null;
 
     /**
-     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
@@ -342,7 +338,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -351,7 +346,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -362,7 +356,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -371,7 +364,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date (and possibly time) the risk assessment was performed. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -422,7 +414,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept()
@@ -431,7 +422,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
@@ -442,7 +432,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -451,7 +440,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The reason the risk assessment was performed. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
@@ -564,34 +552,34 @@ class FHIRRiskAssessment extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->basedOn) $json['basedOn'] = json_encode($this->basedOn);
-        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->condition) $json['condition'] = json_encode($this->condition);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->basedOn) $json['basedOn'] = $this->basedOn;
+        if (null !== $this->parent) $json['parent'] = $this->parent;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->method) $json['method'] = $this->method;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->condition) $json['condition'] = $this->condition;
+        if (null !== $this->performer) $json['performer'] = $this->performer;
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference;
         if (0 < count($this->basis)) {
             $json['basis'] = [];
             foreach($this->basis as $basis) {
-                $json['basis'][] = json_encode($basis);
+                $json['basis'][] = $basis;
             }
         }
         if (0 < count($this->prediction)) {
             $json['prediction'] = [];
             foreach($this->prediction as $prediction) {
-                $json['prediction'][] = json_encode($prediction);
+                $json['prediction'][] = $prediction;
             }
         }
-        if (null !== $this->mitigation) $json['mitigation'] = json_encode($this->mitigation);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->mitigation) $json['mitigation'] = $this->mitigation;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
         return $json;
     }
 

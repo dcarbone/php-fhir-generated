@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -356,26 +356,26 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->lastSystemChange) $json['lastSystemChange'] = json_encode($this->lastSystemChange);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->lastSystemChange) $json['lastSystemChange'] = $this->lastSystemChange;
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->parent) $json['parent'] = $this->parent;
         if (0 < count($this->operationalStatus)) {
             $json['operationalStatus'] = [];
             foreach($this->operationalStatus as $operationalStatus) {
-                $json['operationalStatus'][] = json_encode($operationalStatus);
+                $json['operationalStatus'][] = $operationalStatus;
             }
         }
-        if (null !== $this->parameterGroup) $json['parameterGroup'] = json_encode($this->parameterGroup);
-        if (null !== $this->measurementPrinciple) $json['measurementPrinciple'] = json_encode($this->measurementPrinciple);
+        if (null !== $this->parameterGroup) $json['parameterGroup'] = $this->parameterGroup;
+        if (null !== $this->measurementPrinciple) $json['measurementPrinciple'] = $this->measurementPrinciple;
         if (0 < count($this->productionSpecification)) {
             $json['productionSpecification'] = [];
             foreach($this->productionSpecification as $productionSpecification) {
-                $json['productionSpecification'][] = json_encode($productionSpecification);
+                $json['productionSpecification'][] = $productionSpecification;
             }
         }
-        if (null !== $this->languageCode) $json['languageCode'] = json_encode($this->languageCode);
+        if (null !== $this->languageCode) $json['languageCode'] = $this->languageCode;
         return $json;
     }
 

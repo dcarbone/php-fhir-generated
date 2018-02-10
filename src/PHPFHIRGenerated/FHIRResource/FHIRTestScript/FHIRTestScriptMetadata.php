@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -149,13 +149,13 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
         if (0 < count($this->link)) {
             $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = json_encode($link);
+                $json['link'][] = $link;
             }
         }
         if (0 < count($this->capability)) {
             $json['capability'] = [];
             foreach($this->capability as $capability) {
-                $json['capability'][] = json_encode($capability);
+                $json['capability'][] = $capability;
             }
         }
         return $json;

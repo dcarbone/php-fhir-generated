@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -307,21 +307,21 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements \JsonSeriali
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->appointment) $json['appointment'] = json_encode($this->appointment);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
+        if (null !== $this->appointment) $json['appointment'] = $this->appointment;
+        if (null !== $this->start) $json['start'] = $this->start;
+        if (null !== $this->end) $json['end'] = $this->end;
         if (0 < count($this->participantType)) {
             $json['participantType'] = [];
             foreach($this->participantType as $participantType) {
-                $json['participantType'][] = json_encode($participantType);
+                $json['participantType'][] = $participantType;
             }
         }
-        if (null !== $this->actor) $json['actor'] = json_encode($this->actor);
-        if (null !== $this->participantStatus) $json['participantStatus'] = json_encode($this->participantStatus);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->actor) $json['actor'] = $this->actor;
+        if (null !== $this->participantStatus) $json['participantStatus'] = $this->participantStatus;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
         return $json;
     }
 

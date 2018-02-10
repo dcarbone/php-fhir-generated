@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -252,22 +252,22 @@ class FHIRBundle extends FHIRResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->total) $json['total'] = json_encode($this->total);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->total) $json['total'] = $this->total;
         if (0 < count($this->link)) {
             $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = json_encode($link);
+                $json['link'][] = $link;
             }
         }
         if (0 < count($this->entry)) {
             $json['entry'] = [];
             foreach($this->entry as $entry) {
-                $json['entry'][] = json_encode($entry);
+                $json['entry'][] = $entry;
             }
         }
-        if (null !== $this->signature) $json['signature'] = json_encode($this->signature);
+        if (null !== $this->signature) $json['signature'] = $this->signature;
         return $json;
     }
 

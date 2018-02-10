@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,13 +74,11 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     public $quantity = null;
 
     /**
-     * Another substance that is a component of this substance. (choose any one of substance*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $substanceCodeableConcept = null;
 
     /**
-     * Another substance that is a component of this substance. (choose any one of substance*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $substanceReference = null;
@@ -111,7 +109,6 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Another substance that is a component of this substance. (choose any one of substance*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getSubstanceCodeableConcept()
@@ -120,7 +117,6 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Another substance that is a component of this substance. (choose any one of substance*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $substanceCodeableConcept
      * @return $this
      */
@@ -131,7 +127,6 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Another substance that is a component of this substance. (choose any one of substance*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSubstanceReference()
@@ -140,7 +135,6 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Another substance that is a component of this substance. (choose any one of substance*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $substanceReference
      * @return $this
      */
@@ -172,9 +166,9 @@ class FHIRSubstanceIngredient extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->substanceCodeableConcept) $json['substanceCodeableConcept'] = json_encode($this->substanceCodeableConcept);
-        if (null !== $this->substanceReference) $json['substanceReference'] = json_encode($this->substanceReference);
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->substanceCodeableConcept) $json['substanceCodeableConcept'] = $this->substanceCodeableConcept;
+        if (null !== $this->substanceReference) $json['substanceReference'] = $this->substanceReference;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -355,21 +355,21 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->use) $json['use'] = json_encode($this->use);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->use) $json['use'] = $this->use;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->text) $json['text'] = $this->text;
         if (0 < count($this->line)) {
             $json['line'] = [];
             foreach($this->line as $line) {
-                $json['line'][] = json_encode($line);
+                $json['line'][] = $line;
             }
         }
-        if (null !== $this->city) $json['city'] = json_encode($this->city);
-        if (null !== $this->district) $json['district'] = json_encode($this->district);
-        if (null !== $this->state) $json['state'] = json_encode($this->state);
-        if (null !== $this->postalCode) $json['postalCode'] = json_encode($this->postalCode);
-        if (null !== $this->country) $json['country'] = json_encode($this->country);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->city) $json['city'] = $this->city;
+        if (null !== $this->district) $json['district'] = $this->district;
+        if (null !== $this->state) $json['state'] = $this->state;
+        if (null !== $this->postalCode) $json['postalCode'] = $this->postalCode;
+        if (null !== $this->country) $json['country'] = $this->country;
+        if (null !== $this->period) $json['period'] = $this->period;
         return $json;
     }
 

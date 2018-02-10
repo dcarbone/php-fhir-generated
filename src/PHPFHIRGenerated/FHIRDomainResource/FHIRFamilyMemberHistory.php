@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,37 +129,31 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public $gender = null;
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $bornPeriod = null;
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $bornDate = null;
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $bornString = null;
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $ageAge = null;
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $ageRange = null;
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $ageString = null;
@@ -171,31 +165,26 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public $estimatedAge = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $deceasedBoolean = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $deceasedAge = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $deceasedRange = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $deceasedDate = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $deceasedString = null;
@@ -430,7 +419,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getBornPeriod()
@@ -439,7 +427,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $bornPeriod
      * @return $this
      */
@@ -450,7 +437,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getBornDate()
@@ -459,7 +445,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $bornDate
      * @return $this
      */
@@ -470,7 +455,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getBornString()
@@ -479,7 +463,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $bornString
      * @return $this
      */
@@ -490,7 +473,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAgeAge()
@@ -499,7 +481,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $ageAge
      * @return $this
      */
@@ -510,7 +491,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getAgeRange()
@@ -519,7 +499,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $ageRange
      * @return $this
      */
@@ -530,7 +509,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getAgeString()
@@ -539,7 +517,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $ageString
      * @return $this
      */
@@ -570,7 +547,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getDeceasedBoolean()
@@ -579,7 +555,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $deceasedBoolean
      * @return $this
      */
@@ -590,7 +565,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getDeceasedAge()
@@ -599,7 +573,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @return $this
      */
@@ -610,7 +583,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getDeceasedRange()
@@ -619,7 +591,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $deceasedRange
      * @return $this
      */
@@ -630,7 +601,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getDeceasedDate()
@@ -639,7 +609,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $deceasedDate
      * @return $this
      */
@@ -650,7 +619,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDeceasedString()
@@ -659,7 +627,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $deceasedString
      * @return $this
      */
@@ -775,57 +742,57 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                $json['definition'][] = $definition;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->notDone) $json['notDone'] = json_encode($this->notDone);
-        if (null !== $this->notDoneReason) $json['notDoneReason'] = json_encode($this->notDoneReason);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
-        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
-        if (null !== $this->bornPeriod) $json['bornPeriod'] = json_encode($this->bornPeriod);
-        if (null !== $this->bornDate) $json['bornDate'] = json_encode($this->bornDate);
-        if (null !== $this->bornString) $json['bornString'] = json_encode($this->bornString);
-        if (null !== $this->ageAge) $json['ageAge'] = json_encode($this->ageAge);
-        if (null !== $this->ageRange) $json['ageRange'] = json_encode($this->ageRange);
-        if (null !== $this->ageString) $json['ageString'] = json_encode($this->ageString);
-        if (null !== $this->estimatedAge) $json['estimatedAge'] = json_encode($this->estimatedAge);
-        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = json_encode($this->deceasedBoolean);
-        if (null !== $this->deceasedAge) $json['deceasedAge'] = json_encode($this->deceasedAge);
-        if (null !== $this->deceasedRange) $json['deceasedRange'] = json_encode($this->deceasedRange);
-        if (null !== $this->deceasedDate) $json['deceasedDate'] = json_encode($this->deceasedDate);
-        if (null !== $this->deceasedString) $json['deceasedString'] = json_encode($this->deceasedString);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->notDone) $json['notDone'] = $this->notDone;
+        if (null !== $this->notDoneReason) $json['notDoneReason'] = $this->notDoneReason;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->relationship) $json['relationship'] = $this->relationship;
+        if (null !== $this->gender) $json['gender'] = $this->gender;
+        if (null !== $this->bornPeriod) $json['bornPeriod'] = $this->bornPeriod;
+        if (null !== $this->bornDate) $json['bornDate'] = $this->bornDate;
+        if (null !== $this->bornString) $json['bornString'] = $this->bornString;
+        if (null !== $this->ageAge) $json['ageAge'] = $this->ageAge;
+        if (null !== $this->ageRange) $json['ageRange'] = $this->ageRange;
+        if (null !== $this->ageString) $json['ageString'] = $this->ageString;
+        if (null !== $this->estimatedAge) $json['estimatedAge'] = $this->estimatedAge;
+        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = $this->deceasedBoolean;
+        if (null !== $this->deceasedAge) $json['deceasedAge'] = $this->deceasedAge;
+        if (null !== $this->deceasedRange) $json['deceasedRange'] = $this->deceasedRange;
+        if (null !== $this->deceasedDate) $json['deceasedDate'] = $this->deceasedDate;
+        if (null !== $this->deceasedString) $json['deceasedString'] = $this->deceasedString;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                $json['reasonReference'][] = $reasonReference;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->condition)) {
             $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = json_encode($condition);
+                $json['condition'][] = $condition;
             }
         }
         return $json;

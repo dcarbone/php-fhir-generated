@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,13 +75,11 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
     public $identifier = array();
 
     /**
-     * A reference to a formal or informal definition of the task.  For example, a protocol, a step within a defined workflow definition, etc. (choose any one of definition*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $definitionUri = null;
 
     /**
-     * A reference to a formal or informal definition of the task.  For example, a protocol, a step within a defined workflow definition, etc. (choose any one of definition*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $definitionReference = null;
@@ -262,7 +260,6 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A reference to a formal or informal definition of the task.  For example, a protocol, a step within a defined workflow definition, etc. (choose any one of definition*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDefinitionUri()
@@ -271,7 +268,6 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A reference to a formal or informal definition of the task.  For example, a protocol, a step within a defined workflow definition, etc. (choose any one of definition*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $definitionUri
      * @return $this
      */
@@ -282,7 +278,6 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A reference to a formal or informal definition of the task.  For example, a protocol, a step within a defined workflow definition, etc. (choose any one of definition*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getDefinitionReference()
@@ -291,7 +286,6 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * A reference to a formal or informal definition of the task.  For example, a protocol, a step within a defined workflow definition, etc. (choose any one of definition*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definitionReference
      * @return $this
      */
@@ -827,69 +821,69 @@ class FHIRTask extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->definitionUri) $json['definitionUri'] = json_encode($this->definitionUri);
-        if (null !== $this->definitionReference) $json['definitionReference'] = json_encode($this->definitionReference);
+        if (null !== $this->definitionUri) $json['definitionUri'] = $this->definitionUri;
+        if (null !== $this->definitionReference) $json['definitionReference'] = $this->definitionReference;
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
-        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = json_encode($this->groupIdentifier);
+        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = $this->groupIdentifier;
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->statusReason) $json['statusReason'] = json_encode($this->statusReason);
-        if (null !== $this->businessStatus) $json['businessStatus'] = json_encode($this->businessStatus);
-        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->focus) $json['focus'] = json_encode($this->focus);
-        if (null !== $this->for) $json['for'] = json_encode($this->for);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->executionPeriod) $json['executionPeriod'] = json_encode($this->executionPeriod);
-        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
-        if (null !== $this->lastModified) $json['lastModified'] = json_encode($this->lastModified);
-        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->statusReason) $json['statusReason'] = $this->statusReason;
+        if (null !== $this->businessStatus) $json['businessStatus'] = $this->businessStatus;
+        if (null !== $this->intent) $json['intent'] = $this->intent;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->focus) $json['focus'] = $this->focus;
+        if (null !== $this->for) $json['for'] = $this->for;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->executionPeriod) $json['executionPeriod'] = $this->executionPeriod;
+        if (null !== $this->authoredOn) $json['authoredOn'] = $this->authoredOn;
+        if (null !== $this->lastModified) $json['lastModified'] = $this->lastModified;
+        if (null !== $this->requester) $json['requester'] = $this->requester;
         if (0 < count($this->performerType)) {
             $json['performerType'] = [];
             foreach($this->performerType as $performerType) {
-                $json['performerType'][] = json_encode($performerType);
+                $json['performerType'][] = $performerType;
             }
         }
-        if (null !== $this->owner) $json['owner'] = json_encode($this->owner);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (null !== $this->owner) $json['owner'] = $this->owner;
+        if (null !== $this->reason) $json['reason'] = $this->reason;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->relevantHistory)) {
             $json['relevantHistory'] = [];
             foreach($this->relevantHistory as $relevantHistory) {
-                $json['relevantHistory'][] = json_encode($relevantHistory);
+                $json['relevantHistory'][] = $relevantHistory;
             }
         }
-        if (null !== $this->restriction) $json['restriction'] = json_encode($this->restriction);
+        if (null !== $this->restriction) $json['restriction'] = $this->restriction;
         if (0 < count($this->input)) {
             $json['input'] = [];
             foreach($this->input as $input) {
-                $json['input'][] = json_encode($input);
+                $json['input'][] = $input;
             }
         }
         if (0 < count($this->output)) {
             $json['output'] = [];
             foreach($this->output as $output) {
-                $json['output'][] = json_encode($output);
+                $json['output'][] = $output;
             }
         }
         return $json;

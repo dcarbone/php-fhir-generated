@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $itemCodeableConcept = null;
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $itemReference = null;
@@ -97,7 +95,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     private $_fhirElementName = 'Medication.Ingredient';
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getItemCodeableConcept()
@@ -106,7 +103,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
@@ -117,7 +113,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getItemReference()
@@ -126,7 +121,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $itemReference
      * @return $this
      */
@@ -198,10 +192,10 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->itemCodeableConcept) $json['itemCodeableConcept'] = json_encode($this->itemCodeableConcept);
-        if (null !== $this->itemReference) $json['itemReference'] = json_encode($this->itemReference);
-        if (null !== $this->isActive) $json['isActive'] = json_encode($this->isActive);
-        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
+        if (null !== $this->itemCodeableConcept) $json['itemCodeableConcept'] = $this->itemCodeableConcept;
+        if (null !== $this->itemReference) $json['itemReference'] = $this->itemReference;
+        if (null !== $this->isActive) $json['isActive'] = $this->isActive;
+        if (null !== $this->amount) $json['amount'] = $this->amount;
         return $json;
     }
 

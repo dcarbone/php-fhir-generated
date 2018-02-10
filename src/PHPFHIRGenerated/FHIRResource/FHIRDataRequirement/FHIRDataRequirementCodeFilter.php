@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,13 +75,11 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     public $path = null;
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueSetString = null;
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueSetReference = null;
@@ -130,7 +128,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueSetString()
@@ -139,7 +136,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueSetString
      * @return $this
      */
@@ -150,7 +146,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueSetReference()
@@ -159,7 +154,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     }
 
     /**
-     * The valueset for the code filter. The valueSet and value elements are exclusive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueSetReference
      * @return $this
      */
@@ -251,25 +245,25 @@ class FHIRDataRequirementCodeFilter extends FHIRElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
-        if (null !== $this->valueSetString) $json['valueSetString'] = json_encode($this->valueSetString);
-        if (null !== $this->valueSetReference) $json['valueSetReference'] = json_encode($this->valueSetReference);
+        if (null !== $this->path) $json['path'] = $this->path;
+        if (null !== $this->valueSetString) $json['valueSetString'] = $this->valueSetString;
+        if (null !== $this->valueSetReference) $json['valueSetReference'] = $this->valueSetReference;
         if (0 < count($this->valueCode)) {
             $json['valueCode'] = [];
             foreach($this->valueCode as $valueCode) {
-                $json['valueCode'][] = json_encode($valueCode);
+                $json['valueCode'][] = $valueCode;
             }
         }
         if (0 < count($this->valueCoding)) {
             $json['valueCoding'] = [];
             foreach($this->valueCoding as $valueCoding) {
-                $json['valueCoding'][] = json_encode($valueCoding);
+                $json['valueCoding'][] = $valueCoding;
             }
         }
         if (0 < count($this->valueCodeableConcept)) {
             $json['valueCodeableConcept'] = [];
             foreach($this->valueCodeableConcept as $valueCodeableConcept) {
-                $json['valueCodeableConcept'][] = json_encode($valueCodeableConcept);
+                $json['valueCodeableConcept'][] = $valueCodeableConcept;
             }
         }
         return $json;

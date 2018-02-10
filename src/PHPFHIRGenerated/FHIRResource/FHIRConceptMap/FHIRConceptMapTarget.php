@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,20 +250,20 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->display) $json['display'] = json_encode($this->display);
-        if (null !== $this->equivalence) $json['equivalence'] = json_encode($this->equivalence);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->display) $json['display'] = $this->display;
+        if (null !== $this->equivalence) $json['equivalence'] = $this->equivalence;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
         if (0 < count($this->dependsOn)) {
             $json['dependsOn'] = [];
             foreach($this->dependsOn as $dependsOn) {
-                $json['dependsOn'][] = json_encode($dependsOn);
+                $json['dependsOn'][] = $dependsOn;
             }
         }
         if (0 < count($this->product)) {
             $json['product'] = [];
             foreach($this->product as $product) {
-                $json['product'][] = json_encode($product);
+                $json['product'][] = $product;
             }
         }
         return $json;

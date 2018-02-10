@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,67 +123,56 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $onsetDateTime = null;
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $onsetAge = null;
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $onsetPeriod = null;
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $onsetRange = null;
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $onsetString = null;
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $abatementDateTime = null;
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $abatementAge = null;
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $abatementBoolean = null;
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $abatementPeriod = null;
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $abatementRange = null;
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $abatementString = null;
@@ -404,7 +393,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOnsetDateTime()
@@ -413,7 +401,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $onsetDateTime
      * @return $this
      */
@@ -424,7 +411,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge()
@@ -433,7 +419,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return $this
      */
@@ -444,7 +429,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod()
@@ -453,7 +437,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $onsetPeriod
      * @return $this
      */
@@ -464,7 +447,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getOnsetRange()
@@ -473,7 +455,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $onsetRange
      * @return $this
      */
@@ -484,7 +465,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getOnsetString()
@@ -493,7 +473,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Estimated or actual date or date-time  the condition began, in the opinion of the clinician. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $onsetString
      * @return $this
      */
@@ -504,7 +483,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getAbatementDateTime()
@@ -513,7 +491,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $abatementDateTime
      * @return $this
      */
@@ -524,7 +501,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getAbatementAge()
@@ -533,7 +509,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $abatementAge
      * @return $this
      */
@@ -544,7 +519,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAbatementBoolean()
@@ -553,7 +527,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $abatementBoolean
      * @return $this
      */
@@ -564,7 +537,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getAbatementPeriod()
@@ -573,7 +545,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $abatementPeriod
      * @return $this
      */
@@ -584,7 +555,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getAbatementRange()
@@ -593,7 +563,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $abatementRange
      * @return $this
      */
@@ -604,7 +573,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getAbatementString()
@@ -613,7 +581,6 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or estimated date that the condition resolved or went into remission. This is called "abatement" because of the many overloaded connotations associated with "remission" or "resolution" - Conditions are never really resolved, but they can abate. (choose any one of abatement*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $abatementString
      * @return $this
      */
@@ -749,51 +716,51 @@ class FHIRCondition extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->clinicalStatus) $json['clinicalStatus'] = json_encode($this->clinicalStatus);
-        if (null !== $this->verificationStatus) $json['verificationStatus'] = json_encode($this->verificationStatus);
+        if (null !== $this->clinicalStatus) $json['clinicalStatus'] = $this->clinicalStatus;
+        if (null !== $this->verificationStatus) $json['verificationStatus'] = $this->verificationStatus;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->severity) $json['severity'] = $this->severity;
+        if (null !== $this->code) $json['code'] = $this->code;
         if (0 < count($this->bodySite)) {
             $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = json_encode($bodySite);
+                $json['bodySite'][] = $bodySite;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->onsetDateTime) $json['onsetDateTime'] = json_encode($this->onsetDateTime);
-        if (null !== $this->onsetAge) $json['onsetAge'] = json_encode($this->onsetAge);
-        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = json_encode($this->onsetPeriod);
-        if (null !== $this->onsetRange) $json['onsetRange'] = json_encode($this->onsetRange);
-        if (null !== $this->onsetString) $json['onsetString'] = json_encode($this->onsetString);
-        if (null !== $this->abatementDateTime) $json['abatementDateTime'] = json_encode($this->abatementDateTime);
-        if (null !== $this->abatementAge) $json['abatementAge'] = json_encode($this->abatementAge);
-        if (null !== $this->abatementBoolean) $json['abatementBoolean'] = json_encode($this->abatementBoolean);
-        if (null !== $this->abatementPeriod) $json['abatementPeriod'] = json_encode($this->abatementPeriod);
-        if (null !== $this->abatementRange) $json['abatementRange'] = json_encode($this->abatementRange);
-        if (null !== $this->abatementString) $json['abatementString'] = json_encode($this->abatementString);
-        if (null !== $this->assertedDate) $json['assertedDate'] = json_encode($this->assertedDate);
-        if (null !== $this->asserter) $json['asserter'] = json_encode($this->asserter);
-        if (null !== $this->stage) $json['stage'] = json_encode($this->stage);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->onsetDateTime) $json['onsetDateTime'] = $this->onsetDateTime;
+        if (null !== $this->onsetAge) $json['onsetAge'] = $this->onsetAge;
+        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = $this->onsetPeriod;
+        if (null !== $this->onsetRange) $json['onsetRange'] = $this->onsetRange;
+        if (null !== $this->onsetString) $json['onsetString'] = $this->onsetString;
+        if (null !== $this->abatementDateTime) $json['abatementDateTime'] = $this->abatementDateTime;
+        if (null !== $this->abatementAge) $json['abatementAge'] = $this->abatementAge;
+        if (null !== $this->abatementBoolean) $json['abatementBoolean'] = $this->abatementBoolean;
+        if (null !== $this->abatementPeriod) $json['abatementPeriod'] = $this->abatementPeriod;
+        if (null !== $this->abatementRange) $json['abatementRange'] = $this->abatementRange;
+        if (null !== $this->abatementString) $json['abatementString'] = $this->abatementString;
+        if (null !== $this->assertedDate) $json['assertedDate'] = $this->assertedDate;
+        if (null !== $this->asserter) $json['asserter'] = $this->asserter;
+        if (null !== $this->stage) $json['stage'] = $this->stage;
         if (0 < count($this->evidence)) {
             $json['evidence'] = [];
             foreach($this->evidence as $evidence) {
-                $json['evidence'][] = json_encode($evidence);
+                $json['evidence'][] = $evidence;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

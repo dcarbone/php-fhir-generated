@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -307,31 +307,31 @@ class FHIRSchedule extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->serviceCategory) $json['serviceCategory'] = json_encode($this->serviceCategory);
+        if (null !== $this->active) $json['active'] = $this->active;
+        if (null !== $this->serviceCategory) $json['serviceCategory'] = $this->serviceCategory;
         if (0 < count($this->serviceType)) {
             $json['serviceType'] = [];
             foreach($this->serviceType as $serviceType) {
-                $json['serviceType'][] = json_encode($serviceType);
+                $json['serviceType'][] = $serviceType;
             }
         }
         if (0 < count($this->specialty)) {
             $json['specialty'] = [];
             foreach($this->specialty as $specialty) {
-                $json['specialty'][] = json_encode($specialty);
+                $json['specialty'][] = $specialty;
             }
         }
         if (0 < count($this->actor)) {
             $json['actor'] = [];
             foreach($this->actor as $actor) {
-                $json['actor'][] = json_encode($actor);
+                $json['actor'][] = $actor;
             }
         }
-        if (null !== $this->planningHorizon) $json['planningHorizon'] = json_encode($this->planningHorizon);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->planningHorizon) $json['planningHorizon'] = $this->planningHorizon;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,18 +328,18 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement implemen
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->subCategory) $json['subCategory'] = json_encode($this->subCategory);
-        if (null !== $this->excluded) $json['excluded'] = json_encode($this->excluded);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->network) $json['network'] = json_encode($this->network);
-        if (null !== $this->unit) $json['unit'] = json_encode($this->unit);
-        if (null !== $this->term) $json['term'] = json_encode($this->term);
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->subCategory) $json['subCategory'] = $this->subCategory;
+        if (null !== $this->excluded) $json['excluded'] = $this->excluded;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->network) $json['network'] = $this->network;
+        if (null !== $this->unit) $json['unit'] = $this->unit;
+        if (null !== $this->term) $json['term'] = $this->term;
         if (0 < count($this->financial)) {
             $json['financial'] = [];
             foreach($this->financial as $financial) {
-                $json['financial'][] = json_encode($financial);
+                $json['financial'][] = $financial;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,13 +105,11 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     public $birthDate = null;
 
     /**
-     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $deceasedBoolean = null;
 
     /**
-     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $deceasedDateTime = null;
@@ -129,13 +127,11 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     public $maritalStatus = null;
 
     /**
-     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $multipleBirthBoolean = null;
 
     /**
-     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $multipleBirthInteger = null;
@@ -308,7 +304,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getDeceasedBoolean()
@@ -317,7 +312,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $deceasedBoolean
      * @return $this
      */
@@ -328,7 +322,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDeceasedDateTime()
@@ -337,7 +330,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates if the individual is deceased or not. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $deceasedDateTime
      * @return $this
      */
@@ -388,7 +380,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getMultipleBirthBoolean()
@@ -397,7 +388,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $multipleBirthBoolean
      * @return $this
      */
@@ -408,7 +398,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getMultipleBirthInteger()
@@ -417,7 +406,6 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Indicates whether the patient is part of a multiple (bool) or indicates the actual birth order (integer). (choose any one of multipleBirth*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $multipleBirthInteger
      * @return $this
      */
@@ -593,65 +581,65 @@ class FHIRPatient extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
+        if (null !== $this->active) $json['active'] = $this->active;
         if (0 < count($this->name)) {
             $json['name'] = [];
             foreach($this->name as $name) {
-                $json['name'][] = json_encode($name);
+                $json['name'][] = $name;
             }
         }
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
-        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
-        if (null !== $this->birthDate) $json['birthDate'] = json_encode($this->birthDate);
-        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = json_encode($this->deceasedBoolean);
-        if (null !== $this->deceasedDateTime) $json['deceasedDateTime'] = json_encode($this->deceasedDateTime);
+        if (null !== $this->gender) $json['gender'] = $this->gender;
+        if (null !== $this->birthDate) $json['birthDate'] = $this->birthDate;
+        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = $this->deceasedBoolean;
+        if (null !== $this->deceasedDateTime) $json['deceasedDateTime'] = $this->deceasedDateTime;
         if (0 < count($this->address)) {
             $json['address'] = [];
             foreach($this->address as $address) {
-                $json['address'][] = json_encode($address);
+                $json['address'][] = $address;
             }
         }
-        if (null !== $this->maritalStatus) $json['maritalStatus'] = json_encode($this->maritalStatus);
-        if (null !== $this->multipleBirthBoolean) $json['multipleBirthBoolean'] = json_encode($this->multipleBirthBoolean);
-        if (null !== $this->multipleBirthInteger) $json['multipleBirthInteger'] = json_encode($this->multipleBirthInteger);
+        if (null !== $this->maritalStatus) $json['maritalStatus'] = $this->maritalStatus;
+        if (null !== $this->multipleBirthBoolean) $json['multipleBirthBoolean'] = $this->multipleBirthBoolean;
+        if (null !== $this->multipleBirthInteger) $json['multipleBirthInteger'] = $this->multipleBirthInteger;
         if (0 < count($this->photo)) {
             $json['photo'] = [];
             foreach($this->photo as $photo) {
-                $json['photo'][] = json_encode($photo);
+                $json['photo'][] = $photo;
             }
         }
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->animal) $json['animal'] = json_encode($this->animal);
+        if (null !== $this->animal) $json['animal'] = $this->animal;
         if (0 < count($this->communication)) {
             $json['communication'] = [];
             foreach($this->communication as $communication) {
-                $json['communication'][] = json_encode($communication);
+                $json['communication'][] = $communication;
             }
         }
         if (0 < count($this->generalPractitioner)) {
             $json['generalPractitioner'] = [];
             foreach($this->generalPractitioner as $generalPractitioner) {
-                $json['generalPractitioner'][] = json_encode($generalPractitioner);
+                $json['generalPractitioner'][] = $generalPractitioner;
             }
         }
-        if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
+        if (null !== $this->managingOrganization) $json['managingOrganization'] = $this->managingOrganization;
         if (0 < count($this->link)) {
             $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = json_encode($link);
+                $json['link'][] = $link;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -408,28 +408,28 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->testScript) $json['testScript'] = json_encode($this->testScript);
-        if (null !== $this->result) $json['result'] = json_encode($this->result);
-        if (null !== $this->score) $json['score'] = json_encode($this->score);
-        if (null !== $this->tester) $json['tester'] = json_encode($this->tester);
-        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->testScript) $json['testScript'] = $this->testScript;
+        if (null !== $this->result) $json['result'] = $this->result;
+        if (null !== $this->score) $json['score'] = $this->score;
+        if (null !== $this->tester) $json['tester'] = $this->tester;
+        if (null !== $this->issued) $json['issued'] = $this->issued;
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                $json['participant'][] = $participant;
             }
         }
-        if (null !== $this->setup) $json['setup'] = json_encode($this->setup);
+        if (null !== $this->setup) $json['setup'] = $this->setup;
         if (0 < count($this->test)) {
             $json['test'] = [];
             foreach($this->test as $test) {
-                $json['test'][] = json_encode($test);
+                $json['test'][] = $test;
             }
         }
-        if (null !== $this->teardown) $json['teardown'] = json_encode($this->teardown);
+        if (null !== $this->teardown) $json['teardown'] = $this->teardown;
         return $json;
     }
 

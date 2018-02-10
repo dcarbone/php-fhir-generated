@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,13 +135,11 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $performedDateTime = null;
 
     /**
-     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $performedPeriod = null;
@@ -456,7 +454,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getPerformedDateTime()
@@ -465,7 +462,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $performedDateTime
      * @return $this
      */
@@ -476,7 +472,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getPerformedPeriod()
@@ -485,7 +480,6 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date(time)/period over which the procedure was performed. Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured. (choose any one of performed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $performedPeriod
      * @return $this
      */
@@ -801,108 +795,108 @@ class FHIRProcedure extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                $json['definition'][] = $definition;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->notDone) $json['notDone'] = json_encode($this->notDone);
-        if (null !== $this->notDoneReason) $json['notDoneReason'] = json_encode($this->notDoneReason);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->performedDateTime) $json['performedDateTime'] = json_encode($this->performedDateTime);
-        if (null !== $this->performedPeriod) $json['performedPeriod'] = json_encode($this->performedPeriod);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->notDone) $json['notDone'] = $this->notDone;
+        if (null !== $this->notDoneReason) $json['notDoneReason'] = $this->notDoneReason;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->performedDateTime) $json['performedDateTime'] = $this->performedDateTime;
+        if (null !== $this->performedPeriod) $json['performedPeriod'] = $this->performedPeriod;
         if (0 < count($this->performer)) {
             $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = json_encode($performer);
+                $json['performer'][] = $performer;
             }
         }
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->location) $json['location'] = $this->location;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                $json['reasonReference'][] = $reasonReference;
             }
         }
         if (0 < count($this->bodySite)) {
             $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = json_encode($bodySite);
+                $json['bodySite'][] = $bodySite;
             }
         }
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
         if (0 < count($this->report)) {
             $json['report'] = [];
             foreach($this->report as $report) {
-                $json['report'][] = json_encode($report);
+                $json['report'][] = $report;
             }
         }
         if (0 < count($this->complication)) {
             $json['complication'] = [];
             foreach($this->complication as $complication) {
-                $json['complication'][] = json_encode($complication);
+                $json['complication'][] = $complication;
             }
         }
         if (0 < count($this->complicationDetail)) {
             $json['complicationDetail'] = [];
             foreach($this->complicationDetail as $complicationDetail) {
-                $json['complicationDetail'][] = json_encode($complicationDetail);
+                $json['complicationDetail'][] = $complicationDetail;
             }
         }
         if (0 < count($this->followUp)) {
             $json['followUp'] = [];
             foreach($this->followUp as $followUp) {
-                $json['followUp'][] = json_encode($followUp);
+                $json['followUp'][] = $followUp;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->focalDevice)) {
             $json['focalDevice'] = [];
             foreach($this->focalDevice as $focalDevice) {
-                $json['focalDevice'][] = json_encode($focalDevice);
+                $json['focalDevice'][] = $focalDevice;
             }
         }
         if (0 < count($this->usedReference)) {
             $json['usedReference'] = [];
             foreach($this->usedReference as $usedReference) {
-                $json['usedReference'][] = json_encode($usedReference);
+                $json['usedReference'][] = $usedReference;
             }
         }
         if (0 < count($this->usedCode)) {
             $json['usedCode'] = [];
             foreach($this->usedCode as $usedCode) {
-                $json['usedCode'][] = json_encode($usedCode);
+                $json['usedCode'][] = $usedCode;
             }
         }
         return $json;

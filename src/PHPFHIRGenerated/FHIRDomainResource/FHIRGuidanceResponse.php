@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,13 +117,11 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     public $performer = null;
 
     /**
-     * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCodeableConcept = null;
 
     /**
-     * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
@@ -324,7 +322,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept()
@@ -333,7 +330,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
@@ -344,7 +340,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -353,7 +348,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Indicates the reason the request was initiated. This is typically provided as a parameter to the evaluation and echoed by the service, although for some use cases, such as subscription- or event-based scenarios, it may provide an indication of the cause for the response. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
@@ -486,34 +480,34 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements \JsonSerializab
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->requestId) $json['requestId'] = json_encode($this->requestId);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->module) $json['module'] = json_encode($this->module);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
+        if (null !== $this->requestId) $json['requestId'] = $this->requestId;
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->module) $json['module'] = $this->module;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->performer) $json['performer'] = $this->performer;
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->evaluationMessage)) {
             $json['evaluationMessage'] = [];
             foreach($this->evaluationMessage as $evaluationMessage) {
-                $json['evaluationMessage'][] = json_encode($evaluationMessage);
+                $json['evaluationMessage'][] = $evaluationMessage;
             }
         }
-        if (null !== $this->outputParameters) $json['outputParameters'] = json_encode($this->outputParameters);
-        if (null !== $this->result) $json['result'] = json_encode($this->result);
+        if (null !== $this->outputParameters) $json['outputParameters'] = $this->outputParameters;
+        if (null !== $this->result) $json['result'] = $this->result;
         if (0 < count($this->dataRequirement)) {
             $json['dataRequirement'] = [];
             foreach($this->dataRequirement as $dataRequirement) {
-                $json['dataRequirement'][] = json_encode($dataRequirement);
+                $json['dataRequirement'][] = $dataRequirement;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -225,24 +225,24 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->versionId) $json['versionId'] = json_encode($this->versionId);
-        if (null !== $this->lastUpdated) $json['lastUpdated'] = json_encode($this->lastUpdated);
+        if (null !== $this->versionId) $json['versionId'] = $this->versionId;
+        if (null !== $this->lastUpdated) $json['lastUpdated'] = $this->lastUpdated;
         if (0 < count($this->profile)) {
             $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = json_encode($profile);
+                $json['profile'][] = $profile;
             }
         }
         if (0 < count($this->security)) {
             $json['security'] = [];
             foreach($this->security as $security) {
-                $json['security'][] = json_encode($security);
+                $json['security'][] = $security;
             }
         }
         if (0 < count($this->tag)) {
             $json['tag'] = [];
             foreach($this->tag as $tag) {
-                $json['tag'][] = json_encode($tag);
+                $json['tag'][] = $tag;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -253,34 +253,34 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement implements \JsonSer
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
         if (0 < count($this->schedule)) {
             $json['schedule'] = [];
             foreach($this->schedule as $schedule) {
-                $json['schedule'][] = json_encode($schedule);
+                $json['schedule'][] = $schedule;
             }
         }
         if (0 < count($this->nutrient)) {
             $json['nutrient'] = [];
             foreach($this->nutrient as $nutrient) {
-                $json['nutrient'][] = json_encode($nutrient);
+                $json['nutrient'][] = $nutrient;
             }
         }
         if (0 < count($this->texture)) {
             $json['texture'] = [];
             foreach($this->texture as $texture) {
-                $json['texture'][] = json_encode($texture);
+                $json['texture'][] = $texture;
             }
         }
         if (0 < count($this->fluidConsistencyType)) {
             $json['fluidConsistencyType'] = [];
             foreach($this->fluidConsistencyType as $fluidConsistencyType) {
-                $json['fluidConsistencyType'][] = json_encode($fluidConsistencyType);
+                $json['fluidConsistencyType'][] = $fluidConsistencyType;
             }
         }
-        if (null !== $this->instruction) $json['instruction'] = json_encode($this->instruction);
+        if (null !== $this->instruction) $json['instruction'] = $this->instruction;
         return $json;
     }
 

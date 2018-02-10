@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -406,31 +406,31 @@ class FHIRImagingStudySeries extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
-        if (null !== $this->number) $json['number'] = json_encode($this->number);
-        if (null !== $this->modality) $json['modality'] = json_encode($this->modality);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = json_encode($this->numberOfInstances);
-        if (null !== $this->availability) $json['availability'] = json_encode($this->availability);
+        if (null !== $this->uid) $json['uid'] = $this->uid;
+        if (null !== $this->number) $json['number'] = $this->number;
+        if (null !== $this->modality) $json['modality'] = $this->modality;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->numberOfInstances) $json['numberOfInstances'] = $this->numberOfInstances;
+        if (null !== $this->availability) $json['availability'] = $this->availability;
         if (0 < count($this->endpoint)) {
             $json['endpoint'] = [];
             foreach($this->endpoint as $endpoint) {
-                $json['endpoint'][] = json_encode($endpoint);
+                $json['endpoint'][] = $endpoint;
             }
         }
-        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
-        if (null !== $this->laterality) $json['laterality'] = json_encode($this->laterality);
-        if (null !== $this->started) $json['started'] = json_encode($this->started);
+        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite;
+        if (null !== $this->laterality) $json['laterality'] = $this->laterality;
+        if (null !== $this->started) $json['started'] = $this->started;
         if (0 < count($this->performer)) {
             $json['performer'] = [];
             foreach($this->performer as $performer) {
-                $json['performer'][] = json_encode($performer);
+                $json['performer'][] = $performer;
             }
         }
         if (0 < count($this->instance)) {
             $json['instance'] = [];
             foreach($this->instance as $instance) {
-                $json['instance'][] = json_encode($instance);
+                $json['instance'][] = $instance;
             }
         }
         return $json;

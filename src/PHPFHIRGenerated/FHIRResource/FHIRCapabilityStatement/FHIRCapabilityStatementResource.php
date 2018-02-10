@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -484,44 +484,44 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->profile) $json['profile'] = $this->profile;
+        if (null !== $this->documentation) $json['documentation'] = $this->documentation;
         if (0 < count($this->interaction)) {
             $json['interaction'] = [];
             foreach($this->interaction as $interaction) {
-                $json['interaction'][] = json_encode($interaction);
+                $json['interaction'][] = $interaction;
             }
         }
-        if (null !== $this->versioning) $json['versioning'] = json_encode($this->versioning);
-        if (null !== $this->readHistory) $json['readHistory'] = json_encode($this->readHistory);
-        if (null !== $this->updateCreate) $json['updateCreate'] = json_encode($this->updateCreate);
-        if (null !== $this->conditionalCreate) $json['conditionalCreate'] = json_encode($this->conditionalCreate);
-        if (null !== $this->conditionalRead) $json['conditionalRead'] = json_encode($this->conditionalRead);
-        if (null !== $this->conditionalUpdate) $json['conditionalUpdate'] = json_encode($this->conditionalUpdate);
-        if (null !== $this->conditionalDelete) $json['conditionalDelete'] = json_encode($this->conditionalDelete);
+        if (null !== $this->versioning) $json['versioning'] = $this->versioning;
+        if (null !== $this->readHistory) $json['readHistory'] = $this->readHistory;
+        if (null !== $this->updateCreate) $json['updateCreate'] = $this->updateCreate;
+        if (null !== $this->conditionalCreate) $json['conditionalCreate'] = $this->conditionalCreate;
+        if (null !== $this->conditionalRead) $json['conditionalRead'] = $this->conditionalRead;
+        if (null !== $this->conditionalUpdate) $json['conditionalUpdate'] = $this->conditionalUpdate;
+        if (null !== $this->conditionalDelete) $json['conditionalDelete'] = $this->conditionalDelete;
         if (0 < count($this->referencePolicy)) {
             $json['referencePolicy'] = [];
             foreach($this->referencePolicy as $referencePolicy) {
-                $json['referencePolicy'][] = json_encode($referencePolicy);
+                $json['referencePolicy'][] = $referencePolicy;
             }
         }
         if (0 < count($this->searchInclude)) {
             $json['searchInclude'] = [];
             foreach($this->searchInclude as $searchInclude) {
-                $json['searchInclude'][] = json_encode($searchInclude);
+                $json['searchInclude'][] = $searchInclude;
             }
         }
         if (0 < count($this->searchRevInclude)) {
             $json['searchRevInclude'] = [];
             foreach($this->searchRevInclude as $searchRevInclude) {
-                $json['searchRevInclude'][] = json_encode($searchRevInclude);
+                $json['searchRevInclude'][] = $searchRevInclude;
             }
         }
         if (0 < count($this->searchParam)) {
             $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = json_encode($searchParam);
+                $json['searchParam'][] = $searchParam;
             }
         }
         return $json;

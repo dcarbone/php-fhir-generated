@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -356,21 +356,21 @@ class FHIRMeasureReport extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->measure) $json['measure'] = json_encode($this->measure);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->reportingOrganization) $json['reportingOrganization'] = json_encode($this->reportingOrganization);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->measure) $json['measure'] = $this->measure;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->reportingOrganization) $json['reportingOrganization'] = $this->reportingOrganization;
+        if (null !== $this->period) $json['period'] = $this->period;
         if (0 < count($this->group)) {
             $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = json_encode($group);
+                $json['group'][] = $group;
             }
         }
-        if (null !== $this->evaluatedResources) $json['evaluatedResources'] = json_encode($this->evaluatedResources);
+        if (null !== $this->evaluatedResources) $json['evaluatedResources'] = $this->evaluatedResources;
         return $json;
     }
 

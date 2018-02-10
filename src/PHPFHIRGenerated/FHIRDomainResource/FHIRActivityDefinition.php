@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -219,25 +219,21 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public $code = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $timingRange = null;
@@ -255,13 +251,11 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     public $participant = array();
 
     /**
-     * Identifies the food, drug or other product being consumed or supplied in the activity. (choose any one of product*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $productReference = null;
 
     /**
-     * Identifies the food, drug or other product being consumed or supplied in the activity. (choose any one of product*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $productCodeableConcept = null;
@@ -802,7 +796,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getTimingTiming()
@@ -811,7 +804,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $timingTiming
      * @return $this
      */
@@ -822,7 +814,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
@@ -831,7 +822,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
@@ -842,7 +832,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
@@ -851,7 +840,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
@@ -862,7 +850,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getTimingRange()
@@ -871,7 +858,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The period, timing or frequency upon which the described activity is to occur. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $timingRange
      * @return $this
      */
@@ -922,7 +908,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Identifies the food, drug or other product being consumed or supplied in the activity. (choose any one of product*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getProductReference()
@@ -931,7 +916,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Identifies the food, drug or other product being consumed or supplied in the activity. (choose any one of product*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $productReference
      * @return $this
      */
@@ -942,7 +926,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Identifies the food, drug or other product being consumed or supplied in the activity. (choose any one of product*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getProductCodeableConcept()
@@ -951,7 +934,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Identifies the food, drug or other product being consumed or supplied in the activity. (choose any one of product*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $productCodeableConcept
      * @return $this
      */
@@ -1084,102 +1066,102 @@ class FHIRActivityDefinition extends FHIRDomainResource implements \JsonSerializ
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->url) $json['url'] = $this->url;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
-        if (null !== $this->approvalDate) $json['approvalDate'] = json_encode($this->approvalDate);
-        if (null !== $this->lastReviewDate) $json['lastReviewDate'] = json_encode($this->lastReviewDate);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->purpose) $json['purpose'] = $this->purpose;
+        if (null !== $this->usage) $json['usage'] = $this->usage;
+        if (null !== $this->approvalDate) $json['approvalDate'] = $this->approvalDate;
+        if (null !== $this->lastReviewDate) $json['lastReviewDate'] = $this->lastReviewDate;
+        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = $this->effectivePeriod;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                $json['jurisdiction'][] = $jurisdiction;
             }
         }
         if (0 < count($this->topic)) {
             $json['topic'] = [];
             foreach($this->topic as $topic) {
-                $json['topic'][] = json_encode($topic);
+                $json['topic'][] = $topic;
             }
         }
         if (0 < count($this->contributor)) {
             $json['contributor'] = [];
             foreach($this->contributor as $contributor) {
-                $json['contributor'][] = json_encode($contributor);
+                $json['contributor'][] = $contributor;
             }
         }
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (null !== $this->copyright) $json['copyright'] = $this->copyright;
         if (0 < count($this->relatedArtifact)) {
             $json['relatedArtifact'] = [];
             foreach($this->relatedArtifact as $relatedArtifact) {
-                $json['relatedArtifact'][] = json_encode($relatedArtifact);
+                $json['relatedArtifact'][] = $relatedArtifact;
             }
         }
         if (0 < count($this->library)) {
             $json['library'] = [];
             foreach($this->library as $library) {
-                $json['library'][] = json_encode($library);
+                $json['library'][] = $library;
             }
         }
-        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->timingTiming) $json['timingTiming'] = json_encode($this->timingTiming);
-        if (null !== $this->timingDateTime) $json['timingDateTime'] = json_encode($this->timingDateTime);
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
-        if (null !== $this->timingRange) $json['timingRange'] = json_encode($this->timingRange);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
+        if (null !== $this->kind) $json['kind'] = $this->kind;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->timingTiming) $json['timingTiming'] = $this->timingTiming;
+        if (null !== $this->timingDateTime) $json['timingDateTime'] = $this->timingDateTime;
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = $this->timingPeriod;
+        if (null !== $this->timingRange) $json['timingRange'] = $this->timingRange;
+        if (null !== $this->location) $json['location'] = $this->location;
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                $json['participant'][] = $participant;
             }
         }
-        if (null !== $this->productReference) $json['productReference'] = json_encode($this->productReference);
-        if (null !== $this->productCodeableConcept) $json['productCodeableConcept'] = json_encode($this->productCodeableConcept);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (null !== $this->productReference) $json['productReference'] = $this->productReference;
+        if (null !== $this->productCodeableConcept) $json['productCodeableConcept'] = $this->productCodeableConcept;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
         if (0 < count($this->dosage)) {
             $json['dosage'] = [];
             foreach($this->dosage as $dosage) {
-                $json['dosage'][] = json_encode($dosage);
+                $json['dosage'][] = $dosage;
             }
         }
         if (0 < count($this->bodySite)) {
             $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = json_encode($bodySite);
+                $json['bodySite'][] = $bodySite;
             }
         }
-        if (null !== $this->transform) $json['transform'] = json_encode($this->transform);
+        if (null !== $this->transform) $json['transform'] = $this->transform;
         if (0 < count($this->dynamicValue)) {
             $json['dynamicValue'] = [];
             foreach($this->dynamicValue as $dynamicValue) {
-                $json['dynamicValue'][] = json_encode($dynamicValue);
+                $json['dynamicValue'][] = $dynamicValue;
             }
         }
         return $json;

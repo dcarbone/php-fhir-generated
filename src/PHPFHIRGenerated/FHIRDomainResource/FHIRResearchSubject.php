@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -304,14 +304,14 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->study) $json['study'] = json_encode($this->study);
-        if (null !== $this->individual) $json['individual'] = json_encode($this->individual);
-        if (null !== $this->assignedArm) $json['assignedArm'] = json_encode($this->assignedArm);
-        if (null !== $this->actualArm) $json['actualArm'] = json_encode($this->actualArm);
-        if (null !== $this->consent) $json['consent'] = json_encode($this->consent);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->study) $json['study'] = $this->study;
+        if (null !== $this->individual) $json['individual'] = $this->individual;
+        if (null !== $this->assignedArm) $json['assignedArm'] = $this->assignedArm;
+        if (null !== $this->actualArm) $json['actualArm'] = $this->actualArm;
+        if (null !== $this->consent) $json['consent'] = $this->consent;
         return $json;
     }
 

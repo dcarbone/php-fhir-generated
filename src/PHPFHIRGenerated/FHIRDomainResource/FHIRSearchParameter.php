@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -720,73 +720,73 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (null !== $this->url) $json['url'] = $this->url;
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->purpose) $json['purpose'] = $this->purpose;
+        if (null !== $this->code) $json['code'] = $this->code;
         if (0 < count($this->base)) {
             $json['base'] = [];
             foreach($this->base as $base) {
-                $json['base'][] = json_encode($base);
+                $json['base'][] = $base;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->derivedFrom) $json['derivedFrom'] = json_encode($this->derivedFrom);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
-        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
-        if (null !== $this->xpathUsage) $json['xpathUsage'] = json_encode($this->xpathUsage);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->derivedFrom) $json['derivedFrom'] = $this->derivedFrom;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->expression) $json['expression'] = $this->expression;
+        if (null !== $this->xpath) $json['xpath'] = $this->xpath;
+        if (null !== $this->xpathUsage) $json['xpathUsage'] = $this->xpathUsage;
         if (0 < count($this->target)) {
             $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = json_encode($target);
+                $json['target'][] = $target;
             }
         }
         if (0 < count($this->comparator)) {
             $json['comparator'] = [];
             foreach($this->comparator as $comparator) {
-                $json['comparator'][] = json_encode($comparator);
+                $json['comparator'][] = $comparator;
             }
         }
         if (0 < count($this->modifier)) {
             $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = json_encode($modifier);
+                $json['modifier'][] = $modifier;
             }
         }
         if (0 < count($this->chain)) {
             $json['chain'] = [];
             foreach($this->chain as $chain) {
-                $json['chain'][] = json_encode($chain);
+                $json['chain'][] = $chain;
             }
         }
         if (0 < count($this->component)) {
             $json['component'] = [];
             foreach($this->component as $component) {
-                $json['component'][] = json_encode($component);
+                $json['component'][] = $component;
             }
         }
         return $json;

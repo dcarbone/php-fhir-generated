@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -463,60 +463,60 @@ class FHIRPractitionerRole extends FHIRDomainResource implements \JsonSerializab
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->practitioner) $json['practitioner'] = json_encode($this->practitioner);
-        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
+        if (null !== $this->active) $json['active'] = $this->active;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->practitioner) $json['practitioner'] = $this->practitioner;
+        if (null !== $this->organization) $json['organization'] = $this->organization;
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                $json['code'][] = $code;
             }
         }
         if (0 < count($this->specialty)) {
             $json['specialty'] = [];
             foreach($this->specialty as $specialty) {
-                $json['specialty'][] = json_encode($specialty);
+                $json['specialty'][] = $specialty;
             }
         }
         if (0 < count($this->location)) {
             $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = json_encode($location);
+                $json['location'][] = $location;
             }
         }
         if (0 < count($this->healthcareService)) {
             $json['healthcareService'] = [];
             foreach($this->healthcareService as $healthcareService) {
-                $json['healthcareService'][] = json_encode($healthcareService);
+                $json['healthcareService'][] = $healthcareService;
             }
         }
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
         if (0 < count($this->availableTime)) {
             $json['availableTime'] = [];
             foreach($this->availableTime as $availableTime) {
-                $json['availableTime'][] = json_encode($availableTime);
+                $json['availableTime'][] = $availableTime;
             }
         }
         if (0 < count($this->notAvailable)) {
             $json['notAvailable'] = [];
             foreach($this->notAvailable as $notAvailable) {
-                $json['notAvailable'][] = json_encode($notAvailable);
+                $json['notAvailable'][] = $notAvailable;
             }
         }
-        if (null !== $this->availabilityExceptions) $json['availabilityExceptions'] = json_encode($this->availabilityExceptions);
+        if (null !== $this->availabilityExceptions) $json['availabilityExceptions'] = $this->availabilityExceptions;
         if (0 < count($this->endpoint)) {
             $json['endpoint'] = [];
             foreach($this->endpoint as $endpoint) {
-                $json['endpoint'][] = json_encode($endpoint);
+                $json['endpoint'][] = $endpoint;
             }
         }
         return $json;

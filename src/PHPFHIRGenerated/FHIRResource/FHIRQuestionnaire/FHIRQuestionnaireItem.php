@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -155,73 +155,61 @@ Any information provided in these elements on a Questionnaire Item overrides the
     public $option = array();
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $initialBoolean = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $initialDecimal = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $initialInteger = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $initialDate = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $initialDateTime = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $initialTime = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $initialString = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $initialUri = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $initialAttachment = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $initialCoding = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $initialQuantity = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $initialReference = null;
@@ -516,7 +504,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getInitialBoolean()
@@ -525,7 +512,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $initialBoolean
      * @return $this
      */
@@ -536,7 +522,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getInitialDecimal()
@@ -545,7 +530,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $initialDecimal
      * @return $this
      */
@@ -556,7 +540,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getInitialInteger()
@@ -565,7 +548,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $initialInteger
      * @return $this
      */
@@ -576,7 +558,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getInitialDate()
@@ -585,7 +566,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $initialDate
      * @return $this
      */
@@ -596,7 +576,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getInitialDateTime()
@@ -605,7 +584,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $initialDateTime
      * @return $this
      */
@@ -616,7 +594,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getInitialTime()
@@ -625,7 +602,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $initialTime
      * @return $this
      */
@@ -636,7 +612,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getInitialString()
@@ -645,7 +620,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $initialString
      * @return $this
      */
@@ -656,7 +630,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getInitialUri()
@@ -665,7 +638,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $initialUri
      * @return $this
      */
@@ -676,7 +648,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getInitialAttachment()
@@ -685,7 +656,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $initialAttachment
      * @return $this
      */
@@ -696,7 +666,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getInitialCoding()
@@ -705,7 +674,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $initialCoding
      * @return $this
      */
@@ -716,7 +684,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getInitialQuantity()
@@ -725,7 +692,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $initialQuantity
      * @return $this
      */
@@ -736,7 +702,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getInitialReference()
@@ -745,7 +710,6 @@ Any information provided in these elements on a Questionnaire Item overrides the
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $initialReference
      * @return $this
      */
@@ -797,50 +761,50 @@ Any information provided in these elements on a Questionnaire Item overrides the
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
-        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
+        if (null !== $this->linkId) $json['linkId'] = $this->linkId;
+        if (null !== $this->definition) $json['definition'] = $this->definition;
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                $json['code'][] = $code;
             }
         }
-        if (null !== $this->prefix) $json['prefix'] = json_encode($this->prefix);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->prefix) $json['prefix'] = $this->prefix;
+        if (null !== $this->text) $json['text'] = $this->text;
+        if (null !== $this->type) $json['type'] = $this->type;
         if (0 < count($this->enableWhen)) {
             $json['enableWhen'] = [];
             foreach($this->enableWhen as $enableWhen) {
-                $json['enableWhen'][] = json_encode($enableWhen);
+                $json['enableWhen'][] = $enableWhen;
             }
         }
-        if (null !== $this->required) $json['required'] = json_encode($this->required);
-        if (null !== $this->repeats) $json['repeats'] = json_encode($this->repeats);
-        if (null !== $this->readOnly) $json['readOnly'] = json_encode($this->readOnly);
-        if (null !== $this->maxLength) $json['maxLength'] = json_encode($this->maxLength);
-        if (null !== $this->options) $json['options'] = json_encode($this->options);
+        if (null !== $this->required) $json['required'] = $this->required;
+        if (null !== $this->repeats) $json['repeats'] = $this->repeats;
+        if (null !== $this->readOnly) $json['readOnly'] = $this->readOnly;
+        if (null !== $this->maxLength) $json['maxLength'] = $this->maxLength;
+        if (null !== $this->options) $json['options'] = $this->options;
         if (0 < count($this->option)) {
             $json['option'] = [];
             foreach($this->option as $option) {
-                $json['option'][] = json_encode($option);
+                $json['option'][] = $option;
             }
         }
-        if (null !== $this->initialBoolean) $json['initialBoolean'] = json_encode($this->initialBoolean);
-        if (null !== $this->initialDecimal) $json['initialDecimal'] = json_encode($this->initialDecimal);
-        if (null !== $this->initialInteger) $json['initialInteger'] = json_encode($this->initialInteger);
-        if (null !== $this->initialDate) $json['initialDate'] = json_encode($this->initialDate);
-        if (null !== $this->initialDateTime) $json['initialDateTime'] = json_encode($this->initialDateTime);
-        if (null !== $this->initialTime) $json['initialTime'] = json_encode($this->initialTime);
-        if (null !== $this->initialString) $json['initialString'] = json_encode($this->initialString);
-        if (null !== $this->initialUri) $json['initialUri'] = json_encode($this->initialUri);
-        if (null !== $this->initialAttachment) $json['initialAttachment'] = json_encode($this->initialAttachment);
-        if (null !== $this->initialCoding) $json['initialCoding'] = json_encode($this->initialCoding);
-        if (null !== $this->initialQuantity) $json['initialQuantity'] = json_encode($this->initialQuantity);
-        if (null !== $this->initialReference) $json['initialReference'] = json_encode($this->initialReference);
+        if (null !== $this->initialBoolean) $json['initialBoolean'] = $this->initialBoolean;
+        if (null !== $this->initialDecimal) $json['initialDecimal'] = $this->initialDecimal;
+        if (null !== $this->initialInteger) $json['initialInteger'] = $this->initialInteger;
+        if (null !== $this->initialDate) $json['initialDate'] = $this->initialDate;
+        if (null !== $this->initialDateTime) $json['initialDateTime'] = $this->initialDateTime;
+        if (null !== $this->initialTime) $json['initialTime'] = $this->initialTime;
+        if (null !== $this->initialString) $json['initialString'] = $this->initialString;
+        if (null !== $this->initialUri) $json['initialUri'] = $this->initialUri;
+        if (null !== $this->initialAttachment) $json['initialAttachment'] = $this->initialAttachment;
+        if (null !== $this->initialCoding) $json['initialCoding'] = $this->initialCoding;
+        if (null !== $this->initialQuantity) $json['initialQuantity'] = $this->initialQuantity;
+        if (null !== $this->initialReference) $json['initialReference'] = $this->initialReference;
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                $json['item'][] = $item;
             }
         }
         return $json;

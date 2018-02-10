@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $pAttachment = null;
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $pReference = null;
@@ -85,7 +83,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
     private $_fhirElementName = 'DocumentManifest.Content';
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getPAttachment()
@@ -94,7 +91,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $pAttachment
      * @return $this
      */
@@ -105,7 +101,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPReference()
@@ -114,7 +109,6 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * The list of references to document content, or Attachment that consist of the parts of this document manifest. Usually, these would be document references, but direct references to Media or Attachments are also allowed. (choose any one of p*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $pReference
      * @return $this
      */
@@ -146,8 +140,8 @@ class FHIRDocumentManifestContent extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->pAttachment) $json['pAttachment'] = json_encode($this->pAttachment);
-        if (null !== $this->pReference) $json['pReference'] = json_encode($this->pReference);
+        if (null !== $this->pAttachment) $json['pAttachment'] = $this->pAttachment;
+        if (null !== $this->pReference) $json['pReference'] = $this->pReference;
         return $json;
     }
 

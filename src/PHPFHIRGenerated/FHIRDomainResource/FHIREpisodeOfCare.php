@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -411,48 +411,48 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->statusHistory)) {
             $json['statusHistory'] = [];
             foreach($this->statusHistory as $statusHistory) {
-                $json['statusHistory'][] = json_encode($statusHistory);
+                $json['statusHistory'][] = $statusHistory;
             }
         }
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
         if (0 < count($this->diagnosis)) {
             $json['diagnosis'] = [];
             foreach($this->diagnosis as $diagnosis) {
-                $json['diagnosis'][] = json_encode($diagnosis);
+                $json['diagnosis'][] = $diagnosis;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->managingOrganization) $json['managingOrganization'] = json_encode($this->managingOrganization);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->managingOrganization) $json['managingOrganization'] = $this->managingOrganization;
+        if (null !== $this->period) $json['period'] = $this->period;
         if (0 < count($this->referralRequest)) {
             $json['referralRequest'] = [];
             foreach($this->referralRequest as $referralRequest) {
-                $json['referralRequest'][] = json_encode($referralRequest);
+                $json['referralRequest'][] = $referralRequest;
             }
         }
-        if (null !== $this->careManager) $json['careManager'] = json_encode($this->careManager);
+        if (null !== $this->careManager) $json['careManager'] = $this->careManager;
         if (0 < count($this->team)) {
             $json['team'] = [];
             foreach($this->team as $team) {
-                $json['team'][] = json_encode($team);
+                $json['team'][] = $team;
             }
         }
         if (0 < count($this->account)) {
             $json['account'] = [];
             foreach($this->account as $account) {
-                $json['account'][] = json_encode($account);
+                $json['account'][] = $account;
             }
         }
         return $json;

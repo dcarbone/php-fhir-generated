@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,31 +74,26 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     public $measure = null;
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $detailQuantity = null;
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $detailRange = null;
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $detailCodeableConcept = null;
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $dueDate = null;
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $dueDuration = null;
@@ -129,7 +124,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getDetailQuantity()
@@ -138,7 +132,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $detailQuantity
      * @return $this
      */
@@ -149,7 +142,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getDetailRange()
@@ -158,7 +150,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $detailRange
      * @return $this
      */
@@ -169,7 +160,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getDetailCodeableConcept()
@@ -178,7 +168,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
      * @return $this
      */
@@ -189,7 +178,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getDueDate()
@@ -198,7 +186,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $dueDate
      * @return $this
      */
@@ -209,7 +196,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getDueDuration()
@@ -218,7 +204,6 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
      * @return $this
      */
@@ -250,12 +235,12 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->measure) $json['measure'] = json_encode($this->measure);
-        if (null !== $this->detailQuantity) $json['detailQuantity'] = json_encode($this->detailQuantity);
-        if (null !== $this->detailRange) $json['detailRange'] = json_encode($this->detailRange);
-        if (null !== $this->detailCodeableConcept) $json['detailCodeableConcept'] = json_encode($this->detailCodeableConcept);
-        if (null !== $this->dueDate) $json['dueDate'] = json_encode($this->dueDate);
-        if (null !== $this->dueDuration) $json['dueDuration'] = json_encode($this->dueDuration);
+        if (null !== $this->measure) $json['measure'] = $this->measure;
+        if (null !== $this->detailQuantity) $json['detailQuantity'] = $this->detailQuantity;
+        if (null !== $this->detailRange) $json['detailRange'] = $this->detailRange;
+        if (null !== $this->detailCodeableConcept) $json['detailCodeableConcept'] = $this->detailCodeableConcept;
+        if (null !== $this->dueDate) $json['dueDate'] = $this->dueDate;
+        if (null !== $this->dueDuration) $json['dueDuration'] = $this->dueDuration;
         return $json;
     }
 

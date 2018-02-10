@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,73 +68,61 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $valueDecimal = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $valueDate = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $valueUri = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueReference = null;
@@ -151,7 +139,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     private $_fhirElementName = 'QuestionnaireResponse.Answer';
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -160,7 +147,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
@@ -171,7 +157,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
@@ -180,7 +165,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $valueDecimal
      * @return $this
      */
@@ -191,7 +175,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -200,7 +183,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
@@ -211,7 +193,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getValueDate()
@@ -220,7 +201,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $valueDate
      * @return $this
      */
@@ -231,7 +211,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -240,7 +219,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
@@ -251,7 +229,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -260,7 +237,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
@@ -271,7 +247,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -280,7 +255,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -291,7 +265,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueUri()
@@ -300,7 +273,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $valueUri
      * @return $this
      */
@@ -311,7 +283,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -320,7 +291,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
@@ -331,7 +301,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
@@ -340,7 +309,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
@@ -351,7 +319,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -360,7 +327,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
@@ -371,7 +337,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueReference()
@@ -380,7 +345,6 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The answer (or one of the answers) provided by the respondent to the question. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
@@ -432,22 +396,22 @@ class FHIRQuestionnaireResponseAnswer extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
-        if (null !== $this->valueDecimal) $json['valueDecimal'] = json_encode($this->valueDecimal);
-        if (null !== $this->valueInteger) $json['valueInteger'] = json_encode($this->valueInteger);
-        if (null !== $this->valueDate) $json['valueDate'] = json_encode($this->valueDate);
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
-        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueUri) $json['valueUri'] = json_encode($this->valueUri);
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
-        if (null !== $this->valueCoding) $json['valueCoding'] = json_encode($this->valueCoding);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueReference) $json['valueReference'] = json_encode($this->valueReference);
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = $this->valueBoolean;
+        if (null !== $this->valueDecimal) $json['valueDecimal'] = $this->valueDecimal;
+        if (null !== $this->valueInteger) $json['valueInteger'] = $this->valueInteger;
+        if (null !== $this->valueDate) $json['valueDate'] = $this->valueDate;
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime;
+        if (null !== $this->valueTime) $json['valueTime'] = $this->valueTime;
+        if (null !== $this->valueString) $json['valueString'] = $this->valueString;
+        if (null !== $this->valueUri) $json['valueUri'] = $this->valueUri;
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment;
+        if (null !== $this->valueCoding) $json['valueCoding'] = $this->valueCoding;
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity;
+        if (null !== $this->valueReference) $json['valueReference'] = $this->valueReference;
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                $json['item'][] = $item;
             }
         }
         return $json;

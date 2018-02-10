@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -406,18 +406,18 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->group) $json['group'] = json_encode($this->group);
-        if (null !== $this->groupDisplay) $json['groupDisplay'] = json_encode($this->groupDisplay);
-        if (null !== $this->subGroup) $json['subGroup'] = json_encode($this->subGroup);
-        if (null !== $this->subGroupDisplay) $json['subGroupDisplay'] = json_encode($this->subGroupDisplay);
-        if (null !== $this->plan) $json['plan'] = json_encode($this->plan);
-        if (null !== $this->planDisplay) $json['planDisplay'] = json_encode($this->planDisplay);
-        if (null !== $this->subPlan) $json['subPlan'] = json_encode($this->subPlan);
-        if (null !== $this->subPlanDisplay) $json['subPlanDisplay'] = json_encode($this->subPlanDisplay);
-        if (null !== $this->class) $json['class'] = json_encode($this->class);
-        if (null !== $this->classDisplay) $json['classDisplay'] = json_encode($this->classDisplay);
-        if (null !== $this->subClass) $json['subClass'] = json_encode($this->subClass);
-        if (null !== $this->subClassDisplay) $json['subClassDisplay'] = json_encode($this->subClassDisplay);
+        if (null !== $this->group) $json['group'] = $this->group;
+        if (null !== $this->groupDisplay) $json['groupDisplay'] = $this->groupDisplay;
+        if (null !== $this->subGroup) $json['subGroup'] = $this->subGroup;
+        if (null !== $this->subGroupDisplay) $json['subGroupDisplay'] = $this->subGroupDisplay;
+        if (null !== $this->plan) $json['plan'] = $this->plan;
+        if (null !== $this->planDisplay) $json['planDisplay'] = $this->planDisplay;
+        if (null !== $this->subPlan) $json['subPlan'] = $this->subPlan;
+        if (null !== $this->subPlanDisplay) $json['subPlanDisplay'] = $this->subPlanDisplay;
+        if (null !== $this->class) $json['class'] = $this->class;
+        if (null !== $this->classDisplay) $json['classDisplay'] = $this->classDisplay;
+        if (null !== $this->subClass) $json['subClass'] = $this->subClass;
+        if (null !== $this->subClassDisplay) $json['subClassDisplay'] = $this->subClassDisplay;
         return $json;
     }
 

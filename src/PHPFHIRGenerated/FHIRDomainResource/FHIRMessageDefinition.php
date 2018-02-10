@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -694,62 +694,62 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (null !== $this->url) $json['url'] = $this->url;
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
-        if (null !== $this->base) $json['base'] = json_encode($this->base);
+        if (null !== $this->purpose) $json['purpose'] = $this->purpose;
+        if (null !== $this->copyright) $json['copyright'] = $this->copyright;
+        if (null !== $this->base) $json['base'] = $this->base;
         if (0 < count($this->parent)) {
             $json['parent'] = [];
             foreach($this->parent as $parent) {
-                $json['parent'][] = json_encode($parent);
+                $json['parent'][] = $parent;
             }
         }
         if (0 < count($this->replaces)) {
             $json['replaces'] = [];
             foreach($this->replaces as $replaces) {
-                $json['replaces'][] = json_encode($replaces);
+                $json['replaces'][] = $replaces;
             }
         }
-        if (null !== $this->event) $json['event'] = json_encode($this->event);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (null !== $this->event) $json['event'] = $this->event;
+        if (null !== $this->category) $json['category'] = $this->category;
         if (0 < count($this->focus)) {
             $json['focus'] = [];
             foreach($this->focus as $focus) {
-                $json['focus'][] = json_encode($focus);
+                $json['focus'][] = $focus;
             }
         }
-        if (null !== $this->responseRequired) $json['responseRequired'] = json_encode($this->responseRequired);
+        if (null !== $this->responseRequired) $json['responseRequired'] = $this->responseRequired;
         if (0 < count($this->allowedResponse)) {
             $json['allowedResponse'] = [];
             foreach($this->allowedResponse as $allowedResponse) {
-                $json['allowedResponse'][] = json_encode($allowedResponse);
+                $json['allowedResponse'][] = $allowedResponse;
             }
         }
         return $json;

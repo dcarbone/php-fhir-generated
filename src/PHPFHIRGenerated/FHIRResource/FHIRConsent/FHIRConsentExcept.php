@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -354,49 +354,49 @@ class FHIRConsentExcept extends FHIRBackboneElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->period) $json['period'] = $this->period;
         if (0 < count($this->actor)) {
             $json['actor'] = [];
             foreach($this->actor as $actor) {
-                $json['actor'][] = json_encode($actor);
+                $json['actor'][] = $actor;
             }
         }
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         if (0 < count($this->securityLabel)) {
             $json['securityLabel'] = [];
             foreach($this->securityLabel as $securityLabel) {
-                $json['securityLabel'][] = json_encode($securityLabel);
+                $json['securityLabel'][] = $securityLabel;
             }
         }
         if (0 < count($this->purpose)) {
             $json['purpose'] = [];
             foreach($this->purpose as $purpose) {
-                $json['purpose'][] = json_encode($purpose);
+                $json['purpose'][] = $purpose;
             }
         }
         if (0 < count($this->class)) {
             $json['class'] = [];
             foreach($this->class as $class) {
-                $json['class'][] = json_encode($class);
+                $json['class'][] = $class;
             }
         }
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                $json['code'][] = $code;
             }
         }
-        if (null !== $this->dataPeriod) $json['dataPeriod'] = json_encode($this->dataPeriod);
+        if (null !== $this->dataPeriod) $json['dataPeriod'] = $this->dataPeriod;
         if (0 < count($this->data)) {
             $json['data'] = [];
             foreach($this->data as $data) {
-                $json['data'][] = json_encode($data);
+                $json['data'][] = $data;
             }
         }
         return $json;

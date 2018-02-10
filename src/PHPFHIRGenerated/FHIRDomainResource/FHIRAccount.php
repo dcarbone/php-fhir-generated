@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -414,28 +414,28 @@ This period may be different to the coveragePeriod which is the duration of time
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->balance) $json['balance'] = json_encode($this->balance);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->active) $json['active'] = $this->active;
+        if (null !== $this->balance) $json['balance'] = $this->balance;
         if (0 < count($this->coverage)) {
             $json['coverage'] = [];
             foreach($this->coverage as $coverage) {
-                $json['coverage'][] = json_encode($coverage);
+                $json['coverage'][] = $coverage;
             }
         }
-        if (null !== $this->owner) $json['owner'] = json_encode($this->owner);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->owner) $json['owner'] = $this->owner;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->guarantor)) {
             $json['guarantor'] = [];
             foreach($this->guarantor as $guarantor) {
-                $json['guarantor'][] = json_encode($guarantor);
+                $json['guarantor'][] = $guarantor;
             }
         }
         return $json;

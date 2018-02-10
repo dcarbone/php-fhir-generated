@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -225,29 +225,29 @@ class FHIRDataRequirement extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->type) $json['type'] = $this->type;
         if (0 < count($this->profile)) {
             $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = json_encode($profile);
+                $json['profile'][] = $profile;
             }
         }
         if (0 < count($this->mustSupport)) {
             $json['mustSupport'] = [];
             foreach($this->mustSupport as $mustSupport) {
-                $json['mustSupport'][] = json_encode($mustSupport);
+                $json['mustSupport'][] = $mustSupport;
             }
         }
         if (0 < count($this->codeFilter)) {
             $json['codeFilter'] = [];
             foreach($this->codeFilter as $codeFilter) {
-                $json['codeFilter'][] = json_encode($codeFilter);
+                $json['codeFilter'][] = $codeFilter;
             }
         }
         if (0 < count($this->dateFilter)) {
             $json['dateFilter'] = [];
             foreach($this->dateFilter as $dateFilter) {
-                $json['dateFilter'][] = json_encode($dateFilter);
+                $json['dateFilter'][] = $dateFilter;
             }
         }
         return $json;

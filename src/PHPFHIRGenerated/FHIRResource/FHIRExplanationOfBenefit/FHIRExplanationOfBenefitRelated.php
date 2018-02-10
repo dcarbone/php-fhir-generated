@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,9 +172,9 @@ class FHIRExplanationOfBenefitRelated extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->claim) $json['claim'] = json_encode($this->claim);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (null !== $this->claim) $json['claim'] = $this->claim;
+        if (null !== $this->relationship) $json['relationship'] = $this->relationship;
+        if (null !== $this->reference) $json['reference'] = $this->reference;
         return $json;
     }
 

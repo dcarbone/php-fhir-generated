@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,19 +69,16 @@ use PHPFHIRGenerated\FHIRElement;
 class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
 {
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $boundsDuration = null;
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $boundsRange = null;
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $boundsPeriod = null;
@@ -176,7 +173,6 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     private $_fhirElementName = 'Timing.Repeat';
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getBoundsDuration()
@@ -185,7 +181,6 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $boundsDuration
      * @return $this
      */
@@ -196,7 +191,6 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getBoundsRange()
@@ -205,7 +199,6 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $boundsRange
      * @return $this
      */
@@ -216,7 +209,6 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getBoundsPeriod()
@@ -225,7 +217,6 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Either a duration for the length of the timing schedule, a range of possible length, or outer bounds for start and/or end limits of the timing schedule. (choose any one of bounds*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $boundsPeriod
      * @return $this
      */
@@ -537,38 +528,38 @@ class FHIRTimingRepeat extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->boundsDuration) $json['boundsDuration'] = json_encode($this->boundsDuration);
-        if (null !== $this->boundsRange) $json['boundsRange'] = json_encode($this->boundsRange);
-        if (null !== $this->boundsPeriod) $json['boundsPeriod'] = json_encode($this->boundsPeriod);
-        if (null !== $this->count) $json['count'] = json_encode($this->count);
-        if (null !== $this->countMax) $json['countMax'] = json_encode($this->countMax);
-        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
-        if (null !== $this->durationMax) $json['durationMax'] = json_encode($this->durationMax);
-        if (null !== $this->durationUnit) $json['durationUnit'] = json_encode($this->durationUnit);
-        if (null !== $this->frequency) $json['frequency'] = json_encode($this->frequency);
-        if (null !== $this->frequencyMax) $json['frequencyMax'] = json_encode($this->frequencyMax);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->periodMax) $json['periodMax'] = json_encode($this->periodMax);
-        if (null !== $this->periodUnit) $json['periodUnit'] = json_encode($this->periodUnit);
+        if (null !== $this->boundsDuration) $json['boundsDuration'] = $this->boundsDuration;
+        if (null !== $this->boundsRange) $json['boundsRange'] = $this->boundsRange;
+        if (null !== $this->boundsPeriod) $json['boundsPeriod'] = $this->boundsPeriod;
+        if (null !== $this->count) $json['count'] = $this->count;
+        if (null !== $this->countMax) $json['countMax'] = $this->countMax;
+        if (null !== $this->duration) $json['duration'] = $this->duration;
+        if (null !== $this->durationMax) $json['durationMax'] = $this->durationMax;
+        if (null !== $this->durationUnit) $json['durationUnit'] = $this->durationUnit;
+        if (null !== $this->frequency) $json['frequency'] = $this->frequency;
+        if (null !== $this->frequencyMax) $json['frequencyMax'] = $this->frequencyMax;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->periodMax) $json['periodMax'] = $this->periodMax;
+        if (null !== $this->periodUnit) $json['periodUnit'] = $this->periodUnit;
         if (0 < count($this->dayOfWeek)) {
             $json['dayOfWeek'] = [];
             foreach($this->dayOfWeek as $dayOfWeek) {
-                $json['dayOfWeek'][] = json_encode($dayOfWeek);
+                $json['dayOfWeek'][] = $dayOfWeek;
             }
         }
         if (0 < count($this->timeOfDay)) {
             $json['timeOfDay'] = [];
             foreach($this->timeOfDay as $timeOfDay) {
-                $json['timeOfDay'][] = json_encode($timeOfDay);
+                $json['timeOfDay'][] = $timeOfDay;
             }
         }
         if (0 < count($this->when)) {
             $json['when'] = [];
             foreach($this->when as $when) {
-                $json['when'][] = json_encode($when);
+                $json['when'][] = $when;
             }
         }
-        if (null !== $this->offset) $json['offset'] = json_encode($this->offset);
+        if (null !== $this->offset) $json['offset'] = $this->offset;
         return $json;
     }
 

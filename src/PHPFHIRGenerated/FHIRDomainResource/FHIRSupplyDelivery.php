@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,19 +111,16 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     public $suppliedItem = null;
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $occurrenceTiming = null;
@@ -292,7 +289,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -301,7 +297,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -312,7 +307,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -321,7 +315,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -332,7 +325,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
@@ -341,7 +333,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or time(s) the activity occurred. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
      * @return $this
      */
@@ -434,32 +425,32 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->suppliedItem) $json['suppliedItem'] = json_encode($this->suppliedItem);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
-        if (null !== $this->supplier) $json['supplier'] = json_encode($this->supplier);
-        if (null !== $this->destination) $json['destination'] = json_encode($this->destination);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->suppliedItem) $json['suppliedItem'] = $this->suppliedItem;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = $this->occurrenceTiming;
+        if (null !== $this->supplier) $json['supplier'] = $this->supplier;
+        if (null !== $this->destination) $json['destination'] = $this->destination;
         if (0 < count($this->receiver)) {
             $json['receiver'] = [];
             foreach($this->receiver as $receiver) {
-                $json['receiver'][] = json_encode($receiver);
+                $json['receiver'][] = $receiver;
             }
         }
         return $json;

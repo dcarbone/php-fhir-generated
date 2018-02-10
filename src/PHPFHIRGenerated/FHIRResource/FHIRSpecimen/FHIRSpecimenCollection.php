@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,13 +74,11 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     public $collector = null;
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $collectedDateTime = null;
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $collectedPeriod = null;
@@ -129,7 +127,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getCollectedDateTime()
@@ -138,7 +135,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $collectedDateTime
      * @return $this
      */
@@ -149,7 +145,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getCollectedPeriod()
@@ -158,7 +153,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $collectedPeriod
      * @return $this
      */
@@ -250,12 +244,12 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->collector) $json['collector'] = json_encode($this->collector);
-        if (null !== $this->collectedDateTime) $json['collectedDateTime'] = json_encode($this->collectedDateTime);
-        if (null !== $this->collectedPeriod) $json['collectedPeriod'] = json_encode($this->collectedPeriod);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (null !== $this->collector) $json['collector'] = $this->collector;
+        if (null !== $this->collectedDateTime) $json['collectedDateTime'] = $this->collectedDateTime;
+        if (null !== $this->collectedPeriod) $json['collectedPeriod'] = $this->collectedPeriod;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->method) $json['method'] = $this->method;
+        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite;
         return $json;
     }
 

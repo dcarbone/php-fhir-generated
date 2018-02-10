@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -281,25 +281,25 @@ class FHIRBodySite extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->active) $json['active'] = $this->active;
+        if (null !== $this->code) $json['code'] = $this->code;
         if (0 < count($this->qualifier)) {
             $json['qualifier'] = [];
             foreach($this->qualifier as $qualifier) {
-                $json['qualifier'][] = json_encode($qualifier);
+                $json['qualifier'][] = $qualifier;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->image)) {
             $json['image'] = [];
             foreach($this->image as $image) {
-                $json['image'][] = json_encode($image);
+                $json['image'][] = $image;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
         return $json;
     }
 

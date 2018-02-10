@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,13 +117,11 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     public $priority = null;
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $codeReference = null;
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $codeCodeableConcept = null;
@@ -141,19 +139,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $occurrenceTiming = null;
@@ -378,7 +373,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getCodeReference()
@@ -387,7 +381,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $codeReference
      * @return $this
      */
@@ -398,7 +391,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getCodeCodeableConcept()
@@ -407,7 +399,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $codeCodeableConcept
      * @return $this
      */
@@ -458,7 +449,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -467,7 +457,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -478,7 +467,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -487,7 +475,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -498,7 +485,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
@@ -507,7 +493,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
      * @return $this
      */
@@ -723,70 +708,70 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                $json['definition'][] = $definition;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->priorRequest)) {
             $json['priorRequest'] = [];
             foreach($this->priorRequest as $priorRequest) {
-                $json['priorRequest'][] = json_encode($priorRequest);
+                $json['priorRequest'][] = $priorRequest;
             }
         }
-        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = json_encode($this->groupIdentifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->codeReference) $json['codeReference'] = json_encode($this->codeReference);
-        if (null !== $this->codeCodeableConcept) $json['codeCodeableConcept'] = json_encode($this->codeCodeableConcept);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
-        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
-        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
-        if (null !== $this->performerType) $json['performerType'] = json_encode($this->performerType);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = $this->groupIdentifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->intent) $json['intent'] = $this->intent;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->codeReference) $json['codeReference'] = $this->codeReference;
+        if (null !== $this->codeCodeableConcept) $json['codeCodeableConcept'] = $this->codeCodeableConcept;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = $this->occurrenceTiming;
+        if (null !== $this->authoredOn) $json['authoredOn'] = $this->authoredOn;
+        if (null !== $this->requester) $json['requester'] = $this->requester;
+        if (null !== $this->performerType) $json['performerType'] = $this->performerType;
+        if (null !== $this->performer) $json['performer'] = $this->performer;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                $json['reasonReference'][] = $reasonReference;
             }
         }
         if (0 < count($this->supportingInfo)) {
             $json['supportingInfo'] = [];
             foreach($this->supportingInfo as $supportingInfo) {
-                $json['supportingInfo'][] = json_encode($supportingInfo);
+                $json['supportingInfo'][] = $supportingInfo;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->relevantHistory)) {
             $json['relevantHistory'] = [];
             foreach($this->relevantHistory as $relevantHistory) {
-                $json['relevantHistory'][] = json_encode($relevantHistory);
+                $json['relevantHistory'][] = $relevantHistory;
             }
         }
         return $json;

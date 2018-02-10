@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,28 +328,28 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->vaccineCode) $json['vaccineCode'] = json_encode($this->vaccineCode);
-        if (null !== $this->targetDisease) $json['targetDisease'] = json_encode($this->targetDisease);
-        if (null !== $this->doseNumber) $json['doseNumber'] = json_encode($this->doseNumber);
-        if (null !== $this->forecastStatus) $json['forecastStatus'] = json_encode($this->forecastStatus);
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->vaccineCode) $json['vaccineCode'] = $this->vaccineCode;
+        if (null !== $this->targetDisease) $json['targetDisease'] = $this->targetDisease;
+        if (null !== $this->doseNumber) $json['doseNumber'] = $this->doseNumber;
+        if (null !== $this->forecastStatus) $json['forecastStatus'] = $this->forecastStatus;
         if (0 < count($this->dateCriterion)) {
             $json['dateCriterion'] = [];
             foreach($this->dateCriterion as $dateCriterion) {
-                $json['dateCriterion'][] = json_encode($dateCriterion);
+                $json['dateCriterion'][] = $dateCriterion;
             }
         }
-        if (null !== $this->protocol) $json['protocol'] = json_encode($this->protocol);
+        if (null !== $this->protocol) $json['protocol'] = $this->protocol;
         if (0 < count($this->supportingImmunization)) {
             $json['supportingImmunization'] = [];
             foreach($this->supportingImmunization as $supportingImmunization) {
-                $json['supportingImmunization'][] = json_encode($supportingImmunization);
+                $json['supportingImmunization'][] = $supportingImmunization;
             }
         }
         if (0 < count($this->supportingPatientInformation)) {
             $json['supportingPatientInformation'] = [];
             foreach($this->supportingPatientInformation as $supportingPatientInformation) {
-                $json['supportingPatientInformation'][] = json_encode($supportingPatientInformation);
+                $json['supportingPatientInformation'][] = $supportingPatientInformation;
             }
         }
         return $json;

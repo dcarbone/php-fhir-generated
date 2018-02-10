@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -619,86 +619,86 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                $json['definition'][] = $definition;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->replaces)) {
             $json['replaces'] = [];
             foreach($this->replaces as $replaces) {
-                $json['replaces'][] = json_encode($replaces);
+                $json['replaces'][] = $replaces;
             }
         }
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->intent) $json['intent'] = $this->intent;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->period) $json['period'] = $this->period;
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = json_encode($author);
+                $json['author'][] = $author;
             }
         }
         if (0 < count($this->careTeam)) {
             $json['careTeam'] = [];
             foreach($this->careTeam as $careTeam) {
-                $json['careTeam'][] = json_encode($careTeam);
+                $json['careTeam'][] = $careTeam;
             }
         }
         if (0 < count($this->addresses)) {
             $json['addresses'] = [];
             foreach($this->addresses as $addresses) {
-                $json['addresses'][] = json_encode($addresses);
+                $json['addresses'][] = $addresses;
             }
         }
         if (0 < count($this->supportingInfo)) {
             $json['supportingInfo'] = [];
             foreach($this->supportingInfo as $supportingInfo) {
-                $json['supportingInfo'][] = json_encode($supportingInfo);
+                $json['supportingInfo'][] = $supportingInfo;
             }
         }
         if (0 < count($this->goal)) {
             $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = json_encode($goal);
+                $json['goal'][] = $goal;
             }
         }
         if (0 < count($this->activity)) {
             $json['activity'] = [];
             foreach($this->activity as $activity) {
-                $json['activity'][] = json_encode($activity);
+                $json['activity'][] = $activity;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

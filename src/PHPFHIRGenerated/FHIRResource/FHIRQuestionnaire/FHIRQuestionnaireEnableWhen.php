@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,73 +80,61 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     public $hasAnswer = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $answerBoolean = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $answerDecimal = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $answerInteger = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $answerDate = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $answerDateTime = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $answerTime = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $answerString = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $answerUri = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $answerAttachment = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $answerCoding = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $answerQuantity = null;
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $answerReference = null;
@@ -197,7 +185,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAnswerBoolean()
@@ -206,7 +193,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $answerBoolean
      * @return $this
      */
@@ -217,7 +203,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getAnswerDecimal()
@@ -226,7 +211,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $answerDecimal
      * @return $this
      */
@@ -237,7 +221,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getAnswerInteger()
@@ -246,7 +229,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $answerInteger
      * @return $this
      */
@@ -257,7 +239,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getAnswerDate()
@@ -266,7 +247,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $answerDate
      * @return $this
      */
@@ -277,7 +257,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getAnswerDateTime()
@@ -286,7 +265,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $answerDateTime
      * @return $this
      */
@@ -297,7 +275,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getAnswerTime()
@@ -306,7 +283,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $answerTime
      * @return $this
      */
@@ -317,7 +293,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getAnswerString()
@@ -326,7 +301,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $answerString
      * @return $this
      */
@@ -337,7 +311,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getAnswerUri()
@@ -346,7 +319,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $answerUri
      * @return $this
      */
@@ -357,7 +329,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getAnswerAttachment()
@@ -366,7 +337,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $answerAttachment
      * @return $this
      */
@@ -377,7 +347,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getAnswerCoding()
@@ -386,7 +355,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $answerCoding
      * @return $this
      */
@@ -397,7 +365,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getAnswerQuantity()
@@ -406,7 +373,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $answerQuantity
      * @return $this
      */
@@ -417,7 +383,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getAnswerReference()
@@ -426,7 +391,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     }
 
     /**
-     * An answer that the referenced question must match in order for the item to be enabled. (choose any one of answer*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $answerReference
      * @return $this
      */
@@ -458,20 +422,20 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->question) $json['question'] = json_encode($this->question);
-        if (null !== $this->hasAnswer) $json['hasAnswer'] = json_encode($this->hasAnswer);
-        if (null !== $this->answerBoolean) $json['answerBoolean'] = json_encode($this->answerBoolean);
-        if (null !== $this->answerDecimal) $json['answerDecimal'] = json_encode($this->answerDecimal);
-        if (null !== $this->answerInteger) $json['answerInteger'] = json_encode($this->answerInteger);
-        if (null !== $this->answerDate) $json['answerDate'] = json_encode($this->answerDate);
-        if (null !== $this->answerDateTime) $json['answerDateTime'] = json_encode($this->answerDateTime);
-        if (null !== $this->answerTime) $json['answerTime'] = json_encode($this->answerTime);
-        if (null !== $this->answerString) $json['answerString'] = json_encode($this->answerString);
-        if (null !== $this->answerUri) $json['answerUri'] = json_encode($this->answerUri);
-        if (null !== $this->answerAttachment) $json['answerAttachment'] = json_encode($this->answerAttachment);
-        if (null !== $this->answerCoding) $json['answerCoding'] = json_encode($this->answerCoding);
-        if (null !== $this->answerQuantity) $json['answerQuantity'] = json_encode($this->answerQuantity);
-        if (null !== $this->answerReference) $json['answerReference'] = json_encode($this->answerReference);
+        if (null !== $this->question) $json['question'] = $this->question;
+        if (null !== $this->hasAnswer) $json['hasAnswer'] = $this->hasAnswer;
+        if (null !== $this->answerBoolean) $json['answerBoolean'] = $this->answerBoolean;
+        if (null !== $this->answerDecimal) $json['answerDecimal'] = $this->answerDecimal;
+        if (null !== $this->answerInteger) $json['answerInteger'] = $this->answerInteger;
+        if (null !== $this->answerDate) $json['answerDate'] = $this->answerDate;
+        if (null !== $this->answerDateTime) $json['answerDateTime'] = $this->answerDateTime;
+        if (null !== $this->answerTime) $json['answerTime'] = $this->answerTime;
+        if (null !== $this->answerString) $json['answerString'] = $this->answerString;
+        if (null !== $this->answerUri) $json['answerUri'] = $this->answerUri;
+        if (null !== $this->answerAttachment) $json['answerAttachment'] = $this->answerAttachment;
+        if (null !== $this->answerCoding) $json['answerCoding'] = $this->answerCoding;
+        if (null !== $this->answerQuantity) $json['answerQuantity'] = $this->answerQuantity;
+        if (null !== $this->answerReference) $json['answerReference'] = $this->answerReference;
         return $json;
     }
 

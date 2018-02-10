@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,13 +111,11 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
@@ -328,7 +326,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -337,7 +334,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -348,7 +344,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -357,7 +352,6 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date and time(s) at which the media was collected. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -593,40 +587,40 @@ class FHIRMedia extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->subtype) $json['subtype'] = json_encode($this->subtype);
-        if (null !== $this->view) $json['view'] = json_encode($this->view);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->operator) $json['operator'] = json_encode($this->operator);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->subtype) $json['subtype'] = $this->subtype;
+        if (null !== $this->view) $json['view'] = $this->view;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->operator) $json['operator'] = $this->operator;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                $json['reasonCode'][] = $reasonCode;
             }
         }
-        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
-        if (null !== $this->device) $json['device'] = json_encode($this->device);
-        if (null !== $this->height) $json['height'] = json_encode($this->height);
-        if (null !== $this->width) $json['width'] = json_encode($this->width);
-        if (null !== $this->frames) $json['frames'] = json_encode($this->frames);
-        if (null !== $this->duration) $json['duration'] = json_encode($this->duration);
-        if (null !== $this->content) $json['content'] = json_encode($this->content);
+        if (null !== $this->bodySite) $json['bodySite'] = $this->bodySite;
+        if (null !== $this->device) $json['device'] = $this->device;
+        if (null !== $this->height) $json['height'] = $this->height;
+        if (null !== $this->width) $json['width'] = $this->width;
+        if (null !== $this->frames) $json['frames'] = $this->frames;
+        if (null !== $this->duration) $json['duration'] = $this->duration;
+        if (null !== $this->content) $json['content'] = $this->content;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

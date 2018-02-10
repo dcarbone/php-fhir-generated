@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,13 +105,11 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     public $subject = null;
 
     /**
-     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $startDate = null;
 
     /**
-     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $startCodeableConcept = null;
@@ -290,7 +288,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getStartDate()
@@ -299,7 +296,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $startDate
      * @return $this
      */
@@ -310,7 +306,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getStartCodeableConcept()
@@ -319,7 +314,6 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The date or event after which the goal should begin being pursued. (choose any one of start*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $startCodeableConcept
      * @return $this
      */
@@ -515,47 +509,47 @@ class FHIRGoal extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->startDate) $json['startDate'] = json_encode($this->startDate);
-        if (null !== $this->startCodeableConcept) $json['startCodeableConcept'] = json_encode($this->startCodeableConcept);
-        if (null !== $this->target) $json['target'] = json_encode($this->target);
-        if (null !== $this->statusDate) $json['statusDate'] = json_encode($this->statusDate);
-        if (null !== $this->statusReason) $json['statusReason'] = json_encode($this->statusReason);
-        if (null !== $this->expressedBy) $json['expressedBy'] = json_encode($this->expressedBy);
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->startDate) $json['startDate'] = $this->startDate;
+        if (null !== $this->startCodeableConcept) $json['startCodeableConcept'] = $this->startCodeableConcept;
+        if (null !== $this->target) $json['target'] = $this->target;
+        if (null !== $this->statusDate) $json['statusDate'] = $this->statusDate;
+        if (null !== $this->statusReason) $json['statusReason'] = $this->statusReason;
+        if (null !== $this->expressedBy) $json['expressedBy'] = $this->expressedBy;
         if (0 < count($this->addresses)) {
             $json['addresses'] = [];
             foreach($this->addresses as $addresses) {
-                $json['addresses'][] = json_encode($addresses);
+                $json['addresses'][] = $addresses;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->outcomeCode)) {
             $json['outcomeCode'] = [];
             foreach($this->outcomeCode as $outcomeCode) {
-                $json['outcomeCode'][] = json_encode($outcomeCode);
+                $json['outcomeCode'][] = $outcomeCode;
             }
         }
         if (0 < count($this->outcomeReference)) {
             $json['outcomeReference'] = [];
             foreach($this->outcomeReference as $outcomeReference) {
-                $json['outcomeReference'][] = json_encode($outcomeReference);
+                $json['outcomeReference'][] = $outcomeReference;
             }
         }
         return $json;

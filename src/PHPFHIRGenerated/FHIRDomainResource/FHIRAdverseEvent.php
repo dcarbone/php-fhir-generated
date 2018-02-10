@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -512,45 +512,45 @@ class FHIRAdverseEvent extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->date) $json['date'] = $this->date;
         if (0 < count($this->reaction)) {
             $json['reaction'] = [];
             foreach($this->reaction as $reaction) {
-                $json['reaction'][] = json_encode($reaction);
+                $json['reaction'][] = $reaction;
             }
         }
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (null !== $this->seriousness) $json['seriousness'] = json_encode($this->seriousness);
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
-        if (null !== $this->recorder) $json['recorder'] = json_encode($this->recorder);
-        if (null !== $this->eventParticipant) $json['eventParticipant'] = json_encode($this->eventParticipant);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->location) $json['location'] = $this->location;
+        if (null !== $this->seriousness) $json['seriousness'] = $this->seriousness;
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
+        if (null !== $this->recorder) $json['recorder'] = $this->recorder;
+        if (null !== $this->eventParticipant) $json['eventParticipant'] = $this->eventParticipant;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->suspectEntity)) {
             $json['suspectEntity'] = [];
             foreach($this->suspectEntity as $suspectEntity) {
-                $json['suspectEntity'][] = json_encode($suspectEntity);
+                $json['suspectEntity'][] = $suspectEntity;
             }
         }
         if (0 < count($this->subjectMedicalHistory)) {
             $json['subjectMedicalHistory'] = [];
             foreach($this->subjectMedicalHistory as $subjectMedicalHistory) {
-                $json['subjectMedicalHistory'][] = json_encode($subjectMedicalHistory);
+                $json['subjectMedicalHistory'][] = $subjectMedicalHistory;
             }
         }
         if (0 < count($this->referenceDocument)) {
             $json['referenceDocument'] = [];
             foreach($this->referenceDocument as $referenceDocument) {
-                $json['referenceDocument'][] = json_encode($referenceDocument);
+                $json['referenceDocument'][] = $referenceDocument;
             }
         }
         if (0 < count($this->study)) {
             $json['study'] = [];
             foreach($this->study as $study) {
-                $json['study'][] = json_encode($study);
+                $json['study'][] = $study;
             }
         }
         return $json;

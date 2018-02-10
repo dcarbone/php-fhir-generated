@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,14 +302,14 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->chromosome) $json['chromosome'] = json_encode($this->chromosome);
-        if (null !== $this->genomeBuild) $json['genomeBuild'] = json_encode($this->genomeBuild);
-        if (null !== $this->referenceSeqId) $json['referenceSeqId'] = json_encode($this->referenceSeqId);
-        if (null !== $this->referenceSeqPointer) $json['referenceSeqPointer'] = json_encode($this->referenceSeqPointer);
-        if (null !== $this->referenceSeqString) $json['referenceSeqString'] = json_encode($this->referenceSeqString);
-        if (null !== $this->strand) $json['strand'] = json_encode($this->strand);
-        if (null !== $this->windowStart) $json['windowStart'] = json_encode($this->windowStart);
-        if (null !== $this->windowEnd) $json['windowEnd'] = json_encode($this->windowEnd);
+        if (null !== $this->chromosome) $json['chromosome'] = $this->chromosome;
+        if (null !== $this->genomeBuild) $json['genomeBuild'] = $this->genomeBuild;
+        if (null !== $this->referenceSeqId) $json['referenceSeqId'] = $this->referenceSeqId;
+        if (null !== $this->referenceSeqPointer) $json['referenceSeqPointer'] = $this->referenceSeqPointer;
+        if (null !== $this->referenceSeqString) $json['referenceSeqString'] = $this->referenceSeqString;
+        if (null !== $this->strand) $json['strand'] = $this->strand;
+        if (null !== $this->windowStart) $json['windowStart'] = $this->windowStart;
+        if (null !== $this->windowEnd) $json['windowEnd'] = $this->windowEnd;
         return $json;
     }
 

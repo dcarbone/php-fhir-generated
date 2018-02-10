@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -411,43 +411,43 @@ class FHIRSpecimen extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->accessionIdentifier) $json['accessionIdentifier'] = json_encode($this->accessionIdentifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->receivedTime) $json['receivedTime'] = json_encode($this->receivedTime);
+        if (null !== $this->accessionIdentifier) $json['accessionIdentifier'] = $this->accessionIdentifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->receivedTime) $json['receivedTime'] = $this->receivedTime;
         if (0 < count($this->parent)) {
             $json['parent'] = [];
             foreach($this->parent as $parent) {
-                $json['parent'][] = json_encode($parent);
+                $json['parent'][] = $parent;
             }
         }
         if (0 < count($this->request)) {
             $json['request'] = [];
             foreach($this->request as $request) {
-                $json['request'][] = json_encode($request);
+                $json['request'][] = $request;
             }
         }
-        if (null !== $this->collection) $json['collection'] = json_encode($this->collection);
+        if (null !== $this->collection) $json['collection'] = $this->collection;
         if (0 < count($this->processing)) {
             $json['processing'] = [];
             foreach($this->processing as $processing) {
-                $json['processing'][] = json_encode($processing);
+                $json['processing'][] = $processing;
             }
         }
         if (0 < count($this->container)) {
             $json['container'] = [];
             foreach($this->container as $container) {
-                $json['container'][] = json_encode($container);
+                $json['container'][] = $container;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

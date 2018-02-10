@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,31 +117,26 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     public $patient = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $onsetDateTime = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $onsetAge = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $onsetPeriod = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $onsetRange = null;
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $onsetString = null;
@@ -348,7 +343,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOnsetDateTime()
@@ -357,7 +351,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $onsetDateTime
      * @return $this
      */
@@ -368,7 +361,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public function getOnsetAge()
@@ -377,7 +369,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
      * @return $this
      */
@@ -388,7 +379,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOnsetPeriod()
@@ -397,7 +387,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $onsetPeriod
      * @return $this
      */
@@ -408,7 +397,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getOnsetRange()
@@ -417,7 +405,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $onsetRange
      * @return $this
      */
@@ -428,7 +415,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getOnsetString()
@@ -437,7 +423,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * Estimated or actual date,  date-time, or age when allergy or intolerance was identified. (choose any one of onset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $onsetString
      * @return $this
      */
@@ -593,40 +578,40 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->clinicalStatus) $json['clinicalStatus'] = json_encode($this->clinicalStatus);
-        if (null !== $this->verificationStatus) $json['verificationStatus'] = json_encode($this->verificationStatus);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->clinicalStatus) $json['clinicalStatus'] = $this->clinicalStatus;
+        if (null !== $this->verificationStatus) $json['verificationStatus'] = $this->verificationStatus;
+        if (null !== $this->type) $json['type'] = $this->type;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->criticality) $json['criticality'] = json_encode($this->criticality);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->onsetDateTime) $json['onsetDateTime'] = json_encode($this->onsetDateTime);
-        if (null !== $this->onsetAge) $json['onsetAge'] = json_encode($this->onsetAge);
-        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = json_encode($this->onsetPeriod);
-        if (null !== $this->onsetRange) $json['onsetRange'] = json_encode($this->onsetRange);
-        if (null !== $this->onsetString) $json['onsetString'] = json_encode($this->onsetString);
-        if (null !== $this->assertedDate) $json['assertedDate'] = json_encode($this->assertedDate);
-        if (null !== $this->recorder) $json['recorder'] = json_encode($this->recorder);
-        if (null !== $this->asserter) $json['asserter'] = json_encode($this->asserter);
-        if (null !== $this->lastOccurrence) $json['lastOccurrence'] = json_encode($this->lastOccurrence);
+        if (null !== $this->criticality) $json['criticality'] = $this->criticality;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->onsetDateTime) $json['onsetDateTime'] = $this->onsetDateTime;
+        if (null !== $this->onsetAge) $json['onsetAge'] = $this->onsetAge;
+        if (null !== $this->onsetPeriod) $json['onsetPeriod'] = $this->onsetPeriod;
+        if (null !== $this->onsetRange) $json['onsetRange'] = $this->onsetRange;
+        if (null !== $this->onsetString) $json['onsetString'] = $this->onsetString;
+        if (null !== $this->assertedDate) $json['assertedDate'] = $this->assertedDate;
+        if (null !== $this->recorder) $json['recorder'] = $this->recorder;
+        if (null !== $this->asserter) $json['asserter'] = $this->asserter;
+        if (null !== $this->lastOccurrence) $json['lastOccurrence'] = $this->lastOccurrence;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->reaction)) {
             $json['reaction'] = [];
             foreach($this->reaction as $reaction) {
-                $json['reaction'][] = json_encode($reaction);
+                $json['reaction'][] = $reaction;
             }
         }
         return $json;

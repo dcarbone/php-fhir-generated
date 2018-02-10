@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,13 +74,11 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     public $sequence = null;
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $diagnosisCodeableConcept = null;
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $diagnosisReference = null;
@@ -123,7 +121,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getDiagnosisCodeableConcept()
@@ -132,7 +129,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $diagnosisCodeableConcept
      * @return $this
      */
@@ -143,7 +139,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getDiagnosisReference()
@@ -152,7 +147,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     }
 
     /**
-     * The diagnosis. (choose any one of diagnosis*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $diagnosisReference
      * @return $this
      */
@@ -224,16 +218,16 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement implements \
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->diagnosisCodeableConcept) $json['diagnosisCodeableConcept'] = json_encode($this->diagnosisCodeableConcept);
-        if (null !== $this->diagnosisReference) $json['diagnosisReference'] = json_encode($this->diagnosisReference);
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
+        if (null !== $this->diagnosisCodeableConcept) $json['diagnosisCodeableConcept'] = $this->diagnosisCodeableConcept;
+        if (null !== $this->diagnosisReference) $json['diagnosisReference'] = $this->diagnosisReference;
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
-        if (null !== $this->packageCode) $json['packageCode'] = json_encode($this->packageCode);
+        if (null !== $this->packageCode) $json['packageCode'] = $this->packageCode;
         return $json;
     }
 

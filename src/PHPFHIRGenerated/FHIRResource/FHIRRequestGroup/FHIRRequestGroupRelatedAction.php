@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,13 +80,11 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     public $relationship = null;
 
     /**
-     * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before. (choose any one of offset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $offsetDuration = null;
 
     /**
-     * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before. (choose any one of offset*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $offsetRange = null;
@@ -137,7 +135,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before. (choose any one of offset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getOffsetDuration()
@@ -146,7 +143,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before. (choose any one of offset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $offsetDuration
      * @return $this
      */
@@ -157,7 +153,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before. (choose any one of offset*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getOffsetRange()
@@ -166,7 +161,6 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     }
 
     /**
-     * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before. (choose any one of offset*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $offsetRange
      * @return $this
      */
@@ -198,10 +192,10 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement implements \Json
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->actionId) $json['actionId'] = json_encode($this->actionId);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
-        if (null !== $this->offsetDuration) $json['offsetDuration'] = json_encode($this->offsetDuration);
-        if (null !== $this->offsetRange) $json['offsetRange'] = json_encode($this->offsetRange);
+        if (null !== $this->actionId) $json['actionId'] = $this->actionId;
+        if (null !== $this->relationship) $json['relationship'] = $this->relationship;
+        if (null !== $this->offsetDuration) $json['offsetDuration'] = $this->offsetDuration;
+        if (null !== $this->offsetRange) $json['offsetRange'] = $this->offsetRange;
         return $json;
     }
 

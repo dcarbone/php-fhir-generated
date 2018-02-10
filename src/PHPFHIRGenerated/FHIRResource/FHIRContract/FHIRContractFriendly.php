@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Human readable rendering of this Contract in a format and representation intended to enhance comprehension and ensure understandability. (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $contentAttachment = null;
 
     /**
-     * Human readable rendering of this Contract in a format and representation intended to enhance comprehension and ensure understandability. (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $contentReference = null;
@@ -85,7 +83,6 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     private $_fhirElementName = 'Contract.Friendly';
 
     /**
-     * Human readable rendering of this Contract in a format and representation intended to enhance comprehension and ensure understandability. (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getContentAttachment()
@@ -94,7 +91,6 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Human readable rendering of this Contract in a format and representation intended to enhance comprehension and ensure understandability. (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $contentAttachment
      * @return $this
      */
@@ -105,7 +101,6 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Human readable rendering of this Contract in a format and representation intended to enhance comprehension and ensure understandability. (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getContentReference()
@@ -114,7 +109,6 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     }
 
     /**
-     * Human readable rendering of this Contract in a format and representation intended to enhance comprehension and ensure understandability. (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $contentReference
      * @return $this
      */
@@ -146,8 +140,8 @@ class FHIRContractFriendly extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->contentAttachment) $json['contentAttachment'] = json_encode($this->contentAttachment);
-        if (null !== $this->contentReference) $json['contentReference'] = json_encode($this->contentReference);
+        if (null !== $this->contentAttachment) $json['contentAttachment'] = $this->contentAttachment;
+        if (null !== $this->contentReference) $json['contentReference'] = $this->contentReference;
         return $json;
     }
 

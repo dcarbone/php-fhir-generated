@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,12 +250,12 @@ class FHIRExplanationOfBenefitPayment extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->adjustment) $json['adjustment'] = json_encode($this->adjustment);
-        if (null !== $this->adjustmentReason) $json['adjustmentReason'] = json_encode($this->adjustmentReason);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->adjustment) $json['adjustment'] = $this->adjustment;
+        if (null !== $this->adjustmentReason) $json['adjustmentReason'] = $this->adjustmentReason;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->amount) $json['amount'] = $this->amount;
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -116,31 +116,26 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     public $relatedAction = array();
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $timingDuration = null;
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $timingRange = null;
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $timingTiming = null;
@@ -365,7 +360,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
@@ -374,7 +368,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
@@ -385,7 +378,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
@@ -394,7 +386,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
@@ -405,7 +396,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public function getTimingDuration()
@@ -414,7 +404,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
      * @return $this
      */
@@ -425,7 +414,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getTimingRange()
@@ -434,7 +422,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $timingRange
      * @return $this
      */
@@ -445,7 +432,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getTimingTiming()
@@ -454,7 +440,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     }
 
     /**
-     * An optional value describing when the action should be performed. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $timingTiming
      * @return $this
      */
@@ -666,56 +651,56 @@ class FHIRRequestGroupAction extends FHIRBackboneElement implements \JsonSeriali
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->label) $json['label'] = json_encode($this->label);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->textEquivalent) $json['textEquivalent'] = json_encode($this->textEquivalent);
+        if (null !== $this->label) $json['label'] = $this->label;
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->textEquivalent) $json['textEquivalent'] = $this->textEquivalent;
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                $json['code'][] = $code;
             }
         }
         if (0 < count($this->documentation)) {
             $json['documentation'] = [];
             foreach($this->documentation as $documentation) {
-                $json['documentation'][] = json_encode($documentation);
+                $json['documentation'][] = $documentation;
             }
         }
         if (0 < count($this->condition)) {
             $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = json_encode($condition);
+                $json['condition'][] = $condition;
             }
         }
         if (0 < count($this->relatedAction)) {
             $json['relatedAction'] = [];
             foreach($this->relatedAction as $relatedAction) {
-                $json['relatedAction'][] = json_encode($relatedAction);
+                $json['relatedAction'][] = $relatedAction;
             }
         }
-        if (null !== $this->timingDateTime) $json['timingDateTime'] = json_encode($this->timingDateTime);
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
-        if (null !== $this->timingDuration) $json['timingDuration'] = json_encode($this->timingDuration);
-        if (null !== $this->timingRange) $json['timingRange'] = json_encode($this->timingRange);
-        if (null !== $this->timingTiming) $json['timingTiming'] = json_encode($this->timingTiming);
+        if (null !== $this->timingDateTime) $json['timingDateTime'] = $this->timingDateTime;
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = $this->timingPeriod;
+        if (null !== $this->timingDuration) $json['timingDuration'] = $this->timingDuration;
+        if (null !== $this->timingRange) $json['timingRange'] = $this->timingRange;
+        if (null !== $this->timingTiming) $json['timingTiming'] = $this->timingTiming;
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                $json['participant'][] = $participant;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->groupingBehavior) $json['groupingBehavior'] = json_encode($this->groupingBehavior);
-        if (null !== $this->selectionBehavior) $json['selectionBehavior'] = json_encode($this->selectionBehavior);
-        if (null !== $this->requiredBehavior) $json['requiredBehavior'] = json_encode($this->requiredBehavior);
-        if (null !== $this->precheckBehavior) $json['precheckBehavior'] = json_encode($this->precheckBehavior);
-        if (null !== $this->cardinalityBehavior) $json['cardinalityBehavior'] = json_encode($this->cardinalityBehavior);
-        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->groupingBehavior) $json['groupingBehavior'] = $this->groupingBehavior;
+        if (null !== $this->selectionBehavior) $json['selectionBehavior'] = $this->selectionBehavior;
+        if (null !== $this->requiredBehavior) $json['requiredBehavior'] = $this->requiredBehavior;
+        if (null !== $this->precheckBehavior) $json['precheckBehavior'] = $this->precheckBehavior;
+        if (null !== $this->cardinalityBehavior) $json['cardinalityBehavior'] = $this->cardinalityBehavior;
+        if (null !== $this->resource) $json['resource'] = $this->resource;
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         return $json;

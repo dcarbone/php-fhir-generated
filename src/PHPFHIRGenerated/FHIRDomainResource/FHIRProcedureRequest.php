@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,31 +147,26 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     public $context = null;
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $occurrenceTiming = null;
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure.  For example "pain", "on flare-up", etc. (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $asNeededBoolean = null;
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure.  For example "pain", "on flare-up", etc. (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $asNeededCodeableConcept = null;
@@ -508,7 +503,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getOccurrenceDateTime()
@@ -517,7 +511,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
@@ -528,7 +521,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getOccurrencePeriod()
@@ -537,7 +529,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
@@ -548,7 +539,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getOccurrenceTiming()
@@ -557,7 +547,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The date/time at which the diagnostic testing should occur. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
      * @return $this
      */
@@ -568,7 +557,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure.  For example "pain", "on flare-up", etc. (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean()
@@ -577,7 +565,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure.  For example "pain", "on flare-up", etc. (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return $this
      */
@@ -588,7 +575,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure.  For example "pain", "on flare-up", etc. (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept()
@@ -597,7 +583,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure.  For example "pain", "on flare-up", etc. (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return $this
      */
@@ -853,90 +838,90 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                $json['definition'][] = $definition;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->replaces)) {
             $json['replaces'] = [];
             foreach($this->replaces as $replaces) {
-                $json['replaces'][] = json_encode($replaces);
+                $json['replaces'][] = $replaces;
             }
         }
-        if (null !== $this->requisition) $json['requisition'] = json_encode($this->requisition);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->doNotPerform) $json['doNotPerform'] = json_encode($this->doNotPerform);
+        if (null !== $this->requisition) $json['requisition'] = $this->requisition;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->intent) $json['intent'] = $this->intent;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->doNotPerform) $json['doNotPerform'] = $this->doNotPerform;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
-        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
-        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
-        if (null !== $this->performerType) $json['performerType'] = json_encode($this->performerType);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = $this->occurrenceTiming;
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean;
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept;
+        if (null !== $this->authoredOn) $json['authoredOn'] = $this->authoredOn;
+        if (null !== $this->requester) $json['requester'] = $this->requester;
+        if (null !== $this->performerType) $json['performerType'] = $this->performerType;
+        if (null !== $this->performer) $json['performer'] = $this->performer;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                $json['reasonReference'][] = $reasonReference;
             }
         }
         if (0 < count($this->supportingInfo)) {
             $json['supportingInfo'] = [];
             foreach($this->supportingInfo as $supportingInfo) {
-                $json['supportingInfo'][] = json_encode($supportingInfo);
+                $json['supportingInfo'][] = $supportingInfo;
             }
         }
         if (0 < count($this->specimen)) {
             $json['specimen'] = [];
             foreach($this->specimen as $specimen) {
-                $json['specimen'][] = json_encode($specimen);
+                $json['specimen'][] = $specimen;
             }
         }
         if (0 < count($this->bodySite)) {
             $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = json_encode($bodySite);
+                $json['bodySite'][] = $bodySite;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         if (0 < count($this->relevantHistory)) {
             $json['relevantHistory'] = [];
             foreach($this->relevantHistory as $relevantHistory) {
-                $json['relevantHistory'][] = json_encode($relevantHistory);
+                $json['relevantHistory'][] = $relevantHistory;
             }
         }
         return $json;

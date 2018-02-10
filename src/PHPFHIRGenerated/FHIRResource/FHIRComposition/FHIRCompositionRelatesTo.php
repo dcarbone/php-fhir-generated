@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,13 +74,11 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     public $code = null;
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $targetIdentifier = null;
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $targetReference = null;
@@ -111,7 +109,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getTargetIdentifier()
@@ -120,7 +117,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $targetIdentifier
      * @return $this
      */
@@ -131,7 +127,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getTargetReference()
@@ -140,7 +135,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The target composition/document of this relationship. (choose any one of target*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $targetReference
      * @return $this
      */
@@ -172,9 +166,9 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->targetIdentifier) $json['targetIdentifier'] = json_encode($this->targetIdentifier);
-        if (null !== $this->targetReference) $json['targetReference'] = json_encode($this->targetReference);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->targetIdentifier) $json['targetIdentifier'] = $this->targetIdentifier;
+        if (null !== $this->targetReference) $json['targetReference'] = $this->targetReference;
         return $json;
     }
 

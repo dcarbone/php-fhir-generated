@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,19 +129,16 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     public $organization = array();
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $sourceAttachment = null;
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $sourceIdentifier = null;
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $sourceReference = null;
@@ -394,7 +391,6 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getSourceAttachment()
@@ -403,7 +399,6 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $sourceAttachment
      * @return $this
      */
@@ -414,7 +409,6 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getSourceIdentifier()
@@ -423,7 +417,6 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $sourceIdentifier
      * @return $this
      */
@@ -434,7 +427,6 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSourceReference()
@@ -443,7 +435,6 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document. (choose any one of source*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $sourceReference
      * @return $this
      */
@@ -616,74 +607,74 @@ class FHIRConsent extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->dateTime) $json['dateTime'] = json_encode($this->dateTime);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->dateTime) $json['dateTime'] = $this->dateTime;
         if (0 < count($this->consentingParty)) {
             $json['consentingParty'] = [];
             foreach($this->consentingParty as $consentingParty) {
-                $json['consentingParty'][] = json_encode($consentingParty);
+                $json['consentingParty'][] = $consentingParty;
             }
         }
         if (0 < count($this->actor)) {
             $json['actor'] = [];
             foreach($this->actor as $actor) {
-                $json['actor'][] = json_encode($actor);
+                $json['actor'][] = $actor;
             }
         }
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         if (0 < count($this->organization)) {
             $json['organization'] = [];
             foreach($this->organization as $organization) {
-                $json['organization'][] = json_encode($organization);
+                $json['organization'][] = $organization;
             }
         }
-        if (null !== $this->sourceAttachment) $json['sourceAttachment'] = json_encode($this->sourceAttachment);
-        if (null !== $this->sourceIdentifier) $json['sourceIdentifier'] = json_encode($this->sourceIdentifier);
-        if (null !== $this->sourceReference) $json['sourceReference'] = json_encode($this->sourceReference);
+        if (null !== $this->sourceAttachment) $json['sourceAttachment'] = $this->sourceAttachment;
+        if (null !== $this->sourceIdentifier) $json['sourceIdentifier'] = $this->sourceIdentifier;
+        if (null !== $this->sourceReference) $json['sourceReference'] = $this->sourceReference;
         if (0 < count($this->policy)) {
             $json['policy'] = [];
             foreach($this->policy as $policy) {
-                $json['policy'][] = json_encode($policy);
+                $json['policy'][] = $policy;
             }
         }
-        if (null !== $this->policyRule) $json['policyRule'] = json_encode($this->policyRule);
+        if (null !== $this->policyRule) $json['policyRule'] = $this->policyRule;
         if (0 < count($this->securityLabel)) {
             $json['securityLabel'] = [];
             foreach($this->securityLabel as $securityLabel) {
-                $json['securityLabel'][] = json_encode($securityLabel);
+                $json['securityLabel'][] = $securityLabel;
             }
         }
         if (0 < count($this->purpose)) {
             $json['purpose'] = [];
             foreach($this->purpose as $purpose) {
-                $json['purpose'][] = json_encode($purpose);
+                $json['purpose'][] = $purpose;
             }
         }
-        if (null !== $this->dataPeriod) $json['dataPeriod'] = json_encode($this->dataPeriod);
+        if (null !== $this->dataPeriod) $json['dataPeriod'] = $this->dataPeriod;
         if (0 < count($this->data)) {
             $json['data'] = [];
             foreach($this->data as $data) {
-                $json['data'][] = json_encode($data);
+                $json['data'][] = $data;
             }
         }
         if (0 < count($this->except)) {
             $json['except'] = [];
             foreach($this->except as $except) {
-                $json['except'][] = json_encode($except);
+                $json['except'][] = $except;
             }
         }
         return $json;
