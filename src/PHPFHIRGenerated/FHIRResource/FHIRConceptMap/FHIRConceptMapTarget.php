@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -95,13 +95,13 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    public $dependsOn = array();
+    public $dependsOn = [];
 
     /**
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    public $product = array();
+    public $product = [];
 
     /**
      * @var string
@@ -112,8 +112,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * Identity (code or path) or the element/item that the map refers to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -122,8 +121,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * The display for the code. The display is only provided to help editors when editing the concept map.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDisplay()
-    {
+    public function getDisplay() {
         return $this->display;
     }
 
@@ -142,8 +139,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
      * @return $this
      */
-    public function setDisplay($display)
-    {
+    public function setDisplay($display) {
         $this->display = $display;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence
      */
-    public function getEquivalence()
-    {
+    public function getEquivalence() {
         return $this->equivalence;
     }
 
@@ -162,8 +157,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRConceptMapEquivalence $equivalence
      * @return $this
      */
-    public function setEquivalence($equivalence)
-    {
+    public function setEquivalence($equivalence) {
         $this->equivalence = $equivalence;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getComment()
-    {
+    public function getComment() {
         return $this->comment;
     }
 
@@ -182,8 +175,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setComment($comment)
-    {
+    public function setComment($comment) {
         $this->comment = $comment;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    public function getDependsOn()
-    {
+    public function getDependsOn() {
         return $this->dependsOn;
     }
 
@@ -202,8 +193,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn $dependsOn
      * @return $this
      */
-    public function addDependsOn($dependsOn)
-    {
+    public function addDependsOn($dependsOn) {
         $this->dependsOn[] = $dependsOn;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
-    public function getProduct()
-    {
+    public function getProduct() {
         return $this->product;
     }
 
@@ -222,8 +211,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapDependsOn $product
      * @return $this
      */
-    public function addProduct($product)
-    {
+    public function addProduct($product) {
         $this->product[] = $product;
         return $this;
     }
@@ -231,39 +219,77 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['display'])) {
+                $this->setDisplay($data['display']);
+            }
+            if (isset($data['equivalence'])) {
+                $this->setEquivalence($data['equivalence']);
+            }
+            if (isset($data['comment'])) {
+                $this->setComment($data['comment']);
+            }
+            if (isset($data['dependsOn'])) {
+                if (is_array($data['dependsOn'])) {
+                    foreach($data['dependsOn'] as $d) {
+                        $this->addDependsOn($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dependsOn" must be array of objects or null, '.gettype($data['dependsOn']).' seen.');
+                }
+            }
+            if (isset($data['product'])) {
+                if (is_array($data['product'])) {
+                    foreach($data['product'] as $d) {
+                        $this->addProduct($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"product" must be array of objects or null, '.gettype($data['product']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->display) $json['display'] = json_encode($this->display);
-        if (null !== $this->equivalence) $json['equivalence'] = json_encode($this->equivalence);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->display)) $json['display'] = $this->display;
+        if (isset($this->equivalence)) $json['equivalence'] = $this->equivalence;
+        if (isset($this->comment)) $json['comment'] = $this->comment;
         if (0 < count($this->dependsOn)) {
             $json['dependsOn'] = [];
             foreach($this->dependsOn as $dependsOn) {
-                $json['dependsOn'][] = json_encode($dependsOn);
+                if (null !== $dependsOn) $json['dependsOn'][] = $dependsOn;
             }
         }
         if (0 < count($this->product)) {
             $json['product'] = [];
             foreach($this->product as $product) {
-                $json['product'][] = json_encode($product);
+                if (null !== $product) $json['product'][] = $product;
             }
         }
         return $json;
@@ -274,14 +300,13 @@ class FHIRConceptMapTarget extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConceptMapTarget xmlns="http://hl7.org/fhir"></ConceptMapTarget>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
-        if (null !== $this->equivalence) $this->equivalence->xmlSerialize(true, $sxe->addChild('equivalence'));
-        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->display)) $this->display->xmlSerialize(true, $sxe->addChild('display'));
+        if (isset($this->equivalence)) $this->equivalence->xmlSerialize(true, $sxe->addChild('equivalence'));
+        if (isset($this->comment)) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
         if (0 < count($this->dependsOn)) {
             foreach($this->dependsOn as $dependsOn) {
                 $dependsOn->xmlSerialize(true, $sxe->addChild('dependsOn'));

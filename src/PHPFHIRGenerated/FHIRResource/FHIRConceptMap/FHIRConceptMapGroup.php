@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -95,7 +95,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * Mappings for an individual concept in the source to one or more concepts in the target.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
      */
-    public $element = array();
+    public $element = [];
 
     /**
      * What to do when there is no match in the mappings in the group.
@@ -112,8 +112,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * An absolute URI that identifies the Code System (if the source is a value set that crosses more than one code system).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSource()
-    {
+    public function getSource() {
         return $this->source;
     }
 
@@ -122,8 +121,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $source
      * @return $this
      */
-    public function setSource($source)
-    {
+    public function setSource($source) {
         $this->source = $source;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * The specific version of the code system, as determined by the code system authority.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSourceVersion()
-    {
+    public function getSourceVersion() {
         return $this->sourceVersion;
     }
 
@@ -142,8 +139,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $sourceVersion
      * @return $this
      */
-    public function setSourceVersion($sourceVersion)
-    {
+    public function setSourceVersion($sourceVersion) {
         $this->sourceVersion = $sourceVersion;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * An absolute URI that identifies the code system of the target code (if the target is a value set that cross code systems).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getTarget()
-    {
+    public function getTarget() {
         return $this->target;
     }
 
@@ -162,8 +157,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $target
      * @return $this
      */
-    public function setTarget($target)
-    {
+    public function setTarget($target) {
         $this->target = $target;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * The specific version of the code system, as determined by the code system authority.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTargetVersion()
-    {
+    public function getTargetVersion() {
         return $this->targetVersion;
     }
 
@@ -182,8 +175,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $targetVersion
      * @return $this
      */
-    public function setTargetVersion($targetVersion)
-    {
+    public function setTargetVersion($targetVersion) {
         $this->targetVersion = $targetVersion;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * Mappings for an individual concept in the source to one or more concepts in the target.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement[]
      */
-    public function getElement()
-    {
+    public function getElement() {
         return $this->element;
     }
 
@@ -202,8 +193,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapElement $element
      * @return $this
      */
-    public function addElement($element)
-    {
+    public function addElement($element) {
         $this->element[] = $element;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * What to do when there is no match in the mappings in the group.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped
      */
-    public function getUnmapped()
-    {
+    public function getUnmapped() {
         return $this->unmapped;
     }
 
@@ -222,8 +211,7 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRConceptMap\FHIRConceptMapUnmapped $unmapped
      * @return $this
      */
-    public function setUnmapped($unmapped)
-    {
+    public function setUnmapped($unmapped) {
         $this->unmapped = $unmapped;
         return $this;
     }
@@ -231,36 +219,68 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['source'])) {
+                $this->setSource($data['source']);
+            }
+            if (isset($data['sourceVersion'])) {
+                $this->setSourceVersion($data['sourceVersion']);
+            }
+            if (isset($data['target'])) {
+                $this->setTarget($data['target']);
+            }
+            if (isset($data['targetVersion'])) {
+                $this->setTargetVersion($data['targetVersion']);
+            }
+            if (isset($data['element'])) {
+                if (is_array($data['element'])) {
+                    foreach($data['element'] as $d) {
+                        $this->addElement($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"element" must be array of objects or null, '.gettype($data['element']).' seen.');
+                }
+            }
+            if (isset($data['unmapped'])) {
+                $this->setUnmapped($data['unmapped']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->sourceVersion) $json['sourceVersion'] = json_encode($this->sourceVersion);
-        if (null !== $this->target) $json['target'] = json_encode($this->target);
-        if (null !== $this->targetVersion) $json['targetVersion'] = json_encode($this->targetVersion);
+        if (isset($this->source)) $json['source'] = $this->source;
+        if (isset($this->sourceVersion)) $json['sourceVersion'] = $this->sourceVersion;
+        if (isset($this->target)) $json['target'] = $this->target;
+        if (isset($this->targetVersion)) $json['targetVersion'] = $this->targetVersion;
         if (0 < count($this->element)) {
             $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = json_encode($element);
+                if (null !== $element) $json['element'][] = $element;
             }
         }
-        if (null !== $this->unmapped) $json['unmapped'] = json_encode($this->unmapped);
+        if (isset($this->unmapped)) $json['unmapped'] = $this->unmapped;
         return $json;
     }
 
@@ -269,20 +289,19 @@ class FHIRConceptMapGroup extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConceptMapGroup xmlns="http://hl7.org/fhir"></ConceptMapGroup>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
-        if (null !== $this->sourceVersion) $this->sourceVersion->xmlSerialize(true, $sxe->addChild('sourceVersion'));
-        if (null !== $this->target) $this->target->xmlSerialize(true, $sxe->addChild('target'));
-        if (null !== $this->targetVersion) $this->targetVersion->xmlSerialize(true, $sxe->addChild('targetVersion'));
+        if (isset($this->source)) $this->source->xmlSerialize(true, $sxe->addChild('source'));
+        if (isset($this->sourceVersion)) $this->sourceVersion->xmlSerialize(true, $sxe->addChild('sourceVersion'));
+        if (isset($this->target)) $this->target->xmlSerialize(true, $sxe->addChild('target'));
+        if (isset($this->targetVersion)) $this->targetVersion->xmlSerialize(true, $sxe->addChild('targetVersion'));
         if (0 < count($this->element)) {
             foreach($this->element as $element) {
                 $element->xmlSerialize(true, $sxe->addChild('element'));
             }
         }
-        if (null !== $this->unmapped) $this->unmapped->xmlSerialize(true, $sxe->addChild('unmapped'));
+        if (isset($this->unmapped)) $this->unmapped->xmlSerialize(true, $sxe->addChild('unmapped'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

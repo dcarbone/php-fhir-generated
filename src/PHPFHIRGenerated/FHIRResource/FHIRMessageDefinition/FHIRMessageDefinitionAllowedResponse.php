@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,8 +88,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
      * A reference to the message definition that must be adhered to by this supported response.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getMessage()
-    {
+    public function getMessage() {
         return $this->message;
     }
 
@@ -98,8 +97,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $message
      * @return $this
      */
-    public function setMessage($message)
-    {
+    public function setMessage($message) {
         $this->message = $message;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
      * Provides a description of the circumstances in which this response should be used (as opposed to one of the alternative responses).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getSituation()
-    {
+    public function getSituation() {
         return $this->situation;
     }
 
@@ -118,8 +115,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $situation
      * @return $this
      */
-    public function setSituation($situation)
-    {
+    public function setSituation($situation) {
         $this->situation = $situation;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['message'])) {
+                $this->setMessage($data['message']);
+            }
+            if (isset($data['situation'])) {
+                $this->setSituation($data['situation']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->message) $json['message'] = json_encode($this->message);
-        if (null !== $this->situation) $json['situation'] = json_encode($this->situation);
+        if (isset($this->message)) $json['message'] = $this->message;
+        if (isset($this->situation)) $json['situation'] = $this->situation;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement implement
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MessageDefinitionAllowedResponse xmlns="http://hl7.org/fhir"></MessageDefinitionAllowedResponse>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->message) $this->message->xmlSerialize(true, $sxe->addChild('message'));
-        if (null !== $this->situation) $this->situation->xmlSerialize(true, $sxe->addChild('situation'));
+        if (isset($this->message)) $this->message->xmlSerialize(true, $sxe->addChild('message'));
+        if (isset($this->situation)) $this->situation->xmlSerialize(true, $sxe->addChild('situation'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

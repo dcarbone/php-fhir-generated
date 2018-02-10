@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
  */
 class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -71,13 +71,13 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
      * A link to the FHIR specification that this test is covering.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptLink[]
      */
-    public $link = array();
+    public $link = [];
 
     /**
      * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptCapability[]
      */
-    public $capability = array();
+    public $capability = [];
 
     /**
      * @var string
@@ -88,8 +88,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
      * A link to the FHIR specification that this test is covering.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptLink[]
      */
-    public function getLink()
-    {
+    public function getLink() {
         return $this->link;
     }
 
@@ -98,8 +97,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptLink $link
      * @return $this
      */
-    public function addLink($link)
-    {
+    public function addLink($link) {
         $this->link[] = $link;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
      * Capabilities that must exist and are assumed to function correctly on the FHIR server being tested.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptCapability[]
      */
-    public function getCapability()
-    {
+    public function getCapability() {
         return $this->capability;
     }
 
@@ -118,8 +115,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptCapability $capability
      * @return $this
      */
-    public function addCapability($capability)
-    {
+    public function addCapability($capability) {
         $this->capability[] = $capability;
         return $this;
     }
@@ -127,35 +123,61 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['link'])) {
+                if (is_array($data['link'])) {
+                    foreach($data['link'] as $d) {
+                        $this->addLink($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"link" must be array of objects or null, '.gettype($data['link']).' seen.');
+                }
+            }
+            if (isset($data['capability'])) {
+                if (is_array($data['capability'])) {
+                    foreach($data['capability'] as $d) {
+                        $this->addCapability($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"capability" must be array of objects or null, '.gettype($data['capability']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->link)) {
             $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = json_encode($link);
+                if (null !== $link) $json['link'][] = $link;
             }
         }
         if (0 < count($this->capability)) {
             $json['capability'] = [];
             foreach($this->capability as $capability) {
-                $json['capability'][] = json_encode($capability);
+                if (null !== $capability) $json['capability'][] = $capability;
             }
         }
         return $json;
@@ -166,8 +188,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptMetadata xmlns="http://hl7.org/fhir"></TestScriptMetadata>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->link)) {

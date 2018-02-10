@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -94,8 +94,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * Other claims which are related to this claim such as prior claim versions or for related services.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getClaim()
-    {
+    public function getClaim() {
         return $this->claim;
     }
 
@@ -104,8 +103,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $claim
      * @return $this
      */
-    public function setClaim($claim)
-    {
+    public function setClaim($claim) {
         $this->claim = $claim;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * For example prior or umbrella.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRelationship()
-    {
+    public function getRelationship() {
         return $this->relationship;
     }
 
@@ -124,8 +121,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
-    public function setRelationship($relationship)
-    {
+    public function setRelationship($relationship) {
         $this->relationship = $relationship;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * An alternate organizational reference to the case or file to which this particular claim pertains - eg Property/Casualy insurer claim # or Workers Compensation case # .
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getReference()
-    {
+    public function getReference() {
         return $this->reference;
     }
 
@@ -144,8 +139,7 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $reference
      * @return $this
      */
-    public function setReference($reference)
-    {
+    public function setReference($reference) {
         $this->reference = $reference;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['claim'])) {
+                $this->setClaim($data['claim']);
+            }
+            if (isset($data['relationship'])) {
+                $this->setRelationship($data['relationship']);
+            }
+            if (isset($data['reference'])) {
+                $this->setReference($data['reference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->claim) $json['claim'] = json_encode($this->claim);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (isset($this->claim)) $json['claim'] = $this->claim;
+        if (isset($this->relationship)) $json['relationship'] = $this->relationship;
+        if (isset($this->reference)) $json['reference'] = $this->reference;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRClaimRelated extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimRelated xmlns="http://hl7.org/fhir"></ClaimRelated>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->claim) $this->claim->xmlSerialize(true, $sxe->addChild('claim'));
-        if (null !== $this->relationship) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
-        if (null !== $this->reference) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
+        if (isset($this->claim)) $this->claim->xmlSerialize(true, $sxe->addChild('claim'));
+        if (isset($this->relationship)) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
+        if (isset($this->reference)) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -92,229 +92,231 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     public $type = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $defaultValueBase64Binary = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $defaultValueBoolean = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $defaultValueCode = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $defaultValueDate = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $defaultValueDateTime = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $defaultValueDecimal = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $defaultValueId = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $defaultValueInstant = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $defaultValueInteger = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $defaultValueMarkdown = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $defaultValueOid = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $defaultValuePositiveInt = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $defaultValueString = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $defaultValueTime = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $defaultValueUnsignedInt = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $defaultValueUri = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $defaultValueAddress = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $defaultValueAge = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $defaultValueAnnotation = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $defaultValueAttachment = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $defaultValueCodeableConcept = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $defaultValueCoding = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $defaultValueContactPoint = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
     public $defaultValueCount = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
     public $defaultValueDistance = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $defaultValueDuration = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $defaultValueHumanName = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $defaultValueIdentifier = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $defaultValueMoney = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $defaultValuePeriod = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $defaultValueQuantity = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $defaultValueRange = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $defaultValueRatio = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $defaultValueReference = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $defaultValueSampledData = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $defaultValueSignature = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $defaultValueTiming = null;
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDosage
+     */
+    public $defaultValueDosage = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     */
+    public $defaultValueContactDetail = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor
+     */
+    public $defaultValueContributor = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
+     */
+    public $defaultValueDataRequirement = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
+     */
+    public $defaultValueParameterDefinition = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     */
+    public $defaultValueRelatedArtifact = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
+     */
+    public $defaultValueTriggerDefinition = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     */
+    public $defaultValueUsageContext = null;
+
+    /**
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $defaultValueMeta = null;
@@ -358,8 +360,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * Type or variable this rule applies to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->context;
     }
 
@@ -368,8 +369,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $context
      * @return $this
      */
-    public function setContext($context)
-    {
+    public function setContext($context) {
         $this->context = $context;
         return $this;
     }
@@ -378,8 +378,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getMin()
-    {
+    public function getMin() {
         return $this->min;
     }
 
@@ -388,8 +387,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $min
      * @return $this
      */
-    public function setMin($min)
-    {
+    public function setMin($min) {
         $this->min = $min;
         return $this;
     }
@@ -398,8 +396,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * Specified maximum cardinality for the element - a number or a "*". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it's the default value).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getMax()
-    {
+    public function getMax() {
         return $this->max;
     }
 
@@ -408,8 +405,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $max
      * @return $this
      */
-    public function setMax($max)
-    {
+    public function setMax($max) {
         $this->max = $max;
         return $this;
     }
@@ -418,8 +414,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -428,768 +423,743 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getDefaultValueBase64Binary()
-    {
+    public function getDefaultValueBase64Binary() {
         return $this->defaultValueBase64Binary;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
      * @return $this
      */
-    public function setDefaultValueBase64Binary($defaultValueBase64Binary)
-    {
+    public function setDefaultValueBase64Binary($defaultValueBase64Binary) {
         $this->defaultValueBase64Binary = $defaultValueBase64Binary;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getDefaultValueBoolean()
-    {
+    public function getDefaultValueBoolean() {
         return $this->defaultValueBoolean;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $defaultValueBoolean
      * @return $this
      */
-    public function setDefaultValueBoolean($defaultValueBoolean)
-    {
+    public function setDefaultValueBoolean($defaultValueBoolean) {
         $this->defaultValueBoolean = $defaultValueBoolean;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getDefaultValueCode()
-    {
+    public function getDefaultValueCode() {
         return $this->defaultValueCode;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $defaultValueCode
      * @return $this
      */
-    public function setDefaultValueCode($defaultValueCode)
-    {
+    public function setDefaultValueCode($defaultValueCode) {
         $this->defaultValueCode = $defaultValueCode;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getDefaultValueDate()
-    {
+    public function getDefaultValueDate() {
         return $this->defaultValueDate;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $defaultValueDate
      * @return $this
      */
-    public function setDefaultValueDate($defaultValueDate)
-    {
+    public function setDefaultValueDate($defaultValueDate) {
         $this->defaultValueDate = $defaultValueDate;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDefaultValueDateTime()
-    {
+    public function getDefaultValueDateTime() {
         return $this->defaultValueDateTime;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $defaultValueDateTime
      * @return $this
      */
-    public function setDefaultValueDateTime($defaultValueDateTime)
-    {
+    public function setDefaultValueDateTime($defaultValueDateTime) {
         $this->defaultValueDateTime = $defaultValueDateTime;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getDefaultValueDecimal()
-    {
+    public function getDefaultValueDecimal() {
         return $this->defaultValueDecimal;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $defaultValueDecimal
      * @return $this
      */
-    public function setDefaultValueDecimal($defaultValueDecimal)
-    {
+    public function setDefaultValueDecimal($defaultValueDecimal) {
         $this->defaultValueDecimal = $defaultValueDecimal;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getDefaultValueId()
-    {
+    public function getDefaultValueId() {
         return $this->defaultValueId;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $defaultValueId
      * @return $this
      */
-    public function setDefaultValueId($defaultValueId)
-    {
+    public function setDefaultValueId($defaultValueId) {
         $this->defaultValueId = $defaultValueId;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public function getDefaultValueInstant()
-    {
+    public function getDefaultValueInstant() {
         return $this->defaultValueInstant;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $defaultValueInstant
      * @return $this
      */
-    public function setDefaultValueInstant($defaultValueInstant)
-    {
+    public function setDefaultValueInstant($defaultValueInstant) {
         $this->defaultValueInstant = $defaultValueInstant;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getDefaultValueInteger()
-    {
+    public function getDefaultValueInteger() {
         return $this->defaultValueInteger;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $defaultValueInteger
      * @return $this
      */
-    public function setDefaultValueInteger($defaultValueInteger)
-    {
+    public function setDefaultValueInteger($defaultValueInteger) {
         $this->defaultValueInteger = $defaultValueInteger;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDefaultValueMarkdown()
-    {
+    public function getDefaultValueMarkdown() {
         return $this->defaultValueMarkdown;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $defaultValueMarkdown
      * @return $this
      */
-    public function setDefaultValueMarkdown($defaultValueMarkdown)
-    {
+    public function setDefaultValueMarkdown($defaultValueMarkdown) {
         $this->defaultValueMarkdown = $defaultValueMarkdown;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
-    public function getDefaultValueOid()
-    {
+    public function getDefaultValueOid() {
         return $this->defaultValueOid;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $defaultValueOid
      * @return $this
      */
-    public function setDefaultValueOid($defaultValueOid)
-    {
+    public function setDefaultValueOid($defaultValueOid) {
         $this->defaultValueOid = $defaultValueOid;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getDefaultValuePositiveInt()
-    {
+    public function getDefaultValuePositiveInt() {
         return $this->defaultValuePositiveInt;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
      * @return $this
      */
-    public function setDefaultValuePositiveInt($defaultValuePositiveInt)
-    {
+    public function setDefaultValuePositiveInt($defaultValuePositiveInt) {
         $this->defaultValuePositiveInt = $defaultValuePositiveInt;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDefaultValueString()
-    {
+    public function getDefaultValueString() {
         return $this->defaultValueString;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $defaultValueString
      * @return $this
      */
-    public function setDefaultValueString($defaultValueString)
-    {
+    public function setDefaultValueString($defaultValueString) {
         $this->defaultValueString = $defaultValueString;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public function getDefaultValueTime()
-    {
+    public function getDefaultValueTime() {
         return $this->defaultValueTime;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $defaultValueTime
      * @return $this
      */
-    public function setDefaultValueTime($defaultValueTime)
-    {
+    public function setDefaultValueTime($defaultValueTime) {
         $this->defaultValueTime = $defaultValueTime;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public function getDefaultValueUnsignedInt()
-    {
+    public function getDefaultValueUnsignedInt() {
         return $this->defaultValueUnsignedInt;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
      * @return $this
      */
-    public function setDefaultValueUnsignedInt($defaultValueUnsignedInt)
-    {
+    public function setDefaultValueUnsignedInt($defaultValueUnsignedInt) {
         $this->defaultValueUnsignedInt = $defaultValueUnsignedInt;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getDefaultValueUri()
-    {
+    public function getDefaultValueUri() {
         return $this->defaultValueUri;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $defaultValueUri
      * @return $this
      */
-    public function setDefaultValueUri($defaultValueUri)
-    {
+    public function setDefaultValueUri($defaultValueUri) {
         $this->defaultValueUri = $defaultValueUri;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
-    public function getDefaultValueAddress()
-    {
+    public function getDefaultValueAddress() {
         return $this->defaultValueAddress;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $defaultValueAddress
      * @return $this
      */
-    public function setDefaultValueAddress($defaultValueAddress)
-    {
+    public function setDefaultValueAddress($defaultValueAddress) {
         $this->defaultValueAddress = $defaultValueAddress;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public function getDefaultValueAge()
-    {
+    public function getDefaultValueAge() {
         return $this->defaultValueAge;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $defaultValueAge
      * @return $this
      */
-    public function setDefaultValueAge($defaultValueAge)
-    {
+    public function setDefaultValueAge($defaultValueAge) {
         $this->defaultValueAge = $defaultValueAge;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
-    public function getDefaultValueAnnotation()
-    {
+    public function getDefaultValueAnnotation() {
         return $this->defaultValueAnnotation;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @return $this
      */
-    public function setDefaultValueAnnotation($defaultValueAnnotation)
-    {
+    public function setDefaultValueAnnotation($defaultValueAnnotation) {
         $this->defaultValueAnnotation = $defaultValueAnnotation;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getDefaultValueAttachment()
-    {
+    public function getDefaultValueAttachment() {
         return $this->defaultValueAttachment;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $defaultValueAttachment
      * @return $this
      */
-    public function setDefaultValueAttachment($defaultValueAttachment)
-    {
+    public function setDefaultValueAttachment($defaultValueAttachment) {
         $this->defaultValueAttachment = $defaultValueAttachment;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDefaultValueCodeableConcept()
-    {
+    public function getDefaultValueCodeableConcept() {
         return $this->defaultValueCodeableConcept;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @return $this
      */
-    public function setDefaultValueCodeableConcept($defaultValueCodeableConcept)
-    {
+    public function setDefaultValueCodeableConcept($defaultValueCodeableConcept) {
         $this->defaultValueCodeableConcept = $defaultValueCodeableConcept;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getDefaultValueCoding()
-    {
+    public function getDefaultValueCoding() {
         return $this->defaultValueCoding;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $defaultValueCoding
      * @return $this
      */
-    public function setDefaultValueCoding($defaultValueCoding)
-    {
+    public function setDefaultValueCoding($defaultValueCoding) {
         $this->defaultValueCoding = $defaultValueCoding;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
-    public function getDefaultValueContactPoint()
-    {
+    public function getDefaultValueContactPoint() {
         return $this->defaultValueContactPoint;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @return $this
      */
-    public function setDefaultValueContactPoint($defaultValueContactPoint)
-    {
+    public function setDefaultValueContactPoint($defaultValueContactPoint) {
         $this->defaultValueContactPoint = $defaultValueContactPoint;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount
      */
-    public function getDefaultValueCount()
-    {
+    public function getDefaultValueCount() {
         return $this->defaultValueCount;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRCount $defaultValueCount
      * @return $this
      */
-    public function setDefaultValueCount($defaultValueCount)
-    {
+    public function setDefaultValueCount($defaultValueCount) {
         $this->defaultValueCount = $defaultValueCount;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance
      */
-    public function getDefaultValueDistance()
-    {
+    public function getDefaultValueDistance() {
         return $this->defaultValueDistance;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDistance $defaultValueDistance
      * @return $this
      */
-    public function setDefaultValueDistance($defaultValueDistance)
-    {
+    public function setDefaultValueDistance($defaultValueDistance) {
         $this->defaultValueDistance = $defaultValueDistance;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public function getDefaultValueDuration()
-    {
+    public function getDefaultValueDuration() {
         return $this->defaultValueDuration;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $defaultValueDuration
      * @return $this
      */
-    public function setDefaultValueDuration($defaultValueDuration)
-    {
+    public function setDefaultValueDuration($defaultValueDuration) {
         $this->defaultValueDuration = $defaultValueDuration;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
-    public function getDefaultValueHumanName()
-    {
+    public function getDefaultValueHumanName() {
         return $this->defaultValueHumanName;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $defaultValueHumanName
      * @return $this
      */
-    public function setDefaultValueHumanName($defaultValueHumanName)
-    {
+    public function setDefaultValueHumanName($defaultValueHumanName) {
         $this->defaultValueHumanName = $defaultValueHumanName;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getDefaultValueIdentifier()
-    {
+    public function getDefaultValueIdentifier() {
         return $this->defaultValueIdentifier;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @return $this
      */
-    public function setDefaultValueIdentifier($defaultValueIdentifier)
-    {
+    public function setDefaultValueIdentifier($defaultValueIdentifier) {
         $this->defaultValueIdentifier = $defaultValueIdentifier;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getDefaultValueMoney()
-    {
+    public function getDefaultValueMoney() {
         return $this->defaultValueMoney;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $defaultValueMoney
      * @return $this
      */
-    public function setDefaultValueMoney($defaultValueMoney)
-    {
+    public function setDefaultValueMoney($defaultValueMoney) {
         $this->defaultValueMoney = $defaultValueMoney;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getDefaultValuePeriod()
-    {
+    public function getDefaultValuePeriod() {
         return $this->defaultValuePeriod;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $defaultValuePeriod
      * @return $this
      */
-    public function setDefaultValuePeriod($defaultValuePeriod)
-    {
+    public function setDefaultValuePeriod($defaultValuePeriod) {
         $this->defaultValuePeriod = $defaultValuePeriod;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getDefaultValueQuantity()
-    {
+    public function getDefaultValueQuantity() {
         return $this->defaultValueQuantity;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return $this
      */
-    public function setDefaultValueQuantity($defaultValueQuantity)
-    {
+    public function setDefaultValueQuantity($defaultValueQuantity) {
         $this->defaultValueQuantity = $defaultValueQuantity;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public function getDefaultValueRange()
-    {
+    public function getDefaultValueRange() {
         return $this->defaultValueRange;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $defaultValueRange
      * @return $this
      */
-    public function setDefaultValueRange($defaultValueRange)
-    {
+    public function setDefaultValueRange($defaultValueRange) {
         $this->defaultValueRange = $defaultValueRange;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public function getDefaultValueRatio()
-    {
+    public function getDefaultValueRatio() {
         return $this->defaultValueRatio;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $defaultValueRatio
      * @return $this
      */
-    public function setDefaultValueRatio($defaultValueRatio)
-    {
+    public function setDefaultValueRatio($defaultValueRatio) {
         $this->defaultValueRatio = $defaultValueRatio;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getDefaultValueReference()
-    {
+    public function getDefaultValueReference() {
         return $this->defaultValueReference;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $defaultValueReference
      * @return $this
      */
-    public function setDefaultValueReference($defaultValueReference)
-    {
+    public function setDefaultValueReference($defaultValueReference) {
         $this->defaultValueReference = $defaultValueReference;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
-    public function getDefaultValueSampledData()
-    {
+    public function getDefaultValueSampledData() {
         return $this->defaultValueSampledData;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $defaultValueSampledData
      * @return $this
      */
-    public function setDefaultValueSampledData($defaultValueSampledData)
-    {
+    public function setDefaultValueSampledData($defaultValueSampledData) {
         $this->defaultValueSampledData = $defaultValueSampledData;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
-    public function getDefaultValueSignature()
-    {
+    public function getDefaultValueSignature() {
         return $this->defaultValueSignature;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $defaultValueSignature
      * @return $this
      */
-    public function setDefaultValueSignature($defaultValueSignature)
-    {
+    public function setDefaultValueSignature($defaultValueSignature) {
         $this->defaultValueSignature = $defaultValueSignature;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public function getDefaultValueTiming()
-    {
+    public function getDefaultValueTiming() {
         return $this->defaultValueTiming;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $defaultValueTiming
      * @return $this
      */
-    public function setDefaultValueTiming($defaultValueTiming)
-    {
+    public function setDefaultValueTiming($defaultValueTiming) {
         $this->defaultValueTiming = $defaultValueTiming;
         return $this;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDosage
+     */
+    public function getDefaultValueDosage() {
+        return $this->defaultValueDosage;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDosage $defaultValueDosage
+     * @return $this
+     */
+    public function setDefaultValueDosage($defaultValueDosage) {
+        $this->defaultValueDosage = $defaultValueDosage;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
+     */
+    public function getDefaultValueContactDetail() {
+        return $this->defaultValueContactDetail;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $defaultValueContactDetail
+     * @return $this
+     */
+    public function setDefaultValueContactDetail($defaultValueContactDetail) {
+        $this->defaultValueContactDetail = $defaultValueContactDetail;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContributor
+     */
+    public function getDefaultValueContributor() {
+        return $this->defaultValueContributor;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContributor $defaultValueContributor
+     * @return $this
+     */
+    public function setDefaultValueContributor($defaultValueContributor) {
+        $this->defaultValueContributor = $defaultValueContributor;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement
+     */
+    public function getDefaultValueDataRequirement() {
+        return $this->defaultValueDataRequirement;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement $defaultValueDataRequirement
+     * @return $this
+     */
+    public function setDefaultValueDataRequirement($defaultValueDataRequirement) {
+        $this->defaultValueDataRequirement = $defaultValueDataRequirement;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition
+     */
+    public function getDefaultValueParameterDefinition() {
+        return $this->defaultValueParameterDefinition;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition $defaultValueParameterDefinition
+     * @return $this
+     */
+    public function setDefaultValueParameterDefinition($defaultValueParameterDefinition) {
+        $this->defaultValueParameterDefinition = $defaultValueParameterDefinition;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact
+     */
+    public function getDefaultValueRelatedArtifact() {
+        return $this->defaultValueRelatedArtifact;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact $defaultValueRelatedArtifact
+     * @return $this
+     */
+    public function setDefaultValueRelatedArtifact($defaultValueRelatedArtifact) {
+        $this->defaultValueRelatedArtifact = $defaultValueRelatedArtifact;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition
+     */
+    public function getDefaultValueTriggerDefinition() {
+        return $this->defaultValueTriggerDefinition;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRTriggerDefinition $defaultValueTriggerDefinition
+     * @return $this
+     */
+    public function setDefaultValueTriggerDefinition($defaultValueTriggerDefinition) {
+        $this->defaultValueTriggerDefinition = $defaultValueTriggerDefinition;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext
+     */
+    public function getDefaultValueUsageContext() {
+        return $this->defaultValueUsageContext;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $defaultValueUsageContext
+     * @return $this
+     */
+    public function setDefaultValueUsageContext($defaultValueUsageContext) {
+        $this->defaultValueUsageContext = $defaultValueUsageContext;
+        return $this;
+    }
+
+    /**
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
-    public function getDefaultValueMeta()
-    {
+    public function getDefaultValueMeta() {
         return $this->defaultValueMeta;
     }
 
     /**
-     * A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $defaultValueMeta
      * @return $this
      */
-    public function setDefaultValueMeta($defaultValueMeta)
-    {
+    public function setDefaultValueMeta($defaultValueMeta) {
         $this->defaultValueMeta = $defaultValueMeta;
         return $this;
     }
@@ -1198,8 +1168,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * Optional field for this source.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getElement()
-    {
+    public function getElement() {
         return $this->element;
     }
 
@@ -1208,8 +1177,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $element
      * @return $this
      */
-    public function setElement($element)
-    {
+    public function setElement($element) {
         $this->element = $element;
         return $this;
     }
@@ -1218,8 +1186,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * How to handle the list mode for this element.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRStructureMapSourceListMode
      */
-    public function getListMode()
-    {
+    public function getListMode() {
         return $this->listMode;
     }
 
@@ -1228,8 +1195,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRStructureMapSourceListMode $listMode
      * @return $this
      */
-    public function setListMode($listMode)
-    {
+    public function setListMode($listMode) {
         $this->listMode = $listMode;
         return $this;
     }
@@ -1238,8 +1204,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * Named context for field, if a field is specified.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getVariable()
-    {
+    public function getVariable() {
         return $this->variable;
     }
 
@@ -1248,8 +1213,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $variable
      * @return $this
      */
-    public function setVariable($variable)
-    {
+    public function setVariable($variable) {
         $this->variable = $variable;
         return $this;
     }
@@ -1258,8 +1222,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * FHIRPath expression  - must be true or the rule does not apply.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->condition;
     }
 
@@ -1268,8 +1231,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $condition
      * @return $this
      */
-    public function setCondition($condition)
-    {
+    public function setCondition($condition) {
         $this->condition = $condition;
         return $this;
     }
@@ -1278,8 +1240,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCheck()
-    {
+    public function getCheck() {
         return $this->check;
     }
 
@@ -1288,8 +1249,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $check
      * @return $this
      */
-    public function setCheck($check)
-    {
+    public function setCheck($check) {
         $this->check = $check;
         return $this;
     }
@@ -1297,72 +1257,253 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['context'])) {
+                $this->setContext($data['context']);
+            }
+            if (isset($data['min'])) {
+                $this->setMin($data['min']);
+            }
+            if (isset($data['max'])) {
+                $this->setMax($data['max']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['defaultValueBase64Binary'])) {
+                $this->setDefaultValueBase64Binary($data['defaultValueBase64Binary']);
+            }
+            if (isset($data['defaultValueBoolean'])) {
+                $this->setDefaultValueBoolean($data['defaultValueBoolean']);
+            }
+            if (isset($data['defaultValueCode'])) {
+                $this->setDefaultValueCode($data['defaultValueCode']);
+            }
+            if (isset($data['defaultValueDate'])) {
+                $this->setDefaultValueDate($data['defaultValueDate']);
+            }
+            if (isset($data['defaultValueDateTime'])) {
+                $this->setDefaultValueDateTime($data['defaultValueDateTime']);
+            }
+            if (isset($data['defaultValueDecimal'])) {
+                $this->setDefaultValueDecimal($data['defaultValueDecimal']);
+            }
+            if (isset($data['defaultValueId'])) {
+                $this->setDefaultValueId($data['defaultValueId']);
+            }
+            if (isset($data['defaultValueInstant'])) {
+                $this->setDefaultValueInstant($data['defaultValueInstant']);
+            }
+            if (isset($data['defaultValueInteger'])) {
+                $this->setDefaultValueInteger($data['defaultValueInteger']);
+            }
+            if (isset($data['defaultValueMarkdown'])) {
+                $this->setDefaultValueMarkdown($data['defaultValueMarkdown']);
+            }
+            if (isset($data['defaultValueOid'])) {
+                $this->setDefaultValueOid($data['defaultValueOid']);
+            }
+            if (isset($data['defaultValuePositiveInt'])) {
+                $this->setDefaultValuePositiveInt($data['defaultValuePositiveInt']);
+            }
+            if (isset($data['defaultValueString'])) {
+                $this->setDefaultValueString($data['defaultValueString']);
+            }
+            if (isset($data['defaultValueTime'])) {
+                $this->setDefaultValueTime($data['defaultValueTime']);
+            }
+            if (isset($data['defaultValueUnsignedInt'])) {
+                $this->setDefaultValueUnsignedInt($data['defaultValueUnsignedInt']);
+            }
+            if (isset($data['defaultValueUri'])) {
+                $this->setDefaultValueUri($data['defaultValueUri']);
+            }
+            if (isset($data['defaultValueAddress'])) {
+                $this->setDefaultValueAddress($data['defaultValueAddress']);
+            }
+            if (isset($data['defaultValueAge'])) {
+                $this->setDefaultValueAge($data['defaultValueAge']);
+            }
+            if (isset($data['defaultValueAnnotation'])) {
+                $this->setDefaultValueAnnotation($data['defaultValueAnnotation']);
+            }
+            if (isset($data['defaultValueAttachment'])) {
+                $this->setDefaultValueAttachment($data['defaultValueAttachment']);
+            }
+            if (isset($data['defaultValueCodeableConcept'])) {
+                $this->setDefaultValueCodeableConcept($data['defaultValueCodeableConcept']);
+            }
+            if (isset($data['defaultValueCoding'])) {
+                $this->setDefaultValueCoding($data['defaultValueCoding']);
+            }
+            if (isset($data['defaultValueContactPoint'])) {
+                $this->setDefaultValueContactPoint($data['defaultValueContactPoint']);
+            }
+            if (isset($data['defaultValueCount'])) {
+                $this->setDefaultValueCount($data['defaultValueCount']);
+            }
+            if (isset($data['defaultValueDistance'])) {
+                $this->setDefaultValueDistance($data['defaultValueDistance']);
+            }
+            if (isset($data['defaultValueDuration'])) {
+                $this->setDefaultValueDuration($data['defaultValueDuration']);
+            }
+            if (isset($data['defaultValueHumanName'])) {
+                $this->setDefaultValueHumanName($data['defaultValueHumanName']);
+            }
+            if (isset($data['defaultValueIdentifier'])) {
+                $this->setDefaultValueIdentifier($data['defaultValueIdentifier']);
+            }
+            if (isset($data['defaultValueMoney'])) {
+                $this->setDefaultValueMoney($data['defaultValueMoney']);
+            }
+            if (isset($data['defaultValuePeriod'])) {
+                $this->setDefaultValuePeriod($data['defaultValuePeriod']);
+            }
+            if (isset($data['defaultValueQuantity'])) {
+                $this->setDefaultValueQuantity($data['defaultValueQuantity']);
+            }
+            if (isset($data['defaultValueRange'])) {
+                $this->setDefaultValueRange($data['defaultValueRange']);
+            }
+            if (isset($data['defaultValueRatio'])) {
+                $this->setDefaultValueRatio($data['defaultValueRatio']);
+            }
+            if (isset($data['defaultValueReference'])) {
+                $this->setDefaultValueReference($data['defaultValueReference']);
+            }
+            if (isset($data['defaultValueSampledData'])) {
+                $this->setDefaultValueSampledData($data['defaultValueSampledData']);
+            }
+            if (isset($data['defaultValueSignature'])) {
+                $this->setDefaultValueSignature($data['defaultValueSignature']);
+            }
+            if (isset($data['defaultValueTiming'])) {
+                $this->setDefaultValueTiming($data['defaultValueTiming']);
+            }
+            if (isset($data['defaultValueDosage'])) {
+                $this->setDefaultValueDosage($data['defaultValueDosage']);
+            }
+            if (isset($data['defaultValueContactDetail'])) {
+                $this->setDefaultValueContactDetail($data['defaultValueContactDetail']);
+            }
+            if (isset($data['defaultValueContributor'])) {
+                $this->setDefaultValueContributor($data['defaultValueContributor']);
+            }
+            if (isset($data['defaultValueDataRequirement'])) {
+                $this->setDefaultValueDataRequirement($data['defaultValueDataRequirement']);
+            }
+            if (isset($data['defaultValueParameterDefinition'])) {
+                $this->setDefaultValueParameterDefinition($data['defaultValueParameterDefinition']);
+            }
+            if (isset($data['defaultValueRelatedArtifact'])) {
+                $this->setDefaultValueRelatedArtifact($data['defaultValueRelatedArtifact']);
+            }
+            if (isset($data['defaultValueTriggerDefinition'])) {
+                $this->setDefaultValueTriggerDefinition($data['defaultValueTriggerDefinition']);
+            }
+            if (isset($data['defaultValueUsageContext'])) {
+                $this->setDefaultValueUsageContext($data['defaultValueUsageContext']);
+            }
+            if (isset($data['defaultValueMeta'])) {
+                $this->setDefaultValueMeta($data['defaultValueMeta']);
+            }
+            if (isset($data['element'])) {
+                $this->setElement($data['element']);
+            }
+            if (isset($data['listMode'])) {
+                $this->setListMode($data['listMode']);
+            }
+            if (isset($data['variable'])) {
+                $this->setVariable($data['variable']);
+            }
+            if (isset($data['condition'])) {
+                $this->setCondition($data['condition']);
+            }
+            if (isset($data['check'])) {
+                $this->setCheck($data['check']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->min) $json['min'] = json_encode($this->min);
-        if (null !== $this->max) $json['max'] = json_encode($this->max);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->defaultValueBase64Binary) $json['defaultValueBase64Binary'] = json_encode($this->defaultValueBase64Binary);
-        if (null !== $this->defaultValueBoolean) $json['defaultValueBoolean'] = json_encode($this->defaultValueBoolean);
-        if (null !== $this->defaultValueCode) $json['defaultValueCode'] = json_encode($this->defaultValueCode);
-        if (null !== $this->defaultValueDate) $json['defaultValueDate'] = json_encode($this->defaultValueDate);
-        if (null !== $this->defaultValueDateTime) $json['defaultValueDateTime'] = json_encode($this->defaultValueDateTime);
-        if (null !== $this->defaultValueDecimal) $json['defaultValueDecimal'] = json_encode($this->defaultValueDecimal);
-        if (null !== $this->defaultValueId) $json['defaultValueId'] = json_encode($this->defaultValueId);
-        if (null !== $this->defaultValueInstant) $json['defaultValueInstant'] = json_encode($this->defaultValueInstant);
-        if (null !== $this->defaultValueInteger) $json['defaultValueInteger'] = json_encode($this->defaultValueInteger);
-        if (null !== $this->defaultValueMarkdown) $json['defaultValueMarkdown'] = json_encode($this->defaultValueMarkdown);
-        if (null !== $this->defaultValueOid) $json['defaultValueOid'] = json_encode($this->defaultValueOid);
-        if (null !== $this->defaultValuePositiveInt) $json['defaultValuePositiveInt'] = json_encode($this->defaultValuePositiveInt);
-        if (null !== $this->defaultValueString) $json['defaultValueString'] = json_encode($this->defaultValueString);
-        if (null !== $this->defaultValueTime) $json['defaultValueTime'] = json_encode($this->defaultValueTime);
-        if (null !== $this->defaultValueUnsignedInt) $json['defaultValueUnsignedInt'] = json_encode($this->defaultValueUnsignedInt);
-        if (null !== $this->defaultValueUri) $json['defaultValueUri'] = json_encode($this->defaultValueUri);
-        if (null !== $this->defaultValueAddress) $json['defaultValueAddress'] = json_encode($this->defaultValueAddress);
-        if (null !== $this->defaultValueAge) $json['defaultValueAge'] = json_encode($this->defaultValueAge);
-        if (null !== $this->defaultValueAnnotation) $json['defaultValueAnnotation'] = json_encode($this->defaultValueAnnotation);
-        if (null !== $this->defaultValueAttachment) $json['defaultValueAttachment'] = json_encode($this->defaultValueAttachment);
-        if (null !== $this->defaultValueCodeableConcept) $json['defaultValueCodeableConcept'] = json_encode($this->defaultValueCodeableConcept);
-        if (null !== $this->defaultValueCoding) $json['defaultValueCoding'] = json_encode($this->defaultValueCoding);
-        if (null !== $this->defaultValueContactPoint) $json['defaultValueContactPoint'] = json_encode($this->defaultValueContactPoint);
-        if (null !== $this->defaultValueCount) $json['defaultValueCount'] = json_encode($this->defaultValueCount);
-        if (null !== $this->defaultValueDistance) $json['defaultValueDistance'] = json_encode($this->defaultValueDistance);
-        if (null !== $this->defaultValueDuration) $json['defaultValueDuration'] = json_encode($this->defaultValueDuration);
-        if (null !== $this->defaultValueHumanName) $json['defaultValueHumanName'] = json_encode($this->defaultValueHumanName);
-        if (null !== $this->defaultValueIdentifier) $json['defaultValueIdentifier'] = json_encode($this->defaultValueIdentifier);
-        if (null !== $this->defaultValueMoney) $json['defaultValueMoney'] = json_encode($this->defaultValueMoney);
-        if (null !== $this->defaultValuePeriod) $json['defaultValuePeriod'] = json_encode($this->defaultValuePeriod);
-        if (null !== $this->defaultValueQuantity) $json['defaultValueQuantity'] = json_encode($this->defaultValueQuantity);
-        if (null !== $this->defaultValueRange) $json['defaultValueRange'] = json_encode($this->defaultValueRange);
-        if (null !== $this->defaultValueRatio) $json['defaultValueRatio'] = json_encode($this->defaultValueRatio);
-        if (null !== $this->defaultValueReference) $json['defaultValueReference'] = json_encode($this->defaultValueReference);
-        if (null !== $this->defaultValueSampledData) $json['defaultValueSampledData'] = json_encode($this->defaultValueSampledData);
-        if (null !== $this->defaultValueSignature) $json['defaultValueSignature'] = json_encode($this->defaultValueSignature);
-        if (null !== $this->defaultValueTiming) $json['defaultValueTiming'] = json_encode($this->defaultValueTiming);
-        if (null !== $this->defaultValueMeta) $json['defaultValueMeta'] = json_encode($this->defaultValueMeta);
-        if (null !== $this->element) $json['element'] = json_encode($this->element);
-        if (null !== $this->listMode) $json['listMode'] = json_encode($this->listMode);
-        if (null !== $this->variable) $json['variable'] = json_encode($this->variable);
-        if (null !== $this->condition) $json['condition'] = json_encode($this->condition);
-        if (null !== $this->check) $json['check'] = json_encode($this->check);
+        if (isset($this->context)) $json['context'] = $this->context;
+        if (isset($this->min)) $json['min'] = $this->min;
+        if (isset($this->max)) $json['max'] = $this->max;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->defaultValueBase64Binary)) $json['defaultValueBase64Binary'] = $this->defaultValueBase64Binary;
+        if (isset($this->defaultValueBoolean)) $json['defaultValueBoolean'] = $this->defaultValueBoolean;
+        if (isset($this->defaultValueCode)) $json['defaultValueCode'] = $this->defaultValueCode;
+        if (isset($this->defaultValueDate)) $json['defaultValueDate'] = $this->defaultValueDate;
+        if (isset($this->defaultValueDateTime)) $json['defaultValueDateTime'] = $this->defaultValueDateTime;
+        if (isset($this->defaultValueDecimal)) $json['defaultValueDecimal'] = $this->defaultValueDecimal;
+        if (isset($this->defaultValueId)) $json['defaultValueId'] = $this->defaultValueId;
+        if (isset($this->defaultValueInstant)) $json['defaultValueInstant'] = $this->defaultValueInstant;
+        if (isset($this->defaultValueInteger)) $json['defaultValueInteger'] = $this->defaultValueInteger;
+        if (isset($this->defaultValueMarkdown)) $json['defaultValueMarkdown'] = $this->defaultValueMarkdown;
+        if (isset($this->defaultValueOid)) $json['defaultValueOid'] = $this->defaultValueOid;
+        if (isset($this->defaultValuePositiveInt)) $json['defaultValuePositiveInt'] = $this->defaultValuePositiveInt;
+        if (isset($this->defaultValueString)) $json['defaultValueString'] = $this->defaultValueString;
+        if (isset($this->defaultValueTime)) $json['defaultValueTime'] = $this->defaultValueTime;
+        if (isset($this->defaultValueUnsignedInt)) $json['defaultValueUnsignedInt'] = $this->defaultValueUnsignedInt;
+        if (isset($this->defaultValueUri)) $json['defaultValueUri'] = $this->defaultValueUri;
+        if (isset($this->defaultValueAddress)) $json['defaultValueAddress'] = $this->defaultValueAddress;
+        if (isset($this->defaultValueAge)) $json['defaultValueAge'] = $this->defaultValueAge;
+        if (isset($this->defaultValueAnnotation)) $json['defaultValueAnnotation'] = $this->defaultValueAnnotation;
+        if (isset($this->defaultValueAttachment)) $json['defaultValueAttachment'] = $this->defaultValueAttachment;
+        if (isset($this->defaultValueCodeableConcept)) $json['defaultValueCodeableConcept'] = $this->defaultValueCodeableConcept;
+        if (isset($this->defaultValueCoding)) $json['defaultValueCoding'] = $this->defaultValueCoding;
+        if (isset($this->defaultValueContactPoint)) $json['defaultValueContactPoint'] = $this->defaultValueContactPoint;
+        if (isset($this->defaultValueCount)) $json['defaultValueCount'] = $this->defaultValueCount;
+        if (isset($this->defaultValueDistance)) $json['defaultValueDistance'] = $this->defaultValueDistance;
+        if (isset($this->defaultValueDuration)) $json['defaultValueDuration'] = $this->defaultValueDuration;
+        if (isset($this->defaultValueHumanName)) $json['defaultValueHumanName'] = $this->defaultValueHumanName;
+        if (isset($this->defaultValueIdentifier)) $json['defaultValueIdentifier'] = $this->defaultValueIdentifier;
+        if (isset($this->defaultValueMoney)) $json['defaultValueMoney'] = $this->defaultValueMoney;
+        if (isset($this->defaultValuePeriod)) $json['defaultValuePeriod'] = $this->defaultValuePeriod;
+        if (isset($this->defaultValueQuantity)) $json['defaultValueQuantity'] = $this->defaultValueQuantity;
+        if (isset($this->defaultValueRange)) $json['defaultValueRange'] = $this->defaultValueRange;
+        if (isset($this->defaultValueRatio)) $json['defaultValueRatio'] = $this->defaultValueRatio;
+        if (isset($this->defaultValueReference)) $json['defaultValueReference'] = $this->defaultValueReference;
+        if (isset($this->defaultValueSampledData)) $json['defaultValueSampledData'] = $this->defaultValueSampledData;
+        if (isset($this->defaultValueSignature)) $json['defaultValueSignature'] = $this->defaultValueSignature;
+        if (isset($this->defaultValueTiming)) $json['defaultValueTiming'] = $this->defaultValueTiming;
+        if (isset($this->defaultValueDosage)) $json['defaultValueDosage'] = $this->defaultValueDosage;
+        if (isset($this->defaultValueContactDetail)) $json['defaultValueContactDetail'] = $this->defaultValueContactDetail;
+        if (isset($this->defaultValueContributor)) $json['defaultValueContributor'] = $this->defaultValueContributor;
+        if (isset($this->defaultValueDataRequirement)) $json['defaultValueDataRequirement'] = $this->defaultValueDataRequirement;
+        if (isset($this->defaultValueParameterDefinition)) $json['defaultValueParameterDefinition'] = $this->defaultValueParameterDefinition;
+        if (isset($this->defaultValueRelatedArtifact)) $json['defaultValueRelatedArtifact'] = $this->defaultValueRelatedArtifact;
+        if (isset($this->defaultValueTriggerDefinition)) $json['defaultValueTriggerDefinition'] = $this->defaultValueTriggerDefinition;
+        if (isset($this->defaultValueUsageContext)) $json['defaultValueUsageContext'] = $this->defaultValueUsageContext;
+        if (isset($this->defaultValueMeta)) $json['defaultValueMeta'] = $this->defaultValueMeta;
+        if (isset($this->element)) $json['element'] = $this->element;
+        if (isset($this->listMode)) $json['listMode'] = $this->listMode;
+        if (isset($this->variable)) $json['variable'] = $this->variable;
+        if (isset($this->condition)) $json['condition'] = $this->condition;
+        if (isset($this->check)) $json['check'] = $this->check;
         return $json;
     }
 
@@ -1371,57 +1512,64 @@ class FHIRStructureMapSource extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<StructureMapSource xmlns="http://hl7.org/fhir"></StructureMapSource>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
-        if (null !== $this->min) $this->min->xmlSerialize(true, $sxe->addChild('min'));
-        if (null !== $this->max) $this->max->xmlSerialize(true, $sxe->addChild('max'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->defaultValueBase64Binary) $this->defaultValueBase64Binary->xmlSerialize(true, $sxe->addChild('defaultValueBase64Binary'));
-        if (null !== $this->defaultValueBoolean) $this->defaultValueBoolean->xmlSerialize(true, $sxe->addChild('defaultValueBoolean'));
-        if (null !== $this->defaultValueCode) $this->defaultValueCode->xmlSerialize(true, $sxe->addChild('defaultValueCode'));
-        if (null !== $this->defaultValueDate) $this->defaultValueDate->xmlSerialize(true, $sxe->addChild('defaultValueDate'));
-        if (null !== $this->defaultValueDateTime) $this->defaultValueDateTime->xmlSerialize(true, $sxe->addChild('defaultValueDateTime'));
-        if (null !== $this->defaultValueDecimal) $this->defaultValueDecimal->xmlSerialize(true, $sxe->addChild('defaultValueDecimal'));
-        if (null !== $this->defaultValueId) $this->defaultValueId->xmlSerialize(true, $sxe->addChild('defaultValueId'));
-        if (null !== $this->defaultValueInstant) $this->defaultValueInstant->xmlSerialize(true, $sxe->addChild('defaultValueInstant'));
-        if (null !== $this->defaultValueInteger) $this->defaultValueInteger->xmlSerialize(true, $sxe->addChild('defaultValueInteger'));
-        if (null !== $this->defaultValueMarkdown) $this->defaultValueMarkdown->xmlSerialize(true, $sxe->addChild('defaultValueMarkdown'));
-        if (null !== $this->defaultValueOid) $this->defaultValueOid->xmlSerialize(true, $sxe->addChild('defaultValueOid'));
-        if (null !== $this->defaultValuePositiveInt) $this->defaultValuePositiveInt->xmlSerialize(true, $sxe->addChild('defaultValuePositiveInt'));
-        if (null !== $this->defaultValueString) $this->defaultValueString->xmlSerialize(true, $sxe->addChild('defaultValueString'));
-        if (null !== $this->defaultValueTime) $this->defaultValueTime->xmlSerialize(true, $sxe->addChild('defaultValueTime'));
-        if (null !== $this->defaultValueUnsignedInt) $this->defaultValueUnsignedInt->xmlSerialize(true, $sxe->addChild('defaultValueUnsignedInt'));
-        if (null !== $this->defaultValueUri) $this->defaultValueUri->xmlSerialize(true, $sxe->addChild('defaultValueUri'));
-        if (null !== $this->defaultValueAddress) $this->defaultValueAddress->xmlSerialize(true, $sxe->addChild('defaultValueAddress'));
-        if (null !== $this->defaultValueAge) $this->defaultValueAge->xmlSerialize(true, $sxe->addChild('defaultValueAge'));
-        if (null !== $this->defaultValueAnnotation) $this->defaultValueAnnotation->xmlSerialize(true, $sxe->addChild('defaultValueAnnotation'));
-        if (null !== $this->defaultValueAttachment) $this->defaultValueAttachment->xmlSerialize(true, $sxe->addChild('defaultValueAttachment'));
-        if (null !== $this->defaultValueCodeableConcept) $this->defaultValueCodeableConcept->xmlSerialize(true, $sxe->addChild('defaultValueCodeableConcept'));
-        if (null !== $this->defaultValueCoding) $this->defaultValueCoding->xmlSerialize(true, $sxe->addChild('defaultValueCoding'));
-        if (null !== $this->defaultValueContactPoint) $this->defaultValueContactPoint->xmlSerialize(true, $sxe->addChild('defaultValueContactPoint'));
-        if (null !== $this->defaultValueCount) $this->defaultValueCount->xmlSerialize(true, $sxe->addChild('defaultValueCount'));
-        if (null !== $this->defaultValueDistance) $this->defaultValueDistance->xmlSerialize(true, $sxe->addChild('defaultValueDistance'));
-        if (null !== $this->defaultValueDuration) $this->defaultValueDuration->xmlSerialize(true, $sxe->addChild('defaultValueDuration'));
-        if (null !== $this->defaultValueHumanName) $this->defaultValueHumanName->xmlSerialize(true, $sxe->addChild('defaultValueHumanName'));
-        if (null !== $this->defaultValueIdentifier) $this->defaultValueIdentifier->xmlSerialize(true, $sxe->addChild('defaultValueIdentifier'));
-        if (null !== $this->defaultValueMoney) $this->defaultValueMoney->xmlSerialize(true, $sxe->addChild('defaultValueMoney'));
-        if (null !== $this->defaultValuePeriod) $this->defaultValuePeriod->xmlSerialize(true, $sxe->addChild('defaultValuePeriod'));
-        if (null !== $this->defaultValueQuantity) $this->defaultValueQuantity->xmlSerialize(true, $sxe->addChild('defaultValueQuantity'));
-        if (null !== $this->defaultValueRange) $this->defaultValueRange->xmlSerialize(true, $sxe->addChild('defaultValueRange'));
-        if (null !== $this->defaultValueRatio) $this->defaultValueRatio->xmlSerialize(true, $sxe->addChild('defaultValueRatio'));
-        if (null !== $this->defaultValueReference) $this->defaultValueReference->xmlSerialize(true, $sxe->addChild('defaultValueReference'));
-        if (null !== $this->defaultValueSampledData) $this->defaultValueSampledData->xmlSerialize(true, $sxe->addChild('defaultValueSampledData'));
-        if (null !== $this->defaultValueSignature) $this->defaultValueSignature->xmlSerialize(true, $sxe->addChild('defaultValueSignature'));
-        if (null !== $this->defaultValueTiming) $this->defaultValueTiming->xmlSerialize(true, $sxe->addChild('defaultValueTiming'));
-        if (null !== $this->defaultValueMeta) $this->defaultValueMeta->xmlSerialize(true, $sxe->addChild('defaultValueMeta'));
-        if (null !== $this->element) $this->element->xmlSerialize(true, $sxe->addChild('element'));
-        if (null !== $this->listMode) $this->listMode->xmlSerialize(true, $sxe->addChild('listMode'));
-        if (null !== $this->variable) $this->variable->xmlSerialize(true, $sxe->addChild('variable'));
-        if (null !== $this->condition) $this->condition->xmlSerialize(true, $sxe->addChild('condition'));
-        if (null !== $this->check) $this->check->xmlSerialize(true, $sxe->addChild('check'));
+        if (isset($this->context)) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (isset($this->min)) $this->min->xmlSerialize(true, $sxe->addChild('min'));
+        if (isset($this->max)) $this->max->xmlSerialize(true, $sxe->addChild('max'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->defaultValueBase64Binary)) $this->defaultValueBase64Binary->xmlSerialize(true, $sxe->addChild('defaultValueBase64Binary'));
+        if (isset($this->defaultValueBoolean)) $this->defaultValueBoolean->xmlSerialize(true, $sxe->addChild('defaultValueBoolean'));
+        if (isset($this->defaultValueCode)) $this->defaultValueCode->xmlSerialize(true, $sxe->addChild('defaultValueCode'));
+        if (isset($this->defaultValueDate)) $this->defaultValueDate->xmlSerialize(true, $sxe->addChild('defaultValueDate'));
+        if (isset($this->defaultValueDateTime)) $this->defaultValueDateTime->xmlSerialize(true, $sxe->addChild('defaultValueDateTime'));
+        if (isset($this->defaultValueDecimal)) $this->defaultValueDecimal->xmlSerialize(true, $sxe->addChild('defaultValueDecimal'));
+        if (isset($this->defaultValueId)) $this->defaultValueId->xmlSerialize(true, $sxe->addChild('defaultValueId'));
+        if (isset($this->defaultValueInstant)) $this->defaultValueInstant->xmlSerialize(true, $sxe->addChild('defaultValueInstant'));
+        if (isset($this->defaultValueInteger)) $this->defaultValueInteger->xmlSerialize(true, $sxe->addChild('defaultValueInteger'));
+        if (isset($this->defaultValueMarkdown)) $this->defaultValueMarkdown->xmlSerialize(true, $sxe->addChild('defaultValueMarkdown'));
+        if (isset($this->defaultValueOid)) $this->defaultValueOid->xmlSerialize(true, $sxe->addChild('defaultValueOid'));
+        if (isset($this->defaultValuePositiveInt)) $this->defaultValuePositiveInt->xmlSerialize(true, $sxe->addChild('defaultValuePositiveInt'));
+        if (isset($this->defaultValueString)) $this->defaultValueString->xmlSerialize(true, $sxe->addChild('defaultValueString'));
+        if (isset($this->defaultValueTime)) $this->defaultValueTime->xmlSerialize(true, $sxe->addChild('defaultValueTime'));
+        if (isset($this->defaultValueUnsignedInt)) $this->defaultValueUnsignedInt->xmlSerialize(true, $sxe->addChild('defaultValueUnsignedInt'));
+        if (isset($this->defaultValueUri)) $this->defaultValueUri->xmlSerialize(true, $sxe->addChild('defaultValueUri'));
+        if (isset($this->defaultValueAddress)) $this->defaultValueAddress->xmlSerialize(true, $sxe->addChild('defaultValueAddress'));
+        if (isset($this->defaultValueAge)) $this->defaultValueAge->xmlSerialize(true, $sxe->addChild('defaultValueAge'));
+        if (isset($this->defaultValueAnnotation)) $this->defaultValueAnnotation->xmlSerialize(true, $sxe->addChild('defaultValueAnnotation'));
+        if (isset($this->defaultValueAttachment)) $this->defaultValueAttachment->xmlSerialize(true, $sxe->addChild('defaultValueAttachment'));
+        if (isset($this->defaultValueCodeableConcept)) $this->defaultValueCodeableConcept->xmlSerialize(true, $sxe->addChild('defaultValueCodeableConcept'));
+        if (isset($this->defaultValueCoding)) $this->defaultValueCoding->xmlSerialize(true, $sxe->addChild('defaultValueCoding'));
+        if (isset($this->defaultValueContactPoint)) $this->defaultValueContactPoint->xmlSerialize(true, $sxe->addChild('defaultValueContactPoint'));
+        if (isset($this->defaultValueCount)) $this->defaultValueCount->xmlSerialize(true, $sxe->addChild('defaultValueCount'));
+        if (isset($this->defaultValueDistance)) $this->defaultValueDistance->xmlSerialize(true, $sxe->addChild('defaultValueDistance'));
+        if (isset($this->defaultValueDuration)) $this->defaultValueDuration->xmlSerialize(true, $sxe->addChild('defaultValueDuration'));
+        if (isset($this->defaultValueHumanName)) $this->defaultValueHumanName->xmlSerialize(true, $sxe->addChild('defaultValueHumanName'));
+        if (isset($this->defaultValueIdentifier)) $this->defaultValueIdentifier->xmlSerialize(true, $sxe->addChild('defaultValueIdentifier'));
+        if (isset($this->defaultValueMoney)) $this->defaultValueMoney->xmlSerialize(true, $sxe->addChild('defaultValueMoney'));
+        if (isset($this->defaultValuePeriod)) $this->defaultValuePeriod->xmlSerialize(true, $sxe->addChild('defaultValuePeriod'));
+        if (isset($this->defaultValueQuantity)) $this->defaultValueQuantity->xmlSerialize(true, $sxe->addChild('defaultValueQuantity'));
+        if (isset($this->defaultValueRange)) $this->defaultValueRange->xmlSerialize(true, $sxe->addChild('defaultValueRange'));
+        if (isset($this->defaultValueRatio)) $this->defaultValueRatio->xmlSerialize(true, $sxe->addChild('defaultValueRatio'));
+        if (isset($this->defaultValueReference)) $this->defaultValueReference->xmlSerialize(true, $sxe->addChild('defaultValueReference'));
+        if (isset($this->defaultValueSampledData)) $this->defaultValueSampledData->xmlSerialize(true, $sxe->addChild('defaultValueSampledData'));
+        if (isset($this->defaultValueSignature)) $this->defaultValueSignature->xmlSerialize(true, $sxe->addChild('defaultValueSignature'));
+        if (isset($this->defaultValueTiming)) $this->defaultValueTiming->xmlSerialize(true, $sxe->addChild('defaultValueTiming'));
+        if (isset($this->defaultValueDosage)) $this->defaultValueDosage->xmlSerialize(true, $sxe->addChild('defaultValueDosage'));
+        if (isset($this->defaultValueContactDetail)) $this->defaultValueContactDetail->xmlSerialize(true, $sxe->addChild('defaultValueContactDetail'));
+        if (isset($this->defaultValueContributor)) $this->defaultValueContributor->xmlSerialize(true, $sxe->addChild('defaultValueContributor'));
+        if (isset($this->defaultValueDataRequirement)) $this->defaultValueDataRequirement->xmlSerialize(true, $sxe->addChild('defaultValueDataRequirement'));
+        if (isset($this->defaultValueParameterDefinition)) $this->defaultValueParameterDefinition->xmlSerialize(true, $sxe->addChild('defaultValueParameterDefinition'));
+        if (isset($this->defaultValueRelatedArtifact)) $this->defaultValueRelatedArtifact->xmlSerialize(true, $sxe->addChild('defaultValueRelatedArtifact'));
+        if (isset($this->defaultValueTriggerDefinition)) $this->defaultValueTriggerDefinition->xmlSerialize(true, $sxe->addChild('defaultValueTriggerDefinition'));
+        if (isset($this->defaultValueUsageContext)) $this->defaultValueUsageContext->xmlSerialize(true, $sxe->addChild('defaultValueUsageContext'));
+        if (isset($this->defaultValueMeta)) $this->defaultValueMeta->xmlSerialize(true, $sxe->addChild('defaultValueMeta'));
+        if (isset($this->element)) $this->element->xmlSerialize(true, $sxe->addChild('element'));
+        if (isset($this->listMode)) $this->listMode->xmlSerialize(true, $sxe->addChild('listMode'));
+        if (isset($this->variable)) $this->variable->xmlSerialize(true, $sxe->addChild('variable'));
+        if (isset($this->condition)) $this->condition->xmlSerialize(true, $sxe->addChild('condition'));
+        if (isset($this->check)) $this->check->xmlSerialize(true, $sxe->addChild('check'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

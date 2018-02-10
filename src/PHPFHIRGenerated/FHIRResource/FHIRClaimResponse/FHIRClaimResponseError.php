@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,19 +71,19 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
      * The sequence number of the line item submitted which contains the error. This value is omitted when the error is elsewhere.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $sequenceLinkId = null;
+    public $itemSequence = null;
 
     /**
      * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $detailSequenceLinkId = null;
+    public $detailSequence = null;
 
     /**
      * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public $subdetailSequenceLinkId = null;
+    public $subDetailSequence = null;
 
     /**
      * An error code,from a specified code system, which details why the claim could not be adjudicated.
@@ -100,19 +100,17 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
      * The sequence number of the line item submitted which contains the error. This value is omitted when the error is elsewhere.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getSequenceLinkId()
-    {
-        return $this->sequenceLinkId;
+    public function getItemSequence() {
+        return $this->itemSequence;
     }
 
     /**
      * The sequence number of the line item submitted which contains the error. This value is omitted when the error is elsewhere.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $sequenceLinkId
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $itemSequence
      * @return $this
      */
-    public function setSequenceLinkId($sequenceLinkId)
-    {
-        $this->sequenceLinkId = $sequenceLinkId;
+    public function setItemSequence($itemSequence) {
+        $this->itemSequence = $itemSequence;
         return $this;
     }
 
@@ -120,19 +118,17 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
      * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getDetailSequenceLinkId()
-    {
-        return $this->detailSequenceLinkId;
+    public function getDetailSequence() {
+        return $this->detailSequence;
     }
 
     /**
      * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $detailSequenceLinkId
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $detailSequence
      * @return $this
      */
-    public function setDetailSequenceLinkId($detailSequenceLinkId)
-    {
-        $this->detailSequenceLinkId = $detailSequenceLinkId;
+    public function setDetailSequence($detailSequence) {
+        $this->detailSequence = $detailSequence;
         return $this;
     }
 
@@ -140,19 +136,17 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
      * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getSubdetailSequenceLinkId()
-    {
-        return $this->subdetailSequenceLinkId;
+    public function getSubDetailSequence() {
+        return $this->subDetailSequence;
     }
 
     /**
      * The sequence number of the addition within the line item submitted which contains the error. This value is omitted when the error is not related to an Addition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $subdetailSequenceLinkId
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $subDetailSequence
      * @return $this
      */
-    public function setSubdetailSequenceLinkId($subdetailSequenceLinkId)
-    {
-        $this->subdetailSequenceLinkId = $subdetailSequenceLinkId;
+    public function setSubDetailSequence($subDetailSequence) {
+        $this->subDetailSequence = $subDetailSequence;
         return $this;
     }
 
@@ -160,8 +154,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
      * An error code,from a specified code system, which details why the claim could not be adjudicated.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -170,8 +163,7 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -179,29 +171,49 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['itemSequence'])) {
+                $this->setItemSequence($data['itemSequence']);
+            }
+            if (isset($data['detailSequence'])) {
+                $this->setDetailSequence($data['detailSequence']);
+            }
+            if (isset($data['subDetailSequence'])) {
+                $this->setSubDetailSequence($data['subDetailSequence']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequenceLinkId) $json['sequenceLinkId'] = json_encode($this->sequenceLinkId);
-        if (null !== $this->detailSequenceLinkId) $json['detailSequenceLinkId'] = json_encode($this->detailSequenceLinkId);
-        if (null !== $this->subdetailSequenceLinkId) $json['subdetailSequenceLinkId'] = json_encode($this->subdetailSequenceLinkId);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (isset($this->itemSequence)) $json['itemSequence'] = $this->itemSequence;
+        if (isset($this->detailSequence)) $json['detailSequence'] = $this->detailSequence;
+        if (isset($this->subDetailSequence)) $json['subDetailSequence'] = $this->subDetailSequence;
+        if (isset($this->code)) $json['code'] = $this->code;
         return $json;
     }
 
@@ -210,14 +222,13 @@ class FHIRClaimResponseError extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimResponseError xmlns="http://hl7.org/fhir"></ClaimResponseError>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->sequenceLinkId) $this->sequenceLinkId->xmlSerialize(true, $sxe->addChild('sequenceLinkId'));
-        if (null !== $this->detailSequenceLinkId) $this->detailSequenceLinkId->xmlSerialize(true, $sxe->addChild('detailSequenceLinkId'));
-        if (null !== $this->subdetailSequenceLinkId) $this->subdetailSequenceLinkId->xmlSerialize(true, $sxe->addChild('subdetailSequenceLinkId'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->itemSequence)) $this->itemSequence->xmlSerialize(true, $sxe->addChild('itemSequence'));
+        if (isset($this->detailSequence)) $this->detailSequence->xmlSerialize(true, $sxe->addChild('detailSequence'));
+        if (isset($this->subDetailSequence)) $this->subDetailSequence->xmlSerialize(true, $sxe->addChild('subDetailSequence'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

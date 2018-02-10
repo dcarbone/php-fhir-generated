@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this measure is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -78,7 +78,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A formal identifier that is used to identify this measure when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
@@ -162,31 +162,37 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate measure instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the measure is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
+
+    /**
+     * The intended subjects for the measure. If this element is not provided, a Patient subject is assumed, but the subject of the measure can be anything.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $subject = null;
 
     /**
      * Descriptive topics related to the content of the measure. Topics provide a high-level categorization of the type of the measure that can be useful for filtering and searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $topic = array();
+    public $topic = [];
 
     /**
      * A contributor to the content of the measure, including authors, editors, reviewers, and endorsers.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
-    public $contributor = array();
+    public $contributor = [];
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A copyright statement relating to the measure and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the measure.
@@ -198,13 +204,13 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Related artifacts such as additional documentation, justification, or bibliographic references.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public $relatedArtifact = array();
+    public $relatedArtifact = [];
 
     /**
      * A reference to a Library resource containing the formal logic used by the measure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $library = array();
+    public $library = [];
 
     /**
      * Notices and disclaimers regarding the use of the measure, or related to intellectual property (such as code systems) referenced by the measure.
@@ -228,7 +234,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $type = array();
+    public $type = [];
 
     /**
      * A description of the risk adjustment factors that may impact the resulting score for the measure and how they may be accounted for when computing and reporting measure results.
@@ -264,7 +270,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Provides a description of an individual term used within the measure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown[]
      */
-    public $definition = array();
+    public $definition = [];
 
     /**
      * Additional guidance for the measure including how it can be used in a clinical context, and the intent of the measure.
@@ -282,13 +288,13 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A group of population criteria for the measure.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasure\FHIRMeasureGroup[]
      */
-    public $group = array();
+    public $group = [];
 
     /**
      * The supplemental data criteria for the measure report, specified as either the name of a valid CQL expression within a referenced library, or a valid FHIR Resource Path.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasure\FHIRMeasureSupplementalData[]
      */
-    public $supplementalData = array();
+    public $supplementalData = [];
 
     /**
      * @var string
@@ -296,21 +302,19 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'Measure';
 
     /**
-     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this measure is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this measure is (or will be) published. The URL SHOULD include the major version of the measure. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this measure is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -319,8 +323,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A formal identifier that is used to identify this measure when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -329,8 +332,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -339,8 +341,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The identifier that is used to identify this version of the measure when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the measure author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -349,8 +350,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -359,8 +359,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A natural language name identifying the measure. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -369,8 +368,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -379,8 +377,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A short, descriptive, user-friendly title for the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -389,8 +386,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -399,8 +395,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The status of this measure. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -409,8 +404,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -419,8 +413,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A boolean value to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -429,8 +422,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -439,8 +431,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The date  (and optionally time) when the measure was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -449,8 +440,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -459,8 +449,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The name of the individual or organization that published the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -469,8 +458,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -479,8 +467,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A free text natural language description of the measure from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -489,8 +476,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -499,8 +485,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Explaination of why this measure is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -509,8 +494,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -519,8 +503,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A detailed description of how the measure is used from a clinical perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getUsage()
-    {
+    public function getUsage() {
         return $this->usage;
     }
 
@@ -529,8 +512,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $usage
      * @return $this
      */
-    public function setUsage($usage)
-    {
+    public function setUsage($usage) {
         $this->usage = $usage;
         return $this;
     }
@@ -539,8 +521,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getApprovalDate()
-    {
+    public function getApprovalDate() {
         return $this->approvalDate;
     }
 
@@ -549,8 +530,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
-    public function setApprovalDate($approvalDate)
-    {
+    public function setApprovalDate($approvalDate) {
         $this->approvalDate = $approvalDate;
         return $this;
     }
@@ -559,8 +539,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getLastReviewDate()
-    {
+    public function getLastReviewDate() {
         return $this->lastReviewDate;
     }
 
@@ -569,8 +548,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
-    public function setLastReviewDate($lastReviewDate)
-    {
+    public function setLastReviewDate($lastReviewDate) {
         $this->lastReviewDate = $lastReviewDate;
         return $this;
     }
@@ -579,8 +557,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The period during which the measure content was or is planned to be in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getEffectivePeriod()
-    {
+    public function getEffectivePeriod() {
         return $this->effectivePeriod;
     }
 
@@ -589,8 +566,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
-    public function setEffectivePeriod($effectivePeriod)
-    {
+    public function setEffectivePeriod($effectivePeriod) {
         $this->effectivePeriod = $effectivePeriod;
         return $this;
     }
@@ -599,8 +575,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate measure instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -609,8 +584,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -619,8 +593,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A legal or geographic region in which the measure is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -629,9 +602,26 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * The intended subjects for the measure. If this element is not provided, a Patient subject is assumed, but the subject of the measure can be anything.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSubject() {
+        return $this->subject;
+    }
+
+    /**
+     * The intended subjects for the measure. If this element is not provided, a Patient subject is assumed, but the subject of the measure can be anything.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $subject
+     * @return $this
+     */
+    public function setSubject($subject) {
+        $this->subject = $subject;
         return $this;
     }
 
@@ -639,8 +629,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Descriptive topics related to the content of the measure. Topics provide a high-level categorization of the type of the measure that can be useful for filtering and searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getTopic()
-    {
+    public function getTopic() {
         return $this->topic;
     }
 
@@ -649,8 +638,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
-    public function addTopic($topic)
-    {
+    public function addTopic($topic) {
         $this->topic[] = $topic;
         return $this;
     }
@@ -659,8 +647,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A contributor to the content of the measure, including authors, editors, reviewers, and endorsers.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
-    public function getContributor()
-    {
+    public function getContributor() {
         return $this->contributor;
     }
 
@@ -669,8 +656,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContributor $contributor
      * @return $this
      */
-    public function addContributor($contributor)
-    {
+    public function addContributor($contributor) {
         $this->contributor[] = $contributor;
         return $this;
     }
@@ -679,8 +665,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -689,8 +674,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -699,8 +683,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A copyright statement relating to the measure and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getCopyright()
-    {
+    public function getCopyright() {
         return $this->copyright;
     }
 
@@ -709,8 +692,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
-    public function setCopyright($copyright)
-    {
+    public function setCopyright($copyright) {
         $this->copyright = $copyright;
         return $this;
     }
@@ -719,8 +701,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Related artifacts such as additional documentation, justification, or bibliographic references.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public function getRelatedArtifact()
-    {
+    public function getRelatedArtifact() {
         return $this->relatedArtifact;
     }
 
@@ -729,8 +710,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
-    public function addRelatedArtifact($relatedArtifact)
-    {
+    public function addRelatedArtifact($relatedArtifact) {
         $this->relatedArtifact[] = $relatedArtifact;
         return $this;
     }
@@ -739,8 +719,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A reference to a Library resource containing the formal logic used by the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getLibrary()
-    {
+    public function getLibrary() {
         return $this->library;
     }
 
@@ -749,8 +728,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $library
      * @return $this
      */
-    public function addLibrary($library)
-    {
+    public function addLibrary($library) {
         $this->library[] = $library;
         return $this;
     }
@@ -759,8 +737,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Notices and disclaimers regarding the use of the measure, or related to intellectual property (such as code systems) referenced by the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDisclaimer()
-    {
+    public function getDisclaimer() {
         return $this->disclaimer;
     }
 
@@ -769,8 +746,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $disclaimer
      * @return $this
      */
-    public function setDisclaimer($disclaimer)
-    {
+    public function setDisclaimer($disclaimer) {
         $this->disclaimer = $disclaimer;
         return $this;
     }
@@ -779,8 +755,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Indicates how the calculation is performed for the measure, including proportion, ratio, continuous variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getScoring()
-    {
+    public function getScoring() {
         return $this->scoring;
     }
 
@@ -789,8 +764,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $scoring
      * @return $this
      */
-    public function setScoring($scoring)
-    {
+    public function setScoring($scoring) {
         $this->scoring = $scoring;
         return $this;
     }
@@ -799,8 +773,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * If this is a composite measure, the scoring method used to combine the component measures to determine the composite score.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCompositeScoring()
-    {
+    public function getCompositeScoring() {
         return $this->compositeScoring;
     }
 
@@ -809,8 +782,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $compositeScoring
      * @return $this
      */
-    public function setCompositeScoring($compositeScoring)
-    {
+    public function setCompositeScoring($compositeScoring) {
         $this->compositeScoring = $compositeScoring;
         return $this;
     }
@@ -819,8 +791,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -829,8 +800,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function addType($type)
-    {
+    public function addType($type) {
         $this->type[] = $type;
         return $this;
     }
@@ -839,8 +809,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A description of the risk adjustment factors that may impact the resulting score for the measure and how they may be accounted for when computing and reporting measure results.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getRiskAdjustment()
-    {
+    public function getRiskAdjustment() {
         return $this->riskAdjustment;
     }
 
@@ -849,8 +818,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $riskAdjustment
      * @return $this
      */
-    public function setRiskAdjustment($riskAdjustment)
-    {
+    public function setRiskAdjustment($riskAdjustment) {
         $this->riskAdjustment = $riskAdjustment;
         return $this;
     }
@@ -859,8 +827,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Describes how to combine the information calculated, based on logic in each of several populations, into one summarized result.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getRateAggregation()
-    {
+    public function getRateAggregation() {
         return $this->rateAggregation;
     }
 
@@ -869,8 +836,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $rateAggregation
      * @return $this
      */
-    public function setRateAggregation($rateAggregation)
-    {
+    public function setRateAggregation($rateAggregation) {
         $this->rateAggregation = $rateAggregation;
         return $this;
     }
@@ -879,8 +845,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Provides a succint statement of the need for the measure. Usually includes statements pertaining to importance criterion: impact, gap in care, and evidence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getRationale()
-    {
+    public function getRationale() {
         return $this->rationale;
     }
 
@@ -889,8 +854,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $rationale
      * @return $this
      */
-    public function setRationale($rationale)
-    {
+    public function setRationale($rationale) {
         $this->rationale = $rationale;
         return $this;
     }
@@ -899,8 +863,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Provides a summary of relevant clinical guidelines or other clinical recommendations supporting the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getClinicalRecommendationStatement()
-    {
+    public function getClinicalRecommendationStatement() {
         return $this->clinicalRecommendationStatement;
     }
 
@@ -909,8 +872,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $clinicalRecommendationStatement
      * @return $this
      */
-    public function setClinicalRecommendationStatement($clinicalRecommendationStatement)
-    {
+    public function setClinicalRecommendationStatement($clinicalRecommendationStatement) {
         $this->clinicalRecommendationStatement = $clinicalRecommendationStatement;
         return $this;
     }
@@ -919,8 +881,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is whthin a range).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getImprovementNotation()
-    {
+    public function getImprovementNotation() {
         return $this->improvementNotation;
     }
 
@@ -929,8 +890,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $improvementNotation
      * @return $this
      */
-    public function setImprovementNotation($improvementNotation)
-    {
+    public function setImprovementNotation($improvementNotation) {
         $this->improvementNotation = $improvementNotation;
         return $this;
     }
@@ -939,8 +899,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Provides a description of an individual term used within the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown[]
      */
-    public function getDefinition()
-    {
+    public function getDefinition() {
         return $this->definition;
     }
 
@@ -949,8 +908,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $definition
      * @return $this
      */
-    public function addDefinition($definition)
-    {
+    public function addDefinition($definition) {
         $this->definition[] = $definition;
         return $this;
     }
@@ -959,8 +917,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * Additional guidance for the measure including how it can be used in a clinical context, and the intent of the measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getGuidance()
-    {
+    public function getGuidance() {
         return $this->guidance;
     }
 
@@ -969,8 +926,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $guidance
      * @return $this
      */
-    public function setGuidance($guidance)
-    {
+    public function setGuidance($guidance) {
         $this->guidance = $guidance;
         return $this;
     }
@@ -979,8 +935,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The measure set, e.g. Preventive Care and Screening.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSet()
-    {
+    public function getSet() {
         return $this->set;
     }
 
@@ -989,8 +944,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $set
      * @return $this
      */
-    public function setSet($set)
-    {
+    public function setSet($set) {
         $this->set = $set;
         return $this;
     }
@@ -999,8 +953,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * A group of population criteria for the measure.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasure\FHIRMeasureGroup[]
      */
-    public function getGroup()
-    {
+    public function getGroup() {
         return $this->group;
     }
 
@@ -1009,8 +962,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasure\FHIRMeasureGroup $group
      * @return $this
      */
-    public function addGroup($group)
-    {
+    public function addGroup($group) {
         $this->group[] = $group;
         return $this;
     }
@@ -1019,8 +971,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * The supplemental data criteria for the measure report, specified as either the name of a valid CQL expression within a referenced library, or a valid FHIR Resource Path.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasure\FHIRMeasureSupplementalData[]
      */
-    public function getSupplementalData()
-    {
+    public function getSupplementalData() {
         return $this->supplementalData;
     }
 
@@ -1029,8 +980,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasure\FHIRMeasureSupplementalData $supplementalData
      * @return $this
      */
-    public function addSupplementalData($supplementalData)
-    {
+    public function addSupplementalData($supplementalData) {
         $this->supplementalData[] = $supplementalData;
         return $this;
     }
@@ -1038,121 +988,316 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['usage'])) {
+                $this->setUsage($data['usage']);
+            }
+            if (isset($data['approvalDate'])) {
+                $this->setApprovalDate($data['approvalDate']);
+            }
+            if (isset($data['lastReviewDate'])) {
+                $this->setLastReviewDate($data['lastReviewDate']);
+            }
+            if (isset($data['effectivePeriod'])) {
+                $this->setEffectivePeriod($data['effectivePeriod']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['topic'])) {
+                if (is_array($data['topic'])) {
+                    foreach($data['topic'] as $d) {
+                        $this->addTopic($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"topic" must be array of objects or null, '.gettype($data['topic']).' seen.');
+                }
+            }
+            if (isset($data['contributor'])) {
+                if (is_array($data['contributor'])) {
+                    foreach($data['contributor'] as $d) {
+                        $this->addContributor($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contributor" must be array of objects or null, '.gettype($data['contributor']).' seen.');
+                }
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['copyright'])) {
+                $this->setCopyright($data['copyright']);
+            }
+            if (isset($data['relatedArtifact'])) {
+                if (is_array($data['relatedArtifact'])) {
+                    foreach($data['relatedArtifact'] as $d) {
+                        $this->addRelatedArtifact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"relatedArtifact" must be array of objects or null, '.gettype($data['relatedArtifact']).' seen.');
+                }
+            }
+            if (isset($data['library'])) {
+                if (is_array($data['library'])) {
+                    foreach($data['library'] as $d) {
+                        $this->addLibrary($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"library" must be array of objects or null, '.gettype($data['library']).' seen.');
+                }
+            }
+            if (isset($data['disclaimer'])) {
+                $this->setDisclaimer($data['disclaimer']);
+            }
+            if (isset($data['scoring'])) {
+                $this->setScoring($data['scoring']);
+            }
+            if (isset($data['compositeScoring'])) {
+                $this->setCompositeScoring($data['compositeScoring']);
+            }
+            if (isset($data['type'])) {
+                if (is_array($data['type'])) {
+                    foreach($data['type'] as $d) {
+                        $this->addType($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"type" must be array of objects or null, '.gettype($data['type']).' seen.');
+                }
+            }
+            if (isset($data['riskAdjustment'])) {
+                $this->setRiskAdjustment($data['riskAdjustment']);
+            }
+            if (isset($data['rateAggregation'])) {
+                $this->setRateAggregation($data['rateAggregation']);
+            }
+            if (isset($data['rationale'])) {
+                $this->setRationale($data['rationale']);
+            }
+            if (isset($data['clinicalRecommendationStatement'])) {
+                $this->setClinicalRecommendationStatement($data['clinicalRecommendationStatement']);
+            }
+            if (isset($data['improvementNotation'])) {
+                $this->setImprovementNotation($data['improvementNotation']);
+            }
+            if (isset($data['definition'])) {
+                if (is_array($data['definition'])) {
+                    foreach($data['definition'] as $d) {
+                        $this->addDefinition($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"definition" must be array of objects or null, '.gettype($data['definition']).' seen.');
+                }
+            }
+            if (isset($data['guidance'])) {
+                $this->setGuidance($data['guidance']);
+            }
+            if (isset($data['set'])) {
+                $this->setSet($data['set']);
+            }
+            if (isset($data['group'])) {
+                if (is_array($data['group'])) {
+                    foreach($data['group'] as $d) {
+                        $this->addGroup($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"group" must be array of objects or null, '.gettype($data['group']).' seen.');
+                }
+            }
+            if (isset($data['supplementalData'])) {
+                if (is_array($data['supplementalData'])) {
+                    foreach($data['supplementalData'] as $d) {
+                        $this->addSupplementalData($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supplementalData" must be array of objects or null, '.gettype($data['supplementalData']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (isset($this->url)) $json['url'] = $this->url;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
-        if (null !== $this->approvalDate) $json['approvalDate'] = json_encode($this->approvalDate);
-        if (null !== $this->lastReviewDate) $json['lastReviewDate'] = json_encode($this->lastReviewDate);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->usage)) $json['usage'] = $this->usage;
+        if (isset($this->approvalDate)) $json['approvalDate'] = $this->approvalDate;
+        if (isset($this->lastReviewDate)) $json['lastReviewDate'] = $this->lastReviewDate;
+        if (isset($this->effectivePeriod)) $json['effectivePeriod'] = $this->effectivePeriod;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
+        if (isset($this->subject)) $json['subject'] = $this->subject;
         if (0 < count($this->topic)) {
             $json['topic'] = [];
             foreach($this->topic as $topic) {
-                $json['topic'][] = json_encode($topic);
+                if (null !== $topic) $json['topic'][] = $topic;
             }
         }
         if (0 < count($this->contributor)) {
             $json['contributor'] = [];
             foreach($this->contributor as $contributor) {
-                $json['contributor'][] = json_encode($contributor);
+                if (null !== $contributor) $json['contributor'][] = $contributor;
             }
         }
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (isset($this->copyright)) $json['copyright'] = $this->copyright;
         if (0 < count($this->relatedArtifact)) {
             $json['relatedArtifact'] = [];
             foreach($this->relatedArtifact as $relatedArtifact) {
-                $json['relatedArtifact'][] = json_encode($relatedArtifact);
+                if (null !== $relatedArtifact) $json['relatedArtifact'][] = $relatedArtifact;
             }
         }
         if (0 < count($this->library)) {
             $json['library'] = [];
             foreach($this->library as $library) {
-                $json['library'][] = json_encode($library);
+                if (null !== $library) $json['library'][] = $library;
             }
         }
-        if (null !== $this->disclaimer) $json['disclaimer'] = json_encode($this->disclaimer);
-        if (null !== $this->scoring) $json['scoring'] = json_encode($this->scoring);
-        if (null !== $this->compositeScoring) $json['compositeScoring'] = json_encode($this->compositeScoring);
+        if (isset($this->disclaimer)) $json['disclaimer'] = $this->disclaimer;
+        if (isset($this->scoring)) $json['scoring'] = $this->scoring;
+        if (isset($this->compositeScoring)) $json['compositeScoring'] = $this->compositeScoring;
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                if (null !== $type) $json['type'][] = $type;
             }
         }
-        if (null !== $this->riskAdjustment) $json['riskAdjustment'] = json_encode($this->riskAdjustment);
-        if (null !== $this->rateAggregation) $json['rateAggregation'] = json_encode($this->rateAggregation);
-        if (null !== $this->rationale) $json['rationale'] = json_encode($this->rationale);
-        if (null !== $this->clinicalRecommendationStatement) $json['clinicalRecommendationStatement'] = json_encode($this->clinicalRecommendationStatement);
-        if (null !== $this->improvementNotation) $json['improvementNotation'] = json_encode($this->improvementNotation);
+        if (isset($this->riskAdjustment)) $json['riskAdjustment'] = $this->riskAdjustment;
+        if (isset($this->rateAggregation)) $json['rateAggregation'] = $this->rateAggregation;
+        if (isset($this->rationale)) $json['rationale'] = $this->rationale;
+        if (isset($this->clinicalRecommendationStatement)) $json['clinicalRecommendationStatement'] = $this->clinicalRecommendationStatement;
+        if (isset($this->improvementNotation)) $json['improvementNotation'] = $this->improvementNotation;
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                if (null !== $definition) $json['definition'][] = $definition;
             }
         }
-        if (null !== $this->guidance) $json['guidance'] = json_encode($this->guidance);
-        if (null !== $this->set) $json['set'] = json_encode($this->set);
+        if (isset($this->guidance)) $json['guidance'] = $this->guidance;
+        if (isset($this->set)) $json['set'] = $this->set;
         if (0 < count($this->group)) {
             $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = json_encode($group);
+                if (null !== $group) $json['group'][] = $group;
             }
         }
         if (0 < count($this->supplementalData)) {
             $json['supplementalData'] = [];
             foreach($this->supplementalData as $supplementalData) {
-                $json['supplementalData'][] = json_encode($supplementalData);
+                if (null !== $supplementalData) $json['supplementalData'][] = $supplementalData;
             }
         }
         return $json;
@@ -1163,29 +1308,28 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Measure xmlns="http://hl7.org/fhir"></Measure>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
         if (0 < count($this->identifier)) {
             foreach($this->identifier as $identifier) {
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
-        if (null !== $this->approvalDate) $this->approvalDate->xmlSerialize(true, $sxe->addChild('approvalDate'));
-        if (null !== $this->lastReviewDate) $this->lastReviewDate->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
-        if (null !== $this->effectivePeriod) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->usage)) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
+        if (isset($this->approvalDate)) $this->approvalDate->xmlSerialize(true, $sxe->addChild('approvalDate'));
+        if (isset($this->lastReviewDate)) $this->lastReviewDate->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
+        if (isset($this->effectivePeriod)) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -1196,6 +1340,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (0 < count($this->topic)) {
             foreach($this->topic as $topic) {
                 $topic->xmlSerialize(true, $sxe->addChild('topic'));
@@ -1211,7 +1356,7 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->copyright)) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
         if (0 < count($this->relatedArtifact)) {
             foreach($this->relatedArtifact as $relatedArtifact) {
                 $relatedArtifact->xmlSerialize(true, $sxe->addChild('relatedArtifact'));
@@ -1222,26 +1367,26 @@ class FHIRMeasure extends FHIRDomainResource implements \JsonSerializable
                 $library->xmlSerialize(true, $sxe->addChild('library'));
             }
         }
-        if (null !== $this->disclaimer) $this->disclaimer->xmlSerialize(true, $sxe->addChild('disclaimer'));
-        if (null !== $this->scoring) $this->scoring->xmlSerialize(true, $sxe->addChild('scoring'));
-        if (null !== $this->compositeScoring) $this->compositeScoring->xmlSerialize(true, $sxe->addChild('compositeScoring'));
+        if (isset($this->disclaimer)) $this->disclaimer->xmlSerialize(true, $sxe->addChild('disclaimer'));
+        if (isset($this->scoring)) $this->scoring->xmlSerialize(true, $sxe->addChild('scoring'));
+        if (isset($this->compositeScoring)) $this->compositeScoring->xmlSerialize(true, $sxe->addChild('compositeScoring'));
         if (0 < count($this->type)) {
             foreach($this->type as $type) {
                 $type->xmlSerialize(true, $sxe->addChild('type'));
             }
         }
-        if (null !== $this->riskAdjustment) $this->riskAdjustment->xmlSerialize(true, $sxe->addChild('riskAdjustment'));
-        if (null !== $this->rateAggregation) $this->rateAggregation->xmlSerialize(true, $sxe->addChild('rateAggregation'));
-        if (null !== $this->rationale) $this->rationale->xmlSerialize(true, $sxe->addChild('rationale'));
-        if (null !== $this->clinicalRecommendationStatement) $this->clinicalRecommendationStatement->xmlSerialize(true, $sxe->addChild('clinicalRecommendationStatement'));
-        if (null !== $this->improvementNotation) $this->improvementNotation->xmlSerialize(true, $sxe->addChild('improvementNotation'));
+        if (isset($this->riskAdjustment)) $this->riskAdjustment->xmlSerialize(true, $sxe->addChild('riskAdjustment'));
+        if (isset($this->rateAggregation)) $this->rateAggregation->xmlSerialize(true, $sxe->addChild('rateAggregation'));
+        if (isset($this->rationale)) $this->rationale->xmlSerialize(true, $sxe->addChild('rationale'));
+        if (isset($this->clinicalRecommendationStatement)) $this->clinicalRecommendationStatement->xmlSerialize(true, $sxe->addChild('clinicalRecommendationStatement'));
+        if (isset($this->improvementNotation)) $this->improvementNotation->xmlSerialize(true, $sxe->addChild('improvementNotation'));
         if (0 < count($this->definition)) {
             foreach($this->definition as $definition) {
                 $definition->xmlSerialize(true, $sxe->addChild('definition'));
             }
         }
-        if (null !== $this->guidance) $this->guidance->xmlSerialize(true, $sxe->addChild('guidance'));
-        if (null !== $this->set) $this->set->xmlSerialize(true, $sxe->addChild('set'));
+        if (isset($this->guidance)) $this->guidance->xmlSerialize(true, $sxe->addChild('guidance'));
+        if (isset($this->set)) $this->set->xmlSerialize(true, $sxe->addChild('set'));
         if (0 < count($this->group)) {
             foreach($this->group as $group) {
                 $group->xmlSerialize(true, $sxe->addChild('group'));

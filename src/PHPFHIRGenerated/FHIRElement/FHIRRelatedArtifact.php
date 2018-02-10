@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -113,8 +113,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * The type of relationship to the related artifact.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifactType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -123,8 +122,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifactType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -133,8 +131,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDisplay()
-    {
+    public function getDisplay() {
         return $this->display;
     }
 
@@ -143,8 +140,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
      * @return $this
      */
-    public function setDisplay($display)
-    {
+    public function setDisplay($display) {
         $this->display = $display;
         return $this;
     }
@@ -153,8 +149,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * A bibliographic citation for the related artifact. This text SHOULD be formatted according to an accepted citation format.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCitation()
-    {
+    public function getCitation() {
         return $this->citation;
     }
 
@@ -163,8 +158,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $citation
      * @return $this
      */
-    public function setCitation($citation)
-    {
+    public function setCitation($citation) {
         $this->citation = $citation;
         return $this;
     }
@@ -173,8 +167,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * A url for the artifact that can be followed to access the actual content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
@@ -183,8 +176,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -193,8 +185,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * The document being referenced, represented as an attachment. This is exclusive with the resource element.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getDocument()
-    {
+    public function getDocument() {
         return $this->document;
     }
 
@@ -203,8 +194,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $document
      * @return $this
      */
-    public function setDocument($document)
-    {
+    public function setDocument($document) {
         $this->document = $document;
         return $this;
     }
@@ -213,8 +203,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * The related resource, such as a library, value set, profile, or other knowledge resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getResource()
-    {
+    public function getResource() {
         return $this->resource;
     }
 
@@ -223,8 +212,7 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $resource
      * @return $this
      */
-    public function setResource($resource)
-    {
+    public function setResource($resource) {
         $this->resource = $resource;
         return $this;
     }
@@ -232,31 +220,57 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['display'])) {
+                $this->setDisplay($data['display']);
+            }
+            if (isset($data['citation'])) {
+                $this->setCitation($data['citation']);
+            }
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['document'])) {
+                $this->setDocument($data['document']);
+            }
+            if (isset($data['resource'])) {
+                $this->setResource($data['resource']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->display) $json['display'] = json_encode($this->display);
-        if (null !== $this->citation) $json['citation'] = json_encode($this->citation);
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->document) $json['document'] = json_encode($this->document);
-        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->display)) $json['display'] = $this->display;
+        if (isset($this->citation)) $json['citation'] = $this->citation;
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->document)) $json['document'] = $this->document;
+        if (isset($this->resource)) $json['resource'] = $this->resource;
         return $json;
     }
 
@@ -265,16 +279,15 @@ class FHIRRelatedArtifact extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<RelatedArtifact xmlns="http://hl7.org/fhir"></RelatedArtifact>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
-        if (null !== $this->citation) $this->citation->xmlSerialize(true, $sxe->addChild('citation'));
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->document) $this->document->xmlSerialize(true, $sxe->addChild('document'));
-        if (null !== $this->resource) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->display)) $this->display->xmlSerialize(true, $sxe->addChild('display'));
+        if (isset($this->citation)) $this->citation->xmlSerialize(true, $sxe->addChild('citation'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->document)) $this->document->xmlSerialize(true, $sxe->addChild('document'));
+        if (isset($this->resource)) $this->resource->xmlSerialize(true, $sxe->addChild('resource'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

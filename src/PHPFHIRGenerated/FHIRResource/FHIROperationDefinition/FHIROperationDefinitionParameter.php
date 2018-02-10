@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -104,16 +104,16 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
     public $type = null;
 
     /**
+     * If the type is "Reference", then targetProfile lists a one or more profiles that the Reference can refer to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public $targetProfile = [];
+
+    /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
     public $searchType = null;
-
-    /**
-     * A profile the specifies the rules that this parameter must conform to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $profile = null;
 
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
@@ -125,7 +125,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * The parts of a nested Parameter.
      * @var \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
-    public $part = array();
+    public $part = [];
 
     /**
      * @var string
@@ -136,8 +136,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * The name of used to identify the parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -146,8 +145,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -156,8 +154,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * Whether this is an input or an output parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIROperationParameterUse
      */
-    public function getUse()
-    {
+    public function getUse() {
         return $this->use;
     }
 
@@ -166,8 +163,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIROperationParameterUse $use
      * @return $this
      */
-    public function setUse($use)
-    {
+    public function setUse($use) {
         $this->use = $use;
         return $this;
     }
@@ -176,8 +172,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * The minimum number of times this parameter SHALL appear in the request or response.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getMin()
-    {
+    public function getMin() {
         return $this->min;
     }
 
@@ -186,8 +181,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $min
      * @return $this
      */
-    public function setMin($min)
-    {
+    public function setMin($min) {
         $this->min = $min;
         return $this;
     }
@@ -196,8 +190,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * The maximum number of times this element is permitted to appear in the request or response.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getMax()
-    {
+    public function getMax() {
         return $this->max;
     }
 
@@ -206,8 +199,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $max
      * @return $this
      */
-    public function setMax($max)
-    {
+    public function setMax($max) {
         $this->max = $max;
         return $this;
     }
@@ -216,8 +208,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * Describes the meaning or use of this parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -226,8 +217,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -236,8 +226,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * The type for this parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -246,9 +235,26 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRFHIRAllTypes $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * If the type is "Reference", then targetProfile lists a one or more profiles that the Reference can refer to.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public function getTargetProfile() {
+        return $this->targetProfile;
+    }
+
+    /**
+     * If the type is "Reference", then targetProfile lists a one or more profiles that the Reference can refer to.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $targetProfile
+     * @return $this
+     */
+    public function addTargetProfile($targetProfile) {
+        $this->targetProfile[] = $targetProfile;
         return $this;
     }
 
@@ -256,8 +262,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
-    public function getSearchType()
-    {
+    public function getSearchType() {
         return $this->searchType;
     }
 
@@ -266,29 +271,8 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType $searchType
      * @return $this
      */
-    public function setSearchType($searchType)
-    {
+    public function setSearchType($searchType) {
         $this->searchType = $searchType;
-        return $this;
-    }
-
-    /**
-     * A profile the specifies the rules that this parameter must conform to.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getProfile()
-    {
-        return $this->profile;
-    }
-
-    /**
-     * A profile the specifies the rules that this parameter must conform to.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
-     * @return $this
-     */
-    public function setProfile($profile)
-    {
-        $this->profile = $profile;
         return $this;
     }
 
@@ -296,8 +280,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
      * @return \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding
      */
-    public function getBinding()
-    {
+    public function getBinding() {
         return $this->binding;
     }
 
@@ -306,8 +289,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionBinding $binding
      * @return $this
      */
-    public function setBinding($binding)
-    {
+    public function setBinding($binding) {
         $this->binding = $binding;
         return $this;
     }
@@ -316,8 +298,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * The parts of a nested Parameter.
      * @return \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
-    public function getPart()
-    {
+    public function getPart() {
         return $this->part;
     }
 
@@ -326,8 +307,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRResource\FHIROperationDefinition\FHIROperationDefinitionParameter $part
      * @return $this
      */
-    public function addPart($part)
-    {
+    public function addPart($part) {
         $this->part[] = $part;
         return $this;
     }
@@ -335,38 +315,93 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+            if (isset($data['min'])) {
+                $this->setMin($data['min']);
+            }
+            if (isset($data['max'])) {
+                $this->setMax($data['max']);
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['targetProfile'])) {
+                if (is_array($data['targetProfile'])) {
+                    foreach($data['targetProfile'] as $d) {
+                        $this->addTargetProfile($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"targetProfile" must be array of objects or null, '.gettype($data['targetProfile']).' seen.');
+                }
+            }
+            if (isset($data['searchType'])) {
+                $this->setSearchType($data['searchType']);
+            }
+            if (isset($data['binding'])) {
+                $this->setBinding($data['binding']);
+            }
+            if (isset($data['part'])) {
+                if (is_array($data['part'])) {
+                    foreach($data['part'] as $d) {
+                        $this->addPart($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"part" must be array of objects or null, '.gettype($data['part']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->use) $json['use'] = json_encode($this->use);
-        if (null !== $this->min) $json['min'] = json_encode($this->min);
-        if (null !== $this->max) $json['max'] = json_encode($this->max);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->searchType) $json['searchType'] = json_encode($this->searchType);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
-        if (null !== $this->binding) $json['binding'] = json_encode($this->binding);
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->use)) $json['use'] = $this->use;
+        if (isset($this->min)) $json['min'] = $this->min;
+        if (isset($this->max)) $json['max'] = $this->max;
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (0 < count($this->targetProfile)) {
+            $json['targetProfile'] = [];
+            foreach($this->targetProfile as $targetProfile) {
+                if (null !== $targetProfile) $json['targetProfile'][] = $targetProfile;
+            }
+        }
+        if (isset($this->searchType)) $json['searchType'] = $this->searchType;
+        if (isset($this->binding)) $json['binding'] = $this->binding;
         if (0 < count($this->part)) {
             $json['part'] = [];
             foreach($this->part as $part) {
-                $json['part'][] = json_encode($part);
+                if (null !== $part) $json['part'][] = $part;
             }
         }
         return $json;
@@ -377,19 +412,22 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement implements \J
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<OperationDefinitionParameter xmlns="http://hl7.org/fhir"></OperationDefinitionParameter>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->use) $this->use->xmlSerialize(true, $sxe->addChild('use'));
-        if (null !== $this->min) $this->min->xmlSerialize(true, $sxe->addChild('min'));
-        if (null !== $this->max) $this->max->xmlSerialize(true, $sxe->addChild('max'));
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->searchType) $this->searchType->xmlSerialize(true, $sxe->addChild('searchType'));
-        if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
-        if (null !== $this->binding) $this->binding->xmlSerialize(true, $sxe->addChild('binding'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
+        if (isset($this->min)) $this->min->xmlSerialize(true, $sxe->addChild('min'));
+        if (isset($this->max)) $this->max->xmlSerialize(true, $sxe->addChild('max'));
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (0 < count($this->targetProfile)) {
+            foreach($this->targetProfile as $targetProfile) {
+                $targetProfile->xmlSerialize(true, $sxe->addChild('targetProfile'));
+            }
+        }
+        if (isset($this->searchType)) $this->searchType->xmlSerialize(true, $sxe->addChild('searchType'));
+        if (isset($this->binding)) $this->binding->xmlSerialize(true, $sxe->addChild('binding'));
         if (0 < count($this->part)) {
             foreach($this->part as $part) {
                 $part->xmlSerialize(true, $sxe->addChild('part'));

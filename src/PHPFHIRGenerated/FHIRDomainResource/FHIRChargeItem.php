@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -78,7 +78,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $definition = array();
+    public $definition = [];
 
     /**
      * The current state of the ChargeItem.
@@ -90,7 +90,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = array();
+    public $partOf = [];
 
     /**
      * A code that identifies the charge, like a billing code.
@@ -111,19 +111,16 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $occurrenceTiming = null;
@@ -132,7 +129,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Indicates who or what performed or participated in the charged service.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRChargeItem\FHIRChargeItemParticipant[]
      */
-    public $participant = array();
+    public $participant = [];
 
     /**
      * The organization requesting the service.
@@ -156,7 +153,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The anatomical location where the related service has been applied.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $bodysite = array();
+    public $bodysite = [];
 
     /**
      * Factor overriding the factor determined by the rules associated with the code.
@@ -192,31 +189,31 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Describes why the event occurred in coded or textual form.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reason = array();
+    public $reason = [];
 
     /**
      * Indicated the rendered service that caused this charge.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $service = array();
+    public $service = [];
 
     /**
      * Account into which this ChargeItems belongs.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $account = array();
+    public $account = [];
 
     /**
      * Comments made about the event by the performer, subject or other participants.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * Further information supporting the this charge.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInformation = array();
+    public $supportingInformation = [];
 
     /**
      * @var string
@@ -227,8 +224,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Identifiers assigned to this event performer or other systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -237,8 +233,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -247,8 +242,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getDefinition()
-    {
+    public function getDefinition() {
         return $this->definition;
     }
 
@@ -257,8 +251,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $definition
      * @return $this
      */
-    public function addDefinition($definition)
-    {
+    public function addDefinition($definition) {
         $this->definition[] = $definition;
         return $this;
     }
@@ -267,8 +260,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The current state of the ChargeItem.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRChargeItemStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -277,8 +269,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRChargeItemStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -287,8 +278,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getPartOf()
-    {
+    public function getPartOf() {
         return $this->partOf;
     }
 
@@ -297,8 +287,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partOf
      * @return $this
      */
-    public function addPartOf($partOf)
-    {
+    public function addPartOf($partOf) {
         $this->partOf[] = $partOf;
         return $this;
     }
@@ -307,8 +296,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * A code that identifies the charge, like a billing code.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -317,8 +305,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -327,8 +314,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The individual or set of individuals the action is being or was performed on.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubject()
-    {
+    public function getSubject() {
         return $this->subject;
     }
 
@@ -337,8 +323,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setSubject($subject)
-    {
+    public function setSubject($subject) {
         $this->subject = $subject;
         return $this;
     }
@@ -347,8 +332,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The encounter or episode of care that establishes the context for this event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->context;
     }
 
@@ -357,68 +341,55 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setContext($context)
-    {
+    public function setContext($context) {
         $this->context = $context;
         return $this;
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getOccurrenceDateTime()
-    {
+    public function getOccurrenceDateTime() {
         return $this->occurrenceDateTime;
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
-    public function setOccurrenceDateTime($occurrenceDateTime)
-    {
+    public function setOccurrenceDateTime($occurrenceDateTime) {
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getOccurrencePeriod()
-    {
+    public function getOccurrencePeriod() {
         return $this->occurrencePeriod;
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
-    public function setOccurrencePeriod($occurrencePeriod)
-    {
+    public function setOccurrencePeriod($occurrencePeriod) {
         $this->occurrencePeriod = $occurrencePeriod;
         return $this;
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public function getOccurrenceTiming()
-    {
+    public function getOccurrenceTiming() {
         return $this->occurrenceTiming;
     }
 
     /**
-     * Date/time(s) or duration when the charged service was applied. (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
      * @return $this
      */
-    public function setOccurrenceTiming($occurrenceTiming)
-    {
+    public function setOccurrenceTiming($occurrenceTiming) {
         $this->occurrenceTiming = $occurrenceTiming;
         return $this;
     }
@@ -427,8 +398,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Indicates who or what performed or participated in the charged service.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRChargeItem\FHIRChargeItemParticipant[]
      */
-    public function getParticipant()
-    {
+    public function getParticipant() {
         return $this->participant;
     }
 
@@ -437,8 +407,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRChargeItem\FHIRChargeItemParticipant $participant
      * @return $this
      */
-    public function addParticipant($participant)
-    {
+    public function addParticipant($participant) {
         $this->participant[] = $participant;
         return $this;
     }
@@ -447,8 +416,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The organization requesting the service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPerformingOrganization()
-    {
+    public function getPerformingOrganization() {
         return $this->performingOrganization;
     }
 
@@ -457,8 +425,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $performingOrganization
      * @return $this
      */
-    public function setPerformingOrganization($performingOrganization)
-    {
+    public function setPerformingOrganization($performingOrganization) {
         $this->performingOrganization = $performingOrganization;
         return $this;
     }
@@ -467,8 +434,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The organization performing the service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getRequestingOrganization()
-    {
+    public function getRequestingOrganization() {
         return $this->requestingOrganization;
     }
 
@@ -477,8 +443,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $requestingOrganization
      * @return $this
      */
-    public function setRequestingOrganization($requestingOrganization)
-    {
+    public function setRequestingOrganization($requestingOrganization) {
         $this->requestingOrganization = $requestingOrganization;
         return $this;
     }
@@ -487,8 +452,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Quantity of which the charge item has been serviced.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->quantity;
     }
 
@@ -497,8 +461,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->quantity = $quantity;
         return $this;
     }
@@ -507,8 +470,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The anatomical location where the related service has been applied.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getBodysite()
-    {
+    public function getBodysite() {
         return $this->bodysite;
     }
 
@@ -517,8 +479,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodysite
      * @return $this
      */
-    public function addBodysite($bodysite)
-    {
+    public function addBodysite($bodysite) {
         $this->bodysite[] = $bodysite;
         return $this;
     }
@@ -527,8 +488,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Factor overriding the factor determined by the rules associated with the code.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getFactorOverride()
-    {
+    public function getFactorOverride() {
         return $this->factorOverride;
     }
 
@@ -537,8 +497,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $factorOverride
      * @return $this
      */
-    public function setFactorOverride($factorOverride)
-    {
+    public function setFactorOverride($factorOverride) {
         $this->factorOverride = $factorOverride;
         return $this;
     }
@@ -547,8 +506,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Total price of the charge overriding the list price associated with the code.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getPriceOverride()
-    {
+    public function getPriceOverride() {
         return $this->priceOverride;
     }
 
@@ -557,8 +515,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $priceOverride
      * @return $this
      */
-    public function setPriceOverride($priceOverride)
-    {
+    public function setPriceOverride($priceOverride) {
         $this->priceOverride = $priceOverride;
         return $this;
     }
@@ -567,8 +524,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * If the list price or the rule based factor associated with the code is overridden, this attribute can capture a text to indicate the  reason for this action.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getOverrideReason()
-    {
+    public function getOverrideReason() {
         return $this->overrideReason;
     }
 
@@ -577,8 +533,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $overrideReason
      * @return $this
      */
-    public function setOverrideReason($overrideReason)
-    {
+    public function setOverrideReason($overrideReason) {
         $this->overrideReason = $overrideReason;
         return $this;
     }
@@ -587,8 +542,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * The device, practitioner, etc. who entered the charge item.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEnterer()
-    {
+    public function getEnterer() {
         return $this->enterer;
     }
 
@@ -597,8 +551,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $enterer
      * @return $this
      */
-    public function setEnterer($enterer)
-    {
+    public function setEnterer($enterer) {
         $this->enterer = $enterer;
         return $this;
     }
@@ -607,8 +560,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Date the charge item was entered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getEnteredDate()
-    {
+    public function getEnteredDate() {
         return $this->enteredDate;
     }
 
@@ -617,8 +569,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $enteredDate
      * @return $this
      */
-    public function setEnteredDate($enteredDate)
-    {
+    public function setEnteredDate($enteredDate) {
         $this->enteredDate = $enteredDate;
         return $this;
     }
@@ -627,8 +578,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Describes why the event occurred in coded or textual form.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getReason()
-    {
+    public function getReason() {
         return $this->reason;
     }
 
@@ -637,8 +587,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
-    public function addReason($reason)
-    {
+    public function addReason($reason) {
         $this->reason[] = $reason;
         return $this;
     }
@@ -647,8 +596,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Indicated the rendered service that caused this charge.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getService()
-    {
+    public function getService() {
         return $this->service;
     }
 
@@ -657,8 +605,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $service
      * @return $this
      */
-    public function addService($service)
-    {
+    public function addService($service) {
         $this->service[] = $service;
         return $this;
     }
@@ -667,8 +614,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Account into which this ChargeItems belongs.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getAccount()
-    {
+    public function getAccount() {
         return $this->account;
     }
 
@@ -677,8 +623,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $account
      * @return $this
      */
-    public function addAccount($account)
-    {
+    public function addAccount($account) {
         $this->account[] = $account;
         return $this;
     }
@@ -687,8 +632,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Comments made about the event by the performer, subject or other participants.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -697,8 +641,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -707,8 +650,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * Further information supporting the this charge.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupportingInformation()
-    {
+    public function getSupportingInformation() {
         return $this->supportingInformation;
     }
 
@@ -717,8 +659,7 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInformation
      * @return $this
      */
-    public function addSupportingInformation($supportingInformation)
-    {
+    public function addSupportingInformation($supportingInformation) {
         $this->supportingInformation[] = $supportingInformation;
         return $this;
     }
@@ -726,94 +667,231 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['definition'])) {
+                if (is_array($data['definition'])) {
+                    foreach($data['definition'] as $d) {
+                        $this->addDefinition($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"definition" must be array of objects or null, '.gettype($data['definition']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['partOf'])) {
+                if (is_array($data['partOf'])) {
+                    foreach($data['partOf'] as $d) {
+                        $this->addPartOf($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"partOf" must be array of objects or null, '.gettype($data['partOf']).' seen.');
+                }
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['context'])) {
+                $this->setContext($data['context']);
+            }
+            if (isset($data['occurrenceDateTime'])) {
+                $this->setOccurrenceDateTime($data['occurrenceDateTime']);
+            }
+            if (isset($data['occurrencePeriod'])) {
+                $this->setOccurrencePeriod($data['occurrencePeriod']);
+            }
+            if (isset($data['occurrenceTiming'])) {
+                $this->setOccurrenceTiming($data['occurrenceTiming']);
+            }
+            if (isset($data['participant'])) {
+                if (is_array($data['participant'])) {
+                    foreach($data['participant'] as $d) {
+                        $this->addParticipant($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"participant" must be array of objects or null, '.gettype($data['participant']).' seen.');
+                }
+            }
+            if (isset($data['performingOrganization'])) {
+                $this->setPerformingOrganization($data['performingOrganization']);
+            }
+            if (isset($data['requestingOrganization'])) {
+                $this->setRequestingOrganization($data['requestingOrganization']);
+            }
+            if (isset($data['quantity'])) {
+                $this->setQuantity($data['quantity']);
+            }
+            if (isset($data['bodysite'])) {
+                if (is_array($data['bodysite'])) {
+                    foreach($data['bodysite'] as $d) {
+                        $this->addBodysite($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"bodysite" must be array of objects or null, '.gettype($data['bodysite']).' seen.');
+                }
+            }
+            if (isset($data['factorOverride'])) {
+                $this->setFactorOverride($data['factorOverride']);
+            }
+            if (isset($data['priceOverride'])) {
+                $this->setPriceOverride($data['priceOverride']);
+            }
+            if (isset($data['overrideReason'])) {
+                $this->setOverrideReason($data['overrideReason']);
+            }
+            if (isset($data['enterer'])) {
+                $this->setEnterer($data['enterer']);
+            }
+            if (isset($data['enteredDate'])) {
+                $this->setEnteredDate($data['enteredDate']);
+            }
+            if (isset($data['reason'])) {
+                if (is_array($data['reason'])) {
+                    foreach($data['reason'] as $d) {
+                        $this->addReason($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"reason" must be array of objects or null, '.gettype($data['reason']).' seen.');
+                }
+            }
+            if (isset($data['service'])) {
+                if (is_array($data['service'])) {
+                    foreach($data['service'] as $d) {
+                        $this->addService($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"service" must be array of objects or null, '.gettype($data['service']).' seen.');
+                }
+            }
+            if (isset($data['account'])) {
+                if (is_array($data['account'])) {
+                    foreach($data['account'] as $d) {
+                        $this->addAccount($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"account" must be array of objects or null, '.gettype($data['account']).' seen.');
+                }
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+            if (isset($data['supportingInformation'])) {
+                if (is_array($data['supportingInformation'])) {
+                    foreach($data['supportingInformation'] as $d) {
+                        $this->addSupportingInformation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportingInformation" must be array of objects or null, '.gettype($data['supportingInformation']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
         if (0 < count($this->definition)) {
             $json['definition'] = [];
             foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+                if (null !== $definition) $json['definition'][] = $definition;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (isset($this->status)) $json['status'] = $this->status;
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                if (null !== $partOf) $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->subject)) $json['subject'] = $this->subject;
+        if (isset($this->context)) $json['context'] = $this->context;
+        if (isset($this->occurrenceDateTime)) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (isset($this->occurrencePeriod)) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (isset($this->occurrenceTiming)) $json['occurrenceTiming'] = $this->occurrenceTiming;
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                if (null !== $participant) $json['participant'][] = $participant;
             }
         }
-        if (null !== $this->performingOrganization) $json['performingOrganization'] = json_encode($this->performingOrganization);
-        if (null !== $this->requestingOrganization) $json['requestingOrganization'] = json_encode($this->requestingOrganization);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
+        if (isset($this->performingOrganization)) $json['performingOrganization'] = $this->performingOrganization;
+        if (isset($this->requestingOrganization)) $json['requestingOrganization'] = $this->requestingOrganization;
+        if (isset($this->quantity)) $json['quantity'] = $this->quantity;
         if (0 < count($this->bodysite)) {
             $json['bodysite'] = [];
             foreach($this->bodysite as $bodysite) {
-                $json['bodysite'][] = json_encode($bodysite);
+                if (null !== $bodysite) $json['bodysite'][] = $bodysite;
             }
         }
-        if (null !== $this->factorOverride) $json['factorOverride'] = json_encode($this->factorOverride);
-        if (null !== $this->priceOverride) $json['priceOverride'] = json_encode($this->priceOverride);
-        if (null !== $this->overrideReason) $json['overrideReason'] = json_encode($this->overrideReason);
-        if (null !== $this->enterer) $json['enterer'] = json_encode($this->enterer);
-        if (null !== $this->enteredDate) $json['enteredDate'] = json_encode($this->enteredDate);
+        if (isset($this->factorOverride)) $json['factorOverride'] = $this->factorOverride;
+        if (isset($this->priceOverride)) $json['priceOverride'] = $this->priceOverride;
+        if (isset($this->overrideReason)) $json['overrideReason'] = $this->overrideReason;
+        if (isset($this->enterer)) $json['enterer'] = $this->enterer;
+        if (isset($this->enteredDate)) $json['enteredDate'] = $this->enteredDate;
         if (0 < count($this->reason)) {
             $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = json_encode($reason);
+                if (null !== $reason) $json['reason'][] = $reason;
             }
         }
         if (0 < count($this->service)) {
             $json['service'] = [];
             foreach($this->service as $service) {
-                $json['service'][] = json_encode($service);
+                if (null !== $service) $json['service'][] = $service;
             }
         }
         if (0 < count($this->account)) {
             $json['account'] = [];
             foreach($this->account as $account) {
-                $json['account'][] = json_encode($account);
+                if (null !== $account) $json['account'][] = $account;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                if (null !== $note) $json['note'][] = $note;
             }
         }
         if (0 < count($this->supportingInformation)) {
             $json['supportingInformation'] = [];
             foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = json_encode($supportingInformation);
+                if (null !== $supportingInformation) $json['supportingInformation'][] = $supportingInformation;
             }
         }
         return $json;
@@ -824,46 +902,45 @@ class FHIRChargeItem extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ChargeItem xmlns="http://hl7.org/fhir"></ChargeItem>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
         if (0 < count($this->definition)) {
             foreach($this->definition as $definition) {
                 $definition->xmlSerialize(true, $sxe->addChild('definition'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
         if (0 < count($this->partOf)) {
             foreach($this->partOf as $partOf) {
                 $partOf->xmlSerialize(true, $sxe->addChild('partOf'));
             }
         }
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
-        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
-        if (null !== $this->occurrencePeriod) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
-        if (null !== $this->occurrenceTiming) $this->occurrenceTiming->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (isset($this->context)) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (isset($this->occurrenceDateTime)) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (isset($this->occurrencePeriod)) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        if (isset($this->occurrenceTiming)) $this->occurrenceTiming->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
         if (0 < count($this->participant)) {
             foreach($this->participant as $participant) {
                 $participant->xmlSerialize(true, $sxe->addChild('participant'));
             }
         }
-        if (null !== $this->performingOrganization) $this->performingOrganization->xmlSerialize(true, $sxe->addChild('performingOrganization'));
-        if (null !== $this->requestingOrganization) $this->requestingOrganization->xmlSerialize(true, $sxe->addChild('requestingOrganization'));
-        if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
+        if (isset($this->performingOrganization)) $this->performingOrganization->xmlSerialize(true, $sxe->addChild('performingOrganization'));
+        if (isset($this->requestingOrganization)) $this->requestingOrganization->xmlSerialize(true, $sxe->addChild('requestingOrganization'));
+        if (isset($this->quantity)) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
         if (0 < count($this->bodysite)) {
             foreach($this->bodysite as $bodysite) {
                 $bodysite->xmlSerialize(true, $sxe->addChild('bodysite'));
             }
         }
-        if (null !== $this->factorOverride) $this->factorOverride->xmlSerialize(true, $sxe->addChild('factorOverride'));
-        if (null !== $this->priceOverride) $this->priceOverride->xmlSerialize(true, $sxe->addChild('priceOverride'));
-        if (null !== $this->overrideReason) $this->overrideReason->xmlSerialize(true, $sxe->addChild('overrideReason'));
-        if (null !== $this->enterer) $this->enterer->xmlSerialize(true, $sxe->addChild('enterer'));
-        if (null !== $this->enteredDate) $this->enteredDate->xmlSerialize(true, $sxe->addChild('enteredDate'));
+        if (isset($this->factorOverride)) $this->factorOverride->xmlSerialize(true, $sxe->addChild('factorOverride'));
+        if (isset($this->priceOverride)) $this->priceOverride->xmlSerialize(true, $sxe->addChild('priceOverride'));
+        if (isset($this->overrideReason)) $this->overrideReason->xmlSerialize(true, $sxe->addChild('overrideReason'));
+        if (isset($this->enterer)) $this->enterer->xmlSerialize(true, $sxe->addChild('enterer'));
+        if (isset($this->enteredDate)) $this->enteredDate->xmlSerialize(true, $sxe->addChild('enteredDate'));
         if (0 < count($this->reason)) {
             foreach($this->reason as $reason) {
                 $reason->xmlSerialize(true, $sxe->addChild('reason'));

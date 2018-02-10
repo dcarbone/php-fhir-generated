@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -89,7 +89,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * Additional headers / information to send as part of the notification.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $header = array();
+    public $header = [];
 
     /**
      * @var string
@@ -100,8 +100,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * The type of channel to send notifications on.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionChannelType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -110,8 +109,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSubscriptionChannelType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * The uri that describes the actual end-point to send messages to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getEndpoint()
-    {
+    public function getEndpoint() {
         return $this->endpoint;
     }
 
@@ -130,8 +127,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $endpoint
      * @return $this
      */
-    public function setEndpoint($endpoint)
-    {
+    public function setEndpoint($endpoint) {
         $this->endpoint = $endpoint;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPayload()
-    {
+    public function getPayload() {
         return $this->payload;
     }
 
@@ -150,8 +145,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $payload
      * @return $this
      */
-    public function setPayload($payload)
-    {
+    public function setPayload($payload) {
         $this->payload = $payload;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * Additional headers / information to send as part of the notification.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getHeader()
-    {
+    public function getHeader() {
         return $this->header;
     }
 
@@ -170,8 +163,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $header
      * @return $this
      */
-    public function addHeader($header)
-    {
+    public function addHeader($header) {
         $this->header[] = $header;
         return $this;
     }
@@ -179,32 +171,58 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['endpoint'])) {
+                $this->setEndpoint($data['endpoint']);
+            }
+            if (isset($data['payload'])) {
+                $this->setPayload($data['payload']);
+            }
+            if (isset($data['header'])) {
+                if (is_array($data['header'])) {
+                    foreach($data['header'] as $d) {
+                        $this->addHeader($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"header" must be array of objects or null, '.gettype($data['header']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->endpoint) $json['endpoint'] = json_encode($this->endpoint);
-        if (null !== $this->payload) $json['payload'] = json_encode($this->payload);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->endpoint)) $json['endpoint'] = $this->endpoint;
+        if (isset($this->payload)) $json['payload'] = $this->payload;
         if (0 < count($this->header)) {
             $json['header'] = [];
             foreach($this->header as $header) {
-                $json['header'][] = json_encode($header);
+                if (null !== $header) $json['header'][] = $header;
             }
         }
         return $json;
@@ -215,13 +233,12 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement implements \JsonSerial
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SubscriptionChannel xmlns="http://hl7.org/fhir"></SubscriptionChannel>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->endpoint) $this->endpoint->xmlSerialize(true, $sxe->addChild('endpoint'));
-        if (null !== $this->payload) $this->payload->xmlSerialize(true, $sxe->addChild('payload'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->endpoint)) $this->endpoint->xmlSerialize(true, $sxe->addChild('endpoint'));
+        if (isset($this->payload)) $this->payload->xmlSerialize(true, $sxe->addChild('payload'));
         if (0 < count($this->header)) {
             foreach($this->header as $header) {
                 $header->xmlSerialize(true, $sxe->addChild('header'));

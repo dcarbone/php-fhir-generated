@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,18 +63,16 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * This resource is primarily used for the identification and definition of a medication. It covers the ingredients and the packaging for a medication.
+ * This resource is primarily used for the identification and definition of a medication for the purposes of prescribing, dispensing, and administering a medication as well as for making statements about medication use.
  */
 class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $itemCodeableConcept = null;
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $itemReference = null;
@@ -97,41 +95,33 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     private $_fhirElementName = 'Medication.Ingredient';
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getItemCodeableConcept()
-    {
+    public function getItemCodeableConcept() {
         return $this->itemCodeableConcept;
     }
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
      * @return $this
      */
-    public function setItemCodeableConcept($itemCodeableConcept)
-    {
+    public function setItemCodeableConcept($itemCodeableConcept) {
         $this->itemCodeableConcept = $itemCodeableConcept;
         return $this;
     }
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getItemReference()
-    {
+    public function getItemReference() {
         return $this->itemReference;
     }
 
     /**
-     * The actual ingredient - either a substance (simple ingredient) or another medication. (choose any one of item*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $itemReference
      * @return $this
      */
-    public function setItemReference($itemReference)
-    {
+    public function setItemReference($itemReference) {
         $this->itemReference = $itemReference;
         return $this;
     }
@@ -140,8 +130,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
      * Indication of whether this ingredient affects the therapeutic action of the drug.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getIsActive()
-    {
+    public function getIsActive() {
         return $this->isActive;
     }
 
@@ -150,8 +139,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $isActive
      * @return $this
      */
-    public function setIsActive($isActive)
-    {
+    public function setIsActive($isActive) {
         $this->isActive = $isActive;
         return $this;
     }
@@ -160,8 +148,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public function getAmount()
-    {
+    public function getAmount() {
         return $this->amount;
     }
 
@@ -170,8 +157,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $amount
      * @return $this
      */
-    public function setAmount($amount)
-    {
+    public function setAmount($amount) {
         $this->amount = $amount;
         return $this;
     }
@@ -179,29 +165,49 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['itemCodeableConcept'])) {
+                $this->setItemCodeableConcept($data['itemCodeableConcept']);
+            }
+            if (isset($data['itemReference'])) {
+                $this->setItemReference($data['itemReference']);
+            }
+            if (isset($data['isActive'])) {
+                $this->setIsActive($data['isActive']);
+            }
+            if (isset($data['amount'])) {
+                $this->setAmount($data['amount']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->itemCodeableConcept) $json['itemCodeableConcept'] = json_encode($this->itemCodeableConcept);
-        if (null !== $this->itemReference) $json['itemReference'] = json_encode($this->itemReference);
-        if (null !== $this->isActive) $json['isActive'] = json_encode($this->isActive);
-        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
+        if (isset($this->itemCodeableConcept)) $json['itemCodeableConcept'] = $this->itemCodeableConcept;
+        if (isset($this->itemReference)) $json['itemReference'] = $this->itemReference;
+        if (isset($this->isActive)) $json['isActive'] = $this->isActive;
+        if (isset($this->amount)) $json['amount'] = $this->amount;
         return $json;
     }
 
@@ -210,14 +216,13 @@ class FHIRMedicationIngredient extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationIngredient xmlns="http://hl7.org/fhir"></MedicationIngredient>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->itemCodeableConcept) $this->itemCodeableConcept->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
-        if (null !== $this->itemReference) $this->itemReference->xmlSerialize(true, $sxe->addChild('itemReference'));
-        if (null !== $this->isActive) $this->isActive->xmlSerialize(true, $sxe->addChild('isActive'));
-        if (null !== $this->amount) $this->amount->xmlSerialize(true, $sxe->addChild('amount'));
+        if (isset($this->itemCodeableConcept)) $this->itemCodeableConcept->xmlSerialize(true, $sxe->addChild('itemCodeableConcept'));
+        if (isset($this->itemReference)) $this->itemReference->xmlSerialize(true, $sxe->addChild('itemReference'));
+        if (isset($this->isActive)) $this->isActive->xmlSerialize(true, $sxe->addChild('isActive'));
+        if (isset($this->amount)) $this->amount->xmlSerialize(true, $sxe->addChild('amount'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

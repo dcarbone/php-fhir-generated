@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A record of a healthcare consumer’s policy choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
+ * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
  */
 class FHIRConsentData extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -88,8 +88,7 @@ class FHIRConsentData extends FHIRBackboneElement implements \JsonSerializable
      * How the resource reference is interpreted when testing consent restrictions.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConsentDataMeaning
      */
-    public function getMeaning()
-    {
+    public function getMeaning() {
         return $this->meaning;
     }
 
@@ -98,8 +97,7 @@ class FHIRConsentData extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRConsentDataMeaning $meaning
      * @return $this
      */
-    public function setMeaning($meaning)
-    {
+    public function setMeaning($meaning) {
         $this->meaning = $meaning;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRConsentData extends FHIRBackboneElement implements \JsonSerializable
      * A reference to a specific resource that defines which resources are covered by this consent.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getReference()
-    {
+    public function getReference() {
         return $this->reference;
     }
 
@@ -118,8 +115,7 @@ class FHIRConsentData extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reference
      * @return $this
      */
-    public function setReference($reference)
-    {
+    public function setReference($reference) {
         $this->reference = $reference;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRConsentData extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['meaning'])) {
+                $this->setMeaning($data['meaning']);
+            }
+            if (isset($data['reference'])) {
+                $this->setReference($data['reference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->meaning) $json['meaning'] = json_encode($this->meaning);
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (isset($this->meaning)) $json['meaning'] = $this->meaning;
+        if (isset($this->reference)) $json['reference'] = $this->reference;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRConsentData extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConsentData xmlns="http://hl7.org/fhir"></ConsentData>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->meaning) $this->meaning->xmlSerialize(true, $sxe->addChild('meaning'));
-        if (null !== $this->reference) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
+        if (isset($this->meaning)) $this->meaning->xmlSerialize(true, $sxe->addChild('meaning'));
+        if (isset($this->reference)) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

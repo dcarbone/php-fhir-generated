@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this structure definition is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -78,7 +78,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -126,7 +126,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A free text natural language description of the structure definition from a consumer's perspective.
@@ -138,13 +138,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate structure definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the structure definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Explaination of why this structure definition is needed and why it has been designed as it has.
@@ -162,10 +162,10 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $keyword = array();
+    public $keyword = [];
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $fhirVersion = null;
@@ -174,7 +174,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * An external specification that the content is mapped to.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
-    public $mapping = array();
+    public $mapping = [];
 
     /**
      * Defines the kind of structure that this definition is describing.
@@ -198,13 +198,13 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Identifies the types of resource or data type elements to which the extension can be applied.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $context = array();
+    public $context = [];
 
     /**
      * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurrence variants for the extension).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $contextInvariant = array();
+    public $contextInvariant = [];
 
     /**
      * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
@@ -242,21 +242,19 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     private $_fhirElementName = 'StructureDefinition';
 
     /**
-     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this structure definition is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this structure definition is (or will be) published. The URL SHOULD include the major version of the structure definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this structure definition is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -265,8 +263,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A formal identifier that is used to identify this structure definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -275,8 +272,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -285,8 +281,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * The identifier that is used to identify this version of the structure definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the structure definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -295,8 +290,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -305,8 +299,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A natural language name identifying the structure definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -315,8 +308,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -325,8 +317,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A short, descriptive, user-friendly title for the structure definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -335,8 +326,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -345,8 +335,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * The status of this structure definition. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -355,8 +344,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -365,8 +353,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -375,8 +362,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -385,8 +371,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * The date  (and optionally time) when the structure definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -395,8 +380,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -405,8 +389,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * The name of the individual or organization that published the structure definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -415,8 +398,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -425,8 +407,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -435,8 +416,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -445,8 +425,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A free text natural language description of the structure definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -455,8 +434,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -465,8 +443,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate structure definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -475,8 +452,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -485,8 +461,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A legal or geographic region in which the structure definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -495,8 +470,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -505,8 +479,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Explaination of why this structure definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -515,8 +488,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -525,8 +497,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getCopyright()
-    {
+    public function getCopyright() {
         return $this->copyright;
     }
 
@@ -535,8 +506,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
-    public function setCopyright($copyright)
-    {
+    public function setCopyright($copyright) {
         $this->copyright = $copyright;
         return $this;
     }
@@ -545,8 +515,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getKeyword()
-    {
+    public function getKeyword() {
         return $this->keyword;
     }
 
@@ -555,28 +524,25 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $keyword
      * @return $this
      */
-    public function addKeyword($keyword)
-    {
+    public function addKeyword($keyword) {
         $this->keyword[] = $keyword;
         return $this;
     }
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getFhirVersion()
-    {
+    public function getFhirVersion() {
         return $this->fhirVersion;
     }
 
     /**
-     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
+     * The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $fhirVersion
      * @return $this
      */
-    public function setFhirVersion($fhirVersion)
-    {
+    public function setFhirVersion($fhirVersion) {
         $this->fhirVersion = $fhirVersion;
         return $this;
     }
@@ -585,8 +551,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * An external specification that the content is mapped to.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
-    public function getMapping()
-    {
+    public function getMapping() {
         return $this->mapping;
     }
 
@@ -595,8 +560,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionMapping $mapping
      * @return $this
      */
-    public function addMapping($mapping)
-    {
+    public function addMapping($mapping) {
         $this->mapping[] = $mapping;
         return $this;
     }
@@ -605,8 +569,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Defines the kind of structure that this definition is describing.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRStructureDefinitionKind
      */
-    public function getKind()
-    {
+    public function getKind() {
         return $this->kind;
     }
 
@@ -615,8 +578,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRStructureDefinitionKind $kind
      * @return $this
      */
-    public function setKind($kind)
-    {
+    public function setKind($kind) {
         $this->kind = $kind;
         return $this;
     }
@@ -625,8 +587,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Whether structure this definition describes is abstract or not  - that is, whether the structure is not intended to be instantiated. For Resources and Data types, abstract types will never be exchanged  between systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getAbstract()
-    {
+    public function getAbstract() {
         return $this->abstract;
     }
 
@@ -635,8 +596,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $abstract
      * @return $this
      */
-    public function setAbstract($abstract)
-    {
+    public function setAbstract($abstract) {
         $this->abstract = $abstract;
         return $this;
     }
@@ -645,8 +605,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * If this is an extension, Identifies the context within FHIR resources where the extension can be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRExtensionContext
      */
-    public function getContextType()
-    {
+    public function getContextType() {
         return $this->contextType;
     }
 
@@ -655,8 +614,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRExtensionContext $contextType
      * @return $this
      */
-    public function setContextType($contextType)
-    {
+    public function setContextType($contextType) {
         $this->contextType = $contextType;
         return $this;
     }
@@ -665,8 +623,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * Identifies the types of resource or data type elements to which the extension can be applied.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->context;
     }
 
@@ -675,8 +632,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $context
      * @return $this
      */
-    public function addContext($context)
-    {
+    public function addContext($context) {
         $this->context[] = $context;
         return $this;
     }
@@ -685,8 +641,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A set of rules as Fluent Invariants about when the extension can be used (e.g. co-occurrence variants for the extension).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getContextInvariant()
-    {
+    public function getContextInvariant() {
         return $this->contextInvariant;
     }
 
@@ -695,8 +650,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $contextInvariant
      * @return $this
      */
-    public function addContextInvariant($contextInvariant)
-    {
+    public function addContextInvariant($contextInvariant) {
         $this->contextInvariant[] = $contextInvariant;
         return $this;
     }
@@ -705,8 +659,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * The type this structure describes. If the derivation kind is 'specialization' then this is the master definition for a type, and there is always one of these (a data type, an extension, a resource, including abstract ones). Otherwise the structure definition is a constraint on the stated type (and in this case, the type cannot be an abstract type).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -715,8 +668,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -725,8 +677,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * An absolute URI that is the base structure from which this type is derived, either by specialization or constraint.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getBaseDefinition()
-    {
+    public function getBaseDefinition() {
         return $this->baseDefinition;
     }
 
@@ -735,8 +686,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $baseDefinition
      * @return $this
      */
-    public function setBaseDefinition($baseDefinition)
-    {
+    public function setBaseDefinition($baseDefinition) {
         $this->baseDefinition = $baseDefinition;
         return $this;
     }
@@ -745,8 +695,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * How the type relates to the baseDefinition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTypeDerivationRule
      */
-    public function getDerivation()
-    {
+    public function getDerivation() {
         return $this->derivation;
     }
 
@@ -755,8 +704,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTypeDerivationRule $derivation
      * @return $this
      */
-    public function setDerivation($derivation)
-    {
+    public function setDerivation($derivation) {
         $this->derivation = $derivation;
         return $this;
     }
@@ -765,8 +713,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A snapshot view is expressed in a stand alone form that can be used and interpreted without considering the base StructureDefinition.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
-    public function getSnapshot()
-    {
+    public function getSnapshot() {
         return $this->snapshot;
     }
 
@@ -775,8 +722,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot $snapshot
      * @return $this
      */
-    public function setSnapshot($snapshot)
-    {
+    public function setSnapshot($snapshot) {
         $this->snapshot = $snapshot;
         return $this;
     }
@@ -785,8 +731,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * A differential view is expressed relative to the base StructureDefinition - a statement of differences that it applies.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      */
-    public function getDifferential()
-    {
+    public function getDifferential() {
         return $this->differential;
     }
 
@@ -795,8 +740,7 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureDefinition\FHIRStructureDefinitionDifferential $differential
      * @return $this
      */
-    public function setDifferential($differential)
-    {
+    public function setDifferential($differential) {
         $this->differential = $differential;
         return $this;
     }
@@ -804,94 +748,234 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['copyright'])) {
+                $this->setCopyright($data['copyright']);
+            }
+            if (isset($data['keyword'])) {
+                if (is_array($data['keyword'])) {
+                    foreach($data['keyword'] as $d) {
+                        $this->addKeyword($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"keyword" must be array of objects or null, '.gettype($data['keyword']).' seen.');
+                }
+            }
+            if (isset($data['fhirVersion'])) {
+                $this->setFhirVersion($data['fhirVersion']);
+            }
+            if (isset($data['mapping'])) {
+                if (is_array($data['mapping'])) {
+                    foreach($data['mapping'] as $d) {
+                        $this->addMapping($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"mapping" must be array of objects or null, '.gettype($data['mapping']).' seen.');
+                }
+            }
+            if (isset($data['kind'])) {
+                $this->setKind($data['kind']);
+            }
+            if (isset($data['abstract'])) {
+                $this->setAbstract($data['abstract']);
+            }
+            if (isset($data['contextType'])) {
+                $this->setContextType($data['contextType']);
+            }
+            if (isset($data['context'])) {
+                if (is_array($data['context'])) {
+                    foreach($data['context'] as $d) {
+                        $this->addContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"context" must be array of objects or null, '.gettype($data['context']).' seen.');
+                }
+            }
+            if (isset($data['contextInvariant'])) {
+                if (is_array($data['contextInvariant'])) {
+                    foreach($data['contextInvariant'] as $d) {
+                        $this->addContextInvariant($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contextInvariant" must be array of objects or null, '.gettype($data['contextInvariant']).' seen.');
+                }
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['baseDefinition'])) {
+                $this->setBaseDefinition($data['baseDefinition']);
+            }
+            if (isset($data['derivation'])) {
+                $this->setDerivation($data['derivation']);
+            }
+            if (isset($data['snapshot'])) {
+                $this->setSnapshot($data['snapshot']);
+            }
+            if (isset($data['differential'])) {
+                $this->setDifferential($data['differential']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (isset($this->url)) $json['url'] = $this->url;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->copyright)) $json['copyright'] = $this->copyright;
         if (0 < count($this->keyword)) {
             $json['keyword'] = [];
             foreach($this->keyword as $keyword) {
-                $json['keyword'][] = json_encode($keyword);
+                if (null !== $keyword) $json['keyword'][] = $keyword;
             }
         }
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
+        if (isset($this->fhirVersion)) $json['fhirVersion'] = $this->fhirVersion;
         if (0 < count($this->mapping)) {
             $json['mapping'] = [];
             foreach($this->mapping as $mapping) {
-                $json['mapping'][] = json_encode($mapping);
+                if (null !== $mapping) $json['mapping'][] = $mapping;
             }
         }
-        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
-        if (null !== $this->abstract) $json['abstract'] = json_encode($this->abstract);
-        if (null !== $this->contextType) $json['contextType'] = json_encode($this->contextType);
+        if (isset($this->kind)) $json['kind'] = $this->kind;
+        if (isset($this->abstract)) $json['abstract'] = $this->abstract;
+        if (isset($this->contextType)) $json['contextType'] = $this->contextType;
         if (0 < count($this->context)) {
             $json['context'] = [];
             foreach($this->context as $context) {
-                $json['context'][] = json_encode($context);
+                if (null !== $context) $json['context'][] = $context;
             }
         }
         if (0 < count($this->contextInvariant)) {
             $json['contextInvariant'] = [];
             foreach($this->contextInvariant as $contextInvariant) {
-                $json['contextInvariant'][] = json_encode($contextInvariant);
+                if (null !== $contextInvariant) $json['contextInvariant'][] = $contextInvariant;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->baseDefinition) $json['baseDefinition'] = json_encode($this->baseDefinition);
-        if (null !== $this->derivation) $json['derivation'] = json_encode($this->derivation);
-        if (null !== $this->snapshot) $json['snapshot'] = json_encode($this->snapshot);
-        if (null !== $this->differential) $json['differential'] = json_encode($this->differential);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->baseDefinition)) $json['baseDefinition'] = $this->baseDefinition;
+        if (isset($this->derivation)) $json['derivation'] = $this->derivation;
+        if (isset($this->snapshot)) $json['snapshot'] = $this->snapshot;
+        if (isset($this->differential)) $json['differential'] = $this->differential;
         return $json;
     }
 
@@ -900,29 +984,28 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<StructureDefinition xmlns="http://hl7.org/fhir"></StructureDefinition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
         if (0 < count($this->identifier)) {
             foreach($this->identifier as $identifier) {
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -933,22 +1016,22 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->copyright)) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
         if (0 < count($this->keyword)) {
             foreach($this->keyword as $keyword) {
                 $keyword->xmlSerialize(true, $sxe->addChild('keyword'));
             }
         }
-        if (null !== $this->fhirVersion) $this->fhirVersion->xmlSerialize(true, $sxe->addChild('fhirVersion'));
+        if (isset($this->fhirVersion)) $this->fhirVersion->xmlSerialize(true, $sxe->addChild('fhirVersion'));
         if (0 < count($this->mapping)) {
             foreach($this->mapping as $mapping) {
                 $mapping->xmlSerialize(true, $sxe->addChild('mapping'));
             }
         }
-        if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
-        if (null !== $this->abstract) $this->abstract->xmlSerialize(true, $sxe->addChild('abstract'));
-        if (null !== $this->contextType) $this->contextType->xmlSerialize(true, $sxe->addChild('contextType'));
+        if (isset($this->kind)) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
+        if (isset($this->abstract)) $this->abstract->xmlSerialize(true, $sxe->addChild('abstract'));
+        if (isset($this->contextType)) $this->contextType->xmlSerialize(true, $sxe->addChild('contextType'));
         if (0 < count($this->context)) {
             foreach($this->context as $context) {
                 $context->xmlSerialize(true, $sxe->addChild('context'));
@@ -959,11 +1042,11 @@ class FHIRStructureDefinition extends FHIRDomainResource implements \JsonSeriali
                 $contextInvariant->xmlSerialize(true, $sxe->addChild('contextInvariant'));
             }
         }
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->baseDefinition) $this->baseDefinition->xmlSerialize(true, $sxe->addChild('baseDefinition'));
-        if (null !== $this->derivation) $this->derivation->xmlSerialize(true, $sxe->addChild('derivation'));
-        if (null !== $this->snapshot) $this->snapshot->xmlSerialize(true, $sxe->addChild('snapshot'));
-        if (null !== $this->differential) $this->differential->xmlSerialize(true, $sxe->addChild('differential'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->baseDefinition)) $this->baseDefinition->xmlSerialize(true, $sxe->addChild('baseDefinition'));
+        if (isset($this->derivation)) $this->derivation->xmlSerialize(true, $sxe->addChild('derivation'));
+        if (isset($this->snapshot)) $this->snapshot->xmlSerialize(true, $sxe->addChild('snapshot'));
+        if (isset($this->differential)) $this->differential->xmlSerialize(true, $sxe->addChild('differential'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

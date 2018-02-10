@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -107,8 +107,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -117,8 +116,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -127,8 +125,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
      */
-    public function getComparator()
-    {
+    public function getComparator() {
         return $this->comparator;
     }
 
@@ -137,8 +134,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator $comparator
      * @return $this
      */
-    public function setComparator($comparator)
-    {
+    public function setComparator($comparator) {
         $this->comparator = $comparator;
         return $this;
     }
@@ -147,8 +143,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * A human-readable form of the unit.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getUnit()
-    {
+    public function getUnit() {
         return $this->unit;
     }
 
@@ -157,8 +152,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $unit
      * @return $this
      */
-    public function setUnit($unit)
-    {
+    public function setUnit($unit) {
         $this->unit = $unit;
         return $this;
     }
@@ -167,8 +161,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * The identification of the system that provides the coded form of the unit.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSystem()
-    {
+    public function getSystem() {
         return $this->system;
     }
 
@@ -177,8 +170,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $system
      * @return $this
      */
-    public function setSystem($system)
-    {
+    public function setSystem($system) {
         $this->system = $system;
         return $this;
     }
@@ -187,8 +179,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * A computer processable form of the unit in some unit representation system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -197,8 +188,7 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -206,30 +196,53 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+            if (isset($data['comparator'])) {
+                $this->setComparator($data['comparator']);
+            }
+            if (isset($data['unit'])) {
+                $this->setUnit($data['unit']);
+            }
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
-        if (null !== $this->comparator) $json['comparator'] = json_encode($this->comparator);
-        if (null !== $this->unit) $json['unit'] = json_encode($this->unit);
-        if (null !== $this->system) $json['system'] = json_encode($this->system);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (isset($this->value)) $json['value'] = $this->value;
+        if (isset($this->comparator)) $json['comparator'] = $this->comparator;
+        if (isset($this->unit)) $json['unit'] = $this->unit;
+        if (isset($this->system)) $json['system'] = $this->system;
+        if (isset($this->code)) $json['code'] = $this->code;
         return $json;
     }
 
@@ -238,15 +251,14 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Quantity xmlns="http://hl7.org/fhir"></Quantity>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
-        if (null !== $this->comparator) $this->comparator->xmlSerialize(true, $sxe->addChild('comparator'));
-        if (null !== $this->unit) $this->unit->xmlSerialize(true, $sxe->addChild('unit'));
-        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->comparator)) $this->comparator->xmlSerialize(true, $sxe->addChild('comparator'));
+        if (isset($this->unit)) $this->unit->xmlSerialize(true, $sxe->addChild('unit'));
+        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

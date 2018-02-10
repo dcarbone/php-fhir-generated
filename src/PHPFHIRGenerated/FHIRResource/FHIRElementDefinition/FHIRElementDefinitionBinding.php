@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -81,13 +81,11 @@ class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializa
     public $description = null;
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $valueSetUri = null;
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueSetReference = null;
@@ -101,8 +99,7 @@ class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializa
      * Indicates the degree of conformance expectations associated with this binding - that is, the degree to which the provided value set must be adhered to in the instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBindingStrength
      */
-    public function getStrength()
-    {
+    public function getStrength() {
         return $this->strength;
     }
 
@@ -111,8 +108,7 @@ class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBindingStrength $strength
      * @return $this
      */
-    public function setStrength($strength)
-    {
+    public function setStrength($strength) {
         $this->strength = $strength;
         return $this;
     }
@@ -121,8 +117,7 @@ class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializa
      * Describes the intended use of this particular set of codes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -131,48 +126,39 @@ class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getValueSetUri()
-    {
+    public function getValueSetUri() {
         return $this->valueSetUri;
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $valueSetUri
      * @return $this
      */
-    public function setValueSetUri($valueSetUri)
-    {
+    public function setValueSetUri($valueSetUri) {
         $this->valueSetUri = $valueSetUri;
         return $this;
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getValueSetReference()
-    {
+    public function getValueSetReference() {
         return $this->valueSetReference;
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueSetReference
      * @return $this
      */
-    public function setValueSetReference($valueSetReference)
-    {
+    public function setValueSetReference($valueSetReference) {
         $this->valueSetReference = $valueSetReference;
         return $this;
     }
@@ -180,29 +166,49 @@ class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['strength'])) {
+                $this->setStrength($data['strength']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['valueSetUri'])) {
+                $this->setValueSetUri($data['valueSetUri']);
+            }
+            if (isset($data['valueSetReference'])) {
+                $this->setValueSetReference($data['valueSetReference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->strength) $json['strength'] = json_encode($this->strength);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->valueSetUri) $json['valueSetUri'] = json_encode($this->valueSetUri);
-        if (null !== $this->valueSetReference) $json['valueSetReference'] = json_encode($this->valueSetReference);
+        if (isset($this->strength)) $json['strength'] = $this->strength;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->valueSetUri)) $json['valueSetUri'] = $this->valueSetUri;
+        if (isset($this->valueSetReference)) $json['valueSetReference'] = $this->valueSetReference;
         return $json;
     }
 
@@ -211,14 +217,13 @@ class FHIRElementDefinitionBinding extends FHIRElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ElementDefinitionBinding xmlns="http://hl7.org/fhir"></ElementDefinitionBinding>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->strength) $this->strength->xmlSerialize(true, $sxe->addChild('strength'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->valueSetUri) $this->valueSetUri->xmlSerialize(true, $sxe->addChild('valueSetUri'));
-        if (null !== $this->valueSetReference) $this->valueSetReference->xmlSerialize(true, $sxe->addChild('valueSetReference'));
+        if (isset($this->strength)) $this->strength->xmlSerialize(true, $sxe->addChild('strength'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->valueSetUri)) $this->valueSetUri->xmlSerialize(true, $sxe->addChild('valueSetUri'));
+        if (isset($this->valueSetReference)) $this->valueSetReference->xmlSerialize(true, $sxe->addChild('valueSetReference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

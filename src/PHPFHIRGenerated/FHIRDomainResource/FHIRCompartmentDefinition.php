@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this compartment definition is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -114,7 +114,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A free text natural language description of the compartment definition from a consumer's perspective.
@@ -132,13 +132,13 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate compartment definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the compartment definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Which compartment this definition describes.
@@ -156,7 +156,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * Information about how a resource is related to the compartment.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
      */
-    public $resource = array();
+    public $resource = [];
 
     /**
      * @var string
@@ -164,21 +164,19 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     private $_fhirElementName = 'CompartmentDefinition';
 
     /**
-     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this compartment definition is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this compartment definition is (or will be) published. The URL SHOULD include the major version of the compartment definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this compartment definition is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -187,8 +185,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * A natural language name identifying the compartment definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -197,8 +194,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -207,8 +203,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * A short, descriptive, user-friendly title for the compartment definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -217,8 +212,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -227,8 +221,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * The status of this compartment definition. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -237,8 +230,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -247,8 +239,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * A boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -257,8 +248,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -267,8 +257,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * The date  (and optionally time) when the compartment definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -277,8 +266,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -287,8 +275,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * The name of the individual or organization that published the compartment definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -297,8 +284,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -307,8 +293,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -317,8 +302,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -327,8 +311,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * A free text natural language description of the compartment definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -337,8 +320,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -347,8 +329,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * Explaination of why this compartment definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -357,8 +338,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -367,8 +347,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate compartment definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -377,8 +356,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -387,8 +365,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * A legal or geographic region in which the compartment definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -397,8 +374,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -407,8 +383,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * Which compartment this definition describes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCompartmentType
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -417,8 +392,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCompartmentType $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -427,8 +401,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * Whether the search syntax is supported,.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getSearch()
-    {
+    public function getSearch() {
         return $this->search;
     }
 
@@ -437,8 +410,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $search
      * @return $this
      */
-    public function setSearch($search)
-    {
+    public function setSearch($search) {
         $this->search = $search;
         return $this;
     }
@@ -447,8 +419,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * Information about how a resource is related to the compartment.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[]
      */
-    public function getResource()
-    {
+    public function getResource() {
         return $this->resource;
     }
 
@@ -457,8 +428,7 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource $resource
      * @return $this
      */
-    public function addResource($resource)
-    {
+    public function addResource($resource) {
         $this->resource[] = $resource;
         return $this;
     }
@@ -466,59 +436,136 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['search'])) {
+                $this->setSearch($data['search']);
+            }
+            if (isset($data['resource'])) {
+                if (is_array($data['resource'])) {
+                    foreach($data['resource'] as $d) {
+                        $this->addResource($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"resource" must be array of objects or null, '.gettype($data['resource']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->search) $json['search'] = json_encode($this->search);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->search)) $json['search'] = $this->search;
         if (0 < count($this->resource)) {
             $json['resource'] = [];
             foreach($this->resource as $resource) {
-                $json['resource'][] = json_encode($resource);
+                if (null !== $resource) $json['resource'][] = $resource;
             }
         }
         return $json;
@@ -529,24 +576,23 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CompartmentDefinition xmlns="http://hl7.org/fhir"></CompartmentDefinition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -557,8 +603,8 @@ class FHIRCompartmentDefinition extends FHIRDomainResource implements \JsonSeria
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->search) $this->search->xmlSerialize(true, $sxe->addChild('search'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->search)) $this->search->xmlSerialize(true, $sxe->addChild('search'));
         if (0 < count($this->resource)) {
             foreach($this->resource as $resource) {
                 $resource->xmlSerialize(true, $sxe->addChild('resource'));

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
+ * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
@@ -114,7 +114,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $author = array();
+    public $author = [];
 
     /**
      * Official human-readable label for the composition.
@@ -132,7 +132,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * A participant who has attested to the accuracy of the composition/document.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionAttester[]
      */
-    public $attester = array();
+    public $attester = [];
 
     /**
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
@@ -144,19 +144,19 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Relationships that this composition has with other compositions or documents that already exist.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo[]
      */
-    public $relatesTo = array();
+    public $relatesTo = [];
 
     /**
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionEvent[]
      */
-    public $event = array();
+    public $event = [];
 
     /**
      * The root of the sections that make up the composition.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
-    public $section = array();
+    public $section = [];
 
     /**
      * @var string
@@ -167,8 +167,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Logical identifier for the composition, assigned when created. This identifier stays constant as the composition is changed over time.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -177,8 +176,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -187,8 +185,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * The workflow/clinical status of this composition. The status is a marker for the clinical standing of the document.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -197,8 +194,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCompositionStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -207,8 +203,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -217,8 +212,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -227,8 +221,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * A categorization for the type of the composition - helps for indexing and searching. This may be implied by or derived from the code specified in the Composition Type.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getClass()
-    {
+    public function getClass() {
         return $this->class;
     }
 
@@ -237,8 +230,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $class
      * @return $this
      */
-    public function setClass($class)
-    {
+    public function setClass($class) {
         $this->class = $class;
         return $this;
     }
@@ -247,8 +239,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Who or what the composition is about. The composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubject()
-    {
+    public function getSubject() {
         return $this->subject;
     }
 
@@ -257,8 +248,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setSubject($subject)
-    {
+    public function setSubject($subject) {
         $this->subject = $subject;
         return $this;
     }
@@ -267,8 +257,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Describes the clinical encounter or type of care this documentation is associated with.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
-    {
+    public function getEncounter() {
         return $this->encounter;
     }
 
@@ -277,8 +266,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
      * @return $this
      */
-    public function setEncounter($encounter)
-    {
+    public function setEncounter($encounter) {
         $this->encounter = $encounter;
         return $this;
     }
@@ -287,8 +275,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * The composition editing time, when the composition was last logically changed by the author.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -297,8 +284,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -307,8 +293,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getAuthor()
-    {
+    public function getAuthor() {
         return $this->author;
     }
 
@@ -317,8 +302,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
      * @return $this
      */
-    public function addAuthor($author)
-    {
+    public function addAuthor($author) {
         $this->author[] = $author;
         return $this;
     }
@@ -327,8 +311,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Official human-readable label for the composition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -337,8 +320,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -347,8 +329,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * The code specifying the level of confidentiality of the Composition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification
      */
-    public function getConfidentiality()
-    {
+    public function getConfidentiality() {
         return $this->confidentiality;
     }
 
@@ -357,8 +338,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRConfidentialityClassification $confidentiality
      * @return $this
      */
-    public function setConfidentiality($confidentiality)
-    {
+    public function setConfidentiality($confidentiality) {
         $this->confidentiality = $confidentiality;
         return $this;
     }
@@ -367,8 +347,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * A participant who has attested to the accuracy of the composition/document.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionAttester[]
      */
-    public function getAttester()
-    {
+    public function getAttester() {
         return $this->attester;
     }
 
@@ -377,8 +356,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionAttester $attester
      * @return $this
      */
-    public function addAttester($attester)
-    {
+    public function addAttester($attester) {
         $this->attester[] = $attester;
         return $this;
     }
@@ -387,8 +365,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Identifies the organization or group who is responsible for ongoing maintenance of and access to the composition/document information.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getCustodian()
-    {
+    public function getCustodian() {
         return $this->custodian;
     }
 
@@ -397,8 +374,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $custodian
      * @return $this
      */
-    public function setCustodian($custodian)
-    {
+    public function setCustodian($custodian) {
         $this->custodian = $custodian;
         return $this;
     }
@@ -407,8 +383,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * Relationships that this composition has with other compositions or documents that already exist.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo[]
      */
-    public function getRelatesTo()
-    {
+    public function getRelatesTo() {
         return $this->relatesTo;
     }
 
@@ -417,8 +392,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionRelatesTo $relatesTo
      * @return $this
      */
-    public function addRelatesTo($relatesTo)
-    {
+    public function addRelatesTo($relatesTo) {
         $this->relatesTo[] = $relatesTo;
         return $this;
     }
@@ -427,8 +401,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * The clinical service, such as a colonoscopy or an appendectomy, being documented.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionEvent[]
      */
-    public function getEvent()
-    {
+    public function getEvent() {
         return $this->event;
     }
 
@@ -437,8 +410,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionEvent $event
      * @return $this
      */
-    public function addEvent($event)
-    {
+    public function addEvent($event) {
         $this->event[] = $event;
         return $this;
     }
@@ -447,8 +419,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * The root of the sections that make up the composition.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
-    public function getSection()
-    {
+    public function getSection() {
         return $this->section;
     }
 
@@ -457,8 +428,7 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection $section
      * @return $this
      */
-    public function addSection($section)
-    {
+    public function addSection($section) {
         $this->section[] = $section;
         return $this;
     }
@@ -466,64 +436,147 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['class'])) {
+                $this->setClass($data['class']);
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['encounter'])) {
+                $this->setEncounter($data['encounter']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['author'])) {
+                if (is_array($data['author'])) {
+                    foreach($data['author'] as $d) {
+                        $this->addAuthor($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"author" must be array of objects or null, '.gettype($data['author']).' seen.');
+                }
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['confidentiality'])) {
+                $this->setConfidentiality($data['confidentiality']);
+            }
+            if (isset($data['attester'])) {
+                if (is_array($data['attester'])) {
+                    foreach($data['attester'] as $d) {
+                        $this->addAttester($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"attester" must be array of objects or null, '.gettype($data['attester']).' seen.');
+                }
+            }
+            if (isset($data['custodian'])) {
+                $this->setCustodian($data['custodian']);
+            }
+            if (isset($data['relatesTo'])) {
+                if (is_array($data['relatesTo'])) {
+                    foreach($data['relatesTo'] as $d) {
+                        $this->addRelatesTo($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"relatesTo" must be array of objects or null, '.gettype($data['relatesTo']).' seen.');
+                }
+            }
+            if (isset($data['event'])) {
+                if (is_array($data['event'])) {
+                    foreach($data['event'] as $d) {
+                        $this->addEvent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"event" must be array of objects or null, '.gettype($data['event']).' seen.');
+                }
+            }
+            if (isset($data['section'])) {
+                if (is_array($data['section'])) {
+                    foreach($data['section'] as $d) {
+                        $this->addSection($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"section" must be array of objects or null, '.gettype($data['section']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->class) $json['class'] = json_encode($this->class);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->class)) $json['class'] = $this->class;
+        if (isset($this->subject)) $json['subject'] = $this->subject;
+        if (isset($this->encounter)) $json['encounter'] = $this->encounter;
+        if (isset($this->date)) $json['date'] = $this->date;
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = json_encode($author);
+                if (null !== $author) $json['author'][] = $author;
             }
         }
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->confidentiality) $json['confidentiality'] = json_encode($this->confidentiality);
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->confidentiality)) $json['confidentiality'] = $this->confidentiality;
         if (0 < count($this->attester)) {
             $json['attester'] = [];
             foreach($this->attester as $attester) {
-                $json['attester'][] = json_encode($attester);
+                if (null !== $attester) $json['attester'][] = $attester;
             }
         }
-        if (null !== $this->custodian) $json['custodian'] = json_encode($this->custodian);
+        if (isset($this->custodian)) $json['custodian'] = $this->custodian;
         if (0 < count($this->relatesTo)) {
             $json['relatesTo'] = [];
             foreach($this->relatesTo as $relatesTo) {
-                $json['relatesTo'][] = json_encode($relatesTo);
+                if (null !== $relatesTo) $json['relatesTo'][] = $relatesTo;
             }
         }
         if (0 < count($this->event)) {
             $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = json_encode($event);
+                if (null !== $event) $json['event'][] = $event;
             }
         }
         if (0 < count($this->section)) {
             $json['section'] = [];
             foreach($this->section as $section) {
-                $json['section'][] = json_encode($section);
+                if (null !== $section) $json['section'][] = $section;
             }
         }
         return $json;
@@ -534,30 +587,29 @@ class FHIRComposition extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Composition xmlns="http://hl7.org/fhir"></Composition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->class) $this->class->xmlSerialize(true, $sxe->addChild('class'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->class)) $this->class->xmlSerialize(true, $sxe->addChild('class'));
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (isset($this->encounter)) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
         if (0 < count($this->author)) {
             foreach($this->author as $author) {
                 $author->xmlSerialize(true, $sxe->addChild('author'));
             }
         }
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->confidentiality) $this->confidentiality->xmlSerialize(true, $sxe->addChild('confidentiality'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->confidentiality)) $this->confidentiality->xmlSerialize(true, $sxe->addChild('confidentiality'));
         if (0 < count($this->attester)) {
             foreach($this->attester as $attester) {
                 $attester->xmlSerialize(true, $sxe->addChild('attester'));
             }
         }
-        if (null !== $this->custodian) $this->custodian->xmlSerialize(true, $sxe->addChild('custodian'));
+        if (isset($this->custodian)) $this->custodian->xmlSerialize(true, $sxe->addChild('custodian'));
         if (0 < count($this->relatesTo)) {
             foreach($this->relatesTo as $relatesTo) {
                 $relatesTo->xmlSerialize(true, $sxe->addChild('relatesTo'));

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -84,7 +84,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items hould be evaluated within the collection of linked items.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRLinkage\FHIRLinkageItem[]
      */
-    public $item = array();
+    public $item = [];
 
     /**
      * @var string
@@ -95,8 +95,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * Indicates whether the asserted set of linkages are considered to be "in effect".
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getActive()
-    {
+    public function getActive() {
         return $this->active;
     }
 
@@ -105,8 +104,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $active
      * @return $this
      */
-    public function setActive($active)
-    {
+    public function setActive($active) {
         $this->active = $active;
         return $this;
     }
@@ -115,8 +113,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * Identifies the user or organization responsible for asserting the linkages and who establishes the context for evaluating the nature of each linkage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAuthor()
-    {
+    public function getAuthor() {
         return $this->author;
     }
 
@@ -125,8 +122,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
      * @return $this
      */
-    public function setAuthor($author)
-    {
+    public function setAuthor($author) {
         $this->author = $author;
         return $this;
     }
@@ -135,8 +131,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * Identifies one of the records that is considered to refer to the same real-world occurrence as well as how the items hould be evaluated within the collection of linked items.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRLinkage\FHIRLinkageItem[]
      */
-    public function getItem()
-    {
+    public function getItem() {
         return $this->item;
     }
 
@@ -145,8 +140,7 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRLinkage\FHIRLinkageItem $item
      * @return $this
      */
-    public function addItem($item)
-    {
+    public function addItem($item) {
         $this->item[] = $item;
         return $this;
     }
@@ -154,32 +148,55 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['active'])) {
+                $this->setActive($data['active']);
+            }
+            if (isset($data['author'])) {
+                $this->setAuthor($data['author']);
+            }
+            if (isset($data['item'])) {
+                if (is_array($data['item'])) {
+                    foreach($data['item'] as $d) {
+                        $this->addItem($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"item" must be array of objects or null, '.gettype($data['item']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
+        if (isset($this->active)) $json['active'] = $this->active;
+        if (isset($this->author)) $json['author'] = $this->author;
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                if (null !== $item) $json['item'][] = $item;
             }
         }
         return $json;
@@ -190,12 +207,11 @@ class FHIRLinkage extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Linkage xmlns="http://hl7.org/fhir"></Linkage>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
-        if (null !== $this->author) $this->author->xmlSerialize(true, $sxe->addChild('author'));
+        if (isset($this->active)) $this->active->xmlSerialize(true, $sxe->addChild('active'));
+        if (isset($this->author)) $this->author->xmlSerialize(true, $sxe->addChild('author'));
         if (0 < count($this->item)) {
             foreach($this->item as $item) {
                 $item->xmlSerialize(true, $sxe->addChild('item'));

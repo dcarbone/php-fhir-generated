@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -99,51 +99,39 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
 
     /**
      * The matter of concern in the context of this provision of the agrement.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractOffer
      */
-    public $topic = array();
+    public $offer = null;
+
+    /**
+     * Contract Term Asset List.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAsset[]
+     */
+    public $asset = [];
+
+    /**
+     * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAgent[]
+     */
+    public $agent = [];
 
     /**
      * Action stipulated by this Contract Provision.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $action = array();
+    public $action = [];
 
     /**
      * Reason or purpose for the action stipulated by this Contract Provision.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $actionReason = array();
-
-    /**
-     * A set of security labels that define which terms are controlled by this condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
-     */
-    public $securityLabel = array();
-
-    /**
-     * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAgent1[]
-     */
-    public $agent = array();
-
-    /**
-     * Human readable form of this Contract Provision.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $text = null;
-
-    /**
-     * Contract Provision Valued Item List.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractValuedItem1[]
-     */
-    public $valuedItem = array();
+    public $actionReason = [];
 
     /**
      * Nested group of Contract Provisions.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractTerm[]
      */
-    public $group = array();
+    public $group = [];
 
     /**
      * @var string
@@ -154,8 +142,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * Unique identifier for this particular Contract Provision.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -164,8 +151,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -174,8 +160,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * When this Contract Provision was issued.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getIssued()
-    {
+    public function getIssued() {
         return $this->issued;
     }
 
@@ -184,8 +169,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $issued
      * @return $this
      */
-    public function setIssued($issued)
-    {
+    public function setIssued($issued) {
         $this->issued = $issued;
         return $this;
     }
@@ -194,8 +178,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * Relevant time or time-period when this Contract Provision is applicable.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getApplies()
-    {
+    public function getApplies() {
         return $this->applies;
     }
 
@@ -204,8 +187,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $applies
      * @return $this
      */
-    public function setApplies($applies)
-    {
+    public function setApplies($applies) {
         $this->applies = $applies;
         return $this;
     }
@@ -214,8 +196,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * Type of Contract Provision such as specific requirements, purposes for actions, obligations, prohibitions, e.g. life time maximum benefit.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -224,8 +205,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -234,8 +214,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * Subtype of this Contract Provision, e.g. life time maximum payment for a contract term for specific valued item, e.g. disability payment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getSubType()
-    {
+    public function getSubType() {
         return $this->subType;
     }
 
@@ -244,29 +223,62 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $subType
      * @return $this
      */
-    public function setSubType($subType)
-    {
+    public function setSubType($subType) {
         $this->subType = $subType;
         return $this;
     }
 
     /**
      * The matter of concern in the context of this provision of the agrement.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractOffer
      */
-    public function getTopic()
-    {
-        return $this->topic;
+    public function getOffer() {
+        return $this->offer;
     }
 
     /**
      * The matter of concern in the context of this provision of the agrement.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $topic
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractOffer $offer
      * @return $this
      */
-    public function addTopic($topic)
-    {
-        $this->topic[] = $topic;
+    public function setOffer($offer) {
+        $this->offer = $offer;
+        return $this;
+    }
+
+    /**
+     * Contract Term Asset List.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAsset[]
+     */
+    public function getAsset() {
+        return $this->asset;
+    }
+
+    /**
+     * Contract Term Asset List.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAsset $asset
+     * @return $this
+     */
+    public function addAsset($asset) {
+        $this->asset[] = $asset;
+        return $this;
+    }
+
+    /**
+     * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAgent[]
+     */
+    public function getAgent() {
+        return $this->agent;
+    }
+
+    /**
+     * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAgent $agent
+     * @return $this
+     */
+    public function addAgent($agent) {
+        $this->agent[] = $agent;
         return $this;
     }
 
@@ -274,8 +286,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * Action stipulated by this Contract Provision.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getAction()
-    {
+    public function getAction() {
         return $this->action;
     }
 
@@ -284,8 +295,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $action
      * @return $this
      */
-    public function addAction($action)
-    {
+    public function addAction($action) {
         $this->action[] = $action;
         return $this;
     }
@@ -294,8 +304,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * Reason or purpose for the action stipulated by this Contract Provision.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getActionReason()
-    {
+    public function getActionReason() {
         return $this->actionReason;
     }
 
@@ -304,89 +313,8 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $actionReason
      * @return $this
      */
-    public function addActionReason($actionReason)
-    {
+    public function addActionReason($actionReason) {
         $this->actionReason[] = $actionReason;
-        return $this;
-    }
-
-    /**
-     * A set of security labels that define which terms are controlled by this condition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
-     */
-    public function getSecurityLabel()
-    {
-        return $this->securityLabel;
-    }
-
-    /**
-     * A set of security labels that define which terms are controlled by this condition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $securityLabel
-     * @return $this
-     */
-    public function addSecurityLabel($securityLabel)
-    {
-        $this->securityLabel[] = $securityLabel;
-        return $this;
-    }
-
-    /**
-     * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAgent1[]
-     */
-    public function getAgent()
-    {
-        return $this->agent;
-    }
-
-    /**
-     * An actor taking a role in an activity for which it can be assigned some degree of responsibility for the activity taking place.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractAgent1 $agent
-     * @return $this
-     */
-    public function addAgent($agent)
-    {
-        $this->agent[] = $agent;
-        return $this;
-    }
-
-    /**
-     * Human readable form of this Contract Provision.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * Human readable form of this Contract Provision.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
-     * @return $this
-     */
-    public function setText($text)
-    {
-        $this->text = $text;
-        return $this;
-    }
-
-    /**
-     * Contract Provision Valued Item List.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractValuedItem1[]
-     */
-    public function getValuedItem()
-    {
-        return $this->valuedItem;
-    }
-
-    /**
-     * Contract Provision Valued Item List.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractValuedItem1 $valuedItem
-     * @return $this
-     */
-    public function addValuedItem($valuedItem)
-    {
-        $this->valuedItem[] = $valuedItem;
         return $this;
     }
 
@@ -394,8 +322,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * Nested group of Contract Provisions.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractTerm[]
      */
-    public function getGroup()
-    {
+    public function getGroup() {
         return $this->group;
     }
 
@@ -404,8 +331,7 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRContract\FHIRContractTerm $group
      * @return $this
      */
-    public function addGroup($group)
-    {
+    public function addGroup($group) {
         $this->group[] = $group;
         return $this;
     }
@@ -413,71 +339,130 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['issued'])) {
+                $this->setIssued($data['issued']);
+            }
+            if (isset($data['applies'])) {
+                $this->setApplies($data['applies']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['subType'])) {
+                $this->setSubType($data['subType']);
+            }
+            if (isset($data['offer'])) {
+                $this->setOffer($data['offer']);
+            }
+            if (isset($data['asset'])) {
+                if (is_array($data['asset'])) {
+                    foreach($data['asset'] as $d) {
+                        $this->addAsset($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"asset" must be array of objects or null, '.gettype($data['asset']).' seen.');
+                }
+            }
+            if (isset($data['agent'])) {
+                if (is_array($data['agent'])) {
+                    foreach($data['agent'] as $d) {
+                        $this->addAgent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"agent" must be array of objects or null, '.gettype($data['agent']).' seen.');
+                }
+            }
+            if (isset($data['action'])) {
+                if (is_array($data['action'])) {
+                    foreach($data['action'] as $d) {
+                        $this->addAction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"action" must be array of objects or null, '.gettype($data['action']).' seen.');
+                }
+            }
+            if (isset($data['actionReason'])) {
+                if (is_array($data['actionReason'])) {
+                    foreach($data['actionReason'] as $d) {
+                        $this->addActionReason($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"actionReason" must be array of objects or null, '.gettype($data['actionReason']).' seen.');
+                }
+            }
+            if (isset($data['group'])) {
+                if (is_array($data['group'])) {
+                    foreach($data['group'] as $d) {
+                        $this->addGroup($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"group" must be array of objects or null, '.gettype($data['group']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
-        if (null !== $this->applies) $json['applies'] = json_encode($this->applies);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->subType) $json['subType'] = json_encode($this->subType);
-        if (0 < count($this->topic)) {
-            $json['topic'] = [];
-            foreach($this->topic as $topic) {
-                $json['topic'][] = json_encode($topic);
-            }
-        }
-        if (0 < count($this->action)) {
-            $json['action'] = [];
-            foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
-            }
-        }
-        if (0 < count($this->actionReason)) {
-            $json['actionReason'] = [];
-            foreach($this->actionReason as $actionReason) {
-                $json['actionReason'][] = json_encode($actionReason);
-            }
-        }
-        if (0 < count($this->securityLabel)) {
-            $json['securityLabel'] = [];
-            foreach($this->securityLabel as $securityLabel) {
-                $json['securityLabel'][] = json_encode($securityLabel);
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->issued)) $json['issued'] = $this->issued;
+        if (isset($this->applies)) $json['applies'] = $this->applies;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->subType)) $json['subType'] = $this->subType;
+        if (isset($this->offer)) $json['offer'] = $this->offer;
+        if (0 < count($this->asset)) {
+            $json['asset'] = [];
+            foreach($this->asset as $asset) {
+                if (null !== $asset) $json['asset'][] = $asset;
             }
         }
         if (0 < count($this->agent)) {
             $json['agent'] = [];
             foreach($this->agent as $agent) {
-                $json['agent'][] = json_encode($agent);
+                if (null !== $agent) $json['agent'][] = $agent;
             }
         }
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (0 < count($this->valuedItem)) {
-            $json['valuedItem'] = [];
-            foreach($this->valuedItem as $valuedItem) {
-                $json['valuedItem'][] = json_encode($valuedItem);
+        if (0 < count($this->action)) {
+            $json['action'] = [];
+            foreach($this->action as $action) {
+                if (null !== $action) $json['action'][] = $action;
+            }
+        }
+        if (0 < count($this->actionReason)) {
+            $json['actionReason'] = [];
+            foreach($this->actionReason as $actionReason) {
+                if (null !== $actionReason) $json['actionReason'][] = $actionReason;
             }
         }
         if (0 < count($this->group)) {
             $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = json_encode($group);
+                if (null !== $group) $json['group'][] = $group;
             }
         }
         return $json;
@@ -488,18 +473,23 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ContractTerm xmlns="http://hl7.org/fhir"></ContractTerm>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->issued) $this->issued->xmlSerialize(true, $sxe->addChild('issued'));
-        if (null !== $this->applies) $this->applies->xmlSerialize(true, $sxe->addChild('applies'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->subType) $this->subType->xmlSerialize(true, $sxe->addChild('subType'));
-        if (0 < count($this->topic)) {
-            foreach($this->topic as $topic) {
-                $topic->xmlSerialize(true, $sxe->addChild('topic'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->issued)) $this->issued->xmlSerialize(true, $sxe->addChild('issued'));
+        if (isset($this->applies)) $this->applies->xmlSerialize(true, $sxe->addChild('applies'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->subType)) $this->subType->xmlSerialize(true, $sxe->addChild('subType'));
+        if (isset($this->offer)) $this->offer->xmlSerialize(true, $sxe->addChild('offer'));
+        if (0 < count($this->asset)) {
+            foreach($this->asset as $asset) {
+                $asset->xmlSerialize(true, $sxe->addChild('asset'));
+            }
+        }
+        if (0 < count($this->agent)) {
+            foreach($this->agent as $agent) {
+                $agent->xmlSerialize(true, $sxe->addChild('agent'));
             }
         }
         if (0 < count($this->action)) {
@@ -510,22 +500,6 @@ class FHIRContractTerm extends FHIRBackboneElement implements \JsonSerializable
         if (0 < count($this->actionReason)) {
             foreach($this->actionReason as $actionReason) {
                 $actionReason->xmlSerialize(true, $sxe->addChild('actionReason'));
-            }
-        }
-        if (0 < count($this->securityLabel)) {
-            foreach($this->securityLabel as $securityLabel) {
-                $securityLabel->xmlSerialize(true, $sxe->addChild('securityLabel'));
-            }
-        }
-        if (0 < count($this->agent)) {
-            foreach($this->agent as $agent) {
-                $agent->xmlSerialize(true, $sxe->addChild('agent'));
-            }
-        }
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (0 < count($this->valuedItem)) {
-            foreach($this->valuedItem as $valuedItem) {
-                $valuedItem->xmlSerialize(true, $sxe->addChild('valuedItem'));
             }
         }
         if (0 < count($this->group)) {

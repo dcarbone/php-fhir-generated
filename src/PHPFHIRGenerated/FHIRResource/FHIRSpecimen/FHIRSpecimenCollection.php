@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,13 +74,11 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     public $collector = null;
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $collectedDateTime = null;
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $collectedPeriod = null;
@@ -112,8 +110,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * Person who collected the specimen.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getCollector()
-    {
+    public function getCollector() {
         return $this->collector;
     }
 
@@ -122,48 +119,39 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $collector
      * @return $this
      */
-    public function setCollector($collector)
-    {
+    public function setCollector($collector) {
         $this->collector = $collector;
         return $this;
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getCollectedDateTime()
-    {
+    public function getCollectedDateTime() {
         return $this->collectedDateTime;
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $collectedDateTime
      * @return $this
      */
-    public function setCollectedDateTime($collectedDateTime)
-    {
+    public function setCollectedDateTime($collectedDateTime) {
         $this->collectedDateTime = $collectedDateTime;
         return $this;
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getCollectedPeriod()
-    {
+    public function getCollectedPeriod() {
         return $this->collectedPeriod;
     }
 
     /**
-     * Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $collectedPeriod
      * @return $this
      */
-    public function setCollectedPeriod($collectedPeriod)
-    {
+    public function setCollectedPeriod($collectedPeriod) {
         $this->collectedPeriod = $collectedPeriod;
         return $this;
     }
@@ -172,8 +160,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->quantity;
     }
 
@@ -182,8 +169,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->quantity = $quantity;
         return $this;
     }
@@ -192,8 +178,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * A coded value specifying the technique that is used to perform the procedure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getMethod()
-    {
+    public function getMethod() {
         return $this->method;
     }
 
@@ -202,8 +187,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
-    public function setMethod($method)
-    {
+    public function setMethod($method) {
         $this->method = $method;
         return $this;
     }
@@ -212,8 +196,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getBodySite()
-    {
+    public function getBodySite() {
         return $this->bodySite;
     }
 
@@ -222,8 +205,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySite
      * @return $this
      */
-    public function setBodySite($bodySite)
-    {
+    public function setBodySite($bodySite) {
         $this->bodySite = $bodySite;
         return $this;
     }
@@ -231,31 +213,57 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['collector'])) {
+                $this->setCollector($data['collector']);
+            }
+            if (isset($data['collectedDateTime'])) {
+                $this->setCollectedDateTime($data['collectedDateTime']);
+            }
+            if (isset($data['collectedPeriod'])) {
+                $this->setCollectedPeriod($data['collectedPeriod']);
+            }
+            if (isset($data['quantity'])) {
+                $this->setQuantity($data['quantity']);
+            }
+            if (isset($data['method'])) {
+                $this->setMethod($data['method']);
+            }
+            if (isset($data['bodySite'])) {
+                $this->setBodySite($data['bodySite']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->collector) $json['collector'] = json_encode($this->collector);
-        if (null !== $this->collectedDateTime) $json['collectedDateTime'] = json_encode($this->collectedDateTime);
-        if (null !== $this->collectedPeriod) $json['collectedPeriod'] = json_encode($this->collectedPeriod);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->bodySite) $json['bodySite'] = json_encode($this->bodySite);
+        if (isset($this->collector)) $json['collector'] = $this->collector;
+        if (isset($this->collectedDateTime)) $json['collectedDateTime'] = $this->collectedDateTime;
+        if (isset($this->collectedPeriod)) $json['collectedPeriod'] = $this->collectedPeriod;
+        if (isset($this->quantity)) $json['quantity'] = $this->quantity;
+        if (isset($this->method)) $json['method'] = $this->method;
+        if (isset($this->bodySite)) $json['bodySite'] = $this->bodySite;
         return $json;
     }
 
@@ -264,16 +272,15 @@ class FHIRSpecimenCollection extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SpecimenCollection xmlns="http://hl7.org/fhir"></SpecimenCollection>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->collector) $this->collector->xmlSerialize(true, $sxe->addChild('collector'));
-        if (null !== $this->collectedDateTime) $this->collectedDateTime->xmlSerialize(true, $sxe->addChild('collectedDateTime'));
-        if (null !== $this->collectedPeriod) $this->collectedPeriod->xmlSerialize(true, $sxe->addChild('collectedPeriod'));
-        if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
-        if (null !== $this->method) $this->method->xmlSerialize(true, $sxe->addChild('method'));
-        if (null !== $this->bodySite) $this->bodySite->xmlSerialize(true, $sxe->addChild('bodySite'));
+        if (isset($this->collector)) $this->collector->xmlSerialize(true, $sxe->addChild('collector'));
+        if (isset($this->collectedDateTime)) $this->collectedDateTime->xmlSerialize(true, $sxe->addChild('collectedDateTime'));
+        if (isset($this->collectedPeriod)) $this->collectedPeriod->xmlSerialize(true, $sxe->addChild('collectedPeriod'));
+        if (isset($this->quantity)) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
+        if (isset($this->method)) $this->method->xmlSerialize(true, $sxe->addChild('method'));
+        if (isset($this->bodySite)) $this->bodySite->xmlSerialize(true, $sxe->addChild('bodySite'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

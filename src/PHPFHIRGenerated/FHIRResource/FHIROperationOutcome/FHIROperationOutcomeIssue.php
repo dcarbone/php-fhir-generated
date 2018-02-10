@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -95,13 +95,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $location = array();
+    public $location = [];
 
     /**
      * A simple FHIRPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $expression = array();
+    public $expression = [];
 
     /**
      * @var string
@@ -112,8 +112,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * Indicates whether the issue indicates a variation from successful processing.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIssueSeverity
      */
-    public function getSeverity()
-    {
+    public function getSeverity() {
         return $this->severity;
     }
 
@@ -122,8 +121,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIssueSeverity $severity
      * @return $this
      */
-    public function setSeverity($severity)
-    {
+    public function setSeverity($severity) {
         $this->severity = $severity;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIssueType
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -142,8 +139,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIssueType $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * Additional details about the error. This may be a text description of the error, or a system code that identifies the error.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDetails()
-    {
+    public function getDetails() {
         return $this->details;
     }
 
@@ -162,8 +157,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $details
      * @return $this
      */
-    public function setDetails($details)
-    {
+    public function setDetails($details) {
         $this->details = $details;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * Additional diagnostic information about the issue.  Typically, this may be a description of how a value is erroneous, or a stack dump to help trace the issue.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDiagnostics()
-    {
+    public function getDiagnostics() {
         return $this->diagnostics;
     }
 
@@ -182,8 +175,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $diagnostics
      * @return $this
      */
-    public function setDiagnostics($diagnostics)
-    {
+    public function setDiagnostics($diagnostics) {
         $this->diagnostics = $diagnostics;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be "http." + the parameter name.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getLocation()
-    {
+    public function getLocation() {
         return $this->location;
     }
 
@@ -202,8 +193,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $location
      * @return $this
      */
-    public function addLocation($location)
-    {
+    public function addLocation($location) {
         $this->location[] = $location;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * A simple FHIRPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getExpression()
-    {
+    public function getExpression() {
         return $this->expression;
     }
 
@@ -222,8 +211,7 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
-    public function addExpression($expression)
-    {
+    public function addExpression($expression) {
         $this->expression[] = $expression;
         return $this;
     }
@@ -231,39 +219,77 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['severity'])) {
+                $this->setSeverity($data['severity']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['details'])) {
+                $this->setDetails($data['details']);
+            }
+            if (isset($data['diagnostics'])) {
+                $this->setDiagnostics($data['diagnostics']);
+            }
+            if (isset($data['location'])) {
+                if (is_array($data['location'])) {
+                    foreach($data['location'] as $d) {
+                        $this->addLocation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"location" must be array of objects or null, '.gettype($data['location']).' seen.');
+                }
+            }
+            if (isset($data['expression'])) {
+                if (is_array($data['expression'])) {
+                    foreach($data['expression'] as $d) {
+                        $this->addExpression($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"expression" must be array of objects or null, '.gettype($data['expression']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->details) $json['details'] = json_encode($this->details);
-        if (null !== $this->diagnostics) $json['diagnostics'] = json_encode($this->diagnostics);
+        if (isset($this->severity)) $json['severity'] = $this->severity;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->details)) $json['details'] = $this->details;
+        if (isset($this->diagnostics)) $json['diagnostics'] = $this->diagnostics;
         if (0 < count($this->location)) {
             $json['location'] = [];
             foreach($this->location as $location) {
-                $json['location'][] = json_encode($location);
+                if (null !== $location) $json['location'][] = $location;
             }
         }
         if (0 < count($this->expression)) {
             $json['expression'] = [];
             foreach($this->expression as $expression) {
-                $json['expression'][] = json_encode($expression);
+                if (null !== $expression) $json['expression'][] = $expression;
             }
         }
         return $json;
@@ -274,14 +300,13 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement implements \JsonSeri
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<OperationOutcomeIssue xmlns="http://hl7.org/fhir"></OperationOutcomeIssue>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->severity) $this->severity->xmlSerialize(true, $sxe->addChild('severity'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->details) $this->details->xmlSerialize(true, $sxe->addChild('details'));
-        if (null !== $this->diagnostics) $this->diagnostics->xmlSerialize(true, $sxe->addChild('diagnostics'));
+        if (isset($this->severity)) $this->severity->xmlSerialize(true, $sxe->addChild('severity'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->details)) $this->details->xmlSerialize(true, $sxe->addChild('details'));
+        if (isset($this->diagnostics)) $this->diagnostics->xmlSerialize(true, $sxe->addChild('diagnostics'));
         if (0 < count($this->location)) {
             foreach($this->location as $location) {
                 $location->xmlSerialize(true, $sxe->addChild('location'));

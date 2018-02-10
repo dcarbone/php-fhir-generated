@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -120,7 +120,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * A participant in the test execution, either the execution engine, a client, or a server.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportParticipant[]
      */
-    public $participant = array();
+    public $participant = [];
 
     /**
      * The results of the series of required setup operations before the tests were executed.
@@ -132,7 +132,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * A test executed from the test script.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportTest[]
      */
-    public $test = array();
+    public $test = [];
 
     /**
      * The results of the series of operations required to clean up after the all the tests were executed (successfully or otherwise).
@@ -149,8 +149,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * Identifier for the TestScript assigned for external purposes outside the context of FHIR.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -159,8 +158,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -169,8 +167,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * A free text natural language name identifying the executed TestScript.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -179,8 +176,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -189,8 +185,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * The current state of this test report.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTestReportStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -199,8 +194,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTestReportStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -209,8 +203,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getTestScript()
-    {
+    public function getTestScript() {
         return $this->testScript;
     }
 
@@ -219,8 +212,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $testScript
      * @return $this
      */
-    public function setTestScript($testScript)
-    {
+    public function setTestScript($testScript) {
         $this->testScript = $testScript;
         return $this;
     }
@@ -229,8 +221,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * The overall result from the execution of the TestScript.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTestReportResult
      */
-    public function getResult()
-    {
+    public function getResult() {
         return $this->result;
     }
 
@@ -239,8 +230,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTestReportResult $result
      * @return $this
      */
-    public function setResult($result)
-    {
+    public function setResult($result) {
         $this->result = $result;
         return $this;
     }
@@ -249,8 +239,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getScore()
-    {
+    public function getScore() {
         return $this->score;
     }
 
@@ -259,8 +248,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $score
      * @return $this
      */
-    public function setScore($score)
-    {
+    public function setScore($score) {
         $this->score = $score;
         return $this;
     }
@@ -269,8 +257,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * Name of the tester producing this report (Organization or individual).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTester()
-    {
+    public function getTester() {
         return $this->tester;
     }
 
@@ -279,8 +266,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $tester
      * @return $this
      */
-    public function setTester($tester)
-    {
+    public function setTester($tester) {
         $this->tester = $tester;
         return $this;
     }
@@ -289,8 +275,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * When the TestScript was executed and this TestReport was generated.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getIssued()
-    {
+    public function getIssued() {
         return $this->issued;
     }
 
@@ -299,8 +284,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $issued
      * @return $this
      */
-    public function setIssued($issued)
-    {
+    public function setIssued($issued) {
         $this->issued = $issued;
         return $this;
     }
@@ -309,8 +293,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * A participant in the test execution, either the execution engine, a client, or a server.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportParticipant[]
      */
-    public function getParticipant()
-    {
+    public function getParticipant() {
         return $this->participant;
     }
 
@@ -319,8 +302,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportParticipant $participant
      * @return $this
      */
-    public function addParticipant($participant)
-    {
+    public function addParticipant($participant) {
         $this->participant[] = $participant;
         return $this;
     }
@@ -329,8 +311,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * The results of the series of required setup operations before the tests were executed.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportSetup
      */
-    public function getSetup()
-    {
+    public function getSetup() {
         return $this->setup;
     }
 
@@ -339,8 +320,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportSetup $setup
      * @return $this
      */
-    public function setSetup($setup)
-    {
+    public function setSetup($setup) {
         $this->setup = $setup;
         return $this;
     }
@@ -349,8 +329,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * A test executed from the test script.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportTest[]
      */
-    public function getTest()
-    {
+    public function getTest() {
         return $this->test;
     }
 
@@ -359,8 +338,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportTest $test
      * @return $this
      */
-    public function addTest($test)
-    {
+    public function addTest($test) {
         $this->test[] = $test;
         return $this;
     }
@@ -369,8 +347,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * The results of the series of operations required to clean up after the all the tests were executed (successfully or otherwise).
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportTeardown
      */
-    public function getTeardown()
-    {
+    public function getTeardown() {
         return $this->teardown;
     }
 
@@ -379,8 +356,7 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestReport\FHIRTestReportTeardown $teardown
      * @return $this
      */
-    public function setTeardown($teardown)
-    {
+    public function setTeardown($teardown) {
         $this->teardown = $teardown;
         return $this;
     }
@@ -388,48 +364,104 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['testScript'])) {
+                $this->setTestScript($data['testScript']);
+            }
+            if (isset($data['result'])) {
+                $this->setResult($data['result']);
+            }
+            if (isset($data['score'])) {
+                $this->setScore($data['score']);
+            }
+            if (isset($data['tester'])) {
+                $this->setTester($data['tester']);
+            }
+            if (isset($data['issued'])) {
+                $this->setIssued($data['issued']);
+            }
+            if (isset($data['participant'])) {
+                if (is_array($data['participant'])) {
+                    foreach($data['participant'] as $d) {
+                        $this->addParticipant($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"participant" must be array of objects or null, '.gettype($data['participant']).' seen.');
+                }
+            }
+            if (isset($data['setup'])) {
+                $this->setSetup($data['setup']);
+            }
+            if (isset($data['test'])) {
+                if (is_array($data['test'])) {
+                    foreach($data['test'] as $d) {
+                        $this->addTest($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"test" must be array of objects or null, '.gettype($data['test']).' seen.');
+                }
+            }
+            if (isset($data['teardown'])) {
+                $this->setTeardown($data['teardown']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->testScript) $json['testScript'] = json_encode($this->testScript);
-        if (null !== $this->result) $json['result'] = json_encode($this->result);
-        if (null !== $this->score) $json['score'] = json_encode($this->score);
-        if (null !== $this->tester) $json['tester'] = json_encode($this->tester);
-        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->testScript)) $json['testScript'] = $this->testScript;
+        if (isset($this->result)) $json['result'] = $this->result;
+        if (isset($this->score)) $json['score'] = $this->score;
+        if (isset($this->tester)) $json['tester'] = $this->tester;
+        if (isset($this->issued)) $json['issued'] = $this->issued;
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                if (null !== $participant) $json['participant'][] = $participant;
             }
         }
-        if (null !== $this->setup) $json['setup'] = json_encode($this->setup);
+        if (isset($this->setup)) $json['setup'] = $this->setup;
         if (0 < count($this->test)) {
             $json['test'] = [];
             foreach($this->test as $test) {
-                $json['test'][] = json_encode($test);
+                if (null !== $test) $json['test'][] = $test;
             }
         }
-        if (null !== $this->teardown) $json['teardown'] = json_encode($this->teardown);
+        if (isset($this->teardown)) $json['teardown'] = $this->teardown;
         return $json;
     }
 
@@ -438,30 +470,29 @@ class FHIRTestReport extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestReport xmlns="http://hl7.org/fhir"></TestReport>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->testScript) $this->testScript->xmlSerialize(true, $sxe->addChild('testScript'));
-        if (null !== $this->result) $this->result->xmlSerialize(true, $sxe->addChild('result'));
-        if (null !== $this->score) $this->score->xmlSerialize(true, $sxe->addChild('score'));
-        if (null !== $this->tester) $this->tester->xmlSerialize(true, $sxe->addChild('tester'));
-        if (null !== $this->issued) $this->issued->xmlSerialize(true, $sxe->addChild('issued'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->testScript)) $this->testScript->xmlSerialize(true, $sxe->addChild('testScript'));
+        if (isset($this->result)) $this->result->xmlSerialize(true, $sxe->addChild('result'));
+        if (isset($this->score)) $this->score->xmlSerialize(true, $sxe->addChild('score'));
+        if (isset($this->tester)) $this->tester->xmlSerialize(true, $sxe->addChild('tester'));
+        if (isset($this->issued)) $this->issued->xmlSerialize(true, $sxe->addChild('issued'));
         if (0 < count($this->participant)) {
             foreach($this->participant as $participant) {
                 $participant->xmlSerialize(true, $sxe->addChild('participant'));
             }
         }
-        if (null !== $this->setup) $this->setup->xmlSerialize(true, $sxe->addChild('setup'));
+        if (isset($this->setup)) $this->setup->xmlSerialize(true, $sxe->addChild('setup'));
         if (0 < count($this->test)) {
             foreach($this->test as $test) {
                 $test->xmlSerialize(true, $sxe->addChild('test'));
             }
         }
-        if (null !== $this->teardown) $this->teardown->xmlSerialize(true, $sxe->addChild('teardown'));
+        if (isset($this->teardown)) $this->teardown->xmlSerialize(true, $sxe->addChild('teardown'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

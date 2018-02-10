@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this expansion profile is (or will be) published. The URL SHOULD include the major version of the expansion profile. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this expansion profile is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -120,7 +120,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A free text natural language description of the expansion profile from a consumer's perspective.
@@ -132,19 +132,19 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate expansion profile instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the expansion profile is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Fix use of a particular code system to a particular version.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileFixedVersion[]
      */
-    public $fixedVersion = array();
+    public $fixedVersion = [];
 
     /**
      * Code system, or a particular version of a code system to be excluded from value set expansions.
@@ -212,21 +212,19 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
     private $_fhirElementName = 'ExpansionProfile';
 
     /**
-     * An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this expansion profile is (or will be) published. The URL SHOULD include the major version of the expansion profile. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this expansion profile is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this expansion profile is (or will be) published. The URL SHOULD include the major version of the expansion profile. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this expansion profile is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -235,8 +233,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * A formal identifier that is used to identify this expansion profile when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -245,8 +242,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -255,8 +251,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * The identifier that is used to identify this version of the expansion profile when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the expansion profile author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -265,8 +260,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -275,8 +269,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * A natural language name identifying the expansion profile. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -285,8 +278,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -295,8 +287,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * The status of this expansion profile. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -305,8 +296,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -315,8 +305,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * A boolean value to indicate that this expansion profile is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -325,8 +314,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -335,8 +323,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * The date  (and optionally time) when the expansion profile was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the expansion profile changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -345,8 +332,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -355,8 +341,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * The name of the individual or organization that published the expansion profile.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -365,8 +350,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -375,8 +359,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -385,8 +368,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -395,8 +377,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * A free text natural language description of the expansion profile from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -405,8 +386,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -415,8 +395,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate expansion profile instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -425,8 +404,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -435,8 +413,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * A legal or geographic region in which the expansion profile is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -445,8 +422,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -455,8 +431,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Fix use of a particular code system to a particular version.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileFixedVersion[]
      */
-    public function getFixedVersion()
-    {
+    public function getFixedVersion() {
         return $this->fixedVersion;
     }
 
@@ -465,8 +440,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileFixedVersion $fixedVersion
      * @return $this
      */
-    public function addFixedVersion($fixedVersion)
-    {
+    public function addFixedVersion($fixedVersion) {
         $this->fixedVersion[] = $fixedVersion;
         return $this;
     }
@@ -475,8 +449,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Code system, or a particular version of a code system to be excluded from value set expansions.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileExcludedSystem
      */
-    public function getExcludedSystem()
-    {
+    public function getExcludedSystem() {
         return $this->excludedSystem;
     }
 
@@ -485,8 +458,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileExcludedSystem $excludedSystem
      * @return $this
      */
-    public function setExcludedSystem($excludedSystem)
-    {
+    public function setExcludedSystem($excludedSystem) {
         $this->excludedSystem = $excludedSystem;
         return $this;
     }
@@ -495,8 +467,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Controls whether concept designations are to be included or excluded in value set expansions.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getIncludeDesignations()
-    {
+    public function getIncludeDesignations() {
         return $this->includeDesignations;
     }
 
@@ -505,8 +476,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $includeDesignations
      * @return $this
      */
-    public function setIncludeDesignations($includeDesignations)
-    {
+    public function setIncludeDesignations($includeDesignations) {
         $this->includeDesignations = $includeDesignations;
         return $this;
     }
@@ -515,8 +485,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * A set of criteria that provide the constraints imposed on the value set expansion by including or excluding designations.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileDesignation
      */
-    public function getDesignation()
-    {
+    public function getDesignation() {
         return $this->designation;
     }
 
@@ -525,8 +494,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRExpansionProfile\FHIRExpansionProfileDesignation $designation
      * @return $this
      */
-    public function setDesignation($designation)
-    {
+    public function setDesignation($designation) {
         $this->designation = $designation;
         return $this;
     }
@@ -535,8 +503,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Controls whether the value set definition is included or excluded in value set expansions.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getIncludeDefinition()
-    {
+    public function getIncludeDefinition() {
         return $this->includeDefinition;
     }
 
@@ -545,8 +512,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $includeDefinition
      * @return $this
      */
-    public function setIncludeDefinition($includeDefinition)
-    {
+    public function setIncludeDefinition($includeDefinition) {
         $this->includeDefinition = $includeDefinition;
         return $this;
     }
@@ -555,8 +521,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Controls whether inactive concepts are included or excluded in value set expansions.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getActiveOnly()
-    {
+    public function getActiveOnly() {
         return $this->activeOnly;
     }
 
@@ -565,8 +530,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $activeOnly
      * @return $this
      */
-    public function setActiveOnly($activeOnly)
-    {
+    public function setActiveOnly($activeOnly) {
         $this->activeOnly = $activeOnly;
         return $this;
     }
@@ -575,8 +539,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Controls whether or not the value set expansion nests codes or not (i.e. ValueSet.expansion.contains.contains).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExcludeNested()
-    {
+    public function getExcludeNested() {
         return $this->excludeNested;
     }
 
@@ -585,8 +548,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $excludeNested
      * @return $this
      */
-    public function setExcludeNested($excludeNested)
-    {
+    public function setExcludeNested($excludeNested) {
         $this->excludeNested = $excludeNested;
         return $this;
     }
@@ -595,8 +557,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Controls whether or not the value set expansion includes codes which cannot be displayed in user interfaces.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExcludeNotForUI()
-    {
+    public function getExcludeNotForUI() {
         return $this->excludeNotForUI;
     }
 
@@ -605,8 +566,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $excludeNotForUI
      * @return $this
      */
-    public function setExcludeNotForUI($excludeNotForUI)
-    {
+    public function setExcludeNotForUI($excludeNotForUI) {
         $this->excludeNotForUI = $excludeNotForUI;
         return $this;
     }
@@ -615,8 +575,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Controls whether or not the value set expansion includes post coordinated codes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExcludePostCoordinated()
-    {
+    public function getExcludePostCoordinated() {
         return $this->excludePostCoordinated;
     }
 
@@ -625,8 +584,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $excludePostCoordinated
      * @return $this
      */
-    public function setExcludePostCoordinated($excludePostCoordinated)
-    {
+    public function setExcludePostCoordinated($excludePostCoordinated) {
         $this->excludePostCoordinated = $excludePostCoordinated;
         return $this;
     }
@@ -635,8 +593,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * Specifies the language to be used for description in the expansions i.e. the language to be used for ValueSet.expansion.contains.display.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getDisplayLanguage()
-    {
+    public function getDisplayLanguage() {
         return $this->displayLanguage;
     }
 
@@ -645,8 +602,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $displayLanguage
      * @return $this
      */
-    public function setDisplayLanguage($displayLanguage)
-    {
+    public function setDisplayLanguage($displayLanguage) {
         $this->displayLanguage = $displayLanguage;
         return $this;
     }
@@ -655,8 +611,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * If the value set being expanded is incomplete (because it is too big to expand), return a limited expansion (a subset) with an indicator that expansion is incomplete, using the extension [http://hl7.org/fhir/StructureDefinition/valueset-toocostly](extension-valueset-toocostly.html).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getLimitedExpansion()
-    {
+    public function getLimitedExpansion() {
         return $this->limitedExpansion;
     }
 
@@ -665,8 +620,7 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $limitedExpansion
      * @return $this
      */
-    public function setLimitedExpansion($limitedExpansion)
-    {
+    public function setLimitedExpansion($limitedExpansion) {
         $this->limitedExpansion = $limitedExpansion;
         return $this;
     }
@@ -674,69 +628,170 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['fixedVersion'])) {
+                if (is_array($data['fixedVersion'])) {
+                    foreach($data['fixedVersion'] as $d) {
+                        $this->addFixedVersion($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"fixedVersion" must be array of objects or null, '.gettype($data['fixedVersion']).' seen.');
+                }
+            }
+            if (isset($data['excludedSystem'])) {
+                $this->setExcludedSystem($data['excludedSystem']);
+            }
+            if (isset($data['includeDesignations'])) {
+                $this->setIncludeDesignations($data['includeDesignations']);
+            }
+            if (isset($data['designation'])) {
+                $this->setDesignation($data['designation']);
+            }
+            if (isset($data['includeDefinition'])) {
+                $this->setIncludeDefinition($data['includeDefinition']);
+            }
+            if (isset($data['activeOnly'])) {
+                $this->setActiveOnly($data['activeOnly']);
+            }
+            if (isset($data['excludeNested'])) {
+                $this->setExcludeNested($data['excludeNested']);
+            }
+            if (isset($data['excludeNotForUI'])) {
+                $this->setExcludeNotForUI($data['excludeNotForUI']);
+            }
+            if (isset($data['excludePostCoordinated'])) {
+                $this->setExcludePostCoordinated($data['excludePostCoordinated']);
+            }
+            if (isset($data['displayLanguage'])) {
+                $this->setDisplayLanguage($data['displayLanguage']);
+            }
+            if (isset($data['limitedExpansion'])) {
+                $this->setLimitedExpansion($data['limitedExpansion']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
         if (0 < count($this->fixedVersion)) {
             $json['fixedVersion'] = [];
             foreach($this->fixedVersion as $fixedVersion) {
-                $json['fixedVersion'][] = json_encode($fixedVersion);
+                if (null !== $fixedVersion) $json['fixedVersion'][] = $fixedVersion;
             }
         }
-        if (null !== $this->excludedSystem) $json['excludedSystem'] = json_encode($this->excludedSystem);
-        if (null !== $this->includeDesignations) $json['includeDesignations'] = json_encode($this->includeDesignations);
-        if (null !== $this->designation) $json['designation'] = json_encode($this->designation);
-        if (null !== $this->includeDefinition) $json['includeDefinition'] = json_encode($this->includeDefinition);
-        if (null !== $this->activeOnly) $json['activeOnly'] = json_encode($this->activeOnly);
-        if (null !== $this->excludeNested) $json['excludeNested'] = json_encode($this->excludeNested);
-        if (null !== $this->excludeNotForUI) $json['excludeNotForUI'] = json_encode($this->excludeNotForUI);
-        if (null !== $this->excludePostCoordinated) $json['excludePostCoordinated'] = json_encode($this->excludePostCoordinated);
-        if (null !== $this->displayLanguage) $json['displayLanguage'] = json_encode($this->displayLanguage);
-        if (null !== $this->limitedExpansion) $json['limitedExpansion'] = json_encode($this->limitedExpansion);
+        if (isset($this->excludedSystem)) $json['excludedSystem'] = $this->excludedSystem;
+        if (isset($this->includeDesignations)) $json['includeDesignations'] = $this->includeDesignations;
+        if (isset($this->designation)) $json['designation'] = $this->designation;
+        if (isset($this->includeDefinition)) $json['includeDefinition'] = $this->includeDefinition;
+        if (isset($this->activeOnly)) $json['activeOnly'] = $this->activeOnly;
+        if (isset($this->excludeNested)) $json['excludeNested'] = $this->excludeNested;
+        if (isset($this->excludeNotForUI)) $json['excludeNotForUI'] = $this->excludeNotForUI;
+        if (isset($this->excludePostCoordinated)) $json['excludePostCoordinated'] = $this->excludePostCoordinated;
+        if (isset($this->displayLanguage)) $json['displayLanguage'] = $this->displayLanguage;
+        if (isset($this->limitedExpansion)) $json['limitedExpansion'] = $this->limitedExpansion;
         return $json;
     }
 
@@ -745,24 +800,23 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ExpansionProfile xmlns="http://hl7.org/fhir"></ExpansionProfile>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -778,16 +832,16 @@ class FHIRExpansionProfile extends FHIRDomainResource implements \JsonSerializab
                 $fixedVersion->xmlSerialize(true, $sxe->addChild('fixedVersion'));
             }
         }
-        if (null !== $this->excludedSystem) $this->excludedSystem->xmlSerialize(true, $sxe->addChild('excludedSystem'));
-        if (null !== $this->includeDesignations) $this->includeDesignations->xmlSerialize(true, $sxe->addChild('includeDesignations'));
-        if (null !== $this->designation) $this->designation->xmlSerialize(true, $sxe->addChild('designation'));
-        if (null !== $this->includeDefinition) $this->includeDefinition->xmlSerialize(true, $sxe->addChild('includeDefinition'));
-        if (null !== $this->activeOnly) $this->activeOnly->xmlSerialize(true, $sxe->addChild('activeOnly'));
-        if (null !== $this->excludeNested) $this->excludeNested->xmlSerialize(true, $sxe->addChild('excludeNested'));
-        if (null !== $this->excludeNotForUI) $this->excludeNotForUI->xmlSerialize(true, $sxe->addChild('excludeNotForUI'));
-        if (null !== $this->excludePostCoordinated) $this->excludePostCoordinated->xmlSerialize(true, $sxe->addChild('excludePostCoordinated'));
-        if (null !== $this->displayLanguage) $this->displayLanguage->xmlSerialize(true, $sxe->addChild('displayLanguage'));
-        if (null !== $this->limitedExpansion) $this->limitedExpansion->xmlSerialize(true, $sxe->addChild('limitedExpansion'));
+        if (isset($this->excludedSystem)) $this->excludedSystem->xmlSerialize(true, $sxe->addChild('excludedSystem'));
+        if (isset($this->includeDesignations)) $this->includeDesignations->xmlSerialize(true, $sxe->addChild('includeDesignations'));
+        if (isset($this->designation)) $this->designation->xmlSerialize(true, $sxe->addChild('designation'));
+        if (isset($this->includeDefinition)) $this->includeDefinition->xmlSerialize(true, $sxe->addChild('includeDefinition'));
+        if (isset($this->activeOnly)) $this->activeOnly->xmlSerialize(true, $sxe->addChild('activeOnly'));
+        if (isset($this->excludeNested)) $this->excludeNested->xmlSerialize(true, $sxe->addChild('excludeNested'));
+        if (isset($this->excludeNotForUI)) $this->excludeNotForUI->xmlSerialize(true, $sxe->addChild('excludeNotForUI'));
+        if (isset($this->excludePostCoordinated)) $this->excludePostCoordinated->xmlSerialize(true, $sxe->addChild('excludePostCoordinated'));
+        if (isset($this->displayLanguage)) $this->displayLanguage->xmlSerialize(true, $sxe->addChild('displayLanguage'));
+        if (isset($this->limitedExpansion)) $this->limitedExpansion->xmlSerialize(true, $sxe->addChild('limitedExpansion'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

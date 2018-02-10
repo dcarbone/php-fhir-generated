@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
  */
 class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -77,7 +77,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializab
      * Each rule template can take one or more parameters for rule evaluation.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptParam3[]
      */
-    public $param = array();
+    public $param = [];
 
     /**
      * @var string
@@ -88,8 +88,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializab
      * Id of the referenced rule within the external ruleset template.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getRuleId()
-    {
+    public function getRuleId() {
         return $this->ruleId;
     }
 
@@ -98,8 +97,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $ruleId
      * @return $this
      */
-    public function setRuleId($ruleId)
-    {
+    public function setRuleId($ruleId) {
         $this->ruleId = $ruleId;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializab
      * Each rule template can take one or more parameters for rule evaluation.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptParam3[]
      */
-    public function getParam()
-    {
+    public function getParam() {
         return $this->param;
     }
 
@@ -118,8 +115,7 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptParam3 $param
      * @return $this
      */
-    public function addParam($param)
-    {
+    public function addParam($param) {
         $this->param[] = $param;
         return $this;
     }
@@ -127,30 +123,50 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['ruleId'])) {
+                $this->setRuleId($data['ruleId']);
+            }
+            if (isset($data['param'])) {
+                if (is_array($data['param'])) {
+                    foreach($data['param'] as $d) {
+                        $this->addParam($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"param" must be array of objects or null, '.gettype($data['param']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->ruleId) $json['ruleId'] = json_encode($this->ruleId);
+        if (isset($this->ruleId)) $json['ruleId'] = $this->ruleId;
         if (0 < count($this->param)) {
             $json['param'] = [];
             foreach($this->param as $param) {
-                $json['param'][] = json_encode($param);
+                if (null !== $param) $json['param'][] = $param;
             }
         }
         return $json;
@@ -161,11 +177,10 @@ class FHIRTestScriptRule3 extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptRule3 xmlns="http://hl7.org/fhir"></TestScriptRule3>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->ruleId) $this->ruleId->xmlSerialize(true, $sxe->addChild('ruleId'));
+        if (isset($this->ruleId)) $this->ruleId->xmlSerialize(true, $sxe->addChild('ruleId'));
         if (0 < count($this->param)) {
             foreach($this->param as $param) {
                 $param->xmlSerialize(true, $sxe->addChild('param'));

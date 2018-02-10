@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Path in the resource that contains the link.
+     * A FHIR expression that identifies one of FHIR References to other resources.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $path = null;
@@ -101,7 +101,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * Potential target for the link.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
      */
-    public $target = array();
+    public $target = [];
 
     /**
      * @var string
@@ -109,21 +109,19 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
     private $_fhirElementName = 'GraphDefinition.Link';
 
     /**
-     * Path in the resource that contains the link.
+     * A FHIR expression that identifies one of FHIR References to other resources.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPath()
-    {
+    public function getPath() {
         return $this->path;
     }
 
     /**
-     * Path in the resource that contains the link.
+     * A FHIR expression that identifies one of FHIR References to other resources.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $path
      * @return $this
      */
-    public function setPath($path)
-    {
+    public function setPath($path) {
         $this->path = $path;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * Which slice (if profiled).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSliceName()
-    {
+    public function getSliceName() {
         return $this->sliceName;
     }
 
@@ -142,8 +139,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $sliceName
      * @return $this
      */
-    public function setSliceName($sliceName)
-    {
+    public function setSliceName($sliceName) {
         $this->sliceName = $sliceName;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * Minimum occurrences for this link.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getMin()
-    {
+    public function getMin() {
         return $this->min;
     }
 
@@ -162,8 +157,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $min
      * @return $this
      */
-    public function setMin($min)
-    {
+    public function setMin($min) {
         $this->min = $min;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * Maximum occurrences for this link.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getMax()
-    {
+    public function getMax() {
         return $this->max;
     }
 
@@ -182,8 +175,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $max
      * @return $this
      */
-    public function setMax($max)
-    {
+    public function setMax($max) {
         $this->max = $max;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * Information about why this link is of interest in this graph definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -202,8 +193,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * Potential target for the link.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget[]
      */
-    public function getTarget()
-    {
+    public function getTarget() {
         return $this->target;
     }
 
@@ -222,8 +211,7 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionTarget $target
      * @return $this
      */
-    public function addTarget($target)
-    {
+    public function addTarget($target) {
         $this->target[] = $target;
         return $this;
     }
@@ -231,34 +219,66 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['path'])) {
+                $this->setPath($data['path']);
+            }
+            if (isset($data['sliceName'])) {
+                $this->setSliceName($data['sliceName']);
+            }
+            if (isset($data['min'])) {
+                $this->setMin($data['min']);
+            }
+            if (isset($data['max'])) {
+                $this->setMax($data['max']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['target'])) {
+                if (is_array($data['target'])) {
+                    foreach($data['target'] as $d) {
+                        $this->addTarget($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"target" must be array of objects or null, '.gettype($data['target']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
-        if (null !== $this->sliceName) $json['sliceName'] = json_encode($this->sliceName);
-        if (null !== $this->min) $json['min'] = json_encode($this->min);
-        if (null !== $this->max) $json['max'] = json_encode($this->max);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->path)) $json['path'] = $this->path;
+        if (isset($this->sliceName)) $json['sliceName'] = $this->sliceName;
+        if (isset($this->min)) $json['min'] = $this->min;
+        if (isset($this->max)) $json['max'] = $this->max;
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->target)) {
             $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = json_encode($target);
+                if (null !== $target) $json['target'][] = $target;
             }
         }
         return $json;
@@ -269,15 +289,14 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement implements \JsonSerial
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<GraphDefinitionLink xmlns="http://hl7.org/fhir"></GraphDefinitionLink>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->path) $this->path->xmlSerialize(true, $sxe->addChild('path'));
-        if (null !== $this->sliceName) $this->sliceName->xmlSerialize(true, $sxe->addChild('sliceName'));
-        if (null !== $this->min) $this->min->xmlSerialize(true, $sxe->addChild('min'));
-        if (null !== $this->max) $this->max->xmlSerialize(true, $sxe->addChild('max'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->path)) $this->path->xmlSerialize(true, $sxe->addChild('path'));
+        if (isset($this->sliceName)) $this->sliceName->xmlSerialize(true, $sxe->addChild('sliceName'));
+        if (isset($this->min)) $this->min->xmlSerialize(true, $sxe->addChild('min'));
+        if (isset($this->max)) $this->max->xmlSerialize(true, $sxe->addChild('max'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->target)) {
             foreach($this->target as $target) {
                 $target->xmlSerialize(true, $sxe->addChild('target'));

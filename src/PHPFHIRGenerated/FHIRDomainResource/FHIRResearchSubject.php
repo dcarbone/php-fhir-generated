@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,16 +63,16 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  A ResearchStudy involves the gathering of information about human or animal subjects.
+ * A physical entity which is the primary unit of operational and/or administrative interest in a study.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * Identifiers assigned to this research study by the sponsor or other systems.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Identifiers assigned to this research subject for a study.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    public $identifier = [];
 
     /**
      * The current state of the subject.
@@ -122,22 +122,20 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     private $_fhirElementName = 'ResearchSubject';
 
     /**
-     * Identifiers assigned to this research study by the sponsor or other systems.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Identifiers assigned to this research subject for a study.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
     /**
-     * Identifiers assigned to this research study by the sponsor or other systems.
+     * Identifiers assigned to this research subject for a study.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
-        $this->identifier = $identifier;
+    public function addIdentifier($identifier) {
+        $this->identifier[] = $identifier;
         return $this;
     }
 
@@ -145,8 +143,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * The current state of the subject.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResearchSubjectStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -155,8 +152,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResearchSubjectStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -165,8 +161,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * The dates the subject began and ended their participation in the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -175,8 +170,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -185,8 +179,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * Reference to the study the subject is participating in.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getStudy()
-    {
+    public function getStudy() {
         return $this->study;
     }
 
@@ -195,8 +188,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $study
      * @return $this
      */
-    public function setStudy($study)
-    {
+    public function setStudy($study) {
         $this->study = $study;
         return $this;
     }
@@ -205,8 +197,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * The record of the person or animal who is involved in the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getIndividual()
-    {
+    public function getIndividual() {
         return $this->individual;
     }
 
@@ -215,8 +206,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $individual
      * @return $this
      */
-    public function setIndividual($individual)
-    {
+    public function setIndividual($individual) {
         $this->individual = $individual;
         return $this;
     }
@@ -225,8 +215,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * The name of the arm in the study the subject is expected to follow as part of this study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getAssignedArm()
-    {
+    public function getAssignedArm() {
         return $this->assignedArm;
     }
 
@@ -235,8 +224,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $assignedArm
      * @return $this
      */
-    public function setAssignedArm($assignedArm)
-    {
+    public function setAssignedArm($assignedArm) {
         $this->assignedArm = $assignedArm;
         return $this;
     }
@@ -245,8 +233,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * The name of the arm in the study the subject actually followed as part of this study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getActualArm()
-    {
+    public function getActualArm() {
         return $this->actualArm;
     }
 
@@ -255,8 +242,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $actualArm
      * @return $this
      */
-    public function setActualArm($actualArm)
-    {
+    public function setActualArm($actualArm) {
         $this->actualArm = $actualArm;
         return $this;
     }
@@ -265,8 +251,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * A record of the patient's informed agreement to participate in the study.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getConsent()
-    {
+    public function getConsent() {
         return $this->consent;
     }
 
@@ -275,8 +260,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $consent
      * @return $this
      */
-    public function setConsent($consent)
-    {
+    public function setConsent($consent) {
         $this->consent = $consent;
         return $this;
     }
@@ -284,34 +268,77 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['study'])) {
+                $this->setStudy($data['study']);
+            }
+            if (isset($data['individual'])) {
+                $this->setIndividual($data['individual']);
+            }
+            if (isset($data['assignedArm'])) {
+                $this->setAssignedArm($data['assignedArm']);
+            }
+            if (isset($data['actualArm'])) {
+                $this->setActualArm($data['actualArm']);
+            }
+            if (isset($data['consent'])) {
+                $this->setConsent($data['consent']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->study) $json['study'] = json_encode($this->study);
-        if (null !== $this->individual) $json['individual'] = json_encode($this->individual);
-        if (null !== $this->assignedArm) $json['assignedArm'] = json_encode($this->assignedArm);
-        if (null !== $this->actualArm) $json['actualArm'] = json_encode($this->actualArm);
-        if (null !== $this->consent) $json['consent'] = json_encode($this->consent);
+        if (0 < count($this->identifier)) {
+            $json['identifier'] = [];
+            foreach($this->identifier as $identifier) {
+                if (null !== $identifier) $json['identifier'][] = $identifier;
+            }
+        }
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->period)) $json['period'] = $this->period;
+        if (isset($this->study)) $json['study'] = $this->study;
+        if (isset($this->individual)) $json['individual'] = $this->individual;
+        if (isset($this->assignedArm)) $json['assignedArm'] = $this->assignedArm;
+        if (isset($this->actualArm)) $json['actualArm'] = $this->actualArm;
+        if (isset($this->consent)) $json['consent'] = $this->consent;
         return $json;
     }
 
@@ -320,18 +347,21 @@ class FHIRResearchSubject extends FHIRDomainResource implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ResearchSubject xmlns="http://hl7.org/fhir"></ResearchSubject>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if (null !== $this->study) $this->study->xmlSerialize(true, $sxe->addChild('study'));
-        if (null !== $this->individual) $this->individual->xmlSerialize(true, $sxe->addChild('individual'));
-        if (null !== $this->assignedArm) $this->assignedArm->xmlSerialize(true, $sxe->addChild('assignedArm'));
-        if (null !== $this->actualArm) $this->actualArm->xmlSerialize(true, $sxe->addChild('actualArm'));
-        if (null !== $this->consent) $this->consent->xmlSerialize(true, $sxe->addChild('consent'));
+        if (0 < count($this->identifier)) {
+            foreach($this->identifier as $identifier) {
+                $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+            }
+        }
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->study)) $this->study->xmlSerialize(true, $sxe->addChild('study'));
+        if (isset($this->individual)) $this->individual->xmlSerialize(true, $sxe->addChild('individual'));
+        if (isset($this->assignedArm)) $this->assignedArm->xmlSerialize(true, $sxe->addChild('assignedArm'));
+        if (isset($this->actualArm)) $this->actualArm->xmlSerialize(true, $sxe->addChild('actualArm'));
+        if (isset($this->consent)) $this->consent->xmlSerialize(true, $sxe->addChild('consent'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

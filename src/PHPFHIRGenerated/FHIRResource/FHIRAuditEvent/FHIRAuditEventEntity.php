@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -101,7 +101,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Security labels for the identified entity.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $securityLabel = array();
+    public $securityLabel = [];
 
     /**
      * A name of the entity in the audit event.
@@ -125,7 +125,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Tagged value pairs for conveying additional information about the entity.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
-    public $detail = array();
+    public $detail = [];
 
     /**
      * @var string
@@ -136,8 +136,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a specific instance of the entity. The reference should always be version specific.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -146,8 +145,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -156,8 +154,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a specific instance of the entity. The reference should be version specific.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getReference()
-    {
+    public function getReference() {
         return $this->reference;
     }
 
@@ -166,8 +163,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reference
      * @return $this
      */
-    public function setReference($reference)
-    {
+    public function setReference($reference) {
         $this->reference = $reference;
         return $this;
     }
@@ -176,8 +172,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * The type of the object that was involved in this audit event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -186,8 +181,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -196,8 +190,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Code representing the role the entity played in the event being audited.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -206,8 +199,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $role
      * @return $this
      */
-    public function setRole($role)
-    {
+    public function setRole($role) {
         $this->role = $role;
         return $this;
     }
@@ -216,8 +208,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Identifier for the data life-cycle stage for the entity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getLifecycle()
-    {
+    public function getLifecycle() {
         return $this->lifecycle;
     }
 
@@ -226,8 +217,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $lifecycle
      * @return $this
      */
-    public function setLifecycle($lifecycle)
-    {
+    public function setLifecycle($lifecycle) {
         $this->lifecycle = $lifecycle;
         return $this;
     }
@@ -236,8 +226,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Security labels for the identified entity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getSecurityLabel()
-    {
+    public function getSecurityLabel() {
         return $this->securityLabel;
     }
 
@@ -246,8 +235,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $securityLabel
      * @return $this
      */
-    public function addSecurityLabel($securityLabel)
-    {
+    public function addSecurityLabel($securityLabel) {
         $this->securityLabel[] = $securityLabel;
         return $this;
     }
@@ -256,8 +244,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * A name of the entity in the audit event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -266,8 +253,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -276,8 +262,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Text that describes the entity in more detail.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -286,8 +271,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -296,8 +280,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * The query parameters for a query-type entities.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getQuery()
-    {
+    public function getQuery() {
         return $this->query;
     }
 
@@ -306,8 +289,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $query
      * @return $this
      */
-    public function setQuery($query)
-    {
+    public function setQuery($query) {
         $this->query = $query;
         return $this;
     }
@@ -316,8 +298,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * Tagged value pairs for conveying additional information about the entity.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
-    public function getDetail()
-    {
+    public function getDetail() {
         return $this->detail;
     }
 
@@ -326,8 +307,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRAuditEvent\FHIRAuditEventDetail $detail
      * @return $this
      */
-    public function addDetail($detail)
-    {
+    public function addDetail($detail) {
         $this->detail[] = $detail;
         return $this;
     }
@@ -335,43 +315,93 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['reference'])) {
+                $this->setReference($data['reference']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['role'])) {
+                $this->setRole($data['role']);
+            }
+            if (isset($data['lifecycle'])) {
+                $this->setLifecycle($data['lifecycle']);
+            }
+            if (isset($data['securityLabel'])) {
+                if (is_array($data['securityLabel'])) {
+                    foreach($data['securityLabel'] as $d) {
+                        $this->addSecurityLabel($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"securityLabel" must be array of objects or null, '.gettype($data['securityLabel']).' seen.');
+                }
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['query'])) {
+                $this->setQuery($data['query']);
+            }
+            if (isset($data['detail'])) {
+                if (is_array($data['detail'])) {
+                    foreach($data['detail'] as $d) {
+                        $this->addDetail($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"detail" must be array of objects or null, '.gettype($data['detail']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->lifecycle) $json['lifecycle'] = json_encode($this->lifecycle);
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->reference)) $json['reference'] = $this->reference;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->role)) $json['role'] = $this->role;
+        if (isset($this->lifecycle)) $json['lifecycle'] = $this->lifecycle;
         if (0 < count($this->securityLabel)) {
             $json['securityLabel'] = [];
             foreach($this->securityLabel as $securityLabel) {
-                $json['securityLabel'][] = json_encode($securityLabel);
+                if (null !== $securityLabel) $json['securityLabel'][] = $securityLabel;
             }
         }
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->query) $json['query'] = json_encode($this->query);
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->query)) $json['query'] = $this->query;
         if (0 < count($this->detail)) {
             $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = json_encode($detail);
+                if (null !== $detail) $json['detail'][] = $detail;
             }
         }
         return $json;
@@ -382,23 +412,22 @@ class FHIRAuditEventEntity extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<AuditEventEntity xmlns="http://hl7.org/fhir"></AuditEventEntity>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->reference) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->lifecycle) $this->lifecycle->xmlSerialize(true, $sxe->addChild('lifecycle'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->reference)) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->role)) $this->role->xmlSerialize(true, $sxe->addChild('role'));
+        if (isset($this->lifecycle)) $this->lifecycle->xmlSerialize(true, $sxe->addChild('lifecycle'));
         if (0 < count($this->securityLabel)) {
             foreach($this->securityLabel as $securityLabel) {
                 $securityLabel->xmlSerialize(true, $sxe->addChild('securityLabel'));
             }
         }
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->query) $this->query->xmlSerialize(true, $sxe->addChild('query'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->query)) $this->query->xmlSerialize(true, $sxe->addChild('query'));
         if (0 < count($this->detail)) {
             foreach($this->detail as $detail) {
                 $detail->xmlSerialize(true, $sxe->addChild('detail'));

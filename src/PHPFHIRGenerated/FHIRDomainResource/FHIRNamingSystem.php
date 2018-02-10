@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -102,7 +102,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.
@@ -126,13 +126,13 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate naming system instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the naming system is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
@@ -144,13 +144,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * Indicates how the system may be identified when referenced in electronic exchange.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
      */
-    public $uniqueId = array();
-
-    /**
-     * For naming systems that are retired, indicates the naming system that should be used in their place (if any).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $replacedBy = null;
+    public $uniqueId = [];
 
     /**
      * @var string
@@ -161,8 +155,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * A natural language name identifying the naming system. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -171,8 +164,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -181,8 +173,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * The status of this naming system. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -191,8 +182,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -201,8 +191,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * Indicates the purpose for the naming system - what kinds of things does it make unique?
      * @return \PHPFHIRGenerated\FHIRElement\FHIRNamingSystemType
      */
-    public function getKind()
-    {
+    public function getKind() {
         return $this->kind;
     }
 
@@ -211,8 +200,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRNamingSystemType $kind
      * @return $this
      */
-    public function setKind($kind)
-    {
+    public function setKind($kind) {
         $this->kind = $kind;
         return $this;
     }
@@ -221,8 +209,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * The date  (and optionally time) when the naming system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -231,8 +218,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -241,8 +227,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * The name of the individual or organization that published the naming system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -251,8 +236,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -261,8 +245,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -271,8 +254,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -281,8 +263,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * The name of the organization that is responsible for issuing identifiers or codes for this namespace and ensuring their non-collision.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getResponsible()
-    {
+    public function getResponsible() {
         return $this->responsible;
     }
 
@@ -291,8 +272,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $responsible
      * @return $this
      */
-    public function setResponsible($responsible)
-    {
+    public function setResponsible($responsible) {
         $this->responsible = $responsible;
         return $this;
     }
@@ -301,8 +281,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * Categorizes a naming system for easier search by grouping related naming systems.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -311,8 +290,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -321,8 +299,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * A free text natural language description of the naming system from a consumer's perspective. Details about what the namespace identifies including scope, granularity, version labeling, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -331,8 +308,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -341,8 +317,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate naming system instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -351,8 +326,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -361,8 +335,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * A legal or geographic region in which the naming system is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -371,8 +344,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -381,8 +353,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getUsage()
-    {
+    public function getUsage() {
         return $this->usage;
     }
 
@@ -391,8 +362,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $usage
      * @return $this
      */
-    public function setUsage($usage)
-    {
+    public function setUsage($usage) {
         $this->usage = $usage;
         return $this;
     }
@@ -401,8 +371,7 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * Indicates how the system may be identified when referenced in electronic exchange.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
      */
-    public function getUniqueId()
-    {
+    public function getUniqueId() {
         return $this->uniqueId;
     }
 
@@ -411,89 +380,138 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRNamingSystem\FHIRNamingSystemUniqueId $uniqueId
      * @return $this
      */
-    public function addUniqueId($uniqueId)
-    {
+    public function addUniqueId($uniqueId) {
         $this->uniqueId[] = $uniqueId;
         return $this;
     }
 
     /**
-     * For naming systems that are retired, indicates the naming system that should be used in their place (if any).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public function getReplacedBy()
-    {
-        return $this->replacedBy;
-    }
-
-    /**
-     * For naming systems that are retired, indicates the naming system that should be used in their place (if any).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $replacedBy
-     * @return $this
-     */
-    public function setReplacedBy($replacedBy)
-    {
-        $this->replacedBy = $replacedBy;
-        return $this;
-    }
-
-    /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
     }
 
     /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['kind'])) {
+                $this->setKind($data['kind']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['responsible'])) {
+                $this->setResponsible($data['responsible']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['usage'])) {
+                $this->setUsage($data['usage']);
+            }
+            if (isset($data['uniqueId'])) {
+                if (is_array($data['uniqueId'])) {
+                    foreach($data['uniqueId'] as $d) {
+                        $this->addUniqueId($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"uniqueId" must be array of objects or null, '.gettype($data['uniqueId']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
+    }
+
+    /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->kind)) $json['kind'] = $this->kind;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->responsible) $json['responsible'] = json_encode($this->responsible);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->responsible)) $json['responsible'] = $this->responsible;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
+        if (isset($this->usage)) $json['usage'] = $this->usage;
         if (0 < count($this->uniqueId)) {
             $json['uniqueId'] = [];
             foreach($this->uniqueId as $uniqueId) {
-                $json['uniqueId'][] = json_encode($uniqueId);
+                if (null !== $uniqueId) $json['uniqueId'][] = $uniqueId;
             }
         }
-        if (null !== $this->replacedBy) $json['replacedBy'] = json_encode($this->replacedBy);
         return $json;
     }
 
@@ -502,23 +520,22 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<NamingSystem xmlns="http://hl7.org/fhir"></NamingSystem>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->kind)) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->responsible) $this->responsible->xmlSerialize(true, $sxe->addChild('responsible'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->responsible)) $this->responsible->xmlSerialize(true, $sxe->addChild('responsible'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -529,13 +546,12 @@ class FHIRNamingSystem extends FHIRDomainResource implements \JsonSerializable
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
+        if (isset($this->usage)) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
         if (0 < count($this->uniqueId)) {
             foreach($this->uniqueId as $uniqueId) {
                 $uniqueId->xmlSerialize(true, $sxe->addChild('uniqueId'));
             }
         }
-        if (null !== $this->replacedBy) $this->replacedBy->xmlSerialize(true, $sxe->addChild('replacedBy'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

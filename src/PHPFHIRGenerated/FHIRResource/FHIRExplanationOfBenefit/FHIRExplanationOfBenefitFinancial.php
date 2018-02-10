@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,31 +74,26 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     public $type = null;
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $allowedUnsignedInt = null;
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $allowedString = null;
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $allowedMoney = null;
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $usedUnsignedInt = null;
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
     public $usedMoney = null;
@@ -112,8 +107,7 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
      * Deductable, visits, benefit amount.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -122,108 +116,87 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public function getAllowedUnsignedInt()
-    {
+    public function getAllowedUnsignedInt() {
         return $this->allowedUnsignedInt;
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
      * @return $this
      */
-    public function setAllowedUnsignedInt($allowedUnsignedInt)
-    {
+    public function setAllowedUnsignedInt($allowedUnsignedInt) {
         $this->allowedUnsignedInt = $allowedUnsignedInt;
         return $this;
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getAllowedString()
-    {
+    public function getAllowedString() {
         return $this->allowedString;
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $allowedString
      * @return $this
      */
-    public function setAllowedString($allowedString)
-    {
+    public function setAllowedString($allowedString) {
         $this->allowedString = $allowedString;
         return $this;
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getAllowedMoney()
-    {
+    public function getAllowedMoney() {
         return $this->allowedMoney;
     }
 
     /**
-     * Benefits allowed. (choose any one of allowed*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $allowedMoney
      * @return $this
      */
-    public function setAllowedMoney($allowedMoney)
-    {
+    public function setAllowedMoney($allowedMoney) {
         $this->allowedMoney = $allowedMoney;
         return $this;
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public function getUsedUnsignedInt()
-    {
+    public function getUsedUnsignedInt() {
         return $this->usedUnsignedInt;
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
      * @return $this
      */
-    public function setUsedUnsignedInt($usedUnsignedInt)
-    {
+    public function setUsedUnsignedInt($usedUnsignedInt) {
         $this->usedUnsignedInt = $usedUnsignedInt;
         return $this;
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getUsedMoney()
-    {
+    public function getUsedMoney() {
         return $this->usedMoney;
     }
 
     /**
-     * Benefits used. (choose any one of used*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $usedMoney
      * @return $this
      */
-    public function setUsedMoney($usedMoney)
-    {
+    public function setUsedMoney($usedMoney) {
         $this->usedMoney = $usedMoney;
         return $this;
     }
@@ -231,31 +204,57 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['allowedUnsignedInt'])) {
+                $this->setAllowedUnsignedInt($data['allowedUnsignedInt']);
+            }
+            if (isset($data['allowedString'])) {
+                $this->setAllowedString($data['allowedString']);
+            }
+            if (isset($data['allowedMoney'])) {
+                $this->setAllowedMoney($data['allowedMoney']);
+            }
+            if (isset($data['usedUnsignedInt'])) {
+                $this->setUsedUnsignedInt($data['usedUnsignedInt']);
+            }
+            if (isset($data['usedMoney'])) {
+                $this->setUsedMoney($data['usedMoney']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->allowedUnsignedInt) $json['allowedUnsignedInt'] = json_encode($this->allowedUnsignedInt);
-        if (null !== $this->allowedString) $json['allowedString'] = json_encode($this->allowedString);
-        if (null !== $this->allowedMoney) $json['allowedMoney'] = json_encode($this->allowedMoney);
-        if (null !== $this->usedUnsignedInt) $json['usedUnsignedInt'] = json_encode($this->usedUnsignedInt);
-        if (null !== $this->usedMoney) $json['usedMoney'] = json_encode($this->usedMoney);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->allowedUnsignedInt)) $json['allowedUnsignedInt'] = $this->allowedUnsignedInt;
+        if (isset($this->allowedString)) $json['allowedString'] = $this->allowedString;
+        if (isset($this->allowedMoney)) $json['allowedMoney'] = $this->allowedMoney;
+        if (isset($this->usedUnsignedInt)) $json['usedUnsignedInt'] = $this->usedUnsignedInt;
+        if (isset($this->usedMoney)) $json['usedMoney'] = $this->usedMoney;
         return $json;
     }
 
@@ -264,16 +263,15 @@ class FHIRExplanationOfBenefitFinancial extends FHIRBackboneElement implements \
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ExplanationOfBenefitFinancial xmlns="http://hl7.org/fhir"></ExplanationOfBenefitFinancial>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->allowedUnsignedInt) $this->allowedUnsignedInt->xmlSerialize(true, $sxe->addChild('allowedUnsignedInt'));
-        if (null !== $this->allowedString) $this->allowedString->xmlSerialize(true, $sxe->addChild('allowedString'));
-        if (null !== $this->allowedMoney) $this->allowedMoney->xmlSerialize(true, $sxe->addChild('allowedMoney'));
-        if (null !== $this->usedUnsignedInt) $this->usedUnsignedInt->xmlSerialize(true, $sxe->addChild('usedUnsignedInt'));
-        if (null !== $this->usedMoney) $this->usedMoney->xmlSerialize(true, $sxe->addChild('usedMoney'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->allowedUnsignedInt)) $this->allowedUnsignedInt->xmlSerialize(true, $sxe->addChild('allowedUnsignedInt'));
+        if (isset($this->allowedString)) $this->allowedString->xmlSerialize(true, $sxe->addChild('allowedString'));
+        if (isset($this->allowedMoney)) $this->allowedMoney->xmlSerialize(true, $sxe->addChild('allowedMoney'));
+        if (isset($this->usedUnsignedInt)) $this->usedUnsignedInt->xmlSerialize(true, $sxe->addChild('usedUnsignedInt'));
+        if (isset($this->usedMoney)) $this->usedMoney->xmlSerialize(true, $sxe->addChild('usedMoney'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

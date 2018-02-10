@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,7 +71,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
      */
-    public $endpoint = array();
+    public $endpoint = [];
 
     /**
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or how long the cache length on the receiver should be (if a sender).
@@ -89,13 +89,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * References to message definitions for messages this system can send or receive.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
      */
-    public $supportedMessage = array();
-
-    /**
-     * A description of the solution's support for an event at this end-point.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEvent[]
-     */
-    public $event = array();
+    public $supportedMessage = [];
 
     /**
      * @var string
@@ -106,8 +100,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
      */
-    public function getEndpoint()
-    {
+    public function getEndpoint() {
         return $this->endpoint;
     }
 
@@ -116,8 +109,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint $endpoint
      * @return $this
      */
-    public function addEndpoint($endpoint)
-    {
+    public function addEndpoint($endpoint) {
         $this->endpoint[] = $endpoint;
         return $this;
     }
@@ -126,8 +118,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or how long the cache length on the receiver should be (if a sender).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public function getReliableCache()
-    {
+    public function getReliableCache() {
         return $this->reliableCache;
     }
 
@@ -136,8 +127,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $reliableCache
      * @return $this
      */
-    public function setReliableCache($reliableCache)
-    {
+    public function setReliableCache($reliableCache) {
         $this->reliableCache = $reliableCache;
         return $this;
     }
@@ -146,8 +136,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * Documentation about the system's messaging capabilities for this endpoint not otherwise documented by the capability statement.  For example, the process for becoming an authorized messaging exchange partner.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -156,8 +145,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -166,8 +154,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * References to message definitions for messages this system can send or receive.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
      */
-    public function getSupportedMessage()
-    {
+    public function getSupportedMessage() {
         return $this->supportedMessage;
     }
 
@@ -176,72 +163,77 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage $supportedMessage
      * @return $this
      */
-    public function addSupportedMessage($supportedMessage)
-    {
+    public function addSupportedMessage($supportedMessage) {
         $this->supportedMessage[] = $supportedMessage;
         return $this;
     }
 
     /**
-     * A description of the solution's support for an event at this end-point.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEvent[]
-     */
-    public function getEvent()
-    {
-        return $this->event;
-    }
-
-    /**
-     * A description of the solution's support for an event at this end-point.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementEvent $event
-     * @return $this
-     */
-    public function addEvent($event)
-    {
-        $this->event[] = $event;
-        return $this;
-    }
-
-    /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
     }
 
     /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['endpoint'])) {
+                if (is_array($data['endpoint'])) {
+                    foreach($data['endpoint'] as $d) {
+                        $this->addEndpoint($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"endpoint" must be array of objects or null, '.gettype($data['endpoint']).' seen.');
+                }
+            }
+            if (isset($data['reliableCache'])) {
+                $this->setReliableCache($data['reliableCache']);
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+            if (isset($data['supportedMessage'])) {
+                if (is_array($data['supportedMessage'])) {
+                    foreach($data['supportedMessage'] as $d) {
+                        $this->addSupportedMessage($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportedMessage" must be array of objects or null, '.gettype($data['supportedMessage']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
+    }
+
+    /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->endpoint)) {
             $json['endpoint'] = [];
             foreach($this->endpoint as $endpoint) {
-                $json['endpoint'][] = json_encode($endpoint);
+                if (null !== $endpoint) $json['endpoint'][] = $endpoint;
             }
         }
-        if (null !== $this->reliableCache) $json['reliableCache'] = json_encode($this->reliableCache);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (isset($this->reliableCache)) $json['reliableCache'] = $this->reliableCache;
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
         if (0 < count($this->supportedMessage)) {
             $json['supportedMessage'] = [];
             foreach($this->supportedMessage as $supportedMessage) {
-                $json['supportedMessage'][] = json_encode($supportedMessage);
-            }
-        }
-        if (0 < count($this->event)) {
-            $json['event'] = [];
-            foreach($this->event as $event) {
-                $json['event'][] = json_encode($event);
+                if (null !== $supportedMessage) $json['supportedMessage'][] = $supportedMessage;
             }
         }
         return $json;
@@ -252,8 +244,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CapabilityStatementMessaging xmlns="http://hl7.org/fhir"></CapabilityStatementMessaging>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->endpoint)) {
@@ -261,16 +252,11 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement implements \J
                 $endpoint->xmlSerialize(true, $sxe->addChild('endpoint'));
             }
         }
-        if (null !== $this->reliableCache) $this->reliableCache->xmlSerialize(true, $sxe->addChild('reliableCache'));
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->reliableCache)) $this->reliableCache->xmlSerialize(true, $sxe->addChild('reliableCache'));
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if (0 < count($this->supportedMessage)) {
             foreach($this->supportedMessage as $supportedMessage) {
                 $supportedMessage->xmlSerialize(true, $sxe->addChild('supportedMessage'));
-            }
-        }
-        if (0 < count($this->event)) {
-            foreach($this->event as $event) {
-                $event->xmlSerialize(true, $sxe->addChild('event'));
             }
         }
         if ($returnSXE) return $sxe;

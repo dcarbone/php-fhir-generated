@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,13 +68,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $entityCodeableConcept = null;
 
     /**
-     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $entityReference = null;
@@ -127,41 +125,33 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     private $_fhirElementName = 'Contract.ValuedItem';
 
     /**
-     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getEntityCodeableConcept()
-    {
+    public function getEntityCodeableConcept() {
         return $this->entityCodeableConcept;
     }
 
     /**
-     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $entityCodeableConcept
      * @return $this
      */
-    public function setEntityCodeableConcept($entityCodeableConcept)
-    {
+    public function setEntityCodeableConcept($entityCodeableConcept) {
         $this->entityCodeableConcept = $entityCodeableConcept;
         return $this;
     }
 
     /**
-     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEntityReference()
-    {
+    public function getEntityReference() {
         return $this->entityReference;
     }
 
     /**
-     * Specific type of Contract Valued Item that may be priced. (choose any one of entity*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $entityReference
      * @return $this
      */
-    public function setEntityReference($entityReference)
-    {
+    public function setEntityReference($entityReference) {
         $this->entityReference = $entityReference;
         return $this;
     }
@@ -170,8 +160,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * Identifies a Contract Valued Item instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -180,8 +169,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -190,8 +178,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * Indicates the time during which this Contract ValuedItem information is effective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getEffectiveTime()
-    {
+    public function getEffectiveTime() {
         return $this->effectiveTime;
     }
 
@@ -200,8 +187,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $effectiveTime
      * @return $this
      */
-    public function setEffectiveTime($effectiveTime)
-    {
+    public function setEffectiveTime($effectiveTime) {
         $this->effectiveTime = $effectiveTime;
         return $this;
     }
@@ -210,8 +196,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * Specifies the units by which the Contract Valued Item is measured or counted, and quantifies the countable or measurable Contract Valued Item instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
-    {
+    public function getQuantity() {
         return $this->quantity;
     }
 
@@ -220,8 +205,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $quantity
      * @return $this
      */
-    public function setQuantity($quantity)
-    {
+    public function setQuantity($quantity) {
         $this->quantity = $quantity;
         return $this;
     }
@@ -230,8 +214,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * A Contract Valued Item unit valuation measure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getUnitPrice()
-    {
+    public function getUnitPrice() {
         return $this->unitPrice;
     }
 
@@ -240,8 +223,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $unitPrice
      * @return $this
      */
-    public function setUnitPrice($unitPrice)
-    {
+    public function setUnitPrice($unitPrice) {
         $this->unitPrice = $unitPrice;
         return $this;
     }
@@ -250,8 +232,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * A real number that represents a multiplier used in determining the overall value of the Contract Valued Item delivered. The concept of a Factor allows for a discount or surcharge multiplier to be applied to a monetary amount.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getFactor()
-    {
+    public function getFactor() {
         return $this->factor;
     }
 
@@ -260,8 +241,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $factor
      * @return $this
      */
-    public function setFactor($factor)
-    {
+    public function setFactor($factor) {
         $this->factor = $factor;
         return $this;
     }
@@ -270,8 +250,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the Contract Valued Item delivered. The concept of Points allows for assignment of point values for a Contract Valued Item, such that a monetary amount can be assigned to each point.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getPoints()
-    {
+    public function getPoints() {
         return $this->points;
     }
 
@@ -280,8 +259,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $points
      * @return $this
      */
-    public function setPoints($points)
-    {
+    public function setPoints($points) {
         $this->points = $points;
         return $this;
     }
@@ -290,8 +268,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    public function getNet()
-    {
+    public function getNet() {
         return $this->net;
     }
 
@@ -300,8 +277,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRMoney $net
      * @return $this
      */
-    public function setNet($net)
-    {
+    public function setNet($net) {
         $this->net = $net;
         return $this;
     }
@@ -309,34 +285,69 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['entityCodeableConcept'])) {
+                $this->setEntityCodeableConcept($data['entityCodeableConcept']);
+            }
+            if (isset($data['entityReference'])) {
+                $this->setEntityReference($data['entityReference']);
+            }
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['effectiveTime'])) {
+                $this->setEffectiveTime($data['effectiveTime']);
+            }
+            if (isset($data['quantity'])) {
+                $this->setQuantity($data['quantity']);
+            }
+            if (isset($data['unitPrice'])) {
+                $this->setUnitPrice($data['unitPrice']);
+            }
+            if (isset($data['factor'])) {
+                $this->setFactor($data['factor']);
+            }
+            if (isset($data['points'])) {
+                $this->setPoints($data['points']);
+            }
+            if (isset($data['net'])) {
+                $this->setNet($data['net']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->entityCodeableConcept) $json['entityCodeableConcept'] = json_encode($this->entityCodeableConcept);
-        if (null !== $this->entityReference) $json['entityReference'] = json_encode($this->entityReference);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->effectiveTime) $json['effectiveTime'] = json_encode($this->effectiveTime);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
-        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
-        if (null !== $this->points) $json['points'] = json_encode($this->points);
-        if (null !== $this->net) $json['net'] = json_encode($this->net);
+        if (isset($this->entityCodeableConcept)) $json['entityCodeableConcept'] = $this->entityCodeableConcept;
+        if (isset($this->entityReference)) $json['entityReference'] = $this->entityReference;
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->effectiveTime)) $json['effectiveTime'] = $this->effectiveTime;
+        if (isset($this->quantity)) $json['quantity'] = $this->quantity;
+        if (isset($this->unitPrice)) $json['unitPrice'] = $this->unitPrice;
+        if (isset($this->factor)) $json['factor'] = $this->factor;
+        if (isset($this->points)) $json['points'] = $this->points;
+        if (isset($this->net)) $json['net'] = $this->net;
         return $json;
     }
 
@@ -345,19 +356,18 @@ class FHIRContractValuedItem extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ContractValuedItem xmlns="http://hl7.org/fhir"></ContractValuedItem>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->entityCodeableConcept) $this->entityCodeableConcept->xmlSerialize(true, $sxe->addChild('entityCodeableConcept'));
-        if (null !== $this->entityReference) $this->entityReference->xmlSerialize(true, $sxe->addChild('entityReference'));
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->effectiveTime) $this->effectiveTime->xmlSerialize(true, $sxe->addChild('effectiveTime'));
-        if (null !== $this->quantity) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
-        if (null !== $this->unitPrice) $this->unitPrice->xmlSerialize(true, $sxe->addChild('unitPrice'));
-        if (null !== $this->factor) $this->factor->xmlSerialize(true, $sxe->addChild('factor'));
-        if (null !== $this->points) $this->points->xmlSerialize(true, $sxe->addChild('points'));
-        if (null !== $this->net) $this->net->xmlSerialize(true, $sxe->addChild('net'));
+        if (isset($this->entityCodeableConcept)) $this->entityCodeableConcept->xmlSerialize(true, $sxe->addChild('entityCodeableConcept'));
+        if (isset($this->entityReference)) $this->entityReference->xmlSerialize(true, $sxe->addChild('entityReference'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->effectiveTime)) $this->effectiveTime->xmlSerialize(true, $sxe->addChild('effectiveTime'));
+        if (isset($this->quantity)) $this->quantity->xmlSerialize(true, $sxe->addChild('quantity'));
+        if (isset($this->unitPrice)) $this->unitPrice->xmlSerialize(true, $sxe->addChild('unitPrice'));
+        if (isset($this->factor)) $this->factor->xmlSerialize(true, $sxe->addChild('factor'));
+        if (isset($this->points)) $this->points->xmlSerialize(true, $sxe->addChild('points'));
+        if (isset($this->net)) $this->net->xmlSerialize(true, $sxe->addChild('net'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

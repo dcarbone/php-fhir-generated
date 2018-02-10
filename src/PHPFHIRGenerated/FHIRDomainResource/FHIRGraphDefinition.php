@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this graph definition is (or will be) published. The URL SHOULD include the major version of the graph definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this graph definition is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -114,7 +114,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A free text natural language description of the graph definition from a consumer's perspective.
@@ -126,13 +126,13 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate graph definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the graph definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Explaination of why this graph definition is needed and why it has been designed as it has.
@@ -156,7 +156,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * Links this graph makes rules about.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
-    public $link = array();
+    public $link = [];
 
     /**
      * @var string
@@ -164,21 +164,19 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
     private $_fhirElementName = 'GraphDefinition';
 
     /**
-     * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this graph definition is (or will be) published. The URL SHOULD include the major version of the graph definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this graph definition is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this graph definition is (or will be) published. The URL SHOULD include the major version of the graph definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this graph definition is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -187,8 +185,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The identifier that is used to identify this version of the graph definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the graph definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -197,8 +194,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -207,8 +203,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * A natural language name identifying the graph definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -217,8 +212,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -227,8 +221,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The status of this graph definition. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -237,8 +230,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -247,8 +239,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * A boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -257,8 +248,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -267,8 +257,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The date  (and optionally time) when the graph definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -277,8 +266,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -287,8 +275,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The name of the individual or organization that published the graph definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -297,8 +284,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -307,8 +293,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -317,8 +302,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -327,8 +311,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * A free text natural language description of the graph definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -337,8 +320,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -347,8 +329,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate graph definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -357,8 +338,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -367,8 +347,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * A legal or geographic region in which the graph definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -377,8 +356,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -387,8 +365,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * Explaination of why this graph definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -397,8 +374,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -407,8 +383,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The type of FHIR resource at which instances of this graph start.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public function getStart()
-    {
+    public function getStart() {
         return $this->start;
     }
 
@@ -417,8 +392,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $start
      * @return $this
      */
-    public function setStart($start)
-    {
+    public function setStart($start) {
         $this->start = $start;
         return $this;
     }
@@ -427,8 +401,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * The profile that describes the use of the base resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -437,8 +410,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $profile
      * @return $this
      */
-    public function setProfile($profile)
-    {
+    public function setProfile($profile) {
         $this->profile = $profile;
         return $this;
     }
@@ -447,8 +419,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * Links this graph makes rules about.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
-    public function getLink()
-    {
+    public function getLink() {
         return $this->link;
     }
 
@@ -457,8 +428,7 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRResource\FHIRGraphDefinition\FHIRGraphDefinitionLink $link
      * @return $this
      */
-    public function addLink($link)
-    {
+    public function addLink($link) {
         $this->link[] = $link;
         return $this;
     }
@@ -466,59 +436,136 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['start'])) {
+                $this->setStart($data['start']);
+            }
+            if (isset($data['profile'])) {
+                $this->setProfile($data['profile']);
+            }
+            if (isset($data['link'])) {
+                if (is_array($data['link'])) {
+                    foreach($data['link'] as $d) {
+                        $this->addLink($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"link" must be array of objects or null, '.gettype($data['link']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->start)) $json['start'] = $this->start;
+        if (isset($this->profile)) $json['profile'] = $this->profile;
         if (0 < count($this->link)) {
             $json['link'] = [];
             foreach($this->link as $link) {
-                $json['link'][] = json_encode($link);
+                if (null !== $link) $json['link'][] = $link;
             }
         }
         return $json;
@@ -529,23 +576,22 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<GraphDefinition xmlns="http://hl7.org/fhir"></GraphDefinition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -556,9 +602,9 @@ class FHIRGraphDefinition extends FHIRDomainResource implements \JsonSerializabl
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->start) $this->start->xmlSerialize(true, $sxe->addChild('start'));
-        if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->start)) $this->start->xmlSerialize(true, $sxe->addChild('start'));
+        if (isset($this->profile)) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
         if (0 < count($this->link)) {
             foreach($this->link as $link) {
                 $link->xmlSerialize(true, $sxe->addChild('link'));

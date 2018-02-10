@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * Significant health events and conditions for a person related to the patient relevant in the context of care for the patient.
+ * Significant health conditions for a person related to the patient relevant in the context of care for the patient.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSerializable
@@ -72,13 +72,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * This records identifiers associated with this family member history record that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * A protocol or questionnaire that was adhered to in whole or in part by this event.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $definition = array();
+    public $instantiates = [];
 
     /**
      * A code specifying the status of the record of the family history of a specific family member.
@@ -87,16 +87,10 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public $status = null;
 
     /**
-     * If true, indicates the taking of an individual family member's history did not occur. The notDone element should not be used to document negated conditions, such as a family member that did not have a condition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $notDone = null;
-
-    /**
-     * Describes why the family member's history is absent.
+     * Describes why the family member's history is not available.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $notDoneReason = null;
+    public $dataAbsentReason = null;
 
     /**
      * The person who this history concerns.
@@ -129,37 +123,31 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public $gender = null;
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $bornPeriod = null;
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $bornDate = null;
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $bornString = null;
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $ageAge = null;
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $ageRange = null;
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $ageString = null;
@@ -171,31 +159,26 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     public $estimatedAge = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $deceasedBoolean = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
     public $deceasedAge = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $deceasedRange = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $deceasedDate = null;
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $deceasedString = null;
@@ -204,25 +187,25 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * Describes why the family member history occurred in coded or textual form.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reasonCode = array();
+    public $reasonCode = [];
 
     /**
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $reasonReference = array();
+    public $reasonReference = [];
 
     /**
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
      */
-    public $condition = array();
+    public $condition = [];
 
     /**
      * @var string
@@ -233,8 +216,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * This records identifiers associated with this family member history record that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -243,29 +225,26 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * A protocol or questionnaire that was adhered to in whole or in part by this event.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getDefinition()
-    {
-        return $this->definition;
+    public function getInstantiates() {
+        return $this->instantiates;
     }
 
     /**
      * A protocol or questionnaire that was adhered to in whole or in part by this event.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $instantiates
      * @return $this
      */
-    public function addDefinition($definition)
-    {
-        $this->definition[] = $definition;
+    public function addInstantiates($instantiates) {
+        $this->instantiates[] = $instantiates;
         return $this;
     }
 
@@ -273,8 +252,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * A code specifying the status of the record of the family history of a specific family member.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -283,49 +261,26 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRFamilyHistoryStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
 
     /**
-     * If true, indicates the taking of an individual family member's history did not occur. The notDone element should not be used to document negated conditions, such as a family member that did not have a condition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getNotDone()
-    {
-        return $this->notDone;
-    }
-
-    /**
-     * If true, indicates the taking of an individual family member's history did not occur. The notDone element should not be used to document negated conditions, such as a family member that did not have a condition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $notDone
-     * @return $this
-     */
-    public function setNotDone($notDone)
-    {
-        $this->notDone = $notDone;
-        return $this;
-    }
-
-    /**
-     * Describes why the family member's history is absent.
+     * Describes why the family member's history is not available.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getNotDoneReason()
-    {
-        return $this->notDoneReason;
+    public function getDataAbsentReason() {
+        return $this->dataAbsentReason;
     }
 
     /**
-     * Describes why the family member's history is absent.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $notDoneReason
+     * Describes why the family member's history is not available.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $dataAbsentReason
      * @return $this
      */
-    public function setNotDoneReason($notDoneReason)
-    {
-        $this->notDoneReason = $notDoneReason;
+    public function setDataAbsentReason($dataAbsentReason) {
+        $this->dataAbsentReason = $dataAbsentReason;
         return $this;
     }
 
@@ -333,8 +288,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * The person who this history concerns.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatient()
-    {
+    public function getPatient() {
         return $this->patient;
     }
 
@@ -343,8 +297,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
-    public function setPatient($patient)
-    {
+    public function setPatient($patient) {
         $this->patient = $patient;
         return $this;
     }
@@ -353,8 +306,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * The date (and possibly time) when the family member history was taken.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -363,8 +315,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -373,8 +324,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with the red hair".
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -383,8 +333,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -393,8 +342,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * The type of relationship this person has to the patient (father, mother, brother etc.).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRelationship()
-    {
+    public function getRelationship() {
         return $this->relationship;
     }
 
@@ -403,8 +351,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
-    public function setRelationship($relationship)
-    {
+    public function setRelationship($relationship) {
         $this->relationship = $relationship;
         return $this;
     }
@@ -413,8 +360,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * Administrative Gender - the gender that the relative is considered to have for administration and record keeping purposes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
-    public function getGender()
-    {
+    public function getGender() {
         return $this->gender;
     }
 
@@ -423,128 +369,103 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
-    public function setGender($gender)
-    {
+    public function setGender($gender) {
         $this->gender = $gender;
         return $this;
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getBornPeriod()
-    {
+    public function getBornPeriod() {
         return $this->bornPeriod;
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $bornPeriod
      * @return $this
      */
-    public function setBornPeriod($bornPeriod)
-    {
+    public function setBornPeriod($bornPeriod) {
         $this->bornPeriod = $bornPeriod;
         return $this;
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getBornDate()
-    {
+    public function getBornDate() {
         return $this->bornDate;
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $bornDate
      * @return $this
      */
-    public function setBornDate($bornDate)
-    {
+    public function setBornDate($bornDate) {
         $this->bornDate = $bornDate;
         return $this;
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getBornString()
-    {
+    public function getBornString() {
         return $this->bornString;
     }
 
     /**
-     * The actual or approximate date of birth of the relative. (choose any one of born*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $bornString
      * @return $this
      */
-    public function setBornString($bornString)
-    {
+    public function setBornString($bornString) {
         $this->bornString = $bornString;
         return $this;
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public function getAgeAge()
-    {
+    public function getAgeAge() {
         return $this->ageAge;
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $ageAge
      * @return $this
      */
-    public function setAgeAge($ageAge)
-    {
+    public function setAgeAge($ageAge) {
         $this->ageAge = $ageAge;
         return $this;
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public function getAgeRange()
-    {
+    public function getAgeRange() {
         return $this->ageRange;
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $ageRange
      * @return $this
      */
-    public function setAgeRange($ageRange)
-    {
+    public function setAgeRange($ageRange) {
         $this->ageRange = $ageRange;
         return $this;
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getAgeString()
-    {
+    public function getAgeString() {
         return $this->ageString;
     }
 
     /**
-     * The age of the relative at the time the family member history is recorded. (choose any one of age*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $ageString
      * @return $this
      */
-    public function setAgeString($ageString)
-    {
+    public function setAgeString($ageString) {
         $this->ageString = $ageString;
         return $this;
     }
@@ -553,8 +474,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * If true, indicates that the age value specified is an estimated value.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getEstimatedAge()
-    {
+    public function getEstimatedAge() {
         return $this->estimatedAge;
     }
 
@@ -563,108 +483,87 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $estimatedAge
      * @return $this
      */
-    public function setEstimatedAge($estimatedAge)
-    {
+    public function setEstimatedAge($estimatedAge) {
         $this->estimatedAge = $estimatedAge;
         return $this;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getDeceasedBoolean()
-    {
+    public function getDeceasedBoolean() {
         return $this->deceasedBoolean;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $deceasedBoolean
      * @return $this
      */
-    public function setDeceasedBoolean($deceasedBoolean)
-    {
+    public function setDeceasedBoolean($deceasedBoolean) {
         $this->deceasedBoolean = $deceasedBoolean;
         return $this;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public function getDeceasedAge()
-    {
+    public function getDeceasedAge() {
         return $this->deceasedAge;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @return $this
      */
-    public function setDeceasedAge($deceasedAge)
-    {
+    public function setDeceasedAge($deceasedAge) {
         $this->deceasedAge = $deceasedAge;
         return $this;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public function getDeceasedRange()
-    {
+    public function getDeceasedRange() {
         return $this->deceasedRange;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $deceasedRange
      * @return $this
      */
-    public function setDeceasedRange($deceasedRange)
-    {
+    public function setDeceasedRange($deceasedRange) {
         $this->deceasedRange = $deceasedRange;
         return $this;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getDeceasedDate()
-    {
+    public function getDeceasedDate() {
         return $this->deceasedDate;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $deceasedDate
      * @return $this
      */
-    public function setDeceasedDate($deceasedDate)
-    {
+    public function setDeceasedDate($deceasedDate) {
         $this->deceasedDate = $deceasedDate;
         return $this;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDeceasedString()
-    {
+    public function getDeceasedString() {
         return $this->deceasedString;
     }
 
     /**
-     * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record. (choose any one of deceased*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $deceasedString
      * @return $this
      */
-    public function setDeceasedString($deceasedString)
-    {
+    public function setDeceasedString($deceasedString) {
         $this->deceasedString = $deceasedString;
         return $this;
     }
@@ -673,8 +572,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * Describes why the family member history occurred in coded or textual form.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getReasonCode()
-    {
+    public function getReasonCode() {
         return $this->reasonCode;
     }
 
@@ -683,8 +581,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
-    public function addReasonCode($reasonCode)
-    {
+    public function addReasonCode($reasonCode) {
         $this->reasonCode[] = $reasonCode;
         return $this;
     }
@@ -693,8 +590,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getReasonReference()
-    {
+    public function getReasonReference() {
         return $this->reasonReference;
     }
 
@@ -703,8 +599,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
-    public function addReasonReference($reasonReference)
-    {
+    public function addReasonReference($reasonReference) {
         $this->reasonReference[] = $reasonReference;
         return $this;
     }
@@ -713,8 +608,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -723,8 +617,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -733,8 +626,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
      */
-    public function getCondition()
-    {
+    public function getCondition() {
         return $this->condition;
     }
 
@@ -743,8 +635,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition $condition
      * @return $this
      */
-    public function addCondition($condition)
-    {
+    public function addCondition($condition) {
         $this->condition[] = $condition;
         return $this;
     }
@@ -752,80 +643,198 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['instantiates'])) {
+                if (is_array($data['instantiates'])) {
+                    foreach($data['instantiates'] as $d) {
+                        $this->addInstantiates($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"instantiates" must be array of objects or null, '.gettype($data['instantiates']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['dataAbsentReason'])) {
+                $this->setDataAbsentReason($data['dataAbsentReason']);
+            }
+            if (isset($data['patient'])) {
+                $this->setPatient($data['patient']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['relationship'])) {
+                $this->setRelationship($data['relationship']);
+            }
+            if (isset($data['gender'])) {
+                $this->setGender($data['gender']);
+            }
+            if (isset($data['bornPeriod'])) {
+                $this->setBornPeriod($data['bornPeriod']);
+            }
+            if (isset($data['bornDate'])) {
+                $this->setBornDate($data['bornDate']);
+            }
+            if (isset($data['bornString'])) {
+                $this->setBornString($data['bornString']);
+            }
+            if (isset($data['ageAge'])) {
+                $this->setAgeAge($data['ageAge']);
+            }
+            if (isset($data['ageRange'])) {
+                $this->setAgeRange($data['ageRange']);
+            }
+            if (isset($data['ageString'])) {
+                $this->setAgeString($data['ageString']);
+            }
+            if (isset($data['estimatedAge'])) {
+                $this->setEstimatedAge($data['estimatedAge']);
+            }
+            if (isset($data['deceasedBoolean'])) {
+                $this->setDeceasedBoolean($data['deceasedBoolean']);
+            }
+            if (isset($data['deceasedAge'])) {
+                $this->setDeceasedAge($data['deceasedAge']);
+            }
+            if (isset($data['deceasedRange'])) {
+                $this->setDeceasedRange($data['deceasedRange']);
+            }
+            if (isset($data['deceasedDate'])) {
+                $this->setDeceasedDate($data['deceasedDate']);
+            }
+            if (isset($data['deceasedString'])) {
+                $this->setDeceasedString($data['deceasedString']);
+            }
+            if (isset($data['reasonCode'])) {
+                if (is_array($data['reasonCode'])) {
+                    foreach($data['reasonCode'] as $d) {
+                        $this->addReasonCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"reasonCode" must be array of objects or null, '.gettype($data['reasonCode']).' seen.');
+                }
+            }
+            if (isset($data['reasonReference'])) {
+                if (is_array($data['reasonReference'])) {
+                    foreach($data['reasonReference'] as $d) {
+                        $this->addReasonReference($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"reasonReference" must be array of objects or null, '.gettype($data['reasonReference']).' seen.');
+                }
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+            if (isset($data['condition'])) {
+                if (is_array($data['condition'])) {
+                    foreach($data['condition'] as $d) {
+                        $this->addCondition($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"condition" must be array of objects or null, '.gettype($data['condition']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (0 < count($this->definition)) {
-            $json['definition'] = [];
-            foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+        if (0 < count($this->instantiates)) {
+            $json['instantiates'] = [];
+            foreach($this->instantiates as $instantiates) {
+                if (null !== $instantiates) $json['instantiates'][] = $instantiates;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->notDone) $json['notDone'] = json_encode($this->notDone);
-        if (null !== $this->notDoneReason) $json['notDoneReason'] = json_encode($this->notDoneReason);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
-        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
-        if (null !== $this->bornPeriod) $json['bornPeriod'] = json_encode($this->bornPeriod);
-        if (null !== $this->bornDate) $json['bornDate'] = json_encode($this->bornDate);
-        if (null !== $this->bornString) $json['bornString'] = json_encode($this->bornString);
-        if (null !== $this->ageAge) $json['ageAge'] = json_encode($this->ageAge);
-        if (null !== $this->ageRange) $json['ageRange'] = json_encode($this->ageRange);
-        if (null !== $this->ageString) $json['ageString'] = json_encode($this->ageString);
-        if (null !== $this->estimatedAge) $json['estimatedAge'] = json_encode($this->estimatedAge);
-        if (null !== $this->deceasedBoolean) $json['deceasedBoolean'] = json_encode($this->deceasedBoolean);
-        if (null !== $this->deceasedAge) $json['deceasedAge'] = json_encode($this->deceasedAge);
-        if (null !== $this->deceasedRange) $json['deceasedRange'] = json_encode($this->deceasedRange);
-        if (null !== $this->deceasedDate) $json['deceasedDate'] = json_encode($this->deceasedDate);
-        if (null !== $this->deceasedString) $json['deceasedString'] = json_encode($this->deceasedString);
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->dataAbsentReason)) $json['dataAbsentReason'] = $this->dataAbsentReason;
+        if (isset($this->patient)) $json['patient'] = $this->patient;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->relationship)) $json['relationship'] = $this->relationship;
+        if (isset($this->gender)) $json['gender'] = $this->gender;
+        if (isset($this->bornPeriod)) $json['bornPeriod'] = $this->bornPeriod;
+        if (isset($this->bornDate)) $json['bornDate'] = $this->bornDate;
+        if (isset($this->bornString)) $json['bornString'] = $this->bornString;
+        if (isset($this->ageAge)) $json['ageAge'] = $this->ageAge;
+        if (isset($this->ageRange)) $json['ageRange'] = $this->ageRange;
+        if (isset($this->ageString)) $json['ageString'] = $this->ageString;
+        if (isset($this->estimatedAge)) $json['estimatedAge'] = $this->estimatedAge;
+        if (isset($this->deceasedBoolean)) $json['deceasedBoolean'] = $this->deceasedBoolean;
+        if (isset($this->deceasedAge)) $json['deceasedAge'] = $this->deceasedAge;
+        if (isset($this->deceasedRange)) $json['deceasedRange'] = $this->deceasedRange;
+        if (isset($this->deceasedDate)) $json['deceasedDate'] = $this->deceasedDate;
+        if (isset($this->deceasedString)) $json['deceasedString'] = $this->deceasedString;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                if (null !== $reasonCode) $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                if (null !== $reasonReference) $json['reasonReference'][] = $reasonReference;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                if (null !== $note) $json['note'][] = $note;
             }
         }
         if (0 < count($this->condition)) {
             $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = json_encode($condition);
+                if (null !== $condition) $json['condition'][] = $condition;
             }
         }
         return $json;
@@ -836,8 +845,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<FamilyMemberHistory xmlns="http://hl7.org/fhir"></FamilyMemberHistory>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -845,31 +853,30 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements \JsonSeriali
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (0 < count($this->definition)) {
-            foreach($this->definition as $definition) {
-                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+        if (0 < count($this->instantiates)) {
+            foreach($this->instantiates as $instantiates) {
+                $instantiates->xmlSerialize(true, $sxe->addChild('instantiates'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->notDone) $this->notDone->xmlSerialize(true, $sxe->addChild('notDone'));
-        if (null !== $this->notDoneReason) $this->notDoneReason->xmlSerialize(true, $sxe->addChild('notDoneReason'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->relationship) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
-        if (null !== $this->gender) $this->gender->xmlSerialize(true, $sxe->addChild('gender'));
-        if (null !== $this->bornPeriod) $this->bornPeriod->xmlSerialize(true, $sxe->addChild('bornPeriod'));
-        if (null !== $this->bornDate) $this->bornDate->xmlSerialize(true, $sxe->addChild('bornDate'));
-        if (null !== $this->bornString) $this->bornString->xmlSerialize(true, $sxe->addChild('bornString'));
-        if (null !== $this->ageAge) $this->ageAge->xmlSerialize(true, $sxe->addChild('ageAge'));
-        if (null !== $this->ageRange) $this->ageRange->xmlSerialize(true, $sxe->addChild('ageRange'));
-        if (null !== $this->ageString) $this->ageString->xmlSerialize(true, $sxe->addChild('ageString'));
-        if (null !== $this->estimatedAge) $this->estimatedAge->xmlSerialize(true, $sxe->addChild('estimatedAge'));
-        if (null !== $this->deceasedBoolean) $this->deceasedBoolean->xmlSerialize(true, $sxe->addChild('deceasedBoolean'));
-        if (null !== $this->deceasedAge) $this->deceasedAge->xmlSerialize(true, $sxe->addChild('deceasedAge'));
-        if (null !== $this->deceasedRange) $this->deceasedRange->xmlSerialize(true, $sxe->addChild('deceasedRange'));
-        if (null !== $this->deceasedDate) $this->deceasedDate->xmlSerialize(true, $sxe->addChild('deceasedDate'));
-        if (null !== $this->deceasedString) $this->deceasedString->xmlSerialize(true, $sxe->addChild('deceasedString'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->dataAbsentReason)) $this->dataAbsentReason->xmlSerialize(true, $sxe->addChild('dataAbsentReason'));
+        if (isset($this->patient)) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->relationship)) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
+        if (isset($this->gender)) $this->gender->xmlSerialize(true, $sxe->addChild('gender'));
+        if (isset($this->bornPeriod)) $this->bornPeriod->xmlSerialize(true, $sxe->addChild('bornPeriod'));
+        if (isset($this->bornDate)) $this->bornDate->xmlSerialize(true, $sxe->addChild('bornDate'));
+        if (isset($this->bornString)) $this->bornString->xmlSerialize(true, $sxe->addChild('bornString'));
+        if (isset($this->ageAge)) $this->ageAge->xmlSerialize(true, $sxe->addChild('ageAge'));
+        if (isset($this->ageRange)) $this->ageRange->xmlSerialize(true, $sxe->addChild('ageRange'));
+        if (isset($this->ageString)) $this->ageString->xmlSerialize(true, $sxe->addChild('ageString'));
+        if (isset($this->estimatedAge)) $this->estimatedAge->xmlSerialize(true, $sxe->addChild('estimatedAge'));
+        if (isset($this->deceasedBoolean)) $this->deceasedBoolean->xmlSerialize(true, $sxe->addChild('deceasedBoolean'));
+        if (isset($this->deceasedAge)) $this->deceasedAge->xmlSerialize(true, $sxe->addChild('deceasedAge'));
+        if (isset($this->deceasedRange)) $this->deceasedRange->xmlSerialize(true, $sxe->addChild('deceasedRange'));
+        if (isset($this->deceasedDate)) $this->deceasedDate->xmlSerialize(true, $sxe->addChild('deceasedDate'));
+        if (isset($this->deceasedString)) $this->deceasedString->xmlSerialize(true, $sxe->addChild('deceasedString'));
         if (0 < count($this->reasonCode)) {
             foreach($this->reasonCode as $reasonCode) {
                 $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));

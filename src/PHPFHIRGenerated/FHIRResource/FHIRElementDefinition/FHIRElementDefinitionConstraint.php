@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -119,8 +119,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * Allows identification of which elements have their cardinalities impacted by the constraint.  Will not be referenced for constraints that do not affect cardinality.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getKey()
-    {
+    public function getKey() {
         return $this->key;
     }
 
@@ -129,8 +128,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $key
      * @return $this
      */
-    public function setKey($key)
-    {
+    public function setKey($key) {
         $this->key = $key;
         return $this;
     }
@@ -139,8 +137,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * Description of why this constraint is necessary or appropriate.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getRequirements()
-    {
+    public function getRequirements() {
         return $this->requirements;
     }
 
@@ -149,8 +146,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $requirements
      * @return $this
      */
-    public function setRequirements($requirements)
-    {
+    public function setRequirements($requirements) {
         $this->requirements = $requirements;
         return $this;
     }
@@ -159,8 +155,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * Identifies the impact constraint violation has on the conformance of the instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConstraintSeverity
      */
-    public function getSeverity()
-    {
+    public function getSeverity() {
         return $this->severity;
     }
 
@@ -169,8 +164,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRConstraintSeverity $severity
      * @return $this
      */
-    public function setSeverity($severity)
-    {
+    public function setSeverity($severity) {
         $this->severity = $severity;
         return $this;
     }
@@ -179,8 +173,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * Text that can be used to describe the constraint in messages identifying that the constraint has been violated.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getHuman()
-    {
+    public function getHuman() {
         return $this->human;
     }
 
@@ -189,8 +182,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $human
      * @return $this
      */
-    public function setHuman($human)
-    {
+    public function setHuman($human) {
         $this->human = $human;
         return $this;
     }
@@ -199,8 +191,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * A [FHIRPath](http://hl7.org/fluentpath) expression of constraint that can be executed to see if this constraint is met.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getExpression()
-    {
+    public function getExpression() {
         return $this->expression;
     }
 
@@ -209,8 +200,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
-    public function setExpression($expression)
-    {
+    public function setExpression($expression) {
         $this->expression = $expression;
         return $this;
     }
@@ -219,8 +209,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * An XPath expression of constraint that can be executed to see if this constraint is met.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getXpath()
-    {
+    public function getXpath() {
         return $this->xpath;
     }
 
@@ -229,8 +218,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $xpath
      * @return $this
      */
-    public function setXpath($xpath)
-    {
+    public function setXpath($xpath) {
         $this->xpath = $xpath;
         return $this;
     }
@@ -239,8 +227,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * A reference to the original source of the constraint, for traceability purposes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSource()
-    {
+    public function getSource() {
         return $this->source;
     }
 
@@ -249,8 +236,7 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $source
      * @return $this
      */
-    public function setSource($source)
-    {
+    public function setSource($source) {
         $this->source = $source;
         return $this;
     }
@@ -258,32 +244,61 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['key'])) {
+                $this->setKey($data['key']);
+            }
+            if (isset($data['requirements'])) {
+                $this->setRequirements($data['requirements']);
+            }
+            if (isset($data['severity'])) {
+                $this->setSeverity($data['severity']);
+            }
+            if (isset($data['human'])) {
+                $this->setHuman($data['human']);
+            }
+            if (isset($data['expression'])) {
+                $this->setExpression($data['expression']);
+            }
+            if (isset($data['xpath'])) {
+                $this->setXpath($data['xpath']);
+            }
+            if (isset($data['source'])) {
+                $this->setSource($data['source']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->key) $json['key'] = json_encode($this->key);
-        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
-        if (null !== $this->human) $json['human'] = json_encode($this->human);
-        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
-        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
+        if (isset($this->key)) $json['key'] = $this->key;
+        if (isset($this->requirements)) $json['requirements'] = $this->requirements;
+        if (isset($this->severity)) $json['severity'] = $this->severity;
+        if (isset($this->human)) $json['human'] = $this->human;
+        if (isset($this->expression)) $json['expression'] = $this->expression;
+        if (isset($this->xpath)) $json['xpath'] = $this->xpath;
+        if (isset($this->source)) $json['source'] = $this->source;
         return $json;
     }
 
@@ -292,17 +307,16 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ElementDefinitionConstraint xmlns="http://hl7.org/fhir"></ElementDefinitionConstraint>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->key) $this->key->xmlSerialize(true, $sxe->addChild('key'));
-        if (null !== $this->requirements) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
-        if (null !== $this->severity) $this->severity->xmlSerialize(true, $sxe->addChild('severity'));
-        if (null !== $this->human) $this->human->xmlSerialize(true, $sxe->addChild('human'));
-        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
-        if (null !== $this->xpath) $this->xpath->xmlSerialize(true, $sxe->addChild('xpath'));
-        if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
+        if (isset($this->key)) $this->key->xmlSerialize(true, $sxe->addChild('key'));
+        if (isset($this->requirements)) $this->requirements->xmlSerialize(true, $sxe->addChild('requirements'));
+        if (isset($this->severity)) $this->severity->xmlSerialize(true, $sxe->addChild('severity'));
+        if (isset($this->human)) $this->human->xmlSerialize(true, $sxe->addChild('human'));
+        if (isset($this->expression)) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
+        if (isset($this->xpath)) $this->xpath->xmlSerialize(true, $sxe->addChild('xpath'));
+        if (isset($this->source)) $this->source->xmlSerialize(true, $sxe->addChild('source'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,7 +83,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $recipient = array();
+    public $recipient = [];
 
     /**
      * @var string
@@ -94,8 +94,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * Indicates the number of times the requested action should occur.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getRepetitions()
-    {
+    public function getRepetitions() {
         return $this->repetitions;
     }
 
@@ -104,8 +103,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $repetitions
      * @return $this
      */
-    public function setRepetitions($repetitions)
-    {
+    public function setRepetitions($repetitions) {
         $this->repetitions = $repetitions;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * Over what time-period is fulfillment sought.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -124,8 +121,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getRecipient()
-    {
+    public function getRecipient() {
         return $this->recipient;
     }
 
@@ -144,8 +139,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $recipient
      * @return $this
      */
-    public function addRecipient($recipient)
-    {
+    public function addRecipient($recipient) {
         $this->recipient[] = $recipient;
         return $this;
     }
@@ -153,31 +147,54 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['repetitions'])) {
+                $this->setRepetitions($data['repetitions']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['recipient'])) {
+                if (is_array($data['recipient'])) {
+                    foreach($data['recipient'] as $d) {
+                        $this->addRecipient($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"recipient" must be array of objects or null, '.gettype($data['recipient']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->repetitions) $json['repetitions'] = json_encode($this->repetitions);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->repetitions)) $json['repetitions'] = $this->repetitions;
+        if (isset($this->period)) $json['period'] = $this->period;
         if (0 < count($this->recipient)) {
             $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = json_encode($recipient);
+                if (null !== $recipient) $json['recipient'][] = $recipient;
             }
         }
         return $json;
@@ -188,12 +205,11 @@ class FHIRTaskRestriction extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TaskRestriction xmlns="http://hl7.org/fhir"></TaskRestriction>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->repetitions) $this->repetitions->xmlSerialize(true, $sxe->addChild('repetitions'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->repetitions)) $this->repetitions->xmlSerialize(true, $sxe->addChild('repetitions'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (0 < count($this->recipient)) {
             foreach($this->recipient as $recipient) {
                 $recipient->xmlSerialize(true, $sxe->addChild('recipient'));

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,25 +77,25 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * Source inputs to the mapping.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapSource[]
      */
-    public $source = array();
+    public $source = [];
 
     /**
      * Content to create because of this mapping rule.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapTarget[]
      */
-    public $target = array();
+    public $target = [];
 
     /**
      * Rules contained in this rule.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapRule[]
      */
-    public $rule = array();
+    public $rule = [];
 
     /**
      * Which other rules to apply in the context of this rule.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapDependent[]
      */
-    public $dependent = array();
+    public $dependent = [];
 
     /**
      * Documentation for this instance of data.
@@ -112,8 +112,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * Name of the rule for internal references.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -122,8 +121,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * Source inputs to the mapping.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapSource[]
      */
-    public function getSource()
-    {
+    public function getSource() {
         return $this->source;
     }
 
@@ -142,8 +139,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapSource $source
      * @return $this
      */
-    public function addSource($source)
-    {
+    public function addSource($source) {
         $this->source[] = $source;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * Content to create because of this mapping rule.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapTarget[]
      */
-    public function getTarget()
-    {
+    public function getTarget() {
         return $this->target;
     }
 
@@ -162,8 +157,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapTarget $target
      * @return $this
      */
-    public function addTarget($target)
-    {
+    public function addTarget($target) {
         $this->target[] = $target;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * Rules contained in this rule.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapRule[]
      */
-    public function getRule()
-    {
+    public function getRule() {
         return $this->rule;
     }
 
@@ -182,8 +175,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapRule $rule
      * @return $this
      */
-    public function addRule($rule)
-    {
+    public function addRule($rule) {
         $this->rule[] = $rule;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * Which other rules to apply in the context of this rule.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapDependent[]
      */
-    public function getDependent()
-    {
+    public function getDependent() {
         return $this->dependent;
     }
 
@@ -202,8 +193,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRStructureMap\FHIRStructureMapDependent $dependent
      * @return $this
      */
-    public function addDependent($dependent)
-    {
+    public function addDependent($dependent) {
         $this->dependent[] = $dependent;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * Documentation for this instance of data.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -222,8 +211,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -231,51 +219,101 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['source'])) {
+                if (is_array($data['source'])) {
+                    foreach($data['source'] as $d) {
+                        $this->addSource($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"source" must be array of objects or null, '.gettype($data['source']).' seen.');
+                }
+            }
+            if (isset($data['target'])) {
+                if (is_array($data['target'])) {
+                    foreach($data['target'] as $d) {
+                        $this->addTarget($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"target" must be array of objects or null, '.gettype($data['target']).' seen.');
+                }
+            }
+            if (isset($data['rule'])) {
+                if (is_array($data['rule'])) {
+                    foreach($data['rule'] as $d) {
+                        $this->addRule($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"rule" must be array of objects or null, '.gettype($data['rule']).' seen.');
+                }
+            }
+            if (isset($data['dependent'])) {
+                if (is_array($data['dependent'])) {
+                    foreach($data['dependent'] as $d) {
+                        $this->addDependent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dependent" must be array of objects or null, '.gettype($data['dependent']).' seen.');
+                }
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (isset($this->name)) $json['name'] = $this->name;
         if (0 < count($this->source)) {
             $json['source'] = [];
             foreach($this->source as $source) {
-                $json['source'][] = json_encode($source);
+                if (null !== $source) $json['source'][] = $source;
             }
         }
         if (0 < count($this->target)) {
             $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = json_encode($target);
+                if (null !== $target) $json['target'][] = $target;
             }
         }
         if (0 < count($this->rule)) {
             $json['rule'] = [];
             foreach($this->rule as $rule) {
-                $json['rule'][] = json_encode($rule);
+                if (null !== $rule) $json['rule'][] = $rule;
             }
         }
         if (0 < count($this->dependent)) {
             $json['dependent'] = [];
             foreach($this->dependent as $dependent) {
-                $json['dependent'][] = json_encode($dependent);
+                if (null !== $dependent) $json['dependent'][] = $dependent;
             }
         }
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
         return $json;
     }
 
@@ -284,11 +322,10 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<StructureMapRule xmlns="http://hl7.org/fhir"></StructureMapRule>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (0 < count($this->source)) {
             foreach($this->source as $source) {
                 $source->xmlSerialize(true, $sxe->addChild('source'));
@@ -309,7 +346,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement implements \JsonSerializa
                 $dependent->xmlSerialize(true, $sxe->addChild('dependent'));
             }
         }
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

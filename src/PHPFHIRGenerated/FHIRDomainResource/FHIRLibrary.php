@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this library is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -78,7 +78,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A formal identifier that is used to identify this library when it is represented in other formats, or referenced in a specification, model, design or an instance. e.g. CMS or NQF identifiers for a measure artifact. Note that at least one identifier is required for non-experimental active artifacts.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
@@ -168,31 +168,31 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the library is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $topic = array();
+    public $topic = [];
 
     /**
      * A contributor to the content of the library, including authors, editors, reviewers, and endorsers.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
-    public $contributor = array();
+    public $contributor = [];
 
     /**
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A copyright statement relating to the library and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the library.
@@ -204,25 +204,25 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * Related artifacts such as additional documentation, justification, or bibliographic references.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public $relatedArtifact = array();
+    public $relatedArtifact = [];
 
     /**
      * The parameter element defines parameters used by the library.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition[]
      */
-    public $parameter = array();
+    public $parameter = [];
 
     /**
      * Describes a set of data that must be provided in order to be able to successfully perform the computations defined by the library.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement[]
      */
-    public $dataRequirement = array();
+    public $dataRequirement = [];
 
     /**
      * The content of the library as an Attachment. The content may be a reference to a url, or may be directly embedded as a base-64 string. Either way, the contentType of the attachment determines how to interpret the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $content = array();
+    public $content = [];
 
     /**
      * @var string
@@ -230,21 +230,19 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'Library';
 
     /**
-     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this library is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this library is (or will be) published. The URL SHOULD include the major version of the library. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this library is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -253,8 +251,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A formal identifier that is used to identify this library when it is represented in other formats, or referenced in a specification, model, design or an instance. e.g. CMS or NQF identifiers for a measure artifact. Note that at least one identifier is required for non-experimental active artifacts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -263,8 +260,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -273,8 +269,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The identifier that is used to identify this version of the library when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the library author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -283,8 +278,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -293,8 +287,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A natural language name identifying the library. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -303,8 +296,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -313,8 +305,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A short, descriptive, user-friendly title for the library.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -323,8 +314,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -333,8 +323,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The status of this library. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -343,8 +332,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -353,8 +341,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -363,8 +350,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -373,8 +359,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * Identifies the type of library such as a Logic Library, Model Definition, Asset Collection, or Module Definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -383,8 +368,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -393,8 +377,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -403,8 +386,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -413,8 +395,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The name of the individual or organization that published the library.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -423,8 +404,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -433,8 +413,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A free text natural language description of the library from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -443,8 +422,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -453,8 +431,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * Explaination of why this library is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -463,8 +440,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -473,8 +449,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A detailed description of how the library is used from a clinical perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getUsage()
-    {
+    public function getUsage() {
         return $this->usage;
     }
 
@@ -483,8 +458,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $usage
      * @return $this
      */
-    public function setUsage($usage)
-    {
+    public function setUsage($usage) {
         $this->usage = $usage;
         return $this;
     }
@@ -493,8 +467,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getApprovalDate()
-    {
+    public function getApprovalDate() {
         return $this->approvalDate;
     }
 
@@ -503,8 +476,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
      * @return $this
      */
-    public function setApprovalDate($approvalDate)
-    {
+    public function setApprovalDate($approvalDate) {
         $this->approvalDate = $approvalDate;
         return $this;
     }
@@ -513,8 +485,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getLastReviewDate()
-    {
+    public function getLastReviewDate() {
         return $this->lastReviewDate;
     }
 
@@ -523,8 +494,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
      * @return $this
      */
-    public function setLastReviewDate($lastReviewDate)
-    {
+    public function setLastReviewDate($lastReviewDate) {
         $this->lastReviewDate = $lastReviewDate;
         return $this;
     }
@@ -533,8 +503,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The period during which the library content was or is planned to be in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getEffectivePeriod()
-    {
+    public function getEffectivePeriod() {
         return $this->effectivePeriod;
     }
 
@@ -543,8 +512,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
-    public function setEffectivePeriod($effectivePeriod)
-    {
+    public function setEffectivePeriod($effectivePeriod) {
         $this->effectivePeriod = $effectivePeriod;
         return $this;
     }
@@ -553,8 +521,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate library instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -563,8 +530,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -573,8 +539,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A legal or geographic region in which the library is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -583,8 +548,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -593,8 +557,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * Descriptive topics related to the content of the library. Topics provide a high-level categorization of the library that can be useful for filtering and searching.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getTopic()
-    {
+    public function getTopic() {
         return $this->topic;
     }
 
@@ -603,8 +566,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $topic
      * @return $this
      */
-    public function addTopic($topic)
-    {
+    public function addTopic($topic) {
         $this->topic[] = $topic;
         return $this;
     }
@@ -613,8 +575,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A contributor to the content of the library, including authors, editors, reviewers, and endorsers.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContributor[]
      */
-    public function getContributor()
-    {
+    public function getContributor() {
         return $this->contributor;
     }
 
@@ -623,8 +584,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContributor $contributor
      * @return $this
      */
-    public function addContributor($contributor)
-    {
+    public function addContributor($contributor) {
         $this->contributor[] = $contributor;
         return $this;
     }
@@ -633,8 +593,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -643,8 +602,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -653,8 +611,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * A copyright statement relating to the library and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the library.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getCopyright()
-    {
+    public function getCopyright() {
         return $this->copyright;
     }
 
@@ -663,8 +620,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
-    public function setCopyright($copyright)
-    {
+    public function setCopyright($copyright) {
         $this->copyright = $copyright;
         return $this;
     }
@@ -673,8 +629,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * Related artifacts such as additional documentation, justification, or bibliographic references.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact[]
      */
-    public function getRelatedArtifact()
-    {
+    public function getRelatedArtifact() {
         return $this->relatedArtifact;
     }
 
@@ -683,8 +638,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRelatedArtifact $relatedArtifact
      * @return $this
      */
-    public function addRelatedArtifact($relatedArtifact)
-    {
+    public function addRelatedArtifact($relatedArtifact) {
         $this->relatedArtifact[] = $relatedArtifact;
         return $this;
     }
@@ -693,8 +647,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The parameter element defines parameters used by the library.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition[]
      */
-    public function getParameter()
-    {
+    public function getParameter() {
         return $this->parameter;
     }
 
@@ -703,8 +656,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition $parameter
      * @return $this
      */
-    public function addParameter($parameter)
-    {
+    public function addParameter($parameter) {
         $this->parameter[] = $parameter;
         return $this;
     }
@@ -713,8 +665,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * Describes a set of data that must be provided in order to be able to successfully perform the computations defined by the library.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement[]
      */
-    public function getDataRequirement()
-    {
+    public function getDataRequirement() {
         return $this->dataRequirement;
     }
 
@@ -723,8 +674,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDataRequirement $dataRequirement
      * @return $this
      */
-    public function addDataRequirement($dataRequirement)
-    {
+    public function addDataRequirement($dataRequirement) {
         $this->dataRequirement[] = $dataRequirement;
         return $this;
     }
@@ -733,8 +683,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * The content of the library as an Attachment. The content may be a reference to a url, or may be directly embedded as a base-64 string. Either way, the contentType of the attachment determines how to interpret the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public function getContent()
-    {
+    public function getContent() {
         return $this->content;
     }
 
@@ -743,8 +692,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $content
      * @return $this
      */
-    public function addContent($content)
-    {
+    public function addContent($content) {
         $this->content[] = $content;
         return $this;
     }
@@ -752,100 +700,246 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['usage'])) {
+                $this->setUsage($data['usage']);
+            }
+            if (isset($data['approvalDate'])) {
+                $this->setApprovalDate($data['approvalDate']);
+            }
+            if (isset($data['lastReviewDate'])) {
+                $this->setLastReviewDate($data['lastReviewDate']);
+            }
+            if (isset($data['effectivePeriod'])) {
+                $this->setEffectivePeriod($data['effectivePeriod']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['topic'])) {
+                if (is_array($data['topic'])) {
+                    foreach($data['topic'] as $d) {
+                        $this->addTopic($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"topic" must be array of objects or null, '.gettype($data['topic']).' seen.');
+                }
+            }
+            if (isset($data['contributor'])) {
+                if (is_array($data['contributor'])) {
+                    foreach($data['contributor'] as $d) {
+                        $this->addContributor($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contributor" must be array of objects or null, '.gettype($data['contributor']).' seen.');
+                }
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['copyright'])) {
+                $this->setCopyright($data['copyright']);
+            }
+            if (isset($data['relatedArtifact'])) {
+                if (is_array($data['relatedArtifact'])) {
+                    foreach($data['relatedArtifact'] as $d) {
+                        $this->addRelatedArtifact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"relatedArtifact" must be array of objects or null, '.gettype($data['relatedArtifact']).' seen.');
+                }
+            }
+            if (isset($data['parameter'])) {
+                if (is_array($data['parameter'])) {
+                    foreach($data['parameter'] as $d) {
+                        $this->addParameter($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"parameter" must be array of objects or null, '.gettype($data['parameter']).' seen.');
+                }
+            }
+            if (isset($data['dataRequirement'])) {
+                if (is_array($data['dataRequirement'])) {
+                    foreach($data['dataRequirement'] as $d) {
+                        $this->addDataRequirement($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dataRequirement" must be array of objects or null, '.gettype($data['dataRequirement']).' seen.');
+                }
+            }
+            if (isset($data['content'])) {
+                if (is_array($data['content'])) {
+                    foreach($data['content'] as $d) {
+                        $this->addContent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"content" must be array of objects or null, '.gettype($data['content']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (isset($this->url)) $json['url'] = $this->url;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->usage) $json['usage'] = json_encode($this->usage);
-        if (null !== $this->approvalDate) $json['approvalDate'] = json_encode($this->approvalDate);
-        if (null !== $this->lastReviewDate) $json['lastReviewDate'] = json_encode($this->lastReviewDate);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->usage)) $json['usage'] = $this->usage;
+        if (isset($this->approvalDate)) $json['approvalDate'] = $this->approvalDate;
+        if (isset($this->lastReviewDate)) $json['lastReviewDate'] = $this->lastReviewDate;
+        if (isset($this->effectivePeriod)) $json['effectivePeriod'] = $this->effectivePeriod;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
         if (0 < count($this->topic)) {
             $json['topic'] = [];
             foreach($this->topic as $topic) {
-                $json['topic'][] = json_encode($topic);
+                if (null !== $topic) $json['topic'][] = $topic;
             }
         }
         if (0 < count($this->contributor)) {
             $json['contributor'] = [];
             foreach($this->contributor as $contributor) {
-                $json['contributor'][] = json_encode($contributor);
+                if (null !== $contributor) $json['contributor'][] = $contributor;
             }
         }
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (isset($this->copyright)) $json['copyright'] = $this->copyright;
         if (0 < count($this->relatedArtifact)) {
             $json['relatedArtifact'] = [];
             foreach($this->relatedArtifact as $relatedArtifact) {
-                $json['relatedArtifact'][] = json_encode($relatedArtifact);
+                if (null !== $relatedArtifact) $json['relatedArtifact'][] = $relatedArtifact;
             }
         }
         if (0 < count($this->parameter)) {
             $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = json_encode($parameter);
+                if (null !== $parameter) $json['parameter'][] = $parameter;
             }
         }
         if (0 < count($this->dataRequirement)) {
             $json['dataRequirement'] = [];
             foreach($this->dataRequirement as $dataRequirement) {
-                $json['dataRequirement'][] = json_encode($dataRequirement);
+                if (null !== $dataRequirement) $json['dataRequirement'][] = $dataRequirement;
             }
         }
         if (0 < count($this->content)) {
             $json['content'] = [];
             foreach($this->content as $content) {
-                $json['content'][] = json_encode($content);
+                if (null !== $content) $json['content'][] = $content;
             }
         }
         return $json;
@@ -856,30 +950,29 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Library xmlns="http://hl7.org/fhir"></Library>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
         if (0 < count($this->identifier)) {
             foreach($this->identifier as $identifier) {
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->usage) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
-        if (null !== $this->approvalDate) $this->approvalDate->xmlSerialize(true, $sxe->addChild('approvalDate'));
-        if (null !== $this->lastReviewDate) $this->lastReviewDate->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
-        if (null !== $this->effectivePeriod) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->usage)) $this->usage->xmlSerialize(true, $sxe->addChild('usage'));
+        if (isset($this->approvalDate)) $this->approvalDate->xmlSerialize(true, $sxe->addChild('approvalDate'));
+        if (isset($this->lastReviewDate)) $this->lastReviewDate->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
+        if (isset($this->effectivePeriod)) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -905,7 +998,7 @@ class FHIRLibrary extends FHIRDomainResource implements \JsonSerializable
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->copyright)) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
         if (0 < count($this->relatedArtifact)) {
             foreach($this->relatedArtifact as $relatedArtifact) {
                 $relatedArtifact->xmlSerialize(true, $sxe->addChild('relatedArtifact'));

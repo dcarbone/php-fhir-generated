@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -75,7 +75,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
     public $system = null;
 
     /**
-     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $version = null;
@@ -107,8 +107,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * The identification of the code system that defines the meaning of the symbol in the code.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSystem()
-    {
+    public function getSystem() {
         return $this->system;
     }
 
@@ -117,28 +116,25 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $system
      * @return $this
      */
-    public function setSystem($system)
-    {
+    public function setSystem($system) {
         $this->system = $system;
         return $this;
     }
 
     /**
-     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
     /**
-     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -147,8 +143,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -157,8 +152,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -167,8 +161,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * A representation of the meaning of the code in the system, following the rules of the system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDisplay()
-    {
+    public function getDisplay() {
         return $this->display;
     }
 
@@ -177,8 +170,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
      * @return $this
      */
-    public function setDisplay($display)
-    {
+    public function setDisplay($display) {
         $this->display = $display;
         return $this;
     }
@@ -187,8 +179,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getUserSelected()
-    {
+    public function getUserSelected() {
         return $this->userSelected;
     }
 
@@ -197,8 +188,7 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $userSelected
      * @return $this
      */
-    public function setUserSelected($userSelected)
-    {
+    public function setUserSelected($userSelected) {
         $this->userSelected = $userSelected;
         return $this;
     }
@@ -206,30 +196,53 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['display'])) {
+                $this->setDisplay($data['display']);
+            }
+            if (isset($data['userSelected'])) {
+                $this->setUserSelected($data['userSelected']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = json_encode($this->system);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->display) $json['display'] = json_encode($this->display);
-        if (null !== $this->userSelected) $json['userSelected'] = json_encode($this->userSelected);
+        if (isset($this->system)) $json['system'] = $this->system;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->display)) $json['display'] = $this->display;
+        if (isset($this->userSelected)) $json['userSelected'] = $this->userSelected;
         return $json;
     }
 
@@ -238,15 +251,14 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Coding xmlns="http://hl7.org/fhir"></Coding>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
-        if (null !== $this->userSelected) $this->userSelected->xmlSerialize(true, $sxe->addChild('userSelected'));
+        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->display)) $this->display->xmlSerialize(true, $sxe->addChild('display'));
+        if (isset($this->userSelected)) $this->userSelected->xmlSerialize(true, $sxe->addChild('userSelected'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

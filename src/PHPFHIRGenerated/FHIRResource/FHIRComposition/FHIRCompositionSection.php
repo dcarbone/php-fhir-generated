@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
+ * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
  */
 class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -101,7 +101,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * A reference to the actual resource from which the narrative in the section is derived.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $entry = array();
+    public $entry = [];
 
     /**
      * If the section is empty, why the list is empty. An empty section typically has some text explaining the empty reason.
@@ -113,7 +113,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * A nested sub-section within this section.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
-    public $section = array();
+    public $section = [];
 
     /**
      * @var string
@@ -124,8 +124,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * The label for this particular section.  This will be part of the rendered content for the document, and is often used to build a table of contents.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -134,8 +133,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -144,8 +142,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * A code identifying the kind of content contained within the section. This must be consistent with the section title.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -154,8 +151,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -164,8 +160,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * A human-readable narrative that contains the attested content of the section, used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRNarrative
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -174,8 +169,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRNarrative $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -184,8 +178,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * How the entry list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRListMode
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -194,8 +187,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRListMode $mode
      * @return $this
      */
-    public function setMode($mode)
-    {
+    public function setMode($mode) {
         $this->mode = $mode;
         return $this;
     }
@@ -204,8 +196,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * Specifies the order applied to the items in the section entries.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getOrderedBy()
-    {
+    public function getOrderedBy() {
         return $this->orderedBy;
     }
 
@@ -214,8 +205,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $orderedBy
      * @return $this
      */
-    public function setOrderedBy($orderedBy)
-    {
+    public function setOrderedBy($orderedBy) {
         $this->orderedBy = $orderedBy;
         return $this;
     }
@@ -224,8 +214,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * A reference to the actual resource from which the narrative in the section is derived.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getEntry()
-    {
+    public function getEntry() {
         return $this->entry;
     }
 
@@ -234,8 +223,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $entry
      * @return $this
      */
-    public function addEntry($entry)
-    {
+    public function addEntry($entry) {
         $this->entry[] = $entry;
         return $this;
     }
@@ -244,8 +232,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * If the section is empty, why the list is empty. An empty section typically has some text explaining the empty reason.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getEmptyReason()
-    {
+    public function getEmptyReason() {
         return $this->emptyReason;
     }
 
@@ -254,8 +241,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $emptyReason
      * @return $this
      */
-    public function setEmptyReason($emptyReason)
-    {
+    public function setEmptyReason($emptyReason) {
         $this->emptyReason = $emptyReason;
         return $this;
     }
@@ -264,8 +250,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * A nested sub-section within this section.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection[]
      */
-    public function getSection()
-    {
+    public function getSection() {
         return $this->section;
     }
 
@@ -274,8 +259,7 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRComposition\FHIRCompositionSection $section
      * @return $this
      */
-    public function addSection($section)
-    {
+    public function addSection($section) {
         $this->section[] = $section;
         return $this;
     }
@@ -283,41 +267,85 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+            if (isset($data['mode'])) {
+                $this->setMode($data['mode']);
+            }
+            if (isset($data['orderedBy'])) {
+                $this->setOrderedBy($data['orderedBy']);
+            }
+            if (isset($data['entry'])) {
+                if (is_array($data['entry'])) {
+                    foreach($data['entry'] as $d) {
+                        $this->addEntry($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"entry" must be array of objects or null, '.gettype($data['entry']).' seen.');
+                }
+            }
+            if (isset($data['emptyReason'])) {
+                $this->setEmptyReason($data['emptyReason']);
+            }
+            if (isset($data['section'])) {
+                if (is_array($data['section'])) {
+                    foreach($data['section'] as $d) {
+                        $this->addSection($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"section" must be array of objects or null, '.gettype($data['section']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
-        if (null !== $this->orderedBy) $json['orderedBy'] = json_encode($this->orderedBy);
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->text)) $json['text'] = $this->text;
+        if (isset($this->mode)) $json['mode'] = $this->mode;
+        if (isset($this->orderedBy)) $json['orderedBy'] = $this->orderedBy;
         if (0 < count($this->entry)) {
             $json['entry'] = [];
             foreach($this->entry as $entry) {
-                $json['entry'][] = json_encode($entry);
+                if (null !== $entry) $json['entry'][] = $entry;
             }
         }
-        if (null !== $this->emptyReason) $json['emptyReason'] = json_encode($this->emptyReason);
+        if (isset($this->emptyReason)) $json['emptyReason'] = $this->emptyReason;
         if (0 < count($this->section)) {
             $json['section'] = [];
             foreach($this->section as $section) {
-                $json['section'][] = json_encode($section);
+                if (null !== $section) $json['section'][] = $section;
             }
         }
         return $json;
@@ -328,21 +356,20 @@ class FHIRCompositionSection extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CompositionSection xmlns="http://hl7.org/fhir"></CompositionSection>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
-        if (null !== $this->orderedBy) $this->orderedBy->xmlSerialize(true, $sxe->addChild('orderedBy'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->mode)) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (isset($this->orderedBy)) $this->orderedBy->xmlSerialize(true, $sxe->addChild('orderedBy'));
         if (0 < count($this->entry)) {
             foreach($this->entry as $entry) {
                 $entry->xmlSerialize(true, $sxe->addChild('entry'));
             }
         }
-        if (null !== $this->emptyReason) $this->emptyReason->xmlSerialize(true, $sxe->addChild('emptyReason'));
+        if (isset($this->emptyReason)) $this->emptyReason->xmlSerialize(true, $sxe->addChild('emptyReason'));
         if (0 < count($this->section)) {
             foreach($this->section as $section) {
                 $section->xmlSerialize(true, $sxe->addChild('section'));

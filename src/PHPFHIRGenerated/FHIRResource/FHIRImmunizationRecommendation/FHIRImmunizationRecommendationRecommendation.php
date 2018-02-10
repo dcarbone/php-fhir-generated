@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,21 +63,15 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A patient's point-in-time immunization and recommendation (i.e. forecasting a patient's immunization eligibility according to a published schedule) with optional supporting justification.
+ * A patient's point-in-time set of recommendations (i.e. forecasting) according to a published schedule with optional supporting justification.
  */
 class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The date the immunization recommendation was created.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Vaccine(s) or vaccine group that pertain to the recommendation.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $date = null;
-
-    /**
-     * Vaccine that pertains to the recommendation.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $vaccineCode = null;
+    public $vaccineCode = [];
 
     /**
      * The targeted disease for the recommendation.
@@ -86,40 +80,64 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     public $targetDisease = null;
 
     /**
-     * The next recommended dose number (e.g. dose 2 is the next recommended dose).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * Vaccine(s) which should not be used to fulfill the recommendation.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $doseNumber = null;
+    public $contraindicatedVaccineCode = [];
 
     /**
-     * Vaccine administration status.
+     * Indicates the patient status with respect to the path to immunity for the target disease.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $forecastStatus = null;
 
     /**
+     * The reason for the assigned forecast status.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $forecastReason = [];
+
+    /**
      * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
      */
-    public $dateCriterion = array();
+    public $dateCriterion = [];
 
     /**
-     * Contains information about the protocol under which the vaccine was administered.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
+     * Contains the description about the protocol under which the vaccine was administered.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $protocol = null;
+    public $description = null;
 
     /**
-     * Immunization event history that supports the status and recommendation.
+     * One possible path to achieve presumed immunity against a disease - within the context of an authority.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $series = null;
+
+    /**
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next recommended dose).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     */
+    public $doseNumber = null;
+
+    /**
+     * The recommended number of doses to achieve immunity.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     */
+    public $seriesDoses = null;
+
+    /**
+     * Immunization event history and/or evaluation that supports the status and recommendation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingImmunization = array();
+    public $supportingImmunization = [];
 
     /**
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingPatientInformation = array();
+    public $supportingPatientInformation = [];
 
     /**
      * @var string
@@ -127,42 +145,20 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     private $_fhirElementName = 'ImmunizationRecommendation.Recommendation';
 
     /**
-     * The date the immunization recommendation was created.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * Vaccine(s) or vaccine group that pertain to the recommendation.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * The date the immunization recommendation was created.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
-     * Vaccine that pertains to the recommendation.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getVaccineCode()
-    {
+    public function getVaccineCode() {
         return $this->vaccineCode;
     }
 
     /**
-     * Vaccine that pertains to the recommendation.
+     * Vaccine(s) or vaccine group that pertain to the recommendation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $vaccineCode
      * @return $this
      */
-    public function setVaccineCode($vaccineCode)
-    {
-        $this->vaccineCode = $vaccineCode;
+    public function addVaccineCode($vaccineCode) {
+        $this->vaccineCode[] = $vaccineCode;
         return $this;
     }
 
@@ -170,8 +166,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
      * The targeted disease for the recommendation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getTargetDisease()
-    {
+    public function getTargetDisease() {
         return $this->targetDisease;
     }
 
@@ -180,49 +175,62 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $targetDisease
      * @return $this
      */
-    public function setTargetDisease($targetDisease)
-    {
+    public function setTargetDisease($targetDisease) {
         $this->targetDisease = $targetDisease;
         return $this;
     }
 
     /**
-     * The next recommended dose number (e.g. dose 2 is the next recommended dose).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * Vaccine(s) which should not be used to fulfill the recommendation.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getDoseNumber()
-    {
-        return $this->doseNumber;
+    public function getContraindicatedVaccineCode() {
+        return $this->contraindicatedVaccineCode;
     }
 
     /**
-     * The next recommended dose number (e.g. dose 2 is the next recommended dose).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $doseNumber
+     * Vaccine(s) which should not be used to fulfill the recommendation.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $contraindicatedVaccineCode
      * @return $this
      */
-    public function setDoseNumber($doseNumber)
-    {
-        $this->doseNumber = $doseNumber;
+    public function addContraindicatedVaccineCode($contraindicatedVaccineCode) {
+        $this->contraindicatedVaccineCode[] = $contraindicatedVaccineCode;
         return $this;
     }
 
     /**
-     * Vaccine administration status.
+     * Indicates the patient status with respect to the path to immunity for the target disease.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getForecastStatus()
-    {
+    public function getForecastStatus() {
         return $this->forecastStatus;
     }
 
     /**
-     * Vaccine administration status.
+     * Indicates the patient status with respect to the path to immunity for the target disease.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $forecastStatus
      * @return $this
      */
-    public function setForecastStatus($forecastStatus)
-    {
+    public function setForecastStatus($forecastStatus) {
         $this->forecastStatus = $forecastStatus;
+        return $this;
+    }
+
+    /**
+     * The reason for the assigned forecast status.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getForecastReason() {
+        return $this->forecastReason;
+    }
+
+    /**
+     * The reason for the assigned forecast status.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $forecastReason
+     * @return $this
+     */
+    public function addForecastReason($forecastReason) {
+        $this->forecastReason[] = $forecastReason;
         return $this;
     }
 
@@ -230,8 +238,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
      * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
      */
-    public function getDateCriterion()
-    {
+    public function getDateCriterion() {
         return $this->dateCriterion;
     }
 
@@ -240,48 +247,97 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion $dateCriterion
      * @return $this
      */
-    public function addDateCriterion($dateCriterion)
-    {
+    public function addDateCriterion($dateCriterion) {
         $this->dateCriterion[] = $dateCriterion;
         return $this;
     }
 
     /**
-     * Contains information about the protocol under which the vaccine was administered.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol
+     * Contains the description about the protocol under which the vaccine was administered.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getProtocol()
-    {
-        return $this->protocol;
+    public function getDescription() {
+        return $this->description;
     }
 
     /**
-     * Contains information about the protocol under which the vaccine was administered.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationProtocol $protocol
+     * Contains the description about the protocol under which the vaccine was administered.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setProtocol($protocol)
-    {
-        $this->protocol = $protocol;
+    public function setDescription($description) {
+        $this->description = $description;
         return $this;
     }
 
     /**
-     * Immunization event history that supports the status and recommendation.
+     * One possible path to achieve presumed immunity against a disease - within the context of an authority.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getSeries() {
+        return $this->series;
+    }
+
+    /**
+     * One possible path to achieve presumed immunity against a disease - within the context of an authority.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $series
+     * @return $this
+     */
+    public function setSeries($series) {
+        $this->series = $series;
+        return $this;
+    }
+
+    /**
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next recommended dose).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     */
+    public function getDoseNumber() {
+        return $this->doseNumber;
+    }
+
+    /**
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next recommended dose).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $doseNumber
+     * @return $this
+     */
+    public function setDoseNumber($doseNumber) {
+        $this->doseNumber = $doseNumber;
+        return $this;
+    }
+
+    /**
+     * The recommended number of doses to achieve immunity.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     */
+    public function getSeriesDoses() {
+        return $this->seriesDoses;
+    }
+
+    /**
+     * The recommended number of doses to achieve immunity.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $seriesDoses
+     * @return $this
+     */
+    public function setSeriesDoses($seriesDoses) {
+        $this->seriesDoses = $seriesDoses;
+        return $this;
+    }
+
+    /**
+     * Immunization event history and/or evaluation that supports the status and recommendation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupportingImmunization()
-    {
+    public function getSupportingImmunization() {
         return $this->supportingImmunization;
     }
 
     /**
-     * Immunization event history that supports the status and recommendation.
+     * Immunization event history and/or evaluation that supports the status and recommendation.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingImmunization
      * @return $this
      */
-    public function addSupportingImmunization($supportingImmunization)
-    {
+    public function addSupportingImmunization($supportingImmunization) {
         $this->supportingImmunization[] = $supportingImmunization;
         return $this;
     }
@@ -290,8 +346,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupportingPatientInformation()
-    {
+    public function getSupportingPatientInformation() {
         return $this->supportingPatientInformation;
     }
 
@@ -300,8 +355,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingPatientInformation
      * @return $this
      */
-    public function addSupportingPatientInformation($supportingPatientInformation)
-    {
+    public function addSupportingPatientInformation($supportingPatientInformation) {
         $this->supportingPatientInformation[] = $supportingPatientInformation;
         return $this;
     }
@@ -309,47 +363,145 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['vaccineCode'])) {
+                if (is_array($data['vaccineCode'])) {
+                    foreach($data['vaccineCode'] as $d) {
+                        $this->addVaccineCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"vaccineCode" must be array of objects or null, '.gettype($data['vaccineCode']).' seen.');
+                }
+            }
+            if (isset($data['targetDisease'])) {
+                $this->setTargetDisease($data['targetDisease']);
+            }
+            if (isset($data['contraindicatedVaccineCode'])) {
+                if (is_array($data['contraindicatedVaccineCode'])) {
+                    foreach($data['contraindicatedVaccineCode'] as $d) {
+                        $this->addContraindicatedVaccineCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contraindicatedVaccineCode" must be array of objects or null, '.gettype($data['contraindicatedVaccineCode']).' seen.');
+                }
+            }
+            if (isset($data['forecastStatus'])) {
+                $this->setForecastStatus($data['forecastStatus']);
+            }
+            if (isset($data['forecastReason'])) {
+                if (is_array($data['forecastReason'])) {
+                    foreach($data['forecastReason'] as $d) {
+                        $this->addForecastReason($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"forecastReason" must be array of objects or null, '.gettype($data['forecastReason']).' seen.');
+                }
+            }
+            if (isset($data['dateCriterion'])) {
+                if (is_array($data['dateCriterion'])) {
+                    foreach($data['dateCriterion'] as $d) {
+                        $this->addDateCriterion($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dateCriterion" must be array of objects or null, '.gettype($data['dateCriterion']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['series'])) {
+                $this->setSeries($data['series']);
+            }
+            if (isset($data['doseNumber'])) {
+                $this->setDoseNumber($data['doseNumber']);
+            }
+            if (isset($data['seriesDoses'])) {
+                $this->setSeriesDoses($data['seriesDoses']);
+            }
+            if (isset($data['supportingImmunization'])) {
+                if (is_array($data['supportingImmunization'])) {
+                    foreach($data['supportingImmunization'] as $d) {
+                        $this->addSupportingImmunization($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportingImmunization" must be array of objects or null, '.gettype($data['supportingImmunization']).' seen.');
+                }
+            }
+            if (isset($data['supportingPatientInformation'])) {
+                if (is_array($data['supportingPatientInformation'])) {
+                    foreach($data['supportingPatientInformation'] as $d) {
+                        $this->addSupportingPatientInformation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportingPatientInformation" must be array of objects or null, '.gettype($data['supportingPatientInformation']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->vaccineCode) $json['vaccineCode'] = json_encode($this->vaccineCode);
-        if (null !== $this->targetDisease) $json['targetDisease'] = json_encode($this->targetDisease);
-        if (null !== $this->doseNumber) $json['doseNumber'] = json_encode($this->doseNumber);
-        if (null !== $this->forecastStatus) $json['forecastStatus'] = json_encode($this->forecastStatus);
+        if (0 < count($this->vaccineCode)) {
+            $json['vaccineCode'] = [];
+            foreach($this->vaccineCode as $vaccineCode) {
+                if (null !== $vaccineCode) $json['vaccineCode'][] = $vaccineCode;
+            }
+        }
+        if (isset($this->targetDisease)) $json['targetDisease'] = $this->targetDisease;
+        if (0 < count($this->contraindicatedVaccineCode)) {
+            $json['contraindicatedVaccineCode'] = [];
+            foreach($this->contraindicatedVaccineCode as $contraindicatedVaccineCode) {
+                if (null !== $contraindicatedVaccineCode) $json['contraindicatedVaccineCode'][] = $contraindicatedVaccineCode;
+            }
+        }
+        if (isset($this->forecastStatus)) $json['forecastStatus'] = $this->forecastStatus;
+        if (0 < count($this->forecastReason)) {
+            $json['forecastReason'] = [];
+            foreach($this->forecastReason as $forecastReason) {
+                if (null !== $forecastReason) $json['forecastReason'][] = $forecastReason;
+            }
+        }
         if (0 < count($this->dateCriterion)) {
             $json['dateCriterion'] = [];
             foreach($this->dateCriterion as $dateCriterion) {
-                $json['dateCriterion'][] = json_encode($dateCriterion);
+                if (null !== $dateCriterion) $json['dateCriterion'][] = $dateCriterion;
             }
         }
-        if (null !== $this->protocol) $json['protocol'] = json_encode($this->protocol);
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->series)) $json['series'] = $this->series;
+        if (isset($this->doseNumber)) $json['doseNumber'] = $this->doseNumber;
+        if (isset($this->seriesDoses)) $json['seriesDoses'] = $this->seriesDoses;
         if (0 < count($this->supportingImmunization)) {
             $json['supportingImmunization'] = [];
             foreach($this->supportingImmunization as $supportingImmunization) {
-                $json['supportingImmunization'][] = json_encode($supportingImmunization);
+                if (null !== $supportingImmunization) $json['supportingImmunization'][] = $supportingImmunization;
             }
         }
         if (0 < count($this->supportingPatientInformation)) {
             $json['supportingPatientInformation'] = [];
             foreach($this->supportingPatientInformation as $supportingPatientInformation) {
-                $json['supportingPatientInformation'][] = json_encode($supportingPatientInformation);
+                if (null !== $supportingPatientInformation) $json['supportingPatientInformation'][] = $supportingPatientInformation;
             }
         }
         return $json;
@@ -360,21 +512,35 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement i
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImmunizationRecommendationRecommendation xmlns="http://hl7.org/fhir"></ImmunizationRecommendationRecommendation>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->vaccineCode) $this->vaccineCode->xmlSerialize(true, $sxe->addChild('vaccineCode'));
-        if (null !== $this->targetDisease) $this->targetDisease->xmlSerialize(true, $sxe->addChild('targetDisease'));
-        if (null !== $this->doseNumber) $this->doseNumber->xmlSerialize(true, $sxe->addChild('doseNumber'));
-        if (null !== $this->forecastStatus) $this->forecastStatus->xmlSerialize(true, $sxe->addChild('forecastStatus'));
+        if (0 < count($this->vaccineCode)) {
+            foreach($this->vaccineCode as $vaccineCode) {
+                $vaccineCode->xmlSerialize(true, $sxe->addChild('vaccineCode'));
+            }
+        }
+        if (isset($this->targetDisease)) $this->targetDisease->xmlSerialize(true, $sxe->addChild('targetDisease'));
+        if (0 < count($this->contraindicatedVaccineCode)) {
+            foreach($this->contraindicatedVaccineCode as $contraindicatedVaccineCode) {
+                $contraindicatedVaccineCode->xmlSerialize(true, $sxe->addChild('contraindicatedVaccineCode'));
+            }
+        }
+        if (isset($this->forecastStatus)) $this->forecastStatus->xmlSerialize(true, $sxe->addChild('forecastStatus'));
+        if (0 < count($this->forecastReason)) {
+            foreach($this->forecastReason as $forecastReason) {
+                $forecastReason->xmlSerialize(true, $sxe->addChild('forecastReason'));
+            }
+        }
         if (0 < count($this->dateCriterion)) {
             foreach($this->dateCriterion as $dateCriterion) {
                 $dateCriterion->xmlSerialize(true, $sxe->addChild('dateCriterion'));
             }
         }
-        if (null !== $this->protocol) $this->protocol->xmlSerialize(true, $sxe->addChild('protocol'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->series)) $this->series->xmlSerialize(true, $sxe->addChild('series'));
+        if (isset($this->doseNumber)) $this->doseNumber->xmlSerialize(true, $sxe->addChild('doseNumber'));
+        if (isset($this->seriesDoses)) $this->seriesDoses->xmlSerialize(true, $sxe->addChild('seriesDoses'));
         if (0 < count($this->supportingImmunization)) {
             foreach($this->supportingImmunization as $supportingImmunization) {
                 $supportingImmunization->xmlSerialize(true, $sxe->addChild('supportingImmunization'));

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -94,8 +94,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * A code that identifies a property defined in the code system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getProperty()
-    {
+    public function getProperty() {
         return $this->property;
     }
 
@@ -104,8 +103,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $property
      * @return $this
      */
-    public function setProperty($property)
-    {
+    public function setProperty($property) {
         $this->property = $property;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * The kind of operation to perform as a part of the filter criteria.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator
      */
-    public function getOp()
-    {
+    public function getOp() {
         return $this->op;
     }
 
@@ -124,8 +121,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator $op
      * @return $this
      */
-    public function setOp($op)
-    {
+    public function setOp($op) {
         $this->op = $op;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * The match value may be either a code defined by the system, or a string value, which is a regex match on the literal string of the property value when the operation is 'regex', or one of the values (true and false), when the operation is 'exists'.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -144,8 +139,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['property'])) {
+                $this->setProperty($data['property']);
+            }
+            if (isset($data['op'])) {
+                $this->setOp($data['op']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->property) $json['property'] = json_encode($this->property);
-        if (null !== $this->op) $json['op'] = json_encode($this->op);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (isset($this->property)) $json['property'] = $this->property;
+        if (isset($this->op)) $json['op'] = $this->op;
+        if (isset($this->value)) $json['value'] = $this->value;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ValueSetFilter xmlns="http://hl7.org/fhir"></ValueSetFilter>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->property) $this->property->xmlSerialize(true, $sxe->addChild('property'));
-        if (null !== $this->op) $this->op->xmlSerialize(true, $sxe->addChild('op'));
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->property)) $this->property->xmlSerialize(true, $sxe->addChild('property'));
+        if (isset($this->op)) $this->op->xmlSerialize(true, $sxe->addChild('op'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

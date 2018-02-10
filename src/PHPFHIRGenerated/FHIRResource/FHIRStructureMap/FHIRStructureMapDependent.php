@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,7 +77,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * Variable to pass to the rule or group.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $variable = array();
+    public $variable = [];
 
     /**
      * @var string
@@ -88,8 +88,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * Name of a rule or group to apply.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -98,8 +97,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * Variable to pass to the rule or group.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getVariable()
-    {
+    public function getVariable() {
         return $this->variable;
     }
 
@@ -118,8 +115,7 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $variable
      * @return $this
      */
-    public function addVariable($variable)
-    {
+    public function addVariable($variable) {
         $this->variable[] = $variable;
         return $this;
     }
@@ -127,30 +123,50 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['variable'])) {
+                if (is_array($data['variable'])) {
+                    foreach($data['variable'] as $d) {
+                        $this->addVariable($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"variable" must be array of objects or null, '.gettype($data['variable']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (isset($this->name)) $json['name'] = $this->name;
         if (0 < count($this->variable)) {
             $json['variable'] = [];
             foreach($this->variable as $variable) {
-                $json['variable'][] = json_encode($variable);
+                if (null !== $variable) $json['variable'][] = $variable;
             }
         }
         return $json;
@@ -161,11 +177,10 @@ class FHIRStructureMapDependent extends FHIRBackboneElement implements \JsonSeri
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<StructureMapDependent xmlns="http://hl7.org/fhir"></StructureMapDependent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
         if (0 < count($this->variable)) {
             foreach($this->variable as $variable) {
                 $variable->xmlSerialize(true, $sxe->addChild('variable'));

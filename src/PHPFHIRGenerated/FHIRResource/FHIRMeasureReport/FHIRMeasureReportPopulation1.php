@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,12 +68,6 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The identifier of the population being reported, as defined by the population element of the measure.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public $identifier = null;
-
-    /**
      * The type of the population.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
@@ -86,10 +80,10 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
     public $count = null;
 
     /**
-     * This element refers to a List of patient level MeasureReport resources, one for each patient in this population in this stratum.
+     * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public $patients = null;
+    public $subjects = null;
 
     /**
      * @var string
@@ -97,31 +91,10 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
     private $_fhirElementName = 'MeasureReport.Population1';
 
     /**
-     * The identifier of the population being reported, as defined by the population element of the measure.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * The identifier of the population being reported, as defined by the population element of the measure.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
-     * @return $this
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->identifier = $identifier;
-        return $this;
-    }
-
-    /**
      * The type of the population.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -130,8 +103,7 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -140,8 +112,7 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
      * The number of members of the population in this stratum.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getCount()
-    {
+    public function getCount() {
         return $this->count;
     }
 
@@ -150,58 +121,71 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $count
      * @return $this
      */
-    public function setCount($count)
-    {
+    public function setCount($count) {
         $this->count = $count;
         return $this;
     }
 
     /**
-     * This element refers to a List of patient level MeasureReport resources, one for each patient in this population in this stratum.
+     * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatients()
-    {
-        return $this->patients;
+    public function getSubjects() {
+        return $this->subjects;
     }
 
     /**
-     * This element refers to a List of patient level MeasureReport resources, one for each patient in this population in this stratum.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patients
+     * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subjects
      * @return $this
      */
-    public function setPatients($patients)
-    {
-        $this->patients = $patients;
+    public function setSubjects($subjects) {
+        $this->subjects = $subjects;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['count'])) {
+                $this->setCount($data['count']);
+            }
+            if (isset($data['subjects'])) {
+                $this->setSubjects($data['subjects']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->count) $json['count'] = json_encode($this->count);
-        if (null !== $this->patients) $json['patients'] = json_encode($this->patients);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->count)) $json['count'] = $this->count;
+        if (isset($this->subjects)) $json['subjects'] = $this->subjects;
         return $json;
     }
 
@@ -210,14 +194,12 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement implements \JsonS
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MeasureReportPopulation1 xmlns="http://hl7.org/fhir"></MeasureReportPopulation1>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->count) $this->count->xmlSerialize(true, $sxe->addChild('count'));
-        if (null !== $this->patients) $this->patients->xmlSerialize(true, $sxe->addChild('patients'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->count)) $this->count->xmlSerialize(true, $sxe->addChild('count'));
+        if (isset($this->subjects)) $this->subjects->xmlSerialize(true, $sxe->addChild('subjects'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

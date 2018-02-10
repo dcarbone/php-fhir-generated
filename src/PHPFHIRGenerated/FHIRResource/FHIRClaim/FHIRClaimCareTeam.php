@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -106,8 +106,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * Sequence of the careTeam which serves to order and provide a link.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getSequence()
-    {
+    public function getSequence() {
         return $this->sequence;
     }
 
@@ -116,8 +115,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
-    public function setSequence($sequence)
-    {
+    public function setSequence($sequence) {
         $this->sequence = $sequence;
         return $this;
     }
@@ -126,8 +124,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * Member of the team who provided the overall service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getProvider()
-    {
+    public function getProvider() {
         return $this->provider;
     }
 
@@ -136,8 +133,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $provider
      * @return $this
      */
-    public function setProvider($provider)
-    {
+    public function setProvider($provider) {
         $this->provider = $provider;
         return $this;
     }
@@ -146,8 +142,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * The party who is billing and responsible for the claimed good or service rendered to the patient.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getResponsible()
-    {
+    public function getResponsible() {
         return $this->responsible;
     }
 
@@ -156,8 +151,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $responsible
      * @return $this
      */
-    public function setResponsible($responsible)
-    {
+    public function setResponsible($responsible) {
         $this->responsible = $responsible;
         return $this;
     }
@@ -166,8 +160,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * The lead, assisting or supervising practitioner and their discipline if a multidisiplinary team.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -176,8 +169,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
-    public function setRole($role)
-    {
+    public function setRole($role) {
         $this->role = $role;
         return $this;
     }
@@ -186,8 +178,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * The qualification which is applicable for this service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getQualification()
-    {
+    public function getQualification() {
         return $this->qualification;
     }
 
@@ -196,8 +187,7 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $qualification
      * @return $this
      */
-    public function setQualification($qualification)
-    {
+    public function setQualification($qualification) {
         $this->qualification = $qualification;
         return $this;
     }
@@ -205,30 +195,53 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['sequence'])) {
+                $this->setSequence($data['sequence']);
+            }
+            if (isset($data['provider'])) {
+                $this->setProvider($data['provider']);
+            }
+            if (isset($data['responsible'])) {
+                $this->setResponsible($data['responsible']);
+            }
+            if (isset($data['role'])) {
+                $this->setRole($data['role']);
+            }
+            if (isset($data['qualification'])) {
+                $this->setQualification($data['qualification']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
-        if (null !== $this->responsible) $json['responsible'] = json_encode($this->responsible);
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->qualification) $json['qualification'] = json_encode($this->qualification);
+        if (isset($this->sequence)) $json['sequence'] = $this->sequence;
+        if (isset($this->provider)) $json['provider'] = $this->provider;
+        if (isset($this->responsible)) $json['responsible'] = $this->responsible;
+        if (isset($this->role)) $json['role'] = $this->role;
+        if (isset($this->qualification)) $json['qualification'] = $this->qualification;
         return $json;
     }
 
@@ -237,15 +250,14 @@ class FHIRClaimCareTeam extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimCareTeam xmlns="http://hl7.org/fhir"></ClaimCareTeam>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->provider) $this->provider->xmlSerialize(true, $sxe->addChild('provider'));
-        if (null !== $this->responsible) $this->responsible->xmlSerialize(true, $sxe->addChild('responsible'));
-        if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->qualification) $this->qualification->xmlSerialize(true, $sxe->addChild('qualification'));
+        if (isset($this->sequence)) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
+        if (isset($this->provider)) $this->provider->xmlSerialize(true, $sxe->addChild('provider'));
+        if (isset($this->responsible)) $this->responsible->xmlSerialize(true, $sxe->addChild('responsible'));
+        if (isset($this->role)) $this->role->xmlSerialize(true, $sxe->addChild('role'));
+        if (isset($this->qualification)) $this->qualification->xmlSerialize(true, $sxe->addChild('qualification'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,7 +72,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * Identifier for the List assigned for business purposes outside the context of FHIR.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * Indicates the current state of this list.
@@ -132,13 +132,13 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * Comments that apply to the overall list.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * Entries in this list.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRList\FHIRListEntry[]
      */
-    public $entry = array();
+    public $entry = [];
 
     /**
      * If the list is empty, why the list is empty.
@@ -155,8 +155,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * Identifier for the List assigned for business purposes outside the context of FHIR.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -165,8 +164,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -175,8 +173,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * Indicates the current state of this list.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRListStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -185,8 +182,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRListStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -195,8 +191,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * How this list was prepared - whether it is a working list that is suitable for being maintained on an ongoing basis, or if it represents a snapshot of a list of items from another source, or whether it is a prepared list where items may be marked as added, modified or deleted.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRListMode
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -205,8 +200,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRListMode $mode
      * @return $this
      */
-    public function setMode($mode)
-    {
+    public function setMode($mode) {
         $this->mode = $mode;
         return $this;
     }
@@ -215,8 +209,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * A label for the list assigned by the author.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -225,8 +218,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -235,8 +227,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * This code defines the purpose of the list - why it was created.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -245,8 +236,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -255,8 +245,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * The common subject (or patient) of the resources that are in the list, if there is one.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubject()
-    {
+    public function getSubject() {
         return $this->subject;
     }
 
@@ -265,8 +254,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setSubject($subject)
-    {
+    public function setSubject($subject) {
         $this->subject = $subject;
         return $this;
     }
@@ -275,8 +263,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * The encounter that is the context in which this list was created.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
-    {
+    public function getEncounter() {
         return $this->encounter;
     }
 
@@ -285,8 +272,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
      * @return $this
      */
-    public function setEncounter($encounter)
-    {
+    public function setEncounter($encounter) {
         $this->encounter = $encounter;
         return $this;
     }
@@ -295,8 +281,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * The date that the list was prepared.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -305,8 +290,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -315,8 +299,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * The entity responsible for deciding what the contents of the list were. Where the list was created by a human, this is the same as the author of the list.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSource()
-    {
+    public function getSource() {
         return $this->source;
     }
 
@@ -325,8 +308,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $source
      * @return $this
      */
-    public function setSource($source)
-    {
+    public function setSource($source) {
         $this->source = $source;
         return $this;
     }
@@ -335,8 +317,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * What order applies to the items in the list.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getOrderedBy()
-    {
+    public function getOrderedBy() {
         return $this->orderedBy;
     }
 
@@ -345,8 +326,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $orderedBy
      * @return $this
      */
-    public function setOrderedBy($orderedBy)
-    {
+    public function setOrderedBy($orderedBy) {
         $this->orderedBy = $orderedBy;
         return $this;
     }
@@ -355,8 +335,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * Comments that apply to the overall list.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -365,8 +344,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -375,8 +353,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * Entries in this list.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRList\FHIRListEntry[]
      */
-    public function getEntry()
-    {
+    public function getEntry() {
         return $this->entry;
     }
 
@@ -385,8 +362,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRList\FHIRListEntry $entry
      * @return $this
      */
-    public function addEntry($entry)
-    {
+    public function addEntry($entry) {
         $this->entry[] = $entry;
         return $this;
     }
@@ -395,8 +371,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * If the list is empty, why the list is empty.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getEmptyReason()
-    {
+    public function getEmptyReason() {
         return $this->emptyReason;
     }
 
@@ -405,8 +380,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $emptyReason
      * @return $this
      */
-    public function setEmptyReason($emptyReason)
-    {
+    public function setEmptyReason($emptyReason) {
         $this->emptyReason = $emptyReason;
         return $this;
     }
@@ -414,54 +388,119 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['mode'])) {
+                $this->setMode($data['mode']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['encounter'])) {
+                $this->setEncounter($data['encounter']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['source'])) {
+                $this->setSource($data['source']);
+            }
+            if (isset($data['orderedBy'])) {
+                $this->setOrderedBy($data['orderedBy']);
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+            if (isset($data['entry'])) {
+                if (is_array($data['entry'])) {
+                    foreach($data['entry'] as $d) {
+                        $this->addEntry($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"entry" must be array of objects or null, '.gettype($data['entry']).' seen.');
+                }
+            }
+            if (isset($data['emptyReason'])) {
+                $this->setEmptyReason($data['emptyReason']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->orderedBy) $json['orderedBy'] = json_encode($this->orderedBy);
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->mode)) $json['mode'] = $this->mode;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->subject)) $json['subject'] = $this->subject;
+        if (isset($this->encounter)) $json['encounter'] = $this->encounter;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->source)) $json['source'] = $this->source;
+        if (isset($this->orderedBy)) $json['orderedBy'] = $this->orderedBy;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                if (null !== $note) $json['note'][] = $note;
             }
         }
         if (0 < count($this->entry)) {
             $json['entry'] = [];
             foreach($this->entry as $entry) {
-                $json['entry'][] = json_encode($entry);
+                if (null !== $entry) $json['entry'][] = $entry;
             }
         }
-        if (null !== $this->emptyReason) $json['emptyReason'] = json_encode($this->emptyReason);
+        if (isset($this->emptyReason)) $json['emptyReason'] = $this->emptyReason;
         return $json;
     }
 
@@ -470,8 +509,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<List xmlns="http://hl7.org/fhir"></List>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -479,15 +517,15 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
-        if (null !== $this->orderedBy) $this->orderedBy->xmlSerialize(true, $sxe->addChild('orderedBy'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->mode)) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (isset($this->encounter)) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->source)) $this->source->xmlSerialize(true, $sxe->addChild('source'));
+        if (isset($this->orderedBy)) $this->orderedBy->xmlSerialize(true, $sxe->addChild('orderedBy'));
         if (0 < count($this->note)) {
             foreach($this->note as $note) {
                 $note->xmlSerialize(true, $sxe->addChild('note'));
@@ -498,7 +536,7 @@ class FHIRList extends FHIRDomainResource implements \JsonSerializable
                 $entry->xmlSerialize(true, $sxe->addChild('entry'));
             }
         }
-        if (null !== $this->emptyReason) $this->emptyReason->xmlSerialize(true, $sxe->addChild('emptyReason'));
+        if (isset($this->emptyReason)) $this->emptyReason->xmlSerialize(true, $sxe->addChild('emptyReason'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

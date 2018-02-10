@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -94,8 +94,7 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
      * The specific system for which to fix the version.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSystem()
-    {
+    public function getSystem() {
         return $this->system;
     }
 
@@ -104,8 +103,7 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $system
      * @return $this
      */
-    public function setSystem($system)
-    {
+    public function setSystem($system) {
         $this->system = $system;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
      * The version of the code system from which codes in the expansion should be included.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -124,8 +121,7 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
      * How to manage the intersection between a fixed version in a value set, and this fixed version of the system in the expansion profile.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSystemVersionProcessingMode
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -144,8 +139,7 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSystemVersionProcessingMode $mode
      * @return $this
      */
-    public function setMode($mode)
-    {
+    public function setMode($mode) {
         $this->mode = $mode;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['mode'])) {
+                $this->setMode($data['mode']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = json_encode($this->system);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
+        if (isset($this->system)) $json['system'] = $this->system;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->mode)) $json['mode'] = $this->mode;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRExpansionProfileFixedVersion extends FHIRBackboneElement implements \J
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ExpansionProfileFixedVersion xmlns="http://hl7.org/fhir"></ExpansionProfileFixedVersion>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->mode)) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

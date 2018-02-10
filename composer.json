@@ -10,7 +10,6 @@
       "email": "daniel.p.carbone@gmail.com"
     }
   ],
-
   "keywords": [
     "php",
     "fhir",
@@ -18,11 +17,9 @@
     "hl7",
     "php-fhir"
   ],
-
   "require": {
     "php": ">=5.4.0"
   },
-
   "autoload": {
     "psr-0": {
       "PHPFHIRGenerated\\": "./src"

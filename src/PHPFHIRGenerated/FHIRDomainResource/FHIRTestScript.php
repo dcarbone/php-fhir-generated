@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,13 +63,13 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this test script is (or will be) published. The URL SHOULD include the major version of the test script. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this test script is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -126,7 +126,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A free text natural language description of the test script from a consumer's perspective.
@@ -138,13 +138,13 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate test script instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the test script is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Explaination of why this test script is needed and why it has been designed as it has.
@@ -162,13 +162,13 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * An abstract server used in operations within this test script in the origin element.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin[]
      */
-    public $origin = array();
+    public $origin = [];
 
     /**
      * An abstract server used in operations within this test script in the destination element.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptDestination[]
      */
-    public $destination = array();
+    public $destination = [];
 
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
@@ -180,31 +180,31 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptFixture[]
      */
-    public $fixture = array();
+    public $fixture = [];
 
     /**
      * Reference to the profile to be used for validation.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $profile = array();
+    public $profile = [];
 
     /**
      * Variable is set based either on element value in response body or on header field value in the response headers.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptVariable[]
      */
-    public $variable = array();
+    public $variable = [];
 
     /**
      * Assert rule to be used in one or more asserts within the test script.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRule[]
      */
-    public $rule = array();
+    public $rule = [];
 
     /**
      * Contains one or more rules.  Offers a way to group rules so assertions could reference the group of rules and have them all applied.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRuleset[]
      */
-    public $ruleset = array();
+    public $ruleset = [];
 
     /**
      * A series of required setup operations before tests are executed.
@@ -216,7 +216,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A test in this script.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptTest[]
      */
-    public $test = array();
+    public $test = [];
 
     /**
      * A series of operations required to clean up after the all the tests are executed (successfully or otherwise).
@@ -230,21 +230,19 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'TestScript';
 
     /**
-     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this test script is (or will be) published. The URL SHOULD include the major version of the test script. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this test script is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this test script is (or will be) published. The URL SHOULD include the major version of the test script. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this test script is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -253,8 +251,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A formal identifier that is used to identify this test script when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -263,8 +260,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -273,8 +269,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * The identifier that is used to identify this version of the test script when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the test script author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -283,8 +278,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -293,8 +287,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A natural language name identifying the test script. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -303,8 +296,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -313,8 +305,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A short, descriptive, user-friendly title for the test script.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -323,8 +314,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -333,8 +323,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * The status of this test script. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -343,8 +332,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -353,8 +341,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -363,8 +350,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -373,8 +359,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * The date  (and optionally time) when the test script was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -383,8 +368,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -393,8 +377,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * The name of the individual or organization that published the test script.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -403,8 +386,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -413,8 +395,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -423,8 +404,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -433,8 +413,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A free text natural language description of the test script from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -443,8 +422,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -453,8 +431,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate test script instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -463,8 +440,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -473,8 +449,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A legal or geographic region in which the test script is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -483,8 +458,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -493,8 +467,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Explaination of why this test script is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -503,8 +476,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -513,8 +485,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getCopyright()
-    {
+    public function getCopyright() {
         return $this->copyright;
     }
 
@@ -523,8 +494,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
-    public function setCopyright($copyright)
-    {
+    public function setCopyright($copyright) {
         $this->copyright = $copyright;
         return $this;
     }
@@ -533,8 +503,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * An abstract server used in operations within this test script in the origin element.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin[]
      */
-    public function getOrigin()
-    {
+    public function getOrigin() {
         return $this->origin;
     }
 
@@ -543,8 +512,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptOrigin $origin
      * @return $this
      */
-    public function addOrigin($origin)
-    {
+    public function addOrigin($origin) {
         $this->origin[] = $origin;
         return $this;
     }
@@ -553,8 +521,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * An abstract server used in operations within this test script in the destination element.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptDestination[]
      */
-    public function getDestination()
-    {
+    public function getDestination() {
         return $this->destination;
     }
 
@@ -563,8 +530,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptDestination $destination
      * @return $this
      */
-    public function addDestination($destination)
-    {
+    public function addDestination($destination) {
         $this->destination[] = $destination;
         return $this;
     }
@@ -573,8 +539,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata
      */
-    public function getMetadata()
-    {
+    public function getMetadata() {
         return $this->metadata;
     }
 
@@ -583,8 +548,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptMetadata $metadata
      * @return $this
      */
-    public function setMetadata($metadata)
-    {
+    public function setMetadata($metadata) {
         $this->metadata = $metadata;
         return $this;
     }
@@ -593,8 +557,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptFixture[]
      */
-    public function getFixture()
-    {
+    public function getFixture() {
         return $this->fixture;
     }
 
@@ -603,8 +566,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptFixture $fixture
      * @return $this
      */
-    public function addFixture($fixture)
-    {
+    public function addFixture($fixture) {
         $this->fixture[] = $fixture;
         return $this;
     }
@@ -613,8 +575,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Reference to the profile to be used for validation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -623,8 +584,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
      * @return $this
      */
-    public function addProfile($profile)
-    {
+    public function addProfile($profile) {
         $this->profile[] = $profile;
         return $this;
     }
@@ -633,8 +593,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Variable is set based either on element value in response body or on header field value in the response headers.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptVariable[]
      */
-    public function getVariable()
-    {
+    public function getVariable() {
         return $this->variable;
     }
 
@@ -643,8 +602,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptVariable $variable
      * @return $this
      */
-    public function addVariable($variable)
-    {
+    public function addVariable($variable) {
         $this->variable[] = $variable;
         return $this;
     }
@@ -653,8 +611,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Assert rule to be used in one or more asserts within the test script.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRule[]
      */
-    public function getRule()
-    {
+    public function getRule() {
         return $this->rule;
     }
 
@@ -663,8 +620,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRule $rule
      * @return $this
      */
-    public function addRule($rule)
-    {
+    public function addRule($rule) {
         $this->rule[] = $rule;
         return $this;
     }
@@ -673,8 +629,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * Contains one or more rules.  Offers a way to group rules so assertions could reference the group of rules and have them all applied.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRuleset[]
      */
-    public function getRuleset()
-    {
+    public function getRuleset() {
         return $this->ruleset;
     }
 
@@ -683,8 +638,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptRuleset $ruleset
      * @return $this
      */
-    public function addRuleset($ruleset)
-    {
+    public function addRuleset($ruleset) {
         $this->ruleset[] = $ruleset;
         return $this;
     }
@@ -693,8 +647,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A series of required setup operations before tests are executed.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptSetup
      */
-    public function getSetup()
-    {
+    public function getSetup() {
         return $this->setup;
     }
 
@@ -703,8 +656,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptSetup $setup
      * @return $this
      */
-    public function setSetup($setup)
-    {
+    public function setSetup($setup) {
         $this->setup = $setup;
         return $this;
     }
@@ -713,8 +665,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A test in this script.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptTest[]
      */
-    public function getTest()
-    {
+    public function getTest() {
         return $this->test;
     }
 
@@ -723,8 +674,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptTest $test
      * @return $this
      */
-    public function addTest($test)
-    {
+    public function addTest($test) {
         $this->test[] = $test;
         return $this;
     }
@@ -733,8 +683,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * A series of operations required to clean up after the all the tests are executed (successfully or otherwise).
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown
      */
-    public function getTeardown()
-    {
+    public function getTeardown() {
         return $this->teardown;
     }
 
@@ -743,8 +692,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptTeardown $teardown
      * @return $this
      */
-    public function setTeardown($teardown)
-    {
+    public function setTeardown($teardown) {
         $this->teardown = $teardown;
         return $this;
     }
@@ -752,107 +700,259 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['copyright'])) {
+                $this->setCopyright($data['copyright']);
+            }
+            if (isset($data['origin'])) {
+                if (is_array($data['origin'])) {
+                    foreach($data['origin'] as $d) {
+                        $this->addOrigin($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"origin" must be array of objects or null, '.gettype($data['origin']).' seen.');
+                }
+            }
+            if (isset($data['destination'])) {
+                if (is_array($data['destination'])) {
+                    foreach($data['destination'] as $d) {
+                        $this->addDestination($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"destination" must be array of objects or null, '.gettype($data['destination']).' seen.');
+                }
+            }
+            if (isset($data['metadata'])) {
+                $this->setMetadata($data['metadata']);
+            }
+            if (isset($data['fixture'])) {
+                if (is_array($data['fixture'])) {
+                    foreach($data['fixture'] as $d) {
+                        $this->addFixture($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"fixture" must be array of objects or null, '.gettype($data['fixture']).' seen.');
+                }
+            }
+            if (isset($data['profile'])) {
+                if (is_array($data['profile'])) {
+                    foreach($data['profile'] as $d) {
+                        $this->addProfile($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"profile" must be array of objects or null, '.gettype($data['profile']).' seen.');
+                }
+            }
+            if (isset($data['variable'])) {
+                if (is_array($data['variable'])) {
+                    foreach($data['variable'] as $d) {
+                        $this->addVariable($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"variable" must be array of objects or null, '.gettype($data['variable']).' seen.');
+                }
+            }
+            if (isset($data['rule'])) {
+                if (is_array($data['rule'])) {
+                    foreach($data['rule'] as $d) {
+                        $this->addRule($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"rule" must be array of objects or null, '.gettype($data['rule']).' seen.');
+                }
+            }
+            if (isset($data['ruleset'])) {
+                if (is_array($data['ruleset'])) {
+                    foreach($data['ruleset'] as $d) {
+                        $this->addRuleset($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"ruleset" must be array of objects or null, '.gettype($data['ruleset']).' seen.');
+                }
+            }
+            if (isset($data['setup'])) {
+                $this->setSetup($data['setup']);
+            }
+            if (isset($data['test'])) {
+                if (is_array($data['test'])) {
+                    foreach($data['test'] as $d) {
+                        $this->addTest($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"test" must be array of objects or null, '.gettype($data['test']).' seen.');
+                }
+            }
+            if (isset($data['teardown'])) {
+                $this->setTeardown($data['teardown']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->copyright)) $json['copyright'] = $this->copyright;
         if (0 < count($this->origin)) {
             $json['origin'] = [];
             foreach($this->origin as $origin) {
-                $json['origin'][] = json_encode($origin);
+                if (null !== $origin) $json['origin'][] = $origin;
             }
         }
         if (0 < count($this->destination)) {
             $json['destination'] = [];
             foreach($this->destination as $destination) {
-                $json['destination'][] = json_encode($destination);
+                if (null !== $destination) $json['destination'][] = $destination;
             }
         }
-        if (null !== $this->metadata) $json['metadata'] = json_encode($this->metadata);
+        if (isset($this->metadata)) $json['metadata'] = $this->metadata;
         if (0 < count($this->fixture)) {
             $json['fixture'] = [];
             foreach($this->fixture as $fixture) {
-                $json['fixture'][] = json_encode($fixture);
+                if (null !== $fixture) $json['fixture'][] = $fixture;
             }
         }
         if (0 < count($this->profile)) {
             $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = json_encode($profile);
+                if (null !== $profile) $json['profile'][] = $profile;
             }
         }
         if (0 < count($this->variable)) {
             $json['variable'] = [];
             foreach($this->variable as $variable) {
-                $json['variable'][] = json_encode($variable);
+                if (null !== $variable) $json['variable'][] = $variable;
             }
         }
         if (0 < count($this->rule)) {
             $json['rule'] = [];
             foreach($this->rule as $rule) {
-                $json['rule'][] = json_encode($rule);
+                if (null !== $rule) $json['rule'][] = $rule;
             }
         }
         if (0 < count($this->ruleset)) {
             $json['ruleset'] = [];
             foreach($this->ruleset as $ruleset) {
-                $json['ruleset'][] = json_encode($ruleset);
+                if (null !== $ruleset) $json['ruleset'][] = $ruleset;
             }
         }
-        if (null !== $this->setup) $json['setup'] = json_encode($this->setup);
+        if (isset($this->setup)) $json['setup'] = $this->setup;
         if (0 < count($this->test)) {
             $json['test'] = [];
             foreach($this->test as $test) {
-                $json['test'][] = json_encode($test);
+                if (null !== $test) $json['test'][] = $test;
             }
         }
-        if (null !== $this->teardown) $json['teardown'] = json_encode($this->teardown);
+        if (isset($this->teardown)) $json['teardown'] = $this->teardown;
         return $json;
     }
 
@@ -861,25 +961,24 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScript xmlns="http://hl7.org/fhir"></TestScript>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -890,8 +989,8 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->copyright)) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
         if (0 < count($this->origin)) {
             foreach($this->origin as $origin) {
                 $origin->xmlSerialize(true, $sxe->addChild('origin'));
@@ -902,7 +1001,7 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
                 $destination->xmlSerialize(true, $sxe->addChild('destination'));
             }
         }
-        if (null !== $this->metadata) $this->metadata->xmlSerialize(true, $sxe->addChild('metadata'));
+        if (isset($this->metadata)) $this->metadata->xmlSerialize(true, $sxe->addChild('metadata'));
         if (0 < count($this->fixture)) {
             foreach($this->fixture as $fixture) {
                 $fixture->xmlSerialize(true, $sxe->addChild('fixture'));
@@ -928,13 +1027,13 @@ class FHIRTestScript extends FHIRDomainResource implements \JsonSerializable
                 $ruleset->xmlSerialize(true, $sxe->addChild('ruleset'));
             }
         }
-        if (null !== $this->setup) $this->setup->xmlSerialize(true, $sxe->addChild('setup'));
+        if (isset($this->setup)) $this->setup->xmlSerialize(true, $sxe->addChild('setup'));
         if (0 < count($this->test)) {
             foreach($this->test as $test) {
                 $test->xmlSerialize(true, $sxe->addChild('test'));
             }
         }
-        if (null !== $this->teardown) $this->teardown->xmlSerialize(true, $sxe->addChild('teardown'));
+        if (isset($this->teardown)) $this->teardown->xmlSerialize(true, $sxe->addChild('teardown'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -86,37 +86,31 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
     public $code = null;
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $timingDate = null;
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueReference = null;
@@ -136,8 +130,7 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * Sequence of the information element which serves to provide a link.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getSequence()
-    {
+    public function getSequence() {
         return $this->sequence;
     }
 
@@ -146,8 +139,7 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $sequence
      * @return $this
      */
-    public function setSequence($sequence)
-    {
+    public function setSequence($sequence) {
         $this->sequence = $sequence;
         return $this;
     }
@@ -156,8 +148,7 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * The general class of the information supplied: information; exception; accident, employment; onset, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
@@ -166,8 +157,7 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function setCategory($category)
-    {
+    public function setCategory($category) {
         $this->category = $category;
         return $this;
     }
@@ -176,8 +166,7 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * System and code pertaining to the specific information regarding special conditions relating to the setting, treatment or patient  for which care is sought which may influence the adjudication.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -186,128 +175,103 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getTimingDate()
-    {
+    public function getTimingDate() {
         return $this->timingDate;
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $timingDate
      * @return $this
      */
-    public function setTimingDate($timingDate)
-    {
+    public function setTimingDate($timingDate) {
         $this->timingDate = $timingDate;
         return $this;
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getTimingPeriod()
-    {
+    public function getTimingPeriod() {
         return $this->timingPeriod;
     }
 
     /**
-     * The date when or period to which this information refers. (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
-    public function setTimingPeriod($timingPeriod)
-    {
+    public function setTimingPeriod($timingPeriod) {
         $this->timingPeriod = $timingPeriod;
         return $this;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValueString()
-    {
+    public function getValueString() {
         return $this->valueString;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
-    public function setValueString($valueString)
-    {
+    public function setValueString($valueString) {
         $this->valueString = $valueString;
         return $this;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getValueQuantity()
-    {
+    public function getValueQuantity() {
         return $this->valueQuantity;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
-    public function setValueQuantity($valueQuantity)
-    {
+    public function setValueQuantity($valueQuantity) {
         $this->valueQuantity = $valueQuantity;
         return $this;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getValueAttachment()
-    {
+    public function getValueAttachment() {
         return $this->valueAttachment;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
-    public function setValueAttachment($valueAttachment)
-    {
+    public function setValueAttachment($valueAttachment) {
         $this->valueAttachment = $valueAttachment;
         return $this;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getValueReference()
-    {
+    public function getValueReference() {
         return $this->valueReference;
     }
 
     /**
-     * Additional data or information such as resources, documents, images etc. including references to the data or the actual inclusion of the data. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
-    public function setValueReference($valueReference)
-    {
+    public function setValueReference($valueReference) {
         $this->valueReference = $valueReference;
         return $this;
     }
@@ -316,8 +280,7 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * For example, provides the reason for: the additional stay, or missing tooth or any other situation where a reason code is required in addition to the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReason()
-    {
+    public function getReason() {
         return $this->reason;
     }
 
@@ -326,8 +289,7 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
-    public function setReason($reason)
-    {
+    public function setReason($reason) {
         $this->reason = $reason;
         return $this;
     }
@@ -335,35 +297,73 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['sequence'])) {
+                $this->setSequence($data['sequence']);
+            }
+            if (isset($data['category'])) {
+                $this->setCategory($data['category']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['timingDate'])) {
+                $this->setTimingDate($data['timingDate']);
+            }
+            if (isset($data['timingPeriod'])) {
+                $this->setTimingPeriod($data['timingPeriod']);
+            }
+            if (isset($data['valueString'])) {
+                $this->setValueString($data['valueString']);
+            }
+            if (isset($data['valueQuantity'])) {
+                $this->setValueQuantity($data['valueQuantity']);
+            }
+            if (isset($data['valueAttachment'])) {
+                $this->setValueAttachment($data['valueAttachment']);
+            }
+            if (isset($data['valueReference'])) {
+                $this->setValueReference($data['valueReference']);
+            }
+            if (isset($data['reason'])) {
+                $this->setReason($data['reason']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->timingDate) $json['timingDate'] = json_encode($this->timingDate);
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
-        if (null !== $this->valueReference) $json['valueReference'] = json_encode($this->valueReference);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
+        if (isset($this->sequence)) $json['sequence'] = $this->sequence;
+        if (isset($this->category)) $json['category'] = $this->category;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->timingDate)) $json['timingDate'] = $this->timingDate;
+        if (isset($this->timingPeriod)) $json['timingPeriod'] = $this->timingPeriod;
+        if (isset($this->valueString)) $json['valueString'] = $this->valueString;
+        if (isset($this->valueQuantity)) $json['valueQuantity'] = $this->valueQuantity;
+        if (isset($this->valueAttachment)) $json['valueAttachment'] = $this->valueAttachment;
+        if (isset($this->valueReference)) $json['valueReference'] = $this->valueReference;
+        if (isset($this->reason)) $json['reason'] = $this->reason;
         return $json;
     }
 
@@ -372,20 +372,19 @@ class FHIRClaimInformation extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ClaimInformation xmlns="http://hl7.org/fhir"></ClaimInformation>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->sequence) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
-        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->timingDate) $this->timingDate->xmlSerialize(true, $sxe->addChild('timingDate'));
-        if (null !== $this->timingPeriod) $this->timingPeriod->xmlSerialize(true, $sxe->addChild('timingPeriod'));
-        if (null !== $this->valueString) $this->valueString->xmlSerialize(true, $sxe->addChild('valueString'));
-        if (null !== $this->valueQuantity) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
-        if (null !== $this->valueAttachment) $this->valueAttachment->xmlSerialize(true, $sxe->addChild('valueAttachment'));
-        if (null !== $this->valueReference) $this->valueReference->xmlSerialize(true, $sxe->addChild('valueReference'));
-        if (null !== $this->reason) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
+        if (isset($this->sequence)) $this->sequence->xmlSerialize(true, $sxe->addChild('sequence'));
+        if (isset($this->category)) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->timingDate)) $this->timingDate->xmlSerialize(true, $sxe->addChild('timingDate'));
+        if (isset($this->timingPeriod)) $this->timingPeriod->xmlSerialize(true, $sxe->addChild('timingPeriod'));
+        if (isset($this->valueString)) $this->valueString->xmlSerialize(true, $sxe->addChild('valueString'));
+        if (isset($this->valueQuantity)) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        if (isset($this->valueAttachment)) $this->valueAttachment->xmlSerialize(true, $sxe->addChild('valueAttachment'));
+        if (isset($this->valueReference)) $this->valueReference->xmlSerialize(true, $sxe->addChild('valueReference'));
+        if (isset($this->reason)) $this->reason->xmlSerialize(true, $sxe->addChild('reason'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

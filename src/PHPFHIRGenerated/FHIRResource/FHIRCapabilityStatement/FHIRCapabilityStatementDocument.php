@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -94,8 +94,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      * Mode of this document declaration - whether an application is a producer or consumer.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDocumentMode
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -104,8 +103,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDocumentMode $mode
      * @return $this
      */
-    public function setMode($mode)
-    {
+    public function setMode($mode) {
         $this->mode = $mode;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -124,8 +121,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      * A constraint on a resource used in the document.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -144,8 +139,7 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
      * @return $this
      */
-    public function setProfile($profile)
-    {
+    public function setProfile($profile) {
         $this->profile = $profile;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['mode'])) {
+                $this->setMode($data['mode']);
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+            if (isset($data['profile'])) {
+                $this->setProfile($data['profile']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
+        if (isset($this->mode)) $json['mode'] = $this->mode;
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
+        if (isset($this->profile)) $json['profile'] = $this->profile;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRCapabilityStatementDocument extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CapabilityStatementDocument xmlns="http://hl7.org/fhir"></CapabilityStatementDocument>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
-        if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
+        if (isset($this->mode)) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->profile)) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

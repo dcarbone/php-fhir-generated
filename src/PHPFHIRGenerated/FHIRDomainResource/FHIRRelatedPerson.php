@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,7 +72,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Identifier for a person within a particular scope.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * Whether this related person record is in active use.
@@ -88,21 +88,21 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The nature of the relationship between a patient and the related person.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $relationship = null;
+    public $relationship = [];
 
     /**
      * A name associated with the person.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
-    public $name = array();
+    public $name = [];
 
     /**
      * A contact detail for the person, e.g. a telephone number or an email address.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public $telecom = array();
+    public $telecom = [];
 
     /**
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
@@ -120,16 +120,16 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Address where the related person can be contacted or visited.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
-    public $address = array();
+    public $address = [];
 
     /**
      * Image of the person.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public $photo = array();
+    public $photo = [];
 
     /**
-     * The period of time that this relationship is considered to be valid. If there are no dates defined, then the interval is unknown.
+     * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $period = null;
@@ -143,8 +143,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Identifier for a person within a particular scope.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -153,8 +152,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -163,8 +161,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Whether this related person record is in active use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getActive()
-    {
+    public function getActive() {
         return $this->active;
     }
 
@@ -173,8 +170,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $active
      * @return $this
      */
-    public function setActive($active)
-    {
+    public function setActive($active) {
         $this->active = $active;
         return $this;
     }
@@ -183,8 +179,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * The patient this person is related to.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatient()
-    {
+    public function getPatient() {
         return $this->patient;
     }
 
@@ -193,18 +188,16 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
-    public function setPatient($patient)
-    {
+    public function setPatient($patient) {
         $this->patient = $patient;
         return $this;
     }
 
     /**
      * The nature of the relationship between a patient and the related person.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getRelationship()
-    {
+    public function getRelationship() {
         return $this->relationship;
     }
 
@@ -213,9 +206,8 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $relationship
      * @return $this
      */
-    public function setRelationship($relationship)
-    {
-        $this->relationship = $relationship;
+    public function addRelationship($relationship) {
+        $this->relationship[] = $relationship;
         return $this;
     }
 
@@ -223,8 +215,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * A name associated with the person.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName[]
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -233,8 +224,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $name
      * @return $this
      */
-    public function addName($name)
-    {
+    public function addName($name) {
         $this->name[] = $name;
         return $this;
     }
@@ -243,8 +233,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * A contact detail for the person, e.g. a telephone number or an email address.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
      */
-    public function getTelecom()
-    {
+    public function getTelecom() {
         return $this->telecom;
     }
 
@@ -253,8 +242,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
      * @return $this
      */
-    public function addTelecom($telecom)
-    {
+    public function addTelecom($telecom) {
         $this->telecom[] = $telecom;
         return $this;
     }
@@ -263,8 +251,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender
      */
-    public function getGender()
-    {
+    public function getGender() {
         return $this->gender;
     }
 
@@ -273,8 +260,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAdministrativeGender $gender
      * @return $this
      */
-    public function setGender($gender)
-    {
+    public function setGender($gender) {
         $this->gender = $gender;
         return $this;
     }
@@ -283,8 +269,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * The date on which the related person was born.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getBirthDate()
-    {
+    public function getBirthDate() {
         return $this->birthDate;
     }
 
@@ -293,8 +278,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $birthDate
      * @return $this
      */
-    public function setBirthDate($birthDate)
-    {
+    public function setBirthDate($birthDate) {
         $this->birthDate = $birthDate;
         return $this;
     }
@@ -303,8 +287,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Address where the related person can be contacted or visited.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress[]
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->address;
     }
 
@@ -313,8 +296,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $address
      * @return $this
      */
-    public function addAddress($address)
-    {
+    public function addAddress($address) {
         $this->address[] = $address;
         return $this;
     }
@@ -323,8 +305,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * Image of the person.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment[]
      */
-    public function getPhoto()
-    {
+    public function getPhoto() {
         return $this->photo;
     }
 
@@ -333,28 +314,25 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $photo
      * @return $this
      */
-    public function addPhoto($photo)
-    {
+    public function addPhoto($photo) {
         $this->photo[] = $photo;
         return $this;
     }
 
     /**
-     * The period of time that this relationship is considered to be valid. If there are no dates defined, then the interval is unknown.
+     * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
     /**
-     * The period of time that this relationship is considered to be valid. If there are no dates defined, then the interval is unknown.
+     * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -362,62 +340,144 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['active'])) {
+                $this->setActive($data['active']);
+            }
+            if (isset($data['patient'])) {
+                $this->setPatient($data['patient']);
+            }
+            if (isset($data['relationship'])) {
+                if (is_array($data['relationship'])) {
+                    foreach($data['relationship'] as $d) {
+                        $this->addRelationship($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"relationship" must be array of objects or null, '.gettype($data['relationship']).' seen.');
+                }
+            }
+            if (isset($data['name'])) {
+                if (is_array($data['name'])) {
+                    foreach($data['name'] as $d) {
+                        $this->addName($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"name" must be array of objects or null, '.gettype($data['name']).' seen.');
+                }
+            }
+            if (isset($data['telecom'])) {
+                if (is_array($data['telecom'])) {
+                    foreach($data['telecom'] as $d) {
+                        $this->addTelecom($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"telecom" must be array of objects or null, '.gettype($data['telecom']).' seen.');
+                }
+            }
+            if (isset($data['gender'])) {
+                $this->setGender($data['gender']);
+            }
+            if (isset($data['birthDate'])) {
+                $this->setBirthDate($data['birthDate']);
+            }
+            if (isset($data['address'])) {
+                if (is_array($data['address'])) {
+                    foreach($data['address'] as $d) {
+                        $this->addAddress($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"address" must be array of objects or null, '.gettype($data['address']).' seen.');
+                }
+            }
+            if (isset($data['photo'])) {
+                if (is_array($data['photo'])) {
+                    foreach($data['photo'] as $d) {
+                        $this->addPhoto($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"photo" must be array of objects or null, '.gettype($data['photo']).' seen.');
+                }
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->active) $json['active'] = json_encode($this->active);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
+        if (isset($this->active)) $json['active'] = $this->active;
+        if (isset($this->patient)) $json['patient'] = $this->patient;
+        if (0 < count($this->relationship)) {
+            $json['relationship'] = [];
+            foreach($this->relationship as $relationship) {
+                if (null !== $relationship) $json['relationship'][] = $relationship;
+            }
+        }
         if (0 < count($this->name)) {
             $json['name'] = [];
             foreach($this->name as $name) {
-                $json['name'][] = json_encode($name);
+                if (null !== $name) $json['name'][] = $name;
             }
         }
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                if (null !== $telecom) $json['telecom'][] = $telecom;
             }
         }
-        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
-        if (null !== $this->birthDate) $json['birthDate'] = json_encode($this->birthDate);
+        if (isset($this->gender)) $json['gender'] = $this->gender;
+        if (isset($this->birthDate)) $json['birthDate'] = $this->birthDate;
         if (0 < count($this->address)) {
             $json['address'] = [];
             foreach($this->address as $address) {
-                $json['address'][] = json_encode($address);
+                if (null !== $address) $json['address'][] = $address;
             }
         }
         if (0 < count($this->photo)) {
             $json['photo'] = [];
             foreach($this->photo as $photo) {
-                $json['photo'][] = json_encode($photo);
+                if (null !== $photo) $json['photo'][] = $photo;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->period)) $json['period'] = $this->period;
         return $json;
     }
 
@@ -426,8 +486,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<RelatedPerson xmlns="http://hl7.org/fhir"></RelatedPerson>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -435,9 +494,13 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->active) $this->active->xmlSerialize(true, $sxe->addChild('active'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (null !== $this->relationship) $this->relationship->xmlSerialize(true, $sxe->addChild('relationship'));
+        if (isset($this->active)) $this->active->xmlSerialize(true, $sxe->addChild('active'));
+        if (isset($this->patient)) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (0 < count($this->relationship)) {
+            foreach($this->relationship as $relationship) {
+                $relationship->xmlSerialize(true, $sxe->addChild('relationship'));
+            }
+        }
         if (0 < count($this->name)) {
             foreach($this->name as $name) {
                 $name->xmlSerialize(true, $sxe->addChild('name'));
@@ -448,8 +511,8 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
                 $telecom->xmlSerialize(true, $sxe->addChild('telecom'));
             }
         }
-        if (null !== $this->gender) $this->gender->xmlSerialize(true, $sxe->addChild('gender'));
-        if (null !== $this->birthDate) $this->birthDate->xmlSerialize(true, $sxe->addChild('birthDate'));
+        if (isset($this->gender)) $this->gender->xmlSerialize(true, $sxe->addChild('gender'));
+        if (isset($this->birthDate)) $this->birthDate->xmlSerialize(true, $sxe->addChild('birthDate'));
         if (0 < count($this->address)) {
             foreach($this->address as $address) {
                 $address->xmlSerialize(true, $sxe->addChild('address'));
@@ -460,7 +523,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
                 $photo->xmlSerialize(true, $sxe->addChild('photo'));
             }
         }
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

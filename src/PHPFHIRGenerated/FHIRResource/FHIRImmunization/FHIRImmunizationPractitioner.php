@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * Describes the event of a patient being administered a vaccination or a record of a vaccination as reported by a patient, a clinician or another party and may include vaccine reaction information and what vaccination protocol was followed.
+ * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
  */
 class FHIRImmunizationPractitioner extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -74,7 +74,7 @@ class FHIRImmunizationPractitioner extends FHIRBackboneElement implements \JsonS
     public $role = null;
 
     /**
-     * The device, practitioner, etc. who performed the action.
+     * The practitioner who performed the action.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $actor = null;
@@ -88,8 +88,7 @@ class FHIRImmunizationPractitioner extends FHIRBackboneElement implements \JsonS
      * Describes the type of performance (e.g. ordering provider, administering provider, etc.).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -98,28 +97,25 @@ class FHIRImmunizationPractitioner extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
-    public function setRole($role)
-    {
+    public function setRole($role) {
         $this->role = $role;
         return $this;
     }
 
     /**
-     * The device, practitioner, etc. who performed the action.
+     * The practitioner who performed the action.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getActor()
-    {
+    public function getActor() {
         return $this->actor;
     }
 
     /**
-     * The device, practitioner, etc. who performed the action.
+     * The practitioner who performed the action.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $actor
      * @return $this
      */
-    public function setActor($actor)
-    {
+    public function setActor($actor) {
         $this->actor = $actor;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRImmunizationPractitioner extends FHIRBackboneElement implements \JsonS
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['role'])) {
+                $this->setRole($data['role']);
+            }
+            if (isset($data['actor'])) {
+                $this->setActor($data['actor']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->role) $json['role'] = json_encode($this->role);
-        if (null !== $this->actor) $json['actor'] = json_encode($this->actor);
+        if (isset($this->role)) $json['role'] = $this->role;
+        if (isset($this->actor)) $json['actor'] = $this->actor;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRImmunizationPractitioner extends FHIRBackboneElement implements \JsonS
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImmunizationPractitioner xmlns="http://hl7.org/fhir"></ImmunizationPractitioner>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->role) $this->role->xmlSerialize(true, $sxe->addChild('role'));
-        if (null !== $this->actor) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
+        if (isset($this->role)) $this->role->xmlSerialize(true, $sxe->addChild('role'));
+        if (isset($this->actor)) $this->actor->xmlSerialize(true, $sxe->addChild('actor'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

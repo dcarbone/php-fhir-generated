@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,10 +74,14 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
     public $type = null;
 
     /**
-     * The details, base64 encoded. Used to carry bulk information.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $valueString = null;
+
+    /**
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public $value = null;
+    public $valueBase64Binary = null;
 
     /**
      * @var string
@@ -88,8 +92,7 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * The type of extra detail provided in the value.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -98,56 +101,85 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
 
     /**
-     * The details, base64 encoded. Used to carry bulk information.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValue()
-    {
-        return $this->value;
+    public function getValueString() {
+        return $this->valueString;
     }
 
     /**
-     * The details, base64 encoded. Used to carry bulk information.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $value
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
-    public function setValue($value)
-    {
-        $this->value = $value;
+    public function setValueString($valueString) {
+        $this->valueString = $valueString;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     */
+    public function getValueBase64Binary() {
+        return $this->valueBase64Binary;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $valueBase64Binary
+     * @return $this
+     */
+    public function setValueBase64Binary($valueBase64Binary) {
+        $this->valueBase64Binary = $valueBase64Binary;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['valueString'])) {
+                $this->setValueString($data['valueString']);
+            }
+            if (isset($data['valueBase64Binary'])) {
+                $this->setValueBase64Binary($data['valueBase64Binary']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
-        return (string)$this->getValue();
+    public function __toString() {
+        return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->valueString)) $json['valueString'] = $this->valueString;
+        if (isset($this->valueBase64Binary)) $json['valueBase64Binary'] = $this->valueBase64Binary;
         return $json;
     }
 
@@ -156,12 +188,12 @@ class FHIRAuditEventDetail extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<AuditEventDetail xmlns="http://hl7.org/fhir"></AuditEventDetail>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->valueString)) $this->valueString->xmlSerialize(true, $sxe->addChild('valueString'));
+        if (isset($this->valueBase64Binary)) $this->valueBase64Binary->xmlSerialize(true, $sxe->addChild('valueBase64Binary'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

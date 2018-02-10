@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -100,8 +100,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * The flag allows the system constructing the list to indicate the role and significance of the item in the list.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getFlag()
-    {
+    public function getFlag() {
         return $this->flag;
     }
 
@@ -110,8 +109,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $flag
      * @return $this
      */
-    public function setFlag($flag)
-    {
+    public function setFlag($flag) {
         $this->flag = $flag;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * True if this item is marked as deleted in the list.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getDeleted()
-    {
+    public function getDeleted() {
         return $this->deleted;
     }
 
@@ -130,8 +127,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $deleted
      * @return $this
      */
-    public function setDeleted($deleted)
-    {
+    public function setDeleted($deleted) {
         $this->deleted = $deleted;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * When this item was added to the list.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -150,8 +145,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * A reference to the actual resource from which data was derived.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getItem()
-    {
+    public function getItem() {
         return $this->item;
     }
 
@@ -170,8 +163,7 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $item
      * @return $this
      */
-    public function setItem($item)
-    {
+    public function setItem($item) {
         $this->item = $item;
         return $this;
     }
@@ -179,29 +171,49 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['flag'])) {
+                $this->setFlag($data['flag']);
+            }
+            if (isset($data['deleted'])) {
+                $this->setDeleted($data['deleted']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['item'])) {
+                $this->setItem($data['item']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->flag) $json['flag'] = json_encode($this->flag);
-        if (null !== $this->deleted) $json['deleted'] = json_encode($this->deleted);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->item) $json['item'] = json_encode($this->item);
+        if (isset($this->flag)) $json['flag'] = $this->flag;
+        if (isset($this->deleted)) $json['deleted'] = $this->deleted;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->item)) $json['item'] = $this->item;
         return $json;
     }
 
@@ -210,14 +222,13 @@ class FHIRListEntry extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ListEntry xmlns="http://hl7.org/fhir"></ListEntry>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->flag) $this->flag->xmlSerialize(true, $sxe->addChild('flag'));
-        if (null !== $this->deleted) $this->deleted->xmlSerialize(true, $sxe->addChild('deleted'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->item) $this->item->xmlSerialize(true, $sxe->addChild('item'));
+        if (isset($this->flag)) $this->flag->xmlSerialize(true, $sxe->addChild('flag'));
+        if (isset($this->deleted)) $this->deleted->xmlSerialize(true, $sxe->addChild('deleted'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->item)) $this->item->xmlSerialize(true, $sxe->addChild('item'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

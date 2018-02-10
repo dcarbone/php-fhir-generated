@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,7 +72,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * Designates which child elements are used to discriminate between the slices when processing an instance. If one or more discriminators are provided, the value of the child elements in the instance data SHALL completely distinguish which slice the element in the resource matches based on the allowed values for those elements in each of the slices.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[]
      */
-    public $discriminator = array();
+    public $discriminator = [];
 
     /**
      * A human-readable text description of how the slicing works. If there is no discriminator, this is required to be present to provide whatever information is possible about how the slices can be differentiated.
@@ -101,8 +101,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * Designates which child elements are used to discriminate between the slices when processing an instance. If one or more discriminators are provided, the value of the child elements in the instance data SHALL completely distinguish which slice the element in the resource matches based on the allowed values for those elements in each of the slices.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[]
      */
-    public function getDiscriminator()
-    {
+    public function getDiscriminator() {
         return $this->discriminator;
     }
 
@@ -111,8 +110,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRElementDefinition\FHIRElementDefinitionDiscriminator $discriminator
      * @return $this
      */
-    public function addDiscriminator($discriminator)
-    {
+    public function addDiscriminator($discriminator) {
         $this->discriminator[] = $discriminator;
         return $this;
     }
@@ -121,8 +119,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * A human-readable text description of how the slicing works. If there is no discriminator, this is required to be present to provide whatever information is possible about how the slices can be differentiated.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -131,8 +128,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -141,8 +137,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * If the matching elements have to occur in the same order as defined in the profile.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getOrdered()
-    {
+    public function getOrdered() {
         return $this->ordered;
     }
 
@@ -151,8 +146,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $ordered
      * @return $this
      */
-    public function setOrdered($ordered)
-    {
+    public function setOrdered($ordered) {
         $this->ordered = $ordered;
         return $this;
     }
@@ -161,8 +155,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * Whether additional slices are allowed or not. When the slices are ordered, profile authors can also say that additional slices are only allowed at the end.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSlicingRules
      */
-    public function getRules()
-    {
+    public function getRules() {
         return $this->rules;
     }
 
@@ -171,8 +164,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSlicingRules $rules
      * @return $this
      */
-    public function setRules($rules)
-    {
+    public function setRules($rules) {
         $this->rules = $rules;
         return $this;
     }
@@ -180,34 +172,60 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['discriminator'])) {
+                if (is_array($data['discriminator'])) {
+                    foreach($data['discriminator'] as $d) {
+                        $this->addDiscriminator($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"discriminator" must be array of objects or null, '.gettype($data['discriminator']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['ordered'])) {
+                $this->setOrdered($data['ordered']);
+            }
+            if (isset($data['rules'])) {
+                $this->setRules($data['rules']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->discriminator)) {
             $json['discriminator'] = [];
             foreach($this->discriminator as $discriminator) {
-                $json['discriminator'][] = json_encode($discriminator);
+                if (null !== $discriminator) $json['discriminator'][] = $discriminator;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->ordered) $json['ordered'] = json_encode($this->ordered);
-        if (null !== $this->rules) $json['rules'] = json_encode($this->rules);
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->ordered)) $json['ordered'] = $this->ordered;
+        if (isset($this->rules)) $json['rules'] = $this->rules;
         return $json;
     }
 
@@ -216,8 +234,7 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ElementDefinitionSlicing xmlns="http://hl7.org/fhir"></ElementDefinitionSlicing>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->discriminator)) {
@@ -225,9 +242,9 @@ class FHIRElementDefinitionSlicing extends FHIRElement implements \JsonSerializa
                 $discriminator->xmlSerialize(true, $sxe->addChild('discriminator'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->ordered) $this->ordered->xmlSerialize(true, $sxe->addChild('ordered'));
-        if (null !== $this->rules) $this->rules->xmlSerialize(true, $sxe->addChild('rules'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->ordered)) $this->ordered->xmlSerialize(true, $sxe->addChild('ordered'));
+        if (isset($this->rules)) $this->rules->xmlSerialize(true, $sxe->addChild('rules'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

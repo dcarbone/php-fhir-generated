@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,31 +74,26 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     public $measure = null;
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $detailQuantity = null;
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $detailRange = null;
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $detailCodeableConcept = null;
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $dueDate = null;
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
     public $dueDuration = null;
@@ -112,8 +107,7 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
      * The parameter whose value is being tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getMeasure()
-    {
+    public function getMeasure() {
         return $this->measure;
     }
 
@@ -122,108 +116,87 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $measure
      * @return $this
      */
-    public function setMeasure($measure)
-    {
+    public function setMeasure($measure) {
         $this->measure = $measure;
         return $this;
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getDetailQuantity()
-    {
+    public function getDetailQuantity() {
         return $this->detailQuantity;
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $detailQuantity
      * @return $this
      */
-    public function setDetailQuantity($detailQuantity)
-    {
+    public function setDetailQuantity($detailQuantity) {
         $this->detailQuantity = $detailQuantity;
         return $this;
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public function getDetailRange()
-    {
+    public function getDetailRange() {
         return $this->detailRange;
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $detailRange
      * @return $this
      */
-    public function setDetailRange($detailRange)
-    {
+    public function setDetailRange($detailRange) {
         $this->detailRange = $detailRange;
         return $this;
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDetailCodeableConcept()
-    {
+    public function getDetailCodeableConcept() {
         return $this->detailCodeableConcept;
     }
 
     /**
-     * The target value of the focus to be achieved to signify the fulfillment of the goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any focus value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any focus value at or above the low value. (choose any one of detail*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
      * @return $this
      */
-    public function setDetailCodeableConcept($detailCodeableConcept)
-    {
+    public function setDetailCodeableConcept($detailCodeableConcept) {
         $this->detailCodeableConcept = $detailCodeableConcept;
         return $this;
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getDueDate()
-    {
+    public function getDueDate() {
         return $this->dueDate;
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $dueDate
      * @return $this
      */
-    public function setDueDate($dueDate)
-    {
+    public function setDueDate($dueDate) {
         $this->dueDate = $dueDate;
         return $this;
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public function getDueDuration()
-    {
+    public function getDueDuration() {
         return $this->dueDuration;
     }
 
     /**
-     * Indicates either the date or the duration after start by which the goal should be met. (choose any one of due*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
      * @return $this
      */
-    public function setDueDuration($dueDuration)
-    {
+    public function setDueDuration($dueDuration) {
         $this->dueDuration = $dueDuration;
         return $this;
     }
@@ -231,31 +204,57 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['measure'])) {
+                $this->setMeasure($data['measure']);
+            }
+            if (isset($data['detailQuantity'])) {
+                $this->setDetailQuantity($data['detailQuantity']);
+            }
+            if (isset($data['detailRange'])) {
+                $this->setDetailRange($data['detailRange']);
+            }
+            if (isset($data['detailCodeableConcept'])) {
+                $this->setDetailCodeableConcept($data['detailCodeableConcept']);
+            }
+            if (isset($data['dueDate'])) {
+                $this->setDueDate($data['dueDate']);
+            }
+            if (isset($data['dueDuration'])) {
+                $this->setDueDuration($data['dueDuration']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->measure) $json['measure'] = json_encode($this->measure);
-        if (null !== $this->detailQuantity) $json['detailQuantity'] = json_encode($this->detailQuantity);
-        if (null !== $this->detailRange) $json['detailRange'] = json_encode($this->detailRange);
-        if (null !== $this->detailCodeableConcept) $json['detailCodeableConcept'] = json_encode($this->detailCodeableConcept);
-        if (null !== $this->dueDate) $json['dueDate'] = json_encode($this->dueDate);
-        if (null !== $this->dueDuration) $json['dueDuration'] = json_encode($this->dueDuration);
+        if (isset($this->measure)) $json['measure'] = $this->measure;
+        if (isset($this->detailQuantity)) $json['detailQuantity'] = $this->detailQuantity;
+        if (isset($this->detailRange)) $json['detailRange'] = $this->detailRange;
+        if (isset($this->detailCodeableConcept)) $json['detailCodeableConcept'] = $this->detailCodeableConcept;
+        if (isset($this->dueDate)) $json['dueDate'] = $this->dueDate;
+        if (isset($this->dueDuration)) $json['dueDuration'] = $this->dueDuration;
         return $json;
     }
 
@@ -264,16 +263,15 @@ class FHIRGoalTarget extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<GoalTarget xmlns="http://hl7.org/fhir"></GoalTarget>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->measure) $this->measure->xmlSerialize(true, $sxe->addChild('measure'));
-        if (null !== $this->detailQuantity) $this->detailQuantity->xmlSerialize(true, $sxe->addChild('detailQuantity'));
-        if (null !== $this->detailRange) $this->detailRange->xmlSerialize(true, $sxe->addChild('detailRange'));
-        if (null !== $this->detailCodeableConcept) $this->detailCodeableConcept->xmlSerialize(true, $sxe->addChild('detailCodeableConcept'));
-        if (null !== $this->dueDate) $this->dueDate->xmlSerialize(true, $sxe->addChild('dueDate'));
-        if (null !== $this->dueDuration) $this->dueDuration->xmlSerialize(true, $sxe->addChild('dueDuration'));
+        if (isset($this->measure)) $this->measure->xmlSerialize(true, $sxe->addChild('measure'));
+        if (isset($this->detailQuantity)) $this->detailQuantity->xmlSerialize(true, $sxe->addChild('detailQuantity'));
+        if (isset($this->detailRange)) $this->detailRange->xmlSerialize(true, $sxe->addChild('detailRange'));
+        if (isset($this->detailCodeableConcept)) $this->detailCodeableConcept->xmlSerialize(true, $sxe->addChild('detailCodeableConcept'));
+        if (isset($this->dueDate)) $this->dueDate->xmlSerialize(true, $sxe->addChild('dueDate'));
+        if (isset($this->dueDuration)) $this->dueDuration->xmlSerialize(true, $sxe->addChild('dueDuration'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

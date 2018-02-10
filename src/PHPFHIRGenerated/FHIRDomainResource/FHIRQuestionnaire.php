@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published. The URL SHOULD include the major version of the questionnaire. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this questionnaire is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -78,7 +78,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * A formal identifier that is used to identify this questionnaire when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * The identifier that is used to identify this version of the questionnaire when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the questionnaire author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
@@ -99,6 +99,12 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     public $title = null;
 
     /**
+     * The URL of a Questionnaire that this Questionnaire is based on.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public $derivedFrom = [];
+
+    /**
      * The status of this questionnaire. Enables tracking the life-cycle of the content.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
@@ -109,6 +115,12 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $experimental = null;
+
+    /**
+     * The types of subjects that can be the subject of responses created for the questionnaire.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
+     */
+    public $subjectType = [];
 
     /**
      * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
@@ -123,6 +135,24 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     public $publisher = null;
 
     /**
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
+     */
+    public $contact = [];
+
+    /**
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
+     */
+    public $useContext = [];
+
+    /**
+     * A legal or geographic region in which the questionnaire is intended to be used.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public $jurisdiction = [];
+
+    /**
      * A free text natural language description of the questionnaire from a consumer's perspective.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
@@ -133,6 +163,12 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $purpose = null;
+
+    /**
+     * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public $copyright = null;
 
     /**
      * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
@@ -153,46 +189,16 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     public $effectivePeriod = null;
 
     /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
-     */
-    public $useContext = array();
-
-    /**
-     * A legal or geographic region in which the questionnaire is intended to be used.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
-     */
-    public $jurisdiction = array();
-
-    /**
-     * Contact details to assist a user in finding and communicating with the publisher.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
-     */
-    public $contact = array();
-
-    /**
-     * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
-     */
-    public $copyright = null;
-
-    /**
      * An identifier for this question or group of questions in a particular terminology such as LOINC.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $code = array();
-
-    /**
-     * The types of subjects that can be the subject of responses created for the questionnaire.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
-     */
-    public $subjectType = array();
+    public $code = [];
 
     /**
      * A particular question, question grouping or display text that is part of the questionnaire.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public $item = array();
+    public $item = [];
 
     /**
      * @var string
@@ -200,21 +206,19 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     private $_fhirElementName = 'Questionnaire';
 
     /**
-     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published. The URL SHOULD include the major version of the questionnaire. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this questionnaire is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this questionnaire is (or will be) published. The URL SHOULD include the major version of the questionnaire. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this questionnaire is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -223,8 +227,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * A formal identifier that is used to identify this questionnaire when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -233,8 +236,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -243,8 +245,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * The identifier that is used to identify this version of the questionnaire when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the questionnaire author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -253,8 +254,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -263,8 +263,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * A natural language name identifying the questionnaire. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -273,8 +272,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -283,8 +281,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * A short, descriptive, user-friendly title for the questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -293,9 +290,26 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * The URL of a Questionnaire that this Questionnaire is based on.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
+     */
+    public function getDerivedFrom() {
+        return $this->derivedFrom;
+    }
+
+    /**
+     * The URL of a Questionnaire that this Questionnaire is based on.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $derivedFrom
+     * @return $this
+     */
+    public function addDerivedFrom($derivedFrom) {
+        $this->derivedFrom[] = $derivedFrom;
         return $this;
     }
 
@@ -303,8 +317,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * The status of this questionnaire. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -313,8 +326,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -323,8 +335,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * A boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -333,249 +344,8 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
-        return $this;
-    }
-
-    /**
-     * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-        return $this;
-    }
-
-    /**
-     * The name of the individual or organization that published the questionnaire.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getPublisher()
-    {
-        return $this->publisher;
-    }
-
-    /**
-     * The name of the individual or organization that published the questionnaire.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
-     * @return $this
-     */
-    public function setPublisher($publisher)
-    {
-        $this->publisher = $publisher;
-        return $this;
-    }
-
-    /**
-     * A free text natural language description of the questionnaire from a consumer's perspective.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * A free text natural language description of the questionnaire from a consumer's perspective.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-        return $this;
-    }
-
-    /**
-     * Explaination of why this questionnaire is needed and why it has been designed as it has.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
-     */
-    public function getPurpose()
-    {
-        return $this->purpose;
-    }
-
-    /**
-     * Explaination of why this questionnaire is needed and why it has been designed as it has.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
-     * @return $this
-     */
-    public function setPurpose($purpose)
-    {
-        $this->purpose = $purpose;
-        return $this;
-    }
-
-    /**
-     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
-     */
-    public function getApprovalDate()
-    {
-        return $this->approvalDate;
-    }
-
-    /**
-     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
-     * @return $this
-     */
-    public function setApprovalDate($approvalDate)
-    {
-        $this->approvalDate = $approvalDate;
-        return $this;
-    }
-
-    /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
-     */
-    public function getLastReviewDate()
-    {
-        return $this->lastReviewDate;
-    }
-
-    /**
-     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
-     * @return $this
-     */
-    public function setLastReviewDate($lastReviewDate)
-    {
-        $this->lastReviewDate = $lastReviewDate;
-        return $this;
-    }
-
-    /**
-     * The period during which the questionnaire content was or is planned to be in active use.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getEffectivePeriod()
-    {
-        return $this->effectivePeriod;
-    }
-
-    /**
-     * The period during which the questionnaire content was or is planned to be in active use.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
-     * @return $this
-     */
-    public function setEffectivePeriod($effectivePeriod)
-    {
-        $this->effectivePeriod = $effectivePeriod;
-        return $this;
-    }
-
-    /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
-     */
-    public function getUseContext()
-    {
-        return $this->useContext;
-    }
-
-    /**
-     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
-     * @return $this
-     */
-    public function addUseContext($useContext)
-    {
-        $this->useContext[] = $useContext;
-        return $this;
-    }
-
-    /**
-     * A legal or geographic region in which the questionnaire is intended to be used.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getJurisdiction()
-    {
-        return $this->jurisdiction;
-    }
-
-    /**
-     * A legal or geographic region in which the questionnaire is intended to be used.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return $this
-     */
-    public function addJurisdiction($jurisdiction)
-    {
-        $this->jurisdiction[] = $jurisdiction;
-        return $this;
-    }
-
-    /**
-     * Contact details to assist a user in finding and communicating with the publisher.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
-     */
-    public function getContact()
-    {
-        return $this->contact;
-    }
-
-    /**
-     * Contact details to assist a user in finding and communicating with the publisher.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
-     * @return $this
-     */
-    public function addContact($contact)
-    {
-        $this->contact[] = $contact;
-        return $this;
-    }
-
-    /**
-     * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
-     */
-    public function getCopyright()
-    {
-        return $this->copyright;
-    }
-
-    /**
-     * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
-     * @return $this
-     */
-    public function setCopyright($copyright)
-    {
-        $this->copyright = $copyright;
-        return $this;
-    }
-
-    /**
-     * An identifier for this question or group of questions in a particular terminology such as LOINC.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * An identifier for this question or group of questions in a particular terminology such as LOINC.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
-     * @return $this
-     */
-    public function addCode($code)
-    {
-        $this->code[] = $code;
         return $this;
     }
 
@@ -583,8 +353,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * The types of subjects that can be the subject of responses created for the questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public function getSubjectType()
-    {
+    public function getSubjectType() {
         return $this->subjectType;
     }
 
@@ -593,9 +362,224 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $subjectType
      * @return $this
      */
-    public function addSubjectType($subjectType)
-    {
+    public function addSubjectType($subjectType) {
         $this->subjectType[] = $subjectType;
+        return $this;
+    }
+
+    /**
+     * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getDate() {
+        return $this->date;
+    }
+
+    /**
+     * The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
+     * @return $this
+     */
+    public function setDate($date) {
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * The name of the individual or organization that published the questionnaire.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPublisher() {
+        return $this->publisher;
+    }
+
+    /**
+     * The name of the individual or organization that published the questionnaire.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
+     * @return $this
+     */
+    public function setPublisher($publisher) {
+        $this->publisher = $publisher;
+        return $this;
+    }
+
+    /**
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
+     */
+    public function getContact() {
+        return $this->contact;
+    }
+
+    /**
+     * Contact details to assist a user in finding and communicating with the publisher.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
+     * @return $this
+     */
+    public function addContact($contact) {
+        $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
+     */
+    public function getUseContext() {
+        return $this->useContext;
+    }
+
+    /**
+     * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
+     * @return $this
+     */
+    public function addUseContext($useContext) {
+        $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * A legal or geographic region in which the questionnaire is intended to be used.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getJurisdiction() {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * A legal or geographic region in which the questionnaire is intended to be used.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @return $this
+     */
+    public function addJurisdiction($jurisdiction) {
+        $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A free text natural language description of the questionnaire from a consumer's perspective.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getDescription() {
+        return $this->description;
+    }
+
+    /**
+     * A free text natural language description of the questionnaire from a consumer's perspective.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
+     * @return $this
+     */
+    public function setDescription($description) {
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * Explaination of why this questionnaire is needed and why it has been designed as it has.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getPurpose() {
+        return $this->purpose;
+    }
+
+    /**
+     * Explaination of why this questionnaire is needed and why it has been designed as it has.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
+     * @return $this
+     */
+    public function setPurpose($purpose) {
+        $this->purpose = $purpose;
+        return $this;
+    }
+
+    /**
+     * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getCopyright() {
+        return $this->copyright;
+    }
+
+    /**
+     * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
+     * @return $this
+     */
+    public function setCopyright($copyright) {
+        $this->copyright = $copyright;
+        return $this;
+    }
+
+    /**
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
+     */
+    public function getApprovalDate() {
+        return $this->approvalDate;
+    }
+
+    /**
+     * The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $approvalDate
+     * @return $this
+     */
+    public function setApprovalDate($approvalDate) {
+        $this->approvalDate = $approvalDate;
+        return $this;
+    }
+
+    /**
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
+     */
+    public function getLastReviewDate() {
+        return $this->lastReviewDate;
+    }
+
+    /**
+     * The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $lastReviewDate
+     * @return $this
+     */
+    public function setLastReviewDate($lastReviewDate) {
+        $this->lastReviewDate = $lastReviewDate;
+        return $this;
+    }
+
+    /**
+     * The period during which the questionnaire content was or is planned to be in active use.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getEffectivePeriod() {
+        return $this->effectivePeriod;
+    }
+
+    /**
+     * The period during which the questionnaire content was or is planned to be in active use.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
+     * @return $this
+     */
+    public function setEffectivePeriod($effectivePeriod) {
+        $this->effectivePeriod = $effectivePeriod;
+        return $this;
+    }
+
+    /**
+     * An identifier for this question or group of questions in a particular terminology such as LOINC.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
+     */
+    public function getCode() {
+        return $this->code;
+    }
+
+    /**
+     * An identifier for this question or group of questions in a particular terminology such as LOINC.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
+     * @return $this
+     */
+    public function addCode($code) {
+        $this->code[] = $code;
         return $this;
     }
 
@@ -603,8 +587,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * A particular question, question grouping or display text that is part of the questionnaire.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public function getItem()
-    {
+    public function getItem() {
         return $this->item;
     }
 
@@ -613,8 +596,7 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem $item
      * @return $this
      */
-    public function addItem($item)
-    {
+    public function addItem($item) {
         $this->item[] = $item;
         return $this;
     }
@@ -622,80 +604,208 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['derivedFrom'])) {
+                if (is_array($data['derivedFrom'])) {
+                    foreach($data['derivedFrom'] as $d) {
+                        $this->addDerivedFrom($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"derivedFrom" must be array of objects or null, '.gettype($data['derivedFrom']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['subjectType'])) {
+                if (is_array($data['subjectType'])) {
+                    foreach($data['subjectType'] as $d) {
+                        $this->addSubjectType($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"subjectType" must be array of objects or null, '.gettype($data['subjectType']).' seen.');
+                }
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['copyright'])) {
+                $this->setCopyright($data['copyright']);
+            }
+            if (isset($data['approvalDate'])) {
+                $this->setApprovalDate($data['approvalDate']);
+            }
+            if (isset($data['lastReviewDate'])) {
+                $this->setLastReviewDate($data['lastReviewDate']);
+            }
+            if (isset($data['effectivePeriod'])) {
+                $this->setEffectivePeriod($data['effectivePeriod']);
+            }
+            if (isset($data['code'])) {
+                if (is_array($data['code'])) {
+                    foreach($data['code'] as $d) {
+                        $this->addCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"code" must be array of objects or null, '.gettype($data['code']).' seen.');
+                }
+            }
+            if (isset($data['item'])) {
+                if (is_array($data['item'])) {
+                    foreach($data['item'] as $d) {
+                        $this->addItem($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"item" must be array of objects or null, '.gettype($data['item']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (isset($this->url)) $json['url'] = $this->url;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->approvalDate) $json['approvalDate'] = json_encode($this->approvalDate);
-        if (null !== $this->lastReviewDate) $json['lastReviewDate'] = json_encode($this->lastReviewDate);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (0 < count($this->derivedFrom)) {
+            $json['derivedFrom'] = [];
+            foreach($this->derivedFrom as $derivedFrom) {
+                if (null !== $derivedFrom) $json['derivedFrom'][] = $derivedFrom;
+            }
+        }
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (0 < count($this->subjectType)) {
+            $json['subjectType'] = [];
+            foreach($this->subjectType as $subjectType) {
+                if (null !== $subjectType) $json['subjectType'][] = $subjectType;
+            }
+        }
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
+        if (0 < count($this->contact)) {
+            $json['contact'] = [];
+            foreach($this->contact as $contact) {
+                if (null !== $contact) $json['contact'][] = $contact;
+            }
+        }
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (0 < count($this->contact)) {
-            $json['contact'] = [];
-            foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
-            }
-        }
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->copyright)) $json['copyright'] = $this->copyright;
+        if (isset($this->approvalDate)) $json['approvalDate'] = $this->approvalDate;
+        if (isset($this->lastReviewDate)) $json['lastReviewDate'] = $this->lastReviewDate;
+        if (isset($this->effectivePeriod)) $json['effectivePeriod'] = $this->effectivePeriod;
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
-            }
-        }
-        if (0 < count($this->subjectType)) {
-            $json['subjectType'] = [];
-            foreach($this->subjectType as $subjectType) {
-                $json['subjectType'][] = json_encode($subjectType);
+                if (null !== $code) $json['code'][] = $code;
             }
         }
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                if (null !== $item) $json['item'][] = $item;
             }
         }
         return $json;
@@ -706,28 +816,37 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Questionnaire xmlns="http://hl7.org/fhir"></Questionnaire>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
         if (0 < count($this->identifier)) {
             foreach($this->identifier as $identifier) {
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->approvalDate) $this->approvalDate->xmlSerialize(true, $sxe->addChild('approvalDate'));
-        if (null !== $this->lastReviewDate) $this->lastReviewDate->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
-        if (null !== $this->effectivePeriod) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (0 < count($this->derivedFrom)) {
+            foreach($this->derivedFrom as $derivedFrom) {
+                $derivedFrom->xmlSerialize(true, $sxe->addChild('derivedFrom'));
+            }
+        }
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (0 < count($this->subjectType)) {
+            foreach($this->subjectType as $subjectType) {
+                $subjectType->xmlSerialize(true, $sxe->addChild('subjectType'));
+            }
+        }
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (0 < count($this->contact)) {
+            foreach($this->contact as $contact) {
+                $contact->xmlSerialize(true, $sxe->addChild('contact'));
+            }
+        }
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -738,20 +857,15 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (0 < count($this->contact)) {
-            foreach($this->contact as $contact) {
-                $contact->xmlSerialize(true, $sxe->addChild('contact'));
-            }
-        }
-        if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->copyright)) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->approvalDate)) $this->approvalDate->xmlSerialize(true, $sxe->addChild('approvalDate'));
+        if (isset($this->lastReviewDate)) $this->lastReviewDate->xmlSerialize(true, $sxe->addChild('lastReviewDate'));
+        if (isset($this->effectivePeriod)) $this->effectivePeriod->xmlSerialize(true, $sxe->addChild('effectivePeriod'));
         if (0 < count($this->code)) {
             foreach($this->code as $code) {
                 $code->xmlSerialize(true, $sxe->addChild('code'));
-            }
-        }
-        if (0 < count($this->subjectType)) {
-            foreach($this->subjectType as $subjectType) {
-                $subjectType->xmlSerialize(true, $sxe->addChild('subjectType'));
             }
         }
         if (0 < count($this->item)) {

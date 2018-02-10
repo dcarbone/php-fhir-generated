@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,10 @@ class PHPFHIRResponseParser
         ));
     }
 
+    /**
+     * @param string $input
+     * @return object
+     */
     private function _parseXML($input)
     {
         libxml_use_internal_errors(true);
@@ -115,15 +119,16 @@ class PHPFHIRResponseParser
     /**
      * @param array $jsonEntry
      * @param string $fhirElementName
-     * @return object
+     * @return mixed
      */
-    private function _parseJsonObject($jsonEntry, $fhirElementName)
-    {
-        if ('html' === $fhirElementName)
+    private function _parseJsonObject($jsonEntry, $fhirElementName) {
+        if ('html' === $fhirElementName) {
             return $jsonEntry;
+        }
 
-        if (false !== strpos($fhirElementName, '-primitive') || false !== strpos($fhirElementName, '-list'))
+        if (false !== strpos($fhirElementName, '-primitive') || false !== strpos($fhirElementName, '-list')) {
             return $jsonEntry;
+        }
 
         $map = $this->_tryGetMapEntry($fhirElementName);
 
@@ -133,21 +138,18 @@ class PHPFHIRResponseParser
         $object = new $fullClassName;
 
         // This indicates we are at a primitive value...
-        if (is_scalar($jsonEntry))
-        {
-            if (isset($properties['value']))
-            {
+        if (is_scalar($jsonEntry)) {
+            if (isset($properties['value'])) {
                 $propertyMap = $properties['value'];
                 $setter = $propertyMap['setter'];
                 $element = $propertyMap['element'];
 
-                if (sprintf('%s-primitive', $fhirElementName) === $element || sprintf('%s-list', $fhirElementName) === $element)
+                if (sprintf('%s-primitive', $fhirElementName) === $element || sprintf('%s-list', $fhirElementName) === $element) {
                     $object->$setter($jsonEntry);
-                else
+                } else {
                     $this->_triggerPropertyNotFoundError($fhirElementName, 'value');
-            }
-            else
-            {
+                }
+            } else {
                 $this->_triggerPropertyNotFoundError($fhirElementName, 'value');
             }
         }

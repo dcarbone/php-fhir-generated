@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,7 +77,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a "History and Physical Report" in which the procedure being documented is necessarily a "History and Physical" act.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $event = array();
+    public $event = [];
 
     /**
      * The time period over which the service that is described by the document was provided.
@@ -107,7 +107,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * Related identifiers or resources associated with the DocumentReference.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelated[]
      */
-    public $related = array();
+    public $related = [];
 
     /**
      * @var string
@@ -118,8 +118,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * Describes the clinical encounter or type of care that the document content is associated with.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
-    {
+    public function getEncounter() {
         return $this->encounter;
     }
 
@@ -128,8 +127,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
      * @return $this
      */
-    public function setEncounter($encounter)
-    {
+    public function setEncounter($encounter) {
         $this->encounter = $encounter;
         return $this;
     }
@@ -138,8 +136,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a "History and Physical Report" in which the procedure being documented is necessarily a "History and Physical" act.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getEvent()
-    {
+    public function getEvent() {
         return $this->event;
     }
 
@@ -148,8 +145,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $event
      * @return $this
      */
-    public function addEvent($event)
-    {
+    public function addEvent($event) {
         $this->event[] = $event;
         return $this;
     }
@@ -158,8 +154,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * The time period over which the service that is described by the document was provided.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -168,8 +163,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -178,8 +172,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * The kind of facility where the patient was seen.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getFacilityType()
-    {
+    public function getFacilityType() {
         return $this->facilityType;
     }
 
@@ -188,8 +181,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $facilityType
      * @return $this
      */
-    public function setFacilityType($facilityType)
-    {
+    public function setFacilityType($facilityType) {
         $this->facilityType = $facilityType;
         return $this;
     }
@@ -198,8 +190,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * This property may convey specifics about the practice setting where the content was created, often reflecting the clinical specialty.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getPracticeSetting()
-    {
+    public function getPracticeSetting() {
         return $this->practiceSetting;
     }
 
@@ -208,8 +199,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $practiceSetting
      * @return $this
      */
-    public function setPracticeSetting($practiceSetting)
-    {
+    public function setPracticeSetting($practiceSetting) {
         $this->practiceSetting = $practiceSetting;
         return $this;
     }
@@ -218,8 +208,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * The Patient Information as known when the document was published. May be a reference to a version specific, or contained.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSourcePatientInfo()
-    {
+    public function getSourcePatientInfo() {
         return $this->sourcePatientInfo;
     }
 
@@ -228,8 +217,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $sourcePatientInfo
      * @return $this
      */
-    public function setSourcePatientInfo($sourcePatientInfo)
-    {
+    public function setSourcePatientInfo($sourcePatientInfo) {
         $this->sourcePatientInfo = $sourcePatientInfo;
         return $this;
     }
@@ -238,8 +226,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * Related identifiers or resources associated with the DocumentReference.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelated[]
      */
-    public function getRelated()
-    {
+    public function getRelated() {
         return $this->related;
     }
 
@@ -248,8 +235,7 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \PHPFHIRGenerated\FHIRResource\FHIRDocumentReference\FHIRDocumentReferenceRelated $related
      * @return $this
      */
-    public function addRelated($related)
-    {
+    public function addRelated($related) {
         $this->related[] = $related;
         return $this;
     }
@@ -257,40 +243,81 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['encounter'])) {
+                $this->setEncounter($data['encounter']);
+            }
+            if (isset($data['event'])) {
+                if (is_array($data['event'])) {
+                    foreach($data['event'] as $d) {
+                        $this->addEvent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"event" must be array of objects or null, '.gettype($data['event']).' seen.');
+                }
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['facilityType'])) {
+                $this->setFacilityType($data['facilityType']);
+            }
+            if (isset($data['practiceSetting'])) {
+                $this->setPracticeSetting($data['practiceSetting']);
+            }
+            if (isset($data['sourcePatientInfo'])) {
+                $this->setSourcePatientInfo($data['sourcePatientInfo']);
+            }
+            if (isset($data['related'])) {
+                if (is_array($data['related'])) {
+                    foreach($data['related'] as $d) {
+                        $this->addRelated($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"related" must be array of objects or null, '.gettype($data['related']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (isset($this->encounter)) $json['encounter'] = $this->encounter;
         if (0 < count($this->event)) {
             $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = json_encode($event);
+                if (null !== $event) $json['event'][] = $event;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->facilityType) $json['facilityType'] = json_encode($this->facilityType);
-        if (null !== $this->practiceSetting) $json['practiceSetting'] = json_encode($this->practiceSetting);
-        if (null !== $this->sourcePatientInfo) $json['sourcePatientInfo'] = json_encode($this->sourcePatientInfo);
+        if (isset($this->period)) $json['period'] = $this->period;
+        if (isset($this->facilityType)) $json['facilityType'] = $this->facilityType;
+        if (isset($this->practiceSetting)) $json['practiceSetting'] = $this->practiceSetting;
+        if (isset($this->sourcePatientInfo)) $json['sourcePatientInfo'] = $this->sourcePatientInfo;
         if (0 < count($this->related)) {
             $json['related'] = [];
             foreach($this->related as $related) {
-                $json['related'][] = json_encode($related);
+                if (null !== $related) $json['related'][] = $related;
             }
         }
         return $json;
@@ -301,20 +328,19 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DocumentReferenceContext xmlns="http://hl7.org/fhir"></DocumentReferenceContext>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (isset($this->encounter)) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
         if (0 < count($this->event)) {
             foreach($this->event as $event) {
                 $event->xmlSerialize(true, $sxe->addChild('event'));
             }
         }
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if (null !== $this->facilityType) $this->facilityType->xmlSerialize(true, $sxe->addChild('facilityType'));
-        if (null !== $this->practiceSetting) $this->practiceSetting->xmlSerialize(true, $sxe->addChild('practiceSetting'));
-        if (null !== $this->sourcePatientInfo) $this->sourcePatientInfo->xmlSerialize(true, $sxe->addChild('sourcePatientInfo'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->facilityType)) $this->facilityType->xmlSerialize(true, $sxe->addChild('facilityType'));
+        if (isset($this->practiceSetting)) $this->practiceSetting->xmlSerialize(true, $sxe->addChild('practiceSetting'));
+        if (isset($this->sourcePatientInfo)) $this->sourcePatientInfo->xmlSerialize(true, $sxe->addChild('sourcePatientInfo'));
         if (0 < count($this->related)) {
             foreach($this->related as $related) {
                 $related->xmlSerialize(true, $sxe->addChild('related'));

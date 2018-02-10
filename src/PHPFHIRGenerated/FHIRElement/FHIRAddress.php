@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -90,7 +90,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $line = array();
+    public $line = [];
 
     /**
      * The name of the city, town, village or other community or delivery center.
@@ -137,8 +137,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * The purpose of this address.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddressUse
      */
-    public function getUse()
-    {
+    public function getUse() {
         return $this->use;
     }
 
@@ -147,8 +146,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddressUse $use
      * @return $this
      */
-    public function setUse($use)
-    {
+    public function setUse($use) {
         $this->use = $use;
         return $this;
     }
@@ -157,8 +155,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddressType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -167,8 +164,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddressType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -177,8 +173,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * A full text representation of the address.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -187,8 +182,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -197,8 +191,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getLine()
-    {
+    public function getLine() {
         return $this->line;
     }
 
@@ -207,8 +200,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $line
      * @return $this
      */
-    public function addLine($line)
-    {
+    public function addLine($line) {
         $this->line[] = $line;
         return $this;
     }
@@ -217,8 +209,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * The name of the city, town, village or other community or delivery center.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCity()
-    {
+    public function getCity() {
         return $this->city;
     }
 
@@ -227,8 +218,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $city
      * @return $this
      */
-    public function setCity($city)
-    {
+    public function setCity($city) {
         $this->city = $city;
         return $this;
     }
@@ -237,8 +227,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * The name of the administrative area (county).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDistrict()
-    {
+    public function getDistrict() {
         return $this->district;
     }
 
@@ -247,8 +236,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $district
      * @return $this
      */
-    public function setDistrict($district)
-    {
+    public function setDistrict($district) {
         $this->district = $district;
         return $this;
     }
@@ -257,8 +245,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getState()
-    {
+    public function getState() {
         return $this->state;
     }
 
@@ -267,8 +254,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $state
      * @return $this
      */
-    public function setState($state)
-    {
+    public function setState($state) {
         $this->state = $state;
         return $this;
     }
@@ -277,8 +263,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * A postal code designating a region defined by the postal service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPostalCode()
-    {
+    public function getPostalCode() {
         return $this->postalCode;
     }
 
@@ -287,8 +272,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $postalCode
      * @return $this
      */
-    public function setPostalCode($postalCode)
-    {
+    public function setPostalCode($postalCode) {
         $this->postalCode = $postalCode;
         return $this;
     }
@@ -297,8 +281,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * Country - a nation as commonly understood or generally accepted.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCountry()
-    {
+    public function getCountry() {
         return $this->country;
     }
 
@@ -307,8 +290,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $country
      * @return $this
      */
-    public function setCountry($country)
-    {
+    public function setCountry($country) {
         $this->country = $country;
         return $this;
     }
@@ -317,8 +299,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * Time period when address was/is in use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -327,8 +308,7 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -336,40 +316,84 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+            if (isset($data['line'])) {
+                if (is_array($data['line'])) {
+                    foreach($data['line'] as $d) {
+                        $this->addLine($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"line" must be array of objects or null, '.gettype($data['line']).' seen.');
+                }
+            }
+            if (isset($data['city'])) {
+                $this->setCity($data['city']);
+            }
+            if (isset($data['district'])) {
+                $this->setDistrict($data['district']);
+            }
+            if (isset($data['state'])) {
+                $this->setState($data['state']);
+            }
+            if (isset($data['postalCode'])) {
+                $this->setPostalCode($data['postalCode']);
+            }
+            if (isset($data['country'])) {
+                $this->setCountry($data['country']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->use) $json['use'] = json_encode($this->use);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (isset($this->use)) $json['use'] = $this->use;
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->text)) $json['text'] = $this->text;
         if (0 < count($this->line)) {
             $json['line'] = [];
             foreach($this->line as $line) {
-                $json['line'][] = json_encode($line);
+                if (null !== $line) $json['line'][] = $line;
             }
         }
-        if (null !== $this->city) $json['city'] = json_encode($this->city);
-        if (null !== $this->district) $json['district'] = json_encode($this->district);
-        if (null !== $this->state) $json['state'] = json_encode($this->state);
-        if (null !== $this->postalCode) $json['postalCode'] = json_encode($this->postalCode);
-        if (null !== $this->country) $json['country'] = json_encode($this->country);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->city)) $json['city'] = $this->city;
+        if (isset($this->district)) $json['district'] = $this->district;
+        if (isset($this->state)) $json['state'] = $this->state;
+        if (isset($this->postalCode)) $json['postalCode'] = $this->postalCode;
+        if (isset($this->country)) $json['country'] = $this->country;
+        if (isset($this->period)) $json['period'] = $this->period;
         return $json;
     }
 
@@ -378,24 +402,23 @@ class FHIRAddress extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Address xmlns="http://hl7.org/fhir"></Address>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->use) $this->use->xmlSerialize(true, $sxe->addChild('use'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
         if (0 < count($this->line)) {
             foreach($this->line as $line) {
                 $line->xmlSerialize(true, $sxe->addChild('line'));
             }
         }
-        if (null !== $this->city) $this->city->xmlSerialize(true, $sxe->addChild('city'));
-        if (null !== $this->district) $this->district->xmlSerialize(true, $sxe->addChild('district'));
-        if (null !== $this->state) $this->state->xmlSerialize(true, $sxe->addChild('state'));
-        if (null !== $this->postalCode) $this->postalCode->xmlSerialize(true, $sxe->addChild('postalCode'));
-        if (null !== $this->country) $this->country->xmlSerialize(true, $sxe->addChild('country'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->city)) $this->city->xmlSerialize(true, $sxe->addChild('city'));
+        if (isset($this->district)) $this->district->xmlSerialize(true, $sxe->addChild('district'));
+        if (isset($this->state)) $this->state->xmlSerialize(true, $sxe->addChild('state'));
+        if (isset($this->postalCode)) $this->postalCode->xmlSerialize(true, $sxe->addChild('postalCode'));
+        if (isset($this->country)) $this->country->xmlSerialize(true, $sxe->addChild('country'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

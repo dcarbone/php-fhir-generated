@@ -1,10 +1,13 @@
 # php-fhir-generated
 Pre-generated classes from dcarbone/php-fhir
 
-# VERSION: STU3
+# VERSION: Master
 
-- Homepage: [http://hl7.org/fhir/STU3/index.html](http://hl7.org/fhir/STU3/index.html)
-- Resources: [http://hl7.org/fhir/STU3/resourcelist.html](http://hl7.org/fhir/STU3/resourcelist.html)
+- Homepage: [https://build.fhir.org/](https://build.fhir.org/)
+- Resources: [https://build.fhir.org/resourcelist.html](https://build.fhir.org/resourcelist.html)
+
+`master` will contain the latest output from `dcarbone/php-fhir` based upon the latest (at time of generation) version
+of FHIR.  Use at your own risk.
 
 ## Usage
 
@@ -17,7 +20,7 @@ composer.json require entry:
 
 ```json
 {
-   "dcarbone/php-fhir-generated": "dev-STU3"
+   "dcarbone/php-fhir-generated": "dev-master"
 }
 ```
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -94,8 +94,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getLongitude()
-    {
+    public function getLongitude() {
         return $this->longitude;
     }
 
@@ -104,8 +103,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $longitude
      * @return $this
      */
-    public function setLongitude($longitude)
-    {
+    public function setLongitude($longitude) {
         $this->longitude = $longitude;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getLatitude()
-    {
+    public function getLatitude() {
         return $this->latitude;
     }
 
@@ -124,8 +121,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $latitude
      * @return $this
      */
-    public function setLatitude($latitude)
-    {
+    public function setLatitude($latitude) {
         $this->latitude = $latitude;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getAltitude()
-    {
+    public function getAltitude() {
         return $this->altitude;
     }
 
@@ -144,8 +139,7 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $altitude
      * @return $this
      */
-    public function setAltitude($altitude)
-    {
+    public function setAltitude($altitude) {
         $this->altitude = $altitude;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['longitude'])) {
+                $this->setLongitude($data['longitude']);
+            }
+            if (isset($data['latitude'])) {
+                $this->setLatitude($data['latitude']);
+            }
+            if (isset($data['altitude'])) {
+                $this->setAltitude($data['altitude']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->longitude) $json['longitude'] = json_encode($this->longitude);
-        if (null !== $this->latitude) $json['latitude'] = json_encode($this->latitude);
-        if (null !== $this->altitude) $json['altitude'] = json_encode($this->altitude);
+        if (isset($this->longitude)) $json['longitude'] = $this->longitude;
+        if (isset($this->latitude)) $json['latitude'] = $this->latitude;
+        if (isset($this->altitude)) $json['altitude'] = $this->altitude;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRLocationPosition extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<LocationPosition xmlns="http://hl7.org/fhir"></LocationPosition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->longitude) $this->longitude->xmlSerialize(true, $sxe->addChild('longitude'));
-        if (null !== $this->latitude) $this->latitude->xmlSerialize(true, $sxe->addChild('latitude'));
-        if (null !== $this->altitude) $this->altitude->xmlSerialize(true, $sxe->addChild('altitude'));
+        if (isset($this->longitude)) $this->longitude->xmlSerialize(true, $sxe->addChild('longitude'));
+        if (isset($this->latitude)) $this->latitude->xmlSerialize(true, $sxe->addChild('latitude'));
+        if (isset($this->altitude)) $this->altitude->xmlSerialize(true, $sxe->addChild('altitude'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

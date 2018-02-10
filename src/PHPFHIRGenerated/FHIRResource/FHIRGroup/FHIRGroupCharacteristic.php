@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,25 +74,21 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     public $code = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $valueRange = null;
@@ -118,8 +114,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * A code that identifies the kind of trait being asserted.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -128,88 +123,71 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getValueCodeableConcept()
-    {
+    public function getValueCodeableConcept() {
         return $this->valueCodeableConcept;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
-    public function setValueCodeableConcept($valueCodeableConcept)
-    {
+    public function setValueCodeableConcept($valueCodeableConcept) {
         $this->valueCodeableConcept = $valueCodeableConcept;
         return $this;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getValueBoolean()
-    {
+    public function getValueBoolean() {
         return $this->valueBoolean;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
-    public function setValueBoolean($valueBoolean)
-    {
+    public function setValueBoolean($valueBoolean) {
         $this->valueBoolean = $valueBoolean;
         return $this;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getValueQuantity()
-    {
+    public function getValueQuantity() {
         return $this->valueQuantity;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
-    public function setValueQuantity($valueQuantity)
-    {
+    public function setValueQuantity($valueQuantity) {
         $this->valueQuantity = $valueQuantity;
         return $this;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public function getValueRange()
-    {
+    public function getValueRange() {
         return $this->valueRange;
     }
 
     /**
-     * The value of the trait that holds (or does not hold - see 'exclude') for members of the group. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
-    public function setValueRange($valueRange)
-    {
+    public function setValueRange($valueRange) {
         $this->valueRange = $valueRange;
         return $this;
     }
@@ -218,8 +196,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * If true, indicates the characteristic is one that is NOT held by members of the group.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExclude()
-    {
+    public function getExclude() {
         return $this->exclude;
     }
 
@@ -228,8 +205,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $exclude
      * @return $this
      */
-    public function setExclude($exclude)
-    {
+    public function setExclude($exclude) {
         $this->exclude = $exclude;
         return $this;
     }
@@ -238,8 +214,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -248,8 +223,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -257,32 +231,61 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['valueCodeableConcept'])) {
+                $this->setValueCodeableConcept($data['valueCodeableConcept']);
+            }
+            if (isset($data['valueBoolean'])) {
+                $this->setValueBoolean($data['valueBoolean']);
+            }
+            if (isset($data['valueQuantity'])) {
+                $this->setValueQuantity($data['valueQuantity']);
+            }
+            if (isset($data['valueRange'])) {
+                $this->setValueRange($data['valueRange']);
+            }
+            if (isset($data['exclude'])) {
+                $this->setExclude($data['exclude']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
-        if (null !== $this->exclude) $json['exclude'] = json_encode($this->exclude);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->valueCodeableConcept)) $json['valueCodeableConcept'] = $this->valueCodeableConcept;
+        if (isset($this->valueBoolean)) $json['valueBoolean'] = $this->valueBoolean;
+        if (isset($this->valueQuantity)) $json['valueQuantity'] = $this->valueQuantity;
+        if (isset($this->valueRange)) $json['valueRange'] = $this->valueRange;
+        if (isset($this->exclude)) $json['exclude'] = $this->exclude;
+        if (isset($this->period)) $json['period'] = $this->period;
         return $json;
     }
 
@@ -291,17 +294,16 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement implements \JsonSerial
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<GroupCharacteristic xmlns="http://hl7.org/fhir"></GroupCharacteristic>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->valueCodeableConcept) $this->valueCodeableConcept->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
-        if (null !== $this->valueBoolean) $this->valueBoolean->xmlSerialize(true, $sxe->addChild('valueBoolean'));
-        if (null !== $this->valueQuantity) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
-        if (null !== $this->valueRange) $this->valueRange->xmlSerialize(true, $sxe->addChild('valueRange'));
-        if (null !== $this->exclude) $this->exclude->xmlSerialize(true, $sxe->addChild('exclude'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->valueCodeableConcept)) $this->valueCodeableConcept->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
+        if (isset($this->valueBoolean)) $this->valueBoolean->xmlSerialize(true, $sxe->addChild('valueBoolean'));
+        if (isset($this->valueQuantity)) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        if (isset($this->valueRange)) $this->valueRange->xmlSerialize(true, $sxe->addChild('valueRange'));
+        if (isset($this->exclude)) $this->exclude->xmlSerialize(true, $sxe->addChild('exclude'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

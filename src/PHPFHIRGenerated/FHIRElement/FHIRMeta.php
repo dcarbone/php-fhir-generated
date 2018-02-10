@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,13 +63,13 @@
 use PHPFHIRGenerated\FHIRElement;
 
 /**
- * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content may not always be associated with version changes to the resource.
+ * The metadata about a resource. This is content in the resource that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
  */
 class FHIRMeta extends FHIRElement implements \JsonSerializable
 {
     /**
-     * The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.
+     * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $versionId = null;
@@ -81,22 +81,28 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
     public $lastUpdated = null;
 
     /**
+     * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $source = null;
+
+    /**
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $profile = array();
+    public $profile = [];
 
     /**
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $security = array();
+    public $security = [];
 
     /**
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $tag = array();
+    public $tag = [];
 
     /**
      * @var string
@@ -104,21 +110,19 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
     private $_fhirElementName = 'Meta';
 
     /**
-     * The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.
+     * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getVersionId()
-    {
+    public function getVersionId() {
         return $this->versionId;
     }
 
     /**
-     * The version specific identifier, as it appears in the version portion of the URL. This values changes when the resource is created, updated, or deleted.
+     * The version specific identifier, as it appears in the version portion of the URL. This value changes when the resource is created, updated, or deleted.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $versionId
      * @return $this
      */
-    public function setVersionId($versionId)
-    {
+    public function setVersionId($versionId) {
         $this->versionId = $versionId;
         return $this;
     }
@@ -127,8 +131,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * When the resource last changed - e.g. when the version changed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public function getLastUpdated()
-    {
+    public function getLastUpdated() {
         return $this->lastUpdated;
     }
 
@@ -137,9 +140,26 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $lastUpdated
      * @return $this
      */
-    public function setLastUpdated($lastUpdated)
-    {
+    public function setLastUpdated($lastUpdated) {
         $this->lastUpdated = $lastUpdated;
+        return $this;
+    }
+
+    /**
+     * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getSource() {
+        return $this->source;
+    }
+
+    /**
+     * A uri that identifies the source system of the resource. This provides a minimal amount of [[[Provenance]]] information that can be used to track or differentiate the source of information in the resource. The source may identify another FHIR server, document, message, database, etc.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $source
+     * @return $this
+     */
+    public function setSource($source) {
+        $this->source = $source;
         return $this;
     }
 
@@ -147,8 +167,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this resource claims to conform to. The URL is a reference to [[[StructureDefinition.url]]].
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -157,8 +176,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $profile
      * @return $this
      */
-    public function addProfile($profile)
-    {
+    public function addProfile($profile) {
         $this->profile[] = $profile;
         return $this;
     }
@@ -167,8 +185,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * Security labels applied to this resource. These tags connect specific resources to the overall security policy and infrastructure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getSecurity()
-    {
+    public function getSecurity() {
         return $this->security;
     }
 
@@ -177,8 +194,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $security
      * @return $this
      */
-    public function addSecurity($security)
-    {
+    public function addSecurity($security) {
         $this->security[] = $security;
         return $this;
     }
@@ -187,8 +203,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * Tags applied to this resource. Tags are intended to be used to identify and relate resources to process and workflow, and applications are not required to consider the tags when interpreting the meaning of a resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getTag()
-    {
+    public function getTag() {
         return $this->tag;
     }
 
@@ -197,8 +212,7 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $tag
      * @return $this
      */
-    public function addTag($tag)
-    {
+    public function addTag($tag) {
         $this->tag[] = $tag;
         return $this;
     }
@@ -206,43 +220,88 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['versionId'])) {
+                $this->setVersionId($data['versionId']);
+            }
+            if (isset($data['lastUpdated'])) {
+                $this->setLastUpdated($data['lastUpdated']);
+            }
+            if (isset($data['source'])) {
+                $this->setSource($data['source']);
+            }
+            if (isset($data['profile'])) {
+                if (is_array($data['profile'])) {
+                    foreach($data['profile'] as $d) {
+                        $this->addProfile($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"profile" must be array of objects or null, '.gettype($data['profile']).' seen.');
+                }
+            }
+            if (isset($data['security'])) {
+                if (is_array($data['security'])) {
+                    foreach($data['security'] as $d) {
+                        $this->addSecurity($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"security" must be array of objects or null, '.gettype($data['security']).' seen.');
+                }
+            }
+            if (isset($data['tag'])) {
+                if (is_array($data['tag'])) {
+                    foreach($data['tag'] as $d) {
+                        $this->addTag($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"tag" must be array of objects or null, '.gettype($data['tag']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->versionId) $json['versionId'] = json_encode($this->versionId);
-        if (null !== $this->lastUpdated) $json['lastUpdated'] = json_encode($this->lastUpdated);
+        if (isset($this->versionId)) $json['versionId'] = $this->versionId;
+        if (isset($this->lastUpdated)) $json['lastUpdated'] = $this->lastUpdated;
+        if (isset($this->source)) $json['source'] = $this->source;
         if (0 < count($this->profile)) {
             $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = json_encode($profile);
+                if (null !== $profile) $json['profile'][] = $profile;
             }
         }
         if (0 < count($this->security)) {
             $json['security'] = [];
             foreach($this->security as $security) {
-                $json['security'][] = json_encode($security);
+                if (null !== $security) $json['security'][] = $security;
             }
         }
         if (0 < count($this->tag)) {
             $json['tag'] = [];
             foreach($this->tag as $tag) {
-                $json['tag'][] = json_encode($tag);
+                if (null !== $tag) $json['tag'][] = $tag;
             }
         }
         return $json;
@@ -253,12 +312,12 @@ class FHIRMeta extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Meta xmlns="http://hl7.org/fhir"></Meta>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->versionId) $this->versionId->xmlSerialize(true, $sxe->addChild('versionId'));
-        if (null !== $this->lastUpdated) $this->lastUpdated->xmlSerialize(true, $sxe->addChild('lastUpdated'));
+        if (isset($this->versionId)) $this->versionId->xmlSerialize(true, $sxe->addChild('versionId'));
+        if (isset($this->lastUpdated)) $this->lastUpdated->xmlSerialize(true, $sxe->addChild('lastUpdated'));
+        if (isset($this->source)) $this->source->xmlSerialize(true, $sxe->addChild('source'));
         if (0 < count($this->profile)) {
             foreach($this->profile as $profile) {
                 $profile->xmlSerialize(true, $sxe->addChild('profile'));

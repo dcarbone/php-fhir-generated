@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -100,13 +100,11 @@ The dosage instructions should reflect the dosage of the medication that was adm
     public $dose = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $rateQuantity = null;
@@ -122,8 +120,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
 The dosage instructions should reflect the dosage of the medication that was administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -134,8 +131,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -144,8 +140,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * A coded specification of the anatomic site where the medication first entered the body.  For example, "left arm".
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getSite()
-    {
+    public function getSite() {
         return $this->site;
     }
 
@@ -154,8 +149,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $site
      * @return $this
      */
-    public function setSite($site)
-    {
+    public function setSite($site) {
         $this->site = $site;
         return $this;
     }
@@ -164,8 +158,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * A code specifying the route or physiological path of administration of a therapeutic agent into or onto the patient.  For example, topical, intravenous, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRoute()
-    {
+    public function getRoute() {
         return $this->route;
     }
 
@@ -174,8 +167,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $route
      * @return $this
      */
-    public function setRoute($route)
-    {
+    public function setRoute($route) {
         $this->route = $route;
         return $this;
     }
@@ -184,8 +176,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * A coded value indicating the method by which the medication is intended to be or was introduced into or on the body.  This attribute will most often NOT be populated.  It is most commonly used for injections.  For example, Slow Push, Deep IV.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getMethod()
-    {
+    public function getMethod() {
         return $this->method;
     }
 
@@ -194,8 +185,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $method
      * @return $this
      */
-    public function setMethod($method)
-    {
+    public function setMethod($method) {
         $this->method = $method;
         return $this;
     }
@@ -204,8 +194,7 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * The amount of the medication given at one administration event.   Use this value when the administration is essentially an instantaneous event such as a swallowing a tablet or giving an injection.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getDose()
-    {
+    public function getDose() {
         return $this->dose;
     }
 
@@ -214,48 +203,39 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $dose
      * @return $this
      */
-    public function setDose($dose)
-    {
+    public function setDose($dose) {
         $this->dose = $dose;
         return $this;
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public function getRateRatio()
-    {
+    public function getRateRatio() {
         return $this->rateRatio;
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
-    public function setRateRatio($rateRatio)
-    {
+    public function setRateRatio($rateRatio) {
         $this->rateRatio = $rateRatio;
         return $this;
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getRateQuantity()
-    {
+    public function getRateQuantity() {
         return $this->rateQuantity;
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient.  Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.  Other examples:  200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $rateQuantity
      * @return $this
      */
-    public function setRateQuantity($rateQuantity)
-    {
+    public function setRateQuantity($rateQuantity) {
         $this->rateQuantity = $rateQuantity;
         return $this;
     }
@@ -263,32 +243,61 @@ The dosage instructions should reflect the dosage of the medication that was adm
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+            if (isset($data['site'])) {
+                $this->setSite($data['site']);
+            }
+            if (isset($data['route'])) {
+                $this->setRoute($data['route']);
+            }
+            if (isset($data['method'])) {
+                $this->setMethod($data['method']);
+            }
+            if (isset($data['dose'])) {
+                $this->setDose($data['dose']);
+            }
+            if (isset($data['rateRatio'])) {
+                $this->setRateRatio($data['rateRatio']);
+            }
+            if (isset($data['rateQuantity'])) {
+                $this->setRateQuantity($data['rateQuantity']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->site) $json['site'] = json_encode($this->site);
-        if (null !== $this->route) $json['route'] = json_encode($this->route);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->dose) $json['dose'] = json_encode($this->dose);
-        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
-        if (null !== $this->rateQuantity) $json['rateQuantity'] = json_encode($this->rateQuantity);
+        if (isset($this->text)) $json['text'] = $this->text;
+        if (isset($this->site)) $json['site'] = $this->site;
+        if (isset($this->route)) $json['route'] = $this->route;
+        if (isset($this->method)) $json['method'] = $this->method;
+        if (isset($this->dose)) $json['dose'] = $this->dose;
+        if (isset($this->rateRatio)) $json['rateRatio'] = $this->rateRatio;
+        if (isset($this->rateQuantity)) $json['rateQuantity'] = $this->rateQuantity;
         return $json;
     }
 
@@ -297,17 +306,16 @@ The dosage instructions should reflect the dosage of the medication that was adm
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationAdministrationDosage xmlns="http://hl7.org/fhir"></MedicationAdministrationDosage>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (null !== $this->site) $this->site->xmlSerialize(true, $sxe->addChild('site'));
-        if (null !== $this->route) $this->route->xmlSerialize(true, $sxe->addChild('route'));
-        if (null !== $this->method) $this->method->xmlSerialize(true, $sxe->addChild('method'));
-        if (null !== $this->dose) $this->dose->xmlSerialize(true, $sxe->addChild('dose'));
-        if (null !== $this->rateRatio) $this->rateRatio->xmlSerialize(true, $sxe->addChild('rateRatio'));
-        if (null !== $this->rateQuantity) $this->rateQuantity->xmlSerialize(true, $sxe->addChild('rateQuantity'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->site)) $this->site->xmlSerialize(true, $sxe->addChild('site'));
+        if (isset($this->route)) $this->route->xmlSerialize(true, $sxe->addChild('route'));
+        if (isset($this->method)) $this->method->xmlSerialize(true, $sxe->addChild('method'));
+        if (isset($this->dose)) $this->dose->xmlSerialize(true, $sxe->addChild('dose'));
+        if (isset($this->rateRatio)) $this->rateRatio->xmlSerialize(true, $sxe->addChild('rateRatio'));
+        if (isset($this->rateQuantity)) $this->rateQuantity->xmlSerialize(true, $sxe->addChild('rateQuantity'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

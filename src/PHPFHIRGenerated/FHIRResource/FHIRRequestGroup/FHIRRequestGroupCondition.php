@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -100,8 +100,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * The kind of condition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRActionConditionKind
      */
-    public function getKind()
-    {
+    public function getKind() {
         return $this->kind;
     }
 
@@ -110,8 +109,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRActionConditionKind $kind
      * @return $this
      */
-    public function setKind($kind)
-    {
+    public function setKind($kind) {
         $this->kind = $kind;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * A brief, natural language description of the condition that effectively communicates the intended semantics.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -130,8 +127,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * The media type of the language for the expression.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->language;
     }
 
@@ -150,8 +145,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $language
      * @return $this
      */
-    public function setLanguage($language)
-    {
+    public function setLanguage($language) {
         $this->language = $language;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * An expression that returns true or false, indicating whether or not the condition is satisfied.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getExpression()
-    {
+    public function getExpression() {
         return $this->expression;
     }
 
@@ -170,8 +163,7 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
-    public function setExpression($expression)
-    {
+    public function setExpression($expression) {
         $this->expression = $expression;
         return $this;
     }
@@ -179,29 +171,49 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['kind'])) {
+                $this->setKind($data['kind']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['language'])) {
+                $this->setLanguage($data['language']);
+            }
+            if (isset($data['expression'])) {
+                $this->setExpression($data['expression']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->language) $json['language'] = json_encode($this->language);
-        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
+        if (isset($this->kind)) $json['kind'] = $this->kind;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->language)) $json['language'] = $this->language;
+        if (isset($this->expression)) $json['expression'] = $this->expression;
         return $json;
     }
 
@@ -210,14 +222,13 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement implements \JsonSeri
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<RequestGroupCondition xmlns="http://hl7.org/fhir"></RequestGroupCondition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->kind) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->language) $this->language->xmlSerialize(true, $sxe->addChild('language'));
-        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
+        if (isset($this->kind)) $this->kind->xmlSerialize(true, $sxe->addChild('kind'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->language)) $this->language->xmlSerialize(true, $sxe->addChild('language'));
+        if (isset($this->expression)) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

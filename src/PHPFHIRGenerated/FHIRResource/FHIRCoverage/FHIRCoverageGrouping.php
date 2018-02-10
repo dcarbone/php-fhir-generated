@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -148,8 +148,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a style or collective of coverage issued by the underwriter, for example may be used to identify an employer group. May also be referred to as a Policy or Group ID.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getGroup()
-    {
+    public function getGroup() {
         return $this->group;
     }
 
@@ -158,8 +157,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $group
      * @return $this
      */
-    public function setGroup($group)
-    {
+    public function setGroup($group) {
         $this->group = $group;
         return $this;
     }
@@ -168,8 +166,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * A short description for the group.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getGroupDisplay()
-    {
+    public function getGroupDisplay() {
         return $this->groupDisplay;
     }
 
@@ -178,8 +175,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $groupDisplay
      * @return $this
      */
-    public function setGroupDisplay($groupDisplay)
-    {
+    public function setGroupDisplay($groupDisplay) {
         $this->groupDisplay = $groupDisplay;
         return $this;
     }
@@ -188,8 +184,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a style or collective of coverage issued by the underwriter, for example may be used to identify a subset of an employer group.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSubGroup()
-    {
+    public function getSubGroup() {
         return $this->subGroup;
     }
 
@@ -198,8 +193,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $subGroup
      * @return $this
      */
-    public function setSubGroup($subGroup)
-    {
+    public function setSubGroup($subGroup) {
         $this->subGroup = $subGroup;
         return $this;
     }
@@ -208,8 +202,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * A short description for the subgroup.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSubGroupDisplay()
-    {
+    public function getSubGroupDisplay() {
         return $this->subGroupDisplay;
     }
 
@@ -218,8 +211,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $subGroupDisplay
      * @return $this
      */
-    public function setSubGroupDisplay($subGroupDisplay)
-    {
+    public function setSubGroupDisplay($subGroupDisplay) {
         $this->subGroupDisplay = $subGroupDisplay;
         return $this;
     }
@@ -228,8 +220,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a style or collective of coverage issued by the underwriter, for example may be used to identify a collection of benefits provided to employees. May be referred to as a Section or Division ID.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPlan()
-    {
+    public function getPlan() {
         return $this->plan;
     }
 
@@ -238,8 +229,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $plan
      * @return $this
      */
-    public function setPlan($plan)
-    {
+    public function setPlan($plan) {
         $this->plan = $plan;
         return $this;
     }
@@ -248,8 +238,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * A short description for the plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPlanDisplay()
-    {
+    public function getPlanDisplay() {
         return $this->planDisplay;
     }
 
@@ -258,8 +247,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $planDisplay
      * @return $this
      */
-    public function setPlanDisplay($planDisplay)
-    {
+    public function setPlanDisplay($planDisplay) {
         $this->planDisplay = $planDisplay;
         return $this;
     }
@@ -268,8 +256,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a sub-style or sub-collective of coverage issued by the underwriter, for example may be used to identify a subset of a collection of benefits provided to employees.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSubPlan()
-    {
+    public function getSubPlan() {
         return $this->subPlan;
     }
 
@@ -278,8 +265,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $subPlan
      * @return $this
      */
-    public function setSubPlan($subPlan)
-    {
+    public function setSubPlan($subPlan) {
         $this->subPlan = $subPlan;
         return $this;
     }
@@ -288,8 +274,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * A short description for the subplan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSubPlanDisplay()
-    {
+    public function getSubPlanDisplay() {
         return $this->subPlanDisplay;
     }
 
@@ -298,8 +283,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $subPlanDisplay
      * @return $this
      */
-    public function setSubPlanDisplay($subPlanDisplay)
-    {
+    public function setSubPlanDisplay($subPlanDisplay) {
         $this->subPlanDisplay = $subPlanDisplay;
         return $this;
     }
@@ -308,8 +292,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a style or collective of coverage issues by the underwriter, for example may be used to identify a class of coverage such as a level of deductables or co-payment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getClass()
-    {
+    public function getClass() {
         return $this->class;
     }
 
@@ -318,8 +301,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $class
      * @return $this
      */
-    public function setClass($class)
-    {
+    public function setClass($class) {
         $this->class = $class;
         return $this;
     }
@@ -328,8 +310,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * A short description for the class.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getClassDisplay()
-    {
+    public function getClassDisplay() {
         return $this->classDisplay;
     }
 
@@ -338,8 +319,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $classDisplay
      * @return $this
      */
-    public function setClassDisplay($classDisplay)
-    {
+    public function setClassDisplay($classDisplay) {
         $this->classDisplay = $classDisplay;
         return $this;
     }
@@ -348,8 +328,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * Identifies a sub-style or sub-collective of coverage issues by the underwriter, for example may be used to identify a subclass of coverage such as a sub-level of deductables or co-payment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSubClass()
-    {
+    public function getSubClass() {
         return $this->subClass;
     }
 
@@ -358,8 +337,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $subClass
      * @return $this
      */
-    public function setSubClass($subClass)
-    {
+    public function setSubClass($subClass) {
         $this->subClass = $subClass;
         return $this;
     }
@@ -368,8 +346,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * A short description for the subclass.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getSubClassDisplay()
-    {
+    public function getSubClassDisplay() {
         return $this->subClassDisplay;
     }
 
@@ -378,8 +355,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $subClassDisplay
      * @return $this
      */
-    public function setSubClassDisplay($subClassDisplay)
-    {
+    public function setSubClassDisplay($subClassDisplay) {
         $this->subClassDisplay = $subClassDisplay;
         return $this;
     }
@@ -387,37 +363,81 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['group'])) {
+                $this->setGroup($data['group']);
+            }
+            if (isset($data['groupDisplay'])) {
+                $this->setGroupDisplay($data['groupDisplay']);
+            }
+            if (isset($data['subGroup'])) {
+                $this->setSubGroup($data['subGroup']);
+            }
+            if (isset($data['subGroupDisplay'])) {
+                $this->setSubGroupDisplay($data['subGroupDisplay']);
+            }
+            if (isset($data['plan'])) {
+                $this->setPlan($data['plan']);
+            }
+            if (isset($data['planDisplay'])) {
+                $this->setPlanDisplay($data['planDisplay']);
+            }
+            if (isset($data['subPlan'])) {
+                $this->setSubPlan($data['subPlan']);
+            }
+            if (isset($data['subPlanDisplay'])) {
+                $this->setSubPlanDisplay($data['subPlanDisplay']);
+            }
+            if (isset($data['class'])) {
+                $this->setClass($data['class']);
+            }
+            if (isset($data['classDisplay'])) {
+                $this->setClassDisplay($data['classDisplay']);
+            }
+            if (isset($data['subClass'])) {
+                $this->setSubClass($data['subClass']);
+            }
+            if (isset($data['subClassDisplay'])) {
+                $this->setSubClassDisplay($data['subClassDisplay']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->group) $json['group'] = json_encode($this->group);
-        if (null !== $this->groupDisplay) $json['groupDisplay'] = json_encode($this->groupDisplay);
-        if (null !== $this->subGroup) $json['subGroup'] = json_encode($this->subGroup);
-        if (null !== $this->subGroupDisplay) $json['subGroupDisplay'] = json_encode($this->subGroupDisplay);
-        if (null !== $this->plan) $json['plan'] = json_encode($this->plan);
-        if (null !== $this->planDisplay) $json['planDisplay'] = json_encode($this->planDisplay);
-        if (null !== $this->subPlan) $json['subPlan'] = json_encode($this->subPlan);
-        if (null !== $this->subPlanDisplay) $json['subPlanDisplay'] = json_encode($this->subPlanDisplay);
-        if (null !== $this->class) $json['class'] = json_encode($this->class);
-        if (null !== $this->classDisplay) $json['classDisplay'] = json_encode($this->classDisplay);
-        if (null !== $this->subClass) $json['subClass'] = json_encode($this->subClass);
-        if (null !== $this->subClassDisplay) $json['subClassDisplay'] = json_encode($this->subClassDisplay);
+        if (isset($this->group)) $json['group'] = $this->group;
+        if (isset($this->groupDisplay)) $json['groupDisplay'] = $this->groupDisplay;
+        if (isset($this->subGroup)) $json['subGroup'] = $this->subGroup;
+        if (isset($this->subGroupDisplay)) $json['subGroupDisplay'] = $this->subGroupDisplay;
+        if (isset($this->plan)) $json['plan'] = $this->plan;
+        if (isset($this->planDisplay)) $json['planDisplay'] = $this->planDisplay;
+        if (isset($this->subPlan)) $json['subPlan'] = $this->subPlan;
+        if (isset($this->subPlanDisplay)) $json['subPlanDisplay'] = $this->subPlanDisplay;
+        if (isset($this->class)) $json['class'] = $this->class;
+        if (isset($this->classDisplay)) $json['classDisplay'] = $this->classDisplay;
+        if (isset($this->subClass)) $json['subClass'] = $this->subClass;
+        if (isset($this->subClassDisplay)) $json['subClassDisplay'] = $this->subClassDisplay;
         return $json;
     }
 
@@ -426,22 +446,21 @@ class FHIRCoverageGrouping extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CoverageGrouping xmlns="http://hl7.org/fhir"></CoverageGrouping>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->group) $this->group->xmlSerialize(true, $sxe->addChild('group'));
-        if (null !== $this->groupDisplay) $this->groupDisplay->xmlSerialize(true, $sxe->addChild('groupDisplay'));
-        if (null !== $this->subGroup) $this->subGroup->xmlSerialize(true, $sxe->addChild('subGroup'));
-        if (null !== $this->subGroupDisplay) $this->subGroupDisplay->xmlSerialize(true, $sxe->addChild('subGroupDisplay'));
-        if (null !== $this->plan) $this->plan->xmlSerialize(true, $sxe->addChild('plan'));
-        if (null !== $this->planDisplay) $this->planDisplay->xmlSerialize(true, $sxe->addChild('planDisplay'));
-        if (null !== $this->subPlan) $this->subPlan->xmlSerialize(true, $sxe->addChild('subPlan'));
-        if (null !== $this->subPlanDisplay) $this->subPlanDisplay->xmlSerialize(true, $sxe->addChild('subPlanDisplay'));
-        if (null !== $this->class) $this->class->xmlSerialize(true, $sxe->addChild('class'));
-        if (null !== $this->classDisplay) $this->classDisplay->xmlSerialize(true, $sxe->addChild('classDisplay'));
-        if (null !== $this->subClass) $this->subClass->xmlSerialize(true, $sxe->addChild('subClass'));
-        if (null !== $this->subClassDisplay) $this->subClassDisplay->xmlSerialize(true, $sxe->addChild('subClassDisplay'));
+        if (isset($this->group)) $this->group->xmlSerialize(true, $sxe->addChild('group'));
+        if (isset($this->groupDisplay)) $this->groupDisplay->xmlSerialize(true, $sxe->addChild('groupDisplay'));
+        if (isset($this->subGroup)) $this->subGroup->xmlSerialize(true, $sxe->addChild('subGroup'));
+        if (isset($this->subGroupDisplay)) $this->subGroupDisplay->xmlSerialize(true, $sxe->addChild('subGroupDisplay'));
+        if (isset($this->plan)) $this->plan->xmlSerialize(true, $sxe->addChild('plan'));
+        if (isset($this->planDisplay)) $this->planDisplay->xmlSerialize(true, $sxe->addChild('planDisplay'));
+        if (isset($this->subPlan)) $this->subPlan->xmlSerialize(true, $sxe->addChild('subPlan'));
+        if (isset($this->subPlanDisplay)) $this->subPlanDisplay->xmlSerialize(true, $sxe->addChild('subPlanDisplay'));
+        if (isset($this->class)) $this->class->xmlSerialize(true, $sxe->addChild('class'));
+        if (isset($this->classDisplay)) $this->classDisplay->xmlSerialize(true, $sxe->addChild('classDisplay'));
+        if (isset($this->subClass)) $this->subClass->xmlSerialize(true, $sxe->addChild('subClass'));
+        if (isset($this->subClassDisplay)) $this->subClassDisplay->xmlSerialize(true, $sxe->addChild('subClassDisplay'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

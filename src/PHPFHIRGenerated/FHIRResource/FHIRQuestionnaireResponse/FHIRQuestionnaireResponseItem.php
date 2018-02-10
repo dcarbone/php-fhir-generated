@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -95,13 +95,13 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * The respondent's answer(s) to the question.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
      */
-    public $answer = array();
+    public $answer = [];
 
     /**
      * Questions or sub-groups nested beneath a question or group.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public $item = array();
+    public $item = [];
 
     /**
      * @var string
@@ -112,8 +112,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * The item from the Questionnaire that corresponds to this item in the QuestionnaireResponse resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getLinkId()
-    {
+    public function getLinkId() {
         return $this->linkId;
     }
 
@@ -122,8 +121,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $linkId
      * @return $this
      */
-    public function setLinkId($linkId)
-    {
+    public function setLinkId($linkId) {
         $this->linkId = $linkId;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * A reference to an [[[ElementDefinition]]] that provides the details for the item.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getDefinition()
-    {
+    public function getDefinition() {
         return $this->definition;
     }
 
@@ -142,8 +139,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $definition
      * @return $this
      */
-    public function setDefinition($definition)
-    {
+    public function setDefinition($definition) {
         $this->definition = $definition;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * Text that is displayed above the contents of the group or as the text of the question being answered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -162,8 +157,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * More specific subject this section's answers are about, details the subject given in QuestionnaireResponse.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubject()
-    {
+    public function getSubject() {
         return $this->subject;
     }
 
@@ -182,8 +175,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setSubject($subject)
-    {
+    public function setSubject($subject) {
         $this->subject = $subject;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * The respondent's answer(s) to the question.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
      */
-    public function getAnswer()
-    {
+    public function getAnswer() {
         return $this->answer;
     }
 
@@ -202,8 +193,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer $answer
      * @return $this
      */
-    public function addAnswer($answer)
-    {
+    public function addAnswer($answer) {
         $this->answer[] = $answer;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * Questions or sub-groups nested beneath a question or group.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
-    public function getItem()
-    {
+    public function getItem() {
         return $this->item;
     }
 
@@ -222,8 +211,7 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem $item
      * @return $this
      */
-    public function addItem($item)
-    {
+    public function addItem($item) {
         $this->item[] = $item;
         return $this;
     }
@@ -231,39 +219,77 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['linkId'])) {
+                $this->setLinkId($data['linkId']);
+            }
+            if (isset($data['definition'])) {
+                $this->setDefinition($data['definition']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['answer'])) {
+                if (is_array($data['answer'])) {
+                    foreach($data['answer'] as $d) {
+                        $this->addAnswer($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"answer" must be array of objects or null, '.gettype($data['answer']).' seen.');
+                }
+            }
+            if (isset($data['item'])) {
+                if (is_array($data['item'])) {
+                    foreach($data['item'] as $d) {
+                        $this->addItem($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"item" must be array of objects or null, '.gettype($data['item']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
-        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
+        if (isset($this->linkId)) $json['linkId'] = $this->linkId;
+        if (isset($this->definition)) $json['definition'] = $this->definition;
+        if (isset($this->text)) $json['text'] = $this->text;
+        if (isset($this->subject)) $json['subject'] = $this->subject;
         if (0 < count($this->answer)) {
             $json['answer'] = [];
             foreach($this->answer as $answer) {
-                $json['answer'][] = json_encode($answer);
+                if (null !== $answer) $json['answer'][] = $answer;
             }
         }
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                if (null !== $item) $json['item'][] = $item;
             }
         }
         return $json;
@@ -274,14 +300,13 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement implements \Json
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<QuestionnaireResponseItem xmlns="http://hl7.org/fhir"></QuestionnaireResponseItem>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->linkId) $this->linkId->xmlSerialize(true, $sxe->addChild('linkId'));
-        if (null !== $this->definition) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (isset($this->linkId)) $this->linkId->xmlSerialize(true, $sxe->addChild('linkId'));
+        if (isset($this->definition)) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
         if (0 < count($this->answer)) {
             foreach($this->answer as $answer) {
                 $answer->xmlSerialize(true, $sxe->addChild('answer'));

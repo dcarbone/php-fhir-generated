@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -92,7 +92,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public $code = array();
+    public $code = [];
 
     /**
      * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
@@ -116,7 +116,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
-    public $enableWhen = array();
+    public $enableWhen = [];
 
     /**
      * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
@@ -152,76 +152,64 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * One of the permitted answers for a "choice" or "open-choice" question.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireOption[]
      */
-    public $option = array();
+    public $option = [];
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $initialBoolean = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $initialDecimal = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $initialInteger = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $initialDate = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $initialDateTime = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $initialTime = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $initialString = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $initialUri = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $initialAttachment = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $initialCoding = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $initialQuantity = null;
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $initialReference = null;
@@ -230,7 +218,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * Text, questions and other groups to be nested beneath a question or group.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public $item = array();
+    public $item = [];
 
     /**
      * @var string
@@ -241,8 +229,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * An identifier that is unique within the Questionnaire allowing linkage to the equivalent item in a QuestionnaireResponse resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getLinkId()
-    {
+    public function getLinkId() {
         return $this->linkId;
     }
 
@@ -251,8 +238,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $linkId
      * @return $this
      */
-    public function setLinkId($linkId)
-    {
+    public function setLinkId($linkId) {
         $this->linkId = $linkId;
         return $this;
     }
@@ -270,8 +256,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
 Any information provided in these elements on a Questionnaire Item overrides the information from the definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getDefinition()
-    {
+    public function getDefinition() {
         return $this->definition;
     }
 
@@ -289,8 +274,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $definition
      * @return $this
      */
-    public function setDefinition($definition)
-    {
+    public function setDefinition($definition) {
         $this->definition = $definition;
         return $this;
     }
@@ -299,8 +283,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * A terminology code that corresponds to this group or question (e.g. a code from LOINC, which defines many questions and answers).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding[]
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -309,8 +292,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $code
      * @return $this
      */
-    public function addCode($code)
-    {
+    public function addCode($code) {
         $this->code[] = $code;
         return $this;
     }
@@ -319,8 +301,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * A short label for a particular group, question or set of display text within the questionnaire used for reference by the individual completing the questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPrefix()
-    {
+    public function getPrefix() {
         return $this->prefix;
     }
 
@@ -329,8 +310,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $prefix
      * @return $this
      */
-    public function setPrefix($prefix)
-    {
+    public function setPrefix($prefix) {
         $this->prefix = $prefix;
         return $this;
     }
@@ -339,8 +319,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * The name of a section, the text of a question or text content for a display item.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -349,8 +328,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -359,8 +337,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * The type of questionnaire item this is - whether text for display, a grouping of other items or a particular type of data to be captured (string, integer, coded choice, etc.).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -369,8 +346,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuestionnaireItemType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -379,8 +355,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * A constraint indicating that this item should only be enabled (displayed/allow answers to be captured) when the specified condition is true.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
-    public function getEnableWhen()
-    {
+    public function getEnableWhen() {
         return $this->enableWhen;
     }
 
@@ -389,8 +364,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $enableWhen
      * @return $this
      */
-    public function addEnableWhen($enableWhen)
-    {
+    public function addEnableWhen($enableWhen) {
         $this->enableWhen[] = $enableWhen;
         return $this;
     }
@@ -399,8 +373,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * An indication, if true, that the item must be present in a "completed" QuestionnaireResponse.  If false, the item may be skipped when answering the questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getRequired()
-    {
+    public function getRequired() {
         return $this->required;
     }
 
@@ -409,8 +382,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $required
      * @return $this
      */
-    public function setRequired($required)
-    {
+    public function setRequired($required) {
         $this->required = $required;
         return $this;
     }
@@ -419,8 +391,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getRepeats()
-    {
+    public function getRepeats() {
         return $this->repeats;
     }
 
@@ -429,8 +400,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $repeats
      * @return $this
      */
-    public function setRepeats($repeats)
-    {
+    public function setRepeats($repeats) {
         $this->repeats = $repeats;
         return $this;
     }
@@ -439,8 +409,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * An indication, when true, that the value cannot be changed by a human respondent to the Questionnaire.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getReadOnly()
-    {
+    public function getReadOnly() {
         return $this->readOnly;
     }
 
@@ -449,8 +418,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $readOnly
      * @return $this
      */
-    public function setReadOnly($readOnly)
-    {
+    public function setReadOnly($readOnly) {
         $this->readOnly = $readOnly;
         return $this;
     }
@@ -459,8 +427,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * The maximum number of characters that are permitted in the answer to be considered a "valid" QuestionnaireResponse.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getMaxLength()
-    {
+    public function getMaxLength() {
         return $this->maxLength;
     }
 
@@ -469,8 +436,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $maxLength
      * @return $this
      */
-    public function setMaxLength($maxLength)
-    {
+    public function setMaxLength($maxLength) {
         $this->maxLength = $maxLength;
         return $this;
     }
@@ -479,8 +445,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * A reference to a value set containing a list of codes representing permitted answers for a "choice" or "open-choice" question.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getOptions()
-    {
+    public function getOptions() {
         return $this->options;
     }
 
@@ -489,8 +454,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $options
      * @return $this
      */
-    public function setOptions($options)
-    {
+    public function setOptions($options) {
         $this->options = $options;
         return $this;
     }
@@ -499,8 +463,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * One of the permitted answers for a "choice" or "open-choice" question.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireOption[]
      */
-    public function getOption()
-    {
+    public function getOption() {
         return $this->option;
     }
 
@@ -509,248 +472,199 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireOption $option
      * @return $this
      */
-    public function addOption($option)
-    {
+    public function addOption($option) {
         $this->option[] = $option;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getInitialBoolean()
-    {
+    public function getInitialBoolean() {
         return $this->initialBoolean;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $initialBoolean
      * @return $this
      */
-    public function setInitialBoolean($initialBoolean)
-    {
+    public function setInitialBoolean($initialBoolean) {
         $this->initialBoolean = $initialBoolean;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
-    public function getInitialDecimal()
-    {
+    public function getInitialDecimal() {
         return $this->initialDecimal;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $initialDecimal
      * @return $this
      */
-    public function setInitialDecimal($initialDecimal)
-    {
+    public function setInitialDecimal($initialDecimal) {
         $this->initialDecimal = $initialDecimal;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getInitialInteger()
-    {
+    public function getInitialInteger() {
         return $this->initialInteger;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $initialInteger
      * @return $this
      */
-    public function setInitialInteger($initialInteger)
-    {
+    public function setInitialInteger($initialInteger) {
         $this->initialInteger = $initialInteger;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getInitialDate()
-    {
+    public function getInitialDate() {
         return $this->initialDate;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $initialDate
      * @return $this
      */
-    public function setInitialDate($initialDate)
-    {
+    public function setInitialDate($initialDate) {
         $this->initialDate = $initialDate;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getInitialDateTime()
-    {
+    public function getInitialDateTime() {
         return $this->initialDateTime;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $initialDateTime
      * @return $this
      */
-    public function setInitialDateTime($initialDateTime)
-    {
+    public function setInitialDateTime($initialDateTime) {
         $this->initialDateTime = $initialDateTime;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public function getInitialTime()
-    {
+    public function getInitialTime() {
         return $this->initialTime;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $initialTime
      * @return $this
      */
-    public function setInitialTime($initialTime)
-    {
+    public function setInitialTime($initialTime) {
         $this->initialTime = $initialTime;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getInitialString()
-    {
+    public function getInitialString() {
         return $this->initialString;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $initialString
      * @return $this
      */
-    public function setInitialString($initialString)
-    {
+    public function setInitialString($initialString) {
         $this->initialString = $initialString;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getInitialUri()
-    {
+    public function getInitialUri() {
         return $this->initialUri;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $initialUri
      * @return $this
      */
-    public function setInitialUri($initialUri)
-    {
+    public function setInitialUri($initialUri) {
         $this->initialUri = $initialUri;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
-    public function getInitialAttachment()
-    {
+    public function getInitialAttachment() {
         return $this->initialAttachment;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $initialAttachment
      * @return $this
      */
-    public function setInitialAttachment($initialAttachment)
-    {
+    public function setInitialAttachment($initialAttachment) {
         $this->initialAttachment = $initialAttachment;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getInitialCoding()
-    {
+    public function getInitialCoding() {
         return $this->initialCoding;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $initialCoding
      * @return $this
      */
-    public function setInitialCoding($initialCoding)
-    {
+    public function setInitialCoding($initialCoding) {
         $this->initialCoding = $initialCoding;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getInitialQuantity()
-    {
+    public function getInitialQuantity() {
         return $this->initialQuantity;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $initialQuantity
      * @return $this
      */
-    public function setInitialQuantity($initialQuantity)
-    {
+    public function setInitialQuantity($initialQuantity) {
         $this->initialQuantity = $initialQuantity;
         return $this;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getInitialReference()
-    {
+    public function getInitialReference() {
         return $this->initialReference;
     }
 
     /**
-     * The value that should be defaulted when initially rendering the questionnaire for user input. (choose any one of initial*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $initialReference
      * @return $this
      */
-    public function setInitialReference($initialReference)
-    {
+    public function setInitialReference($initialReference) {
         $this->initialReference = $initialReference;
         return $this;
     }
@@ -759,8 +673,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * Text, questions and other groups to be nested beneath a question or group.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public function getItem()
-    {
+    public function getItem() {
         return $this->item;
     }
 
@@ -769,8 +682,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \PHPFHIRGenerated\FHIRResource\FHIRQuestionnaire\FHIRQuestionnaireItem $item
      * @return $this
      */
-    public function addItem($item)
-    {
+    public function addItem($item) {
         $this->item[] = $item;
         return $this;
     }
@@ -778,69 +690,179 @@ Any information provided in these elements on a Questionnaire Item overrides the
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['linkId'])) {
+                $this->setLinkId($data['linkId']);
+            }
+            if (isset($data['definition'])) {
+                $this->setDefinition($data['definition']);
+            }
+            if (isset($data['code'])) {
+                if (is_array($data['code'])) {
+                    foreach($data['code'] as $d) {
+                        $this->addCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"code" must be array of objects or null, '.gettype($data['code']).' seen.');
+                }
+            }
+            if (isset($data['prefix'])) {
+                $this->setPrefix($data['prefix']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['enableWhen'])) {
+                if (is_array($data['enableWhen'])) {
+                    foreach($data['enableWhen'] as $d) {
+                        $this->addEnableWhen($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"enableWhen" must be array of objects or null, '.gettype($data['enableWhen']).' seen.');
+                }
+            }
+            if (isset($data['required'])) {
+                $this->setRequired($data['required']);
+            }
+            if (isset($data['repeats'])) {
+                $this->setRepeats($data['repeats']);
+            }
+            if (isset($data['readOnly'])) {
+                $this->setReadOnly($data['readOnly']);
+            }
+            if (isset($data['maxLength'])) {
+                $this->setMaxLength($data['maxLength']);
+            }
+            if (isset($data['options'])) {
+                $this->setOptions($data['options']);
+            }
+            if (isset($data['option'])) {
+                if (is_array($data['option'])) {
+                    foreach($data['option'] as $d) {
+                        $this->addOption($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"option" must be array of objects or null, '.gettype($data['option']).' seen.');
+                }
+            }
+            if (isset($data['initialBoolean'])) {
+                $this->setInitialBoolean($data['initialBoolean']);
+            }
+            if (isset($data['initialDecimal'])) {
+                $this->setInitialDecimal($data['initialDecimal']);
+            }
+            if (isset($data['initialInteger'])) {
+                $this->setInitialInteger($data['initialInteger']);
+            }
+            if (isset($data['initialDate'])) {
+                $this->setInitialDate($data['initialDate']);
+            }
+            if (isset($data['initialDateTime'])) {
+                $this->setInitialDateTime($data['initialDateTime']);
+            }
+            if (isset($data['initialTime'])) {
+                $this->setInitialTime($data['initialTime']);
+            }
+            if (isset($data['initialString'])) {
+                $this->setInitialString($data['initialString']);
+            }
+            if (isset($data['initialUri'])) {
+                $this->setInitialUri($data['initialUri']);
+            }
+            if (isset($data['initialAttachment'])) {
+                $this->setInitialAttachment($data['initialAttachment']);
+            }
+            if (isset($data['initialCoding'])) {
+                $this->setInitialCoding($data['initialCoding']);
+            }
+            if (isset($data['initialQuantity'])) {
+                $this->setInitialQuantity($data['initialQuantity']);
+            }
+            if (isset($data['initialReference'])) {
+                $this->setInitialReference($data['initialReference']);
+            }
+            if (isset($data['item'])) {
+                if (is_array($data['item'])) {
+                    foreach($data['item'] as $d) {
+                        $this->addItem($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"item" must be array of objects or null, '.gettype($data['item']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
-        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
+        if (isset($this->linkId)) $json['linkId'] = $this->linkId;
+        if (isset($this->definition)) $json['definition'] = $this->definition;
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                if (null !== $code) $json['code'][] = $code;
             }
         }
-        if (null !== $this->prefix) $json['prefix'] = json_encode($this->prefix);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (isset($this->prefix)) $json['prefix'] = $this->prefix;
+        if (isset($this->text)) $json['text'] = $this->text;
+        if (isset($this->type)) $json['type'] = $this->type;
         if (0 < count($this->enableWhen)) {
             $json['enableWhen'] = [];
             foreach($this->enableWhen as $enableWhen) {
-                $json['enableWhen'][] = json_encode($enableWhen);
+                if (null !== $enableWhen) $json['enableWhen'][] = $enableWhen;
             }
         }
-        if (null !== $this->required) $json['required'] = json_encode($this->required);
-        if (null !== $this->repeats) $json['repeats'] = json_encode($this->repeats);
-        if (null !== $this->readOnly) $json['readOnly'] = json_encode($this->readOnly);
-        if (null !== $this->maxLength) $json['maxLength'] = json_encode($this->maxLength);
-        if (null !== $this->options) $json['options'] = json_encode($this->options);
+        if (isset($this->required)) $json['required'] = $this->required;
+        if (isset($this->repeats)) $json['repeats'] = $this->repeats;
+        if (isset($this->readOnly)) $json['readOnly'] = $this->readOnly;
+        if (isset($this->maxLength)) $json['maxLength'] = $this->maxLength;
+        if (isset($this->options)) $json['options'] = $this->options;
         if (0 < count($this->option)) {
             $json['option'] = [];
             foreach($this->option as $option) {
-                $json['option'][] = json_encode($option);
+                if (null !== $option) $json['option'][] = $option;
             }
         }
-        if (null !== $this->initialBoolean) $json['initialBoolean'] = json_encode($this->initialBoolean);
-        if (null !== $this->initialDecimal) $json['initialDecimal'] = json_encode($this->initialDecimal);
-        if (null !== $this->initialInteger) $json['initialInteger'] = json_encode($this->initialInteger);
-        if (null !== $this->initialDate) $json['initialDate'] = json_encode($this->initialDate);
-        if (null !== $this->initialDateTime) $json['initialDateTime'] = json_encode($this->initialDateTime);
-        if (null !== $this->initialTime) $json['initialTime'] = json_encode($this->initialTime);
-        if (null !== $this->initialString) $json['initialString'] = json_encode($this->initialString);
-        if (null !== $this->initialUri) $json['initialUri'] = json_encode($this->initialUri);
-        if (null !== $this->initialAttachment) $json['initialAttachment'] = json_encode($this->initialAttachment);
-        if (null !== $this->initialCoding) $json['initialCoding'] = json_encode($this->initialCoding);
-        if (null !== $this->initialQuantity) $json['initialQuantity'] = json_encode($this->initialQuantity);
-        if (null !== $this->initialReference) $json['initialReference'] = json_encode($this->initialReference);
+        if (isset($this->initialBoolean)) $json['initialBoolean'] = $this->initialBoolean;
+        if (isset($this->initialDecimal)) $json['initialDecimal'] = $this->initialDecimal;
+        if (isset($this->initialInteger)) $json['initialInteger'] = $this->initialInteger;
+        if (isset($this->initialDate)) $json['initialDate'] = $this->initialDate;
+        if (isset($this->initialDateTime)) $json['initialDateTime'] = $this->initialDateTime;
+        if (isset($this->initialTime)) $json['initialTime'] = $this->initialTime;
+        if (isset($this->initialString)) $json['initialString'] = $this->initialString;
+        if (isset($this->initialUri)) $json['initialUri'] = $this->initialUri;
+        if (isset($this->initialAttachment)) $json['initialAttachment'] = $this->initialAttachment;
+        if (isset($this->initialCoding)) $json['initialCoding'] = $this->initialCoding;
+        if (isset($this->initialQuantity)) $json['initialQuantity'] = $this->initialQuantity;
+        if (isset($this->initialReference)) $json['initialReference'] = $this->initialReference;
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                if (null !== $item) $json['item'][] = $item;
             }
         }
         return $json;
@@ -851,47 +873,46 @@ Any information provided in these elements on a Questionnaire Item overrides the
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<QuestionnaireItem xmlns="http://hl7.org/fhir"></QuestionnaireItem>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->linkId) $this->linkId->xmlSerialize(true, $sxe->addChild('linkId'));
-        if (null !== $this->definition) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
+        if (isset($this->linkId)) $this->linkId->xmlSerialize(true, $sxe->addChild('linkId'));
+        if (isset($this->definition)) $this->definition->xmlSerialize(true, $sxe->addChild('definition'));
         if (0 < count($this->code)) {
             foreach($this->code as $code) {
                 $code->xmlSerialize(true, $sxe->addChild('code'));
             }
         }
-        if (null !== $this->prefix) $this->prefix->xmlSerialize(true, $sxe->addChild('prefix'));
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->prefix)) $this->prefix->xmlSerialize(true, $sxe->addChild('prefix'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (0 < count($this->enableWhen)) {
             foreach($this->enableWhen as $enableWhen) {
                 $enableWhen->xmlSerialize(true, $sxe->addChild('enableWhen'));
             }
         }
-        if (null !== $this->required) $this->required->xmlSerialize(true, $sxe->addChild('required'));
-        if (null !== $this->repeats) $this->repeats->xmlSerialize(true, $sxe->addChild('repeats'));
-        if (null !== $this->readOnly) $this->readOnly->xmlSerialize(true, $sxe->addChild('readOnly'));
-        if (null !== $this->maxLength) $this->maxLength->xmlSerialize(true, $sxe->addChild('maxLength'));
-        if (null !== $this->options) $this->options->xmlSerialize(true, $sxe->addChild('options'));
+        if (isset($this->required)) $this->required->xmlSerialize(true, $sxe->addChild('required'));
+        if (isset($this->repeats)) $this->repeats->xmlSerialize(true, $sxe->addChild('repeats'));
+        if (isset($this->readOnly)) $this->readOnly->xmlSerialize(true, $sxe->addChild('readOnly'));
+        if (isset($this->maxLength)) $this->maxLength->xmlSerialize(true, $sxe->addChild('maxLength'));
+        if (isset($this->options)) $this->options->xmlSerialize(true, $sxe->addChild('options'));
         if (0 < count($this->option)) {
             foreach($this->option as $option) {
                 $option->xmlSerialize(true, $sxe->addChild('option'));
             }
         }
-        if (null !== $this->initialBoolean) $this->initialBoolean->xmlSerialize(true, $sxe->addChild('initialBoolean'));
-        if (null !== $this->initialDecimal) $this->initialDecimal->xmlSerialize(true, $sxe->addChild('initialDecimal'));
-        if (null !== $this->initialInteger) $this->initialInteger->xmlSerialize(true, $sxe->addChild('initialInteger'));
-        if (null !== $this->initialDate) $this->initialDate->xmlSerialize(true, $sxe->addChild('initialDate'));
-        if (null !== $this->initialDateTime) $this->initialDateTime->xmlSerialize(true, $sxe->addChild('initialDateTime'));
-        if (null !== $this->initialTime) $this->initialTime->xmlSerialize(true, $sxe->addChild('initialTime'));
-        if (null !== $this->initialString) $this->initialString->xmlSerialize(true, $sxe->addChild('initialString'));
-        if (null !== $this->initialUri) $this->initialUri->xmlSerialize(true, $sxe->addChild('initialUri'));
-        if (null !== $this->initialAttachment) $this->initialAttachment->xmlSerialize(true, $sxe->addChild('initialAttachment'));
-        if (null !== $this->initialCoding) $this->initialCoding->xmlSerialize(true, $sxe->addChild('initialCoding'));
-        if (null !== $this->initialQuantity) $this->initialQuantity->xmlSerialize(true, $sxe->addChild('initialQuantity'));
-        if (null !== $this->initialReference) $this->initialReference->xmlSerialize(true, $sxe->addChild('initialReference'));
+        if (isset($this->initialBoolean)) $this->initialBoolean->xmlSerialize(true, $sxe->addChild('initialBoolean'));
+        if (isset($this->initialDecimal)) $this->initialDecimal->xmlSerialize(true, $sxe->addChild('initialDecimal'));
+        if (isset($this->initialInteger)) $this->initialInteger->xmlSerialize(true, $sxe->addChild('initialInteger'));
+        if (isset($this->initialDate)) $this->initialDate->xmlSerialize(true, $sxe->addChild('initialDate'));
+        if (isset($this->initialDateTime)) $this->initialDateTime->xmlSerialize(true, $sxe->addChild('initialDateTime'));
+        if (isset($this->initialTime)) $this->initialTime->xmlSerialize(true, $sxe->addChild('initialTime'));
+        if (isset($this->initialString)) $this->initialString->xmlSerialize(true, $sxe->addChild('initialString'));
+        if (isset($this->initialUri)) $this->initialUri->xmlSerialize(true, $sxe->addChild('initialUri'));
+        if (isset($this->initialAttachment)) $this->initialAttachment->xmlSerialize(true, $sxe->addChild('initialAttachment'));
+        if (isset($this->initialCoding)) $this->initialCoding->xmlSerialize(true, $sxe->addChild('initialCoding'));
+        if (isset($this->initialQuantity)) $this->initialQuantity->xmlSerialize(true, $sxe->addChild('initialQuantity'));
+        if (isset($this->initialReference)) $this->initialReference->xmlSerialize(true, $sxe->addChild('initialReference'));
         if (0 < count($this->item)) {
             foreach($this->item as $item) {
                 $item->xmlSerialize(true, $sxe->addChild('item'));

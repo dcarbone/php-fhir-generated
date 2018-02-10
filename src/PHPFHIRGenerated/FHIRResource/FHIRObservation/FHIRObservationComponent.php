@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -74,67 +74,62 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     public $code = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public $valueBoolean = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    public $valueInteger = null;
+
+    /**
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $valueRatio = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $valueSampledData = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
-     */
-    public $valueAttachment = null;
-
-    /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $valuePeriod = null;
 
     /**
-     * Provides a reason why the expected value in the element Observation.value[x] is missing.
+     * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $dataAbsentReason = null;
@@ -149,7 +144,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
      */
-    public $referenceRange = array();
+    public $referenceRange = [];
 
     /**
      * @var string
@@ -160,8 +155,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * Describes what was observed. Sometimes this is called the observation "code".
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -170,228 +164,201 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getValueQuantity()
-    {
+    public function getValueQuantity() {
         return $this->valueQuantity;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
-    public function setValueQuantity($valueQuantity)
-    {
+    public function setValueQuantity($valueQuantity) {
         $this->valueQuantity = $valueQuantity;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getValueCodeableConcept()
-    {
+    public function getValueCodeableConcept() {
         return $this->valueCodeableConcept;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
-    public function setValueCodeableConcept($valueCodeableConcept)
-    {
+    public function setValueCodeableConcept($valueCodeableConcept) {
         $this->valueCodeableConcept = $valueCodeableConcept;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValueString()
-    {
+    public function getValueString() {
         return $this->valueString;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
-    public function setValueString($valueString)
-    {
+    public function setValueString($valueString) {
         $this->valueString = $valueString;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getValueBoolean() {
+        return $this->valueBoolean;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $valueBoolean
+     * @return $this
+     */
+    public function setValueBoolean($valueBoolean) {
+        $this->valueBoolean = $valueBoolean;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    public function getValueInteger() {
+        return $this->valueInteger;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $valueInteger
+     * @return $this
+     */
+    public function setValueInteger($valueInteger) {
+        $this->valueInteger = $valueInteger;
+        return $this;
+    }
+
+    /**
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public function getValueRange()
-    {
+    public function getValueRange() {
         return $this->valueRange;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
-    public function setValueRange($valueRange)
-    {
+    public function setValueRange($valueRange) {
         $this->valueRange = $valueRange;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
-    public function getValueRatio()
-    {
+    public function getValueRatio() {
         return $this->valueRatio;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $valueRatio
      * @return $this
      */
-    public function setValueRatio($valueRatio)
-    {
+    public function setValueRatio($valueRatio) {
         $this->valueRatio = $valueRatio;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
-    public function getValueSampledData()
-    {
+    public function getValueSampledData() {
         return $this->valueSampledData;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $valueSampledData
      * @return $this
      */
-    public function setValueSampledData($valueSampledData)
-    {
+    public function setValueSampledData($valueSampledData) {
         $this->valueSampledData = $valueSampledData;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
-     */
-    public function getValueAttachment()
-    {
-        return $this->valueAttachment;
-    }
-
-    /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $valueAttachment
-     * @return $this
-     */
-    public function setValueAttachment($valueAttachment)
-    {
-        $this->valueAttachment = $valueAttachment;
-        return $this;
-    }
-
-    /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public function getValueTime()
-    {
+    public function getValueTime() {
         return $this->valueTime;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
-    public function setValueTime($valueTime)
-    {
+    public function setValueTime($valueTime) {
         $this->valueTime = $valueTime;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getValueDateTime()
-    {
+    public function getValueDateTime() {
         return $this->valueDateTime;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
-    public function setValueDateTime($valueDateTime)
-    {
+    public function setValueDateTime($valueDateTime) {
         $this->valueDateTime = $valueDateTime;
         return $this;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getValuePeriod()
-    {
+    public function getValuePeriod() {
         return $this->valuePeriod;
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $valuePeriod
      * @return $this
      */
-    public function setValuePeriod($valuePeriod)
-    {
+    public function setValuePeriod($valuePeriod) {
         $this->valuePeriod = $valuePeriod;
         return $this;
     }
 
     /**
-     * Provides a reason why the expected value in the element Observation.value[x] is missing.
+     * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getDataAbsentReason()
-    {
+    public function getDataAbsentReason() {
         return $this->dataAbsentReason;
     }
 
     /**
-     * Provides a reason why the expected value in the element Observation.value[x] is missing.
+     * Provides a reason why the expected value in the element Observation.component.value[x] is missing.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $dataAbsentReason
      * @return $this
      */
-    public function setDataAbsentReason($dataAbsentReason)
-    {
+    public function setDataAbsentReason($dataAbsentReason) {
         $this->dataAbsentReason = $dataAbsentReason;
         return $this;
     }
@@ -400,8 +367,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * The assessment made based on the result of the observation.  Intended as a simple compact code often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result. Otherwise known as abnormal flag.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getInterpretation()
-    {
+    public function getInterpretation() {
         return $this->interpretation;
     }
 
@@ -410,8 +376,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $interpretation
      * @return $this
      */
-    public function setInterpretation($interpretation)
-    {
+    public function setInterpretation($interpretation) {
         $this->interpretation = $interpretation;
         return $this;
     }
@@ -420,8 +385,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * Guidance on how to interpret the value by comparison to a normal or recommended range.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationReferenceRange[]
      */
-    public function getReferenceRange()
-    {
+    public function getReferenceRange() {
         return $this->referenceRange;
     }
 
@@ -430,8 +394,7 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRResource\FHIRObservation\FHIRObservationReferenceRange $referenceRange
      * @return $this
      */
-    public function addReferenceRange($referenceRange)
-    {
+    public function addReferenceRange($referenceRange) {
         $this->referenceRange[] = $referenceRange;
         return $this;
     }
@@ -439,42 +402,102 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['valueQuantity'])) {
+                $this->setValueQuantity($data['valueQuantity']);
+            }
+            if (isset($data['valueCodeableConcept'])) {
+                $this->setValueCodeableConcept($data['valueCodeableConcept']);
+            }
+            if (isset($data['valueString'])) {
+                $this->setValueString($data['valueString']);
+            }
+            if (isset($data['valueBoolean'])) {
+                $this->setValueBoolean($data['valueBoolean']);
+            }
+            if (isset($data['valueInteger'])) {
+                $this->setValueInteger($data['valueInteger']);
+            }
+            if (isset($data['valueRange'])) {
+                $this->setValueRange($data['valueRange']);
+            }
+            if (isset($data['valueRatio'])) {
+                $this->setValueRatio($data['valueRatio']);
+            }
+            if (isset($data['valueSampledData'])) {
+                $this->setValueSampledData($data['valueSampledData']);
+            }
+            if (isset($data['valueTime'])) {
+                $this->setValueTime($data['valueTime']);
+            }
+            if (isset($data['valueDateTime'])) {
+                $this->setValueDateTime($data['valueDateTime']);
+            }
+            if (isset($data['valuePeriod'])) {
+                $this->setValuePeriod($data['valuePeriod']);
+            }
+            if (isset($data['dataAbsentReason'])) {
+                $this->setDataAbsentReason($data['dataAbsentReason']);
+            }
+            if (isset($data['interpretation'])) {
+                $this->setInterpretation($data['interpretation']);
+            }
+            if (isset($data['referenceRange'])) {
+                if (is_array($data['referenceRange'])) {
+                    foreach($data['referenceRange'] as $d) {
+                        $this->addReferenceRange($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"referenceRange" must be array of objects or null, '.gettype($data['referenceRange']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
-        if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
-        if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
-        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
-        if (null !== $this->dataAbsentReason) $json['dataAbsentReason'] = json_encode($this->dataAbsentReason);
-        if (null !== $this->interpretation) $json['interpretation'] = json_encode($this->interpretation);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->valueQuantity)) $json['valueQuantity'] = $this->valueQuantity;
+        if (isset($this->valueCodeableConcept)) $json['valueCodeableConcept'] = $this->valueCodeableConcept;
+        if (isset($this->valueString)) $json['valueString'] = $this->valueString;
+        if (isset($this->valueBoolean)) $json['valueBoolean'] = $this->valueBoolean;
+        if (isset($this->valueInteger)) $json['valueInteger'] = $this->valueInteger;
+        if (isset($this->valueRange)) $json['valueRange'] = $this->valueRange;
+        if (isset($this->valueRatio)) $json['valueRatio'] = $this->valueRatio;
+        if (isset($this->valueSampledData)) $json['valueSampledData'] = $this->valueSampledData;
+        if (isset($this->valueTime)) $json['valueTime'] = $this->valueTime;
+        if (isset($this->valueDateTime)) $json['valueDateTime'] = $this->valueDateTime;
+        if (isset($this->valuePeriod)) $json['valuePeriod'] = $this->valuePeriod;
+        if (isset($this->dataAbsentReason)) $json['dataAbsentReason'] = $this->dataAbsentReason;
+        if (isset($this->interpretation)) $json['interpretation'] = $this->interpretation;
         if (0 < count($this->referenceRange)) {
             $json['referenceRange'] = [];
             foreach($this->referenceRange as $referenceRange) {
-                $json['referenceRange'][] = json_encode($referenceRange);
+                if (null !== $referenceRange) $json['referenceRange'][] = $referenceRange;
             }
         }
         return $json;
@@ -485,23 +508,23 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ObservationComponent xmlns="http://hl7.org/fhir"></ObservationComponent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->valueQuantity) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
-        if (null !== $this->valueCodeableConcept) $this->valueCodeableConcept->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
-        if (null !== $this->valueString) $this->valueString->xmlSerialize(true, $sxe->addChild('valueString'));
-        if (null !== $this->valueRange) $this->valueRange->xmlSerialize(true, $sxe->addChild('valueRange'));
-        if (null !== $this->valueRatio) $this->valueRatio->xmlSerialize(true, $sxe->addChild('valueRatio'));
-        if (null !== $this->valueSampledData) $this->valueSampledData->xmlSerialize(true, $sxe->addChild('valueSampledData'));
-        if (null !== $this->valueAttachment) $this->valueAttachment->xmlSerialize(true, $sxe->addChild('valueAttachment'));
-        if (null !== $this->valueTime) $this->valueTime->xmlSerialize(true, $sxe->addChild('valueTime'));
-        if (null !== $this->valueDateTime) $this->valueDateTime->xmlSerialize(true, $sxe->addChild('valueDateTime'));
-        if (null !== $this->valuePeriod) $this->valuePeriod->xmlSerialize(true, $sxe->addChild('valuePeriod'));
-        if (null !== $this->dataAbsentReason) $this->dataAbsentReason->xmlSerialize(true, $sxe->addChild('dataAbsentReason'));
-        if (null !== $this->interpretation) $this->interpretation->xmlSerialize(true, $sxe->addChild('interpretation'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->valueQuantity)) $this->valueQuantity->xmlSerialize(true, $sxe->addChild('valueQuantity'));
+        if (isset($this->valueCodeableConcept)) $this->valueCodeableConcept->xmlSerialize(true, $sxe->addChild('valueCodeableConcept'));
+        if (isset($this->valueString)) $this->valueString->xmlSerialize(true, $sxe->addChild('valueString'));
+        if (isset($this->valueBoolean)) $this->valueBoolean->xmlSerialize(true, $sxe->addChild('valueBoolean'));
+        if (isset($this->valueInteger)) $this->valueInteger->xmlSerialize(true, $sxe->addChild('valueInteger'));
+        if (isset($this->valueRange)) $this->valueRange->xmlSerialize(true, $sxe->addChild('valueRange'));
+        if (isset($this->valueRatio)) $this->valueRatio->xmlSerialize(true, $sxe->addChild('valueRatio'));
+        if (isset($this->valueSampledData)) $this->valueSampledData->xmlSerialize(true, $sxe->addChild('valueSampledData'));
+        if (isset($this->valueTime)) $this->valueTime->xmlSerialize(true, $sxe->addChild('valueTime'));
+        if (isset($this->valueDateTime)) $this->valueDateTime->xmlSerialize(true, $sxe->addChild('valueDateTime'));
+        if (isset($this->valuePeriod)) $this->valuePeriod->xmlSerialize(true, $sxe->addChild('valuePeriod'));
+        if (isset($this->dataAbsentReason)) $this->dataAbsentReason->xmlSerialize(true, $sxe->addChild('dataAbsentReason'));
+        if (isset($this->interpretation)) $this->interpretation->xmlSerialize(true, $sxe->addChild('interpretation'));
         if (0 < count($this->referenceRange)) {
             foreach($this->referenceRange as $referenceRange) {
                 $referenceRange->xmlSerialize(true, $sxe->addChild('referenceRange'));

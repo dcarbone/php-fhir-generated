@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -90,19 +90,19 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * Given name.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $given = array();
+    public $given = [];
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $prefix = array();
+    public $prefix = [];
 
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $suffix = array();
+    public $suffix = [];
 
     /**
      * Indicates the period of time when this name was valid for the named person.
@@ -119,8 +119,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * Identifies the purpose for this name.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRNameUse
      */
-    public function getUse()
-    {
+    public function getUse() {
         return $this->use;
     }
 
@@ -129,8 +128,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRNameUse $use
      * @return $this
      */
-    public function setUse($use)
-    {
+    public function setUse($use) {
         $this->use = $use;
         return $this;
     }
@@ -139,8 +137,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * A full text representation of the name.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -149,8 +146,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -159,8 +155,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getFamily()
-    {
+    public function getFamily() {
         return $this->family;
     }
 
@@ -169,8 +164,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $family
      * @return $this
      */
-    public function setFamily($family)
-    {
+    public function setFamily($family) {
         $this->family = $family;
         return $this;
     }
@@ -179,8 +173,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * Given name.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getGiven()
-    {
+    public function getGiven() {
         return $this->given;
     }
 
@@ -189,8 +182,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $given
      * @return $this
      */
-    public function addGiven($given)
-    {
+    public function addGiven($given) {
         $this->given[] = $given;
         return $this;
     }
@@ -199,8 +191,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getPrefix()
-    {
+    public function getPrefix() {
         return $this->prefix;
     }
 
@@ -209,8 +200,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $prefix
      * @return $this
      */
-    public function addPrefix($prefix)
-    {
+    public function addPrefix($prefix) {
         $this->prefix[] = $prefix;
         return $this;
     }
@@ -219,8 +209,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getSuffix()
-    {
+    public function getSuffix() {
         return $this->suffix;
     }
 
@@ -229,8 +218,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $suffix
      * @return $this
      */
-    public function addSuffix($suffix)
-    {
+    public function addSuffix($suffix) {
         $this->suffix[] = $suffix;
         return $this;
     }
@@ -239,8 +227,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * Indicates the period of time when this name was valid for the named person.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -249,8 +236,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -258,47 +244,94 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+            if (isset($data['family'])) {
+                $this->setFamily($data['family']);
+            }
+            if (isset($data['given'])) {
+                if (is_array($data['given'])) {
+                    foreach($data['given'] as $d) {
+                        $this->addGiven($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"given" must be array of objects or null, '.gettype($data['given']).' seen.');
+                }
+            }
+            if (isset($data['prefix'])) {
+                if (is_array($data['prefix'])) {
+                    foreach($data['prefix'] as $d) {
+                        $this->addPrefix($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"prefix" must be array of objects or null, '.gettype($data['prefix']).' seen.');
+                }
+            }
+            if (isset($data['suffix'])) {
+                if (is_array($data['suffix'])) {
+                    foreach($data['suffix'] as $d) {
+                        $this->addSuffix($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"suffix" must be array of objects or null, '.gettype($data['suffix']).' seen.');
+                }
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->use) $json['use'] = json_encode($this->use);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->family) $json['family'] = json_encode($this->family);
+        if (isset($this->use)) $json['use'] = $this->use;
+        if (isset($this->text)) $json['text'] = $this->text;
+        if (isset($this->family)) $json['family'] = $this->family;
         if (0 < count($this->given)) {
             $json['given'] = [];
             foreach($this->given as $given) {
-                $json['given'][] = json_encode($given);
+                if (null !== $given) $json['given'][] = $given;
             }
         }
         if (0 < count($this->prefix)) {
             $json['prefix'] = [];
             foreach($this->prefix as $prefix) {
-                $json['prefix'][] = json_encode($prefix);
+                if (null !== $prefix) $json['prefix'][] = $prefix;
             }
         }
         if (0 < count($this->suffix)) {
             $json['suffix'] = [];
             foreach($this->suffix as $suffix) {
-                $json['suffix'][] = json_encode($suffix);
+                if (null !== $suffix) $json['suffix'][] = $suffix;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->period)) $json['period'] = $this->period;
         return $json;
     }
 
@@ -307,13 +340,12 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<HumanName xmlns="http://hl7.org/fhir"></HumanName>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->use) $this->use->xmlSerialize(true, $sxe->addChild('use'));
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (null !== $this->family) $this->family->xmlSerialize(true, $sxe->addChild('family'));
+        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->family)) $this->family->xmlSerialize(true, $sxe->addChild('family'));
         if (0 < count($this->given)) {
             foreach($this->given as $given) {
                 $given->xmlSerialize(true, $sxe->addChild('given'));
@@ -329,7 +361,7 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
                 $suffix->xmlSerialize(true, $sxe->addChild('suffix'));
             }
         }
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

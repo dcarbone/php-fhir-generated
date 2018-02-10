@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -126,8 +126,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDeviceIdentifier()
-    {
+    public function getDeviceIdentifier() {
         return $this->deviceIdentifier;
     }
 
@@ -136,8 +135,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $deviceIdentifier
      * @return $this
      */
-    public function setDeviceIdentifier($deviceIdentifier)
-    {
+    public function setDeviceIdentifier($deviceIdentifier) {
         $this->deviceIdentifier = $deviceIdentifier;
         return $this;
     }
@@ -146,8 +144,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * Name of device as used in labeling or catalog.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -156,8 +153,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -166,8 +162,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace. with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -176,8 +171,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $jurisdiction
      * @return $this
      */
-    public function setJurisdiction($jurisdiction)
-    {
+    public function setJurisdiction($jurisdiction) {
         $this->jurisdiction = $jurisdiction;
         return $this;
     }
@@ -186,8 +180,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * The full UDI carrier as the human readable form (HRF) representation of the barcode string as printed on the packaging of the device.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCarrierHRF()
-    {
+    public function getCarrierHRF() {
         return $this->carrierHRF;
     }
 
@@ -196,8 +189,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $carrierHRF
      * @return $this
      */
-    public function setCarrierHRF($carrierHRF)
-    {
+    public function setCarrierHRF($carrierHRF) {
         $this->carrierHRF = $carrierHRF;
         return $this;
     }
@@ -206,8 +198,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * The full UDI carrier of the Automatic Identification and Data Capture (AIDC) technology representation of the barcode string as printed on the packaging of the device - E.g a barcode or RFID.   Because of limitations on character sets in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be base64 encoded.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getCarrierAIDC()
-    {
+    public function getCarrierAIDC() {
         return $this->carrierAIDC;
     }
 
@@ -216,8 +207,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $carrierAIDC
      * @return $this
      */
-    public function setCarrierAIDC($carrierAIDC)
-    {
+    public function setCarrierAIDC($carrierAIDC) {
         $this->carrierAIDC = $carrierAIDC;
         return $this;
     }
@@ -234,8 +224,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-blood-di,
 http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getIssuer()
-    {
+    public function getIssuer() {
         return $this->issuer;
     }
 
@@ -252,8 +241,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $issuer
      * @return $this
      */
-    public function setIssuer($issuer)
-    {
+    public function setIssuer($issuer) {
         $this->issuer = $issuer;
         return $this;
     }
@@ -262,8 +250,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * A coded entry to indicate how the data was entered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUDIEntryType
      */
-    public function getEntryType()
-    {
+    public function getEntryType() {
         return $this->entryType;
     }
 
@@ -272,8 +259,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUDIEntryType $entryType
      * @return $this
      */
-    public function setEntryType($entryType)
-    {
+    public function setEntryType($entryType) {
         $this->entryType = $entryType;
         return $this;
     }
@@ -281,32 +267,61 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['deviceIdentifier'])) {
+                $this->setDeviceIdentifier($data['deviceIdentifier']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['jurisdiction'])) {
+                $this->setJurisdiction($data['jurisdiction']);
+            }
+            if (isset($data['carrierHRF'])) {
+                $this->setCarrierHRF($data['carrierHRF']);
+            }
+            if (isset($data['carrierAIDC'])) {
+                $this->setCarrierAIDC($data['carrierAIDC']);
+            }
+            if (isset($data['issuer'])) {
+                $this->setIssuer($data['issuer']);
+            }
+            if (isset($data['entryType'])) {
+                $this->setEntryType($data['entryType']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->deviceIdentifier) $json['deviceIdentifier'] = json_encode($this->deviceIdentifier);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->jurisdiction) $json['jurisdiction'] = json_encode($this->jurisdiction);
-        if (null !== $this->carrierHRF) $json['carrierHRF'] = json_encode($this->carrierHRF);
-        if (null !== $this->carrierAIDC) $json['carrierAIDC'] = json_encode($this->carrierAIDC);
-        if (null !== $this->issuer) $json['issuer'] = json_encode($this->issuer);
-        if (null !== $this->entryType) $json['entryType'] = json_encode($this->entryType);
+        if (isset($this->deviceIdentifier)) $json['deviceIdentifier'] = $this->deviceIdentifier;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->jurisdiction)) $json['jurisdiction'] = $this->jurisdiction;
+        if (isset($this->carrierHRF)) $json['carrierHRF'] = $this->carrierHRF;
+        if (isset($this->carrierAIDC)) $json['carrierAIDC'] = $this->carrierAIDC;
+        if (isset($this->issuer)) $json['issuer'] = $this->issuer;
+        if (isset($this->entryType)) $json['entryType'] = $this->entryType;
         return $json;
     }
 
@@ -315,17 +330,16 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DeviceUdi xmlns="http://hl7.org/fhir"></DeviceUdi>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->deviceIdentifier) $this->deviceIdentifier->xmlSerialize(true, $sxe->addChild('deviceIdentifier'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->jurisdiction) $this->jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
-        if (null !== $this->carrierHRF) $this->carrierHRF->xmlSerialize(true, $sxe->addChild('carrierHRF'));
-        if (null !== $this->carrierAIDC) $this->carrierAIDC->xmlSerialize(true, $sxe->addChild('carrierAIDC'));
-        if (null !== $this->issuer) $this->issuer->xmlSerialize(true, $sxe->addChild('issuer'));
-        if (null !== $this->entryType) $this->entryType->xmlSerialize(true, $sxe->addChild('entryType'));
+        if (isset($this->deviceIdentifier)) $this->deviceIdentifier->xmlSerialize(true, $sxe->addChild('deviceIdentifier'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->jurisdiction)) $this->jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
+        if (isset($this->carrierHRF)) $this->carrierHRF->xmlSerialize(true, $sxe->addChild('carrierHRF'));
+        if (isset($this->carrierAIDC)) $this->carrierAIDC->xmlSerialize(true, $sxe->addChild('carrierAIDC'));
+        if (isset($this->issuer)) $this->issuer->xmlSerialize(true, $sxe->addChild('issuer'));
+        if (isset($this->entryType)) $this->entryType->xmlSerialize(true, $sxe->addChild('entryType'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -89,31 +89,31 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * A specification of the restful capabilities of the solution for a specific resource type.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
-    public $resource = array();
+    public $resource = [];
 
     /**
      * A specification of restful operations supported by the system.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
-    public $interaction = array();
+    public $interaction = [];
 
     /**
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
-    public $searchParam = array();
+    public $searchParam = [];
 
     /**
      * Definition of an operation or a named query together with its parameters and their meaning and type.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
-    public $operation = array();
+    public $operation = [];
 
     /**
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $compartment = array();
+    public $compartment = [];
 
     /**
      * @var string
@@ -124,8 +124,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -134,8 +133,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRestfulCapabilityMode $mode
      * @return $this
      */
-    public function setMode($mode)
-    {
+    public function setMode($mode) {
         $this->mode = $mode;
         return $this;
     }
@@ -144,8 +142,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * Information about the system's restful capabilities that apply across all applications, such as security.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -154,8 +151,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -164,8 +160,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * Information about security implementation from an interface perspective - what a client needs to know.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
-    public function getSecurity()
-    {
+    public function getSecurity() {
         return $this->security;
     }
 
@@ -174,8 +169,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $security
      * @return $this
      */
-    public function setSecurity($security)
-    {
+    public function setSecurity($security) {
         $this->security = $security;
         return $this;
     }
@@ -184,8 +178,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * A specification of the restful capabilities of the solution for a specific resource type.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
-    public function getResource()
-    {
+    public function getResource() {
         return $this->resource;
     }
 
@@ -194,8 +187,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementResource $resource
      * @return $this
      */
-    public function addResource($resource)
-    {
+    public function addResource($resource) {
         $this->resource[] = $resource;
         return $this;
     }
@@ -204,8 +196,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * A specification of restful operations supported by the system.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
-    public function getInteraction()
-    {
+    public function getInteraction() {
         return $this->interaction;
     }
 
@@ -214,8 +205,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1 $interaction
      * @return $this
      */
-    public function addInteraction($interaction)
-    {
+    public function addInteraction($interaction) {
         $this->interaction[] = $interaction;
         return $this;
     }
@@ -224,8 +214,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
-    public function getSearchParam()
-    {
+    public function getSearchParam() {
         return $this->searchParam;
     }
 
@@ -234,8 +223,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
      * @return $this
      */
-    public function addSearchParam($searchParam)
-    {
+    public function addSearchParam($searchParam) {
         $this->searchParam[] = $searchParam;
         return $this;
     }
@@ -244,8 +232,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * Definition of an operation or a named query together with its parameters and their meaning and type.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
-    public function getOperation()
-    {
+    public function getOperation() {
         return $this->operation;
     }
 
@@ -254,8 +241,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
      * @return $this
      */
-    public function addOperation($operation)
-    {
+    public function addOperation($operation) {
         $this->operation[] = $operation;
         return $this;
     }
@@ -264,8 +250,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getCompartment()
-    {
+    public function getCompartment() {
         return $this->compartment;
     }
 
@@ -274,8 +259,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $compartment
      * @return $this
      */
-    public function addCompartment($compartment)
-    {
+    public function addCompartment($compartment) {
         $this->compartment[] = $compartment;
         return $this;
     }
@@ -283,56 +267,118 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['mode'])) {
+                $this->setMode($data['mode']);
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+            if (isset($data['security'])) {
+                $this->setSecurity($data['security']);
+            }
+            if (isset($data['resource'])) {
+                if (is_array($data['resource'])) {
+                    foreach($data['resource'] as $d) {
+                        $this->addResource($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"resource" must be array of objects or null, '.gettype($data['resource']).' seen.');
+                }
+            }
+            if (isset($data['interaction'])) {
+                if (is_array($data['interaction'])) {
+                    foreach($data['interaction'] as $d) {
+                        $this->addInteraction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"interaction" must be array of objects or null, '.gettype($data['interaction']).' seen.');
+                }
+            }
+            if (isset($data['searchParam'])) {
+                if (is_array($data['searchParam'])) {
+                    foreach($data['searchParam'] as $d) {
+                        $this->addSearchParam($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"searchParam" must be array of objects or null, '.gettype($data['searchParam']).' seen.');
+                }
+            }
+            if (isset($data['operation'])) {
+                if (is_array($data['operation'])) {
+                    foreach($data['operation'] as $d) {
+                        $this->addOperation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"operation" must be array of objects or null, '.gettype($data['operation']).' seen.');
+                }
+            }
+            if (isset($data['compartment'])) {
+                if (is_array($data['compartment'])) {
+                    foreach($data['compartment'] as $d) {
+                        $this->addCompartment($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"compartment" must be array of objects or null, '.gettype($data['compartment']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->mode) $json['mode'] = json_encode($this->mode);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
-        if (null !== $this->security) $json['security'] = json_encode($this->security);
+        if (isset($this->mode)) $json['mode'] = $this->mode;
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
+        if (isset($this->security)) $json['security'] = $this->security;
         if (0 < count($this->resource)) {
             $json['resource'] = [];
             foreach($this->resource as $resource) {
-                $json['resource'][] = json_encode($resource);
+                if (null !== $resource) $json['resource'][] = $resource;
             }
         }
         if (0 < count($this->interaction)) {
             $json['interaction'] = [];
             foreach($this->interaction as $interaction) {
-                $json['interaction'][] = json_encode($interaction);
+                if (null !== $interaction) $json['interaction'][] = $interaction;
             }
         }
         if (0 < count($this->searchParam)) {
             $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = json_encode($searchParam);
+                if (null !== $searchParam) $json['searchParam'][] = $searchParam;
             }
         }
         if (0 < count($this->operation)) {
             $json['operation'] = [];
             foreach($this->operation as $operation) {
-                $json['operation'][] = json_encode($operation);
+                if (null !== $operation) $json['operation'][] = $operation;
             }
         }
         if (0 < count($this->compartment)) {
             $json['compartment'] = [];
             foreach($this->compartment as $compartment) {
-                $json['compartment'][] = json_encode($compartment);
+                if (null !== $compartment) $json['compartment'][] = $compartment;
             }
         }
         return $json;
@@ -343,13 +389,12 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement implements \JsonSe
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CapabilityStatementRest xmlns="http://hl7.org/fhir"></CapabilityStatementRest>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->mode) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
-        if (null !== $this->security) $this->security->xmlSerialize(true, $sxe->addChild('security'));
+        if (isset($this->mode)) $this->mode->xmlSerialize(true, $sxe->addChild('mode'));
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->security)) $this->security->xmlSerialize(true, $sxe->addChild('security'));
         if (0 < count($this->resource)) {
             foreach($this->resource as $resource) {
                 $resource->xmlSerialize(true, $sxe->addChild('resource'));

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A structured set of tests against a FHIR server implementation to determine compliance against the FHIR specification.
+ * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
  */
 class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -83,7 +83,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * Action would contain either an operation or an assertion.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction1[]
      */
-    public $action = array();
+    public $action = [];
 
     /**
      * @var string
@@ -94,8 +94,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * The name of this test used for tracking/logging purposes by test engines.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -104,8 +103,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * A short description of the test used by test engines for tracking and reporting purposes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -124,8 +121,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * Action would contain either an operation or an assertion.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction1[]
      */
-    public function getAction()
-    {
+    public function getAction() {
         return $this->action;
     }
 
@@ -144,8 +139,7 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRResource\FHIRTestScript\FHIRTestScriptAction1 $action
      * @return $this
      */
-    public function addAction($action)
-    {
+    public function addAction($action) {
         $this->action[] = $action;
         return $this;
     }
@@ -153,31 +147,54 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['action'])) {
+                if (is_array($data['action'])) {
+                    foreach($data['action'] as $d) {
+                        $this->addAction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"action" must be array of objects or null, '.gettype($data['action']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                if (null !== $action) $json['action'][] = $action;
             }
         }
         return $json;
@@ -188,12 +205,11 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<TestScriptTest xmlns="http://hl7.org/fhir"></TestScriptTest>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->action)) {
             foreach($this->action as $action) {
                 $action->xmlSerialize(true, $sxe->addChild('action'));

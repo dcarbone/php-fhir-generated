@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -107,8 +107,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem
      */
-    public function getSystem()
-    {
+    public function getSystem() {
         return $this->system;
     }
 
@@ -117,8 +116,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem $system
      * @return $this
      */
-    public function setSystem($system)
-    {
+    public function setSystem($system) {
         $this->system = $system;
         return $this;
     }
@@ -127,8 +125,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -137,8 +134,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -147,8 +143,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * Identifies the purpose for the contact point.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
      */
-    public function getUse()
-    {
+    public function getUse() {
         return $this->use;
     }
 
@@ -157,8 +152,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse $use
      * @return $this
      */
-    public function setUse($use)
-    {
+    public function setUse($use) {
         $this->use = $use;
         return $this;
     }
@@ -167,8 +161,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    public function getRank()
-    {
+    public function getRank() {
         return $this->rank;
     }
 
@@ -177,8 +170,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $rank
      * @return $this
      */
-    public function setRank($rank)
-    {
+    public function setRank($rank) {
         $this->rank = $rank;
         return $this;
     }
@@ -187,8 +179,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * Time period when the contact point was/is in use.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -197,8 +188,7 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -206,30 +196,53 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+            if (isset($data['rank'])) {
+                $this->setRank($data['rank']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->system) $json['system'] = json_encode($this->system);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
-        if (null !== $this->use) $json['use'] = json_encode($this->use);
-        if (null !== $this->rank) $json['rank'] = json_encode($this->rank);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->system)) $json['system'] = $this->system;
+        if (isset($this->value)) $json['value'] = $this->value;
+        if (isset($this->use)) $json['use'] = $this->use;
+        if (isset($this->rank)) $json['rank'] = $this->rank;
+        if (isset($this->period)) $json['period'] = $this->period;
         return $json;
     }
 
@@ -238,15 +251,14 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ContactPoint xmlns="http://hl7.org/fhir"></ContactPoint>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->system) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
-        if (null !== $this->use) $this->use->xmlSerialize(true, $sxe->addChild('use'));
-        if (null !== $this->rank) $this->rank->xmlSerialize(true, $sxe->addChild('rank'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
+        if (isset($this->rank)) $this->rank->xmlSerialize(true, $sxe->addChild('rank'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

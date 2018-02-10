@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,8 +88,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
      * The kind of change that happened to the device during the procedure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getAction()
-    {
+    public function getAction() {
         return $this->action;
     }
 
@@ -98,8 +97,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $action
      * @return $this
      */
-    public function setAction($action)
-    {
+    public function setAction($action) {
         $this->action = $action;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
      * The device that was manipulated (changed) during the procedure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getManipulated()
-    {
+    public function getManipulated() {
         return $this->manipulated;
     }
 
@@ -118,8 +115,7 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $manipulated
      * @return $this
      */
-    public function setManipulated($manipulated)
-    {
+    public function setManipulated($manipulated) {
         $this->manipulated = $manipulated;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['action'])) {
+                $this->setAction($data['action']);
+            }
+            if (isset($data['manipulated'])) {
+                $this->setManipulated($data['manipulated']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->action) $json['action'] = json_encode($this->action);
-        if (null !== $this->manipulated) $json['manipulated'] = json_encode($this->manipulated);
+        if (isset($this->action)) $json['action'] = $this->action;
+        if (isset($this->manipulated)) $json['manipulated'] = $this->manipulated;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRProcedureFocalDevice extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProcedureFocalDevice xmlns="http://hl7.org/fhir"></ProcedureFocalDevice>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->action) $this->action->xmlSerialize(true, $sxe->addChild('action'));
-        if (null !== $this->manipulated) $this->manipulated->xmlSerialize(true, $sxe->addChild('manipulated'));
+        if (isset($this->action)) $this->action->xmlSerialize(true, $sxe->addChild('action'));
+        if (isset($this->manipulated)) $this->manipulated->xmlSerialize(true, $sxe->addChild('manipulated'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

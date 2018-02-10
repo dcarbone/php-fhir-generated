@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,8 +68,8 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The value for this stratum, expressed as a string. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     * The value for this stratum, expressed as a CodeableConcept. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $value = null;
 
@@ -77,11 +77,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
      * The populations that make up the stratum, one for each type of population appropriate to the measure.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1[]
      */
-    public $population = array();
+    public $population = [];
 
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $measureScore = null;
 
@@ -91,21 +91,19 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
     private $_fhirElementName = 'MeasureReport.Stratum';
 
     /**
-     * The value for this stratum, expressed as a string. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * The value for this stratum, expressed as a CodeableConcept. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
     /**
-     * The value for this stratum, expressed as a string. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $value
+     * The value for this stratum, expressed as a CodeableConcept. When defining stratifiers on complex values, the value must be rendered such that the value for each stratum within the stratifier is unique.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
      * The populations that make up the stratum, one for each type of population appropriate to the measure.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1[]
      */
-    public function getPopulation()
-    {
+    public function getPopulation() {
         return $this->population;
     }
 
@@ -124,28 +121,25 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation1 $population
      * @return $this
      */
-    public function addPopulation($population)
-    {
+    public function addPopulation($population) {
         $this->population[] = $population;
         return $this;
     }
 
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getMeasureScore()
-    {
+    public function getMeasureScore() {
         return $this->measureScore;
     }
 
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $measureScore
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $measureScore
      * @return $this
      */
-    public function setMeasureScore($measureScore)
-    {
+    public function setMeasureScore($measureScore) {
         $this->measureScore = $measureScore;
         return $this;
     }
@@ -153,33 +147,56 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+            if (isset($data['population'])) {
+                if (is_array($data['population'])) {
+                    foreach($data['population'] as $d) {
+                        $this->addPopulation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"population" must be array of objects or null, '.gettype($data['population']).' seen.');
+                }
+            }
+            if (isset($data['measureScore'])) {
+                $this->setMeasureScore($data['measureScore']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (isset($this->value)) $json['value'] = $this->value;
         if (0 < count($this->population)) {
             $json['population'] = [];
             foreach($this->population as $population) {
-                $json['population'][] = json_encode($population);
+                if (null !== $population) $json['population'][] = $population;
             }
         }
-        if (null !== $this->measureScore) $json['measureScore'] = json_encode($this->measureScore);
+        if (isset($this->measureScore)) $json['measureScore'] = $this->measureScore;
         return $json;
     }
 
@@ -188,17 +205,16 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MeasureReportStratum xmlns="http://hl7.org/fhir"></MeasureReportStratum>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if (0 < count($this->population)) {
             foreach($this->population as $population) {
                 $population->xmlSerialize(true, $sxe->addChild('population'));
             }
         }
-        if (null !== $this->measureScore) $this->measureScore->xmlSerialize(true, $sxe->addChild('measureScore'));
+        if (isset($this->measureScore)) $this->measureScore->xmlSerialize(true, $sxe->addChild('measureScore'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

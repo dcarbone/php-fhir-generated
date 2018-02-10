@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -88,8 +88,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
      * The type of relationship that this document has with anther document.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDocumentRelationshipType
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -98,8 +97,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDocumentRelationshipType $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
      * The target document of this relationship.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getTarget()
-    {
+    public function getTarget() {
         return $this->target;
     }
 
@@ -118,8 +115,7 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $target
      * @return $this
      */
-    public function setTarget($target)
-    {
+    public function setTarget($target) {
         $this->target = $target;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['target'])) {
+                $this->setTarget($data['target']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->target) $json['target'] = json_encode($this->target);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->target)) $json['target'] = $this->target;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRDocumentReferenceRelatesTo extends FHIRBackboneElement implements \Jso
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DocumentReferenceRelatesTo xmlns="http://hl7.org/fhir"></DocumentReferenceRelatesTo>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->target) $this->target->xmlSerialize(true, $sxe->addChild('target'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->target)) $this->target->xmlSerialize(true, $sxe->addChild('target'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

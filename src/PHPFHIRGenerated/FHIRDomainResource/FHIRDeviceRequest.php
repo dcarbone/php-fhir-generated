@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,25 +72,25 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Identifiers assigned to this order by the orderer or by the receiver.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * Protocol or definition followed by this request. For example: The proposed act must be performed if the indicated conditions occur, e.g.., shortness of breath, SpO2 less than x%.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $definition = array();
+    public $instantiates = [];
 
     /**
      * Plan/proposal/order fulfilled by this request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = array();
+    public $basedOn = [];
 
     /**
      * The request takes the place of the referenced completed or terminated request(s).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $priorRequest = array();
+    public $priorRequest = [];
 
     /**
      * Composite request this is part of.
@@ -117,16 +117,20 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     public $priority = null;
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $codeReference = null;
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $codeCodeableConcept = null;
+
+    /**
+     * Specific parameters for the ordered item.  For example, the prism value for lenses.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter[]
+     */
+    public $parameter = [];
 
     /**
      * The patient who will use the device.
@@ -141,19 +145,16 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     public $context = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $occurrenceDateTime = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $occurrencePeriod = null;
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $occurrenceTiming = null;
@@ -166,7 +167,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestRequester
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $requester = null;
 
@@ -186,31 +187,37 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Reason or justification for the use of this device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reasonCode = array();
+    public $reasonCode = [];
 
     /**
      * Reason or justification for the use of this device.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $reasonReference = array();
+    public $reasonReference = [];
+
+    /**
+     * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $insurance = [];
 
     /**
      * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may includes body where on the subject's the device will be used ( i.e. the target site).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInfo = array();
+    public $supportingInfo = [];
 
     /**
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * Key events in the history of the request.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $relevantHistory = array();
+    public $relevantHistory = [];
 
     /**
      * @var string
@@ -221,8 +228,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Identifiers assigned to this order by the orderer or by the receiver.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -231,29 +237,26 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Protocol or definition followed by this request. For example: The proposed act must be performed if the indicated conditions occur, e.g.., shortness of breath, SpO2 less than x%.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getDefinition()
-    {
-        return $this->definition;
+    public function getInstantiates() {
+        return $this->instantiates;
     }
 
     /**
      * Protocol or definition followed by this request. For example: The proposed act must be performed if the indicated conditions occur, e.g.., shortness of breath, SpO2 less than x%.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $instantiates
      * @return $this
      */
-    public function addDefinition($definition)
-    {
-        $this->definition[] = $definition;
+    public function addInstantiates($instantiates) {
+        $this->instantiates[] = $instantiates;
         return $this;
     }
 
@@ -261,8 +264,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Plan/proposal/order fulfilled by this request.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getBasedOn()
-    {
+    public function getBasedOn() {
         return $this->basedOn;
     }
 
@@ -271,8 +273,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
-    public function addBasedOn($basedOn)
-    {
+    public function addBasedOn($basedOn) {
         $this->basedOn[] = $basedOn;
         return $this;
     }
@@ -281,8 +282,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * The request takes the place of the referenced completed or terminated request(s).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getPriorRequest()
-    {
+    public function getPriorRequest() {
         return $this->priorRequest;
     }
 
@@ -291,8 +291,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $priorRequest
      * @return $this
      */
-    public function addPriorRequest($priorRequest)
-    {
+    public function addPriorRequest($priorRequest) {
         $this->priorRequest[] = $priorRequest;
         return $this;
     }
@@ -301,8 +300,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Composite request this is part of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getGroupIdentifier()
-    {
+    public function getGroupIdentifier() {
         return $this->groupIdentifier;
     }
 
@@ -311,8 +309,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $groupIdentifier
      * @return $this
      */
-    public function setGroupIdentifier($groupIdentifier)
-    {
+    public function setGroupIdentifier($groupIdentifier) {
         $this->groupIdentifier = $groupIdentifier;
         return $this;
     }
@@ -321,8 +318,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * The status of the request.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -331,8 +327,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -341,8 +336,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Whether the request is a proposal, plan, an original order or a reflex order.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getIntent()
-    {
+    public function getIntent() {
         return $this->intent;
     }
 
@@ -351,8 +345,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $intent
      * @return $this
      */
-    public function setIntent($intent)
-    {
+    public function setIntent($intent) {
         $this->intent = $intent;
         return $this;
     }
@@ -361,8 +354,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority
      */
-    public function getPriority()
-    {
+    public function getPriority() {
         return $this->priority;
     }
 
@@ -371,49 +363,58 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRequestPriority $priority
      * @return $this
      */
-    public function setPriority($priority)
-    {
+    public function setPriority($priority) {
         $this->priority = $priority;
         return $this;
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getCodeReference()
-    {
+    public function getCodeReference() {
         return $this->codeReference;
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $codeReference
      * @return $this
      */
-    public function setCodeReference($codeReference)
-    {
+    public function setCodeReference($codeReference) {
         $this->codeReference = $codeReference;
         return $this;
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getCodeCodeableConcept()
-    {
+    public function getCodeCodeableConcept() {
         return $this->codeCodeableConcept;
     }
 
     /**
-     * The details of the device to be used. (choose any one of code*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $codeCodeableConcept
      * @return $this
      */
-    public function setCodeCodeableConcept($codeCodeableConcept)
-    {
+    public function setCodeCodeableConcept($codeCodeableConcept) {
         $this->codeCodeableConcept = $codeCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * Specific parameters for the ordered item.  For example, the prism value for lenses.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter[]
+     */
+    public function getParameter() {
+        return $this->parameter;
+    }
+
+    /**
+     * Specific parameters for the ordered item.  For example, the prism value for lenses.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestParameter $parameter
+     * @return $this
+     */
+    public function addParameter($parameter) {
+        $this->parameter[] = $parameter;
         return $this;
     }
 
@@ -421,8 +422,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * The patient who will use the device.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubject()
-    {
+    public function getSubject() {
         return $this->subject;
     }
 
@@ -431,8 +431,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setSubject($subject)
-    {
+    public function setSubject($subject) {
         $this->subject = $subject;
         return $this;
     }
@@ -441,8 +440,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * An encounter that provides additional context in which this request is made.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->context;
     }
 
@@ -451,68 +449,55 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setContext($context)
-    {
+    public function setContext($context) {
         $this->context = $context;
         return $this;
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getOccurrenceDateTime()
-    {
+    public function getOccurrenceDateTime() {
         return $this->occurrenceDateTime;
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $occurrenceDateTime
      * @return $this
      */
-    public function setOccurrenceDateTime($occurrenceDateTime)
-    {
+    public function setOccurrenceDateTime($occurrenceDateTime) {
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getOccurrencePeriod()
-    {
+    public function getOccurrencePeriod() {
         return $this->occurrencePeriod;
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $occurrencePeriod
      * @return $this
      */
-    public function setOccurrencePeriod($occurrencePeriod)
-    {
+    public function setOccurrencePeriod($occurrencePeriod) {
         $this->occurrencePeriod = $occurrencePeriod;
         return $this;
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
-    public function getOccurrenceTiming()
-    {
+    public function getOccurrenceTiming() {
         return $this->occurrenceTiming;
     }
 
     /**
-     * The timing schedule for the use of the device. The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of occurrence*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $occurrenceTiming
      * @return $this
      */
-    public function setOccurrenceTiming($occurrenceTiming)
-    {
+    public function setOccurrenceTiming($occurrenceTiming) {
         $this->occurrenceTiming = $occurrenceTiming;
         return $this;
     }
@@ -521,8 +506,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * When the request transitioned to being actionable.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getAuthoredOn()
-    {
+    public function getAuthoredOn() {
         return $this->authoredOn;
     }
 
@@ -531,28 +515,25 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $authoredOn
      * @return $this
      */
-    public function setAuthoredOn($authoredOn)
-    {
+    public function setAuthoredOn($authoredOn) {
         $this->authoredOn = $authoredOn;
         return $this;
     }
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestRequester
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getRequester()
-    {
+    public function getRequester() {
         return $this->requester;
     }
 
     /**
      * The individual who initiated the request and has responsibility for its activation.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceRequest\FHIRDeviceRequestRequester $requester
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $requester
      * @return $this
      */
-    public function setRequester($requester)
-    {
+    public function setRequester($requester) {
         $this->requester = $requester;
         return $this;
     }
@@ -561,8 +542,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Desired type of performer for doing the diagnostic testing.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getPerformerType()
-    {
+    public function getPerformerType() {
         return $this->performerType;
     }
 
@@ -571,8 +551,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $performerType
      * @return $this
      */
-    public function setPerformerType($performerType)
-    {
+    public function setPerformerType($performerType) {
         $this->performerType = $performerType;
         return $this;
     }
@@ -581,8 +560,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * The desired perfomer for doing the diagnostic testing.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPerformer()
-    {
+    public function getPerformer() {
         return $this->performer;
     }
 
@@ -591,8 +569,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $performer
      * @return $this
      */
-    public function setPerformer($performer)
-    {
+    public function setPerformer($performer) {
         $this->performer = $performer;
         return $this;
     }
@@ -601,8 +578,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Reason or justification for the use of this device.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getReasonCode()
-    {
+    public function getReasonCode() {
         return $this->reasonCode;
     }
 
@@ -611,8 +587,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCode
      * @return $this
      */
-    public function addReasonCode($reasonCode)
-    {
+    public function addReasonCode($reasonCode) {
         $this->reasonCode[] = $reasonCode;
         return $this;
     }
@@ -621,8 +596,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Reason or justification for the use of this device.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getReasonReference()
-    {
+    public function getReasonReference() {
         return $this->reasonReference;
     }
 
@@ -631,9 +605,26 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
-    public function addReasonReference($reasonReference)
-    {
+    public function addReasonReference($reasonReference) {
         $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
+     * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getInsurance() {
+        return $this->insurance;
+    }
+
+    /**
+     * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $insurance
+     * @return $this
+     */
+    public function addInsurance($insurance) {
+        $this->insurance[] = $insurance;
         return $this;
     }
 
@@ -641,8 +632,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Additional clinical information about the patient that may influence the request fulfilment.  For example, this may includes body where on the subject's the device will be used ( i.e. the target site).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupportingInfo()
-    {
+    public function getSupportingInfo() {
         return $this->supportingInfo;
     }
 
@@ -651,8 +641,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
-    public function addSupportingInfo($supportingInfo)
-    {
+    public function addSupportingInfo($supportingInfo) {
         $this->supportingInfo[] = $supportingInfo;
         return $this;
     }
@@ -661,8 +650,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Details about this request that were not represented at all or sufficiently in one of the attributes provided in a class. These may include for example a comment, an instruction, or a note associated with the statement.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -671,8 +659,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -681,8 +668,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * Key events in the history of the request.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getRelevantHistory()
-    {
+    public function getRelevantHistory() {
         return $this->relevantHistory;
     }
 
@@ -691,8 +677,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $relevantHistory
      * @return $this
      */
-    public function addRelevantHistory($relevantHistory)
-    {
+    public function addRelevantHistory($relevantHistory) {
         $this->relevantHistory[] = $relevantHistory;
         return $this;
     }
@@ -700,93 +685,257 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['instantiates'])) {
+                if (is_array($data['instantiates'])) {
+                    foreach($data['instantiates'] as $d) {
+                        $this->addInstantiates($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"instantiates" must be array of objects or null, '.gettype($data['instantiates']).' seen.');
+                }
+            }
+            if (isset($data['basedOn'])) {
+                if (is_array($data['basedOn'])) {
+                    foreach($data['basedOn'] as $d) {
+                        $this->addBasedOn($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"basedOn" must be array of objects or null, '.gettype($data['basedOn']).' seen.');
+                }
+            }
+            if (isset($data['priorRequest'])) {
+                if (is_array($data['priorRequest'])) {
+                    foreach($data['priorRequest'] as $d) {
+                        $this->addPriorRequest($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"priorRequest" must be array of objects or null, '.gettype($data['priorRequest']).' seen.');
+                }
+            }
+            if (isset($data['groupIdentifier'])) {
+                $this->setGroupIdentifier($data['groupIdentifier']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['intent'])) {
+                $this->setIntent($data['intent']);
+            }
+            if (isset($data['priority'])) {
+                $this->setPriority($data['priority']);
+            }
+            if (isset($data['codeReference'])) {
+                $this->setCodeReference($data['codeReference']);
+            }
+            if (isset($data['codeCodeableConcept'])) {
+                $this->setCodeCodeableConcept($data['codeCodeableConcept']);
+            }
+            if (isset($data['parameter'])) {
+                if (is_array($data['parameter'])) {
+                    foreach($data['parameter'] as $d) {
+                        $this->addParameter($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"parameter" must be array of objects or null, '.gettype($data['parameter']).' seen.');
+                }
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['context'])) {
+                $this->setContext($data['context']);
+            }
+            if (isset($data['occurrenceDateTime'])) {
+                $this->setOccurrenceDateTime($data['occurrenceDateTime']);
+            }
+            if (isset($data['occurrencePeriod'])) {
+                $this->setOccurrencePeriod($data['occurrencePeriod']);
+            }
+            if (isset($data['occurrenceTiming'])) {
+                $this->setOccurrenceTiming($data['occurrenceTiming']);
+            }
+            if (isset($data['authoredOn'])) {
+                $this->setAuthoredOn($data['authoredOn']);
+            }
+            if (isset($data['requester'])) {
+                $this->setRequester($data['requester']);
+            }
+            if (isset($data['performerType'])) {
+                $this->setPerformerType($data['performerType']);
+            }
+            if (isset($data['performer'])) {
+                $this->setPerformer($data['performer']);
+            }
+            if (isset($data['reasonCode'])) {
+                if (is_array($data['reasonCode'])) {
+                    foreach($data['reasonCode'] as $d) {
+                        $this->addReasonCode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"reasonCode" must be array of objects or null, '.gettype($data['reasonCode']).' seen.');
+                }
+            }
+            if (isset($data['reasonReference'])) {
+                if (is_array($data['reasonReference'])) {
+                    foreach($data['reasonReference'] as $d) {
+                        $this->addReasonReference($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"reasonReference" must be array of objects or null, '.gettype($data['reasonReference']).' seen.');
+                }
+            }
+            if (isset($data['insurance'])) {
+                if (is_array($data['insurance'])) {
+                    foreach($data['insurance'] as $d) {
+                        $this->addInsurance($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"insurance" must be array of objects or null, '.gettype($data['insurance']).' seen.');
+                }
+            }
+            if (isset($data['supportingInfo'])) {
+                if (is_array($data['supportingInfo'])) {
+                    foreach($data['supportingInfo'] as $d) {
+                        $this->addSupportingInfo($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportingInfo" must be array of objects or null, '.gettype($data['supportingInfo']).' seen.');
+                }
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+            if (isset($data['relevantHistory'])) {
+                if (is_array($data['relevantHistory'])) {
+                    foreach($data['relevantHistory'] as $d) {
+                        $this->addRelevantHistory($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"relevantHistory" must be array of objects or null, '.gettype($data['relevantHistory']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (0 < count($this->definition)) {
-            $json['definition'] = [];
-            foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+        if (0 < count($this->instantiates)) {
+            $json['instantiates'] = [];
+            foreach($this->instantiates as $instantiates) {
+                if (null !== $instantiates) $json['instantiates'][] = $instantiates;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                if (null !== $basedOn) $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->priorRequest)) {
             $json['priorRequest'] = [];
             foreach($this->priorRequest as $priorRequest) {
-                $json['priorRequest'][] = json_encode($priorRequest);
+                if (null !== $priorRequest) $json['priorRequest'][] = $priorRequest;
             }
         }
-        if (null !== $this->groupIdentifier) $json['groupIdentifier'] = json_encode($this->groupIdentifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->codeReference) $json['codeReference'] = json_encode($this->codeReference);
-        if (null !== $this->codeCodeableConcept) $json['codeCodeableConcept'] = json_encode($this->codeCodeableConcept);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->occurrenceDateTime) $json['occurrenceDateTime'] = json_encode($this->occurrenceDateTime);
-        if (null !== $this->occurrencePeriod) $json['occurrencePeriod'] = json_encode($this->occurrencePeriod);
-        if (null !== $this->occurrenceTiming) $json['occurrenceTiming'] = json_encode($this->occurrenceTiming);
-        if (null !== $this->authoredOn) $json['authoredOn'] = json_encode($this->authoredOn);
-        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
-        if (null !== $this->performerType) $json['performerType'] = json_encode($this->performerType);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (isset($this->groupIdentifier)) $json['groupIdentifier'] = $this->groupIdentifier;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->intent)) $json['intent'] = $this->intent;
+        if (isset($this->priority)) $json['priority'] = $this->priority;
+        if (isset($this->codeReference)) $json['codeReference'] = $this->codeReference;
+        if (isset($this->codeCodeableConcept)) $json['codeCodeableConcept'] = $this->codeCodeableConcept;
+        if (0 < count($this->parameter)) {
+            $json['parameter'] = [];
+            foreach($this->parameter as $parameter) {
+                if (null !== $parameter) $json['parameter'][] = $parameter;
+            }
+        }
+        if (isset($this->subject)) $json['subject'] = $this->subject;
+        if (isset($this->context)) $json['context'] = $this->context;
+        if (isset($this->occurrenceDateTime)) $json['occurrenceDateTime'] = $this->occurrenceDateTime;
+        if (isset($this->occurrencePeriod)) $json['occurrencePeriod'] = $this->occurrencePeriod;
+        if (isset($this->occurrenceTiming)) $json['occurrenceTiming'] = $this->occurrenceTiming;
+        if (isset($this->authoredOn)) $json['authoredOn'] = $this->authoredOn;
+        if (isset($this->requester)) $json['requester'] = $this->requester;
+        if (isset($this->performerType)) $json['performerType'] = $this->performerType;
+        if (isset($this->performer)) $json['performer'] = $this->performer;
         if (0 < count($this->reasonCode)) {
             $json['reasonCode'] = [];
             foreach($this->reasonCode as $reasonCode) {
-                $json['reasonCode'][] = json_encode($reasonCode);
+                if (null !== $reasonCode) $json['reasonCode'][] = $reasonCode;
             }
         }
         if (0 < count($this->reasonReference)) {
             $json['reasonReference'] = [];
             foreach($this->reasonReference as $reasonReference) {
-                $json['reasonReference'][] = json_encode($reasonReference);
+                if (null !== $reasonReference) $json['reasonReference'][] = $reasonReference;
+            }
+        }
+        if (0 < count($this->insurance)) {
+            $json['insurance'] = [];
+            foreach($this->insurance as $insurance) {
+                if (null !== $insurance) $json['insurance'][] = $insurance;
             }
         }
         if (0 < count($this->supportingInfo)) {
             $json['supportingInfo'] = [];
             foreach($this->supportingInfo as $supportingInfo) {
-                $json['supportingInfo'][] = json_encode($supportingInfo);
+                if (null !== $supportingInfo) $json['supportingInfo'][] = $supportingInfo;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                if (null !== $note) $json['note'][] = $note;
             }
         }
         if (0 < count($this->relevantHistory)) {
             $json['relevantHistory'] = [];
             foreach($this->relevantHistory as $relevantHistory) {
-                $json['relevantHistory'][] = json_encode($relevantHistory);
+                if (null !== $relevantHistory) $json['relevantHistory'][] = $relevantHistory;
             }
         }
         return $json;
@@ -797,8 +946,7 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DeviceRequest xmlns="http://hl7.org/fhir"></DeviceRequest>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -806,9 +954,9 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (0 < count($this->definition)) {
-            foreach($this->definition as $definition) {
-                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+        if (0 < count($this->instantiates)) {
+            foreach($this->instantiates as $instantiates) {
+                $instantiates->xmlSerialize(true, $sxe->addChild('instantiates'));
             }
         }
         if (0 < count($this->basedOn)) {
@@ -821,21 +969,26 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
                 $priorRequest->xmlSerialize(true, $sxe->addChild('priorRequest'));
             }
         }
-        if (null !== $this->groupIdentifier) $this->groupIdentifier->xmlSerialize(true, $sxe->addChild('groupIdentifier'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->intent) $this->intent->xmlSerialize(true, $sxe->addChild('intent'));
-        if (null !== $this->priority) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
-        if (null !== $this->codeReference) $this->codeReference->xmlSerialize(true, $sxe->addChild('codeReference'));
-        if (null !== $this->codeCodeableConcept) $this->codeCodeableConcept->xmlSerialize(true, $sxe->addChild('codeCodeableConcept'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
-        if (null !== $this->occurrenceDateTime) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
-        if (null !== $this->occurrencePeriod) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
-        if (null !== $this->occurrenceTiming) $this->occurrenceTiming->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
-        if (null !== $this->authoredOn) $this->authoredOn->xmlSerialize(true, $sxe->addChild('authoredOn'));
-        if (null !== $this->requester) $this->requester->xmlSerialize(true, $sxe->addChild('requester'));
-        if (null !== $this->performerType) $this->performerType->xmlSerialize(true, $sxe->addChild('performerType'));
-        if (null !== $this->performer) $this->performer->xmlSerialize(true, $sxe->addChild('performer'));
+        if (isset($this->groupIdentifier)) $this->groupIdentifier->xmlSerialize(true, $sxe->addChild('groupIdentifier'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->intent)) $this->intent->xmlSerialize(true, $sxe->addChild('intent'));
+        if (isset($this->priority)) $this->priority->xmlSerialize(true, $sxe->addChild('priority'));
+        if (isset($this->codeReference)) $this->codeReference->xmlSerialize(true, $sxe->addChild('codeReference'));
+        if (isset($this->codeCodeableConcept)) $this->codeCodeableConcept->xmlSerialize(true, $sxe->addChild('codeCodeableConcept'));
+        if (0 < count($this->parameter)) {
+            foreach($this->parameter as $parameter) {
+                $parameter->xmlSerialize(true, $sxe->addChild('parameter'));
+            }
+        }
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (isset($this->context)) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (isset($this->occurrenceDateTime)) $this->occurrenceDateTime->xmlSerialize(true, $sxe->addChild('occurrenceDateTime'));
+        if (isset($this->occurrencePeriod)) $this->occurrencePeriod->xmlSerialize(true, $sxe->addChild('occurrencePeriod'));
+        if (isset($this->occurrenceTiming)) $this->occurrenceTiming->xmlSerialize(true, $sxe->addChild('occurrenceTiming'));
+        if (isset($this->authoredOn)) $this->authoredOn->xmlSerialize(true, $sxe->addChild('authoredOn'));
+        if (isset($this->requester)) $this->requester->xmlSerialize(true, $sxe->addChild('requester'));
+        if (isset($this->performerType)) $this->performerType->xmlSerialize(true, $sxe->addChild('performerType'));
+        if (isset($this->performer)) $this->performer->xmlSerialize(true, $sxe->addChild('performer'));
         if (0 < count($this->reasonCode)) {
             foreach($this->reasonCode as $reasonCode) {
                 $reasonCode->xmlSerialize(true, $sxe->addChild('reasonCode'));
@@ -844,6 +997,11 @@ class FHIRDeviceRequest extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->reasonReference)) {
             foreach($this->reasonReference as $reasonReference) {
                 $reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
+            }
+        }
+        if (0 < count($this->insurance)) {
+            foreach($this->insurance as $insurance) {
+                $insurance->xmlSerialize(true, $sxe->addChild('insurance'));
             }
         }
         if (0 < count($this->supportingInfo)) {

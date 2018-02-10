@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,7 +83,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * A list of operators that can be used with the filter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator[]
      */
-    public $operator = array();
+    public $operator = [];
 
     /**
      * A description of what the value for the filter should be.
@@ -100,8 +100,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * The code that identifies this filter when it is used in the instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -110,8 +109,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * A description of how or why the filter is used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -130,8 +127,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * A list of operators that can be used with the filter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator[]
      */
-    public function getOperator()
-    {
+    public function getOperator() {
         return $this->operator;
     }
 
@@ -150,8 +145,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRFilterOperator $operator
      * @return $this
      */
-    public function addOperator($operator)
-    {
+    public function addOperator($operator) {
         $this->operator[] = $operator;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * A description of what the value for the filter should be.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -170,8 +163,7 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -179,34 +171,60 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['operator'])) {
+                if (is_array($data['operator'])) {
+                    foreach($data['operator'] as $d) {
+                        $this->addOperator($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"operator" must be array of objects or null, '.gettype($data['operator']).' seen.');
+                }
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->operator)) {
             $json['operator'] = [];
             foreach($this->operator as $operator) {
-                $json['operator'][] = json_encode($operator);
+                if (null !== $operator) $json['operator'][] = $operator;
             }
         }
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
+        if (isset($this->value)) $json['value'] = $this->value;
         return $json;
     }
 
@@ -215,18 +233,17 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CodeSystemFilter xmlns="http://hl7.org/fhir"></CodeSystemFilter>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->operator)) {
             foreach($this->operator as $operator) {
                 $operator->xmlSerialize(true, $sxe->addChild('operator'));
             }
         }
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

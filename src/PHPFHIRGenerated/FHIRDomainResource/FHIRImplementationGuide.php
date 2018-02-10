@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published. The URL SHOULD include the major version of the implementation guide. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this implementation guide is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -114,7 +114,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A free text natural language description of the implementation guide from a consumer's perspective.
@@ -126,13 +126,13 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate implementation guide instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the implementation guide is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
@@ -141,7 +141,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
     public $copyright = null;
 
     /**
-     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
+     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $fhirVersion = null;
@@ -150,25 +150,25 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependency[]
      */
-    public $dependency = array();
+    public $dependency = [];
 
     /**
      * A logical group of resources. Logical groups can be used when building pages.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePackage[]
      */
-    public $package = array();
+    public $package = [];
 
     /**
      * A set of profiles that all resources covered by this implementation guide must conform to.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
      */
-    public $global = array();
+    public $global = [];
 
     /**
      * A binary file that is included in the  implementation guide when it is published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $binary = array();
+    public $binary = [];
 
     /**
      * A page / section in the implementation guide. The root page is the implementation guide home page.
@@ -182,21 +182,19 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
     private $_fhirElementName = 'ImplementationGuide';
 
     /**
-     * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published. The URL SHOULD include the major version of the implementation guide. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this implementation guide is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this implementation guide is (or will be) published. The URL SHOULD include the major version of the implementation guide. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this implementation guide is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -205,8 +203,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * The identifier that is used to identify this version of the implementation guide when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the implementation guide author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -215,8 +212,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -225,8 +221,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A natural language name identifying the implementation guide. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -235,8 +230,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -245,8 +239,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * The status of this implementation guide. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -255,8 +248,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -265,8 +257,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A boolean value to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -275,8 +266,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -285,8 +275,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * The date  (and optionally time) when the implementation guide was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -295,8 +284,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -305,8 +293,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * The name of the individual or organization that published the implementation guide.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -315,8 +302,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -325,8 +311,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -335,8 +320,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -345,8 +329,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A free text natural language description of the implementation guide from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -355,8 +338,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -365,8 +347,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate implementation guide instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -375,8 +356,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -385,8 +365,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A legal or geographic region in which the implementation guide is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -395,8 +374,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -405,8 +383,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getCopyright()
-    {
+    public function getCopyright() {
         return $this->copyright;
     }
 
@@ -415,28 +392,25 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
-    public function setCopyright($copyright)
-    {
+    public function setCopyright($copyright) {
         $this->copyright = $copyright;
         return $this;
     }
 
     /**
-     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
+     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
-    public function getFhirVersion()
-    {
+    public function getFhirVersion() {
         return $this->fhirVersion;
     }
 
     /**
-     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.0.1 for this version.
+     * The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $fhirVersion
      * @return $this
      */
-    public function setFhirVersion($fhirVersion)
-    {
+    public function setFhirVersion($fhirVersion) {
         $this->fhirVersion = $fhirVersion;
         return $this;
     }
@@ -445,8 +419,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependency[]
      */
-    public function getDependency()
-    {
+    public function getDependency() {
         return $this->dependency;
     }
 
@@ -455,8 +428,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideDependency $dependency
      * @return $this
      */
-    public function addDependency($dependency)
-    {
+    public function addDependency($dependency) {
         $this->dependency[] = $dependency;
         return $this;
     }
@@ -465,8 +437,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A logical group of resources. Logical groups can be used when building pages.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePackage[]
      */
-    public function getPackage()
-    {
+    public function getPackage() {
         return $this->package;
     }
 
@@ -475,8 +446,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePackage $package
      * @return $this
      */
-    public function addPackage($package)
-    {
+    public function addPackage($package) {
         $this->package[] = $package;
         return $this;
     }
@@ -485,8 +455,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A set of profiles that all resources covered by this implementation guide must conform to.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
      */
-    public function getGlobal()
-    {
+    public function getGlobal() {
         return $this->global;
     }
 
@@ -495,8 +464,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuideGlobal $global
      * @return $this
      */
-    public function addGlobal($global)
-    {
+    public function addGlobal($global) {
         $this->global[] = $global;
         return $this;
     }
@@ -505,8 +473,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A binary file that is included in the  implementation guide when it is published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getBinary()
-    {
+    public function getBinary() {
         return $this->binary;
     }
 
@@ -515,8 +482,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $binary
      * @return $this
      */
-    public function addBinary($binary)
-    {
+    public function addBinary($binary) {
         $this->binary[] = $binary;
         return $this;
     }
@@ -525,8 +491,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * A page / section in the implementation guide. The root page is the implementation guide home page.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
-    public function getPage()
-    {
+    public function getPage() {
         return $this->page;
     }
 
@@ -535,8 +500,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImplementationGuide\FHIRImplementationGuidePage $page
      * @return $this
      */
-    public function setPage($page)
-    {
+    public function setPage($page) {
         $this->page = $page;
         return $this;
     }
@@ -544,79 +508,183 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['copyright'])) {
+                $this->setCopyright($data['copyright']);
+            }
+            if (isset($data['fhirVersion'])) {
+                $this->setFhirVersion($data['fhirVersion']);
+            }
+            if (isset($data['dependency'])) {
+                if (is_array($data['dependency'])) {
+                    foreach($data['dependency'] as $d) {
+                        $this->addDependency($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dependency" must be array of objects or null, '.gettype($data['dependency']).' seen.');
+                }
+            }
+            if (isset($data['package'])) {
+                if (is_array($data['package'])) {
+                    foreach($data['package'] as $d) {
+                        $this->addPackage($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"package" must be array of objects or null, '.gettype($data['package']).' seen.');
+                }
+            }
+            if (isset($data['global'])) {
+                if (is_array($data['global'])) {
+                    foreach($data['global'] as $d) {
+                        $this->addGlobal($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"global" must be array of objects or null, '.gettype($data['global']).' seen.');
+                }
+            }
+            if (isset($data['binary'])) {
+                if (is_array($data['binary'])) {
+                    foreach($data['binary'] as $d) {
+                        $this->addBinary($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"binary" must be array of objects or null, '.gettype($data['binary']).' seen.');
+                }
+            }
+            if (isset($data['page'])) {
+                $this->setPage($data['page']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
+        if (isset($this->copyright)) $json['copyright'] = $this->copyright;
+        if (isset($this->fhirVersion)) $json['fhirVersion'] = $this->fhirVersion;
         if (0 < count($this->dependency)) {
             $json['dependency'] = [];
             foreach($this->dependency as $dependency) {
-                $json['dependency'][] = json_encode($dependency);
+                if (null !== $dependency) $json['dependency'][] = $dependency;
             }
         }
         if (0 < count($this->package)) {
             $json['package'] = [];
             foreach($this->package as $package) {
-                $json['package'][] = json_encode($package);
+                if (null !== $package) $json['package'][] = $package;
             }
         }
         if (0 < count($this->global)) {
             $json['global'] = [];
             foreach($this->global as $global) {
-                $json['global'][] = json_encode($global);
+                if (null !== $global) $json['global'][] = $global;
             }
         }
         if (0 < count($this->binary)) {
             $json['binary'] = [];
             foreach($this->binary as $binary) {
-                $json['binary'][] = json_encode($binary);
+                if (null !== $binary) $json['binary'][] = $binary;
             }
         }
-        if (null !== $this->page) $json['page'] = json_encode($this->page);
+        if (isset($this->page)) $json['page'] = $this->page;
         return $json;
     }
 
@@ -625,23 +693,22 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImplementationGuide xmlns="http://hl7.org/fhir"></ImplementationGuide>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -652,8 +719,8 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
-        if (null !== $this->fhirVersion) $this->fhirVersion->xmlSerialize(true, $sxe->addChild('fhirVersion'));
+        if (isset($this->copyright)) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->fhirVersion)) $this->fhirVersion->xmlSerialize(true, $sxe->addChild('fhirVersion'));
         if (0 < count($this->dependency)) {
             foreach($this->dependency as $dependency) {
                 $dependency->xmlSerialize(true, $sxe->addChild('dependency'));
@@ -674,7 +741,7 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
                 $binary->xmlSerialize(true, $sxe->addChild('binary'));
             }
         }
-        if (null !== $this->page) $this->page->xmlSerialize(true, $sxe->addChild('page'));
+        if (isset($this->page)) $this->page->xmlSerialize(true, $sxe->addChild('page'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

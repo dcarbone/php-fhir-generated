@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,31 +72,31 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public $definition = array();
+    public $instantiates = [];
 
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $basedOn = array();
+    public $basedOn = [];
 
     /**
      * Completed or terminated care plan whose function is taken by this new care plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $replaces = array();
+    public $replaces = [];
 
     /**
      * A larger care plan of which this particular care plan is a component or step.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $partOf = array();
+    public $partOf = [];
 
     /**
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
@@ -114,7 +114,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $category = array();
+    public $category = [];
 
     /**
      * Human-friendly name for the CarePlan.
@@ -150,43 +150,43 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies the individual(s) or ogranization who is responsible for the content of the care plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $author = array();
+    public $author = [];
 
     /**
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $careTeam = array();
+    public $careTeam = [];
 
     /**
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $addresses = array();
+    public $addresses = [];
 
     /**
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $supportingInfo = array();
+    public $supportingInfo = [];
 
     /**
      * Describes the intended objective(s) of carrying out the care plan.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $goal = array();
+    public $goal = [];
 
     /**
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity[]
      */
-    public $activity = array();
+    public $activity = [];
 
     /**
      * General notes about the care plan not covered elsewhere.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * @var string
@@ -197,8 +197,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -207,29 +206,26 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
      * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri[]
      */
-    public function getDefinition()
-    {
-        return $this->definition;
+    public function getInstantiates() {
+        return $this->instantiates;
     }
 
     /**
      * Identifies the protocol, questionnaire, guideline or other specification the care plan should be conducted in accordance with.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $definition
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $instantiates
      * @return $this
      */
-    public function addDefinition($definition)
-    {
-        $this->definition[] = $definition;
+    public function addInstantiates($instantiates) {
+        $this->instantiates[] = $instantiates;
         return $this;
     }
 
@@ -237,8 +233,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * A care plan that is fulfilled in whole or in part by this care plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getBasedOn()
-    {
+    public function getBasedOn() {
         return $this->basedOn;
     }
 
@@ -247,8 +242,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $basedOn
      * @return $this
      */
-    public function addBasedOn($basedOn)
-    {
+    public function addBasedOn($basedOn) {
         $this->basedOn[] = $basedOn;
         return $this;
     }
@@ -257,8 +251,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Completed or terminated care plan whose function is taken by this new care plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getReplaces()
-    {
+    public function getReplaces() {
         return $this->replaces;
     }
 
@@ -267,8 +260,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $replaces
      * @return $this
      */
-    public function addReplaces($replaces)
-    {
+    public function addReplaces($replaces) {
         $this->replaces[] = $replaces;
         return $this;
     }
@@ -277,8 +269,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * A larger care plan of which this particular care plan is a component or step.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getPartOf()
-    {
+    public function getPartOf() {
         return $this->partOf;
     }
 
@@ -287,8 +278,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $partOf
      * @return $this
      */
-    public function addPartOf($partOf)
-    {
+    public function addPartOf($partOf) {
         $this->partOf[] = $partOf;
         return $this;
     }
@@ -297,8 +287,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Indicates whether the plan is currently being acted upon, represents future intentions or is now a historical record.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -307,8 +296,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCarePlanStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -317,8 +305,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Indicates the level of authority/intentionality associated with the care plan and where the care plan fits into the workflow chain.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent
      */
-    public function getIntent()
-    {
+    public function getIntent() {
         return $this->intent;
     }
 
@@ -327,8 +314,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCarePlanIntent $intent
      * @return $this
      */
-    public function setIntent($intent)
-    {
+    public function setIntent($intent) {
         $this->intent = $intent;
         return $this;
     }
@@ -337,8 +323,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies what "kind" of plan this is to support differentiation between multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma", "disease management", "wellness plan", etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
@@ -347,8 +332,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $category
      * @return $this
      */
-    public function addCategory($category)
-    {
+    public function addCategory($category) {
         $this->category[] = $category;
         return $this;
     }
@@ -357,8 +341,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Human-friendly name for the CarePlan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -367,8 +350,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -377,8 +359,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * A description of the scope and nature of the plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -387,8 +368,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -397,8 +377,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies the patient or group whose intended care is described by the plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSubject()
-    {
+    public function getSubject() {
         return $this->subject;
     }
 
@@ -407,8 +386,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $subject
      * @return $this
      */
-    public function setSubject($subject)
-    {
+    public function setSubject($subject) {
         $this->subject = $subject;
         return $this;
     }
@@ -417,8 +395,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies the original context in which this particular CarePlan was created.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->context;
     }
 
@@ -427,8 +404,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $context
      * @return $this
      */
-    public function setContext($context)
-    {
+    public function setContext($context) {
         $this->context = $context;
         return $this;
     }
@@ -437,8 +413,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Indicates when the plan did (or is intended to) come into effect and end.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -447,8 +422,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -457,8 +431,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies the individual(s) or ogranization who is responsible for the content of the care plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getAuthor()
-    {
+    public function getAuthor() {
         return $this->author;
     }
 
@@ -467,8 +440,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $author
      * @return $this
      */
-    public function addAuthor($author)
-    {
+    public function addAuthor($author) {
         $this->author[] = $author;
         return $this;
     }
@@ -477,8 +449,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getCareTeam()
-    {
+    public function getCareTeam() {
         return $this->careTeam;
     }
 
@@ -487,8 +458,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $careTeam
      * @return $this
      */
-    public function addCareTeam($careTeam)
-    {
+    public function addCareTeam($careTeam) {
         $this->careTeam[] = $careTeam;
         return $this;
     }
@@ -497,8 +467,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management and/or mitigation are handled by this plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getAddresses()
-    {
+    public function getAddresses() {
         return $this->addresses;
     }
 
@@ -507,8 +476,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $addresses
      * @return $this
      */
-    public function addAddresses($addresses)
-    {
+    public function addAddresses($addresses) {
         $this->addresses[] = $addresses;
         return $this;
     }
@@ -517,8 +485,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getSupportingInfo()
-    {
+    public function getSupportingInfo() {
         return $this->supportingInfo;
     }
 
@@ -527,8 +494,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportingInfo
      * @return $this
      */
-    public function addSupportingInfo($supportingInfo)
-    {
+    public function addSupportingInfo($supportingInfo) {
         $this->supportingInfo[] = $supportingInfo;
         return $this;
     }
@@ -537,8 +503,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Describes the intended objective(s) of carrying out the care plan.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getGoal()
-    {
+    public function getGoal() {
         return $this->goal;
     }
 
@@ -547,8 +512,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $goal
      * @return $this
      */
-    public function addGoal($goal)
-    {
+    public function addGoal($goal) {
         $this->goal[] = $goal;
         return $this;
     }
@@ -557,8 +521,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity[]
      */
-    public function getActivity()
-    {
+    public function getActivity() {
         return $this->activity;
     }
 
@@ -567,8 +530,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanActivity $activity
      * @return $this
      */
-    public function addActivity($activity)
-    {
+    public function addActivity($activity) {
         $this->activity[] = $activity;
         return $this;
     }
@@ -577,8 +539,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * General notes about the care plan not covered elsewhere.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -587,8 +548,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -596,109 +556,255 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['instantiates'])) {
+                if (is_array($data['instantiates'])) {
+                    foreach($data['instantiates'] as $d) {
+                        $this->addInstantiates($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"instantiates" must be array of objects or null, '.gettype($data['instantiates']).' seen.');
+                }
+            }
+            if (isset($data['basedOn'])) {
+                if (is_array($data['basedOn'])) {
+                    foreach($data['basedOn'] as $d) {
+                        $this->addBasedOn($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"basedOn" must be array of objects or null, '.gettype($data['basedOn']).' seen.');
+                }
+            }
+            if (isset($data['replaces'])) {
+                if (is_array($data['replaces'])) {
+                    foreach($data['replaces'] as $d) {
+                        $this->addReplaces($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"replaces" must be array of objects or null, '.gettype($data['replaces']).' seen.');
+                }
+            }
+            if (isset($data['partOf'])) {
+                if (is_array($data['partOf'])) {
+                    foreach($data['partOf'] as $d) {
+                        $this->addPartOf($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"partOf" must be array of objects or null, '.gettype($data['partOf']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['intent'])) {
+                $this->setIntent($data['intent']);
+            }
+            if (isset($data['category'])) {
+                if (is_array($data['category'])) {
+                    foreach($data['category'] as $d) {
+                        $this->addCategory($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"category" must be array of objects or null, '.gettype($data['category']).' seen.');
+                }
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['subject'])) {
+                $this->setSubject($data['subject']);
+            }
+            if (isset($data['context'])) {
+                $this->setContext($data['context']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['author'])) {
+                if (is_array($data['author'])) {
+                    foreach($data['author'] as $d) {
+                        $this->addAuthor($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"author" must be array of objects or null, '.gettype($data['author']).' seen.');
+                }
+            }
+            if (isset($data['careTeam'])) {
+                if (is_array($data['careTeam'])) {
+                    foreach($data['careTeam'] as $d) {
+                        $this->addCareTeam($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"careTeam" must be array of objects or null, '.gettype($data['careTeam']).' seen.');
+                }
+            }
+            if (isset($data['addresses'])) {
+                if (is_array($data['addresses'])) {
+                    foreach($data['addresses'] as $d) {
+                        $this->addAddresses($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"addresses" must be array of objects or null, '.gettype($data['addresses']).' seen.');
+                }
+            }
+            if (isset($data['supportingInfo'])) {
+                if (is_array($data['supportingInfo'])) {
+                    foreach($data['supportingInfo'] as $d) {
+                        $this->addSupportingInfo($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportingInfo" must be array of objects or null, '.gettype($data['supportingInfo']).' seen.');
+                }
+            }
+            if (isset($data['goal'])) {
+                if (is_array($data['goal'])) {
+                    foreach($data['goal'] as $d) {
+                        $this->addGoal($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"goal" must be array of objects or null, '.gettype($data['goal']).' seen.');
+                }
+            }
+            if (isset($data['activity'])) {
+                if (is_array($data['activity'])) {
+                    foreach($data['activity'] as $d) {
+                        $this->addActivity($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"activity" must be array of objects or null, '.gettype($data['activity']).' seen.');
+                }
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (0 < count($this->definition)) {
-            $json['definition'] = [];
-            foreach($this->definition as $definition) {
-                $json['definition'][] = json_encode($definition);
+        if (0 < count($this->instantiates)) {
+            $json['instantiates'] = [];
+            foreach($this->instantiates as $instantiates) {
+                if (null !== $instantiates) $json['instantiates'][] = $instantiates;
             }
         }
         if (0 < count($this->basedOn)) {
             $json['basedOn'] = [];
             foreach($this->basedOn as $basedOn) {
-                $json['basedOn'][] = json_encode($basedOn);
+                if (null !== $basedOn) $json['basedOn'][] = $basedOn;
             }
         }
         if (0 < count($this->replaces)) {
             $json['replaces'] = [];
             foreach($this->replaces as $replaces) {
-                $json['replaces'][] = json_encode($replaces);
+                if (null !== $replaces) $json['replaces'][] = $replaces;
             }
         }
         if (0 < count($this->partOf)) {
             $json['partOf'] = [];
             foreach($this->partOf as $partOf) {
-                $json['partOf'][] = json_encode($partOf);
+                if (null !== $partOf) $json['partOf'][] = $partOf;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->intent) $json['intent'] = json_encode($this->intent);
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->intent)) $json['intent'] = $this->intent;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                if (null !== $category) $json['category'][] = $category;
             }
         }
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->subject)) $json['subject'] = $this->subject;
+        if (isset($this->context)) $json['context'] = $this->context;
+        if (isset($this->period)) $json['period'] = $this->period;
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = json_encode($author);
+                if (null !== $author) $json['author'][] = $author;
             }
         }
         if (0 < count($this->careTeam)) {
             $json['careTeam'] = [];
             foreach($this->careTeam as $careTeam) {
-                $json['careTeam'][] = json_encode($careTeam);
+                if (null !== $careTeam) $json['careTeam'][] = $careTeam;
             }
         }
         if (0 < count($this->addresses)) {
             $json['addresses'] = [];
             foreach($this->addresses as $addresses) {
-                $json['addresses'][] = json_encode($addresses);
+                if (null !== $addresses) $json['addresses'][] = $addresses;
             }
         }
         if (0 < count($this->supportingInfo)) {
             $json['supportingInfo'] = [];
             foreach($this->supportingInfo as $supportingInfo) {
-                $json['supportingInfo'][] = json_encode($supportingInfo);
+                if (null !== $supportingInfo) $json['supportingInfo'][] = $supportingInfo;
             }
         }
         if (0 < count($this->goal)) {
             $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = json_encode($goal);
+                if (null !== $goal) $json['goal'][] = $goal;
             }
         }
         if (0 < count($this->activity)) {
             $json['activity'] = [];
             foreach($this->activity as $activity) {
-                $json['activity'][] = json_encode($activity);
+                if (null !== $activity) $json['activity'][] = $activity;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                if (null !== $note) $json['note'][] = $note;
             }
         }
         return $json;
@@ -709,8 +815,7 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CarePlan xmlns="http://hl7.org/fhir"></CarePlan>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -718,9 +823,9 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (0 < count($this->definition)) {
-            foreach($this->definition as $definition) {
-                $definition->xmlSerialize(true, $sxe->addChild('definition'));
+        if (0 < count($this->instantiates)) {
+            foreach($this->instantiates as $instantiates) {
+                $instantiates->xmlSerialize(true, $sxe->addChild('instantiates'));
             }
         }
         if (0 < count($this->basedOn)) {
@@ -738,18 +843,18 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
                 $partOf->xmlSerialize(true, $sxe->addChild('partOf'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->intent) $this->intent->xmlSerialize(true, $sxe->addChild('intent'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->intent)) $this->intent->xmlSerialize(true, $sxe->addChild('intent'));
         if (0 < count($this->category)) {
             foreach($this->category as $category) {
                 $category->xmlSerialize(true, $sxe->addChild('category'));
             }
         }
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->subject) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
-        if (null !== $this->context) $this->context->xmlSerialize(true, $sxe->addChild('context'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->subject)) $this->subject->xmlSerialize(true, $sxe->addChild('subject'));
+        if (isset($this->context)) $this->context->xmlSerialize(true, $sxe->addChild('context'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if (0 < count($this->author)) {
             foreach($this->author as $author) {
                 $author->xmlSerialize(true, $sxe->addChild('author'));

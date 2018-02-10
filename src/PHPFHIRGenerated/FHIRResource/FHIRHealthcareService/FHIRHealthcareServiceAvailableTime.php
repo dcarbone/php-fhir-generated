@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,7 +71,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * Indicates which days of the week are available between the start and end Times.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek[]
      */
-    public $daysOfWeek = array();
+    public $daysOfWeek = [];
 
     /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
@@ -100,8 +100,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * Indicates which days of the week are available between the start and end Times.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek[]
      */
-    public function getDaysOfWeek()
-    {
+    public function getDaysOfWeek() {
         return $this->daysOfWeek;
     }
 
@@ -110,8 +109,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDaysOfWeek $daysOfWeek
      * @return $this
      */
-    public function addDaysOfWeek($daysOfWeek)
-    {
+    public function addDaysOfWeek($daysOfWeek) {
         $this->daysOfWeek[] = $daysOfWeek;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getAllDay()
-    {
+    public function getAllDay() {
         return $this->allDay;
     }
 
@@ -130,8 +127,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $allDay
      * @return $this
      */
-    public function setAllDay($allDay)
-    {
+    public function setAllDay($allDay) {
         $this->allDay = $allDay;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * The opening time of day. Note: If the AllDay flag is set, then this time is ignored.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public function getAvailableStartTime()
-    {
+    public function getAvailableStartTime() {
         return $this->availableStartTime;
     }
 
@@ -150,8 +145,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $availableStartTime
      * @return $this
      */
-    public function setAvailableStartTime($availableStartTime)
-    {
+    public function setAvailableStartTime($availableStartTime) {
         $this->availableStartTime = $availableStartTime;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * The closing time of day. Note: If the AllDay flag is set, then this time is ignored.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
-    public function getAvailableEndTime()
-    {
+    public function getAvailableEndTime() {
         return $this->availableEndTime;
     }
 
@@ -170,8 +163,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $availableEndTime
      * @return $this
      */
-    public function setAvailableEndTime($availableEndTime)
-    {
+    public function setAvailableEndTime($availableEndTime) {
         $this->availableEndTime = $availableEndTime;
         return $this;
     }
@@ -179,34 +171,60 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['daysOfWeek'])) {
+                if (is_array($data['daysOfWeek'])) {
+                    foreach($data['daysOfWeek'] as $d) {
+                        $this->addDaysOfWeek($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"daysOfWeek" must be array of objects or null, '.gettype($data['daysOfWeek']).' seen.');
+                }
+            }
+            if (isset($data['allDay'])) {
+                $this->setAllDay($data['allDay']);
+            }
+            if (isset($data['availableStartTime'])) {
+                $this->setAvailableStartTime($data['availableStartTime']);
+            }
+            if (isset($data['availableEndTime'])) {
+                $this->setAvailableEndTime($data['availableEndTime']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->daysOfWeek)) {
             $json['daysOfWeek'] = [];
             foreach($this->daysOfWeek as $daysOfWeek) {
-                $json['daysOfWeek'][] = json_encode($daysOfWeek);
+                if (null !== $daysOfWeek) $json['daysOfWeek'][] = $daysOfWeek;
             }
         }
-        if (null !== $this->allDay) $json['allDay'] = json_encode($this->allDay);
-        if (null !== $this->availableStartTime) $json['availableStartTime'] = json_encode($this->availableStartTime);
-        if (null !== $this->availableEndTime) $json['availableEndTime'] = json_encode($this->availableEndTime);
+        if (isset($this->allDay)) $json['allDay'] = $this->allDay;
+        if (isset($this->availableStartTime)) $json['availableStartTime'] = $this->availableStartTime;
+        if (isset($this->availableEndTime)) $json['availableEndTime'] = $this->availableEndTime;
         return $json;
     }
 
@@ -215,8 +233,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<HealthcareServiceAvailableTime xmlns="http://hl7.org/fhir"></HealthcareServiceAvailableTime>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->daysOfWeek)) {
@@ -224,9 +241,9 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement implements 
                 $daysOfWeek->xmlSerialize(true, $sxe->addChild('daysOfWeek'));
             }
         }
-        if (null !== $this->allDay) $this->allDay->xmlSerialize(true, $sxe->addChild('allDay'));
-        if (null !== $this->availableStartTime) $this->availableStartTime->xmlSerialize(true, $sxe->addChild('availableStartTime'));
-        if (null !== $this->availableEndTime) $this->availableEndTime->xmlSerialize(true, $sxe->addChild('availableEndTime'));
+        if (isset($this->allDay)) $this->allDay->xmlSerialize(true, $sxe->addChild('allDay'));
+        if (isset($this->availableStartTime)) $this->availableStartTime->xmlSerialize(true, $sxe->addChild('availableStartTime'));
+        if (isset($this->availableEndTime)) $this->availableEndTime->xmlSerialize(true, $sxe->addChild('availableEndTime'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

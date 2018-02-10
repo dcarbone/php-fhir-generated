@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A record of a healthcare consumer’s policy choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
+ * A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.
  */
 class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -88,8 +88,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
      * Entity or Organization having regulatory jurisdiction or accountability for  enforcing policies pertaining to Consent Directives.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getAuthority()
-    {
+    public function getAuthority() {
         return $this->authority;
     }
 
@@ -98,8 +97,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $authority
      * @return $this
      */
-    public function setAuthority($authority)
-    {
+    public function setAuthority($authority) {
         $this->authority = $authority;
         return $this;
     }
@@ -108,8 +106,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
      * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUri()
-    {
+    public function getUri() {
         return $this->uri;
     }
 
@@ -118,8 +115,7 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $uri
      * @return $this
      */
-    public function setUri($uri)
-    {
+    public function setUri($uri) {
         $this->uri = $uri;
         return $this;
     }
@@ -127,27 +123,41 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['authority'])) {
+                $this->setAuthority($data['authority']);
+            }
+            if (isset($data['uri'])) {
+                $this->setUri($data['uri']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->authority) $json['authority'] = json_encode($this->authority);
-        if (null !== $this->uri) $json['uri'] = json_encode($this->uri);
+        if (isset($this->authority)) $json['authority'] = $this->authority;
+        if (isset($this->uri)) $json['uri'] = $this->uri;
         return $json;
     }
 
@@ -156,12 +166,11 @@ class FHIRConsentPolicy extends FHIRBackboneElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ConsentPolicy xmlns="http://hl7.org/fhir"></ConsentPolicy>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->authority) $this->authority->xmlSerialize(true, $sxe->addChild('authority'));
-        if (null !== $this->uri) $this->uri->xmlSerialize(true, $sxe->addChild('uri'));
+        if (isset($this->authority)) $this->authority->xmlSerialize(true, $sxe->addChild('authority'));
+        if (isset($this->uri)) $this->uri->xmlSerialize(true, $sxe->addChild('uri'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

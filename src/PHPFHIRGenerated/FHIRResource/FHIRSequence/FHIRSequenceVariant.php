@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -112,8 +112,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * Start position of the variant on the  reference sequence.If the coordinate system is either 0-based or 1-based, then start position is inclusive.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getStart()
-    {
+    public function getStart() {
         return $this->start;
     }
 
@@ -122,8 +121,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $start
      * @return $this
      */
-    public function setStart($start)
-    {
+    public function setStart($start) {
         $this->start = $start;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * End position of the variant on the reference sequence.If the coordinate system is 0-based then end is is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
-    public function getEnd()
-    {
+    public function getEnd() {
         return $this->end;
     }
 
@@ -142,8 +139,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $end
      * @return $this
      */
-    public function setEnd($end)
-    {
+    public function setEnd($end) {
         $this->end = $end;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * An allele is one of a set of coexisting sequence variants of a gene ([SO:0001023](http://www.sequenceontology.org/browser/current_svn/term/SO:0001023)).  Nucleotide(s)/amino acids from start position of sequence to stop position of sequence on the positive (+) strand of the observed  sequence. When the sequence  type is DNA, it should be the sequence on the positive (+) strand. This will lay in the range between variant.start and variant.end.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getObservedAllele()
-    {
+    public function getObservedAllele() {
         return $this->observedAllele;
     }
 
@@ -162,8 +157,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $observedAllele
      * @return $this
      */
-    public function setObservedAllele($observedAllele)
-    {
+    public function setObservedAllele($observedAllele) {
         $this->observedAllele = $observedAllele;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * An allele is one of a set of coexisting sequence variants of a gene ([SO:0001023](http://www.sequenceontology.org/browser/current_svn/term/SO:0001023)). Nucleotide(s)/amino acids from start position of sequence to stop position of sequence on the positive (+) strand of the reference sequence. When the sequence  type is DNA, it should be the sequence on the positive (+) strand. This will lay in the range between variant.start and variant.end.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getReferenceAllele()
-    {
+    public function getReferenceAllele() {
         return $this->referenceAllele;
     }
 
@@ -182,8 +175,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $referenceAllele
      * @return $this
      */
-    public function setReferenceAllele($referenceAllele)
-    {
+    public function setReferenceAllele($referenceAllele) {
         $this->referenceAllele = $referenceAllele;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * Extended CIGAR string for aligning the sequence with reference bases. See detailed documentation [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getCigar()
-    {
+    public function getCigar() {
         return $this->cigar;
     }
 
@@ -202,8 +193,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $cigar
      * @return $this
      */
-    public function setCigar($cigar)
-    {
+    public function setCigar($cigar) {
         $this->cigar = $cigar;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * A pointer to an Observation containing variant information.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getVariantPointer()
-    {
+    public function getVariantPointer() {
         return $this->variantPointer;
     }
 
@@ -222,8 +211,7 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $variantPointer
      * @return $this
      */
-    public function setVariantPointer($variantPointer)
-    {
+    public function setVariantPointer($variantPointer) {
         $this->variantPointer = $variantPointer;
         return $this;
     }
@@ -231,31 +219,57 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['start'])) {
+                $this->setStart($data['start']);
+            }
+            if (isset($data['end'])) {
+                $this->setEnd($data['end']);
+            }
+            if (isset($data['observedAllele'])) {
+                $this->setObservedAllele($data['observedAllele']);
+            }
+            if (isset($data['referenceAllele'])) {
+                $this->setReferenceAllele($data['referenceAllele']);
+            }
+            if (isset($data['cigar'])) {
+                $this->setCigar($data['cigar']);
+            }
+            if (isset($data['variantPointer'])) {
+                $this->setVariantPointer($data['variantPointer']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
-        if (null !== $this->observedAllele) $json['observedAllele'] = json_encode($this->observedAllele);
-        if (null !== $this->referenceAllele) $json['referenceAllele'] = json_encode($this->referenceAllele);
-        if (null !== $this->cigar) $json['cigar'] = json_encode($this->cigar);
-        if (null !== $this->variantPointer) $json['variantPointer'] = json_encode($this->variantPointer);
+        if (isset($this->start)) $json['start'] = $this->start;
+        if (isset($this->end)) $json['end'] = $this->end;
+        if (isset($this->observedAllele)) $json['observedAllele'] = $this->observedAllele;
+        if (isset($this->referenceAllele)) $json['referenceAllele'] = $this->referenceAllele;
+        if (isset($this->cigar)) $json['cigar'] = $this->cigar;
+        if (isset($this->variantPointer)) $json['variantPointer'] = $this->variantPointer;
         return $json;
     }
 
@@ -264,16 +278,15 @@ class FHIRSequenceVariant extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SequenceVariant xmlns="http://hl7.org/fhir"></SequenceVariant>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->start) $this->start->xmlSerialize(true, $sxe->addChild('start'));
-        if (null !== $this->end) $this->end->xmlSerialize(true, $sxe->addChild('end'));
-        if (null !== $this->observedAllele) $this->observedAllele->xmlSerialize(true, $sxe->addChild('observedAllele'));
-        if (null !== $this->referenceAllele) $this->referenceAllele->xmlSerialize(true, $sxe->addChild('referenceAllele'));
-        if (null !== $this->cigar) $this->cigar->xmlSerialize(true, $sxe->addChild('cigar'));
-        if (null !== $this->variantPointer) $this->variantPointer->xmlSerialize(true, $sxe->addChild('variantPointer'));
+        if (isset($this->start)) $this->start->xmlSerialize(true, $sxe->addChild('start'));
+        if (isset($this->end)) $this->end->xmlSerialize(true, $sxe->addChild('end'));
+        if (isset($this->observedAllele)) $this->observedAllele->xmlSerialize(true, $sxe->addChild('observedAllele'));
+        if (isset($this->referenceAllele)) $this->referenceAllele->xmlSerialize(true, $sxe->addChild('referenceAllele'));
+        if (isset($this->cigar)) $this->cigar->xmlSerialize(true, $sxe->addChild('cigar'));
+        if (isset($this->variantPointer)) $this->variantPointer->xmlSerialize(true, $sxe->addChild('variantPointer'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 
 /**
- * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. While a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained.
+ * A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. A Composition defines the structure and narrative content necessary for a document. However, a Composition alone does not constitute a document. Rather, the Composition must be the first entry in a Bundle where Bundle.type=document, and any other resources referenced from Composition must be included as subsequent entries in the Bundle (for example Patient, Practitioner, Encounter, etc.).
  */
 class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerializable
 {
@@ -71,7 +71,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * The type of attestation the authenticator offers.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCompositionAttestationMode[]
      */
-    public $mode = array();
+    public $mode = [];
 
     /**
      * When the composition was attested by the party.
@@ -94,8 +94,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * The type of attestation the authenticator offers.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCompositionAttestationMode[]
      */
-    public function getMode()
-    {
+    public function getMode() {
         return $this->mode;
     }
 
@@ -104,8 +103,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCompositionAttestationMode $mode
      * @return $this
      */
-    public function addMode($mode)
-    {
+    public function addMode($mode) {
         $this->mode[] = $mode;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * When the composition was attested by the party.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getTime()
-    {
+    public function getTime() {
         return $this->time;
     }
 
@@ -124,8 +121,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $time
      * @return $this
      */
-    public function setTime($time)
-    {
+    public function setTime($time) {
         $this->time = $time;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * Who attested the composition in the specified way.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getParty()
-    {
+    public function getParty() {
         return $this->party;
     }
 
@@ -144,8 +139,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $party
      * @return $this
      */
-    public function setParty($party)
-    {
+    public function setParty($party) {
         $this->party = $party;
         return $this;
     }
@@ -153,33 +147,56 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['mode'])) {
+                if (is_array($data['mode'])) {
+                    foreach($data['mode'] as $d) {
+                        $this->addMode($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"mode" must be array of objects or null, '.gettype($data['mode']).' seen.');
+                }
+            }
+            if (isset($data['time'])) {
+                $this->setTime($data['time']);
+            }
+            if (isset($data['party'])) {
+                $this->setParty($data['party']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->mode)) {
             $json['mode'] = [];
             foreach($this->mode as $mode) {
-                $json['mode'][] = json_encode($mode);
+                if (null !== $mode) $json['mode'][] = $mode;
             }
         }
-        if (null !== $this->time) $json['time'] = json_encode($this->time);
-        if (null !== $this->party) $json['party'] = json_encode($this->party);
+        if (isset($this->time)) $json['time'] = $this->time;
+        if (isset($this->party)) $json['party'] = $this->party;
         return $json;
     }
 
@@ -188,8 +205,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CompositionAttester xmlns="http://hl7.org/fhir"></CompositionAttester>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->mode)) {
@@ -197,8 +213,8 @@ class FHIRCompositionAttester extends FHIRBackboneElement implements \JsonSerial
                 $mode->xmlSerialize(true, $sxe->addChild('mode'));
             }
         }
-        if (null !== $this->time) $this->time->xmlSerialize(true, $sxe->addChild('time'));
-        if (null !== $this->party) $this->party->xmlSerialize(true, $sxe->addChild('party'));
+        if (isset($this->time)) $this->time->xmlSerialize(true, $sxe->addChild('time'));
+        if (isset($this->party)) $this->party->xmlSerialize(true, $sxe->addChild('party'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

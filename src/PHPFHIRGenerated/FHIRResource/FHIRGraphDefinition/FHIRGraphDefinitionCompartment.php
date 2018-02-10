@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -67,6 +67,12 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
  */
 class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \JsonSerializable
 {
+    /**
+     * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse
+     */
+    public $use = null;
+
     /**
      * Identifies the compartment.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCompartmentType
@@ -97,11 +103,28 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
     private $_fhirElementName = 'GraphDefinition.Compartment';
 
     /**
+     * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse
+     */
+    public function getUse() {
+        return $this->use;
+    }
+
+    /**
+     * Defines how the compartment rule is used - whether it it is used to test whether resources are subject to the rule, or whether it is a rule that must be followed.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentUse $use
+     * @return $this
+     */
+    public function setUse($use) {
+        $this->use = $use;
+        return $this;
+    }
+
+    /**
      * Identifies the compartment.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCompartmentType
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -110,8 +133,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCompartmentType $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -120,8 +142,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * identical | matching | different | no-rule | custom.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentRule
      */
-    public function getRule()
-    {
+    public function getRule() {
         return $this->rule;
     }
 
@@ -130,8 +151,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRGraphCompartmentRule $rule
      * @return $this
      */
-    public function setRule($rule)
-    {
+    public function setRule($rule) {
         $this->rule = $rule;
         return $this;
     }
@@ -140,8 +160,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * Custom rule, as a FHIRPath expression.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getExpression()
-    {
+    public function getExpression() {
         return $this->expression;
     }
 
@@ -150,8 +169,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
-    public function setExpression($expression)
-    {
+    public function setExpression($expression) {
         $this->expression = $expression;
         return $this;
     }
@@ -160,8 +178,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * Documentation for FHIRPath expression.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -170,8 +187,7 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -179,29 +195,53 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['rule'])) {
+                $this->setRule($data['rule']);
+            }
+            if (isset($data['expression'])) {
+                $this->setExpression($data['expression']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->rule) $json['rule'] = json_encode($this->rule);
-        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->use)) $json['use'] = $this->use;
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->rule)) $json['rule'] = $this->rule;
+        if (isset($this->expression)) $json['expression'] = $this->expression;
+        if (isset($this->description)) $json['description'] = $this->description;
         return $json;
     }
 
@@ -210,14 +250,14 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement implements \Jso
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<GraphDefinitionCompartment xmlns="http://hl7.org/fhir"></GraphDefinitionCompartment>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->rule) $this->rule->xmlSerialize(true, $sxe->addChild('rule'));
-        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->rule)) $this->rule->xmlSerialize(true, $sxe->addChild('rule'));
+        if (isset($this->expression)) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

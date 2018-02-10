@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -80,6 +80,12 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
     public $profile = null;
 
     /**
+     * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public $supportedProfile = [];
+
+    /**
      * Additional information about the resource type used by the system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
@@ -89,7 +95,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * Identifies a restful operation supported by the solution.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
      */
-    public $interaction = array();
+    public $interaction = [];
 
     /**
      * This field is set to no-version to specify that the system does not support (server) or use (client) versioning for this resource type. If this has some other value, the server must at least correctly track and populate the versionId meta-property on resources. If the value is 'versioned-update', then the server supports all the versioning features, including using e-tags for version integrity in the API.
@@ -137,25 +143,31 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A set of flags that defines how references are supported.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReferenceHandlingPolicy[]
      */
-    public $referencePolicy = array();
+    public $referencePolicy = [];
 
     /**
      * A list of _include values supported by the server.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $searchInclude = array();
+    public $searchInclude = [];
 
     /**
      * A list of _revinclude (reverse include) values supported by the server.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $searchRevInclude = array();
+    public $searchRevInclude = [];
 
     /**
      * Search parameters for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
-    public $searchParam = array();
+    public $searchParam = [];
+
+    /**
+     * Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the opration, and the parameters.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
+     */
+    public $operation = [];
 
     /**
      * @var string
@@ -166,8 +178,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A type of resource exposed via the restful interface.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -176,8 +187,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -186,8 +196,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles](profiling.html#profile-uses).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -196,9 +205,26 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
      * @return $this
      */
-    public function setProfile($profile)
-    {
+    public function setProfile($profile) {
         $this->profile = $profile;
+        return $this;
+    }
+
+    /**
+     * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
+     */
+    public function getSupportedProfile() {
+        return $this->supportedProfile;
+    }
+
+    /**
+     * A list of profiles that represent different use cases supported by the system. For a server, "supported by the system" means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $supportedProfile
+     * @return $this
+     */
+    public function addSupportedProfile($supportedProfile) {
+        $this->supportedProfile[] = $supportedProfile;
         return $this;
     }
 
@@ -206,8 +232,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * Additional information about the resource type used by the system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDocumentation()
-    {
+    public function getDocumentation() {
         return $this->documentation;
     }
 
@@ -216,8 +241,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $documentation
      * @return $this
      */
-    public function setDocumentation($documentation)
-    {
+    public function setDocumentation($documentation) {
         $this->documentation = $documentation;
         return $this;
     }
@@ -226,8 +250,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * Identifies a restful operation supported by the solution.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
      */
-    public function getInteraction()
-    {
+    public function getInteraction() {
         return $this->interaction;
     }
 
@@ -236,8 +259,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction $interaction
      * @return $this
      */
-    public function addInteraction($interaction)
-    {
+    public function addInteraction($interaction) {
         $this->interaction[] = $interaction;
         return $this;
     }
@@ -246,8 +268,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * This field is set to no-version to specify that the system does not support (server) or use (client) versioning for this resource type. If this has some other value, the server must at least correctly track and populate the versionId meta-property on resources. If the value is 'versioned-update', then the server supports all the versioning features, including using e-tags for version integrity in the API.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceVersionPolicy
      */
-    public function getVersioning()
-    {
+    public function getVersioning() {
         return $this->versioning;
     }
 
@@ -256,8 +277,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceVersionPolicy $versioning
      * @return $this
      */
-    public function setVersioning($versioning)
-    {
+    public function setVersioning($versioning) {
         $this->versioning = $versioning;
         return $this;
     }
@@ -266,8 +286,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A flag for whether the server is able to return past versions as part of the vRead operation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getReadHistory()
-    {
+    public function getReadHistory() {
         return $this->readHistory;
     }
 
@@ -276,8 +295,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $readHistory
      * @return $this
      */
-    public function setReadHistory($readHistory)
-    {
+    public function setReadHistory($readHistory) {
         $this->readHistory = $readHistory;
         return $this;
     }
@@ -286,8 +304,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A flag to indicate that the server allows or needs to allow the client to create new identities on the server (e.g. that is, the client PUTs to a location where there is no existing resource). Allowing this operation means that the server allows the client to create new identities on the server.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getUpdateCreate()
-    {
+    public function getUpdateCreate() {
         return $this->updateCreate;
     }
 
@@ -296,8 +313,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $updateCreate
      * @return $this
      */
-    public function setUpdateCreate($updateCreate)
-    {
+    public function setUpdateCreate($updateCreate) {
         $this->updateCreate = $updateCreate;
         return $this;
     }
@@ -306,8 +322,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A flag that indicates that the server supports conditional create.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getConditionalCreate()
-    {
+    public function getConditionalCreate() {
         return $this->conditionalCreate;
     }
 
@@ -316,8 +331,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $conditionalCreate
      * @return $this
      */
-    public function setConditionalCreate($conditionalCreate)
-    {
+    public function setConditionalCreate($conditionalCreate) {
         $this->conditionalCreate = $conditionalCreate;
         return $this;
     }
@@ -326,8 +340,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A code that indicates how the server supports conditional read.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConditionalReadStatus
      */
-    public function getConditionalRead()
-    {
+    public function getConditionalRead() {
         return $this->conditionalRead;
     }
 
@@ -336,8 +349,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRConditionalReadStatus $conditionalRead
      * @return $this
      */
-    public function setConditionalRead($conditionalRead)
-    {
+    public function setConditionalRead($conditionalRead) {
         $this->conditionalRead = $conditionalRead;
         return $this;
     }
@@ -346,8 +358,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A flag that indicates that the server supports conditional update.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getConditionalUpdate()
-    {
+    public function getConditionalUpdate() {
         return $this->conditionalUpdate;
     }
 
@@ -356,8 +367,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $conditionalUpdate
      * @return $this
      */
-    public function setConditionalUpdate($conditionalUpdate)
-    {
+    public function setConditionalUpdate($conditionalUpdate) {
         $this->conditionalUpdate = $conditionalUpdate;
         return $this;
     }
@@ -366,8 +376,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A code that indicates how the server supports conditional delete.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRConditionalDeleteStatus
      */
-    public function getConditionalDelete()
-    {
+    public function getConditionalDelete() {
         return $this->conditionalDelete;
     }
 
@@ -376,8 +385,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
      * @return $this
      */
-    public function setConditionalDelete($conditionalDelete)
-    {
+    public function setConditionalDelete($conditionalDelete) {
         $this->conditionalDelete = $conditionalDelete;
         return $this;
     }
@@ -386,8 +394,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A set of flags that defines how references are supported.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReferenceHandlingPolicy[]
      */
-    public function getReferencePolicy()
-    {
+    public function getReferencePolicy() {
         return $this->referencePolicy;
     }
 
@@ -396,8 +403,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReferenceHandlingPolicy $referencePolicy
      * @return $this
      */
-    public function addReferencePolicy($referencePolicy)
-    {
+    public function addReferencePolicy($referencePolicy) {
         $this->referencePolicy[] = $referencePolicy;
         return $this;
     }
@@ -406,8 +412,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A list of _include values supported by the server.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getSearchInclude()
-    {
+    public function getSearchInclude() {
         return $this->searchInclude;
     }
 
@@ -416,8 +421,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $searchInclude
      * @return $this
      */
-    public function addSearchInclude($searchInclude)
-    {
+    public function addSearchInclude($searchInclude) {
         $this->searchInclude[] = $searchInclude;
         return $this;
     }
@@ -426,8 +430,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * A list of _revinclude (reverse include) values supported by the server.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getSearchRevInclude()
-    {
+    public function getSearchRevInclude() {
         return $this->searchRevInclude;
     }
 
@@ -436,8 +439,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $searchRevInclude
      * @return $this
      */
-    public function addSearchRevInclude($searchRevInclude)
-    {
+    public function addSearchRevInclude($searchRevInclude) {
         $this->searchRevInclude[] = $searchRevInclude;
         return $this;
     }
@@ -446,8 +448,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * Search parameters for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
-    public function getSearchParam()
-    {
+    public function getSearchParam() {
         return $this->searchParam;
     }
 
@@ -456,72 +457,202 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam $searchParam
      * @return $this
      */
-    public function addSearchParam($searchParam)
-    {
+    public function addSearchParam($searchParam) {
         $this->searchParam[] = $searchParam;
+        return $this;
+    }
+
+    /**
+     * Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the opration, and the parameters.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
+     */
+    public function getOperation() {
+        return $this->operation;
+    }
+
+    /**
+     * Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the opration, and the parameters.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementOperation $operation
+     * @return $this
+     */
+    public function addOperation($operation) {
+        $this->operation[] = $operation;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['profile'])) {
+                $this->setProfile($data['profile']);
+            }
+            if (isset($data['supportedProfile'])) {
+                if (is_array($data['supportedProfile'])) {
+                    foreach($data['supportedProfile'] as $d) {
+                        $this->addSupportedProfile($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"supportedProfile" must be array of objects or null, '.gettype($data['supportedProfile']).' seen.');
+                }
+            }
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+            if (isset($data['interaction'])) {
+                if (is_array($data['interaction'])) {
+                    foreach($data['interaction'] as $d) {
+                        $this->addInteraction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"interaction" must be array of objects or null, '.gettype($data['interaction']).' seen.');
+                }
+            }
+            if (isset($data['versioning'])) {
+                $this->setVersioning($data['versioning']);
+            }
+            if (isset($data['readHistory'])) {
+                $this->setReadHistory($data['readHistory']);
+            }
+            if (isset($data['updateCreate'])) {
+                $this->setUpdateCreate($data['updateCreate']);
+            }
+            if (isset($data['conditionalCreate'])) {
+                $this->setConditionalCreate($data['conditionalCreate']);
+            }
+            if (isset($data['conditionalRead'])) {
+                $this->setConditionalRead($data['conditionalRead']);
+            }
+            if (isset($data['conditionalUpdate'])) {
+                $this->setConditionalUpdate($data['conditionalUpdate']);
+            }
+            if (isset($data['conditionalDelete'])) {
+                $this->setConditionalDelete($data['conditionalDelete']);
+            }
+            if (isset($data['referencePolicy'])) {
+                if (is_array($data['referencePolicy'])) {
+                    foreach($data['referencePolicy'] as $d) {
+                        $this->addReferencePolicy($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"referencePolicy" must be array of objects or null, '.gettype($data['referencePolicy']).' seen.');
+                }
+            }
+            if (isset($data['searchInclude'])) {
+                if (is_array($data['searchInclude'])) {
+                    foreach($data['searchInclude'] as $d) {
+                        $this->addSearchInclude($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"searchInclude" must be array of objects or null, '.gettype($data['searchInclude']).' seen.');
+                }
+            }
+            if (isset($data['searchRevInclude'])) {
+                if (is_array($data['searchRevInclude'])) {
+                    foreach($data['searchRevInclude'] as $d) {
+                        $this->addSearchRevInclude($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"searchRevInclude" must be array of objects or null, '.gettype($data['searchRevInclude']).' seen.');
+                }
+            }
+            if (isset($data['searchParam'])) {
+                if (is_array($data['searchParam'])) {
+                    foreach($data['searchParam'] as $d) {
+                        $this->addSearchParam($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"searchParam" must be array of objects or null, '.gettype($data['searchParam']).' seen.');
+                }
+            }
+            if (isset($data['operation'])) {
+                if (is_array($data['operation'])) {
+                    foreach($data['operation'] as $d) {
+                        $this->addOperation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"operation" must be array of objects or null, '.gettype($data['operation']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
-        if (null !== $this->documentation) $json['documentation'] = json_encode($this->documentation);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->profile)) $json['profile'] = $this->profile;
+        if (0 < count($this->supportedProfile)) {
+            $json['supportedProfile'] = [];
+            foreach($this->supportedProfile as $supportedProfile) {
+                if (null !== $supportedProfile) $json['supportedProfile'][] = $supportedProfile;
+            }
+        }
+        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
         if (0 < count($this->interaction)) {
             $json['interaction'] = [];
             foreach($this->interaction as $interaction) {
-                $json['interaction'][] = json_encode($interaction);
+                if (null !== $interaction) $json['interaction'][] = $interaction;
             }
         }
-        if (null !== $this->versioning) $json['versioning'] = json_encode($this->versioning);
-        if (null !== $this->readHistory) $json['readHistory'] = json_encode($this->readHistory);
-        if (null !== $this->updateCreate) $json['updateCreate'] = json_encode($this->updateCreate);
-        if (null !== $this->conditionalCreate) $json['conditionalCreate'] = json_encode($this->conditionalCreate);
-        if (null !== $this->conditionalRead) $json['conditionalRead'] = json_encode($this->conditionalRead);
-        if (null !== $this->conditionalUpdate) $json['conditionalUpdate'] = json_encode($this->conditionalUpdate);
-        if (null !== $this->conditionalDelete) $json['conditionalDelete'] = json_encode($this->conditionalDelete);
+        if (isset($this->versioning)) $json['versioning'] = $this->versioning;
+        if (isset($this->readHistory)) $json['readHistory'] = $this->readHistory;
+        if (isset($this->updateCreate)) $json['updateCreate'] = $this->updateCreate;
+        if (isset($this->conditionalCreate)) $json['conditionalCreate'] = $this->conditionalCreate;
+        if (isset($this->conditionalRead)) $json['conditionalRead'] = $this->conditionalRead;
+        if (isset($this->conditionalUpdate)) $json['conditionalUpdate'] = $this->conditionalUpdate;
+        if (isset($this->conditionalDelete)) $json['conditionalDelete'] = $this->conditionalDelete;
         if (0 < count($this->referencePolicy)) {
             $json['referencePolicy'] = [];
             foreach($this->referencePolicy as $referencePolicy) {
-                $json['referencePolicy'][] = json_encode($referencePolicy);
+                if (null !== $referencePolicy) $json['referencePolicy'][] = $referencePolicy;
             }
         }
         if (0 < count($this->searchInclude)) {
             $json['searchInclude'] = [];
             foreach($this->searchInclude as $searchInclude) {
-                $json['searchInclude'][] = json_encode($searchInclude);
+                if (null !== $searchInclude) $json['searchInclude'][] = $searchInclude;
             }
         }
         if (0 < count($this->searchRevInclude)) {
             $json['searchRevInclude'] = [];
             foreach($this->searchRevInclude as $searchRevInclude) {
-                $json['searchRevInclude'][] = json_encode($searchRevInclude);
+                if (null !== $searchRevInclude) $json['searchRevInclude'][] = $searchRevInclude;
             }
         }
         if (0 < count($this->searchParam)) {
             $json['searchParam'] = [];
             foreach($this->searchParam as $searchParam) {
-                $json['searchParam'][] = json_encode($searchParam);
+                if (null !== $searchParam) $json['searchParam'][] = $searchParam;
+            }
+        }
+        if (0 < count($this->operation)) {
+            $json['operation'] = [];
+            foreach($this->operation as $operation) {
+                if (null !== $operation) $json['operation'][] = $operation;
             }
         }
         return $json;
@@ -532,25 +663,29 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CapabilityStatementResource xmlns="http://hl7.org/fhir"></CapabilityStatementResource>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
-        if (null !== $this->documentation) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->profile)) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
+        if (0 < count($this->supportedProfile)) {
+            foreach($this->supportedProfile as $supportedProfile) {
+                $supportedProfile->xmlSerialize(true, $sxe->addChild('supportedProfile'));
+            }
+        }
+        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
         if (0 < count($this->interaction)) {
             foreach($this->interaction as $interaction) {
                 $interaction->xmlSerialize(true, $sxe->addChild('interaction'));
             }
         }
-        if (null !== $this->versioning) $this->versioning->xmlSerialize(true, $sxe->addChild('versioning'));
-        if (null !== $this->readHistory) $this->readHistory->xmlSerialize(true, $sxe->addChild('readHistory'));
-        if (null !== $this->updateCreate) $this->updateCreate->xmlSerialize(true, $sxe->addChild('updateCreate'));
-        if (null !== $this->conditionalCreate) $this->conditionalCreate->xmlSerialize(true, $sxe->addChild('conditionalCreate'));
-        if (null !== $this->conditionalRead) $this->conditionalRead->xmlSerialize(true, $sxe->addChild('conditionalRead'));
-        if (null !== $this->conditionalUpdate) $this->conditionalUpdate->xmlSerialize(true, $sxe->addChild('conditionalUpdate'));
-        if (null !== $this->conditionalDelete) $this->conditionalDelete->xmlSerialize(true, $sxe->addChild('conditionalDelete'));
+        if (isset($this->versioning)) $this->versioning->xmlSerialize(true, $sxe->addChild('versioning'));
+        if (isset($this->readHistory)) $this->readHistory->xmlSerialize(true, $sxe->addChild('readHistory'));
+        if (isset($this->updateCreate)) $this->updateCreate->xmlSerialize(true, $sxe->addChild('updateCreate'));
+        if (isset($this->conditionalCreate)) $this->conditionalCreate->xmlSerialize(true, $sxe->addChild('conditionalCreate'));
+        if (isset($this->conditionalRead)) $this->conditionalRead->xmlSerialize(true, $sxe->addChild('conditionalRead'));
+        if (isset($this->conditionalUpdate)) $this->conditionalUpdate->xmlSerialize(true, $sxe->addChild('conditionalUpdate'));
+        if (isset($this->conditionalDelete)) $this->conditionalDelete->xmlSerialize(true, $sxe->addChild('conditionalDelete'));
         if (0 < count($this->referencePolicy)) {
             foreach($this->referencePolicy as $referencePolicy) {
                 $referencePolicy->xmlSerialize(true, $sxe->addChild('referencePolicy'));
@@ -569,6 +704,11 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement implements \Js
         if (0 < count($this->searchParam)) {
             foreach($this->searchParam as $searchParam) {
                 $searchParam->xmlSerialize(true, $sxe->addChild('searchParam'));
+            }
+        }
+        if (0 < count($this->operation)) {
+            foreach($this->operation as $operation) {
+                $operation->xmlSerialize(true, $sxe->addChild('operation'));
             }
         }
         if ($returnSXE) return $sxe;

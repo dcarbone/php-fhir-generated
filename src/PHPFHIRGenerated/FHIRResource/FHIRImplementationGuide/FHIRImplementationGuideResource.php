@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -92,13 +92,11 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     public $acronym = null;
 
     /**
-     * Where this resource is found. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $sourceUri = null;
 
     /**
-     * Where this resource is found. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $sourceReference = null;
@@ -118,8 +116,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * Whether a resource is included in the guide as part of the rules defined by the guide, or just as an example of a resource that conforms to the rules and/or help implementers understand the intent of the guide.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExample()
-    {
+    public function getExample() {
         return $this->example;
     }
 
@@ -128,8 +125,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $example
      * @return $this
      */
-    public function setExample($example)
-    {
+    public function setExample($example) {
         $this->example = $example;
         return $this;
     }
@@ -138,8 +134,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -148,8 +143,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -158,8 +152,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * A description of the reason that a resource has been included in the implementation guide.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -168,8 +161,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -178,8 +170,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * A short code that may be used to identify the resource throughout the implementation guide.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getAcronym()
-    {
+    public function getAcronym() {
         return $this->acronym;
     }
 
@@ -188,48 +179,39 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $acronym
      * @return $this
      */
-    public function setAcronym($acronym)
-    {
+    public function setAcronym($acronym) {
         $this->acronym = $acronym;
         return $this;
     }
 
     /**
-     * Where this resource is found. (choose any one of source*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSourceUri()
-    {
+    public function getSourceUri() {
         return $this->sourceUri;
     }
 
     /**
-     * Where this resource is found. (choose any one of source*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $sourceUri
      * @return $this
      */
-    public function setSourceUri($sourceUri)
-    {
+    public function setSourceUri($sourceUri) {
         $this->sourceUri = $sourceUri;
         return $this;
     }
 
     /**
-     * Where this resource is found. (choose any one of source*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSourceReference()
-    {
+    public function getSourceReference() {
         return $this->sourceReference;
     }
 
     /**
-     * Where this resource is found. (choose any one of source*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $sourceReference
      * @return $this
      */
-    public function setSourceReference($sourceReference)
-    {
+    public function setSourceReference($sourceReference) {
         $this->sourceReference = $sourceReference;
         return $this;
     }
@@ -238,8 +220,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * Another resource that this resource is an example for. This is mostly used for resources that are included as examples of StructureDefinitions.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getExampleFor()
-    {
+    public function getExampleFor() {
         return $this->exampleFor;
     }
 
@@ -248,8 +229,7 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $exampleFor
      * @return $this
      */
-    public function setExampleFor($exampleFor)
-    {
+    public function setExampleFor($exampleFor) {
         $this->exampleFor = $exampleFor;
         return $this;
     }
@@ -257,32 +237,61 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['example'])) {
+                $this->setExample($data['example']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['acronym'])) {
+                $this->setAcronym($data['acronym']);
+            }
+            if (isset($data['sourceUri'])) {
+                $this->setSourceUri($data['sourceUri']);
+            }
+            if (isset($data['sourceReference'])) {
+                $this->setSourceReference($data['sourceReference']);
+            }
+            if (isset($data['exampleFor'])) {
+                $this->setExampleFor($data['exampleFor']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->example) $json['example'] = json_encode($this->example);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->acronym) $json['acronym'] = json_encode($this->acronym);
-        if (null !== $this->sourceUri) $json['sourceUri'] = json_encode($this->sourceUri);
-        if (null !== $this->sourceReference) $json['sourceReference'] = json_encode($this->sourceReference);
-        if (null !== $this->exampleFor) $json['exampleFor'] = json_encode($this->exampleFor);
+        if (isset($this->example)) $json['example'] = $this->example;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->acronym)) $json['acronym'] = $this->acronym;
+        if (isset($this->sourceUri)) $json['sourceUri'] = $this->sourceUri;
+        if (isset($this->sourceReference)) $json['sourceReference'] = $this->sourceReference;
+        if (isset($this->exampleFor)) $json['exampleFor'] = $this->exampleFor;
         return $json;
     }
 
@@ -291,17 +300,16 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ImplementationGuideResource xmlns="http://hl7.org/fhir"></ImplementationGuideResource>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->example) $this->example->xmlSerialize(true, $sxe->addChild('example'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->acronym) $this->acronym->xmlSerialize(true, $sxe->addChild('acronym'));
-        if (null !== $this->sourceUri) $this->sourceUri->xmlSerialize(true, $sxe->addChild('sourceUri'));
-        if (null !== $this->sourceReference) $this->sourceReference->xmlSerialize(true, $sxe->addChild('sourceReference'));
-        if (null !== $this->exampleFor) $this->exampleFor->xmlSerialize(true, $sxe->addChild('exampleFor'));
+        if (isset($this->example)) $this->example->xmlSerialize(true, $sxe->addChild('example'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->acronym)) $this->acronym->xmlSerialize(true, $sxe->addChild('acronym'));
+        if (isset($this->sourceUri)) $this->sourceUri->xmlSerialize(true, $sxe->addChild('sourceUri'));
+        if (isset($this->sourceReference)) $this->sourceReference->xmlSerialize(true, $sxe->addChild('sourceReference'));
+        if (isset($this->exampleFor)) $this->exampleFor->xmlSerialize(true, $sxe->addChild('exampleFor'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

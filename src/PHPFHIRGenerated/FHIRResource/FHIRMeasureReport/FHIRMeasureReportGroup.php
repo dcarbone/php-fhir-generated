@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,20 +68,20 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The identifier of the population group as defined in the measure definition.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The meaning of the population group as defined in the measure definition.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public $identifier = null;
+    public $code = null;
 
     /**
      * The populations that make up the population group, one for each type of population appropriate for the measure.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation[]
      */
-    public $population = array();
+    public $population = [];
 
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $measureScore = null;
 
@@ -89,7 +89,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
      * When a measure includes multiple stratifiers, there will be a stratifier group for each stratifier defined by the measure.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier[]
      */
-    public $stratifier = array();
+    public $stratifier = [];
 
     /**
      * @var string
@@ -97,22 +97,20 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
     private $_fhirElementName = 'MeasureReport.Group';
 
     /**
-     * The identifier of the population group as defined in the measure definition.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * The meaning of the population group as defined in the measure definition.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getIdentifier()
-    {
-        return $this->identifier;
+    public function getCode() {
+        return $this->code;
     }
 
     /**
-     * The identifier of the population group as defined in the measure definition.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
+     * The meaning of the population group as defined in the measure definition.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $code
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
-        $this->identifier = $identifier;
+    public function setCode($code) {
+        $this->code = $code;
         return $this;
     }
 
@@ -120,8 +118,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
      * The populations that make up the population group, one for each type of population appropriate for the measure.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation[]
      */
-    public function getPopulation()
-    {
+    public function getPopulation() {
         return $this->population;
     }
 
@@ -130,28 +127,25 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportPopulation $population
      * @return $this
      */
-    public function addPopulation($population)
-    {
+    public function addPopulation($population) {
         $this->population[] = $population;
         return $this;
     }
 
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getMeasureScore()
-    {
+    public function getMeasureScore() {
         return $this->measureScore;
     }
 
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $measureScore
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $measureScore
      * @return $this
      */
-    public function setMeasureScore($measureScore)
-    {
+    public function setMeasureScore($measureScore) {
         $this->measureScore = $measureScore;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
      * When a measure includes multiple stratifiers, there will be a stratifier group for each stratifier defined by the measure.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier[]
      */
-    public function getStratifier()
-    {
+    public function getStratifier() {
         return $this->stratifier;
     }
 
@@ -170,8 +163,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMeasureReport\FHIRMeasureReportStratifier $stratifier
      * @return $this
      */
-    public function addStratifier($stratifier)
-    {
+    public function addStratifier($stratifier) {
         $this->stratifier[] = $stratifier;
         return $this;
     }
@@ -179,37 +171,69 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['population'])) {
+                if (is_array($data['population'])) {
+                    foreach($data['population'] as $d) {
+                        $this->addPopulation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"population" must be array of objects or null, '.gettype($data['population']).' seen.');
+                }
+            }
+            if (isset($data['measureScore'])) {
+                $this->setMeasureScore($data['measureScore']);
+            }
+            if (isset($data['stratifier'])) {
+                if (is_array($data['stratifier'])) {
+                    foreach($data['stratifier'] as $d) {
+                        $this->addStratifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"stratifier" must be array of objects or null, '.gettype($data['stratifier']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
+        if (isset($this->code)) $json['code'] = $this->code;
         if (0 < count($this->population)) {
             $json['population'] = [];
             foreach($this->population as $population) {
-                $json['population'][] = json_encode($population);
+                if (null !== $population) $json['population'][] = $population;
             }
         }
-        if (null !== $this->measureScore) $json['measureScore'] = json_encode($this->measureScore);
+        if (isset($this->measureScore)) $json['measureScore'] = $this->measureScore;
         if (0 < count($this->stratifier)) {
             $json['stratifier'] = [];
             foreach($this->stratifier as $stratifier) {
-                $json['stratifier'][] = json_encode($stratifier);
+                if (null !== $stratifier) $json['stratifier'][] = $stratifier;
             }
         }
         return $json;
@@ -220,17 +244,16 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MeasureReportGroup xmlns="http://hl7.org/fhir"></MeasureReportGroup>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (0 < count($this->population)) {
             foreach($this->population as $population) {
                 $population->xmlSerialize(true, $sxe->addChild('population'));
             }
         }
-        if (null !== $this->measureScore) $this->measureScore->xmlSerialize(true, $sxe->addChild('measureScore'));
+        if (isset($this->measureScore)) $this->measureScore->xmlSerialize(true, $sxe->addChild('measureScore'));
         if (0 < count($this->stratifier)) {
             foreach($this->stratifier as $stratifier) {
                 $stratifier->xmlSerialize(true, $sxe->addChild('stratifier'));

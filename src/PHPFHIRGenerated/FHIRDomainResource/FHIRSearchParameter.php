@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this search parameter is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -114,19 +114,19 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the search parameter is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Explaination of why this search parameter is needed and why it has been designed as it has.
@@ -144,7 +144,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The base resource type(s) that this search parameter can be used against.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public $base = array();
+    public $base = [];
 
     /**
      * The type of value a search parameter refers to, and how the content is interpreted.
@@ -186,31 +186,31 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Types of resource (if a resource is referenced).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public $target = array();
+    public $target = [];
 
     /**
      * Comparators supported for the search parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator[]
      */
-    public $comparator = array();
+    public $comparator = [];
 
     /**
      * A modifier supported for the search parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode[]
      */
-    public $modifier = array();
+    public $modifier = [];
 
     /**
      * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public $chain = array();
+    public $chain = [];
 
     /**
      * Used to define the parts of a composite search parameter.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
-    public $component = array();
+    public $component = [];
 
     /**
      * @var string
@@ -218,21 +218,19 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     private $_fhirElementName = 'SearchParameter';
 
     /**
-     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this search parameter is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this search parameter is (or will be) published. The URL SHOULD include the major version of the search parameter. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this search parameter is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -241,8 +239,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The identifier that is used to identify this version of the search parameter when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the search parameter author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -251,8 +248,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -261,8 +257,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * A natural language name identifying the search parameter. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -271,8 +266,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -281,8 +275,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The status of this search parameter. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -291,8 +284,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -301,8 +293,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -311,8 +302,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -321,8 +311,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -331,8 +320,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -341,8 +329,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The name of the individual or organization that published the search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -351,8 +338,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -361,8 +347,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -371,8 +356,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -381,8 +365,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -391,8 +374,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -401,8 +383,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * A legal or geographic region in which the search parameter is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -411,8 +392,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -421,8 +401,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Explaination of why this search parameter is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -431,8 +410,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -441,8 +419,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The code used in the URL or the parameter name in a parameters resource for this search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -451,8 +428,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -461,8 +437,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The base resource type(s) that this search parameter can be used against.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public function getBase()
-    {
+    public function getBase() {
         return $this->base;
     }
 
@@ -471,8 +446,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $base
      * @return $this
      */
-    public function addBase($base)
-    {
+    public function addBase($base) {
         $this->base[] = $base;
         return $this;
     }
@@ -481,8 +455,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * The type of value a search parameter refers to, and how the content is interpreted.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -491,8 +464,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchParamType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -501,8 +473,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. I.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getDerivedFrom()
-    {
+    public function getDerivedFrom() {
         return $this->derivedFrom;
     }
 
@@ -511,8 +482,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $derivedFrom
      * @return $this
      */
-    public function setDerivedFrom($derivedFrom)
-    {
+    public function setDerivedFrom($derivedFrom) {
         $this->derivedFrom = $derivedFrom;
         return $this;
     }
@@ -521,8 +491,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * A free text natural language description of the search parameter from a consumer's perspective. and how it used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -531,8 +500,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -541,8 +509,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * A FHIRPath expression that returns a set of elements for the search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getExpression()
-    {
+    public function getExpression() {
         return $this->expression;
     }
 
@@ -551,8 +518,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $expression
      * @return $this
      */
-    public function setExpression($expression)
-    {
+    public function setExpression($expression) {
         $this->expression = $expression;
         return $this;
     }
@@ -561,8 +527,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * An XPath expression that returns a set of elements for the search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getXpath()
-    {
+    public function getXpath() {
         return $this->xpath;
     }
 
@@ -571,8 +536,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $xpath
      * @return $this
      */
-    public function setXpath($xpath)
-    {
+    public function setXpath($xpath) {
         $this->xpath = $xpath;
         return $this;
     }
@@ -581,8 +545,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * How the search parameter relates to the set of elements returned by evaluating the xpath query.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRXPathUsageType
      */
-    public function getXpathUsage()
-    {
+    public function getXpathUsage() {
         return $this->xpathUsage;
     }
 
@@ -591,8 +554,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRXPathUsageType $xpathUsage
      * @return $this
      */
-    public function setXpathUsage($xpathUsage)
-    {
+    public function setXpathUsage($xpathUsage) {
         $this->xpathUsage = $xpathUsage;
         return $this;
     }
@@ -601,8 +563,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Types of resource (if a resource is referenced).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType[]
      */
-    public function getTarget()
-    {
+    public function getTarget() {
         return $this->target;
     }
 
@@ -611,8 +572,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $target
      * @return $this
      */
-    public function addTarget($target)
-    {
+    public function addTarget($target) {
         $this->target[] = $target;
         return $this;
     }
@@ -621,8 +581,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Comparators supported for the search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator[]
      */
-    public function getComparator()
-    {
+    public function getComparator() {
         return $this->comparator;
     }
 
@@ -631,8 +590,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchComparator $comparator
      * @return $this
      */
-    public function addComparator($comparator)
-    {
+    public function addComparator($comparator) {
         $this->comparator[] = $comparator;
         return $this;
     }
@@ -641,8 +599,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * A modifier supported for the search parameter.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode[]
      */
-    public function getModifier()
-    {
+    public function getModifier() {
         return $this->modifier;
     }
 
@@ -651,8 +608,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSearchModifierCode $modifier
      * @return $this
      */
-    public function addModifier($modifier)
-    {
+    public function addModifier($modifier) {
         $this->modifier[] = $modifier;
         return $this;
     }
@@ -661,8 +617,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
      */
-    public function getChain()
-    {
+    public function getChain() {
         return $this->chain;
     }
 
@@ -671,8 +626,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $chain
      * @return $this
      */
-    public function addChain($chain)
-    {
+    public function addChain($chain) {
         $this->chain[] = $chain;
         return $this;
     }
@@ -681,8 +635,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * Used to define the parts of a composite search parameter.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
-    public function getComponent()
-    {
+    public function getComponent() {
         return $this->component;
     }
 
@@ -691,8 +644,7 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRResource\FHIRSearchParameter\FHIRSearchParameterComponent $component
      * @return $this
      */
-    public function addComponent($component)
-    {
+    public function addComponent($component) {
         $this->component[] = $component;
         return $this;
     }
@@ -700,93 +652,227 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['base'])) {
+                if (is_array($data['base'])) {
+                    foreach($data['base'] as $d) {
+                        $this->addBase($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"base" must be array of objects or null, '.gettype($data['base']).' seen.');
+                }
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['derivedFrom'])) {
+                $this->setDerivedFrom($data['derivedFrom']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['expression'])) {
+                $this->setExpression($data['expression']);
+            }
+            if (isset($data['xpath'])) {
+                $this->setXpath($data['xpath']);
+            }
+            if (isset($data['xpathUsage'])) {
+                $this->setXpathUsage($data['xpathUsage']);
+            }
+            if (isset($data['target'])) {
+                if (is_array($data['target'])) {
+                    foreach($data['target'] as $d) {
+                        $this->addTarget($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"target" must be array of objects or null, '.gettype($data['target']).' seen.');
+                }
+            }
+            if (isset($data['comparator'])) {
+                if (is_array($data['comparator'])) {
+                    foreach($data['comparator'] as $d) {
+                        $this->addComparator($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"comparator" must be array of objects or null, '.gettype($data['comparator']).' seen.');
+                }
+            }
+            if (isset($data['modifier'])) {
+                if (is_array($data['modifier'])) {
+                    foreach($data['modifier'] as $d) {
+                        $this->addModifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"modifier" must be array of objects or null, '.gettype($data['modifier']).' seen.');
+                }
+            }
+            if (isset($data['chain'])) {
+                if (is_array($data['chain'])) {
+                    foreach($data['chain'] as $d) {
+                        $this->addChain($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"chain" must be array of objects or null, '.gettype($data['chain']).' seen.');
+                }
+            }
+            if (isset($data['component'])) {
+                if (is_array($data['component'])) {
+                    foreach($data['component'] as $d) {
+                        $this->addComponent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"component" must be array of objects or null, '.gettype($data['component']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->code)) $json['code'] = $this->code;
         if (0 < count($this->base)) {
             $json['base'] = [];
             foreach($this->base as $base) {
-                $json['base'][] = json_encode($base);
+                if (null !== $base) $json['base'][] = $base;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->derivedFrom) $json['derivedFrom'] = json_encode($this->derivedFrom);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->expression) $json['expression'] = json_encode($this->expression);
-        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
-        if (null !== $this->xpathUsage) $json['xpathUsage'] = json_encode($this->xpathUsage);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->derivedFrom)) $json['derivedFrom'] = $this->derivedFrom;
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->expression)) $json['expression'] = $this->expression;
+        if (isset($this->xpath)) $json['xpath'] = $this->xpath;
+        if (isset($this->xpathUsage)) $json['xpathUsage'] = $this->xpathUsage;
         if (0 < count($this->target)) {
             $json['target'] = [];
             foreach($this->target as $target) {
-                $json['target'][] = json_encode($target);
+                if (null !== $target) $json['target'][] = $target;
             }
         }
         if (0 < count($this->comparator)) {
             $json['comparator'] = [];
             foreach($this->comparator as $comparator) {
-                $json['comparator'][] = json_encode($comparator);
+                if (null !== $comparator) $json['comparator'][] = $comparator;
             }
         }
         if (0 < count($this->modifier)) {
             $json['modifier'] = [];
             foreach($this->modifier as $modifier) {
-                $json['modifier'][] = json_encode($modifier);
+                if (null !== $modifier) $json['modifier'][] = $modifier;
             }
         }
         if (0 < count($this->chain)) {
             $json['chain'] = [];
             foreach($this->chain as $chain) {
-                $json['chain'][] = json_encode($chain);
+                if (null !== $chain) $json['chain'][] = $chain;
             }
         }
         if (0 < count($this->component)) {
             $json['component'] = [];
             foreach($this->component as $component) {
-                $json['component'][] = json_encode($component);
+                if (null !== $component) $json['component'][] = $component;
             }
         }
         return $json;
@@ -797,17 +883,16 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SearchParameter xmlns="http://hl7.org/fhir"></SearchParameter>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
@@ -823,19 +908,19 @@ class FHIRSearchParameter extends FHIRDomainResource implements \JsonSerializabl
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
         if (0 < count($this->base)) {
             foreach($this->base as $base) {
                 $base->xmlSerialize(true, $sxe->addChild('base'));
             }
         }
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->derivedFrom) $this->derivedFrom->xmlSerialize(true, $sxe->addChild('derivedFrom'));
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->expression) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
-        if (null !== $this->xpath) $this->xpath->xmlSerialize(true, $sxe->addChild('xpath'));
-        if (null !== $this->xpathUsage) $this->xpathUsage->xmlSerialize(true, $sxe->addChild('xpathUsage'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->derivedFrom)) $this->derivedFrom->xmlSerialize(true, $sxe->addChild('derivedFrom'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->expression)) $this->expression->xmlSerialize(true, $sxe->addChild('expression'));
+        if (isset($this->xpath)) $this->xpath->xmlSerialize(true, $sxe->addChild('xpath'));
+        if (isset($this->xpathUsage)) $this->xpathUsage->xmlSerialize(true, $sxe->addChild('xpathUsage'));
         if (0 < count($this->target)) {
             foreach($this->target as $target) {
                 $target->xmlSerialize(true, $sxe->addChild('target'));

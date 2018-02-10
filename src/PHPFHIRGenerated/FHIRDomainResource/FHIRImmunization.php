@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -63,7 +63,7 @@
 use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 
 /**
- * Describes the event of a patient being administered a vaccination or a record of a vaccination as reported by a patient, a clinician or another party and may include vaccine reaction information and what vaccination protocol was followed.
+ * Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party.
  * If the element is present, it must have either a @value, an @id, or extensions
  */
 class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
@@ -72,19 +72,13 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * A unique identifier assigned to this immunization record.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
-     * Indicates the current status of the vaccination event.
+     * Indicates the current status of the immunization event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRImmunizationStatusCodes
      */
     public $status = null;
-
-    /**
-     * Indicates if the vaccination was or was not given.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public $notGiven = null;
 
     /**
      * Vaccine that was administered or was to be administered.
@@ -165,34 +159,40 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
     public $doseQuantity = null;
 
     /**
-     * Indicates who or what performed the event.
+     * Indicates who performed the immunization event.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationPractitioner[]
      */
-    public $practitioner = array();
+    public $practitioner = [];
 
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * Reasons why a vaccine was or was not administered.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationExplanation
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $explanation = null;
+    public $reason = [];
 
     /**
-     * Categorical data indicating that an adverse event is associated in time to an immunization.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationReaction[]
+     * Educational material presented to the patient (or guardian) at the time of vaccine administration.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationEducation[]
      */
-    public $reaction = array();
+    public $education = [];
 
     /**
-     * Contains information about the protocol(s) under which the vaccine was administered.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationVaccinationProtocol[]
+     * Indicates a patient's eligibility for a funding program.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $vaccinationProtocol = array();
+    public $programEligibility = [];
+
+    /**
+     * Indicates the source of the vaccine actually administered. This may be different than the patient eligbility (e.g. the patient may be eligibile for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $fundingSource = null;
 
     /**
      * @var string
@@ -203,8 +203,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * A unique identifier assigned to this immunization record.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -213,49 +212,26 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * Indicates the current status of the vaccination event.
+     * Indicates the current status of the immunization event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRImmunizationStatusCodes
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
     /**
-     * Indicates the current status of the vaccination event.
+     * Indicates the current status of the immunization event.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRImmunizationStatusCodes $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
-        return $this;
-    }
-
-    /**
-     * Indicates if the vaccination was or was not given.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getNotGiven()
-    {
-        return $this->notGiven;
-    }
-
-    /**
-     * Indicates if the vaccination was or was not given.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $notGiven
-     * @return $this
-     */
-    public function setNotGiven($notGiven)
-    {
-        $this->notGiven = $notGiven;
         return $this;
     }
 
@@ -263,8 +239,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * Vaccine that was administered or was to be administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getVaccineCode()
-    {
+    public function getVaccineCode() {
         return $this->vaccineCode;
     }
 
@@ -273,8 +248,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $vaccineCode
      * @return $this
      */
-    public function setVaccineCode($vaccineCode)
-    {
+    public function setVaccineCode($vaccineCode) {
         $this->vaccineCode = $vaccineCode;
         return $this;
     }
@@ -283,8 +257,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * The patient who either received or did not receive the immunization.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatient()
-    {
+    public function getPatient() {
         return $this->patient;
     }
 
@@ -293,8 +266,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
-    public function setPatient($patient)
-    {
+    public function setPatient($patient) {
         $this->patient = $patient;
         return $this;
     }
@@ -303,8 +275,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * The visit or admission or other contact between patient and health care provider the immunization was performed as part of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
-    {
+    public function getEncounter() {
         return $this->encounter;
     }
 
@@ -313,8 +284,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
      * @return $this
      */
-    public function setEncounter($encounter)
-    {
+    public function setEncounter($encounter) {
         $this->encounter = $encounter;
         return $this;
     }
@@ -323,8 +293,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * Date vaccine administered or was to be administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -333,8 +302,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -343,8 +311,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getPrimarySource()
-    {
+    public function getPrimarySource() {
         return $this->primarySource;
     }
 
@@ -353,8 +320,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $primarySource
      * @return $this
      */
-    public function setPrimarySource($primarySource)
-    {
+    public function setPrimarySource($primarySource) {
         $this->primarySource = $primarySource;
         return $this;
     }
@@ -363,8 +329,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReportOrigin()
-    {
+    public function getReportOrigin() {
         return $this->reportOrigin;
     }
 
@@ -373,8 +338,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reportOrigin
      * @return $this
      */
-    public function setReportOrigin($reportOrigin)
-    {
+    public function setReportOrigin($reportOrigin) {
         $this->reportOrigin = $reportOrigin;
         return $this;
     }
@@ -383,8 +347,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * The service delivery location where the vaccine administration occurred.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getLocation()
-    {
+    public function getLocation() {
         return $this->location;
     }
 
@@ -393,8 +356,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $location
      * @return $this
      */
-    public function setLocation($location)
-    {
+    public function setLocation($location) {
         $this->location = $location;
         return $this;
     }
@@ -403,8 +365,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * Name of vaccine manufacturer.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getManufacturer()
-    {
+    public function getManufacturer() {
         return $this->manufacturer;
     }
 
@@ -413,8 +374,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $manufacturer
      * @return $this
      */
-    public function setManufacturer($manufacturer)
-    {
+    public function setManufacturer($manufacturer) {
         $this->manufacturer = $manufacturer;
         return $this;
     }
@@ -423,8 +383,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * Lot number of the  vaccine product.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getLotNumber()
-    {
+    public function getLotNumber() {
         return $this->lotNumber;
     }
 
@@ -433,8 +392,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $lotNumber
      * @return $this
      */
-    public function setLotNumber($lotNumber)
-    {
+    public function setLotNumber($lotNumber) {
         $this->lotNumber = $lotNumber;
         return $this;
     }
@@ -443,8 +401,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * Date vaccine batch expires.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
-    public function getExpirationDate()
-    {
+    public function getExpirationDate() {
         return $this->expirationDate;
     }
 
@@ -453,8 +410,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $expirationDate
      * @return $this
      */
-    public function setExpirationDate($expirationDate)
-    {
+    public function setExpirationDate($expirationDate) {
         $this->expirationDate = $expirationDate;
         return $this;
     }
@@ -463,8 +419,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * Body site where vaccine was administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getSite()
-    {
+    public function getSite() {
         return $this->site;
     }
 
@@ -473,8 +428,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $site
      * @return $this
      */
-    public function setSite($site)
-    {
+    public function setSite($site) {
         $this->site = $site;
         return $this;
     }
@@ -483,8 +437,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * The path by which the vaccine product is taken into the body.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getRoute()
-    {
+    public function getRoute() {
         return $this->route;
     }
 
@@ -493,8 +446,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $route
      * @return $this
      */
-    public function setRoute($route)
-    {
+    public function setRoute($route) {
         $this->route = $route;
         return $this;
     }
@@ -503,8 +455,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * The quantity of vaccine product that was administered.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getDoseQuantity()
-    {
+    public function getDoseQuantity() {
         return $this->doseQuantity;
     }
 
@@ -513,28 +464,25 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $doseQuantity
      * @return $this
      */
-    public function setDoseQuantity($doseQuantity)
-    {
+    public function setDoseQuantity($doseQuantity) {
         $this->doseQuantity = $doseQuantity;
         return $this;
     }
 
     /**
-     * Indicates who or what performed the event.
+     * Indicates who performed the immunization event.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationPractitioner[]
      */
-    public function getPractitioner()
-    {
+    public function getPractitioner() {
         return $this->practitioner;
     }
 
     /**
-     * Indicates who or what performed the event.
+     * Indicates who performed the immunization event.
      * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationPractitioner $practitioner
      * @return $this
      */
-    public function addPractitioner($practitioner)
-    {
+    public function addPractitioner($practitioner) {
         $this->practitioner[] = $practitioner;
         return $this;
     }
@@ -543,8 +491,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * Extra information about the immunization that is not conveyed by the other attributes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -553,141 +500,264 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
 
     /**
      * Reasons why a vaccine was or was not administered.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationExplanation
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getExplanation()
-    {
-        return $this->explanation;
+    public function getReason() {
+        return $this->reason;
     }
 
     /**
      * Reasons why a vaccine was or was not administered.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationExplanation $explanation
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
-    public function setExplanation($explanation)
-    {
-        $this->explanation = $explanation;
+    public function addReason($reason) {
+        $this->reason[] = $reason;
         return $this;
     }
 
     /**
-     * Categorical data indicating that an adverse event is associated in time to an immunization.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationReaction[]
+     * Educational material presented to the patient (or guardian) at the time of vaccine administration.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationEducation[]
      */
-    public function getReaction()
-    {
-        return $this->reaction;
+    public function getEducation() {
+        return $this->education;
     }
 
     /**
-     * Categorical data indicating that an adverse event is associated in time to an immunization.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationReaction $reaction
+     * Educational material presented to the patient (or guardian) at the time of vaccine administration.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationEducation $education
      * @return $this
      */
-    public function addReaction($reaction)
-    {
-        $this->reaction[] = $reaction;
+    public function addEducation($education) {
+        $this->education[] = $education;
         return $this;
     }
 
     /**
-     * Contains information about the protocol(s) under which the vaccine was administered.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationVaccinationProtocol[]
+     * Indicates a patient's eligibility for a funding program.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getVaccinationProtocol()
-    {
-        return $this->vaccinationProtocol;
+    public function getProgramEligibility() {
+        return $this->programEligibility;
     }
 
     /**
-     * Contains information about the protocol(s) under which the vaccine was administered.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRImmunization\FHIRImmunizationVaccinationProtocol $vaccinationProtocol
+     * Indicates a patient's eligibility for a funding program.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $programEligibility
      * @return $this
      */
-    public function addVaccinationProtocol($vaccinationProtocol)
-    {
-        $this->vaccinationProtocol[] = $vaccinationProtocol;
+    public function addProgramEligibility($programEligibility) {
+        $this->programEligibility[] = $programEligibility;
+        return $this;
+    }
+
+    /**
+     * Indicates the source of the vaccine actually administered. This may be different than the patient eligbility (e.g. the patient may be eligibile for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getFundingSource() {
+        return $this->fundingSource;
+    }
+
+    /**
+     * Indicates the source of the vaccine actually administered. This may be different than the patient eligbility (e.g. the patient may be eligibile for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $fundingSource
+     * @return $this
+     */
+    public function setFundingSource($fundingSource) {
+        $this->fundingSource = $fundingSource;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
     }
 
     /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['vaccineCode'])) {
+                $this->setVaccineCode($data['vaccineCode']);
+            }
+            if (isset($data['patient'])) {
+                $this->setPatient($data['patient']);
+            }
+            if (isset($data['encounter'])) {
+                $this->setEncounter($data['encounter']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['primarySource'])) {
+                $this->setPrimarySource($data['primarySource']);
+            }
+            if (isset($data['reportOrigin'])) {
+                $this->setReportOrigin($data['reportOrigin']);
+            }
+            if (isset($data['location'])) {
+                $this->setLocation($data['location']);
+            }
+            if (isset($data['manufacturer'])) {
+                $this->setManufacturer($data['manufacturer']);
+            }
+            if (isset($data['lotNumber'])) {
+                $this->setLotNumber($data['lotNumber']);
+            }
+            if (isset($data['expirationDate'])) {
+                $this->setExpirationDate($data['expirationDate']);
+            }
+            if (isset($data['site'])) {
+                $this->setSite($data['site']);
+            }
+            if (isset($data['route'])) {
+                $this->setRoute($data['route']);
+            }
+            if (isset($data['doseQuantity'])) {
+                $this->setDoseQuantity($data['doseQuantity']);
+            }
+            if (isset($data['practitioner'])) {
+                if (is_array($data['practitioner'])) {
+                    foreach($data['practitioner'] as $d) {
+                        $this->addPractitioner($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"practitioner" must be array of objects or null, '.gettype($data['practitioner']).' seen.');
+                }
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+            if (isset($data['reason'])) {
+                if (is_array($data['reason'])) {
+                    foreach($data['reason'] as $d) {
+                        $this->addReason($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"reason" must be array of objects or null, '.gettype($data['reason']).' seen.');
+                }
+            }
+            if (isset($data['education'])) {
+                if (is_array($data['education'])) {
+                    foreach($data['education'] as $d) {
+                        $this->addEducation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"education" must be array of objects or null, '.gettype($data['education']).' seen.');
+                }
+            }
+            if (isset($data['programEligibility'])) {
+                if (is_array($data['programEligibility'])) {
+                    foreach($data['programEligibility'] as $d) {
+                        $this->addProgramEligibility($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"programEligibility" must be array of objects or null, '.gettype($data['programEligibility']).' seen.');
+                }
+            }
+            if (isset($data['fundingSource'])) {
+                $this->setFundingSource($data['fundingSource']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
+    }
+
+    /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->notGiven) $json['notGiven'] = json_encode($this->notGiven);
-        if (null !== $this->vaccineCode) $json['vaccineCode'] = json_encode($this->vaccineCode);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->primarySource) $json['primarySource'] = json_encode($this->primarySource);
-        if (null !== $this->reportOrigin) $json['reportOrigin'] = json_encode($this->reportOrigin);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
-        if (null !== $this->lotNumber) $json['lotNumber'] = json_encode($this->lotNumber);
-        if (null !== $this->expirationDate) $json['expirationDate'] = json_encode($this->expirationDate);
-        if (null !== $this->site) $json['site'] = json_encode($this->site);
-        if (null !== $this->route) $json['route'] = json_encode($this->route);
-        if (null !== $this->doseQuantity) $json['doseQuantity'] = json_encode($this->doseQuantity);
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->vaccineCode)) $json['vaccineCode'] = $this->vaccineCode;
+        if (isset($this->patient)) $json['patient'] = $this->patient;
+        if (isset($this->encounter)) $json['encounter'] = $this->encounter;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->primarySource)) $json['primarySource'] = $this->primarySource;
+        if (isset($this->reportOrigin)) $json['reportOrigin'] = $this->reportOrigin;
+        if (isset($this->location)) $json['location'] = $this->location;
+        if (isset($this->manufacturer)) $json['manufacturer'] = $this->manufacturer;
+        if (isset($this->lotNumber)) $json['lotNumber'] = $this->lotNumber;
+        if (isset($this->expirationDate)) $json['expirationDate'] = $this->expirationDate;
+        if (isset($this->site)) $json['site'] = $this->site;
+        if (isset($this->route)) $json['route'] = $this->route;
+        if (isset($this->doseQuantity)) $json['doseQuantity'] = $this->doseQuantity;
         if (0 < count($this->practitioner)) {
             $json['practitioner'] = [];
             foreach($this->practitioner as $practitioner) {
-                $json['practitioner'][] = json_encode($practitioner);
+                if (null !== $practitioner) $json['practitioner'][] = $practitioner;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                if (null !== $note) $json['note'][] = $note;
             }
         }
-        if (null !== $this->explanation) $json['explanation'] = json_encode($this->explanation);
-        if (0 < count($this->reaction)) {
-            $json['reaction'] = [];
-            foreach($this->reaction as $reaction) {
-                $json['reaction'][] = json_encode($reaction);
+        if (0 < count($this->reason)) {
+            $json['reason'] = [];
+            foreach($this->reason as $reason) {
+                if (null !== $reason) $json['reason'][] = $reason;
             }
         }
-        if (0 < count($this->vaccinationProtocol)) {
-            $json['vaccinationProtocol'] = [];
-            foreach($this->vaccinationProtocol as $vaccinationProtocol) {
-                $json['vaccinationProtocol'][] = json_encode($vaccinationProtocol);
+        if (0 < count($this->education)) {
+            $json['education'] = [];
+            foreach($this->education as $education) {
+                if (null !== $education) $json['education'][] = $education;
             }
         }
+        if (0 < count($this->programEligibility)) {
+            $json['programEligibility'] = [];
+            foreach($this->programEligibility as $programEligibility) {
+                if (null !== $programEligibility) $json['programEligibility'][] = $programEligibility;
+            }
+        }
+        if (isset($this->fundingSource)) $json['fundingSource'] = $this->fundingSource;
         return $json;
     }
 
@@ -696,8 +766,7 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Immunization xmlns="http://hl7.org/fhir"></Immunization>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -705,21 +774,20 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->notGiven) $this->notGiven->xmlSerialize(true, $sxe->addChild('notGiven'));
-        if (null !== $this->vaccineCode) $this->vaccineCode->xmlSerialize(true, $sxe->addChild('vaccineCode'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->primarySource) $this->primarySource->xmlSerialize(true, $sxe->addChild('primarySource'));
-        if (null !== $this->reportOrigin) $this->reportOrigin->xmlSerialize(true, $sxe->addChild('reportOrigin'));
-        if (null !== $this->location) $this->location->xmlSerialize(true, $sxe->addChild('location'));
-        if (null !== $this->manufacturer) $this->manufacturer->xmlSerialize(true, $sxe->addChild('manufacturer'));
-        if (null !== $this->lotNumber) $this->lotNumber->xmlSerialize(true, $sxe->addChild('lotNumber'));
-        if (null !== $this->expirationDate) $this->expirationDate->xmlSerialize(true, $sxe->addChild('expirationDate'));
-        if (null !== $this->site) $this->site->xmlSerialize(true, $sxe->addChild('site'));
-        if (null !== $this->route) $this->route->xmlSerialize(true, $sxe->addChild('route'));
-        if (null !== $this->doseQuantity) $this->doseQuantity->xmlSerialize(true, $sxe->addChild('doseQuantity'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->vaccineCode)) $this->vaccineCode->xmlSerialize(true, $sxe->addChild('vaccineCode'));
+        if (isset($this->patient)) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (isset($this->encounter)) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->primarySource)) $this->primarySource->xmlSerialize(true, $sxe->addChild('primarySource'));
+        if (isset($this->reportOrigin)) $this->reportOrigin->xmlSerialize(true, $sxe->addChild('reportOrigin'));
+        if (isset($this->location)) $this->location->xmlSerialize(true, $sxe->addChild('location'));
+        if (isset($this->manufacturer)) $this->manufacturer->xmlSerialize(true, $sxe->addChild('manufacturer'));
+        if (isset($this->lotNumber)) $this->lotNumber->xmlSerialize(true, $sxe->addChild('lotNumber'));
+        if (isset($this->expirationDate)) $this->expirationDate->xmlSerialize(true, $sxe->addChild('expirationDate'));
+        if (isset($this->site)) $this->site->xmlSerialize(true, $sxe->addChild('site'));
+        if (isset($this->route)) $this->route->xmlSerialize(true, $sxe->addChild('route'));
+        if (isset($this->doseQuantity)) $this->doseQuantity->xmlSerialize(true, $sxe->addChild('doseQuantity'));
         if (0 < count($this->practitioner)) {
             foreach($this->practitioner as $practitioner) {
                 $practitioner->xmlSerialize(true, $sxe->addChild('practitioner'));
@@ -730,17 +798,22 @@ class FHIRImmunization extends FHIRDomainResource implements \JsonSerializable
                 $note->xmlSerialize(true, $sxe->addChild('note'));
             }
         }
-        if (null !== $this->explanation) $this->explanation->xmlSerialize(true, $sxe->addChild('explanation'));
-        if (0 < count($this->reaction)) {
-            foreach($this->reaction as $reaction) {
-                $reaction->xmlSerialize(true, $sxe->addChild('reaction'));
+        if (0 < count($this->reason)) {
+            foreach($this->reason as $reason) {
+                $reason->xmlSerialize(true, $sxe->addChild('reason'));
             }
         }
-        if (0 < count($this->vaccinationProtocol)) {
-            foreach($this->vaccinationProtocol as $vaccinationProtocol) {
-                $vaccinationProtocol->xmlSerialize(true, $sxe->addChild('vaccinationProtocol'));
+        if (0 < count($this->education)) {
+            foreach($this->education as $education) {
+                $education->xmlSerialize(true, $sxe->addChild('education'));
             }
         }
+        if (0 < count($this->programEligibility)) {
+            foreach($this->programEligibility as $programEligibility) {
+                $programEligibility->xmlSerialize(true, $sxe->addChild('programEligibility'));
+            }
+        }
+        if (isset($this->fundingSource)) $this->fundingSource->xmlSerialize(true, $sxe->addChild('fundingSource'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -106,8 +106,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * Identifies the unique identifier scheme used for this particular identifier.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRNamingSystemIdentifierType
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -116,8 +115,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRNamingSystemIdentifierType $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -126,8 +124,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * The string that should be sent over the wire to identify the code system or identifier system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->value;
     }
 
@@ -136,8 +133,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $value
      * @return $this
      */
-    public function setValue($value)
-    {
+    public function setValue($value) {
         $this->value = $value;
         return $this;
     }
@@ -146,8 +142,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * Indicates whether this identifier is the "preferred" identifier of this type.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getPreferred()
-    {
+    public function getPreferred() {
         return $this->preferred;
     }
 
@@ -156,8 +151,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $preferred
      * @return $this
      */
-    public function setPreferred($preferred)
-    {
+    public function setPreferred($preferred) {
         $this->preferred = $preferred;
         return $this;
     }
@@ -166,8 +160,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * Notes about the past or intended usage of this identifier.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getComment()
-    {
+    public function getComment() {
         return $this->comment;
     }
 
@@ -176,8 +169,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $comment
      * @return $this
      */
-    public function setComment($comment)
-    {
+    public function setComment($comment) {
         $this->comment = $comment;
         return $this;
     }
@@ -186,8 +178,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * Identifies the period of time over which this identifier is considered appropriate to refer to the naming system.  Outside of this window, the identifier might be non-deterministic.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
-    {
+    public function getPeriod() {
         return $this->period;
     }
 
@@ -196,8 +187,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
      * @return $this
      */
-    public function setPeriod($period)
-    {
+    public function setPeriod($period) {
         $this->period = $period;
         return $this;
     }
@@ -205,30 +195,53 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+            if (isset($data['preferred'])) {
+                $this->setPreferred($data['preferred']);
+            }
+            if (isset($data['comment'])) {
+                $this->setComment($data['comment']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return (string)$this->getValue();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
-        if (null !== $this->preferred) $json['preferred'] = json_encode($this->preferred);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->value)) $json['value'] = $this->value;
+        if (isset($this->preferred)) $json['preferred'] = $this->preferred;
+        if (isset($this->comment)) $json['comment'] = $this->comment;
+        if (isset($this->period)) $json['period'] = $this->period;
         return $json;
     }
 
@@ -237,15 +250,14 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement implements \JsonSeria
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<NamingSystemUniqueId xmlns="http://hl7.org/fhir"></NamingSystemUniqueId>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->value) $this->value->xmlSerialize(true, $sxe->addChild('value'));
-        if (null !== $this->preferred) $this->preferred->xmlSerialize(true, $sxe->addChild('preferred'));
-        if (null !== $this->comment) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
-        if (null !== $this->period) $this->period->xmlSerialize(true, $sxe->addChild('period'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
+        if (isset($this->preferred)) $this->preferred->xmlSerialize(true, $sxe->addChild('preferred'));
+        if (isset($this->comment)) $this->comment->xmlSerialize(true, $sxe->addChild('comment'));
+        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

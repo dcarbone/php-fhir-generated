@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -100,8 +100,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * The kind of resource that must be the focus for this message.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRResourceType
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -110,8 +109,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * @param \PHPFHIRGenerated\FHIRElement\FHIRResourceType $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * A profile that reflects constraints for the focal resource (and potentially for related resources).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getProfile()
-    {
+    public function getProfile() {
         return $this->profile;
     }
 
@@ -130,8 +127,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
      * @return $this
      */
-    public function setProfile($profile)
-    {
+    public function setProfile($profile) {
         $this->profile = $profile;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * Identifies the minimum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
-    public function getMin()
-    {
+    public function getMin() {
         return $this->min;
     }
 
@@ -150,8 +145,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $min
      * @return $this
      */
-    public function setMin($min)
-    {
+    public function setMin($min) {
         $this->min = $min;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * Identifies the maximum number of resources of this type that must be pointed to by a message in order for it to be valid against this MessageDefinition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getMax()
-    {
+    public function getMax() {
         return $this->max;
     }
 
@@ -170,8 +163,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $max
      * @return $this
      */
-    public function setMax($max)
-    {
+    public function setMax($max) {
         $this->max = $max;
         return $this;
     }
@@ -179,29 +171,49 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['profile'])) {
+                $this->setProfile($data['profile']);
+            }
+            if (isset($data['min'])) {
+                $this->setMin($data['min']);
+            }
+            if (isset($data['max'])) {
+                $this->setMax($data['max']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->profile) $json['profile'] = json_encode($this->profile);
-        if (null !== $this->min) $json['min'] = json_encode($this->min);
-        if (null !== $this->max) $json['max'] = json_encode($this->max);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->profile)) $json['profile'] = $this->profile;
+        if (isset($this->min)) $json['min'] = $this->min;
+        if (isset($this->max)) $json['max'] = $this->max;
         return $json;
     }
 
@@ -210,14 +222,13 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement implements \JsonSer
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MessageDefinitionFocus xmlns="http://hl7.org/fhir"></MessageDefinitionFocus>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->profile) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
-        if (null !== $this->min) $this->min->xmlSerialize(true, $sxe->addChild('min'));
-        if (null !== $this->max) $this->max->xmlSerialize(true, $sxe->addChild('max'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->profile)) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
+        if (isset($this->min)) $this->min->xmlSerialize(true, $sxe->addChild('min'));
+        if (isset($this->max)) $this->max->xmlSerialize(true, $sxe->addChild('max'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -72,7 +72,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * Business identifier which may be used by other parties to reference or identify the prescription.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = array();
+    public $identifier = [];
 
     /**
      * The status of the resource instance.
@@ -105,13 +105,11 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
     public $prescriber = null;
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCodeableConcept = null;
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
@@ -120,7 +118,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * Deals with details of the dispense part of the supply specification.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionDispense[]
      */
-    public $dispense = array();
+    public $dispense = [];
 
     /**
      * @var string
@@ -131,8 +129,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * Business identifier which may be used by other parties to reference or identify the prescription.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -141,8 +138,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function addIdentifier($identifier)
-    {
+    public function addIdentifier($identifier) {
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -151,8 +147,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * The status of the resource instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -161,8 +156,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -171,8 +165,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * A link to a resource representing the person to whom the vision products will be supplied.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPatient()
-    {
+    public function getPatient() {
         return $this->patient;
     }
 
@@ -181,8 +174,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patient
      * @return $this
      */
-    public function setPatient($patient)
-    {
+    public function setPatient($patient) {
         $this->patient = $patient;
         return $this;
     }
@@ -191,8 +183,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * A link to a resource that identifies the particular occurrence of contact between patient and health care provider.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getEncounter()
-    {
+    public function getEncounter() {
         return $this->encounter;
     }
 
@@ -201,8 +192,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $encounter
      * @return $this
      */
-    public function setEncounter($encounter)
-    {
+    public function setEncounter($encounter) {
         $this->encounter = $encounter;
         return $this;
     }
@@ -211,8 +201,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * The date (and perhaps time) when the prescription was written.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDateWritten()
-    {
+    public function getDateWritten() {
         return $this->dateWritten;
     }
 
@@ -221,8 +210,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $dateWritten
      * @return $this
      */
-    public function setDateWritten($dateWritten)
-    {
+    public function setDateWritten($dateWritten) {
         $this->dateWritten = $dateWritten;
         return $this;
     }
@@ -231,8 +219,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * The healthcare professional responsible for authorizing the prescription.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getPrescriber()
-    {
+    public function getPrescriber() {
         return $this->prescriber;
     }
 
@@ -241,48 +228,39 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $prescriber
      * @return $this
      */
-    public function setPrescriber($prescriber)
-    {
+    public function setPrescriber($prescriber) {
         $this->prescriber = $prescriber;
         return $this;
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getReasonCodeableConcept()
-    {
+    public function getReasonCodeableConcept() {
         return $this->reasonCodeableConcept;
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
-    public function setReasonCodeableConcept($reasonCodeableConcept)
-    {
+    public function setReasonCodeableConcept($reasonCodeableConcept) {
         $this->reasonCodeableConcept = $reasonCodeableConcept;
         return $this;
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getReasonReference()
-    {
+    public function getReasonReference() {
         return $this->reasonReference;
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
-    public function setReasonReference($reasonReference)
-    {
+    public function setReasonReference($reasonReference) {
         $this->reasonReference = $reasonReference;
         return $this;
     }
@@ -291,8 +269,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * Deals with details of the dispense part of the supply specification.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionDispense[]
      */
-    public function getDispense()
-    {
+    public function getDispense() {
         return $this->dispense;
     }
 
@@ -301,8 +278,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \PHPFHIRGenerated\FHIRResource\FHIRVisionPrescription\FHIRVisionPrescriptionDispense $dispense
      * @return $this
      */
-    public function addDispense($dispense)
-    {
+    public function addDispense($dispense) {
         $this->dispense[] = $dispense;
         return $this;
     }
@@ -310,43 +286,90 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['patient'])) {
+                $this->setPatient($data['patient']);
+            }
+            if (isset($data['encounter'])) {
+                $this->setEncounter($data['encounter']);
+            }
+            if (isset($data['dateWritten'])) {
+                $this->setDateWritten($data['dateWritten']);
+            }
+            if (isset($data['prescriber'])) {
+                $this->setPrescriber($data['prescriber']);
+            }
+            if (isset($data['reasonCodeableConcept'])) {
+                $this->setReasonCodeableConcept($data['reasonCodeableConcept']);
+            }
+            if (isset($data['reasonReference'])) {
+                $this->setReasonReference($data['reasonReference']);
+            }
+            if (isset($data['dispense'])) {
+                if (is_array($data['dispense'])) {
+                    foreach($data['dispense'] as $d) {
+                        $this->addDispense($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"dispense" must be array of objects or null, '.gettype($data['dispense']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                if (null !== $identifier) $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->dateWritten) $json['dateWritten'] = json_encode($this->dateWritten);
-        if (null !== $this->prescriber) $json['prescriber'] = json_encode($this->prescriber);
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->patient)) $json['patient'] = $this->patient;
+        if (isset($this->encounter)) $json['encounter'] = $this->encounter;
+        if (isset($this->dateWritten)) $json['dateWritten'] = $this->dateWritten;
+        if (isset($this->prescriber)) $json['prescriber'] = $this->prescriber;
+        if (isset($this->reasonCodeableConcept)) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (isset($this->reasonReference)) $json['reasonReference'] = $this->reasonReference;
         if (0 < count($this->dispense)) {
             $json['dispense'] = [];
             foreach($this->dispense as $dispense) {
-                $json['dispense'][] = json_encode($dispense);
+                if (null !== $dispense) $json['dispense'][] = $dispense;
             }
         }
         return $json;
@@ -357,8 +380,7 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<VisionPrescription xmlns="http://hl7.org/fhir"></VisionPrescription>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->identifier)) {
@@ -366,13 +388,13 @@ class FHIRVisionPrescription extends FHIRDomainResource implements \JsonSerializ
                 $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
             }
         }
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->patient) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
-        if (null !== $this->encounter) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
-        if (null !== $this->dateWritten) $this->dateWritten->xmlSerialize(true, $sxe->addChild('dateWritten'));
-        if (null !== $this->prescriber) $this->prescriber->xmlSerialize(true, $sxe->addChild('prescriber'));
-        if (null !== $this->reasonCodeableConcept) $this->reasonCodeableConcept->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
-        if (null !== $this->reasonReference) $this->reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->patient)) $this->patient->xmlSerialize(true, $sxe->addChild('patient'));
+        if (isset($this->encounter)) $this->encounter->xmlSerialize(true, $sxe->addChild('encounter'));
+        if (isset($this->dateWritten)) $this->dateWritten->xmlSerialize(true, $sxe->addChild('dateWritten'));
+        if (isset($this->prescriber)) $this->prescriber->xmlSerialize(true, $sxe->addChild('prescriber'));
+        if (isset($this->reasonCodeableConcept)) $this->reasonCodeableConcept->xmlSerialize(true, $sxe->addChild('reasonCodeableConcept'));
+        if (isset($this->reasonReference)) $this->reasonReference->xmlSerialize(true, $sxe->addChild('reasonReference'));
         if (0 < count($this->dispense)) {
             foreach($this->dispense as $dispense) {
                 $dispense->xmlSerialize(true, $sxe->addChild('dispense'));

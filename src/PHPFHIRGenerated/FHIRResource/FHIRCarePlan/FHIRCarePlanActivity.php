@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -71,19 +71,19 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * Identifies the outcome at the point when the status of the activity is assessed.  For example, the outcome of an education activity could be patient understands (or not).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $outcomeCodeableConcept = array();
+    public $outcomeCodeableConcept = [];
 
     /**
      * Details of the outcome or action resulting from the activity.  The reference to an "event" resource, such as Procedure or Encounter or Observation, is the result/outcome of the activity itself.  The activity can be conveyed using CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference to a “request” resource).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $outcomeReference = array();
+    public $outcomeReference = [];
 
     /**
      * Notes about the adherence/status/progress of the activity.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $progress = array();
+    public $progress = [];
 
     /**
      * The details of the proposed activity represented in a specific resource.
@@ -106,8 +106,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * Identifies the outcome at the point when the status of the activity is assessed.  For example, the outcome of an education activity could be patient understands (or not).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getOutcomeCodeableConcept()
-    {
+    public function getOutcomeCodeableConcept() {
         return $this->outcomeCodeableConcept;
     }
 
@@ -116,8 +115,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $outcomeCodeableConcept
      * @return $this
      */
-    public function addOutcomeCodeableConcept($outcomeCodeableConcept)
-    {
+    public function addOutcomeCodeableConcept($outcomeCodeableConcept) {
         $this->outcomeCodeableConcept[] = $outcomeCodeableConcept;
         return $this;
     }
@@ -126,8 +124,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * Details of the outcome or action resulting from the activity.  The reference to an "event" resource, such as Procedure or Encounter or Observation, is the result/outcome of the activity itself.  The activity can be conveyed using CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference to a “request” resource).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getOutcomeReference()
-    {
+    public function getOutcomeReference() {
         return $this->outcomeReference;
     }
 
@@ -136,8 +133,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $outcomeReference
      * @return $this
      */
-    public function addOutcomeReference($outcomeReference)
-    {
+    public function addOutcomeReference($outcomeReference) {
         $this->outcomeReference[] = $outcomeReference;
         return $this;
     }
@@ -146,8 +142,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * Notes about the adherence/status/progress of the activity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getProgress()
-    {
+    public function getProgress() {
         return $this->progress;
     }
 
@@ -156,8 +151,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $progress
      * @return $this
      */
-    public function addProgress($progress)
-    {
+    public function addProgress($progress) {
         $this->progress[] = $progress;
         return $this;
     }
@@ -166,8 +160,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * The details of the proposed activity represented in a specific resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getReference()
-    {
+    public function getReference() {
         return $this->reference;
     }
 
@@ -176,8 +169,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reference
      * @return $this
      */
-    public function setReference($reference)
-    {
+    public function setReference($reference) {
         $this->reference = $reference;
         return $this;
     }
@@ -186,8 +178,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail
      */
-    public function getDetail()
-    {
+    public function getDetail() {
         return $this->detail;
     }
 
@@ -196,8 +187,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCarePlan\FHIRCarePlanDetail $detail
      * @return $this
      */
-    public function setDetail($detail)
-    {
+    public function setDetail($detail) {
         $this->detail = $detail;
         return $this;
     }
@@ -205,45 +195,86 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['outcomeCodeableConcept'])) {
+                if (is_array($data['outcomeCodeableConcept'])) {
+                    foreach($data['outcomeCodeableConcept'] as $d) {
+                        $this->addOutcomeCodeableConcept($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"outcomeCodeableConcept" must be array of objects or null, '.gettype($data['outcomeCodeableConcept']).' seen.');
+                }
+            }
+            if (isset($data['outcomeReference'])) {
+                if (is_array($data['outcomeReference'])) {
+                    foreach($data['outcomeReference'] as $d) {
+                        $this->addOutcomeReference($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"outcomeReference" must be array of objects or null, '.gettype($data['outcomeReference']).' seen.');
+                }
+            }
+            if (isset($data['progress'])) {
+                if (is_array($data['progress'])) {
+                    foreach($data['progress'] as $d) {
+                        $this->addProgress($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"progress" must be array of objects or null, '.gettype($data['progress']).' seen.');
+                }
+            }
+            if (isset($data['reference'])) {
+                $this->setReference($data['reference']);
+            }
+            if (isset($data['detail'])) {
+                $this->setDetail($data['detail']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         if (0 < count($this->outcomeCodeableConcept)) {
             $json['outcomeCodeableConcept'] = [];
             foreach($this->outcomeCodeableConcept as $outcomeCodeableConcept) {
-                $json['outcomeCodeableConcept'][] = json_encode($outcomeCodeableConcept);
+                if (null !== $outcomeCodeableConcept) $json['outcomeCodeableConcept'][] = $outcomeCodeableConcept;
             }
         }
         if (0 < count($this->outcomeReference)) {
             $json['outcomeReference'] = [];
             foreach($this->outcomeReference as $outcomeReference) {
-                $json['outcomeReference'][] = json_encode($outcomeReference);
+                if (null !== $outcomeReference) $json['outcomeReference'][] = $outcomeReference;
             }
         }
         if (0 < count($this->progress)) {
             $json['progress'] = [];
             foreach($this->progress as $progress) {
-                $json['progress'][] = json_encode($progress);
+                if (null !== $progress) $json['progress'][] = $progress;
             }
         }
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
-        if (null !== $this->detail) $json['detail'] = json_encode($this->detail);
+        if (isset($this->reference)) $json['reference'] = $this->reference;
+        if (isset($this->detail)) $json['detail'] = $this->detail;
         return $json;
     }
 
@@ -252,8 +283,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CarePlanActivity xmlns="http://hl7.org/fhir"></CarePlanActivity>');
         parent::xmlSerialize(true, $sxe);
         if (0 < count($this->outcomeCodeableConcept)) {
@@ -271,8 +301,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement implements \JsonSerializa
                 $progress->xmlSerialize(true, $sxe->addChild('progress'));
             }
         }
-        if (null !== $this->reference) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
-        if (null !== $this->detail) $this->detail->xmlSerialize(true, $sxe->addChild('detail'));
+        if (isset($this->reference)) $this->reference->xmlSerialize(true, $sxe->addChild('reference'));
+        if (isset($this->detail)) $this->detail->xmlSerialize(true, $sxe->addChild('detail'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,16 +83,14 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * Material used in the processing step.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $additive = array();
+    public $additive = [];
 
     /**
-     * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $timeDateTime = null;
 
     /**
-     * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $timePeriod = null;
@@ -106,8 +104,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * Textual description of procedure.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -116,8 +113,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -126,8 +122,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * A coded value specifying the procedure used to process the specimen.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getProcedure()
-    {
+    public function getProcedure() {
         return $this->procedure;
     }
 
@@ -136,8 +131,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $procedure
      * @return $this
      */
-    public function setProcedure($procedure)
-    {
+    public function setProcedure($procedure) {
         $this->procedure = $procedure;
         return $this;
     }
@@ -146,8 +140,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * Material used in the processing step.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getAdditive()
-    {
+    public function getAdditive() {
         return $this->additive;
     }
 
@@ -156,48 +149,39 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $additive
      * @return $this
      */
-    public function addAdditive($additive)
-    {
+    public function addAdditive($additive) {
         $this->additive[] = $additive;
         return $this;
     }
 
     /**
-     * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getTimeDateTime()
-    {
+    public function getTimeDateTime() {
         return $this->timeDateTime;
     }
 
     /**
-     * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $timeDateTime
      * @return $this
      */
-    public function setTimeDateTime($timeDateTime)
-    {
+    public function setTimeDateTime($timeDateTime) {
         $this->timeDateTime = $timeDateTime;
         return $this;
     }
 
     /**
-     * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function getTimePeriod()
-    {
+    public function getTimePeriod() {
         return $this->timePeriod;
     }
 
     /**
-     * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin. (choose any one of time*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timePeriod
      * @return $this
      */
-    public function setTimePeriod($timePeriod)
-    {
+    public function setTimePeriod($timePeriod) {
         $this->timePeriod = $timePeriod;
         return $this;
     }
@@ -205,35 +189,64 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['procedure'])) {
+                $this->setProcedure($data['procedure']);
+            }
+            if (isset($data['additive'])) {
+                if (is_array($data['additive'])) {
+                    foreach($data['additive'] as $d) {
+                        $this->addAdditive($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"additive" must be array of objects or null, '.gettype($data['additive']).' seen.');
+                }
+            }
+            if (isset($data['timeDateTime'])) {
+                $this->setTimeDateTime($data['timeDateTime']);
+            }
+            if (isset($data['timePeriod'])) {
+                $this->setTimePeriod($data['timePeriod']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->procedure) $json['procedure'] = json_encode($this->procedure);
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->procedure)) $json['procedure'] = $this->procedure;
         if (0 < count($this->additive)) {
             $json['additive'] = [];
             foreach($this->additive as $additive) {
-                $json['additive'][] = json_encode($additive);
+                if (null !== $additive) $json['additive'][] = $additive;
             }
         }
-        if (null !== $this->timeDateTime) $json['timeDateTime'] = json_encode($this->timeDateTime);
-        if (null !== $this->timePeriod) $json['timePeriod'] = json_encode($this->timePeriod);
+        if (isset($this->timeDateTime)) $json['timeDateTime'] = $this->timeDateTime;
+        if (isset($this->timePeriod)) $json['timePeriod'] = $this->timePeriod;
         return $json;
     }
 
@@ -242,19 +255,18 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement implements \JsonSeriali
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<SpecimenProcessing xmlns="http://hl7.org/fhir"></SpecimenProcessing>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->procedure) $this->procedure->xmlSerialize(true, $sxe->addChild('procedure'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->procedure)) $this->procedure->xmlSerialize(true, $sxe->addChild('procedure'));
         if (0 < count($this->additive)) {
             foreach($this->additive as $additive) {
                 $additive->xmlSerialize(true, $sxe->addChild('additive'));
             }
         }
-        if (null !== $this->timeDateTime) $this->timeDateTime->xmlSerialize(true, $sxe->addChild('timeDateTime'));
-        if (null !== $this->timePeriod) $this->timePeriod->xmlSerialize(true, $sxe->addChild('timePeriod'));
+        if (isset($this->timeDateTime)) $this->timeDateTime->xmlSerialize(true, $sxe->addChild('timeDateTime'));
+        if (isset($this->timePeriod)) $this->timePeriod->xmlSerialize(true, $sxe->addChild('timePeriod'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

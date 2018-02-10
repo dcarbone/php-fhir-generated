@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,13 +83,13 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * Indicates the reason for the substitution of (or lack of substitution) from what was prescribed.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $reason = array();
+    public $reason = [];
 
     /**
      * The person or organization that has primary responsibility for the substitution.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $responsibleParty = array();
+    public $responsibleParty = [];
 
     /**
      * @var string
@@ -100,8 +100,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * True if the dispenser dispensed a different drug or product from what was prescribed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getWasSubstituted()
-    {
+    public function getWasSubstituted() {
         return $this->wasSubstituted;
     }
 
@@ -110,8 +109,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $wasSubstituted
      * @return $this
      */
-    public function setWasSubstituted($wasSubstituted)
-    {
+    public function setWasSubstituted($wasSubstituted) {
         $this->wasSubstituted = $wasSubstituted;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * A code signifying whether a different drug was dispensed from what was prescribed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -130,8 +127,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * Indicates the reason for the substitution of (or lack of substitution) from what was prescribed.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getReason()
-    {
+    public function getReason() {
         return $this->reason;
     }
 
@@ -150,8 +145,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reason
      * @return $this
      */
-    public function addReason($reason)
-    {
+    public function addReason($reason) {
         $this->reason[] = $reason;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * The person or organization that has primary responsibility for the substitution.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getResponsibleParty()
-    {
+    public function getResponsibleParty() {
         return $this->responsibleParty;
     }
 
@@ -170,8 +163,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $responsibleParty
      * @return $this
      */
-    public function addResponsibleParty($responsibleParty)
-    {
+    public function addResponsibleParty($responsibleParty) {
         $this->responsibleParty[] = $responsibleParty;
         return $this;
     }
@@ -179,37 +171,69 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['wasSubstituted'])) {
+                $this->setWasSubstituted($data['wasSubstituted']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['reason'])) {
+                if (is_array($data['reason'])) {
+                    foreach($data['reason'] as $d) {
+                        $this->addReason($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"reason" must be array of objects or null, '.gettype($data['reason']).' seen.');
+                }
+            }
+            if (isset($data['responsibleParty'])) {
+                if (is_array($data['responsibleParty'])) {
+                    foreach($data['responsibleParty'] as $d) {
+                        $this->addResponsibleParty($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"responsibleParty" must be array of objects or null, '.gettype($data['responsibleParty']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->wasSubstituted) $json['wasSubstituted'] = json_encode($this->wasSubstituted);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (isset($this->wasSubstituted)) $json['wasSubstituted'] = $this->wasSubstituted;
+        if (isset($this->type)) $json['type'] = $this->type;
         if (0 < count($this->reason)) {
             $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = json_encode($reason);
+                if (null !== $reason) $json['reason'][] = $reason;
             }
         }
         if (0 < count($this->responsibleParty)) {
             $json['responsibleParty'] = [];
             foreach($this->responsibleParty as $responsibleParty) {
-                $json['responsibleParty'][] = json_encode($responsibleParty);
+                if (null !== $responsibleParty) $json['responsibleParty'][] = $responsibleParty;
             }
         }
         return $json;
@@ -220,12 +244,11 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement implements 
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MedicationDispenseSubstitution xmlns="http://hl7.org/fhir"></MedicationDispenseSubstitution>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->wasSubstituted) $this->wasSubstituted->xmlSerialize(true, $sxe->addChild('wasSubstituted'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->wasSubstituted)) $this->wasSubstituted->xmlSerialize(true, $sxe->addChild('wasSubstituted'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (0 < count($this->reason)) {
             foreach($this->reason as $reason) {
                 $reason->xmlSerialize(true, $sxe->addChild('reason'));

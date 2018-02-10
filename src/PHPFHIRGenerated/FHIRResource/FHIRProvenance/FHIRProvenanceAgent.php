@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,40 +68,36 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
+     * The participation the agent had with respect to the activity.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $type = null;
+
+    /**
      * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $role = array();
+    public $role = [];
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $whoUri = null;
+    public $whoIdentifier = null;
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $whoReference = null;
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public $onBehalfOfUri = null;
+    public $onBehalfOfIdentifier = null;
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $onBehalfOfReference = null;
-
-    /**
-     * The type of relationship between agents.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public $relatedAgentType = null;
 
     /**
      * @var string
@@ -109,11 +105,28 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
     private $_fhirElementName = 'Provenance.Agent';
 
     /**
+     * The participation the agent had with respect to the activity.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType() {
+        return $this->type;
+    }
+
+    /**
+     * The participation the agent had with respect to the activity.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
+     * @return $this
+     */
+    public function setType($type) {
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
      * The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getRole()
-    {
+    public function getRole() {
         return $this->role;
     }
 
@@ -122,145 +135,140 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $role
      * @return $this
      */
-    public function addRole($role)
-    {
+    public function addRole($role) {
         $this->role[] = $role;
         return $this;
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getWhoUri()
-    {
-        return $this->whoUri;
+    public function getWhoIdentifier() {
+        return $this->whoIdentifier;
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whoUri
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $whoIdentifier
      * @return $this
      */
-    public function setWhoUri($whoUri)
-    {
-        $this->whoUri = $whoUri;
+    public function setWhoIdentifier($whoIdentifier) {
+        $this->whoIdentifier = $whoIdentifier;
         return $this;
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getWhoReference()
-    {
+    public function getWhoReference() {
         return $this->whoReference;
     }
 
     /**
-     * The individual, device or organization that participated in the event. (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whoReference
      * @return $this
      */
-    public function setWhoReference($whoReference)
-    {
+    public function setWhoReference($whoReference) {
         $this->whoReference = $whoReference;
         return $this;
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getOnBehalfOfUri()
-    {
-        return $this->onBehalfOfUri;
+    public function getOnBehalfOfIdentifier() {
+        return $this->onBehalfOfIdentifier;
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $onBehalfOfUri
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $onBehalfOfIdentifier
      * @return $this
      */
-    public function setOnBehalfOfUri($onBehalfOfUri)
-    {
-        $this->onBehalfOfUri = $onBehalfOfUri;
+    public function setOnBehalfOfIdentifier($onBehalfOfIdentifier) {
+        $this->onBehalfOfIdentifier = $onBehalfOfIdentifier;
         return $this;
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getOnBehalfOfReference()
-    {
+    public function getOnBehalfOfReference() {
         return $this->onBehalfOfReference;
     }
 
     /**
-     * The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $onBehalfOfReference
      * @return $this
      */
-    public function setOnBehalfOfReference($onBehalfOfReference)
-    {
+    public function setOnBehalfOfReference($onBehalfOfReference) {
         $this->onBehalfOfReference = $onBehalfOfReference;
         return $this;
     }
 
     /**
-     * The type of relationship between agents.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
-     */
-    public function getRelatedAgentType()
-    {
-        return $this->relatedAgentType;
-    }
-
-    /**
-     * The type of relationship between agents.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $relatedAgentType
-     * @return $this
-     */
-    public function setRelatedAgentType($relatedAgentType)
-    {
-        $this->relatedAgentType = $relatedAgentType;
-        return $this;
-    }
-
-    /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
     }
 
     /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['role'])) {
+                if (is_array($data['role'])) {
+                    foreach($data['role'] as $d) {
+                        $this->addRole($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"role" must be array of objects or null, '.gettype($data['role']).' seen.');
+                }
+            }
+            if (isset($data['whoIdentifier'])) {
+                $this->setWhoIdentifier($data['whoIdentifier']);
+            }
+            if (isset($data['whoReference'])) {
+                $this->setWhoReference($data['whoReference']);
+            }
+            if (isset($data['onBehalfOfIdentifier'])) {
+                $this->setOnBehalfOfIdentifier($data['onBehalfOfIdentifier']);
+            }
+            if (isset($data['onBehalfOfReference'])) {
+                $this->setOnBehalfOfReference($data['onBehalfOfReference']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
+    }
+
+    /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
+        if (isset($this->type)) $json['type'] = $this->type;
         if (0 < count($this->role)) {
             $json['role'] = [];
             foreach($this->role as $role) {
-                $json['role'][] = json_encode($role);
+                if (null !== $role) $json['role'][] = $role;
             }
         }
-        if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
-        if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
-        if (null !== $this->onBehalfOfUri) $json['onBehalfOfUri'] = json_encode($this->onBehalfOfUri);
-        if (null !== $this->onBehalfOfReference) $json['onBehalfOfReference'] = json_encode($this->onBehalfOfReference);
-        if (null !== $this->relatedAgentType) $json['relatedAgentType'] = json_encode($this->relatedAgentType);
+        if (isset($this->whoIdentifier)) $json['whoIdentifier'] = $this->whoIdentifier;
+        if (isset($this->whoReference)) $json['whoReference'] = $this->whoReference;
+        if (isset($this->onBehalfOfIdentifier)) $json['onBehalfOfIdentifier'] = $this->onBehalfOfIdentifier;
+        if (isset($this->onBehalfOfReference)) $json['onBehalfOfReference'] = $this->onBehalfOfReference;
         return $json;
     }
 
@@ -269,20 +277,19 @@ class FHIRProvenanceAgent extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ProvenanceAgent xmlns="http://hl7.org/fhir"></ProvenanceAgent>');
         parent::xmlSerialize(true, $sxe);
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (0 < count($this->role)) {
             foreach($this->role as $role) {
                 $role->xmlSerialize(true, $sxe->addChild('role'));
             }
         }
-        if (null !== $this->whoUri) $this->whoUri->xmlSerialize(true, $sxe->addChild('whoUri'));
-        if (null !== $this->whoReference) $this->whoReference->xmlSerialize(true, $sxe->addChild('whoReference'));
-        if (null !== $this->onBehalfOfUri) $this->onBehalfOfUri->xmlSerialize(true, $sxe->addChild('onBehalfOfUri'));
-        if (null !== $this->onBehalfOfReference) $this->onBehalfOfReference->xmlSerialize(true, $sxe->addChild('onBehalfOfReference'));
-        if (null !== $this->relatedAgentType) $this->relatedAgentType->xmlSerialize(true, $sxe->addChild('relatedAgentType'));
+        if (isset($this->whoIdentifier)) $this->whoIdentifier->xmlSerialize(true, $sxe->addChild('whoIdentifier'));
+        if (isset($this->whoReference)) $this->whoReference->xmlSerialize(true, $sxe->addChild('whoReference'));
+        if (isset($this->onBehalfOfIdentifier)) $this->onBehalfOfIdentifier->xmlSerialize(true, $sxe->addChild('onBehalfOfIdentifier'));
+        if (isset($this->onBehalfOfReference)) $this->onBehalfOfReference->xmlSerialize(true, $sxe->addChild('onBehalfOfReference'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

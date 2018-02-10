@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,10 +69,10 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * The locally assigned unique identification by the software. For example: handle ID.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Unique instance identifiers assigned to a device by the software, manufacturers, other organizations or owners. For example: handle ID.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public $identifier = null;
+    public $identifier = [];
 
     /**
      * The component type as defined in the object-oriented or metric nomenclature partition.
@@ -102,7 +102,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The current operational status of the device. For example: On, Off, Standby, etc.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $operationalStatus = array();
+    public $operationalStatus = [];
 
     /**
      * The parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
@@ -120,7 +120,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The production specification such as component revision, serial number, etc.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification[]
      */
-    public $productionSpecification = array();
+    public $productionSpecification = [];
 
     /**
      * The language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
@@ -129,27 +129,31 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
     public $languageCode = null;
 
     /**
+     * Other device properties expressed as a `type` which identifies the property and a value(s) either as a quantity or a code.
+     * @var \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProperty[]
+     */
+    public $property = [];
+
+    /**
      * @var string
      */
     private $_fhirElementName = 'DeviceComponent';
 
     /**
-     * The locally assigned unique identification by the software. For example: handle ID.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * Unique instance identifiers assigned to a device by the software, manufacturers, other organizations or owners. For example: handle ID.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
     /**
-     * The locally assigned unique identification by the software. For example: handle ID.
+     * Unique instance identifiers assigned to a device by the software, manufacturers, other organizations or owners. For example: handle ID.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
-        $this->identifier = $identifier;
+    public function addIdentifier($identifier) {
+        $this->identifier[] = $identifier;
         return $this;
     }
 
@@ -157,8 +161,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The component type as defined in the object-oriented or metric nomenclature partition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -167,8 +170,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -177,8 +179,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The timestamp for the most recent system change which includes device configuration or setting change.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
-    public function getLastSystemChange()
-    {
+    public function getLastSystemChange() {
         return $this->lastSystemChange;
     }
 
@@ -187,8 +188,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $lastSystemChange
      * @return $this
      */
-    public function setLastSystemChange($lastSystemChange)
-    {
+    public function setLastSystemChange($lastSystemChange) {
         $this->lastSystemChange = $lastSystemChange;
         return $this;
     }
@@ -197,8 +197,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The link to the source Device that contains administrative device information such as manufacture, serial number, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getSource()
-    {
+    public function getSource() {
         return $this->source;
     }
 
@@ -207,8 +206,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $source
      * @return $this
      */
-    public function setSource($source)
-    {
+    public function setSource($source) {
         $this->source = $source;
         return $this;
     }
@@ -217,8 +215,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The link to the parent resource. For example: Channel is linked to its VMD parent.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getParent()
-    {
+    public function getParent() {
         return $this->parent;
     }
 
@@ -227,8 +224,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $parent
      * @return $this
      */
-    public function setParent($parent)
-    {
+    public function setParent($parent) {
         $this->parent = $parent;
         return $this;
     }
@@ -237,8 +233,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The current operational status of the device. For example: On, Off, Standby, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getOperationalStatus()
-    {
+    public function getOperationalStatus() {
         return $this->operationalStatus;
     }
 
@@ -247,8 +242,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $operationalStatus
      * @return $this
      */
-    public function addOperationalStatus($operationalStatus)
-    {
+    public function addOperationalStatus($operationalStatus) {
         $this->operationalStatus[] = $operationalStatus;
         return $this;
     }
@@ -257,8 +251,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The parameter group supported by the current device component that is based on some nomenclature, e.g. cardiovascular.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getParameterGroup()
-    {
+    public function getParameterGroup() {
         return $this->parameterGroup;
     }
 
@@ -267,8 +260,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $parameterGroup
      * @return $this
      */
-    public function setParameterGroup($parameterGroup)
-    {
+    public function setParameterGroup($parameterGroup) {
         $this->parameterGroup = $parameterGroup;
         return $this;
     }
@@ -277,8 +269,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The physical principle of the measurement. For example: thermal, chemical, acoustical, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple
      */
-    public function getMeasurementPrinciple()
-    {
+    public function getMeasurementPrinciple() {
         return $this->measurementPrinciple;
     }
 
@@ -287,8 +278,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeasmntPrinciple $measurementPrinciple
      * @return $this
      */
-    public function setMeasurementPrinciple($measurementPrinciple)
-    {
+    public function setMeasurementPrinciple($measurementPrinciple) {
         $this->measurementPrinciple = $measurementPrinciple;
         return $this;
     }
@@ -297,8 +287,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The production specification such as component revision, serial number, etc.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification[]
      */
-    public function getProductionSpecification()
-    {
+    public function getProductionSpecification() {
         return $this->productionSpecification;
     }
 
@@ -307,8 +296,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $productionSpecification
      * @return $this
      */
-    public function addProductionSpecification($productionSpecification)
-    {
+    public function addProductionSpecification($productionSpecification) {
         $this->productionSpecification[] = $productionSpecification;
         return $this;
     }
@@ -317,8 +305,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * The language code for the human-readable text string produced by the device. This language code will follow the IETF language tag. Example: en-US.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getLanguageCode()
-    {
+    public function getLanguageCode() {
         return $this->languageCode;
     }
 
@@ -327,55 +314,148 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $languageCode
      * @return $this
      */
-    public function setLanguageCode($languageCode)
-    {
+    public function setLanguageCode($languageCode) {
         $this->languageCode = $languageCode;
+        return $this;
+    }
+
+    /**
+     * Other device properties expressed as a `type` which identifies the property and a value(s) either as a quantity or a code.
+     * @return \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProperty[]
+     */
+    public function getProperty() {
+        return $this->property;
+    }
+
+    /**
+     * Other device properties expressed as a `type` which identifies the property and a value(s) either as a quantity or a code.
+     * @param \PHPFHIRGenerated\FHIRResource\FHIRDeviceComponent\FHIRDeviceComponentProperty $property
+     * @return $this
+     */
+    public function addProperty($property) {
+        $this->property[] = $property;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['identifier'])) {
+                if (is_array($data['identifier'])) {
+                    foreach($data['identifier'] as $d) {
+                        $this->addIdentifier($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"identifier" must be array of objects or null, '.gettype($data['identifier']).' seen.');
+                }
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['lastSystemChange'])) {
+                $this->setLastSystemChange($data['lastSystemChange']);
+            }
+            if (isset($data['source'])) {
+                $this->setSource($data['source']);
+            }
+            if (isset($data['parent'])) {
+                $this->setParent($data['parent']);
+            }
+            if (isset($data['operationalStatus'])) {
+                if (is_array($data['operationalStatus'])) {
+                    foreach($data['operationalStatus'] as $d) {
+                        $this->addOperationalStatus($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"operationalStatus" must be array of objects or null, '.gettype($data['operationalStatus']).' seen.');
+                }
+            }
+            if (isset($data['parameterGroup'])) {
+                $this->setParameterGroup($data['parameterGroup']);
+            }
+            if (isset($data['measurementPrinciple'])) {
+                $this->setMeasurementPrinciple($data['measurementPrinciple']);
+            }
+            if (isset($data['productionSpecification'])) {
+                if (is_array($data['productionSpecification'])) {
+                    foreach($data['productionSpecification'] as $d) {
+                        $this->addProductionSpecification($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"productionSpecification" must be array of objects or null, '.gettype($data['productionSpecification']).' seen.');
+                }
+            }
+            if (isset($data['languageCode'])) {
+                $this->setLanguageCode($data['languageCode']);
+            }
+            if (isset($data['property'])) {
+                if (is_array($data['property'])) {
+                    foreach($data['property'] as $d) {
+                        $this->addProperty($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"property" must be array of objects or null, '.gettype($data['property']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->lastSystemChange) $json['lastSystemChange'] = json_encode($this->lastSystemChange);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->parent) $json['parent'] = json_encode($this->parent);
+        if (0 < count($this->identifier)) {
+            $json['identifier'] = [];
+            foreach($this->identifier as $identifier) {
+                if (null !== $identifier) $json['identifier'][] = $identifier;
+            }
+        }
+        if (isset($this->type)) $json['type'] = $this->type;
+        if (isset($this->lastSystemChange)) $json['lastSystemChange'] = $this->lastSystemChange;
+        if (isset($this->source)) $json['source'] = $this->source;
+        if (isset($this->parent)) $json['parent'] = $this->parent;
         if (0 < count($this->operationalStatus)) {
             $json['operationalStatus'] = [];
             foreach($this->operationalStatus as $operationalStatus) {
-                $json['operationalStatus'][] = json_encode($operationalStatus);
+                if (null !== $operationalStatus) $json['operationalStatus'][] = $operationalStatus;
             }
         }
-        if (null !== $this->parameterGroup) $json['parameterGroup'] = json_encode($this->parameterGroup);
-        if (null !== $this->measurementPrinciple) $json['measurementPrinciple'] = json_encode($this->measurementPrinciple);
+        if (isset($this->parameterGroup)) $json['parameterGroup'] = $this->parameterGroup;
+        if (isset($this->measurementPrinciple)) $json['measurementPrinciple'] = $this->measurementPrinciple;
         if (0 < count($this->productionSpecification)) {
             $json['productionSpecification'] = [];
             foreach($this->productionSpecification as $productionSpecification) {
-                $json['productionSpecification'][] = json_encode($productionSpecification);
+                if (null !== $productionSpecification) $json['productionSpecification'][] = $productionSpecification;
             }
         }
-        if (null !== $this->languageCode) $json['languageCode'] = json_encode($this->languageCode);
+        if (isset($this->languageCode)) $json['languageCode'] = $this->languageCode;
+        if (0 < count($this->property)) {
+            $json['property'] = [];
+            foreach($this->property as $property) {
+                if (null !== $property) $json['property'][] = $property;
+            }
+        }
         return $json;
     }
 
@@ -384,28 +464,36 @@ class FHIRDeviceComponent extends FHIRDomainResource implements \JsonSerializabl
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DeviceComponent xmlns="http://hl7.org/fhir"></DeviceComponent>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (null !== $this->lastSystemChange) $this->lastSystemChange->xmlSerialize(true, $sxe->addChild('lastSystemChange'));
-        if (null !== $this->source) $this->source->xmlSerialize(true, $sxe->addChild('source'));
-        if (null !== $this->parent) $this->parent->xmlSerialize(true, $sxe->addChild('parent'));
+        if (0 < count($this->identifier)) {
+            foreach($this->identifier as $identifier) {
+                $identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+            }
+        }
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->lastSystemChange)) $this->lastSystemChange->xmlSerialize(true, $sxe->addChild('lastSystemChange'));
+        if (isset($this->source)) $this->source->xmlSerialize(true, $sxe->addChild('source'));
+        if (isset($this->parent)) $this->parent->xmlSerialize(true, $sxe->addChild('parent'));
         if (0 < count($this->operationalStatus)) {
             foreach($this->operationalStatus as $operationalStatus) {
                 $operationalStatus->xmlSerialize(true, $sxe->addChild('operationalStatus'));
             }
         }
-        if (null !== $this->parameterGroup) $this->parameterGroup->xmlSerialize(true, $sxe->addChild('parameterGroup'));
-        if (null !== $this->measurementPrinciple) $this->measurementPrinciple->xmlSerialize(true, $sxe->addChild('measurementPrinciple'));
+        if (isset($this->parameterGroup)) $this->parameterGroup->xmlSerialize(true, $sxe->addChild('parameterGroup'));
+        if (isset($this->measurementPrinciple)) $this->measurementPrinciple->xmlSerialize(true, $sxe->addChild('measurementPrinciple'));
         if (0 < count($this->productionSpecification)) {
             foreach($this->productionSpecification as $productionSpecification) {
                 $productionSpecification->xmlSerialize(true, $sxe->addChild('productionSpecification'));
             }
         }
-        if (null !== $this->languageCode) $this->languageCode->xmlSerialize(true, $sxe->addChild('languageCode'));
+        if (isset($this->languageCode)) $this->languageCode->xmlSerialize(true, $sxe->addChild('languageCode'));
+        if (0 < count($this->property)) {
+            foreach($this->property as $property) {
+                $property->xmlSerialize(true, $sxe->addChild('property'));
+            }
+        }
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

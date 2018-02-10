@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -68,7 +68,7 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.
+     * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $substance = null;
@@ -77,7 +77,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Clinical symptoms and/or signs that are observed or associated with the adverse reaction event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $manifestation = array();
+    public $manifestation = [];
 
     /**
      * Text description about the reaction as a whole, including details of the manifestation if required.
@@ -107,7 +107,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Additional text about the adverse reaction event not captured in other fields.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public $note = array();
+    public $note = [];
 
     /**
      * @var string
@@ -115,21 +115,19 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
     private $_fhirElementName = 'AllergyIntolerance.Reaction';
 
     /**
-     * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.
+     * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getSubstance()
-    {
+    public function getSubstance() {
         return $this->substance;
     }
 
     /**
-     * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.
+     * Identification of the specific substance (or pharmaceutical product) considered to be responsible for the Adverse Reaction event. Note: the substance for a specific reaction may be different from the substance identified as the cause of the risk, but it must be consistent with it. For instance, it may be a more specific substance (e.g. a brand medication) or a composite product that includes the identified substance. It must be clinically safe to only process the 'code' and ignore the 'reaction.substance'.  If a receiving system is unable to confirm that AllergyIntolerance.reaction.substance falls within the semantic scope of AllergyIntolerance.code, then the receiving system should ignore AllergyIntolerance.reaction.substance.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $substance
      * @return $this
      */
-    public function setSubstance($substance)
-    {
+    public function setSubstance($substance) {
         $this->substance = $substance;
         return $this;
     }
@@ -138,8 +136,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Clinical symptoms and/or signs that are observed or associated with the adverse reaction event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getManifestation()
-    {
+    public function getManifestation() {
         return $this->manifestation;
     }
 
@@ -148,8 +145,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $manifestation
      * @return $this
      */
-    public function addManifestation($manifestation)
-    {
+    public function addManifestation($manifestation) {
         $this->manifestation[] = $manifestation;
         return $this;
     }
@@ -158,8 +154,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Text description about the reaction as a whole, including details of the manifestation if required.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -168,8 +163,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -178,8 +172,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Record of the date and/or time of the onset of the Reaction.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getOnset()
-    {
+    public function getOnset() {
         return $this->onset;
     }
 
@@ -188,8 +181,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $onset
      * @return $this
      */
-    public function setOnset($onset)
-    {
+    public function setOnset($onset) {
         $this->onset = $onset;
         return $this;
     }
@@ -198,8 +190,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceSeverity
      */
-    public function getSeverity()
-    {
+    public function getSeverity() {
         return $this->severity;
     }
 
@@ -208,8 +199,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
      * @return $this
      */
-    public function setSeverity($severity)
-    {
+    public function setSeverity($severity) {
         $this->severity = $severity;
         return $this;
     }
@@ -218,8 +208,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Identification of the route by which the subject was exposed to the substance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getExposureRoute()
-    {
+    public function getExposureRoute() {
         return $this->exposureRoute;
     }
 
@@ -228,8 +217,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $exposureRoute
      * @return $this
      */
-    public function setExposureRoute($exposureRoute)
-    {
+    public function setExposureRoute($exposureRoute) {
         $this->exposureRoute = $exposureRoute;
         return $this;
     }
@@ -238,8 +226,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * Additional text about the adverse reaction event not captured in other fields.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation[]
      */
-    public function getNote()
-    {
+    public function getNote() {
         return $this->note;
     }
 
@@ -248,8 +235,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $note
      * @return $this
      */
-    public function addNote($note)
-    {
+    public function addNote($note) {
         $this->note[] = $note;
         return $this;
     }
@@ -257,40 +243,81 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['substance'])) {
+                $this->setSubstance($data['substance']);
+            }
+            if (isset($data['manifestation'])) {
+                if (is_array($data['manifestation'])) {
+                    foreach($data['manifestation'] as $d) {
+                        $this->addManifestation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"manifestation" must be array of objects or null, '.gettype($data['manifestation']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['onset'])) {
+                $this->setOnset($data['onset']);
+            }
+            if (isset($data['severity'])) {
+                $this->setSeverity($data['severity']);
+            }
+            if (isset($data['exposureRoute'])) {
+                $this->setExposureRoute($data['exposureRoute']);
+            }
+            if (isset($data['note'])) {
+                if (is_array($data['note'])) {
+                    foreach($data['note'] as $d) {
+                        $this->addNote($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"note" must be array of objects or null, '.gettype($data['note']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->substance) $json['substance'] = json_encode($this->substance);
+        if (isset($this->substance)) $json['substance'] = $this->substance;
         if (0 < count($this->manifestation)) {
             $json['manifestation'] = [];
             foreach($this->manifestation as $manifestation) {
-                $json['manifestation'][] = json_encode($manifestation);
+                if (null !== $manifestation) $json['manifestation'][] = $manifestation;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->onset) $json['onset'] = json_encode($this->onset);
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
-        if (null !== $this->exposureRoute) $json['exposureRoute'] = json_encode($this->exposureRoute);
+        if (isset($this->description)) $json['description'] = $this->description;
+        if (isset($this->onset)) $json['onset'] = $this->onset;
+        if (isset($this->severity)) $json['severity'] = $this->severity;
+        if (isset($this->exposureRoute)) $json['exposureRoute'] = $this->exposureRoute;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                if (null !== $note) $json['note'][] = $note;
             }
         }
         return $json;
@@ -301,20 +328,19 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<AllergyIntoleranceReaction xmlns="http://hl7.org/fhir"></AllergyIntoleranceReaction>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->substance) $this->substance->xmlSerialize(true, $sxe->addChild('substance'));
+        if (isset($this->substance)) $this->substance->xmlSerialize(true, $sxe->addChild('substance'));
         if (0 < count($this->manifestation)) {
             foreach($this->manifestation as $manifestation) {
                 $manifestation->xmlSerialize(true, $sxe->addChild('manifestation'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
-        if (null !== $this->onset) $this->onset->xmlSerialize(true, $sxe->addChild('onset'));
-        if (null !== $this->severity) $this->severity->xmlSerialize(true, $sxe->addChild('severity'));
-        if (null !== $this->exposureRoute) $this->exposureRoute->xmlSerialize(true, $sxe->addChild('exposureRoute'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->onset)) $this->onset->xmlSerialize(true, $sxe->addChild('onset'));
+        if (isset($this->severity)) $this->severity->xmlSerialize(true, $sxe->addChild('severity'));
+        if (isset($this->exposureRoute)) $this->exposureRoute->xmlSerialize(true, $sxe->addChild('exposureRoute'));
         if (0 < count($this->note)) {
             foreach($this->note as $note) {
                 $note->xmlSerialize(true, $sxe->addChild('note'));

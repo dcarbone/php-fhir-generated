@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -94,8 +94,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
      * The specification type, such as, serial number, part number, hardware revision, software revision, etc.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getSpecType()
-    {
+    public function getSpecType() {
         return $this->specType;
     }
 
@@ -104,8 +103,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $specType
      * @return $this
      */
-    public function setSpecType($specType)
-    {
+    public function setSpecType($specType) {
         $this->specType = $specType;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
      * The internal component unique identification. This is a provision for manufacture specific standard components using a private OID. 11073-10101 has a partition for private OID semantic that the manufacturer can make use of.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getComponentId()
-    {
+    public function getComponentId() {
         return $this->componentId;
     }
 
@@ -124,8 +121,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $componentId
      * @return $this
      */
-    public function setComponentId($componentId)
-    {
+    public function setComponentId($componentId) {
         $this->componentId = $componentId;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
      * The printable string defining the component.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getProductionSpec()
-    {
+    public function getProductionSpec() {
         return $this->productionSpec;
     }
 
@@ -144,8 +139,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $productionSpec
      * @return $this
      */
-    public function setProductionSpec($productionSpec)
-    {
+    public function setProductionSpec($productionSpec) {
         $this->productionSpec = $productionSpec;
         return $this;
     }
@@ -153,28 +147,45 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['specType'])) {
+                $this->setSpecType($data['specType']);
+            }
+            if (isset($data['componentId'])) {
+                $this->setComponentId($data['componentId']);
+            }
+            if (isset($data['productionSpec'])) {
+                $this->setProductionSpec($data['productionSpec']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->specType) $json['specType'] = json_encode($this->specType);
-        if (null !== $this->componentId) $json['componentId'] = json_encode($this->componentId);
-        if (null !== $this->productionSpec) $json['productionSpec'] = json_encode($this->productionSpec);
+        if (isset($this->specType)) $json['specType'] = $this->specType;
+        if (isset($this->componentId)) $json['componentId'] = $this->componentId;
+        if (isset($this->productionSpec)) $json['productionSpec'] = $this->productionSpec;
         return $json;
     }
 
@@ -183,13 +194,12 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement imp
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<DeviceComponentProductionSpecification xmlns="http://hl7.org/fhir"></DeviceComponentProductionSpecification>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->specType) $this->specType->xmlSerialize(true, $sxe->addChild('specType'));
-        if (null !== $this->componentId) $this->componentId->xmlSerialize(true, $sxe->addChild('componentId'));
-        if (null !== $this->productionSpec) $this->productionSpec->xmlSerialize(true, $sxe->addChild('productionSpec'));
+        if (isset($this->specType)) $this->specType->xmlSerialize(true, $sxe->addChild('specType'));
+        if (isset($this->componentId)) $this->componentId->xmlSerialize(true, $sxe->addChild('componentId'));
+        if (isset($this->productionSpec)) $this->productionSpec->xmlSerialize(true, $sxe->addChild('productionSpec'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

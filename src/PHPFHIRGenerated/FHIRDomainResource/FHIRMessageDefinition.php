@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,7 +69,7 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this message definition is (or will be) published.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $url = null;
@@ -126,7 +126,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Contact details to assist a user in finding and communicating with the publisher.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public $contact = array();
+    public $contact = [];
 
     /**
      * A free text natural language description of the message definition from a consumer's perspective.
@@ -138,13 +138,13 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public $useContext = array();
+    public $useContext = [];
 
     /**
      * A legal or geographic region in which the message definition is intended to be used.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $jurisdiction = array();
+    public $jurisdiction = [];
 
     /**
      * Explaination of why this message definition is needed and why it has been designed as it has.
@@ -168,19 +168,23 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $parent = array();
+    public $parent = [];
 
     /**
      * A MessageDefinition that is superseded by this definition.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public $replaces = array();
+    public $replaces = [];
 
     /**
-     * A coded identifier of a supported messaging event.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public $event = null;
+    public $eventCoding = null;
+
+    /**
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $eventUri = null;
 
     /**
      * The impact of the content of the message.
@@ -192,11 +196,11 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
      */
-    public $focus = array();
+    public $focus = [];
 
     /**
-     * Indicates whether a response is required for this message.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * Declare at a message definition level whether a response is required or only upon error or success, or never.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest
      */
     public $responseRequired = null;
 
@@ -204,7 +208,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Indicates what types of messages may be sent as an application-level response to this message.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
      */
-    public $allowedResponse = array();
+    public $allowedResponse = [];
 
     /**
      * @var string
@@ -212,21 +216,19 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     private $_fhirElementName = 'MessageDefinition';
 
     /**
-     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this message definition is (or will be) published.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
     /**
-     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this message definition is (or will be) published. The URL SHOULD include the major version of the message definition. For more information see [Technical and Business Versions](resource.html#versions).
+     * An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance. This SHOULD be globally unique, and SHOULD be a literal address at which this message definition is (or will be) published.
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
      * @return $this
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
         return $this;
     }
@@ -235,8 +237,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A formal identifier that is used to identify this message definition when it is represented in other formats, or referenced in a specification, model, design or an instance.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
-    {
+    public function getIdentifier() {
         return $this->identifier;
     }
 
@@ -245,8 +246,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $identifier
      * @return $this
      */
-    public function setIdentifier($identifier)
-    {
+    public function setIdentifier($identifier) {
         $this->identifier = $identifier;
         return $this;
     }
@@ -255,8 +255,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The identifier that is used to identify this version of the message definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the message definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion()
-    {
+    public function getVersion() {
         return $this->version;
     }
 
@@ -265,8 +264,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
      * @return $this
      */
-    public function setVersion($version)
-    {
+    public function setVersion($version) {
         $this->version = $version;
         return $this;
     }
@@ -275,8 +273,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A natural language name identifying the message definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -285,8 +282,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
      * @return $this
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
         return $this;
     }
@@ -295,8 +291,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A short, descriptive, user-friendly title for the message definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -305,8 +300,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
      * @return $this
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
         return $this;
     }
@@ -315,8 +309,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The status of this message definition. Enables tracking the life-cycle of the content.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -325,8 +318,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPublicationStatus $status
      * @return $this
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
         return $this;
     }
@@ -335,8 +327,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getExperimental()
-    {
+    public function getExperimental() {
         return $this->experimental;
     }
 
@@ -345,8 +336,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $experimental
      * @return $this
      */
-    public function setExperimental($experimental)
-    {
+    public function setExperimental($experimental) {
         $this->experimental = $experimental;
         return $this;
     }
@@ -355,8 +345,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getDate()
-    {
+    public function getDate() {
         return $this->date;
     }
 
@@ -365,8 +354,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $date
      * @return $this
      */
-    public function setDate($date)
-    {
+    public function setDate($date) {
         $this->date = $date;
         return $this;
     }
@@ -375,8 +363,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The name of the individual or organization that published the message definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getPublisher()
-    {
+    public function getPublisher() {
         return $this->publisher;
     }
 
@@ -385,8 +372,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $publisher
      * @return $this
      */
-    public function setPublisher($publisher)
-    {
+    public function setPublisher($publisher) {
         $this->publisher = $publisher;
         return $this;
     }
@@ -395,8 +381,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Contact details to assist a user in finding and communicating with the publisher.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
 
@@ -405,8 +390,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
      * @return $this
      */
-    public function addContact($contact)
-    {
+    public function addContact($contact) {
         $this->contact[] = $contact;
         return $this;
     }
@@ -415,8 +399,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A free text natural language description of the message definition from a consumer's perspective.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -425,8 +408,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -435,8 +417,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate message definition instances.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
-    {
+    public function getUseContext() {
         return $this->useContext;
     }
 
@@ -445,8 +426,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUsageContext $useContext
      * @return $this
      */
-    public function addUseContext($useContext)
-    {
+    public function addUseContext($useContext) {
         $this->useContext[] = $useContext;
         return $this;
     }
@@ -455,8 +435,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A legal or geographic region in which the message definition is intended to be used.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getJurisdiction()
-    {
+    public function getJurisdiction() {
         return $this->jurisdiction;
     }
 
@@ -465,8 +444,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return $this
      */
-    public function addJurisdiction($jurisdiction)
-    {
+    public function addJurisdiction($jurisdiction) {
         $this->jurisdiction[] = $jurisdiction;
         return $this;
     }
@@ -475,8 +453,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Explaination of why this message definition is needed and why it has been designed as it has.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getPurpose()
-    {
+    public function getPurpose() {
         return $this->purpose;
     }
 
@@ -485,8 +462,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $purpose
      * @return $this
      */
-    public function setPurpose($purpose)
-    {
+    public function setPurpose($purpose) {
         $this->purpose = $purpose;
         return $this;
     }
@@ -495,8 +471,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A copyright statement relating to the message definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the message definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
-    public function getCopyright()
-    {
+    public function getCopyright() {
         return $this->copyright;
     }
 
@@ -505,8 +480,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $copyright
      * @return $this
      */
-    public function setCopyright($copyright)
-    {
+    public function setCopyright($copyright) {
         $this->copyright = $copyright;
         return $this;
     }
@@ -515,8 +489,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The MessageDefinition that is the basis for the contents of this resource.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getBase()
-    {
+    public function getBase() {
         return $this->base;
     }
 
@@ -525,8 +498,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $base
      * @return $this
      */
-    public function setBase($base)
-    {
+    public function setBase($base) {
         $this->base = $base;
         return $this;
     }
@@ -535,8 +507,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Identifies a protocol or workflow that this MessageDefinition represents a step in.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getParent()
-    {
+    public function getParent() {
         return $this->parent;
     }
 
@@ -545,8 +516,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $parent
      * @return $this
      */
-    public function addParent($parent)
-    {
+    public function addParent($parent) {
         $this->parent[] = $parent;
         return $this;
     }
@@ -555,8 +525,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * A MessageDefinition that is superseded by this definition.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference[]
      */
-    public function getReplaces()
-    {
+    public function getReplaces() {
         return $this->replaces;
     }
 
@@ -565,29 +534,40 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $replaces
      * @return $this
      */
-    public function addReplaces($replaces)
-    {
+    public function addReplaces($replaces) {
         $this->replaces[] = $replaces;
         return $this;
     }
 
     /**
-     * A coded identifier of a supported messaging event.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
-    public function getEvent()
-    {
-        return $this->event;
+    public function getEventCoding() {
+        return $this->eventCoding;
     }
 
     /**
-     * A coded identifier of a supported messaging event.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $event
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $eventCoding
      * @return $this
      */
-    public function setEvent($event)
-    {
-        $this->event = $event;
+    public function setEventCoding($eventCoding) {
+        $this->eventCoding = $eventCoding;
+        return $this;
+    }
+
+    /**
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getEventUri() {
+        return $this->eventUri;
+    }
+
+    /**
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $eventUri
+     * @return $this
+     */
+    public function setEventUri($eventUri) {
+        $this->eventUri = $eventUri;
         return $this;
     }
 
@@ -595,8 +575,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * The impact of the content of the message.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
@@ -605,8 +584,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMessageSignificanceCategory $category
      * @return $this
      */
-    public function setCategory($category)
-    {
+    public function setCategory($category) {
         $this->category = $category;
         return $this;
     }
@@ -615,8 +593,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
      */
-    public function getFocus()
-    {
+    public function getFocus() {
         return $this->focus;
     }
 
@@ -625,28 +602,25 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionFocus $focus
      * @return $this
      */
-    public function addFocus($focus)
-    {
+    public function addFocus($focus) {
         $this->focus[] = $focus;
         return $this;
     }
 
     /**
-     * Indicates whether a response is required for this message.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * Declare at a message definition level whether a response is required or only upon error or success, or never.
+     * @return \PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest
      */
-    public function getResponseRequired()
-    {
+    public function getResponseRequired() {
         return $this->responseRequired;
     }
 
     /**
-     * Indicates whether a response is required for this message.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $responseRequired
+     * Declare at a message definition level whether a response is required or only upon error or success, or never.
+     * @param \PHPFHIRGenerated\FHIRElement\FHIRMessageheaderResponseRequest $responseRequired
      * @return $this
      */
-    public function setResponseRequired($responseRequired)
-    {
+    public function setResponseRequired($responseRequired) {
         $this->responseRequired = $responseRequired;
         return $this;
     }
@@ -655,8 +629,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * Indicates what types of messages may be sent as an application-level response to this message.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
      */
-    public function getAllowedResponse()
-    {
+    public function getAllowedResponse() {
         return $this->allowedResponse;
     }
 
@@ -665,8 +638,7 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \PHPFHIRGenerated\FHIRResource\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $allowedResponse
      * @return $this
      */
-    public function addAllowedResponse($allowedResponse)
-    {
+    public function addAllowedResponse($allowedResponse) {
         $this->allowedResponse[] = $allowedResponse;
         return $this;
     }
@@ -674,82 +646,205 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+            if (isset($data['experimental'])) {
+                $this->setExperimental($data['experimental']);
+            }
+            if (isset($data['date'])) {
+                $this->setDate($data['date']);
+            }
+            if (isset($data['publisher'])) {
+                $this->setPublisher($data['publisher']);
+            }
+            if (isset($data['contact'])) {
+                if (is_array($data['contact'])) {
+                    foreach($data['contact'] as $d) {
+                        $this->addContact($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['useContext'])) {
+                if (is_array($data['useContext'])) {
+                    foreach($data['useContext'] as $d) {
+                        $this->addUseContext($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"useContext" must be array of objects or null, '.gettype($data['useContext']).' seen.');
+                }
+            }
+            if (isset($data['jurisdiction'])) {
+                if (is_array($data['jurisdiction'])) {
+                    foreach($data['jurisdiction'] as $d) {
+                        $this->addJurisdiction($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"jurisdiction" must be array of objects or null, '.gettype($data['jurisdiction']).' seen.');
+                }
+            }
+            if (isset($data['purpose'])) {
+                $this->setPurpose($data['purpose']);
+            }
+            if (isset($data['copyright'])) {
+                $this->setCopyright($data['copyright']);
+            }
+            if (isset($data['base'])) {
+                $this->setBase($data['base']);
+            }
+            if (isset($data['parent'])) {
+                if (is_array($data['parent'])) {
+                    foreach($data['parent'] as $d) {
+                        $this->addParent($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"parent" must be array of objects or null, '.gettype($data['parent']).' seen.');
+                }
+            }
+            if (isset($data['replaces'])) {
+                if (is_array($data['replaces'])) {
+                    foreach($data['replaces'] as $d) {
+                        $this->addReplaces($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"replaces" must be array of objects or null, '.gettype($data['replaces']).' seen.');
+                }
+            }
+            if (isset($data['eventCoding'])) {
+                $this->setEventCoding($data['eventCoding']);
+            }
+            if (isset($data['eventUri'])) {
+                $this->setEventUri($data['eventUri']);
+            }
+            if (isset($data['category'])) {
+                $this->setCategory($data['category']);
+            }
+            if (isset($data['focus'])) {
+                if (is_array($data['focus'])) {
+                    foreach($data['focus'] as $d) {
+                        $this->addFocus($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"focus" must be array of objects or null, '.gettype($data['focus']).' seen.');
+                }
+            }
+            if (isset($data['responseRequired'])) {
+                $this->setResponseRequired($data['responseRequired']);
+            }
+            if (isset($data['allowedResponse'])) {
+                if (is_array($data['allowedResponse'])) {
+                    foreach($data['allowedResponse'] as $d) {
+                        $this->addAllowedResponse($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"allowedResponse" must be array of objects or null, '.gettype($data['allowedResponse']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (isset($this->url)) $json['url'] = $this->url;
+        if (isset($this->identifier)) $json['identifier'] = $this->identifier;
+        if (isset($this->version)) $json['version'] = $this->version;
+        if (isset($this->name)) $json['name'] = $this->name;
+        if (isset($this->title)) $json['title'] = $this->title;
+        if (isset($this->status)) $json['status'] = $this->status;
+        if (isset($this->experimental)) $json['experimental'] = $this->experimental;
+        if (isset($this->date)) $json['date'] = $this->date;
+        if (isset($this->publisher)) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                if (null !== $contact) $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                if (null !== $useContext) $json['useContext'][] = $useContext;
             }
         }
         if (0 < count($this->jurisdiction)) {
             $json['jurisdiction'] = [];
             foreach($this->jurisdiction as $jurisdiction) {
-                $json['jurisdiction'][] = json_encode($jurisdiction);
+                if (null !== $jurisdiction) $json['jurisdiction'][] = $jurisdiction;
             }
         }
-        if (null !== $this->purpose) $json['purpose'] = json_encode($this->purpose);
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
-        if (null !== $this->base) $json['base'] = json_encode($this->base);
+        if (isset($this->purpose)) $json['purpose'] = $this->purpose;
+        if (isset($this->copyright)) $json['copyright'] = $this->copyright;
+        if (isset($this->base)) $json['base'] = $this->base;
         if (0 < count($this->parent)) {
             $json['parent'] = [];
             foreach($this->parent as $parent) {
-                $json['parent'][] = json_encode($parent);
+                if (null !== $parent) $json['parent'][] = $parent;
             }
         }
         if (0 < count($this->replaces)) {
             $json['replaces'] = [];
             foreach($this->replaces as $replaces) {
-                $json['replaces'][] = json_encode($replaces);
+                if (null !== $replaces) $json['replaces'][] = $replaces;
             }
         }
-        if (null !== $this->event) $json['event'] = json_encode($this->event);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
+        if (isset($this->eventCoding)) $json['eventCoding'] = $this->eventCoding;
+        if (isset($this->eventUri)) $json['eventUri'] = $this->eventUri;
+        if (isset($this->category)) $json['category'] = $this->category;
         if (0 < count($this->focus)) {
             $json['focus'] = [];
             foreach($this->focus as $focus) {
-                $json['focus'][] = json_encode($focus);
+                if (null !== $focus) $json['focus'][] = $focus;
             }
         }
-        if (null !== $this->responseRequired) $json['responseRequired'] = json_encode($this->responseRequired);
+        if (isset($this->responseRequired)) $json['responseRequired'] = $this->responseRequired;
         if (0 < count($this->allowedResponse)) {
             $json['allowedResponse'] = [];
             foreach($this->allowedResponse as $allowedResponse) {
-                $json['allowedResponse'][] = json_encode($allowedResponse);
+                if (null !== $allowedResponse) $json['allowedResponse'][] = $allowedResponse;
             }
         }
         return $json;
@@ -760,25 +855,24 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<MessageDefinition xmlns="http://hl7.org/fhir"></MessageDefinition>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->url) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (null !== $this->identifier) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
-        if (null !== $this->version) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (null !== $this->name) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (null !== $this->title) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (null !== $this->status) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (null !== $this->experimental) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
-        if (null !== $this->date) $this->date->xmlSerialize(true, $sxe->addChild('date'));
-        if (null !== $this->publisher) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
+        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
+        if (isset($this->identifier)) $this->identifier->xmlSerialize(true, $sxe->addChild('identifier'));
+        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
+        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
+        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
+        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
+        if (isset($this->experimental)) $this->experimental->xmlSerialize(true, $sxe->addChild('experimental'));
+        if (isset($this->date)) $this->date->xmlSerialize(true, $sxe->addChild('date'));
+        if (isset($this->publisher)) $this->publisher->xmlSerialize(true, $sxe->addChild('publisher'));
         if (0 < count($this->contact)) {
             foreach($this->contact as $contact) {
                 $contact->xmlSerialize(true, $sxe->addChild('contact'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->useContext)) {
             foreach($this->useContext as $useContext) {
                 $useContext->xmlSerialize(true, $sxe->addChild('useContext'));
@@ -789,9 +883,9 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
                 $jurisdiction->xmlSerialize(true, $sxe->addChild('jurisdiction'));
             }
         }
-        if (null !== $this->purpose) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
-        if (null !== $this->copyright) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
-        if (null !== $this->base) $this->base->xmlSerialize(true, $sxe->addChild('base'));
+        if (isset($this->purpose)) $this->purpose->xmlSerialize(true, $sxe->addChild('purpose'));
+        if (isset($this->copyright)) $this->copyright->xmlSerialize(true, $sxe->addChild('copyright'));
+        if (isset($this->base)) $this->base->xmlSerialize(true, $sxe->addChild('base'));
         if (0 < count($this->parent)) {
             foreach($this->parent as $parent) {
                 $parent->xmlSerialize(true, $sxe->addChild('parent'));
@@ -802,14 +896,15 @@ class FHIRMessageDefinition extends FHIRDomainResource implements \JsonSerializa
                 $replaces->xmlSerialize(true, $sxe->addChild('replaces'));
             }
         }
-        if (null !== $this->event) $this->event->xmlSerialize(true, $sxe->addChild('event'));
-        if (null !== $this->category) $this->category->xmlSerialize(true, $sxe->addChild('category'));
+        if (isset($this->eventCoding)) $this->eventCoding->xmlSerialize(true, $sxe->addChild('eventCoding'));
+        if (isset($this->eventUri)) $this->eventUri->xmlSerialize(true, $sxe->addChild('eventUri'));
+        if (isset($this->category)) $this->category->xmlSerialize(true, $sxe->addChild('category'));
         if (0 < count($this->focus)) {
             foreach($this->focus as $focus) {
                 $focus->xmlSerialize(true, $sxe->addChild('focus'));
             }
         }
-        if (null !== $this->responseRequired) $this->responseRequired->xmlSerialize(true, $sxe->addChild('responseRequired'));
+        if (isset($this->responseRequired)) $this->responseRequired->xmlSerialize(true, $sxe->addChild('responseRequired'));
         if (0 < count($this->allowedResponse)) {
             foreach($this->allowedResponse as $allowedResponse) {
                 $allowedResponse->xmlSerialize(true, $sxe->addChild('allowedResponse'));

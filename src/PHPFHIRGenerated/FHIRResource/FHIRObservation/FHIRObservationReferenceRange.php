@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -89,7 +89,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $appliesTo = array();
+    public $appliesTo = [];
 
     /**
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
@@ -112,8 +112,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * The value of the low bound of the reference range.  The low bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the low bound is omitted,  it is assumed to be meaningless (e.g. reference range is <=2.3).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getLow()
-    {
+    public function getLow() {
         return $this->low;
     }
 
@@ -122,8 +121,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $low
      * @return $this
      */
-    public function setLow($low)
-    {
+    public function setLow($low) {
         $this->low = $low;
         return $this;
     }
@@ -132,8 +130,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * The value of the high bound of the reference range.  The high bound of the reference range endpoint is inclusive of the value (e.g.  reference range is >=5 - <=9).   If the high bound is omitted,  it is assumed to be meaningless (e.g. reference range is >= 2.3).
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function getHigh()
-    {
+    public function getHigh() {
         return $this->high;
     }
 
@@ -142,8 +139,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $high
      * @return $this
      */
-    public function setHigh($high)
-    {
+    public function setHigh($high) {
         $this->high = $high;
         return $this;
     }
@@ -152,8 +148,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * Codes to indicate the what part of the targeted reference population it applies to. For example, the normal or therapeutic range.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->type;
     }
 
@@ -162,8 +157,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $type
      * @return $this
      */
-    public function setType($type)
-    {
+    public function setType($type) {
         $this->type = $type;
         return $this;
     }
@@ -172,8 +166,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * Codes to indicate the target population this reference range applies to.  For example, a reference range may be based on the normal population or a particular sex or race.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getAppliesTo()
-    {
+    public function getAppliesTo() {
         return $this->appliesTo;
     }
 
@@ -182,8 +175,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $appliesTo
      * @return $this
      */
-    public function addAppliesTo($appliesTo)
-    {
+    public function addAppliesTo($appliesTo) {
         $this->appliesTo[] = $appliesTo;
         return $this;
     }
@@ -192,8 +184,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
-    public function getAge()
-    {
+    public function getAge() {
         return $this->age;
     }
 
@@ -202,8 +193,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $age
      * @return $this
      */
-    public function setAge($age)
-    {
+    public function setAge($age) {
         $this->age = $age;
         return $this;
     }
@@ -212,8 +202,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of 'normals'.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -222,8 +211,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -231,36 +219,68 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['low'])) {
+                $this->setLow($data['low']);
+            }
+            if (isset($data['high'])) {
+                $this->setHigh($data['high']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['appliesTo'])) {
+                if (is_array($data['appliesTo'])) {
+                    foreach($data['appliesTo'] as $d) {
+                        $this->addAppliesTo($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"appliesTo" must be array of objects or null, '.gettype($data['appliesTo']).' seen.');
+                }
+            }
+            if (isset($data['age'])) {
+                $this->setAge($data['age']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->low) $json['low'] = json_encode($this->low);
-        if (null !== $this->high) $json['high'] = json_encode($this->high);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (isset($this->low)) $json['low'] = $this->low;
+        if (isset($this->high)) $json['high'] = $this->high;
+        if (isset($this->type)) $json['type'] = $this->type;
         if (0 < count($this->appliesTo)) {
             $json['appliesTo'] = [];
             foreach($this->appliesTo as $appliesTo) {
-                $json['appliesTo'][] = json_encode($appliesTo);
+                if (null !== $appliesTo) $json['appliesTo'][] = $appliesTo;
             }
         }
-        if (null !== $this->age) $json['age'] = json_encode($this->age);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (isset($this->age)) $json['age'] = $this->age;
+        if (isset($this->text)) $json['text'] = $this->text;
         return $json;
     }
 
@@ -269,20 +289,19 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement implements \Json
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ObservationReferenceRange xmlns="http://hl7.org/fhir"></ObservationReferenceRange>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->low) $this->low->xmlSerialize(true, $sxe->addChild('low'));
-        if (null !== $this->high) $this->high->xmlSerialize(true, $sxe->addChild('high'));
-        if (null !== $this->type) $this->type->xmlSerialize(true, $sxe->addChild('type'));
+        if (isset($this->low)) $this->low->xmlSerialize(true, $sxe->addChild('low'));
+        if (isset($this->high)) $this->high->xmlSerialize(true, $sxe->addChild('high'));
+        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
         if (0 < count($this->appliesTo)) {
             foreach($this->appliesTo as $appliesTo) {
                 $appliesTo->xmlSerialize(true, $sxe->addChild('appliesTo'));
             }
         }
-        if (null !== $this->age) $this->age->xmlSerialize(true, $sxe->addChild('age'));
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->age)) $this->age->xmlSerialize(true, $sxe->addChild('age'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

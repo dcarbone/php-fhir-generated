@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,13 +69,11 @@ use PHPFHIRGenerated\FHIRElement;
 class FHIRAnnotation extends FHIRElement implements \JsonSerializable
 {
     /**
-     * The individual responsible for making the annotation. (choose any one of author*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $authorReference = null;
 
     /**
-     * The individual responsible for making the annotation. (choose any one of author*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $authorString = null;
@@ -98,41 +96,33 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
     private $_fhirElementName = 'Annotation';
 
     /**
-     * The individual responsible for making the annotation. (choose any one of author*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
-    public function getAuthorReference()
-    {
+    public function getAuthorReference() {
         return $this->authorReference;
     }
 
     /**
-     * The individual responsible for making the annotation. (choose any one of author*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $authorReference
      * @return $this
      */
-    public function setAuthorReference($authorReference)
-    {
+    public function setAuthorReference($authorReference) {
         $this->authorReference = $authorReference;
         return $this;
     }
 
     /**
-     * The individual responsible for making the annotation. (choose any one of author*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getAuthorString()
-    {
+    public function getAuthorString() {
         return $this->authorString;
     }
 
     /**
-     * The individual responsible for making the annotation. (choose any one of author*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $authorString
      * @return $this
      */
-    public function setAuthorString($authorString)
-    {
+    public function setAuthorString($authorString) {
         $this->authorString = $authorString;
         return $this;
     }
@@ -141,8 +131,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
      * Indicates when this particular annotation was made.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function getTime()
-    {
+    public function getTime() {
         return $this->time;
     }
 
@@ -151,8 +140,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $time
      * @return $this
      */
-    public function setTime($time)
-    {
+    public function setTime($time) {
         $this->time = $time;
         return $this;
     }
@@ -161,8 +149,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
      * The text of the annotation.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -171,8 +158,7 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
      * @return $this
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
         return $this;
     }
@@ -180,29 +166,49 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['authorReference'])) {
+                $this->setAuthorReference($data['authorReference']);
+            }
+            if (isset($data['authorString'])) {
+                $this->setAuthorString($data['authorString']);
+            }
+            if (isset($data['time'])) {
+                $this->setTime($data['time']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->authorReference) $json['authorReference'] = json_encode($this->authorReference);
-        if (null !== $this->authorString) $json['authorString'] = json_encode($this->authorString);
-        if (null !== $this->time) $json['time'] = json_encode($this->time);
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (isset($this->authorReference)) $json['authorReference'] = $this->authorReference;
+        if (isset($this->authorString)) $json['authorString'] = $this->authorString;
+        if (isset($this->time)) $json['time'] = $this->time;
+        if (isset($this->text)) $json['text'] = $this->text;
         return $json;
     }
 
@@ -211,14 +217,13 @@ class FHIRAnnotation extends FHIRElement implements \JsonSerializable
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<Annotation xmlns="http://hl7.org/fhir"></Annotation>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->authorReference) $this->authorReference->xmlSerialize(true, $sxe->addChild('authorReference'));
-        if (null !== $this->authorString) $this->authorString->xmlSerialize(true, $sxe->addChild('authorString'));
-        if (null !== $this->time) $this->time->xmlSerialize(true, $sxe->addChild('time'));
-        if (null !== $this->text) $this->text->xmlSerialize(true, $sxe->addChild('text'));
+        if (isset($this->authorReference)) $this->authorReference->xmlSerialize(true, $sxe->addChild('authorReference'));
+        if (isset($this->authorString)) $this->authorString->xmlSerialize(true, $sxe->addChild('authorString'));
+        if (isset($this->time)) $this->time->xmlSerialize(true, $sxe->addChild('time'));
+        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
         if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -77,7 +77,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * Types of security services that are supported/required by the system.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public $service = array();
+    public $service = [];
 
     /**
      * General description of how security works.
@@ -89,7 +89,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * Certificates associated with security profiles.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementCertificate[]
      */
-    public $certificate = array();
+    public $certificate = [];
 
     /**
      * @var string
@@ -100,8 +100,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * Server adds CORS headers when responding to requests - this enables javascript applications to use the server.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
-    public function getCors()
-    {
+    public function getCors() {
         return $this->cors;
     }
 
@@ -110,8 +109,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $cors
      * @return $this
      */
-    public function setCors($cors)
-    {
+    public function setCors($cors) {
         $this->cors = $cors;
         return $this;
     }
@@ -120,8 +118,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * Types of security services that are supported/required by the system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getService()
-    {
+    public function getService() {
         return $this->service;
     }
 
@@ -130,8 +127,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $service
      * @return $this
      */
-    public function addService($service)
-    {
+    public function addService($service) {
         $this->service[] = $service;
         return $this;
     }
@@ -140,8 +136,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * General description of how security works.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -150,8 +145,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $description
      * @return $this
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
         return $this;
     }
@@ -160,8 +154,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * Certificates associated with security profiles.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementCertificate[]
      */
-    public function getCertificate()
-    {
+    public function getCertificate() {
         return $this->certificate;
     }
 
@@ -170,8 +163,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * @param \PHPFHIRGenerated\FHIRResource\FHIRCapabilityStatement\FHIRCapabilityStatementCertificate $certificate
      * @return $this
      */
-    public function addCertificate($certificate)
-    {
+    public function addCertificate($certificate) {
         $this->certificate[] = $certificate;
         return $this;
     }
@@ -179,37 +171,69 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['cors'])) {
+                $this->setCors($data['cors']);
+            }
+            if (isset($data['service'])) {
+                if (is_array($data['service'])) {
+                    foreach($data['service'] as $d) {
+                        $this->addService($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"service" must be array of objects or null, '.gettype($data['service']).' seen.');
+                }
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['certificate'])) {
+                if (is_array($data['certificate'])) {
+                    foreach($data['certificate'] as $d) {
+                        $this->addCertificate($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"certificate" must be array of objects or null, '.gettype($data['certificate']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->cors) $json['cors'] = json_encode($this->cors);
+        if (isset($this->cors)) $json['cors'] = $this->cors;
         if (0 < count($this->service)) {
             $json['service'] = [];
             foreach($this->service as $service) {
-                $json['service'][] = json_encode($service);
+                if (null !== $service) $json['service'][] = $service;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (isset($this->description)) $json['description'] = $this->description;
         if (0 < count($this->certificate)) {
             $json['certificate'] = [];
             foreach($this->certificate as $certificate) {
-                $json['certificate'][] = json_encode($certificate);
+                if (null !== $certificate) $json['certificate'][] = $certificate;
             }
         }
         return $json;
@@ -220,17 +244,16 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement implements \Js
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<CapabilityStatementSecurity xmlns="http://hl7.org/fhir"></CapabilityStatementSecurity>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->cors) $this->cors->xmlSerialize(true, $sxe->addChild('cors'));
+        if (isset($this->cors)) $this->cors->xmlSerialize(true, $sxe->addChild('cors'));
         if (0 < count($this->service)) {
             foreach($this->service as $service) {
                 $service->xmlSerialize(true, $sxe->addChild('service'));
             }
         }
-        if (null !== $this->description) $this->description->xmlSerialize(true, $sxe->addChild('description'));
+        if (isset($this->description)) $this->description->xmlSerialize(true, $sxe->addChild('description'));
         if (0 < count($this->certificate)) {
             foreach($this->certificate as $certificate) {
                 $certificate->xmlSerialize(true, $sxe->addChild('certificate'));

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: April 20th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Wed, Apr 19, 2017 07:44+1000 for FHIR v3.0.1
+ *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -83,7 +83,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
      * @var \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
-    public $designation = array();
+    public $designation = [];
 
     /**
      * @var string
@@ -94,8 +94,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * Specifies a code for the concept to be included or excluded.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getCode()
-    {
+    public function getCode() {
         return $this->code;
     }
 
@@ -104,8 +103,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
      * @return $this
      */
-    public function setCode($code)
-    {
+    public function setCode($code) {
         $this->code = $code;
         return $this;
     }
@@ -114,8 +112,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * The text to display to the user for this concept in the context of this valueset. If no display is provided, then applications using the value set use the display specified for the code by the system.
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getDisplay()
-    {
+    public function getDisplay() {
         return $this->display;
     }
 
@@ -124,8 +121,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
      * @return $this
      */
-    public function setDisplay($display)
-    {
+    public function setDisplay($display) {
         $this->display = $display;
         return $this;
     }
@@ -134,8 +130,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * Additional representations for this concept when used in this value set - other languages, aliases, specialized purposes, used for particular purposes, etc.
      * @return \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation[]
      */
-    public function getDesignation()
-    {
+    public function getDesignation() {
         return $this->designation;
     }
 
@@ -144,8 +139,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * @param \PHPFHIRGenerated\FHIRResource\FHIRValueSet\FHIRValueSetDesignation $designation
      * @return $this
      */
-    public function addDesignation($designation)
-    {
+    public function addDesignation($designation) {
         $this->designation[] = $designation;
         return $this;
     }
@@ -153,31 +147,54 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
     /**
      * @return string
      */
-    public function get_fhirElementName()
-    {
+    public function get_fhirElementName() {
         return $this->_fhirElementName;
+    }
+
+    /**
+     * @param mixed $data
+     */
+    public function __construct($data = []) {
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['display'])) {
+                $this->setDisplay($data['display']);
+            }
+            if (isset($data['designation'])) {
+                if (is_array($data['designation'])) {
+                    foreach($data['designation'] as $d) {
+                        $this->addDesignation($d);
+                    }
+                } else {
+                    throw new \InvalidArgumentException('"designation" must be array of objects or null, '.gettype($data['designation']).' seen.');
+                }
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+        }
+        parent::__construct($data);
     }
 
     /**
      * @return string
      */
-    public function __toString()
-    {
+    public function __toString() {
         return $this->get_fhirElementName();
     }
 
     /**
      * @return array
      */
-    public function jsonSerialize()
-    {
+    public function jsonSerialize() {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->display) $json['display'] = json_encode($this->display);
+        if (isset($this->code)) $json['code'] = $this->code;
+        if (isset($this->display)) $json['display'] = $this->display;
         if (0 < count($this->designation)) {
             $json['designation'] = [];
             foreach($this->designation as $designation) {
-                $json['designation'][] = json_encode($designation);
+                if (null !== $designation) $json['designation'][] = $designation;
             }
         }
         return $json;
@@ -188,12 +205,11 @@ class FHIRValueSetConcept extends FHIRBackboneElement implements \JsonSerializab
      * @param \SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null)
-    {
+    public function xmlSerialize($returnSXE = false, $sxe = null) {
         if (null === $sxe) $sxe = new \SimpleXMLElement('<ValueSetConcept xmlns="http://hl7.org/fhir"></ValueSetConcept>');
         parent::xmlSerialize(true, $sxe);
-        if (null !== $this->code) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (null !== $this->display) $this->display->xmlSerialize(true, $sxe->addChild('display'));
+        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
+        if (isset($this->display)) $this->display->xmlSerialize(true, $sxe->addChild('display'));
         if (0 < count($this->designation)) {
             foreach($this->designation as $designation) {
                 $designation->xmlSerialize(true, $sxe->addChild('designation'));
