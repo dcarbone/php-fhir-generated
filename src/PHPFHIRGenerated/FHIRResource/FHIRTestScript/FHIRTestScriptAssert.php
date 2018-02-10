@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -562,24 +562,24 @@ class FHIRTestScriptAssert extends FHIRBackboneElement implements \JsonSerializa
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->label) $json['label'] = json_encode($this->label);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->direction) $json['direction'] = json_encode($this->direction);
-        if (null !== $this->compareToSourceId) $json['compareToSourceId'] = json_encode($this->compareToSourceId);
-        if (null !== $this->compareToSourcePath) $json['compareToSourcePath'] = json_encode($this->compareToSourcePath);
-        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
-        if (null !== $this->headerField) $json['headerField'] = json_encode($this->headerField);
-        if (null !== $this->minimumId) $json['minimumId'] = json_encode($this->minimumId);
-        if (null !== $this->navigationLinks) $json['navigationLinks'] = json_encode($this->navigationLinks);
-        if (null !== $this->operator) $json['operator'] = json_encode($this->operator);
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
-        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
-        if (null !== $this->response) $json['response'] = json_encode($this->response);
-        if (null !== $this->responseCode) $json['responseCode'] = json_encode($this->responseCode);
-        if (null !== $this->sourceId) $json['sourceId'] = json_encode($this->sourceId);
-        if (null !== $this->validateProfileId) $json['validateProfileId'] = json_encode($this->validateProfileId);
-        if (null !== $this->value) $json['value'] = json_encode($this->value);
-        if (null !== $this->warningOnly) $json['warningOnly'] = json_encode($this->warningOnly);
+        if (null !== $this->label) $json['label'] = $this->label;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->direction) $json['direction'] = $this->direction;
+        if (null !== $this->compareToSourceId) $json['compareToSourceId'] = $this->compareToSourceId;
+        if (null !== $this->compareToSourcePath) $json['compareToSourcePath'] = $this->compareToSourcePath;
+        if (null !== $this->contentType) $json['contentType'] = $this->contentType;
+        if (null !== $this->headerField) $json['headerField'] = $this->headerField;
+        if (null !== $this->minimumId) $json['minimumId'] = $this->minimumId;
+        if (null !== $this->navigationLinks) $json['navigationLinks'] = $this->navigationLinks;
+        if (null !== $this->operator) $json['operator'] = $this->operator;
+        if (null !== $this->path) $json['path'] = $this->path;
+        if (null !== $this->resource) $json['resource'] = $this->resource;
+        if (null !== $this->response) $json['response'] = $this->response;
+        if (null !== $this->responseCode) $json['responseCode'] = $this->responseCode;
+        if (null !== $this->sourceId) $json['sourceId'] = $this->sourceId;
+        if (null !== $this->validateProfileId) $json['validateProfileId'] = $this->validateProfileId;
+        if (null !== $this->value) $json['value'] = $this->value;
+        if (null !== $this->warningOnly) $json['warningOnly'] = $this->warningOnly;
         return $json;
     }
 

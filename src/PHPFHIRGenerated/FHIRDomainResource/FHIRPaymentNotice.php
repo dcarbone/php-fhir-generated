@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -359,18 +359,18 @@ class FHIRPaymentNotice extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
-        if (null !== $this->target) $json['target'] = json_encode($this->target);
-        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
-        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (null !== $this->response) $json['response'] = json_encode($this->response);
-        if (null !== $this->paymentStatus) $json['paymentStatus'] = json_encode($this->paymentStatus);
+        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset;
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset;
+        if (null !== $this->created) $json['created'] = $this->created;
+        if (null !== $this->target) $json['target'] = $this->target;
+        if (null !== $this->provider) $json['provider'] = $this->provider;
+        if (null !== $this->organization) $json['organization'] = $this->organization;
+        if (null !== $this->request) $json['request'] = $this->request;
+        if (null !== $this->response) $json['response'] = $this->response;
+        if (null !== $this->paymentStatus) $json['paymentStatus'] = $this->paymentStatus;
         return $json;
     }
 

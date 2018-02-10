@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -515,64 +515,64 @@ class FHIRCarePlan extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->context) $json['context'] = json_encode($this->context);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->context) $json['context'] = $this->context;
+        if (null !== $this->period) $json['period'] = $this->period;
         if (0 < count($this->author)) {
             $json['author'] = [];
             foreach($this->author as $author) {
-                $json['author'][] = json_encode($author);
+                $json['author'][] = $author;
             }
         }
-        if (null !== $this->modified) $json['modified'] = json_encode($this->modified);
+        if (null !== $this->modified) $json['modified'] = $this->modified;
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->addresses)) {
             $json['addresses'] = [];
             foreach($this->addresses as $addresses) {
-                $json['addresses'][] = json_encode($addresses);
+                $json['addresses'][] = $addresses;
             }
         }
         if (0 < count($this->support)) {
             $json['support'] = [];
             foreach($this->support as $support) {
-                $json['support'][] = json_encode($support);
+                $json['support'][] = $support;
             }
         }
         if (0 < count($this->relatedPlan)) {
             $json['relatedPlan'] = [];
             foreach($this->relatedPlan as $relatedPlan) {
-                $json['relatedPlan'][] = json_encode($relatedPlan);
+                $json['relatedPlan'][] = $relatedPlan;
             }
         }
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                $json['participant'][] = $participant;
             }
         }
         if (0 < count($this->goal)) {
             $json['goal'] = [];
             foreach($this->goal as $goal) {
-                $json['goal'][] = json_encode($goal);
+                $json['goal'][] = $goal;
             }
         }
         if (0 < count($this->activity)) {
             $json['activity'] = [];
             foreach($this->activity as $activity) {
-                $json['activity'][] = json_encode($activity);
+                $json['activity'][] = $activity;
             }
         }
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (null !== $this->note) $json['note'] = $this->note;
         return $json;
     }
 

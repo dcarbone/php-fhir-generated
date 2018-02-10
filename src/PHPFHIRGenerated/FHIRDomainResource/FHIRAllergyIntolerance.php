@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -463,25 +463,25 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements \JsonSerializ
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->onset) $json['onset'] = json_encode($this->onset);
-        if (null !== $this->recordedDate) $json['recordedDate'] = json_encode($this->recordedDate);
-        if (null !== $this->recorder) $json['recorder'] = json_encode($this->recorder);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->reporter) $json['reporter'] = json_encode($this->reporter);
-        if (null !== $this->substance) $json['substance'] = json_encode($this->substance);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->criticality) $json['criticality'] = json_encode($this->criticality);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->lastOccurence) $json['lastOccurence'] = json_encode($this->lastOccurence);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (null !== $this->onset) $json['onset'] = $this->onset;
+        if (null !== $this->recordedDate) $json['recordedDate'] = $this->recordedDate;
+        if (null !== $this->recorder) $json['recorder'] = $this->recorder;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->reporter) $json['reporter'] = $this->reporter;
+        if (null !== $this->substance) $json['substance'] = $this->substance;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->criticality) $json['criticality'] = $this->criticality;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->lastOccurence) $json['lastOccurence'] = $this->lastOccurence;
+        if (null !== $this->note) $json['note'] = $this->note;
         if (0 < count($this->reaction)) {
             $json['reaction'] = [];
             foreach($this->reaction as $reaction) {
-                $json['reaction'][] = json_encode($reaction);
+                $json['reaction'][] = $reaction;
             }
         }
         return $json;

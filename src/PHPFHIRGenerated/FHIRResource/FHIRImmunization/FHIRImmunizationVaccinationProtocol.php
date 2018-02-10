@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,19 +302,19 @@ class FHIRImmunizationVaccinationProtocol extends FHIRBackboneElement implements
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->doseSequence) $json['doseSequence'] = json_encode($this->doseSequence);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->authority) $json['authority'] = json_encode($this->authority);
-        if (null !== $this->series) $json['series'] = json_encode($this->series);
-        if (null !== $this->seriesDoses) $json['seriesDoses'] = json_encode($this->seriesDoses);
+        if (null !== $this->doseSequence) $json['doseSequence'] = $this->doseSequence;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->authority) $json['authority'] = $this->authority;
+        if (null !== $this->series) $json['series'] = $this->series;
+        if (null !== $this->seriesDoses) $json['seriesDoses'] = $this->seriesDoses;
         if (0 < count($this->targetDisease)) {
             $json['targetDisease'] = [];
             foreach($this->targetDisease as $targetDisease) {
-                $json['targetDisease'][] = json_encode($targetDisease);
+                $json['targetDisease'][] = $targetDisease;
             }
         }
-        if (null !== $this->doseStatus) $json['doseStatus'] = json_encode($this->doseStatus);
-        if (null !== $this->doseStatusReason) $json['doseStatusReason'] = json_encode($this->doseStatusReason);
+        if (null !== $this->doseStatus) $json['doseStatus'] = $this->doseStatus;
+        if (null !== $this->doseStatusReason) $json['doseStatusReason'] = $this->doseStatusReason;
         return $json;
     }
 

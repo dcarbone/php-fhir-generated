@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,9 +172,9 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement implements \JsonSe
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->state) $json['state'] = json_encode($this->state);
-        if (null !== $this->time) $json['time'] = json_encode($this->time);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->state) $json['state'] = $this->state;
+        if (null !== $this->time) $json['time'] = $this->time;
         return $json;
     }
 

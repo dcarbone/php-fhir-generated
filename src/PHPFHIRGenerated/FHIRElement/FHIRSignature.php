@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,13 +81,11 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     public $when = null;
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $whoUri = null;
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $whoReference = null;
@@ -150,7 +148,6 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getWhoUri()
@@ -159,7 +156,6 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $whoUri
      * @return $this
      */
@@ -170,7 +166,6 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getWhoReference()
@@ -179,7 +174,6 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A reference to an application-usable description of the person that signed the certificate (e.g. the signature used their private key). (choose any one of who*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $whoReference
      * @return $this
      */
@@ -254,14 +248,14 @@ class FHIRSignature extends FHIRElement implements \JsonSerializable
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
-        if (null !== $this->when) $json['when'] = json_encode($this->when);
-        if (null !== $this->whoUri) $json['whoUri'] = json_encode($this->whoUri);
-        if (null !== $this->whoReference) $json['whoReference'] = json_encode($this->whoReference);
-        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
-        if (null !== $this->blob) $json['blob'] = json_encode($this->blob);
+        if (null !== $this->when) $json['when'] = $this->when;
+        if (null !== $this->whoUri) $json['whoUri'] = $this->whoUri;
+        if (null !== $this->whoReference) $json['whoReference'] = $this->whoReference;
+        if (null !== $this->contentType) $json['contentType'] = $this->contentType;
+        if (null !== $this->blob) $json['blob'] = $this->blob;
         return $json;
     }
 

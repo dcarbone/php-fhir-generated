@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,19 +74,16 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     public $outcome = null;
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $probabilityDecimal = null;
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $probabilityRange = null;
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $probabilityCodeableConcept = null;
@@ -98,13 +95,11 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     public $relativeRisk = null;
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $whenPeriod = null;
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $whenRange = null;
@@ -141,7 +136,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getProbabilityDecimal()
@@ -150,7 +144,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $probabilityDecimal
      * @return $this
      */
@@ -161,7 +154,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getProbabilityRange()
@@ -170,7 +162,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $probabilityRange
      * @return $this
      */
@@ -181,7 +172,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getProbabilityCodeableConcept()
@@ -190,7 +180,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * How likely is the outcome (in the specified timeframe). (choose any one of probability*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $probabilityCodeableConcept
      * @return $this
      */
@@ -221,7 +210,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getWhenPeriod()
@@ -230,7 +218,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $whenPeriod
      * @return $this
      */
@@ -241,7 +228,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getWhenRange()
@@ -250,7 +236,6 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     }
 
     /**
-     * Indicates the period of time or age range of the subject to which the specified probability applies. (choose any one of when*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $whenRange
      * @return $this
      */
@@ -302,14 +287,14 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement implements \JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
-        if (null !== $this->probabilityDecimal) $json['probabilityDecimal'] = json_encode($this->probabilityDecimal);
-        if (null !== $this->probabilityRange) $json['probabilityRange'] = json_encode($this->probabilityRange);
-        if (null !== $this->probabilityCodeableConcept) $json['probabilityCodeableConcept'] = json_encode($this->probabilityCodeableConcept);
-        if (null !== $this->relativeRisk) $json['relativeRisk'] = json_encode($this->relativeRisk);
-        if (null !== $this->whenPeriod) $json['whenPeriod'] = json_encode($this->whenPeriod);
-        if (null !== $this->whenRange) $json['whenRange'] = json_encode($this->whenRange);
-        if (null !== $this->rationale) $json['rationale'] = json_encode($this->rationale);
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
+        if (null !== $this->probabilityDecimal) $json['probabilityDecimal'] = $this->probabilityDecimal;
+        if (null !== $this->probabilityRange) $json['probabilityRange'] = $this->probabilityRange;
+        if (null !== $this->probabilityCodeableConcept) $json['probabilityCodeableConcept'] = $this->probabilityCodeableConcept;
+        if (null !== $this->relativeRisk) $json['relativeRisk'] = $this->relativeRisk;
+        if (null !== $this->whenPeriod) $json['whenPeriod'] = $this->whenPeriod;
+        if (null !== $this->whenRange) $json['whenRange'] = $this->whenRange;
+        if (null !== $this->rationale) $json['rationale'] = $this->rationale;
         return $json;
     }
 

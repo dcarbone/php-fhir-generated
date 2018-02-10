@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -411,28 +411,28 @@ class FHIRAppointment extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
-        if (null !== $this->minutesDuration) $json['minutesDuration'] = json_encode($this->minutesDuration);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->reason) $json['reason'] = $this->reason;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->start) $json['start'] = $this->start;
+        if (null !== $this->end) $json['end'] = $this->end;
+        if (null !== $this->minutesDuration) $json['minutesDuration'] = $this->minutesDuration;
         if (0 < count($this->slot)) {
             $json['slot'] = [];
             foreach($this->slot as $slot) {
-                $json['slot'][] = json_encode($slot);
+                $json['slot'][] = $slot;
             }
         }
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->comment) $json['comment'] = $this->comment;
         if (0 < count($this->participant)) {
             $json['participant'] = [];
             foreach($this->participant as $participant) {
-                $json['participant'][] = json_encode($participant);
+                $json['participant'][] = $participant;
             }
         }
         return $json;

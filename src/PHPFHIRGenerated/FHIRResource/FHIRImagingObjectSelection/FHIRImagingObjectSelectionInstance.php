@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,13 +198,13 @@ class FHIRImagingObjectSelectionInstance extends FHIRBackboneElement implements 
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sopClass) $json['sopClass'] = json_encode($this->sopClass);
-        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->sopClass) $json['sopClass'] = $this->sopClass;
+        if (null !== $this->uid) $json['uid'] = $this->uid;
+        if (null !== $this->url) $json['url'] = $this->url;
         if (0 < count($this->frames)) {
             $json['frames'] = [];
             foreach($this->frames as $frames) {
-                $json['frames'][] = json_encode($frames);
+                $json['frames'][] = $frames;
             }
         }
         return $json;

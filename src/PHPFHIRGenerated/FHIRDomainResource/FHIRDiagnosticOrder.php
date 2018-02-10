@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -408,51 +408,51 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements \JsonSerializabl
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->orderer) $json['orderer'] = json_encode($this->orderer);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->orderer) $json['orderer'] = $this->orderer;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
         if (0 < count($this->reason)) {
             $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = json_encode($reason);
+                $json['reason'][] = $reason;
             }
         }
         if (0 < count($this->supportingInformation)) {
             $json['supportingInformation'] = [];
             foreach($this->supportingInformation as $supportingInformation) {
-                $json['supportingInformation'][] = json_encode($supportingInformation);
+                $json['supportingInformation'][] = $supportingInformation;
             }
         }
         if (0 < count($this->specimen)) {
             $json['specimen'] = [];
             foreach($this->specimen as $specimen) {
-                $json['specimen'][] = json_encode($specimen);
+                $json['specimen'][] = $specimen;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
         if (0 < count($this->event)) {
             $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = json_encode($event);
+                $json['event'][] = $event;
             }
         }
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                $json['item'][] = $item;
             }
         }
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

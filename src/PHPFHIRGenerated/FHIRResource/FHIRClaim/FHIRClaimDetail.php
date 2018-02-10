@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -354,19 +354,19 @@ class FHIRClaimDetail extends FHIRBackboneElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->service) $json['service'] = json_encode($this->service);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
-        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
-        if (null !== $this->points) $json['points'] = json_encode($this->points);
-        if (null !== $this->net) $json['net'] = json_encode($this->net);
-        if (null !== $this->udi) $json['udi'] = json_encode($this->udi);
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->service) $json['service'] = $this->service;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice;
+        if (null !== $this->factor) $json['factor'] = $this->factor;
+        if (null !== $this->points) $json['points'] = $this->points;
+        if (null !== $this->net) $json['net'] = $this->net;
+        if (null !== $this->udi) $json['udi'] = $this->udi;
         if (0 < count($this->subDetail)) {
             $json['subDetail'] = [];
             foreach($this->subDetail as $subDetail) {
-                $json['subDetail'][] = json_encode($subDetail);
+                $json['subDetail'][] = $subDetail;
             }
         }
         return $json;

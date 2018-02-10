@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -303,14 +303,14 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->contentType) $json['contentType'] = json_encode($this->contentType);
-        if (null !== $this->language) $json['language'] = json_encode($this->language);
-        if (null !== $this->data) $json['data'] = json_encode($this->data);
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->size) $json['size'] = json_encode($this->size);
-        if (null !== $this->hash) $json['hash'] = json_encode($this->hash);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->creation) $json['creation'] = json_encode($this->creation);
+        if (null !== $this->contentType) $json['contentType'] = $this->contentType;
+        if (null !== $this->language) $json['language'] = $this->language;
+        if (null !== $this->data) $json['data'] = $this->data;
+        if (null !== $this->url) $json['url'] = $this->url;
+        if (null !== $this->size) $json['size'] = $this->size;
+        if (null !== $this->hash) $json['hash'] = $this->hash;
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->creation) $json['creation'] = $this->creation;
         return $json;
     }
 

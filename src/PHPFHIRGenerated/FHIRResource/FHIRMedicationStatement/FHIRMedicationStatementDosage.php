@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,29 +82,21 @@ class FHIRMedicationStatementDosage extends FHIRBackboneElement implements \Json
     public $timing = null;
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).  
-
-Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule. (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $asNeededBoolean = null;
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).  
-
-Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule. (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $asNeededCodeableConcept = null;
 
     /**
-     * A coded specification of or a reference to the anatomic site where the medication first enters the body. (choose any one of site*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $siteCodeableConcept = null;
 
     /**
-     * A coded specification of or a reference to the anatomic site where the medication first enters the body. (choose any one of site*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $siteReference = null;
@@ -122,25 +114,21 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     public $method = null;
 
     /**
-     * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $quantityQuantity = null;
 
     /**
-     * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $quantityRange = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $rateRange = null;
@@ -197,9 +185,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).  
-
-Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule. (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean()
@@ -208,9 +193,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).  
-
-Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule. (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return $this
      */
@@ -221,9 +203,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).  
-
-Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule. (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept()
@@ -232,9 +211,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Indicates whether the Medication is only taken when needed within a specific dosing schedule (Boolean option), or it indicates the precondition for taking the Medication (CodeableConcept).  
-
-Specifically if 'boolean' datatype is selected, then the following logic applies:  If set to True, this indicates that the medication is only taken when needed, within the specified schedule. (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return $this
      */
@@ -245,7 +221,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * A coded specification of or a reference to the anatomic site where the medication first enters the body. (choose any one of site*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getSiteCodeableConcept()
@@ -254,7 +229,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * A coded specification of or a reference to the anatomic site where the medication first enters the body. (choose any one of site*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $siteCodeableConcept
      * @return $this
      */
@@ -265,7 +239,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * A coded specification of or a reference to the anatomic site where the medication first enters the body. (choose any one of site*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSiteReference()
@@ -274,7 +247,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * A coded specification of or a reference to the anatomic site where the medication first enters the body. (choose any one of site*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $siteReference
      * @return $this
      */
@@ -325,7 +297,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getQuantityQuantity()
@@ -334,7 +305,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantityQuantity
      * @return $this
      */
@@ -345,7 +315,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getQuantityRange()
@@ -354,7 +323,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * The amount of therapeutic or other substance given at one administration event. (choose any one of quantity*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $quantityRange
      * @return $this
      */
@@ -365,7 +333,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
@@ -374,7 +341,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
@@ -385,7 +351,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getRateRange()
@@ -394,7 +359,6 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     }
 
     /**
-     * Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Currently we do not specify a default of '1' in the denominator, but this is being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $rateRange
      * @return $this
      */
@@ -446,19 +410,19 @@ Specifically if 'boolean' datatype is selected, then the following logic applies
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->timing) $json['timing'] = json_encode($this->timing);
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
-        if (null !== $this->siteCodeableConcept) $json['siteCodeableConcept'] = json_encode($this->siteCodeableConcept);
-        if (null !== $this->siteReference) $json['siteReference'] = json_encode($this->siteReference);
-        if (null !== $this->route) $json['route'] = json_encode($this->route);
-        if (null !== $this->method) $json['method'] = json_encode($this->method);
-        if (null !== $this->quantityQuantity) $json['quantityQuantity'] = json_encode($this->quantityQuantity);
-        if (null !== $this->quantityRange) $json['quantityRange'] = json_encode($this->quantityRange);
-        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
-        if (null !== $this->rateRange) $json['rateRange'] = json_encode($this->rateRange);
-        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = json_encode($this->maxDosePerPeriod);
+        if (null !== $this->text) $json['text'] = $this->text;
+        if (null !== $this->timing) $json['timing'] = $this->timing;
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean;
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept;
+        if (null !== $this->siteCodeableConcept) $json['siteCodeableConcept'] = $this->siteCodeableConcept;
+        if (null !== $this->siteReference) $json['siteReference'] = $this->siteReference;
+        if (null !== $this->route) $json['route'] = $this->route;
+        if (null !== $this->method) $json['method'] = $this->method;
+        if (null !== $this->quantityQuantity) $json['quantityQuantity'] = $this->quantityQuantity;
+        if (null !== $this->quantityRange) $json['quantityRange'] = $this->quantityRange;
+        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio;
+        if (null !== $this->rateRange) $json['rateRange'] = $this->rateRange;
+        if (null !== $this->maxDosePerPeriod) $json['maxDosePerPeriod'] = $this->maxDosePerPeriod;
         return $json;
     }
 

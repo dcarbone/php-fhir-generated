@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,19 +302,19 @@ class FHIRClaimCoverage extends FHIRBackboneElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->focal) $json['focal'] = json_encode($this->focal);
-        if (null !== $this->coverage) $json['coverage'] = json_encode($this->coverage);
-        if (null !== $this->businessArrangement) $json['businessArrangement'] = json_encode($this->businessArrangement);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
+        if (null !== $this->focal) $json['focal'] = $this->focal;
+        if (null !== $this->coverage) $json['coverage'] = $this->coverage;
+        if (null !== $this->businessArrangement) $json['businessArrangement'] = $this->businessArrangement;
+        if (null !== $this->relationship) $json['relationship'] = $this->relationship;
         if (0 < count($this->preAuthRef)) {
             $json['preAuthRef'] = [];
             foreach($this->preAuthRef as $preAuthRef) {
-                $json['preAuthRef'][] = json_encode($preAuthRef);
+                $json['preAuthRef'][] = $preAuthRef;
             }
         }
-        if (null !== $this->claimResponse) $json['claimResponse'] = json_encode($this->claimResponse);
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
+        if (null !== $this->claimResponse) $json['claimResponse'] = $this->claimResponse;
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,25 +147,21 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     public $copyright = null;
 
     /**
-     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $sourceUri = null;
 
     /**
-     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $sourceReference = null;
 
     /**
-     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $targetUri = null;
 
     /**
-     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $targetReference = null;
@@ -442,7 +438,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getSourceUri()
@@ -451,7 +446,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $sourceUri
      * @return $this
      */
@@ -462,7 +456,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getSourceReference()
@@ -471,7 +464,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The source value set that specifies the concepts that are being mapped. (choose any one of source*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $sourceReference
      * @return $this
      */
@@ -482,7 +474,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getTargetUri()
@@ -491,7 +482,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $targetUri
      * @return $this
      */
@@ -502,7 +492,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getTargetReference()
@@ -511,7 +500,6 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * The target value set provides context to the mappings. Note that the mapping is made between concepts, not between value sets, but the value set provides important context about how the concept mapping choices are made. (choose any one of target*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $targetReference
      * @return $this
      */
@@ -564,37 +552,37 @@ class FHIRConceptMap extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (null !== $this->url) $json['url'] = $this->url;
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                $json['useContext'][] = $useContext;
             }
         }
-        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
-        if (null !== $this->sourceUri) $json['sourceUri'] = json_encode($this->sourceUri);
-        if (null !== $this->sourceReference) $json['sourceReference'] = json_encode($this->sourceReference);
-        if (null !== $this->targetUri) $json['targetUri'] = json_encode($this->targetUri);
-        if (null !== $this->targetReference) $json['targetReference'] = json_encode($this->targetReference);
+        if (null !== $this->requirements) $json['requirements'] = $this->requirements;
+        if (null !== $this->copyright) $json['copyright'] = $this->copyright;
+        if (null !== $this->sourceUri) $json['sourceUri'] = $this->sourceUri;
+        if (null !== $this->sourceReference) $json['sourceReference'] = $this->sourceReference;
+        if (null !== $this->targetUri) $json['targetUri'] = $this->targetUri;
+        if (null !== $this->targetReference) $json['targetReference'] = $this->targetReference;
         if (0 < count($this->element)) {
             $json['element'] = [];
             foreach($this->element as $element) {
-                $json['element'][] = json_encode($element);
+                $json['element'][] = $element;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -850,78 +850,78 @@ class FHIRClaim extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->type) $json['type'] = $this->type;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
-        if (null !== $this->target) $json['target'] = json_encode($this->target);
-        if (null !== $this->provider) $json['provider'] = json_encode($this->provider);
-        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
-        if (null !== $this->use) $json['use'] = json_encode($this->use);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
-        if (null !== $this->fundsReserve) $json['fundsReserve'] = json_encode($this->fundsReserve);
-        if (null !== $this->enterer) $json['enterer'] = json_encode($this->enterer);
-        if (null !== $this->facility) $json['facility'] = json_encode($this->facility);
-        if (null !== $this->prescription) $json['prescription'] = json_encode($this->prescription);
-        if (null !== $this->originalPrescription) $json['originalPrescription'] = json_encode($this->originalPrescription);
-        if (null !== $this->payee) $json['payee'] = json_encode($this->payee);
-        if (null !== $this->referral) $json['referral'] = json_encode($this->referral);
+        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset;
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset;
+        if (null !== $this->created) $json['created'] = $this->created;
+        if (null !== $this->target) $json['target'] = $this->target;
+        if (null !== $this->provider) $json['provider'] = $this->provider;
+        if (null !== $this->organization) $json['organization'] = $this->organization;
+        if (null !== $this->use) $json['use'] = $this->use;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
+        if (null !== $this->fundsReserve) $json['fundsReserve'] = $this->fundsReserve;
+        if (null !== $this->enterer) $json['enterer'] = $this->enterer;
+        if (null !== $this->facility) $json['facility'] = $this->facility;
+        if (null !== $this->prescription) $json['prescription'] = $this->prescription;
+        if (null !== $this->originalPrescription) $json['originalPrescription'] = $this->originalPrescription;
+        if (null !== $this->payee) $json['payee'] = $this->payee;
+        if (null !== $this->referral) $json['referral'] = $this->referral;
         if (0 < count($this->diagnosis)) {
             $json['diagnosis'] = [];
             foreach($this->diagnosis as $diagnosis) {
-                $json['diagnosis'][] = json_encode($diagnosis);
+                $json['diagnosis'][] = $diagnosis;
             }
         }
         if (0 < count($this->condition)) {
             $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = json_encode($condition);
+                $json['condition'][] = $condition;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
         if (0 < count($this->coverage)) {
             $json['coverage'] = [];
             foreach($this->coverage as $coverage) {
-                $json['coverage'][] = json_encode($coverage);
+                $json['coverage'][] = $coverage;
             }
         }
         if (0 < count($this->exception)) {
             $json['exception'] = [];
             foreach($this->exception as $exception) {
-                $json['exception'][] = json_encode($exception);
+                $json['exception'][] = $exception;
             }
         }
-        if (null !== $this->school) $json['school'] = json_encode($this->school);
-        if (null !== $this->accident) $json['accident'] = json_encode($this->accident);
-        if (null !== $this->accidentType) $json['accidentType'] = json_encode($this->accidentType);
+        if (null !== $this->school) $json['school'] = $this->school;
+        if (null !== $this->accident) $json['accident'] = $this->accident;
+        if (null !== $this->accidentType) $json['accidentType'] = $this->accidentType;
         if (0 < count($this->interventionException)) {
             $json['interventionException'] = [];
             foreach($this->interventionException as $interventionException) {
-                $json['interventionException'][] = json_encode($interventionException);
+                $json['interventionException'][] = $interventionException;
             }
         }
         if (0 < count($this->item)) {
             $json['item'] = [];
             foreach($this->item as $item) {
-                $json['item'][] = json_encode($item);
+                $json['item'][] = $item;
             }
         }
         if (0 < count($this->additionalMaterials)) {
             $json['additionalMaterials'] = [];
             foreach($this->additionalMaterials as $additionalMaterials) {
-                $json['additionalMaterials'][] = json_encode($additionalMaterials);
+                $json['additionalMaterials'][] = $additionalMaterials;
             }
         }
         if (0 < count($this->missingTeeth)) {
             $json['missingTeeth'] = [];
             foreach($this->missingTeeth as $missingTeeth) {
-                $json['missingTeeth'][] = json_encode($missingTeeth);
+                $json['missingTeeth'][] = $missingTeeth;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,13 +198,13 @@ class FHIRTestScriptTest extends FHIRBackboneElement implements \JsonSerializabl
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->metadata) $json['metadata'] = json_encode($this->metadata);
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->metadata) $json['metadata'] = $this->metadata;
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         return $json;

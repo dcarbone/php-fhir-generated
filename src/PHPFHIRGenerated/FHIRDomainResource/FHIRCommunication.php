@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -437,41 +437,41 @@ class FHIRCommunication extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->sender) $json['sender'] = json_encode($this->sender);
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->sender) $json['sender'] = $this->sender;
         if (0 < count($this->recipient)) {
             $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = json_encode($recipient);
+                $json['recipient'][] = $recipient;
             }
         }
         if (0 < count($this->payload)) {
             $json['payload'] = [];
             foreach($this->payload as $payload) {
-                $json['payload'][] = json_encode($payload);
+                $json['payload'][] = $payload;
             }
         }
         if (0 < count($this->medium)) {
             $json['medium'] = [];
             foreach($this->medium as $medium) {
-                $json['medium'][] = json_encode($medium);
+                $json['medium'][] = $medium;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->sent) $json['sent'] = json_encode($this->sent);
-        if (null !== $this->received) $json['received'] = json_encode($this->received);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->sent) $json['sent'] = $this->sent;
+        if (null !== $this->received) $json['received'] = $this->received;
         if (0 < count($this->reason)) {
             $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = json_encode($reason);
+                $json['reason'][] = $reason;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->requestDetail) $json['requestDetail'] = json_encode($this->requestDetail);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->requestDetail) $json['requestDetail'] = $this->requestDetail;
         return $json;
     }
 

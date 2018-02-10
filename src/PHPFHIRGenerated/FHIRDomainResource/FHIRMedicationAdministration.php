@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,25 +123,21 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     public $reasonGiven = array();
 
     /**
-     * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate. (choose any one of effectiveTime*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $effectiveTimeDateTime = null;
 
     /**
-     * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate. (choose any one of effectiveTime*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectiveTimePeriod = null;
 
     /**
-     * Identifies the medication that was administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $medicationCodeableConcept = null;
 
     /**
-     * Identifies the medication that was administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $medicationReference = null;
@@ -350,7 +346,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate. (choose any one of effectiveTime*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getEffectiveTimeDateTime()
@@ -359,7 +354,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate. (choose any one of effectiveTime*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $effectiveTimeDateTime
      * @return $this
      */
@@ -370,7 +364,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate. (choose any one of effectiveTime*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectiveTimePeriod()
@@ -379,7 +372,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate. (choose any one of effectiveTime*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectiveTimePeriod
      * @return $this
      */
@@ -390,7 +382,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * Identifies the medication that was administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getMedicationCodeableConcept()
@@ -399,7 +390,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * Identifies the medication that was administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return $this
      */
@@ -410,7 +400,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * Identifies the medication that was administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getMedicationReference()
@@ -419,7 +408,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
     }
 
     /**
-     * Identifies the medication that was administered. This is either a link to a resource representing the details of the medication or a simple attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $medicationReference
      * @return $this
      */
@@ -515,39 +503,39 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements \JsonSe
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->practitioner) $json['practitioner'] = json_encode($this->practitioner);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->prescription) $json['prescription'] = json_encode($this->prescription);
-        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = json_encode($this->wasNotGiven);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->practitioner) $json['practitioner'] = $this->practitioner;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->prescription) $json['prescription'] = $this->prescription;
+        if (null !== $this->wasNotGiven) $json['wasNotGiven'] = $this->wasNotGiven;
         if (0 < count($this->reasonNotGiven)) {
             $json['reasonNotGiven'] = [];
             foreach($this->reasonNotGiven as $reasonNotGiven) {
-                $json['reasonNotGiven'][] = json_encode($reasonNotGiven);
+                $json['reasonNotGiven'][] = $reasonNotGiven;
             }
         }
         if (0 < count($this->reasonGiven)) {
             $json['reasonGiven'] = [];
             foreach($this->reasonGiven as $reasonGiven) {
-                $json['reasonGiven'][] = json_encode($reasonGiven);
+                $json['reasonGiven'][] = $reasonGiven;
             }
         }
-        if (null !== $this->effectiveTimeDateTime) $json['effectiveTimeDateTime'] = json_encode($this->effectiveTimeDateTime);
-        if (null !== $this->effectiveTimePeriod) $json['effectiveTimePeriod'] = json_encode($this->effectiveTimePeriod);
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
-        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
+        if (null !== $this->effectiveTimeDateTime) $json['effectiveTimeDateTime'] = $this->effectiveTimeDateTime;
+        if (null !== $this->effectiveTimePeriod) $json['effectiveTimePeriod'] = $this->effectiveTimePeriod;
+        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept;
+        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference;
         if (0 < count($this->device)) {
             $json['device'] = [];
             foreach($this->device as $device) {
-                $json['device'][] = json_encode($device);
+                $json['device'][] = $device;
             }
         }
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
-        if (null !== $this->dosage) $json['dosage'] = json_encode($this->dosage);
+        if (null !== $this->note) $json['note'] = $this->note;
+        if (null !== $this->dosage) $json['dosage'] = $this->dosage;
         return $json;
     }
 

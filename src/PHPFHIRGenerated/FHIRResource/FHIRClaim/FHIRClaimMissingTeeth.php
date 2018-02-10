@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,9 +172,9 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->tooth) $json['tooth'] = json_encode($this->tooth);
-        if (null !== $this->reason) $json['reason'] = json_encode($this->reason);
-        if (null !== $this->extractionDate) $json['extractionDate'] = json_encode($this->extractionDate);
+        if (null !== $this->tooth) $json['tooth'] = $this->tooth;
+        if (null !== $this->reason) $json['reason'] = $this->reason;
+        if (null !== $this->extractionDate) $json['extractionDate'] = $this->extractionDate;
         return $json;
     }
 

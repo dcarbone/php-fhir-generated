@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -307,16 +307,16 @@ class FHIRSlot extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->schedule) $json['schedule'] = json_encode($this->schedule);
-        if (null !== $this->freeBusyType) $json['freeBusyType'] = json_encode($this->freeBusyType);
-        if (null !== $this->start) $json['start'] = json_encode($this->start);
-        if (null !== $this->end) $json['end'] = json_encode($this->end);
-        if (null !== $this->overbooked) $json['overbooked'] = json_encode($this->overbooked);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->schedule) $json['schedule'] = $this->schedule;
+        if (null !== $this->freeBusyType) $json['freeBusyType'] = $this->freeBusyType;
+        if (null !== $this->start) $json['start'] = $this->start;
+        if (null !== $this->end) $json['end'] = $this->end;
+        if (null !== $this->overbooked) $json['overbooked'] = $this->overbooked;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
         return $json;
     }
 

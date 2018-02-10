@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -671,75 +671,75 @@ class FHIRHealthcareService extends FHIRDomainResource implements \JsonSerializa
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->providedBy) $json['providedBy'] = json_encode($this->providedBy);
-        if (null !== $this->serviceCategory) $json['serviceCategory'] = json_encode($this->serviceCategory);
+        if (null !== $this->providedBy) $json['providedBy'] = $this->providedBy;
+        if (null !== $this->serviceCategory) $json['serviceCategory'] = $this->serviceCategory;
         if (0 < count($this->serviceType)) {
             $json['serviceType'] = [];
             foreach($this->serviceType as $serviceType) {
-                $json['serviceType'][] = json_encode($serviceType);
+                $json['serviceType'][] = $serviceType;
             }
         }
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (null !== $this->serviceName) $json['serviceName'] = json_encode($this->serviceName);
-        if (null !== $this->comment) $json['comment'] = json_encode($this->comment);
-        if (null !== $this->extraDetails) $json['extraDetails'] = json_encode($this->extraDetails);
-        if (null !== $this->photo) $json['photo'] = json_encode($this->photo);
+        if (null !== $this->location) $json['location'] = $this->location;
+        if (null !== $this->serviceName) $json['serviceName'] = $this->serviceName;
+        if (null !== $this->comment) $json['comment'] = $this->comment;
+        if (null !== $this->extraDetails) $json['extraDetails'] = $this->extraDetails;
+        if (null !== $this->photo) $json['photo'] = $this->photo;
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
         if (0 < count($this->coverageArea)) {
             $json['coverageArea'] = [];
             foreach($this->coverageArea as $coverageArea) {
-                $json['coverageArea'][] = json_encode($coverageArea);
+                $json['coverageArea'][] = $coverageArea;
             }
         }
         if (0 < count($this->serviceProvisionCode)) {
             $json['serviceProvisionCode'] = [];
             foreach($this->serviceProvisionCode as $serviceProvisionCode) {
-                $json['serviceProvisionCode'][] = json_encode($serviceProvisionCode);
+                $json['serviceProvisionCode'][] = $serviceProvisionCode;
             }
         }
-        if (null !== $this->eligibility) $json['eligibility'] = json_encode($this->eligibility);
-        if (null !== $this->eligibilityNote) $json['eligibilityNote'] = json_encode($this->eligibilityNote);
+        if (null !== $this->eligibility) $json['eligibility'] = $this->eligibility;
+        if (null !== $this->eligibilityNote) $json['eligibilityNote'] = $this->eligibilityNote;
         if (0 < count($this->programName)) {
             $json['programName'] = [];
             foreach($this->programName as $programName) {
-                $json['programName'][] = json_encode($programName);
+                $json['programName'][] = $programName;
             }
         }
         if (0 < count($this->characteristic)) {
             $json['characteristic'] = [];
             foreach($this->characteristic as $characteristic) {
-                $json['characteristic'][] = json_encode($characteristic);
+                $json['characteristic'][] = $characteristic;
             }
         }
         if (0 < count($this->referralMethod)) {
             $json['referralMethod'] = [];
             foreach($this->referralMethod as $referralMethod) {
-                $json['referralMethod'][] = json_encode($referralMethod);
+                $json['referralMethod'][] = $referralMethod;
             }
         }
-        if (null !== $this->publicKey) $json['publicKey'] = json_encode($this->publicKey);
-        if (null !== $this->appointmentRequired) $json['appointmentRequired'] = json_encode($this->appointmentRequired);
+        if (null !== $this->publicKey) $json['publicKey'] = $this->publicKey;
+        if (null !== $this->appointmentRequired) $json['appointmentRequired'] = $this->appointmentRequired;
         if (0 < count($this->availableTime)) {
             $json['availableTime'] = [];
             foreach($this->availableTime as $availableTime) {
-                $json['availableTime'][] = json_encode($availableTime);
+                $json['availableTime'][] = $availableTime;
             }
         }
         if (0 < count($this->notAvailable)) {
             $json['notAvailable'] = [];
             foreach($this->notAvailable as $notAvailable) {
-                $json['notAvailable'][] = json_encode($notAvailable);
+                $json['notAvailable'][] = $notAvailable;
             }
         }
-        if (null !== $this->availabilityExceptions) $json['availabilityExceptions'] = json_encode($this->availabilityExceptions);
+        if (null !== $this->availabilityExceptions) $json['availabilityExceptions'] = $this->availabilityExceptions;
         return $json;
     }
 

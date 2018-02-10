@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,61 +74,51 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     public $code = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $valueRatio = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $valueSampledData = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $valuePeriod = null;
@@ -171,7 +161,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -180,7 +169,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
@@ -191,7 +179,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -200,7 +187,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
@@ -211,7 +197,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -220,7 +205,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -231,7 +215,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
@@ -240,7 +223,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
@@ -251,7 +233,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getValueRatio()
@@ -260,7 +241,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $valueRatio
      * @return $this
      */
@@ -271,7 +251,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData()
@@ -280,7 +259,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $valueSampledData
      * @return $this
      */
@@ -291,7 +269,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -300,7 +277,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
@@ -311,7 +287,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -320,7 +295,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
@@ -331,7 +305,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -340,7 +313,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
@@ -351,7 +323,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
@@ -360,7 +331,6 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     }
 
     /**
-     * The information determined as a result of making the observation, if the information has a simple value. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $valuePeriod
      * @return $this
      */
@@ -432,22 +402,22 @@ class FHIRObservationComponent extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
-        if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
-        if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
-        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
-        if (null !== $this->dataAbsentReason) $json['dataAbsentReason'] = json_encode($this->dataAbsentReason);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity;
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept;
+        if (null !== $this->valueString) $json['valueString'] = $this->valueString;
+        if (null !== $this->valueRange) $json['valueRange'] = $this->valueRange;
+        if (null !== $this->valueRatio) $json['valueRatio'] = $this->valueRatio;
+        if (null !== $this->valueSampledData) $json['valueSampledData'] = $this->valueSampledData;
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment;
+        if (null !== $this->valueTime) $json['valueTime'] = $this->valueTime;
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime;
+        if (null !== $this->valuePeriod) $json['valuePeriod'] = $this->valuePeriod;
+        if (null !== $this->dataAbsentReason) $json['dataAbsentReason'] = $this->dataAbsentReason;
         if (0 < count($this->referenceRange)) {
             $json['referenceRange'] = [];
             foreach($this->referenceRange as $referenceRange) {
-                $json['referenceRange'][] = json_encode($referenceRange);
+                $json['referenceRange'][] = $referenceRange;
             }
         }
         return $json;

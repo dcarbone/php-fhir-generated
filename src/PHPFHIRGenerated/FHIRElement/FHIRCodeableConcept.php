@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,10 +150,10 @@ class FHIRCodeableConcept extends FHIRElement implements \JsonSerializable
         if (0 < count($this->coding)) {
             $json['coding'] = [];
             foreach($this->coding as $coding) {
-                $json['coding'][] = json_encode($coding);
+                $json['coding'][] = $coding;
             }
         }
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
+        if (null !== $this->text) $json['text'] = $this->text;
         return $json;
     }
 

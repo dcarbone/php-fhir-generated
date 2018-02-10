@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -356,24 +356,24 @@ class FHIRDetectedIssue extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->severity) $json['severity'] = $this->severity;
         if (0 < count($this->implicated)) {
             $json['implicated'] = [];
             foreach($this->implicated as $implicated) {
-                $json['implicated'][] = json_encode($implicated);
+                $json['implicated'][] = $implicated;
             }
         }
-        if (null !== $this->detail) $json['detail'] = json_encode($this->detail);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->reference) $json['reference'] = json_encode($this->reference);
+        if (null !== $this->detail) $json['detail'] = $this->detail;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->author) $json['author'] = $this->author;
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->reference) $json['reference'] = $this->reference;
         if (0 < count($this->mitigation)) {
             $json['mitigation'] = [];
             foreach($this->mitigation as $mitigation) {
-                $json['mitigation'][] = json_encode($mitigation);
+                $json['mitigation'][] = $mitigation;
             }
         }
         return $json;

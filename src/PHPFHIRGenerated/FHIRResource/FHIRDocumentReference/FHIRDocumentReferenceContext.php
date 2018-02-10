@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,21 +276,21 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement implements \JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
         if (0 < count($this->event)) {
             $json['event'] = [];
             foreach($this->event as $event) {
-                $json['event'][] = json_encode($event);
+                $json['event'][] = $event;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->facilityType) $json['facilityType'] = json_encode($this->facilityType);
-        if (null !== $this->practiceSetting) $json['practiceSetting'] = json_encode($this->practiceSetting);
-        if (null !== $this->sourcePatientInfo) $json['sourcePatientInfo'] = json_encode($this->sourcePatientInfo);
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->facilityType) $json['facilityType'] = $this->facilityType;
+        if (null !== $this->practiceSetting) $json['practiceSetting'] = $this->practiceSetting;
+        if (null !== $this->sourcePatientInfo) $json['sourcePatientInfo'] = $this->sourcePatientInfo;
         if (0 < count($this->related)) {
             $json['related'] = [];
             foreach($this->related as $related) {
-                $json['related'][] = json_encode($related);
+                $json['related'][] = $related;
             }
         }
         return $json;

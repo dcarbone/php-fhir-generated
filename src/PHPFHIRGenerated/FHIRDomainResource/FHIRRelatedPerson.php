@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -359,33 +359,33 @@ class FHIRRelatedPerson extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->relationship) $json['relationship'] = json_encode($this->relationship);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->relationship) $json['relationship'] = $this->relationship;
+        if (null !== $this->name) $json['name'] = $this->name;
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
-        if (null !== $this->gender) $json['gender'] = json_encode($this->gender);
-        if (null !== $this->birthDate) $json['birthDate'] = json_encode($this->birthDate);
+        if (null !== $this->gender) $json['gender'] = $this->gender;
+        if (null !== $this->birthDate) $json['birthDate'] = $this->birthDate;
         if (0 < count($this->address)) {
             $json['address'] = [];
             foreach($this->address as $address) {
-                $json['address'][] = json_encode($address);
+                $json['address'][] = $address;
             }
         }
         if (0 < count($this->photo)) {
             $json['photo'] = [];
             foreach($this->photo as $photo) {
-                $json['photo'][] = json_encode($photo);
+                $json['photo'][] = $photo;
             }
         }
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
+        if (null !== $this->period) $json['period'] = $this->period;
         return $json;
     }
 

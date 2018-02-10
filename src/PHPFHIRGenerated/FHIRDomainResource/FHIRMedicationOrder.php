@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,13 +117,11 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     public $encounter = null;
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCodeableConcept = null;
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
@@ -135,13 +133,11 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     public $note = null;
 
     /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $medicationCodeableConcept = null;
 
     /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $medicationReference = null;
@@ -336,7 +332,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept()
@@ -345,7 +340,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
@@ -356,7 +350,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -365,7 +358,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Can be the reason or the indication for writing the prescription. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
@@ -396,7 +388,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getMedicationCodeableConcept()
@@ -405,7 +396,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
      * @return $this
      */
@@ -416,7 +406,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getMedicationReference()
@@ -425,7 +414,6 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
     }
 
     /**
-     * Identifies the medication being administered. This is a link to a resource that represents the medication which may be the details of the medication or simply an attribute carrying a code that identifies the medication from a known list of medications. (choose any one of medication*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $medicationReference
      * @return $this
      */
@@ -541,30 +529,30 @@ class FHIRMedicationOrder extends FHIRDomainResource implements \JsonSerializabl
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->dateWritten) $json['dateWritten'] = json_encode($this->dateWritten);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->dateEnded) $json['dateEnded'] = json_encode($this->dateEnded);
-        if (null !== $this->reasonEnded) $json['reasonEnded'] = json_encode($this->reasonEnded);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->prescriber) $json['prescriber'] = json_encode($this->prescriber);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
-        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = json_encode($this->medicationCodeableConcept);
-        if (null !== $this->medicationReference) $json['medicationReference'] = json_encode($this->medicationReference);
+        if (null !== $this->dateWritten) $json['dateWritten'] = $this->dateWritten;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->dateEnded) $json['dateEnded'] = $this->dateEnded;
+        if (null !== $this->reasonEnded) $json['reasonEnded'] = $this->reasonEnded;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->prescriber) $json['prescriber'] = $this->prescriber;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference;
+        if (null !== $this->note) $json['note'] = $this->note;
+        if (null !== $this->medicationCodeableConcept) $json['medicationCodeableConcept'] = $this->medicationCodeableConcept;
+        if (null !== $this->medicationReference) $json['medicationReference'] = $this->medicationReference;
         if (0 < count($this->dosageInstruction)) {
             $json['dosageInstruction'] = [];
             foreach($this->dosageInstruction as $dosageInstruction) {
-                $json['dosageInstruction'][] = json_encode($dosageInstruction);
+                $json['dosageInstruction'][] = $dosageInstruction;
             }
         }
-        if (null !== $this->dispenseRequest) $json['dispenseRequest'] = json_encode($this->dispenseRequest);
-        if (null !== $this->substitution) $json['substitution'] = json_encode($this->substitution);
-        if (null !== $this->priorPrescription) $json['priorPrescription'] = json_encode($this->priorPrescription);
+        if (null !== $this->dispenseRequest) $json['dispenseRequest'] = $this->dispenseRequest;
+        if (null !== $this->substitution) $json['substitution'] = $this->substitution;
+        if (null !== $this->priorPrescription) $json['priorPrescription'] = $this->priorPrescription;
         return $json;
     }
 

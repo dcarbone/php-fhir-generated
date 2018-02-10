@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -278,16 +278,16 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements \JsonSeri
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->uid) $json['uid'] = json_encode($this->uid);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->title) $json['title'] = json_encode($this->title);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->author) $json['author'] = json_encode($this->author);
-        if (null !== $this->authoringTime) $json['authoringTime'] = json_encode($this->authoringTime);
+        if (null !== $this->uid) $json['uid'] = $this->uid;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->title) $json['title'] = $this->title;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->author) $json['author'] = $this->author;
+        if (null !== $this->authoringTime) $json['authoringTime'] = $this->authoringTime;
         if (0 < count($this->study)) {
             $json['study'] = [];
             foreach($this->study as $study) {
-                $json['study'][] = json_encode($study);
+                $json['study'][] = $study;
             }
         }
         return $json;

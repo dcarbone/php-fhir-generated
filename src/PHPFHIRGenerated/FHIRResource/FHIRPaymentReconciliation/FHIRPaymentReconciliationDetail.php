@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,13 +276,13 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (null !== $this->responce) $json['responce'] = json_encode($this->responce);
-        if (null !== $this->submitter) $json['submitter'] = json_encode($this->submitter);
-        if (null !== $this->payee) $json['payee'] = json_encode($this->payee);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->amount) $json['amount'] = json_encode($this->amount);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->request) $json['request'] = $this->request;
+        if (null !== $this->responce) $json['responce'] = $this->responce;
+        if (null !== $this->submitter) $json['submitter'] = $this->submitter;
+        if (null !== $this->payee) $json['payee'] = $this->payee;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->amount) $json['amount'] = $this->amount;
         return $json;
     }
 

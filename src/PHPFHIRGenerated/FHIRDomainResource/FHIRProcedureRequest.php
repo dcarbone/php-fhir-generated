@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,31 +93,26 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     public $bodySite = array();
 
     /**
-     * The reason why the procedure is being proposed or ordered. This procedure request may be motivated by a Condition for instance. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCodeableConcept = null;
 
     /**
-     * The reason why the procedure is being proposed or ordered. This procedure request may be motivated by a Condition for instance. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $scheduledDateTime = null;
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $scheduledPeriod = null;
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $scheduledTiming = null;
@@ -147,13 +142,11 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     public $notes = array();
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure. (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $asNeededBoolean = null;
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure. (choose any one of asNeeded*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $asNeededCodeableConcept = null;
@@ -262,7 +255,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The reason why the procedure is being proposed or ordered. This procedure request may be motivated by a Condition for instance. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept()
@@ -271,7 +263,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The reason why the procedure is being proposed or ordered. This procedure request may be motivated by a Condition for instance. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
@@ -282,7 +273,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The reason why the procedure is being proposed or ordered. This procedure request may be motivated by a Condition for instance. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -291,7 +281,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The reason why the procedure is being proposed or ordered. This procedure request may be motivated by a Condition for instance. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
@@ -302,7 +291,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getScheduledDateTime()
@@ -311,7 +299,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $scheduledDateTime
      * @return $this
      */
@@ -322,7 +309,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getScheduledPeriod()
@@ -331,7 +317,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $scheduledPeriod
      * @return $this
      */
@@ -342,7 +327,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getScheduledTiming()
@@ -351,7 +335,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the proposed or ordered procedure. The Schedule data type allows many different expressions.  E.g. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $scheduledTiming
      * @return $this
      */
@@ -442,7 +425,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure. (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getAsNeededBoolean()
@@ -451,7 +433,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure. (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $asNeededBoolean
      * @return $this
      */
@@ -462,7 +443,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure. (choose any one of asNeeded*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getAsNeededCodeableConcept()
@@ -471,7 +451,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * If a CodeableConcept is present, it indicates the pre-condition for performing the procedure. (choose any one of asNeeded*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $asNeededCodeableConcept
      * @return $this
      */
@@ -567,36 +546,36 @@ class FHIRProcedureRequest extends FHIRDomainResource implements \JsonSerializab
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->code) $json['code'] = $this->code;
         if (0 < count($this->bodySite)) {
             $json['bodySite'] = [];
             foreach($this->bodySite as $bodySite) {
-                $json['bodySite'][] = json_encode($bodySite);
+                $json['bodySite'][] = $bodySite;
             }
         }
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
-        if (null !== $this->scheduledDateTime) $json['scheduledDateTime'] = json_encode($this->scheduledDateTime);
-        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = json_encode($this->scheduledPeriod);
-        if (null !== $this->scheduledTiming) $json['scheduledTiming'] = json_encode($this->scheduledTiming);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference;
+        if (null !== $this->scheduledDateTime) $json['scheduledDateTime'] = $this->scheduledDateTime;
+        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = $this->scheduledPeriod;
+        if (null !== $this->scheduledTiming) $json['scheduledTiming'] = $this->scheduledTiming;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->performer) $json['performer'] = $this->performer;
+        if (null !== $this->status) $json['status'] = $this->status;
         if (0 < count($this->notes)) {
             $json['notes'] = [];
             foreach($this->notes as $notes) {
-                $json['notes'][] = json_encode($notes);
+                $json['notes'][] = $notes;
             }
         }
-        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = json_encode($this->asNeededBoolean);
-        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = json_encode($this->asNeededCodeableConcept);
-        if (null !== $this->orderedOn) $json['orderedOn'] = json_encode($this->orderedOn);
-        if (null !== $this->orderer) $json['orderer'] = json_encode($this->orderer);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->asNeededBoolean) $json['asNeededBoolean'] = $this->asNeededBoolean;
+        if (null !== $this->asNeededCodeableConcept) $json['asNeededCodeableConcept'] = $this->asNeededCodeableConcept;
+        if (null !== $this->orderedOn) $json['orderedOn'] = $this->orderedOn;
+        if (null !== $this->orderer) $json['orderer'] = $this->orderer;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -255,27 +255,27 @@ class FHIRSubstance extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->category)) {
             $json['category'] = [];
             foreach($this->category as $category) {
-                $json['category'][] = json_encode($category);
+                $json['category'][] = $category;
             }
         }
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->instance)) {
             $json['instance'] = [];
             foreach($this->instance as $instance) {
-                $json['instance'][] = json_encode($instance);
+                $json['instance'][] = $instance;
             }
         }
         if (0 < count($this->ingredient)) {
             $json['ingredient'] = [];
             foreach($this->ingredient as $ingredient) {
-                $json['ingredient'][] = json_encode($ingredient);
+                $json['ingredient'][] = $ingredient;
             }
         }
         return $json;

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,19 +68,16 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $contentString = null;
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $contentAttachment = null;
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $contentReference = null;
@@ -91,7 +88,6 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \Js
     private $_fhirElementName = 'CommunicationRequest.Payload';
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getContentString()
@@ -100,7 +96,6 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $contentString
      * @return $this
      */
@@ -111,7 +106,6 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getContentAttachment()
@@ -120,7 +114,6 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $contentAttachment
      * @return $this
      */
@@ -131,7 +124,6 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getContentReference()
@@ -140,7 +132,6 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \Js
     }
 
     /**
-     * The communicated content (or for multi-part communications, one portion of the communication). (choose any one of content*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $contentReference
      * @return $this
      */
@@ -172,9 +163,9 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement implements \Js
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->contentString) $json['contentString'] = json_encode($this->contentString);
-        if (null !== $this->contentAttachment) $json['contentAttachment'] = json_encode($this->contentAttachment);
-        if (null !== $this->contentReference) $json['contentReference'] = json_encode($this->contentReference);
+        if (null !== $this->contentString) $json['contentString'] = $this->contentString;
+        if (null !== $this->contentAttachment) $json['contentAttachment'] = $this->contentAttachment;
+        if (null !== $this->contentReference) $json['contentReference'] = $this->contentReference;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -460,28 +460,28 @@ class FHIRCoverage extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->issuer) $json['issuer'] = json_encode($this->issuer);
-        if (null !== $this->bin) $json['bin'] = json_encode($this->bin);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->subscriberId) $json['subscriberId'] = json_encode($this->subscriberId);
+        if (null !== $this->issuer) $json['issuer'] = $this->issuer;
+        if (null !== $this->bin) $json['bin'] = $this->bin;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->subscriberId) $json['subscriberId'] = $this->subscriberId;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->group) $json['group'] = json_encode($this->group);
-        if (null !== $this->plan) $json['plan'] = json_encode($this->plan);
-        if (null !== $this->subPlan) $json['subPlan'] = json_encode($this->subPlan);
-        if (null !== $this->dependent) $json['dependent'] = json_encode($this->dependent);
-        if (null !== $this->sequence) $json['sequence'] = json_encode($this->sequence);
-        if (null !== $this->subscriber) $json['subscriber'] = json_encode($this->subscriber);
-        if (null !== $this->network) $json['network'] = json_encode($this->network);
+        if (null !== $this->group) $json['group'] = $this->group;
+        if (null !== $this->plan) $json['plan'] = $this->plan;
+        if (null !== $this->subPlan) $json['subPlan'] = $this->subPlan;
+        if (null !== $this->dependent) $json['dependent'] = $this->dependent;
+        if (null !== $this->sequence) $json['sequence'] = $this->sequence;
+        if (null !== $this->subscriber) $json['subscriber'] = $this->subscriber;
+        if (null !== $this->network) $json['network'] = $this->network;
         if (0 < count($this->contract)) {
             $json['contract'] = [];
             foreach($this->contract as $contract) {
-                $json['contract'][] = json_encode($contract);
+                $json['contract'][] = $contract;
             }
         }
         return $json;

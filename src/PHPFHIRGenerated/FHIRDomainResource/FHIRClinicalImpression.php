@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,13 +111,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     public $problem = array();
 
     /**
-     * The request or event that necessitated this assessment. This may be a diagnosis, a Care Plan, a Request Referral, or some other resource. (choose any one of trigger*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $triggerCodeableConcept = null;
 
     /**
-     * The request or event that necessitated this assessment. This may be a diagnosis, a Care Plan, a Request Referral, or some other resource. (choose any one of trigger*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $triggerReference = null;
@@ -322,7 +320,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The request or event that necessitated this assessment. This may be a diagnosis, a Care Plan, a Request Referral, or some other resource. (choose any one of trigger*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getTriggerCodeableConcept()
@@ -331,7 +328,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The request or event that necessitated this assessment. This may be a diagnosis, a Care Plan, a Request Referral, or some other resource. (choose any one of trigger*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $triggerCodeableConcept
      * @return $this
      */
@@ -342,7 +338,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The request or event that necessitated this assessment. This may be a diagnosis, a Care Plan, a Request Referral, or some other resource. (choose any one of trigger*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getTriggerReference()
@@ -351,7 +346,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     }
 
     /**
-     * The request or event that necessitated this assessment. This may be a diagnosis, a Care Plan, a Request Referral, or some other resource. (choose any one of trigger*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $triggerReference
      * @return $this
      */
@@ -564,57 +558,57 @@ class FHIRClinicalImpression extends FHIRDomainResource implements \JsonSerializ
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->assessor) $json['assessor'] = json_encode($this->assessor);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->previous) $json['previous'] = json_encode($this->previous);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->assessor) $json['assessor'] = $this->assessor;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->previous) $json['previous'] = $this->previous;
         if (0 < count($this->problem)) {
             $json['problem'] = [];
             foreach($this->problem as $problem) {
-                $json['problem'][] = json_encode($problem);
+                $json['problem'][] = $problem;
             }
         }
-        if (null !== $this->triggerCodeableConcept) $json['triggerCodeableConcept'] = json_encode($this->triggerCodeableConcept);
-        if (null !== $this->triggerReference) $json['triggerReference'] = json_encode($this->triggerReference);
+        if (null !== $this->triggerCodeableConcept) $json['triggerCodeableConcept'] = $this->triggerCodeableConcept;
+        if (null !== $this->triggerReference) $json['triggerReference'] = $this->triggerReference;
         if (0 < count($this->investigations)) {
             $json['investigations'] = [];
             foreach($this->investigations as $investigations) {
-                $json['investigations'][] = json_encode($investigations);
+                $json['investigations'][] = $investigations;
             }
         }
-        if (null !== $this->protocol) $json['protocol'] = json_encode($this->protocol);
-        if (null !== $this->summary) $json['summary'] = json_encode($this->summary);
+        if (null !== $this->protocol) $json['protocol'] = $this->protocol;
+        if (null !== $this->summary) $json['summary'] = $this->summary;
         if (0 < count($this->finding)) {
             $json['finding'] = [];
             foreach($this->finding as $finding) {
-                $json['finding'][] = json_encode($finding);
+                $json['finding'][] = $finding;
             }
         }
         if (0 < count($this->resolved)) {
             $json['resolved'] = [];
             foreach($this->resolved as $resolved) {
-                $json['resolved'][] = json_encode($resolved);
+                $json['resolved'][] = $resolved;
             }
         }
         if (0 < count($this->ruledOut)) {
             $json['ruledOut'] = [];
             foreach($this->ruledOut as $ruledOut) {
-                $json['ruledOut'][] = json_encode($ruledOut);
+                $json['ruledOut'][] = $ruledOut;
             }
         }
-        if (null !== $this->prognosis) $json['prognosis'] = json_encode($this->prognosis);
+        if (null !== $this->prognosis) $json['prognosis'] = $this->prognosis;
         if (0 < count($this->plan)) {
             $json['plan'] = [];
             foreach($this->plan as $plan) {
-                $json['plan'][] = json_encode($plan);
+                $json['plan'][] = $plan;
             }
         }
         if (0 < count($this->action)) {
             $json['action'] = [];
             foreach($this->action as $action) {
-                $json['action'][] = json_encode($action);
+                $json['action'][] = $action;
             }
         }
         return $json;

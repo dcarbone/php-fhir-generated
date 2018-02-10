@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,13 +69,11 @@ use PHPFHIRGenerated\FHIRResource\FHIRDomainResource;
 class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializable
 {
     /**
-     * Indicates the site on the subject's body where the device should be used ( i.e. the target site). (choose any one of bodySite*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $bodySiteCodeableConcept = null;
 
     /**
-     * Indicates the site on the subject's body where the device should be used ( i.e. the target site). (choose any one of bodySite*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $bodySiteReference = null;
@@ -141,19 +139,16 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     public $subject = null;
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $timingTiming = null;
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $timingPeriod = null;
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $timingDateTime = null;
@@ -170,7 +165,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     private $_fhirElementName = 'DeviceUseRequest';
 
     /**
-     * Indicates the site on the subject's body where the device should be used ( i.e. the target site). (choose any one of bodySite*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getBodySiteCodeableConcept()
@@ -179,7 +173,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Indicates the site on the subject's body where the device should be used ( i.e. the target site). (choose any one of bodySite*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $bodySiteCodeableConcept
      * @return $this
      */
@@ -190,7 +183,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Indicates the site on the subject's body where the device should be used ( i.e. the target site). (choose any one of bodySite*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getBodySiteReference()
@@ -199,7 +191,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * Indicates the site on the subject's body where the device should be used ( i.e. the target site). (choose any one of bodySite*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $bodySiteReference
      * @return $this
      */
@@ -410,7 +401,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getTimingTiming()
@@ -419,7 +409,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $timingTiming
      * @return $this
      */
@@ -430,7 +419,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getTimingPeriod()
@@ -439,7 +427,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $timingPeriod
      * @return $this
      */
@@ -450,7 +437,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getTimingDateTime()
@@ -459,7 +445,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The timing schedule for the use of the device The Schedule data type allows many different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct 2013 and 1 Nov 2013". (choose any one of timing*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $timingDateTime
      * @return $this
      */
@@ -512,42 +497,42 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements \JsonSerializab
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->bodySiteCodeableConcept) $json['bodySiteCodeableConcept'] = json_encode($this->bodySiteCodeableConcept);
-        if (null !== $this->bodySiteReference) $json['bodySiteReference'] = json_encode($this->bodySiteReference);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->device) $json['device'] = json_encode($this->device);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
+        if (null !== $this->bodySiteCodeableConcept) $json['bodySiteCodeableConcept'] = $this->bodySiteCodeableConcept;
+        if (null !== $this->bodySiteReference) $json['bodySiteReference'] = $this->bodySiteReference;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->device) $json['device'] = $this->device;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
         if (0 < count($this->indication)) {
             $json['indication'] = [];
             foreach($this->indication as $indication) {
-                $json['indication'][] = json_encode($indication);
+                $json['indication'][] = $indication;
             }
         }
         if (0 < count($this->notes)) {
             $json['notes'] = [];
             foreach($this->notes as $notes) {
-                $json['notes'][] = json_encode($notes);
+                $json['notes'][] = $notes;
             }
         }
         if (0 < count($this->prnReason)) {
             $json['prnReason'] = [];
             foreach($this->prnReason as $prnReason) {
-                $json['prnReason'][] = json_encode($prnReason);
+                $json['prnReason'][] = $prnReason;
             }
         }
-        if (null !== $this->orderedOn) $json['orderedOn'] = json_encode($this->orderedOn);
-        if (null !== $this->recordedOn) $json['recordedOn'] = json_encode($this->recordedOn);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->timingTiming) $json['timingTiming'] = json_encode($this->timingTiming);
-        if (null !== $this->timingPeriod) $json['timingPeriod'] = json_encode($this->timingPeriod);
-        if (null !== $this->timingDateTime) $json['timingDateTime'] = json_encode($this->timingDateTime);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->orderedOn) $json['orderedOn'] = $this->orderedOn;
+        if (null !== $this->recordedOn) $json['recordedOn'] = $this->recordedOn;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->timingTiming) $json['timingTiming'] = $this->timingTiming;
+        if (null !== $this->timingPeriod) $json['timingPeriod'] = $this->timingPeriod;
+        if (null !== $this->timingDateTime) $json['timingDateTime'] = $this->timingDateTime;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
         return $json;
     }
 

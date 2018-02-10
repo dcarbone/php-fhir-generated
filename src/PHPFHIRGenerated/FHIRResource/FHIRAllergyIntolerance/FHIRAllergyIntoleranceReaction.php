@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,19 +302,19 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement implements \Jso
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->substance) $json['substance'] = json_encode($this->substance);
-        if (null !== $this->certainty) $json['certainty'] = json_encode($this->certainty);
+        if (null !== $this->substance) $json['substance'] = $this->substance;
+        if (null !== $this->certainty) $json['certainty'] = $this->certainty;
         if (0 < count($this->manifestation)) {
             $json['manifestation'] = [];
             foreach($this->manifestation as $manifestation) {
-                $json['manifestation'][] = json_encode($manifestation);
+                $json['manifestation'][] = $manifestation;
             }
         }
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
-        if (null !== $this->onset) $json['onset'] = json_encode($this->onset);
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
-        if (null !== $this->exposureRoute) $json['exposureRoute'] = json_encode($this->exposureRoute);
-        if (null !== $this->note) $json['note'] = json_encode($this->note);
+        if (null !== $this->description) $json['description'] = $this->description;
+        if (null !== $this->onset) $json['onset'] = $this->onset;
+        if (null !== $this->severity) $json['severity'] = $this->severity;
+        if (null !== $this->exposureRoute) $json['exposureRoute'] = $this->exposureRoute;
+        if (null !== $this->note) $json['note'] = $this->note;
         return $json;
     }
 

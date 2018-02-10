@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -225,11 +225,11 @@ class FHIRElementDefinitionConstraint extends FHIRElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->key) $json['key'] = json_encode($this->key);
-        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
-        if (null !== $this->severity) $json['severity'] = json_encode($this->severity);
-        if (null !== $this->human) $json['human'] = json_encode($this->human);
-        if (null !== $this->xpath) $json['xpath'] = json_encode($this->xpath);
+        if (null !== $this->key) $json['key'] = $this->key;
+        if (null !== $this->requirements) $json['requirements'] = $this->requirements;
+        if (null !== $this->severity) $json['severity'] = $this->severity;
+        if (null !== $this->human) $json['human'] = $this->human;
+        if (null !== $this->xpath) $json['xpath'] = $this->xpath;
         return $json;
     }
 

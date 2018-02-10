@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,17 +173,17 @@ class FHIRElementDefinitionType extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
+        if (null !== $this->code) $json['code'] = $this->code;
         if (0 < count($this->profile)) {
             $json['profile'] = [];
             foreach($this->profile as $profile) {
-                $json['profile'][] = json_encode($profile);
+                $json['profile'][] = $profile;
             }
         }
         if (0 < count($this->aggregation)) {
             $json['aggregation'] = [];
             foreach($this->aggregation as $aggregation) {
-                $json['aggregation'][] = json_encode($aggregation);
+                $json['aggregation'][] = $aggregation;
             }
         }
         return $json;

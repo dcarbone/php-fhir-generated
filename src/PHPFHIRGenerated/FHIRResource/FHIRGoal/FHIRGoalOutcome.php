@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRGoalOutcome extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Details of what's changed (or not changed). (choose any one of result*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $resultCodeableConcept = null;
 
     /**
-     * Details of what's changed (or not changed). (choose any one of result*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $resultReference = null;
@@ -85,7 +83,6 @@ class FHIRGoalOutcome extends FHIRBackboneElement implements \JsonSerializable
     private $_fhirElementName = 'Goal.Outcome';
 
     /**
-     * Details of what's changed (or not changed). (choose any one of result*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getResultCodeableConcept()
@@ -94,7 +91,6 @@ class FHIRGoalOutcome extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Details of what's changed (or not changed). (choose any one of result*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $resultCodeableConcept
      * @return $this
      */
@@ -105,7 +101,6 @@ class FHIRGoalOutcome extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Details of what's changed (or not changed). (choose any one of result*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getResultReference()
@@ -114,7 +109,6 @@ class FHIRGoalOutcome extends FHIRBackboneElement implements \JsonSerializable
     }
 
     /**
-     * Details of what's changed (or not changed). (choose any one of result*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $resultReference
      * @return $this
      */
@@ -146,8 +140,8 @@ class FHIRGoalOutcome extends FHIRBackboneElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->resultCodeableConcept) $json['resultCodeableConcept'] = json_encode($this->resultCodeableConcept);
-        if (null !== $this->resultReference) $json['resultReference'] = json_encode($this->resultReference);
+        if (null !== $this->resultCodeableConcept) $json['resultCodeableConcept'] = $this->resultCodeableConcept;
+        if (null !== $this->resultReference) $json['resultReference'] = $this->resultReference;
         return $json;
     }
 

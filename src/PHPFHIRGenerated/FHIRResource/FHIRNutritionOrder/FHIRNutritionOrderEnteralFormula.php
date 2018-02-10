@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,20 +328,20 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement implements \J
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->baseFormulaType) $json['baseFormulaType'] = json_encode($this->baseFormulaType);
-        if (null !== $this->baseFormulaProductName) $json['baseFormulaProductName'] = json_encode($this->baseFormulaProductName);
-        if (null !== $this->additiveType) $json['additiveType'] = json_encode($this->additiveType);
-        if (null !== $this->additiveProductName) $json['additiveProductName'] = json_encode($this->additiveProductName);
-        if (null !== $this->caloricDensity) $json['caloricDensity'] = json_encode($this->caloricDensity);
-        if (null !== $this->routeofAdministration) $json['routeofAdministration'] = json_encode($this->routeofAdministration);
+        if (null !== $this->baseFormulaType) $json['baseFormulaType'] = $this->baseFormulaType;
+        if (null !== $this->baseFormulaProductName) $json['baseFormulaProductName'] = $this->baseFormulaProductName;
+        if (null !== $this->additiveType) $json['additiveType'] = $this->additiveType;
+        if (null !== $this->additiveProductName) $json['additiveProductName'] = $this->additiveProductName;
+        if (null !== $this->caloricDensity) $json['caloricDensity'] = $this->caloricDensity;
+        if (null !== $this->routeofAdministration) $json['routeofAdministration'] = $this->routeofAdministration;
         if (0 < count($this->administration)) {
             $json['administration'] = [];
             foreach($this->administration as $administration) {
-                $json['administration'][] = json_encode($administration);
+                $json['administration'][] = $administration;
             }
         }
-        if (null !== $this->maxVolumeToDeliver) $json['maxVolumeToDeliver'] = json_encode($this->maxVolumeToDeliver);
-        if (null !== $this->administrationInstruction) $json['administrationInstruction'] = json_encode($this->administrationInstruction);
+        if (null !== $this->maxVolumeToDeliver) $json['maxVolumeToDeliver'] = $this->maxVolumeToDeliver;
+        if (null !== $this->administrationInstruction) $json['administrationInstruction'] = $this->administrationInstruction;
         return $json;
     }
 

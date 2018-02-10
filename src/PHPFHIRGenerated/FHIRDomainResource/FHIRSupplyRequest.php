@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,13 +117,11 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     public $supplier = array();
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $reasonCodeableConcept = null;
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $reasonReference = null;
@@ -300,7 +298,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getReasonCodeableConcept()
@@ -309,7 +306,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $reasonCodeableConcept
      * @return $this
      */
@@ -320,7 +316,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getReasonReference()
@@ -329,7 +324,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     }
 
     /**
-     * Why the supply item was requested. (choose any one of reason*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $reasonReference
      * @return $this
      */
@@ -382,22 +376,22 @@ class FHIRSupplyRequest extends FHIRDomainResource implements \JsonSerializable
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
-        if (null !== $this->source) $json['source'] = json_encode($this->source);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->kind) $json['kind'] = json_encode($this->kind);
-        if (null !== $this->orderedItem) $json['orderedItem'] = json_encode($this->orderedItem);
+        if (null !== $this->patient) $json['patient'] = $this->patient;
+        if (null !== $this->source) $json['source'] = $this->source;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->kind) $json['kind'] = $this->kind;
+        if (null !== $this->orderedItem) $json['orderedItem'] = $this->orderedItem;
         if (0 < count($this->supplier)) {
             $json['supplier'] = [];
             foreach($this->supplier as $supplier) {
-                $json['supplier'][] = json_encode($supplier);
+                $json['supplier'][] = $supplier;
             }
         }
-        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = json_encode($this->reasonCodeableConcept);
-        if (null !== $this->reasonReference) $json['reasonReference'] = json_encode($this->reasonReference);
-        if (null !== $this->when) $json['when'] = json_encode($this->when);
+        if (null !== $this->reasonCodeableConcept) $json['reasonCodeableConcept'] = $this->reasonCodeableConcept;
+        if (null !== $this->reasonReference) $json['reasonReference'] = $this->reasonReference;
+        if (null !== $this->when) $json['when'] = $this->when;
         return $json;
     }
 

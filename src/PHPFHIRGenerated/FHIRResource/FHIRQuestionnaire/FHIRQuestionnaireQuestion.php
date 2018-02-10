@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -328,28 +328,28 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement implements \JsonSeri
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->linkId) $json['linkId'] = json_encode($this->linkId);
+        if (null !== $this->linkId) $json['linkId'] = $this->linkId;
         if (0 < count($this->concept)) {
             $json['concept'] = [];
             foreach($this->concept as $concept) {
-                $json['concept'][] = json_encode($concept);
+                $json['concept'][] = $concept;
             }
         }
-        if (null !== $this->text) $json['text'] = json_encode($this->text);
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->required) $json['required'] = json_encode($this->required);
-        if (null !== $this->repeats) $json['repeats'] = json_encode($this->repeats);
-        if (null !== $this->options) $json['options'] = json_encode($this->options);
+        if (null !== $this->text) $json['text'] = $this->text;
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->required) $json['required'] = $this->required;
+        if (null !== $this->repeats) $json['repeats'] = $this->repeats;
+        if (null !== $this->options) $json['options'] = $this->options;
         if (0 < count($this->option)) {
             $json['option'] = [];
             foreach($this->option as $option) {
-                $json['option'][] = json_encode($option);
+                $json['option'][] = $option;
             }
         }
         if (0 < count($this->group)) {
             $json['group'] = [];
             foreach($this->group as $group) {
-                $json['group'][] = json_encode($group);
+                $json['group'][] = $group;
             }
         }
         return $json;

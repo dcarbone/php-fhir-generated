@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -489,31 +489,31 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements \JsonSeria
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->request) $json['request'] = json_encode($this->request);
-        if (null !== $this->outcome) $json['outcome'] = json_encode($this->outcome);
-        if (null !== $this->disposition) $json['disposition'] = json_encode($this->disposition);
-        if (null !== $this->ruleset) $json['ruleset'] = json_encode($this->ruleset);
-        if (null !== $this->originalRuleset) $json['originalRuleset'] = json_encode($this->originalRuleset);
-        if (null !== $this->created) $json['created'] = json_encode($this->created);
-        if (null !== $this->period) $json['period'] = json_encode($this->period);
-        if (null !== $this->organization) $json['organization'] = json_encode($this->organization);
-        if (null !== $this->requestProvider) $json['requestProvider'] = json_encode($this->requestProvider);
-        if (null !== $this->requestOrganization) $json['requestOrganization'] = json_encode($this->requestOrganization);
+        if (null !== $this->request) $json['request'] = $this->request;
+        if (null !== $this->outcome) $json['outcome'] = $this->outcome;
+        if (null !== $this->disposition) $json['disposition'] = $this->disposition;
+        if (null !== $this->ruleset) $json['ruleset'] = $this->ruleset;
+        if (null !== $this->originalRuleset) $json['originalRuleset'] = $this->originalRuleset;
+        if (null !== $this->created) $json['created'] = $this->created;
+        if (null !== $this->period) $json['period'] = $this->period;
+        if (null !== $this->organization) $json['organization'] = $this->organization;
+        if (null !== $this->requestProvider) $json['requestProvider'] = $this->requestProvider;
+        if (null !== $this->requestOrganization) $json['requestOrganization'] = $this->requestOrganization;
         if (0 < count($this->detail)) {
             $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = json_encode($detail);
+                $json['detail'][] = $detail;
             }
         }
-        if (null !== $this->form) $json['form'] = json_encode($this->form);
-        if (null !== $this->total) $json['total'] = json_encode($this->total);
+        if (null !== $this->form) $json['form'] = $this->form;
+        if (null !== $this->total) $json['total'] = $this->total;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
         return $json;

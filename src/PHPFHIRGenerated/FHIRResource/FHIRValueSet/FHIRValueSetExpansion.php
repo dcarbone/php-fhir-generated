@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,20 +250,20 @@ class FHIRValueSetExpansion extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->timestamp) $json['timestamp'] = json_encode($this->timestamp);
-        if (null !== $this->total) $json['total'] = json_encode($this->total);
-        if (null !== $this->offset) $json['offset'] = json_encode($this->offset);
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->timestamp) $json['timestamp'] = $this->timestamp;
+        if (null !== $this->total) $json['total'] = $this->total;
+        if (null !== $this->offset) $json['offset'] = $this->offset;
         if (0 < count($this->parameter)) {
             $json['parameter'] = [];
             foreach($this->parameter as $parameter) {
-                $json['parameter'][] = json_encode($parameter);
+                $json['parameter'][] = $parameter;
             }
         }
         if (0 < count($this->contains)) {
             $json['contains'] = [];
             foreach($this->contains as $contains) {
-                $json['contains'][] = json_encode($contains);
+                $json['contains'][] = $contains;
             }
         }
         return $json;

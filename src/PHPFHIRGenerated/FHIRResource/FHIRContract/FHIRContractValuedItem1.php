@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,13 +68,11 @@ use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
 class FHIRContractValuedItem1 extends FHIRBackboneElement implements \JsonSerializable
 {
     /**
-     * Specific type of Contract Provision Valued Item that may be priced. (choose any one of entity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $entityCodeableConcept = null;
 
     /**
-     * Specific type of Contract Provision Valued Item that may be priced. (choose any one of entity*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $entityReference = null;
@@ -127,7 +125,6 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements \JsonSerial
     private $_fhirElementName = 'Contract.ValuedItem1';
 
     /**
-     * Specific type of Contract Provision Valued Item that may be priced. (choose any one of entity*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getEntityCodeableConcept()
@@ -136,7 +133,6 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Specific type of Contract Provision Valued Item that may be priced. (choose any one of entity*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $entityCodeableConcept
      * @return $this
      */
@@ -147,7 +143,6 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Specific type of Contract Provision Valued Item that may be priced. (choose any one of entity*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getEntityReference()
@@ -156,7 +151,6 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * Specific type of Contract Provision Valued Item that may be priced. (choose any one of entity*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $entityReference
      * @return $this
      */
@@ -328,15 +322,15 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->entityCodeableConcept) $json['entityCodeableConcept'] = json_encode($this->entityCodeableConcept);
-        if (null !== $this->entityReference) $json['entityReference'] = json_encode($this->entityReference);
-        if (null !== $this->identifier) $json['identifier'] = json_encode($this->identifier);
-        if (null !== $this->effectiveTime) $json['effectiveTime'] = json_encode($this->effectiveTime);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->unitPrice) $json['unitPrice'] = json_encode($this->unitPrice);
-        if (null !== $this->factor) $json['factor'] = json_encode($this->factor);
-        if (null !== $this->points) $json['points'] = json_encode($this->points);
-        if (null !== $this->net) $json['net'] = json_encode($this->net);
+        if (null !== $this->entityCodeableConcept) $json['entityCodeableConcept'] = $this->entityCodeableConcept;
+        if (null !== $this->entityReference) $json['entityReference'] = $this->entityReference;
+        if (null !== $this->identifier) $json['identifier'] = $this->identifier;
+        if (null !== $this->effectiveTime) $json['effectiveTime'] = $this->effectiveTime;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->unitPrice) $json['unitPrice'] = $this->unitPrice;
+        if (null !== $this->factor) $json['factor'] = $this->factor;
+        if (null !== $this->points) $json['points'] = $this->points;
+        if (null !== $this->net) $json['net'] = $this->net;
         return $json;
     }
 

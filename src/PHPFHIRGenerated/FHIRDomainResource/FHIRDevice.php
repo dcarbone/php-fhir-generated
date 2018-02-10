@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -515,34 +515,34 @@ class FHIRDevice extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
+        if (null !== $this->type) $json['type'] = $this->type;
         if (0 < count($this->note)) {
             $json['note'] = [];
             foreach($this->note as $note) {
-                $json['note'][] = json_encode($note);
+                $json['note'][] = $note;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->manufacturer) $json['manufacturer'] = json_encode($this->manufacturer);
-        if (null !== $this->model) $json['model'] = json_encode($this->model);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->manufactureDate) $json['manufactureDate'] = json_encode($this->manufactureDate);
-        if (null !== $this->expiry) $json['expiry'] = json_encode($this->expiry);
-        if (null !== $this->udi) $json['udi'] = json_encode($this->udi);
-        if (null !== $this->lotNumber) $json['lotNumber'] = json_encode($this->lotNumber);
-        if (null !== $this->owner) $json['owner'] = json_encode($this->owner);
-        if (null !== $this->location) $json['location'] = json_encode($this->location);
-        if (null !== $this->patient) $json['patient'] = json_encode($this->patient);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->manufacturer) $json['manufacturer'] = $this->manufacturer;
+        if (null !== $this->model) $json['model'] = $this->model;
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->manufactureDate) $json['manufactureDate'] = $this->manufactureDate;
+        if (null !== $this->expiry) $json['expiry'] = $this->expiry;
+        if (null !== $this->udi) $json['udi'] = $this->udi;
+        if (null !== $this->lotNumber) $json['lotNumber'] = $this->lotNumber;
+        if (null !== $this->owner) $json['owner'] = $this->owner;
+        if (null !== $this->location) $json['location'] = $this->location;
+        if (null !== $this->patient) $json['patient'] = $this->patient;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
+        if (null !== $this->url) $json['url'] = $this->url;
         return $json;
     }
 

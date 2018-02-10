@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,13 +74,11 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
     public $strength = null;
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $valueSetUri = null;
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueSetReference = null;
@@ -111,7 +109,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueSetUri()
@@ -120,7 +117,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $valueSetUri
      * @return $this
      */
@@ -131,7 +127,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueSetReference()
@@ -140,7 +135,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
     }
 
     /**
-     * Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. (choose any one of valueSet*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueSetReference
      * @return $this
      */
@@ -172,9 +166,9 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement implements \Jso
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->strength) $json['strength'] = json_encode($this->strength);
-        if (null !== $this->valueSetUri) $json['valueSetUri'] = json_encode($this->valueSetUri);
-        if (null !== $this->valueSetReference) $json['valueSetReference'] = json_encode($this->valueSetReference);
+        if (null !== $this->strength) $json['strength'] = $this->strength;
+        if (null !== $this->valueSetUri) $json['valueSetUri'] = $this->valueSetUri;
+        if (null !== $this->valueSetReference) $json['valueSetReference'] = $this->valueSetReference;
         return $json;
     }
 

@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,37 +74,31 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     public $name = null;
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $valueDecimal = null;
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $valueUri = null;
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $valueCode = null;
@@ -135,7 +129,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -144,7 +137,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -155,7 +147,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -164,7 +155,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
@@ -175,7 +165,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -184,7 +173,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
@@ -195,7 +183,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
@@ -204,7 +191,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $valueDecimal
      * @return $this
      */
@@ -215,7 +201,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueUri()
@@ -224,7 +209,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $valueUri
      * @return $this
      */
@@ -235,7 +219,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getValueCode()
@@ -244,7 +227,6 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     }
 
     /**
-     * The value of the parameter. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $valueCode
      * @return $this
      */
@@ -276,13 +258,13 @@ class FHIRValueSetParameter extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
-        if (null !== $this->valueInteger) $json['valueInteger'] = json_encode($this->valueInteger);
-        if (null !== $this->valueDecimal) $json['valueDecimal'] = json_encode($this->valueDecimal);
-        if (null !== $this->valueUri) $json['valueUri'] = json_encode($this->valueUri);
-        if (null !== $this->valueCode) $json['valueCode'] = json_encode($this->valueCode);
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->valueString) $json['valueString'] = $this->valueString;
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = $this->valueBoolean;
+        if (null !== $this->valueInteger) $json['valueInteger'] = $this->valueInteger;
+        if (null !== $this->valueDecimal) $json['valueDecimal'] = $this->valueDecimal;
+        if (null !== $this->valueUri) $json['valueUri'] = $this->valueUri;
+        if (null !== $this->valueCode) $json['valueCode'] = $this->valueCode;
         return $json;
     }
 

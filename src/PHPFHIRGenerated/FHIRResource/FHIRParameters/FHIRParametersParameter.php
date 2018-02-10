@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,211 +74,176 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     public $name = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $valueBoolean = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $valueInteger = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $valueDecimal = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $valueBase64Binary = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $valueInstant = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $valueString = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $valueUri = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $valueDate = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $valueDateTime = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $valueTime = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $valueCode = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $valueOid = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public $valueUuid = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $valueId = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $valueUnsignedInt = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $valuePositiveInt = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $valueMarkdown = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $valueAnnotation = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $valueAttachment = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $valueIdentifier = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $valueCodeableConcept = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $valueCoding = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $valueQuantity = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $valueRange = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $valuePeriod = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $valueRatio = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $valueReference = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $valueSampledData = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $valueSignature = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $valueHumanName = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $valueAddress = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $valueContactPoint = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $valueTiming = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $valueMeta = null;
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition
      */
     public $valueElementDefinition = null;
@@ -321,7 +286,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getValueBoolean()
@@ -330,7 +294,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $valueBoolean
      * @return $this
      */
@@ -341,7 +304,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getValueInteger()
@@ -350,7 +312,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $valueInteger
      * @return $this
      */
@@ -361,7 +322,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getValueDecimal()
@@ -370,7 +330,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $valueDecimal
      * @return $this
      */
@@ -381,7 +340,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getValueBase64Binary()
@@ -390,7 +348,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $valueBase64Binary
      * @return $this
      */
@@ -401,7 +358,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getValueInstant()
@@ -410,7 +366,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $valueInstant
      * @return $this
      */
@@ -421,7 +376,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getValueString()
@@ -430,7 +384,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $valueString
      * @return $this
      */
@@ -441,7 +394,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getValueUri()
@@ -450,7 +402,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $valueUri
      * @return $this
      */
@@ -461,7 +412,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getValueDate()
@@ -470,7 +420,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $valueDate
      * @return $this
      */
@@ -481,7 +430,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getValueDateTime()
@@ -490,7 +438,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $valueDateTime
      * @return $this
      */
@@ -501,7 +448,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getValueTime()
@@ -510,7 +456,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $valueTime
      * @return $this
      */
@@ -521,7 +466,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getValueCode()
@@ -530,7 +474,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $valueCode
      * @return $this
      */
@@ -541,7 +484,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getValueOid()
@@ -550,7 +492,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $valueOid
      * @return $this
      */
@@ -561,7 +502,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public function getValueUuid()
@@ -570,7 +510,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUuid $valueUuid
      * @return $this
      */
@@ -581,7 +520,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getValueId()
@@ -590,7 +528,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $valueId
      * @return $this
      */
@@ -601,7 +538,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getValueUnsignedInt()
@@ -610,7 +546,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
      * @return $this
      */
@@ -621,7 +556,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getValuePositiveInt()
@@ -630,7 +564,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $valuePositiveInt
      * @return $this
      */
@@ -641,7 +574,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getValueMarkdown()
@@ -650,7 +582,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $valueMarkdown
      * @return $this
      */
@@ -661,7 +592,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getValueAnnotation()
@@ -670,7 +600,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $valueAnnotation
      * @return $this
      */
@@ -681,7 +610,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getValueAttachment()
@@ -690,7 +618,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $valueAttachment
      * @return $this
      */
@@ -701,7 +628,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getValueIdentifier()
@@ -710,7 +636,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $valueIdentifier
      * @return $this
      */
@@ -721,7 +646,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getValueCodeableConcept()
@@ -730,7 +654,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
      * @return $this
      */
@@ -741,7 +664,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getValueCoding()
@@ -750,7 +672,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $valueCoding
      * @return $this
      */
@@ -761,7 +682,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getValueQuantity()
@@ -770,7 +690,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $valueQuantity
      * @return $this
      */
@@ -781,7 +700,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getValueRange()
@@ -790,7 +708,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $valueRange
      * @return $this
      */
@@ -801,7 +718,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getValuePeriod()
@@ -810,7 +726,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $valuePeriod
      * @return $this
      */
@@ -821,7 +736,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getValueRatio()
@@ -830,7 +744,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $valueRatio
      * @return $this
      */
@@ -841,7 +754,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getValueReference()
@@ -850,7 +762,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $valueReference
      * @return $this
      */
@@ -861,7 +772,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getValueSampledData()
@@ -870,7 +780,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $valueSampledData
      * @return $this
      */
@@ -881,7 +790,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getValueSignature()
@@ -890,7 +798,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $valueSignature
      * @return $this
      */
@@ -901,7 +808,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getValueHumanName()
@@ -910,7 +816,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $valueHumanName
      * @return $this
      */
@@ -921,7 +826,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getValueAddress()
@@ -930,7 +834,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $valueAddress
      * @return $this
      */
@@ -941,7 +844,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getValueContactPoint()
@@ -950,7 +852,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $valueContactPoint
      * @return $this
      */
@@ -961,7 +862,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getValueTiming()
@@ -970,7 +870,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $valueTiming
      * @return $this
      */
@@ -981,7 +880,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getValueMeta()
@@ -990,7 +888,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $valueMeta
      * @return $this
      */
@@ -1001,7 +898,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition
      */
     public function getValueElementDefinition()
@@ -1010,7 +906,6 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     }
 
     /**
-     * If the parameter is a data type. (choose any one of value*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRElementDefinition $valueElementDefinition
      * @return $this
      */
@@ -1082,47 +977,47 @@ class FHIRParametersParameter extends FHIRBackboneElement implements \JsonSerial
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->valueBoolean) $json['valueBoolean'] = json_encode($this->valueBoolean);
-        if (null !== $this->valueInteger) $json['valueInteger'] = json_encode($this->valueInteger);
-        if (null !== $this->valueDecimal) $json['valueDecimal'] = json_encode($this->valueDecimal);
-        if (null !== $this->valueBase64Binary) $json['valueBase64Binary'] = json_encode($this->valueBase64Binary);
-        if (null !== $this->valueInstant) $json['valueInstant'] = json_encode($this->valueInstant);
-        if (null !== $this->valueString) $json['valueString'] = json_encode($this->valueString);
-        if (null !== $this->valueUri) $json['valueUri'] = json_encode($this->valueUri);
-        if (null !== $this->valueDate) $json['valueDate'] = json_encode($this->valueDate);
-        if (null !== $this->valueDateTime) $json['valueDateTime'] = json_encode($this->valueDateTime);
-        if (null !== $this->valueTime) $json['valueTime'] = json_encode($this->valueTime);
-        if (null !== $this->valueCode) $json['valueCode'] = json_encode($this->valueCode);
-        if (null !== $this->valueOid) $json['valueOid'] = json_encode($this->valueOid);
-        if (null !== $this->valueUuid) $json['valueUuid'] = json_encode($this->valueUuid);
-        if (null !== $this->valueId) $json['valueId'] = json_encode($this->valueId);
-        if (null !== $this->valueUnsignedInt) $json['valueUnsignedInt'] = json_encode($this->valueUnsignedInt);
-        if (null !== $this->valuePositiveInt) $json['valuePositiveInt'] = json_encode($this->valuePositiveInt);
-        if (null !== $this->valueMarkdown) $json['valueMarkdown'] = json_encode($this->valueMarkdown);
-        if (null !== $this->valueAnnotation) $json['valueAnnotation'] = json_encode($this->valueAnnotation);
-        if (null !== $this->valueAttachment) $json['valueAttachment'] = json_encode($this->valueAttachment);
-        if (null !== $this->valueIdentifier) $json['valueIdentifier'] = json_encode($this->valueIdentifier);
-        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = json_encode($this->valueCodeableConcept);
-        if (null !== $this->valueCoding) $json['valueCoding'] = json_encode($this->valueCoding);
-        if (null !== $this->valueQuantity) $json['valueQuantity'] = json_encode($this->valueQuantity);
-        if (null !== $this->valueRange) $json['valueRange'] = json_encode($this->valueRange);
-        if (null !== $this->valuePeriod) $json['valuePeriod'] = json_encode($this->valuePeriod);
-        if (null !== $this->valueRatio) $json['valueRatio'] = json_encode($this->valueRatio);
-        if (null !== $this->valueReference) $json['valueReference'] = json_encode($this->valueReference);
-        if (null !== $this->valueSampledData) $json['valueSampledData'] = json_encode($this->valueSampledData);
-        if (null !== $this->valueSignature) $json['valueSignature'] = json_encode($this->valueSignature);
-        if (null !== $this->valueHumanName) $json['valueHumanName'] = json_encode($this->valueHumanName);
-        if (null !== $this->valueAddress) $json['valueAddress'] = json_encode($this->valueAddress);
-        if (null !== $this->valueContactPoint) $json['valueContactPoint'] = json_encode($this->valueContactPoint);
-        if (null !== $this->valueTiming) $json['valueTiming'] = json_encode($this->valueTiming);
-        if (null !== $this->valueMeta) $json['valueMeta'] = json_encode($this->valueMeta);
-        if (null !== $this->valueElementDefinition) $json['valueElementDefinition'] = json_encode($this->valueElementDefinition);
-        if (null !== $this->resource) $json['resource'] = json_encode($this->resource);
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->valueBoolean) $json['valueBoolean'] = $this->valueBoolean;
+        if (null !== $this->valueInteger) $json['valueInteger'] = $this->valueInteger;
+        if (null !== $this->valueDecimal) $json['valueDecimal'] = $this->valueDecimal;
+        if (null !== $this->valueBase64Binary) $json['valueBase64Binary'] = $this->valueBase64Binary;
+        if (null !== $this->valueInstant) $json['valueInstant'] = $this->valueInstant;
+        if (null !== $this->valueString) $json['valueString'] = $this->valueString;
+        if (null !== $this->valueUri) $json['valueUri'] = $this->valueUri;
+        if (null !== $this->valueDate) $json['valueDate'] = $this->valueDate;
+        if (null !== $this->valueDateTime) $json['valueDateTime'] = $this->valueDateTime;
+        if (null !== $this->valueTime) $json['valueTime'] = $this->valueTime;
+        if (null !== $this->valueCode) $json['valueCode'] = $this->valueCode;
+        if (null !== $this->valueOid) $json['valueOid'] = $this->valueOid;
+        if (null !== $this->valueUuid) $json['valueUuid'] = $this->valueUuid;
+        if (null !== $this->valueId) $json['valueId'] = $this->valueId;
+        if (null !== $this->valueUnsignedInt) $json['valueUnsignedInt'] = $this->valueUnsignedInt;
+        if (null !== $this->valuePositiveInt) $json['valuePositiveInt'] = $this->valuePositiveInt;
+        if (null !== $this->valueMarkdown) $json['valueMarkdown'] = $this->valueMarkdown;
+        if (null !== $this->valueAnnotation) $json['valueAnnotation'] = $this->valueAnnotation;
+        if (null !== $this->valueAttachment) $json['valueAttachment'] = $this->valueAttachment;
+        if (null !== $this->valueIdentifier) $json['valueIdentifier'] = $this->valueIdentifier;
+        if (null !== $this->valueCodeableConcept) $json['valueCodeableConcept'] = $this->valueCodeableConcept;
+        if (null !== $this->valueCoding) $json['valueCoding'] = $this->valueCoding;
+        if (null !== $this->valueQuantity) $json['valueQuantity'] = $this->valueQuantity;
+        if (null !== $this->valueRange) $json['valueRange'] = $this->valueRange;
+        if (null !== $this->valuePeriod) $json['valuePeriod'] = $this->valuePeriod;
+        if (null !== $this->valueRatio) $json['valueRatio'] = $this->valueRatio;
+        if (null !== $this->valueReference) $json['valueReference'] = $this->valueReference;
+        if (null !== $this->valueSampledData) $json['valueSampledData'] = $this->valueSampledData;
+        if (null !== $this->valueSignature) $json['valueSignature'] = $this->valueSignature;
+        if (null !== $this->valueHumanName) $json['valueHumanName'] = $this->valueHumanName;
+        if (null !== $this->valueAddress) $json['valueAddress'] = $this->valueAddress;
+        if (null !== $this->valueContactPoint) $json['valueContactPoint'] = $this->valueContactPoint;
+        if (null !== $this->valueTiming) $json['valueTiming'] = $this->valueTiming;
+        if (null !== $this->valueMeta) $json['valueMeta'] = $this->valueMeta;
+        if (null !== $this->valueElementDefinition) $json['valueElementDefinition'] = $this->valueElementDefinition;
+        if (null !== $this->resource) $json['resource'] = $this->resource;
         if (0 < count($this->part)) {
             $json['part'] = [];
             foreach($this->part as $part) {
-                $json['part'][] = json_encode($part);
+                $json['part'][] = $part;
             }
         }
         return $json;

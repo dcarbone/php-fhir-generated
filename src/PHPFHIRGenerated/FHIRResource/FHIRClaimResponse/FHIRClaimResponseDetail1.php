@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,12 +172,12 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement implements \JsonSeria
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->service) $json['service'] = json_encode($this->service);
-        if (null !== $this->fee) $json['fee'] = json_encode($this->fee);
+        if (null !== $this->service) $json['service'] = $this->service;
+        if (null !== $this->fee) $json['fee'] = $this->fee;
         if (0 < count($this->adjudication)) {
             $json['adjudication'] = [];
             foreach($this->adjudication as $adjudication) {
-                $json['adjudication'][] = json_encode($adjudication);
+                $json['adjudication'][] = $adjudication;
             }
         }
         return $json;

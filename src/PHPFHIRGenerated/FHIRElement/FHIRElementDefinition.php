@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,205 +165,171 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     public $nameReference = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $defaultValueBoolean = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $defaultValueInteger = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $defaultValueDecimal = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $defaultValueBase64Binary = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $defaultValueInstant = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $defaultValueString = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $defaultValueUri = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $defaultValueDate = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $defaultValueDateTime = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $defaultValueTime = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $defaultValueCode = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $defaultValueOid = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public $defaultValueUuid = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $defaultValueId = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $defaultValueUnsignedInt = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $defaultValuePositiveInt = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $defaultValueMarkdown = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $defaultValueAnnotation = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $defaultValueAttachment = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $defaultValueIdentifier = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $defaultValueCodeableConcept = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $defaultValueCoding = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $defaultValueQuantity = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $defaultValueRange = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $defaultValuePeriod = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $defaultValueRatio = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $defaultValueReference = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $defaultValueSampledData = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $defaultValueSignature = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $defaultValueHumanName = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $defaultValueAddress = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $defaultValueContactPoint = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $defaultValueTiming = null;
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $defaultValueMeta = null;
@@ -375,1021 +341,851 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     public $meaningWhenMissing = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $fixedBoolean = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $fixedInteger = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $fixedDecimal = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $fixedBase64Binary = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $fixedInstant = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $fixedString = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $fixedUri = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $fixedDate = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $fixedDateTime = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $fixedTime = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $fixedCode = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $fixedOid = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public $fixedUuid = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $fixedId = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $fixedUnsignedInt = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $fixedPositiveInt = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $fixedMarkdown = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $fixedAnnotation = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $fixedAttachment = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $fixedIdentifier = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $fixedCodeableConcept = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $fixedCoding = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $fixedQuantity = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $fixedRange = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $fixedPeriod = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $fixedRatio = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $fixedReference = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $fixedSampledData = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $fixedSignature = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $fixedHumanName = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $fixedAddress = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $fixedContactPoint = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $fixedTiming = null;
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $fixedMeta = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $patternBoolean = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $patternInteger = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $patternDecimal = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $patternBase64Binary = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $patternInstant = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $patternString = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $patternUri = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $patternDate = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $patternDateTime = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $patternTime = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $patternCode = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $patternOid = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public $patternUuid = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $patternId = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $patternUnsignedInt = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $patternPositiveInt = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $patternMarkdown = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $patternAnnotation = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $patternAttachment = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $patternIdentifier = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $patternCodeableConcept = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $patternCoding = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $patternQuantity = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $patternRange = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $patternPeriod = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $patternRatio = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $patternReference = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $patternSampledData = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $patternSignature = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $patternHumanName = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $patternAddress = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $patternContactPoint = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $patternTiming = null;
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $patternMeta = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $exampleBoolean = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $exampleInteger = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $exampleDecimal = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $exampleBase64Binary = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $exampleInstant = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $exampleString = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $exampleUri = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $exampleDate = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $exampleDateTime = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $exampleTime = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $exampleCode = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $exampleOid = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public $exampleUuid = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $exampleId = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $exampleUnsignedInt = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $examplePositiveInt = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $exampleMarkdown = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $exampleAnnotation = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $exampleAttachment = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $exampleIdentifier = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $exampleCodeableConcept = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $exampleCoding = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $exampleQuantity = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $exampleRange = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $examplePeriod = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $exampleRatio = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $exampleReference = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $exampleSampledData = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $exampleSignature = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $exampleHumanName = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $exampleAddress = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $exampleContactPoint = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $exampleTiming = null;
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $exampleMeta = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $minValueBoolean = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $minValueInteger = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $minValueDecimal = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $minValueBase64Binary = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $minValueInstant = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $minValueString = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $minValueUri = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $minValueDate = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $minValueDateTime = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $minValueTime = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $minValueCode = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $minValueOid = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public $minValueUuid = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $minValueId = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $minValueUnsignedInt = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $minValuePositiveInt = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $minValueMarkdown = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $minValueAnnotation = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $minValueAttachment = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $minValueIdentifier = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $minValueCodeableConcept = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $minValueCoding = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $minValueQuantity = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $minValueRange = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $minValuePeriod = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $minValueRatio = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $minValueReference = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $minValueSampledData = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $minValueSignature = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $minValueHumanName = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $minValueAddress = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $minValueContactPoint = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $minValueTiming = null;
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $minValueMeta = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $maxValueBoolean = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public $maxValueInteger = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public $maxValueDecimal = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public $maxValueBase64Binary = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public $maxValueInstant = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public $maxValueString = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public $maxValueUri = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public $maxValueDate = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $maxValueDateTime = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public $maxValueTime = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $maxValueCode = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public $maxValueOid = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public $maxValueUuid = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public $maxValueId = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public $maxValueUnsignedInt = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public $maxValuePositiveInt = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public $maxValueMarkdown = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public $maxValueAnnotation = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public $maxValueAttachment = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public $maxValueIdentifier = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public $maxValueCodeableConcept = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public $maxValueCoding = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public $maxValueQuantity = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public $maxValueRange = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $maxValuePeriod = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $maxValueRatio = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public $maxValueReference = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public $maxValueSampledData = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public $maxValueSignature = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public $maxValueHumanName = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public $maxValueAddress = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public $maxValueContactPoint = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public $maxValueTiming = null;
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public $maxValueMeta = null;
@@ -1768,7 +1564,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getDefaultValueBoolean()
@@ -1777,7 +1572,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $defaultValueBoolean
      * @return $this
      */
@@ -1788,7 +1582,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getDefaultValueInteger()
@@ -1797,7 +1590,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $defaultValueInteger
      * @return $this
      */
@@ -1808,7 +1600,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getDefaultValueDecimal()
@@ -1817,7 +1608,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $defaultValueDecimal
      * @return $this
      */
@@ -1828,7 +1618,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getDefaultValueBase64Binary()
@@ -1837,7 +1626,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $defaultValueBase64Binary
      * @return $this
      */
@@ -1848,7 +1636,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getDefaultValueInstant()
@@ -1857,7 +1644,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $defaultValueInstant
      * @return $this
      */
@@ -1868,7 +1654,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getDefaultValueString()
@@ -1877,7 +1662,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $defaultValueString
      * @return $this
      */
@@ -1888,7 +1672,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getDefaultValueUri()
@@ -1897,7 +1680,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $defaultValueUri
      * @return $this
      */
@@ -1908,7 +1690,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getDefaultValueDate()
@@ -1917,7 +1698,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $defaultValueDate
      * @return $this
      */
@@ -1928,7 +1708,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getDefaultValueDateTime()
@@ -1937,7 +1716,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $defaultValueDateTime
      * @return $this
      */
@@ -1948,7 +1726,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getDefaultValueTime()
@@ -1957,7 +1734,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $defaultValueTime
      * @return $this
      */
@@ -1968,7 +1744,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getDefaultValueCode()
@@ -1977,7 +1752,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $defaultValueCode
      * @return $this
      */
@@ -1988,7 +1762,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getDefaultValueOid()
@@ -1997,7 +1770,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $defaultValueOid
      * @return $this
      */
@@ -2008,7 +1780,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public function getDefaultValueUuid()
@@ -2017,7 +1788,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUuid $defaultValueUuid
      * @return $this
      */
@@ -2028,7 +1798,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getDefaultValueId()
@@ -2037,7 +1806,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $defaultValueId
      * @return $this
      */
@@ -2048,7 +1816,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getDefaultValueUnsignedInt()
@@ -2057,7 +1824,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $defaultValueUnsignedInt
      * @return $this
      */
@@ -2068,7 +1834,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getDefaultValuePositiveInt()
@@ -2077,7 +1842,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $defaultValuePositiveInt
      * @return $this
      */
@@ -2088,7 +1852,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getDefaultValueMarkdown()
@@ -2097,7 +1860,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $defaultValueMarkdown
      * @return $this
      */
@@ -2108,7 +1870,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getDefaultValueAnnotation()
@@ -2117,7 +1878,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $defaultValueAnnotation
      * @return $this
      */
@@ -2128,7 +1888,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getDefaultValueAttachment()
@@ -2137,7 +1896,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $defaultValueAttachment
      * @return $this
      */
@@ -2148,7 +1906,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getDefaultValueIdentifier()
@@ -2157,7 +1914,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $defaultValueIdentifier
      * @return $this
      */
@@ -2168,7 +1924,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getDefaultValueCodeableConcept()
@@ -2177,7 +1932,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $defaultValueCodeableConcept
      * @return $this
      */
@@ -2188,7 +1942,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getDefaultValueCoding()
@@ -2197,7 +1950,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $defaultValueCoding
      * @return $this
      */
@@ -2208,7 +1960,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getDefaultValueQuantity()
@@ -2217,7 +1968,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $defaultValueQuantity
      * @return $this
      */
@@ -2228,7 +1978,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getDefaultValueRange()
@@ -2237,7 +1986,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $defaultValueRange
      * @return $this
      */
@@ -2248,7 +1996,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getDefaultValuePeriod()
@@ -2257,7 +2004,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $defaultValuePeriod
      * @return $this
      */
@@ -2268,7 +2014,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getDefaultValueRatio()
@@ -2277,7 +2022,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $defaultValueRatio
      * @return $this
      */
@@ -2288,7 +2032,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getDefaultValueReference()
@@ -2297,7 +2040,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $defaultValueReference
      * @return $this
      */
@@ -2308,7 +2050,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getDefaultValueSampledData()
@@ -2317,7 +2058,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $defaultValueSampledData
      * @return $this
      */
@@ -2328,7 +2068,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getDefaultValueSignature()
@@ -2337,7 +2076,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $defaultValueSignature
      * @return $this
      */
@@ -2348,7 +2086,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getDefaultValueHumanName()
@@ -2357,7 +2094,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $defaultValueHumanName
      * @return $this
      */
@@ -2368,7 +2104,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getDefaultValueAddress()
@@ -2377,7 +2112,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $defaultValueAddress
      * @return $this
      */
@@ -2388,7 +2122,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getDefaultValueContactPoint()
@@ -2397,7 +2130,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $defaultValueContactPoint
      * @return $this
      */
@@ -2408,7 +2140,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getDefaultValueTiming()
@@ -2417,7 +2148,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $defaultValueTiming
      * @return $this
      */
@@ -2428,7 +2158,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getDefaultValueMeta()
@@ -2437,7 +2166,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The value that should be used if there is no value stated in the instance (e.g. 'if not otherwise specified, the abstract is false'). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $defaultValueMeta
      * @return $this
      */
@@ -2468,7 +2196,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getFixedBoolean()
@@ -2477,7 +2204,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $fixedBoolean
      * @return $this
      */
@@ -2488,7 +2214,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getFixedInteger()
@@ -2497,7 +2222,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $fixedInteger
      * @return $this
      */
@@ -2508,7 +2232,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getFixedDecimal()
@@ -2517,7 +2240,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $fixedDecimal
      * @return $this
      */
@@ -2528,7 +2250,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getFixedBase64Binary()
@@ -2537,7 +2258,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $fixedBase64Binary
      * @return $this
      */
@@ -2548,7 +2268,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getFixedInstant()
@@ -2557,7 +2276,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $fixedInstant
      * @return $this
      */
@@ -2568,7 +2286,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getFixedString()
@@ -2577,7 +2294,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $fixedString
      * @return $this
      */
@@ -2588,7 +2304,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getFixedUri()
@@ -2597,7 +2312,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $fixedUri
      * @return $this
      */
@@ -2608,7 +2322,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getFixedDate()
@@ -2617,7 +2330,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $fixedDate
      * @return $this
      */
@@ -2628,7 +2340,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getFixedDateTime()
@@ -2637,7 +2348,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $fixedDateTime
      * @return $this
      */
@@ -2648,7 +2358,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getFixedTime()
@@ -2657,7 +2366,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $fixedTime
      * @return $this
      */
@@ -2668,7 +2376,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getFixedCode()
@@ -2677,7 +2384,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $fixedCode
      * @return $this
      */
@@ -2688,7 +2394,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getFixedOid()
@@ -2697,7 +2402,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $fixedOid
      * @return $this
      */
@@ -2708,7 +2412,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public function getFixedUuid()
@@ -2717,7 +2420,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUuid $fixedUuid
      * @return $this
      */
@@ -2728,7 +2430,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getFixedId()
@@ -2737,7 +2438,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $fixedId
      * @return $this
      */
@@ -2748,7 +2448,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getFixedUnsignedInt()
@@ -2757,7 +2456,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $fixedUnsignedInt
      * @return $this
      */
@@ -2768,7 +2466,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getFixedPositiveInt()
@@ -2777,7 +2474,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $fixedPositiveInt
      * @return $this
      */
@@ -2788,7 +2484,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getFixedMarkdown()
@@ -2797,7 +2492,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $fixedMarkdown
      * @return $this
      */
@@ -2808,7 +2502,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getFixedAnnotation()
@@ -2817,7 +2510,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $fixedAnnotation
      * @return $this
      */
@@ -2828,7 +2520,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getFixedAttachment()
@@ -2837,7 +2528,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $fixedAttachment
      * @return $this
      */
@@ -2848,7 +2538,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getFixedIdentifier()
@@ -2857,7 +2546,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $fixedIdentifier
      * @return $this
      */
@@ -2868,7 +2556,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getFixedCodeableConcept()
@@ -2877,7 +2564,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $fixedCodeableConcept
      * @return $this
      */
@@ -2888,7 +2574,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getFixedCoding()
@@ -2897,7 +2582,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $fixedCoding
      * @return $this
      */
@@ -2908,7 +2592,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getFixedQuantity()
@@ -2917,7 +2600,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $fixedQuantity
      * @return $this
      */
@@ -2928,7 +2610,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getFixedRange()
@@ -2937,7 +2618,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $fixedRange
      * @return $this
      */
@@ -2948,7 +2628,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getFixedPeriod()
@@ -2957,7 +2636,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $fixedPeriod
      * @return $this
      */
@@ -2968,7 +2646,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getFixedRatio()
@@ -2977,7 +2654,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $fixedRatio
      * @return $this
      */
@@ -2988,7 +2664,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getFixedReference()
@@ -2997,7 +2672,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $fixedReference
      * @return $this
      */
@@ -3008,7 +2682,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getFixedSampledData()
@@ -3017,7 +2690,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $fixedSampledData
      * @return $this
      */
@@ -3028,7 +2700,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getFixedSignature()
@@ -3037,7 +2708,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $fixedSignature
      * @return $this
      */
@@ -3048,7 +2718,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getFixedHumanName()
@@ -3057,7 +2726,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $fixedHumanName
      * @return $this
      */
@@ -3068,7 +2736,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getFixedAddress()
@@ -3077,7 +2744,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $fixedAddress
      * @return $this
      */
@@ -3088,7 +2754,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getFixedContactPoint()
@@ -3097,7 +2762,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $fixedContactPoint
      * @return $this
      */
@@ -3108,7 +2772,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getFixedTiming()
@@ -3117,7 +2780,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $fixedTiming
      * @return $this
      */
@@ -3128,7 +2790,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getFixedMeta()
@@ -3137,7 +2798,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that SHALL be exactly the value  for this element in the instance. For purposes of comparison, non-significant whitespace is ignored, and all values must be an exact match (case and accent sensitive). Missing elements/attributes must also be missing. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $fixedMeta
      * @return $this
      */
@@ -3148,7 +2808,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getPatternBoolean()
@@ -3157,7 +2816,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $patternBoolean
      * @return $this
      */
@@ -3168,7 +2826,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getPatternInteger()
@@ -3177,7 +2834,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $patternInteger
      * @return $this
      */
@@ -3188,7 +2844,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getPatternDecimal()
@@ -3197,7 +2852,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $patternDecimal
      * @return $this
      */
@@ -3208,7 +2862,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getPatternBase64Binary()
@@ -3217,7 +2870,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $patternBase64Binary
      * @return $this
      */
@@ -3228,7 +2880,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getPatternInstant()
@@ -3237,7 +2888,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $patternInstant
      * @return $this
      */
@@ -3248,7 +2898,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getPatternString()
@@ -3257,7 +2906,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $patternString
      * @return $this
      */
@@ -3268,7 +2916,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getPatternUri()
@@ -3277,7 +2924,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $patternUri
      * @return $this
      */
@@ -3288,7 +2934,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getPatternDate()
@@ -3297,7 +2942,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $patternDate
      * @return $this
      */
@@ -3308,7 +2952,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getPatternDateTime()
@@ -3317,7 +2960,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $patternDateTime
      * @return $this
      */
@@ -3328,7 +2970,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getPatternTime()
@@ -3337,7 +2978,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $patternTime
      * @return $this
      */
@@ -3348,7 +2988,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getPatternCode()
@@ -3357,7 +2996,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $patternCode
      * @return $this
      */
@@ -3368,7 +3006,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getPatternOid()
@@ -3377,7 +3014,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $patternOid
      * @return $this
      */
@@ -3388,7 +3024,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public function getPatternUuid()
@@ -3397,7 +3032,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUuid $patternUuid
      * @return $this
      */
@@ -3408,7 +3042,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getPatternId()
@@ -3417,7 +3050,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $patternId
      * @return $this
      */
@@ -3428,7 +3060,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getPatternUnsignedInt()
@@ -3437,7 +3068,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $patternUnsignedInt
      * @return $this
      */
@@ -3448,7 +3078,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getPatternPositiveInt()
@@ -3457,7 +3086,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $patternPositiveInt
      * @return $this
      */
@@ -3468,7 +3096,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getPatternMarkdown()
@@ -3477,7 +3104,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $patternMarkdown
      * @return $this
      */
@@ -3488,7 +3114,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getPatternAnnotation()
@@ -3497,7 +3122,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $patternAnnotation
      * @return $this
      */
@@ -3508,7 +3132,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getPatternAttachment()
@@ -3517,7 +3140,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $patternAttachment
      * @return $this
      */
@@ -3528,7 +3150,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getPatternIdentifier()
@@ -3537,7 +3158,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $patternIdentifier
      * @return $this
      */
@@ -3548,7 +3168,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getPatternCodeableConcept()
@@ -3557,7 +3176,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $patternCodeableConcept
      * @return $this
      */
@@ -3568,7 +3186,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getPatternCoding()
@@ -3577,7 +3194,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $patternCoding
      * @return $this
      */
@@ -3588,7 +3204,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getPatternQuantity()
@@ -3597,7 +3212,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $patternQuantity
      * @return $this
      */
@@ -3608,7 +3222,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getPatternRange()
@@ -3617,7 +3230,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $patternRange
      * @return $this
      */
@@ -3628,7 +3240,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getPatternPeriod()
@@ -3637,7 +3248,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $patternPeriod
      * @return $this
      */
@@ -3648,7 +3258,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getPatternRatio()
@@ -3657,7 +3266,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $patternRatio
      * @return $this
      */
@@ -3668,7 +3276,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getPatternReference()
@@ -3677,7 +3284,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $patternReference
      * @return $this
      */
@@ -3688,7 +3294,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getPatternSampledData()
@@ -3697,7 +3302,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $patternSampledData
      * @return $this
      */
@@ -3708,7 +3312,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getPatternSignature()
@@ -3717,7 +3320,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $patternSignature
      * @return $this
      */
@@ -3728,7 +3330,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getPatternHumanName()
@@ -3737,7 +3338,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $patternHumanName
      * @return $this
      */
@@ -3748,7 +3348,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getPatternAddress()
@@ -3757,7 +3356,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $patternAddress
      * @return $this
      */
@@ -3768,7 +3366,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getPatternContactPoint()
@@ -3777,7 +3374,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $patternContactPoint
      * @return $this
      */
@@ -3788,7 +3384,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getPatternTiming()
@@ -3797,7 +3392,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $patternTiming
      * @return $this
      */
@@ -3808,7 +3402,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getPatternMeta()
@@ -3817,7 +3410,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * Specifies a value that the value in the instance SHALL follow - that is, any value in the pattern must be found in the instance. Other additional values may be found too. This is effectively constraint by example.  The values of elements present in the pattern must match exactly (case-sensitive, accent-sensitive, etc.). (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $patternMeta
      * @return $this
      */
@@ -3828,7 +3420,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getExampleBoolean()
@@ -3837,7 +3428,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $exampleBoolean
      * @return $this
      */
@@ -3848,7 +3438,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getExampleInteger()
@@ -3857,7 +3446,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $exampleInteger
      * @return $this
      */
@@ -3868,7 +3456,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getExampleDecimal()
@@ -3877,7 +3464,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $exampleDecimal
      * @return $this
      */
@@ -3888,7 +3474,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getExampleBase64Binary()
@@ -3897,7 +3482,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $exampleBase64Binary
      * @return $this
      */
@@ -3908,7 +3492,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getExampleInstant()
@@ -3917,7 +3500,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $exampleInstant
      * @return $this
      */
@@ -3928,7 +3510,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getExampleString()
@@ -3937,7 +3518,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $exampleString
      * @return $this
      */
@@ -3948,7 +3528,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getExampleUri()
@@ -3957,7 +3536,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $exampleUri
      * @return $this
      */
@@ -3968,7 +3546,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getExampleDate()
@@ -3977,7 +3554,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $exampleDate
      * @return $this
      */
@@ -3988,7 +3564,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getExampleDateTime()
@@ -3997,7 +3572,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $exampleDateTime
      * @return $this
      */
@@ -4008,7 +3582,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getExampleTime()
@@ -4017,7 +3590,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $exampleTime
      * @return $this
      */
@@ -4028,7 +3600,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getExampleCode()
@@ -4037,7 +3608,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $exampleCode
      * @return $this
      */
@@ -4048,7 +3618,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getExampleOid()
@@ -4057,7 +3626,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $exampleOid
      * @return $this
      */
@@ -4068,7 +3636,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public function getExampleUuid()
@@ -4077,7 +3644,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUuid $exampleUuid
      * @return $this
      */
@@ -4088,7 +3654,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getExampleId()
@@ -4097,7 +3662,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $exampleId
      * @return $this
      */
@@ -4108,7 +3672,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getExampleUnsignedInt()
@@ -4117,7 +3680,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $exampleUnsignedInt
      * @return $this
      */
@@ -4128,7 +3690,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getExamplePositiveInt()
@@ -4137,7 +3698,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $examplePositiveInt
      * @return $this
      */
@@ -4148,7 +3708,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getExampleMarkdown()
@@ -4157,7 +3716,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $exampleMarkdown
      * @return $this
      */
@@ -4168,7 +3726,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getExampleAnnotation()
@@ -4177,7 +3734,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $exampleAnnotation
      * @return $this
      */
@@ -4188,7 +3744,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getExampleAttachment()
@@ -4197,7 +3752,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $exampleAttachment
      * @return $this
      */
@@ -4208,7 +3762,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getExampleIdentifier()
@@ -4217,7 +3770,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $exampleIdentifier
      * @return $this
      */
@@ -4228,7 +3780,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getExampleCodeableConcept()
@@ -4237,7 +3788,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $exampleCodeableConcept
      * @return $this
      */
@@ -4248,7 +3798,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getExampleCoding()
@@ -4257,7 +3806,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $exampleCoding
      * @return $this
      */
@@ -4268,7 +3816,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getExampleQuantity()
@@ -4277,7 +3824,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $exampleQuantity
      * @return $this
      */
@@ -4288,7 +3834,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getExampleRange()
@@ -4297,7 +3842,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $exampleRange
      * @return $this
      */
@@ -4308,7 +3852,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getExamplePeriod()
@@ -4317,7 +3860,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $examplePeriod
      * @return $this
      */
@@ -4328,7 +3870,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getExampleRatio()
@@ -4337,7 +3878,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $exampleRatio
      * @return $this
      */
@@ -4348,7 +3888,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getExampleReference()
@@ -4357,7 +3896,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $exampleReference
      * @return $this
      */
@@ -4368,7 +3906,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getExampleSampledData()
@@ -4377,7 +3914,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $exampleSampledData
      * @return $this
      */
@@ -4388,7 +3924,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getExampleSignature()
@@ -4397,7 +3932,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $exampleSignature
      * @return $this
      */
@@ -4408,7 +3942,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getExampleHumanName()
@@ -4417,7 +3950,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $exampleHumanName
      * @return $this
      */
@@ -4428,7 +3960,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getExampleAddress()
@@ -4437,7 +3968,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $exampleAddress
      * @return $this
      */
@@ -4448,7 +3978,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getExampleContactPoint()
@@ -4457,7 +3986,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $exampleContactPoint
      * @return $this
      */
@@ -4468,7 +3996,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getExampleTiming()
@@ -4477,7 +4004,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $exampleTiming
      * @return $this
      */
@@ -4488,7 +4014,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getExampleMeta()
@@ -4497,7 +4022,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * A sample value for this element demonstrating the type of information that would typically be captured. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $exampleMeta
      * @return $this
      */
@@ -4508,7 +4032,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getMinValueBoolean()
@@ -4517,7 +4040,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $minValueBoolean
      * @return $this
      */
@@ -4528,7 +4050,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getMinValueInteger()
@@ -4537,7 +4058,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $minValueInteger
      * @return $this
      */
@@ -4548,7 +4068,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getMinValueDecimal()
@@ -4557,7 +4076,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $minValueDecimal
      * @return $this
      */
@@ -4568,7 +4086,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getMinValueBase64Binary()
@@ -4577,7 +4094,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $minValueBase64Binary
      * @return $this
      */
@@ -4588,7 +4104,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getMinValueInstant()
@@ -4597,7 +4112,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $minValueInstant
      * @return $this
      */
@@ -4608,7 +4122,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getMinValueString()
@@ -4617,7 +4130,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $minValueString
      * @return $this
      */
@@ -4628,7 +4140,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getMinValueUri()
@@ -4637,7 +4148,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $minValueUri
      * @return $this
      */
@@ -4648,7 +4158,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getMinValueDate()
@@ -4657,7 +4166,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $minValueDate
      * @return $this
      */
@@ -4668,7 +4176,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getMinValueDateTime()
@@ -4677,7 +4184,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $minValueDateTime
      * @return $this
      */
@@ -4688,7 +4194,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getMinValueTime()
@@ -4697,7 +4202,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $minValueTime
      * @return $this
      */
@@ -4708,7 +4212,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getMinValueCode()
@@ -4717,7 +4220,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $minValueCode
      * @return $this
      */
@@ -4728,7 +4230,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getMinValueOid()
@@ -4737,7 +4238,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $minValueOid
      * @return $this
      */
@@ -4748,7 +4248,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public function getMinValueUuid()
@@ -4757,7 +4256,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUuid $minValueUuid
      * @return $this
      */
@@ -4768,7 +4266,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getMinValueId()
@@ -4777,7 +4274,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $minValueId
      * @return $this
      */
@@ -4788,7 +4284,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getMinValueUnsignedInt()
@@ -4797,7 +4292,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $minValueUnsignedInt
      * @return $this
      */
@@ -4808,7 +4302,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getMinValuePositiveInt()
@@ -4817,7 +4310,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $minValuePositiveInt
      * @return $this
      */
@@ -4828,7 +4320,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getMinValueMarkdown()
@@ -4837,7 +4328,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $minValueMarkdown
      * @return $this
      */
@@ -4848,7 +4338,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getMinValueAnnotation()
@@ -4857,7 +4346,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $minValueAnnotation
      * @return $this
      */
@@ -4868,7 +4356,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getMinValueAttachment()
@@ -4877,7 +4364,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $minValueAttachment
      * @return $this
      */
@@ -4888,7 +4374,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getMinValueIdentifier()
@@ -4897,7 +4382,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $minValueIdentifier
      * @return $this
      */
@@ -4908,7 +4392,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getMinValueCodeableConcept()
@@ -4917,7 +4400,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $minValueCodeableConcept
      * @return $this
      */
@@ -4928,7 +4410,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getMinValueCoding()
@@ -4937,7 +4418,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $minValueCoding
      * @return $this
      */
@@ -4948,7 +4428,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getMinValueQuantity()
@@ -4957,7 +4436,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $minValueQuantity
      * @return $this
      */
@@ -4968,7 +4446,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getMinValueRange()
@@ -4977,7 +4454,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $minValueRange
      * @return $this
      */
@@ -4988,7 +4464,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getMinValuePeriod()
@@ -4997,7 +4472,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $minValuePeriod
      * @return $this
      */
@@ -5008,7 +4482,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getMinValueRatio()
@@ -5017,7 +4490,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $minValueRatio
      * @return $this
      */
@@ -5028,7 +4500,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getMinValueReference()
@@ -5037,7 +4508,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $minValueReference
      * @return $this
      */
@@ -5048,7 +4518,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getMinValueSampledData()
@@ -5057,7 +4526,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $minValueSampledData
      * @return $this
      */
@@ -5068,7 +4536,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getMinValueSignature()
@@ -5077,7 +4544,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $minValueSignature
      * @return $this
      */
@@ -5088,7 +4554,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getMinValueHumanName()
@@ -5097,7 +4562,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $minValueHumanName
      * @return $this
      */
@@ -5108,7 +4572,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getMinValueAddress()
@@ -5117,7 +4580,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $minValueAddress
      * @return $this
      */
@@ -5128,7 +4590,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getMinValueContactPoint()
@@ -5137,7 +4598,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $minValueContactPoint
      * @return $this
      */
@@ -5148,7 +4608,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getMinValueTiming()
@@ -5157,7 +4616,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $minValueTiming
      * @return $this
      */
@@ -5168,7 +4626,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getMinValueMeta()
@@ -5177,7 +4634,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The minimum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $minValueMeta
      * @return $this
      */
@@ -5188,7 +4644,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public function getMaxValueBoolean()
@@ -5197,7 +4652,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $maxValueBoolean
      * @return $this
      */
@@ -5208,7 +4662,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
      */
     public function getMaxValueInteger()
@@ -5217,7 +4670,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $maxValueInteger
      * @return $this
      */
@@ -5228,7 +4680,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
      */
     public function getMaxValueDecimal()
@@ -5237,7 +4688,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $maxValueDecimal
      * @return $this
      */
@@ -5248,7 +4698,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
     public function getMaxValueBase64Binary()
@@ -5257,7 +4706,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $maxValueBase64Binary
      * @return $this
      */
@@ -5268,7 +4716,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRInstant
      */
     public function getMaxValueInstant()
@@ -5277,7 +4724,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRInstant $maxValueInstant
      * @return $this
      */
@@ -5288,7 +4734,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRString
      */
     public function getMaxValueString()
@@ -5297,7 +4742,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRString $maxValueString
      * @return $this
      */
@@ -5308,7 +4752,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
     public function getMaxValueUri()
@@ -5317,7 +4760,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $maxValueUri
      * @return $this
      */
@@ -5328,7 +4770,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDate
      */
     public function getMaxValueDate()
@@ -5337,7 +4778,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDate $maxValueDate
      * @return $this
      */
@@ -5348,7 +4788,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getMaxValueDateTime()
@@ -5357,7 +4796,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $maxValueDateTime
      * @return $this
      */
@@ -5368,7 +4806,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTime
      */
     public function getMaxValueTime()
@@ -5377,7 +4814,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTime $maxValueTime
      * @return $this
      */
@@ -5388,7 +4824,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public function getMaxValueCode()
@@ -5397,7 +4832,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $maxValueCode
      * @return $this
      */
@@ -5408,7 +4842,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIROid
      */
     public function getMaxValueOid()
@@ -5417,7 +4850,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIROid $maxValueOid
      * @return $this
      */
@@ -5428,7 +4860,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUuid
      */
     public function getMaxValueUuid()
@@ -5437,7 +4868,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUuid $maxValueUuid
      * @return $this
      */
@@ -5448,7 +4878,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRId
      */
     public function getMaxValueId()
@@ -5457,7 +4886,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRId $maxValueId
      * @return $this
      */
@@ -5468,7 +4896,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
      */
     public function getMaxValueUnsignedInt()
@@ -5477,7 +4904,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $maxValueUnsignedInt
      * @return $this
      */
@@ -5488,7 +4914,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
     public function getMaxValuePositiveInt()
@@ -5497,7 +4922,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $maxValuePositiveInt
      * @return $this
      */
@@ -5508,7 +4932,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
      */
     public function getMaxValueMarkdown()
@@ -5517,7 +4940,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMarkdown $maxValueMarkdown
      * @return $this
      */
@@ -5528,7 +4950,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAnnotation
      */
     public function getMaxValueAnnotation()
@@ -5537,7 +4958,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAnnotation $maxValueAnnotation
      * @return $this
      */
@@ -5548,7 +4968,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAttachment
      */
     public function getMaxValueAttachment()
@@ -5557,7 +4976,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAttachment $maxValueAttachment
      * @return $this
      */
@@ -5568,7 +4986,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
      */
     public function getMaxValueIdentifier()
@@ -5577,7 +4994,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRIdentifier $maxValueIdentifier
      * @return $this
      */
@@ -5588,7 +5004,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
      */
     public function getMaxValueCodeableConcept()
@@ -5597,7 +5012,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept $maxValueCodeableConcept
      * @return $this
      */
@@ -5608,7 +5022,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRCoding
      */
     public function getMaxValueCoding()
@@ -5617,7 +5030,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRCoding $maxValueCoding
      * @return $this
      */
@@ -5628,7 +5040,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
     public function getMaxValueQuantity()
@@ -5637,7 +5048,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $maxValueQuantity
      * @return $this
      */
@@ -5648,7 +5058,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRange
      */
     public function getMaxValueRange()
@@ -5657,7 +5066,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRange $maxValueRange
      * @return $this
      */
@@ -5668,7 +5076,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getMaxValuePeriod()
@@ -5677,7 +5084,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $maxValuePeriod
      * @return $this
      */
@@ -5688,7 +5094,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getMaxValueRatio()
@@ -5697,7 +5102,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $maxValueRatio
      * @return $this
      */
@@ -5708,7 +5112,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
      */
     public function getMaxValueReference()
@@ -5717,7 +5120,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $maxValueReference
      * @return $this
      */
@@ -5728,7 +5130,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSampledData
      */
     public function getMaxValueSampledData()
@@ -5737,7 +5138,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSampledData $maxValueSampledData
      * @return $this
      */
@@ -5748,7 +5148,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRSignature
      */
     public function getMaxValueSignature()
@@ -5757,7 +5156,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRSignature $maxValueSignature
      * @return $this
      */
@@ -5768,7 +5166,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRHumanName
      */
     public function getMaxValueHumanName()
@@ -5777,7 +5174,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRHumanName $maxValueHumanName
      * @return $this
      */
@@ -5788,7 +5184,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRAddress
      */
     public function getMaxValueAddress()
@@ -5797,7 +5192,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRAddress $maxValueAddress
      * @return $this
      */
@@ -5808,7 +5202,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
     public function getMaxValueContactPoint()
@@ -5817,7 +5210,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $maxValueContactPoint
      * @return $this
      */
@@ -5828,7 +5220,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRTiming
      */
     public function getMaxValueTiming()
@@ -5837,7 +5228,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRTiming $maxValueTiming
      * @return $this
      */
@@ -5848,7 +5238,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRMeta
      */
     public function getMaxValueMeta()
@@ -5857,7 +5246,6 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     }
 
     /**
-     * The maximum allowed value for the element. The value is inclusive. This is allowed for the types date, dateTime, instant, time, decimal, integer, and Quantity. (choose any one of the elements, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRMeta $maxValueMeta
      * @return $this
      */
@@ -6049,268 +5437,268 @@ class FHIRElementDefinition extends FHIRElement implements \JsonSerializable
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->path) $json['path'] = json_encode($this->path);
+        if (null !== $this->path) $json['path'] = $this->path;
         if (0 < count($this->representation)) {
             $json['representation'] = [];
             foreach($this->representation as $representation) {
-                $json['representation'][] = json_encode($representation);
+                $json['representation'][] = $representation;
             }
         }
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->label) $json['label'] = json_encode($this->label);
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->label) $json['label'] = $this->label;
         if (0 < count($this->code)) {
             $json['code'] = [];
             foreach($this->code as $code) {
-                $json['code'][] = json_encode($code);
+                $json['code'][] = $code;
             }
         }
-        if (null !== $this->slicing) $json['slicing'] = json_encode($this->slicing);
-        if (null !== $this->short) $json['short'] = json_encode($this->short);
-        if (null !== $this->definition) $json['definition'] = json_encode($this->definition);
-        if (null !== $this->comments) $json['comments'] = json_encode($this->comments);
-        if (null !== $this->requirements) $json['requirements'] = json_encode($this->requirements);
+        if (null !== $this->slicing) $json['slicing'] = $this->slicing;
+        if (null !== $this->short) $json['short'] = $this->short;
+        if (null !== $this->definition) $json['definition'] = $this->definition;
+        if (null !== $this->comments) $json['comments'] = $this->comments;
+        if (null !== $this->requirements) $json['requirements'] = $this->requirements;
         if (0 < count($this->alias)) {
             $json['alias'] = [];
             foreach($this->alias as $alias) {
-                $json['alias'][] = json_encode($alias);
+                $json['alias'][] = $alias;
             }
         }
-        if (null !== $this->min) $json['min'] = json_encode($this->min);
-        if (null !== $this->max) $json['max'] = json_encode($this->max);
-        if (null !== $this->base) $json['base'] = json_encode($this->base);
+        if (null !== $this->min) $json['min'] = $this->min;
+        if (null !== $this->max) $json['max'] = $this->max;
+        if (null !== $this->base) $json['base'] = $this->base;
         if (0 < count($this->type)) {
             $json['type'] = [];
             foreach($this->type as $type) {
-                $json['type'][] = json_encode($type);
+                $json['type'][] = $type;
             }
         }
-        if (null !== $this->nameReference) $json['nameReference'] = json_encode($this->nameReference);
-        if (null !== $this->defaultValueBoolean) $json['defaultValueBoolean'] = json_encode($this->defaultValueBoolean);
-        if (null !== $this->defaultValueInteger) $json['defaultValueInteger'] = json_encode($this->defaultValueInteger);
-        if (null !== $this->defaultValueDecimal) $json['defaultValueDecimal'] = json_encode($this->defaultValueDecimal);
-        if (null !== $this->defaultValueBase64Binary) $json['defaultValueBase64Binary'] = json_encode($this->defaultValueBase64Binary);
-        if (null !== $this->defaultValueInstant) $json['defaultValueInstant'] = json_encode($this->defaultValueInstant);
-        if (null !== $this->defaultValueString) $json['defaultValueString'] = json_encode($this->defaultValueString);
-        if (null !== $this->defaultValueUri) $json['defaultValueUri'] = json_encode($this->defaultValueUri);
-        if (null !== $this->defaultValueDate) $json['defaultValueDate'] = json_encode($this->defaultValueDate);
-        if (null !== $this->defaultValueDateTime) $json['defaultValueDateTime'] = json_encode($this->defaultValueDateTime);
-        if (null !== $this->defaultValueTime) $json['defaultValueTime'] = json_encode($this->defaultValueTime);
-        if (null !== $this->defaultValueCode) $json['defaultValueCode'] = json_encode($this->defaultValueCode);
-        if (null !== $this->defaultValueOid) $json['defaultValueOid'] = json_encode($this->defaultValueOid);
-        if (null !== $this->defaultValueUuid) $json['defaultValueUuid'] = json_encode($this->defaultValueUuid);
-        if (null !== $this->defaultValueId) $json['defaultValueId'] = json_encode($this->defaultValueId);
-        if (null !== $this->defaultValueUnsignedInt) $json['defaultValueUnsignedInt'] = json_encode($this->defaultValueUnsignedInt);
-        if (null !== $this->defaultValuePositiveInt) $json['defaultValuePositiveInt'] = json_encode($this->defaultValuePositiveInt);
-        if (null !== $this->defaultValueMarkdown) $json['defaultValueMarkdown'] = json_encode($this->defaultValueMarkdown);
-        if (null !== $this->defaultValueAnnotation) $json['defaultValueAnnotation'] = json_encode($this->defaultValueAnnotation);
-        if (null !== $this->defaultValueAttachment) $json['defaultValueAttachment'] = json_encode($this->defaultValueAttachment);
-        if (null !== $this->defaultValueIdentifier) $json['defaultValueIdentifier'] = json_encode($this->defaultValueIdentifier);
-        if (null !== $this->defaultValueCodeableConcept) $json['defaultValueCodeableConcept'] = json_encode($this->defaultValueCodeableConcept);
-        if (null !== $this->defaultValueCoding) $json['defaultValueCoding'] = json_encode($this->defaultValueCoding);
-        if (null !== $this->defaultValueQuantity) $json['defaultValueQuantity'] = json_encode($this->defaultValueQuantity);
-        if (null !== $this->defaultValueRange) $json['defaultValueRange'] = json_encode($this->defaultValueRange);
-        if (null !== $this->defaultValuePeriod) $json['defaultValuePeriod'] = json_encode($this->defaultValuePeriod);
-        if (null !== $this->defaultValueRatio) $json['defaultValueRatio'] = json_encode($this->defaultValueRatio);
-        if (null !== $this->defaultValueReference) $json['defaultValueReference'] = json_encode($this->defaultValueReference);
-        if (null !== $this->defaultValueSampledData) $json['defaultValueSampledData'] = json_encode($this->defaultValueSampledData);
-        if (null !== $this->defaultValueSignature) $json['defaultValueSignature'] = json_encode($this->defaultValueSignature);
-        if (null !== $this->defaultValueHumanName) $json['defaultValueHumanName'] = json_encode($this->defaultValueHumanName);
-        if (null !== $this->defaultValueAddress) $json['defaultValueAddress'] = json_encode($this->defaultValueAddress);
-        if (null !== $this->defaultValueContactPoint) $json['defaultValueContactPoint'] = json_encode($this->defaultValueContactPoint);
-        if (null !== $this->defaultValueTiming) $json['defaultValueTiming'] = json_encode($this->defaultValueTiming);
-        if (null !== $this->defaultValueMeta) $json['defaultValueMeta'] = json_encode($this->defaultValueMeta);
-        if (null !== $this->meaningWhenMissing) $json['meaningWhenMissing'] = json_encode($this->meaningWhenMissing);
-        if (null !== $this->fixedBoolean) $json['fixedBoolean'] = json_encode($this->fixedBoolean);
-        if (null !== $this->fixedInteger) $json['fixedInteger'] = json_encode($this->fixedInteger);
-        if (null !== $this->fixedDecimal) $json['fixedDecimal'] = json_encode($this->fixedDecimal);
-        if (null !== $this->fixedBase64Binary) $json['fixedBase64Binary'] = json_encode($this->fixedBase64Binary);
-        if (null !== $this->fixedInstant) $json['fixedInstant'] = json_encode($this->fixedInstant);
-        if (null !== $this->fixedString) $json['fixedString'] = json_encode($this->fixedString);
-        if (null !== $this->fixedUri) $json['fixedUri'] = json_encode($this->fixedUri);
-        if (null !== $this->fixedDate) $json['fixedDate'] = json_encode($this->fixedDate);
-        if (null !== $this->fixedDateTime) $json['fixedDateTime'] = json_encode($this->fixedDateTime);
-        if (null !== $this->fixedTime) $json['fixedTime'] = json_encode($this->fixedTime);
-        if (null !== $this->fixedCode) $json['fixedCode'] = json_encode($this->fixedCode);
-        if (null !== $this->fixedOid) $json['fixedOid'] = json_encode($this->fixedOid);
-        if (null !== $this->fixedUuid) $json['fixedUuid'] = json_encode($this->fixedUuid);
-        if (null !== $this->fixedId) $json['fixedId'] = json_encode($this->fixedId);
-        if (null !== $this->fixedUnsignedInt) $json['fixedUnsignedInt'] = json_encode($this->fixedUnsignedInt);
-        if (null !== $this->fixedPositiveInt) $json['fixedPositiveInt'] = json_encode($this->fixedPositiveInt);
-        if (null !== $this->fixedMarkdown) $json['fixedMarkdown'] = json_encode($this->fixedMarkdown);
-        if (null !== $this->fixedAnnotation) $json['fixedAnnotation'] = json_encode($this->fixedAnnotation);
-        if (null !== $this->fixedAttachment) $json['fixedAttachment'] = json_encode($this->fixedAttachment);
-        if (null !== $this->fixedIdentifier) $json['fixedIdentifier'] = json_encode($this->fixedIdentifier);
-        if (null !== $this->fixedCodeableConcept) $json['fixedCodeableConcept'] = json_encode($this->fixedCodeableConcept);
-        if (null !== $this->fixedCoding) $json['fixedCoding'] = json_encode($this->fixedCoding);
-        if (null !== $this->fixedQuantity) $json['fixedQuantity'] = json_encode($this->fixedQuantity);
-        if (null !== $this->fixedRange) $json['fixedRange'] = json_encode($this->fixedRange);
-        if (null !== $this->fixedPeriod) $json['fixedPeriod'] = json_encode($this->fixedPeriod);
-        if (null !== $this->fixedRatio) $json['fixedRatio'] = json_encode($this->fixedRatio);
-        if (null !== $this->fixedReference) $json['fixedReference'] = json_encode($this->fixedReference);
-        if (null !== $this->fixedSampledData) $json['fixedSampledData'] = json_encode($this->fixedSampledData);
-        if (null !== $this->fixedSignature) $json['fixedSignature'] = json_encode($this->fixedSignature);
-        if (null !== $this->fixedHumanName) $json['fixedHumanName'] = json_encode($this->fixedHumanName);
-        if (null !== $this->fixedAddress) $json['fixedAddress'] = json_encode($this->fixedAddress);
-        if (null !== $this->fixedContactPoint) $json['fixedContactPoint'] = json_encode($this->fixedContactPoint);
-        if (null !== $this->fixedTiming) $json['fixedTiming'] = json_encode($this->fixedTiming);
-        if (null !== $this->fixedMeta) $json['fixedMeta'] = json_encode($this->fixedMeta);
-        if (null !== $this->patternBoolean) $json['patternBoolean'] = json_encode($this->patternBoolean);
-        if (null !== $this->patternInteger) $json['patternInteger'] = json_encode($this->patternInteger);
-        if (null !== $this->patternDecimal) $json['patternDecimal'] = json_encode($this->patternDecimal);
-        if (null !== $this->patternBase64Binary) $json['patternBase64Binary'] = json_encode($this->patternBase64Binary);
-        if (null !== $this->patternInstant) $json['patternInstant'] = json_encode($this->patternInstant);
-        if (null !== $this->patternString) $json['patternString'] = json_encode($this->patternString);
-        if (null !== $this->patternUri) $json['patternUri'] = json_encode($this->patternUri);
-        if (null !== $this->patternDate) $json['patternDate'] = json_encode($this->patternDate);
-        if (null !== $this->patternDateTime) $json['patternDateTime'] = json_encode($this->patternDateTime);
-        if (null !== $this->patternTime) $json['patternTime'] = json_encode($this->patternTime);
-        if (null !== $this->patternCode) $json['patternCode'] = json_encode($this->patternCode);
-        if (null !== $this->patternOid) $json['patternOid'] = json_encode($this->patternOid);
-        if (null !== $this->patternUuid) $json['patternUuid'] = json_encode($this->patternUuid);
-        if (null !== $this->patternId) $json['patternId'] = json_encode($this->patternId);
-        if (null !== $this->patternUnsignedInt) $json['patternUnsignedInt'] = json_encode($this->patternUnsignedInt);
-        if (null !== $this->patternPositiveInt) $json['patternPositiveInt'] = json_encode($this->patternPositiveInt);
-        if (null !== $this->patternMarkdown) $json['patternMarkdown'] = json_encode($this->patternMarkdown);
-        if (null !== $this->patternAnnotation) $json['patternAnnotation'] = json_encode($this->patternAnnotation);
-        if (null !== $this->patternAttachment) $json['patternAttachment'] = json_encode($this->patternAttachment);
-        if (null !== $this->patternIdentifier) $json['patternIdentifier'] = json_encode($this->patternIdentifier);
-        if (null !== $this->patternCodeableConcept) $json['patternCodeableConcept'] = json_encode($this->patternCodeableConcept);
-        if (null !== $this->patternCoding) $json['patternCoding'] = json_encode($this->patternCoding);
-        if (null !== $this->patternQuantity) $json['patternQuantity'] = json_encode($this->patternQuantity);
-        if (null !== $this->patternRange) $json['patternRange'] = json_encode($this->patternRange);
-        if (null !== $this->patternPeriod) $json['patternPeriod'] = json_encode($this->patternPeriod);
-        if (null !== $this->patternRatio) $json['patternRatio'] = json_encode($this->patternRatio);
-        if (null !== $this->patternReference) $json['patternReference'] = json_encode($this->patternReference);
-        if (null !== $this->patternSampledData) $json['patternSampledData'] = json_encode($this->patternSampledData);
-        if (null !== $this->patternSignature) $json['patternSignature'] = json_encode($this->patternSignature);
-        if (null !== $this->patternHumanName) $json['patternHumanName'] = json_encode($this->patternHumanName);
-        if (null !== $this->patternAddress) $json['patternAddress'] = json_encode($this->patternAddress);
-        if (null !== $this->patternContactPoint) $json['patternContactPoint'] = json_encode($this->patternContactPoint);
-        if (null !== $this->patternTiming) $json['patternTiming'] = json_encode($this->patternTiming);
-        if (null !== $this->patternMeta) $json['patternMeta'] = json_encode($this->patternMeta);
-        if (null !== $this->exampleBoolean) $json['exampleBoolean'] = json_encode($this->exampleBoolean);
-        if (null !== $this->exampleInteger) $json['exampleInteger'] = json_encode($this->exampleInteger);
-        if (null !== $this->exampleDecimal) $json['exampleDecimal'] = json_encode($this->exampleDecimal);
-        if (null !== $this->exampleBase64Binary) $json['exampleBase64Binary'] = json_encode($this->exampleBase64Binary);
-        if (null !== $this->exampleInstant) $json['exampleInstant'] = json_encode($this->exampleInstant);
-        if (null !== $this->exampleString) $json['exampleString'] = json_encode($this->exampleString);
-        if (null !== $this->exampleUri) $json['exampleUri'] = json_encode($this->exampleUri);
-        if (null !== $this->exampleDate) $json['exampleDate'] = json_encode($this->exampleDate);
-        if (null !== $this->exampleDateTime) $json['exampleDateTime'] = json_encode($this->exampleDateTime);
-        if (null !== $this->exampleTime) $json['exampleTime'] = json_encode($this->exampleTime);
-        if (null !== $this->exampleCode) $json['exampleCode'] = json_encode($this->exampleCode);
-        if (null !== $this->exampleOid) $json['exampleOid'] = json_encode($this->exampleOid);
-        if (null !== $this->exampleUuid) $json['exampleUuid'] = json_encode($this->exampleUuid);
-        if (null !== $this->exampleId) $json['exampleId'] = json_encode($this->exampleId);
-        if (null !== $this->exampleUnsignedInt) $json['exampleUnsignedInt'] = json_encode($this->exampleUnsignedInt);
-        if (null !== $this->examplePositiveInt) $json['examplePositiveInt'] = json_encode($this->examplePositiveInt);
-        if (null !== $this->exampleMarkdown) $json['exampleMarkdown'] = json_encode($this->exampleMarkdown);
-        if (null !== $this->exampleAnnotation) $json['exampleAnnotation'] = json_encode($this->exampleAnnotation);
-        if (null !== $this->exampleAttachment) $json['exampleAttachment'] = json_encode($this->exampleAttachment);
-        if (null !== $this->exampleIdentifier) $json['exampleIdentifier'] = json_encode($this->exampleIdentifier);
-        if (null !== $this->exampleCodeableConcept) $json['exampleCodeableConcept'] = json_encode($this->exampleCodeableConcept);
-        if (null !== $this->exampleCoding) $json['exampleCoding'] = json_encode($this->exampleCoding);
-        if (null !== $this->exampleQuantity) $json['exampleQuantity'] = json_encode($this->exampleQuantity);
-        if (null !== $this->exampleRange) $json['exampleRange'] = json_encode($this->exampleRange);
-        if (null !== $this->examplePeriod) $json['examplePeriod'] = json_encode($this->examplePeriod);
-        if (null !== $this->exampleRatio) $json['exampleRatio'] = json_encode($this->exampleRatio);
-        if (null !== $this->exampleReference) $json['exampleReference'] = json_encode($this->exampleReference);
-        if (null !== $this->exampleSampledData) $json['exampleSampledData'] = json_encode($this->exampleSampledData);
-        if (null !== $this->exampleSignature) $json['exampleSignature'] = json_encode($this->exampleSignature);
-        if (null !== $this->exampleHumanName) $json['exampleHumanName'] = json_encode($this->exampleHumanName);
-        if (null !== $this->exampleAddress) $json['exampleAddress'] = json_encode($this->exampleAddress);
-        if (null !== $this->exampleContactPoint) $json['exampleContactPoint'] = json_encode($this->exampleContactPoint);
-        if (null !== $this->exampleTiming) $json['exampleTiming'] = json_encode($this->exampleTiming);
-        if (null !== $this->exampleMeta) $json['exampleMeta'] = json_encode($this->exampleMeta);
-        if (null !== $this->minValueBoolean) $json['minValueBoolean'] = json_encode($this->minValueBoolean);
-        if (null !== $this->minValueInteger) $json['minValueInteger'] = json_encode($this->minValueInteger);
-        if (null !== $this->minValueDecimal) $json['minValueDecimal'] = json_encode($this->minValueDecimal);
-        if (null !== $this->minValueBase64Binary) $json['minValueBase64Binary'] = json_encode($this->minValueBase64Binary);
-        if (null !== $this->minValueInstant) $json['minValueInstant'] = json_encode($this->minValueInstant);
-        if (null !== $this->minValueString) $json['minValueString'] = json_encode($this->minValueString);
-        if (null !== $this->minValueUri) $json['minValueUri'] = json_encode($this->minValueUri);
-        if (null !== $this->minValueDate) $json['minValueDate'] = json_encode($this->minValueDate);
-        if (null !== $this->minValueDateTime) $json['minValueDateTime'] = json_encode($this->minValueDateTime);
-        if (null !== $this->minValueTime) $json['minValueTime'] = json_encode($this->minValueTime);
-        if (null !== $this->minValueCode) $json['minValueCode'] = json_encode($this->minValueCode);
-        if (null !== $this->minValueOid) $json['minValueOid'] = json_encode($this->minValueOid);
-        if (null !== $this->minValueUuid) $json['minValueUuid'] = json_encode($this->minValueUuid);
-        if (null !== $this->minValueId) $json['minValueId'] = json_encode($this->minValueId);
-        if (null !== $this->minValueUnsignedInt) $json['minValueUnsignedInt'] = json_encode($this->minValueUnsignedInt);
-        if (null !== $this->minValuePositiveInt) $json['minValuePositiveInt'] = json_encode($this->minValuePositiveInt);
-        if (null !== $this->minValueMarkdown) $json['minValueMarkdown'] = json_encode($this->minValueMarkdown);
-        if (null !== $this->minValueAnnotation) $json['minValueAnnotation'] = json_encode($this->minValueAnnotation);
-        if (null !== $this->minValueAttachment) $json['minValueAttachment'] = json_encode($this->minValueAttachment);
-        if (null !== $this->minValueIdentifier) $json['minValueIdentifier'] = json_encode($this->minValueIdentifier);
-        if (null !== $this->minValueCodeableConcept) $json['minValueCodeableConcept'] = json_encode($this->minValueCodeableConcept);
-        if (null !== $this->minValueCoding) $json['minValueCoding'] = json_encode($this->minValueCoding);
-        if (null !== $this->minValueQuantity) $json['minValueQuantity'] = json_encode($this->minValueQuantity);
-        if (null !== $this->minValueRange) $json['minValueRange'] = json_encode($this->minValueRange);
-        if (null !== $this->minValuePeriod) $json['minValuePeriod'] = json_encode($this->minValuePeriod);
-        if (null !== $this->minValueRatio) $json['minValueRatio'] = json_encode($this->minValueRatio);
-        if (null !== $this->minValueReference) $json['minValueReference'] = json_encode($this->minValueReference);
-        if (null !== $this->minValueSampledData) $json['minValueSampledData'] = json_encode($this->minValueSampledData);
-        if (null !== $this->minValueSignature) $json['minValueSignature'] = json_encode($this->minValueSignature);
-        if (null !== $this->minValueHumanName) $json['minValueHumanName'] = json_encode($this->minValueHumanName);
-        if (null !== $this->minValueAddress) $json['minValueAddress'] = json_encode($this->minValueAddress);
-        if (null !== $this->minValueContactPoint) $json['minValueContactPoint'] = json_encode($this->minValueContactPoint);
-        if (null !== $this->minValueTiming) $json['minValueTiming'] = json_encode($this->minValueTiming);
-        if (null !== $this->minValueMeta) $json['minValueMeta'] = json_encode($this->minValueMeta);
-        if (null !== $this->maxValueBoolean) $json['maxValueBoolean'] = json_encode($this->maxValueBoolean);
-        if (null !== $this->maxValueInteger) $json['maxValueInteger'] = json_encode($this->maxValueInteger);
-        if (null !== $this->maxValueDecimal) $json['maxValueDecimal'] = json_encode($this->maxValueDecimal);
-        if (null !== $this->maxValueBase64Binary) $json['maxValueBase64Binary'] = json_encode($this->maxValueBase64Binary);
-        if (null !== $this->maxValueInstant) $json['maxValueInstant'] = json_encode($this->maxValueInstant);
-        if (null !== $this->maxValueString) $json['maxValueString'] = json_encode($this->maxValueString);
-        if (null !== $this->maxValueUri) $json['maxValueUri'] = json_encode($this->maxValueUri);
-        if (null !== $this->maxValueDate) $json['maxValueDate'] = json_encode($this->maxValueDate);
-        if (null !== $this->maxValueDateTime) $json['maxValueDateTime'] = json_encode($this->maxValueDateTime);
-        if (null !== $this->maxValueTime) $json['maxValueTime'] = json_encode($this->maxValueTime);
-        if (null !== $this->maxValueCode) $json['maxValueCode'] = json_encode($this->maxValueCode);
-        if (null !== $this->maxValueOid) $json['maxValueOid'] = json_encode($this->maxValueOid);
-        if (null !== $this->maxValueUuid) $json['maxValueUuid'] = json_encode($this->maxValueUuid);
-        if (null !== $this->maxValueId) $json['maxValueId'] = json_encode($this->maxValueId);
-        if (null !== $this->maxValueUnsignedInt) $json['maxValueUnsignedInt'] = json_encode($this->maxValueUnsignedInt);
-        if (null !== $this->maxValuePositiveInt) $json['maxValuePositiveInt'] = json_encode($this->maxValuePositiveInt);
-        if (null !== $this->maxValueMarkdown) $json['maxValueMarkdown'] = json_encode($this->maxValueMarkdown);
-        if (null !== $this->maxValueAnnotation) $json['maxValueAnnotation'] = json_encode($this->maxValueAnnotation);
-        if (null !== $this->maxValueAttachment) $json['maxValueAttachment'] = json_encode($this->maxValueAttachment);
-        if (null !== $this->maxValueIdentifier) $json['maxValueIdentifier'] = json_encode($this->maxValueIdentifier);
-        if (null !== $this->maxValueCodeableConcept) $json['maxValueCodeableConcept'] = json_encode($this->maxValueCodeableConcept);
-        if (null !== $this->maxValueCoding) $json['maxValueCoding'] = json_encode($this->maxValueCoding);
-        if (null !== $this->maxValueQuantity) $json['maxValueQuantity'] = json_encode($this->maxValueQuantity);
-        if (null !== $this->maxValueRange) $json['maxValueRange'] = json_encode($this->maxValueRange);
-        if (null !== $this->maxValuePeriod) $json['maxValuePeriod'] = json_encode($this->maxValuePeriod);
-        if (null !== $this->maxValueRatio) $json['maxValueRatio'] = json_encode($this->maxValueRatio);
-        if (null !== $this->maxValueReference) $json['maxValueReference'] = json_encode($this->maxValueReference);
-        if (null !== $this->maxValueSampledData) $json['maxValueSampledData'] = json_encode($this->maxValueSampledData);
-        if (null !== $this->maxValueSignature) $json['maxValueSignature'] = json_encode($this->maxValueSignature);
-        if (null !== $this->maxValueHumanName) $json['maxValueHumanName'] = json_encode($this->maxValueHumanName);
-        if (null !== $this->maxValueAddress) $json['maxValueAddress'] = json_encode($this->maxValueAddress);
-        if (null !== $this->maxValueContactPoint) $json['maxValueContactPoint'] = json_encode($this->maxValueContactPoint);
-        if (null !== $this->maxValueTiming) $json['maxValueTiming'] = json_encode($this->maxValueTiming);
-        if (null !== $this->maxValueMeta) $json['maxValueMeta'] = json_encode($this->maxValueMeta);
-        if (null !== $this->maxLength) $json['maxLength'] = json_encode($this->maxLength);
+        if (null !== $this->nameReference) $json['nameReference'] = $this->nameReference;
+        if (null !== $this->defaultValueBoolean) $json['defaultValueBoolean'] = $this->defaultValueBoolean;
+        if (null !== $this->defaultValueInteger) $json['defaultValueInteger'] = $this->defaultValueInteger;
+        if (null !== $this->defaultValueDecimal) $json['defaultValueDecimal'] = $this->defaultValueDecimal;
+        if (null !== $this->defaultValueBase64Binary) $json['defaultValueBase64Binary'] = $this->defaultValueBase64Binary;
+        if (null !== $this->defaultValueInstant) $json['defaultValueInstant'] = $this->defaultValueInstant;
+        if (null !== $this->defaultValueString) $json['defaultValueString'] = $this->defaultValueString;
+        if (null !== $this->defaultValueUri) $json['defaultValueUri'] = $this->defaultValueUri;
+        if (null !== $this->defaultValueDate) $json['defaultValueDate'] = $this->defaultValueDate;
+        if (null !== $this->defaultValueDateTime) $json['defaultValueDateTime'] = $this->defaultValueDateTime;
+        if (null !== $this->defaultValueTime) $json['defaultValueTime'] = $this->defaultValueTime;
+        if (null !== $this->defaultValueCode) $json['defaultValueCode'] = $this->defaultValueCode;
+        if (null !== $this->defaultValueOid) $json['defaultValueOid'] = $this->defaultValueOid;
+        if (null !== $this->defaultValueUuid) $json['defaultValueUuid'] = $this->defaultValueUuid;
+        if (null !== $this->defaultValueId) $json['defaultValueId'] = $this->defaultValueId;
+        if (null !== $this->defaultValueUnsignedInt) $json['defaultValueUnsignedInt'] = $this->defaultValueUnsignedInt;
+        if (null !== $this->defaultValuePositiveInt) $json['defaultValuePositiveInt'] = $this->defaultValuePositiveInt;
+        if (null !== $this->defaultValueMarkdown) $json['defaultValueMarkdown'] = $this->defaultValueMarkdown;
+        if (null !== $this->defaultValueAnnotation) $json['defaultValueAnnotation'] = $this->defaultValueAnnotation;
+        if (null !== $this->defaultValueAttachment) $json['defaultValueAttachment'] = $this->defaultValueAttachment;
+        if (null !== $this->defaultValueIdentifier) $json['defaultValueIdentifier'] = $this->defaultValueIdentifier;
+        if (null !== $this->defaultValueCodeableConcept) $json['defaultValueCodeableConcept'] = $this->defaultValueCodeableConcept;
+        if (null !== $this->defaultValueCoding) $json['defaultValueCoding'] = $this->defaultValueCoding;
+        if (null !== $this->defaultValueQuantity) $json['defaultValueQuantity'] = $this->defaultValueQuantity;
+        if (null !== $this->defaultValueRange) $json['defaultValueRange'] = $this->defaultValueRange;
+        if (null !== $this->defaultValuePeriod) $json['defaultValuePeriod'] = $this->defaultValuePeriod;
+        if (null !== $this->defaultValueRatio) $json['defaultValueRatio'] = $this->defaultValueRatio;
+        if (null !== $this->defaultValueReference) $json['defaultValueReference'] = $this->defaultValueReference;
+        if (null !== $this->defaultValueSampledData) $json['defaultValueSampledData'] = $this->defaultValueSampledData;
+        if (null !== $this->defaultValueSignature) $json['defaultValueSignature'] = $this->defaultValueSignature;
+        if (null !== $this->defaultValueHumanName) $json['defaultValueHumanName'] = $this->defaultValueHumanName;
+        if (null !== $this->defaultValueAddress) $json['defaultValueAddress'] = $this->defaultValueAddress;
+        if (null !== $this->defaultValueContactPoint) $json['defaultValueContactPoint'] = $this->defaultValueContactPoint;
+        if (null !== $this->defaultValueTiming) $json['defaultValueTiming'] = $this->defaultValueTiming;
+        if (null !== $this->defaultValueMeta) $json['defaultValueMeta'] = $this->defaultValueMeta;
+        if (null !== $this->meaningWhenMissing) $json['meaningWhenMissing'] = $this->meaningWhenMissing;
+        if (null !== $this->fixedBoolean) $json['fixedBoolean'] = $this->fixedBoolean;
+        if (null !== $this->fixedInteger) $json['fixedInteger'] = $this->fixedInteger;
+        if (null !== $this->fixedDecimal) $json['fixedDecimal'] = $this->fixedDecimal;
+        if (null !== $this->fixedBase64Binary) $json['fixedBase64Binary'] = $this->fixedBase64Binary;
+        if (null !== $this->fixedInstant) $json['fixedInstant'] = $this->fixedInstant;
+        if (null !== $this->fixedString) $json['fixedString'] = $this->fixedString;
+        if (null !== $this->fixedUri) $json['fixedUri'] = $this->fixedUri;
+        if (null !== $this->fixedDate) $json['fixedDate'] = $this->fixedDate;
+        if (null !== $this->fixedDateTime) $json['fixedDateTime'] = $this->fixedDateTime;
+        if (null !== $this->fixedTime) $json['fixedTime'] = $this->fixedTime;
+        if (null !== $this->fixedCode) $json['fixedCode'] = $this->fixedCode;
+        if (null !== $this->fixedOid) $json['fixedOid'] = $this->fixedOid;
+        if (null !== $this->fixedUuid) $json['fixedUuid'] = $this->fixedUuid;
+        if (null !== $this->fixedId) $json['fixedId'] = $this->fixedId;
+        if (null !== $this->fixedUnsignedInt) $json['fixedUnsignedInt'] = $this->fixedUnsignedInt;
+        if (null !== $this->fixedPositiveInt) $json['fixedPositiveInt'] = $this->fixedPositiveInt;
+        if (null !== $this->fixedMarkdown) $json['fixedMarkdown'] = $this->fixedMarkdown;
+        if (null !== $this->fixedAnnotation) $json['fixedAnnotation'] = $this->fixedAnnotation;
+        if (null !== $this->fixedAttachment) $json['fixedAttachment'] = $this->fixedAttachment;
+        if (null !== $this->fixedIdentifier) $json['fixedIdentifier'] = $this->fixedIdentifier;
+        if (null !== $this->fixedCodeableConcept) $json['fixedCodeableConcept'] = $this->fixedCodeableConcept;
+        if (null !== $this->fixedCoding) $json['fixedCoding'] = $this->fixedCoding;
+        if (null !== $this->fixedQuantity) $json['fixedQuantity'] = $this->fixedQuantity;
+        if (null !== $this->fixedRange) $json['fixedRange'] = $this->fixedRange;
+        if (null !== $this->fixedPeriod) $json['fixedPeriod'] = $this->fixedPeriod;
+        if (null !== $this->fixedRatio) $json['fixedRatio'] = $this->fixedRatio;
+        if (null !== $this->fixedReference) $json['fixedReference'] = $this->fixedReference;
+        if (null !== $this->fixedSampledData) $json['fixedSampledData'] = $this->fixedSampledData;
+        if (null !== $this->fixedSignature) $json['fixedSignature'] = $this->fixedSignature;
+        if (null !== $this->fixedHumanName) $json['fixedHumanName'] = $this->fixedHumanName;
+        if (null !== $this->fixedAddress) $json['fixedAddress'] = $this->fixedAddress;
+        if (null !== $this->fixedContactPoint) $json['fixedContactPoint'] = $this->fixedContactPoint;
+        if (null !== $this->fixedTiming) $json['fixedTiming'] = $this->fixedTiming;
+        if (null !== $this->fixedMeta) $json['fixedMeta'] = $this->fixedMeta;
+        if (null !== $this->patternBoolean) $json['patternBoolean'] = $this->patternBoolean;
+        if (null !== $this->patternInteger) $json['patternInteger'] = $this->patternInteger;
+        if (null !== $this->patternDecimal) $json['patternDecimal'] = $this->patternDecimal;
+        if (null !== $this->patternBase64Binary) $json['patternBase64Binary'] = $this->patternBase64Binary;
+        if (null !== $this->patternInstant) $json['patternInstant'] = $this->patternInstant;
+        if (null !== $this->patternString) $json['patternString'] = $this->patternString;
+        if (null !== $this->patternUri) $json['patternUri'] = $this->patternUri;
+        if (null !== $this->patternDate) $json['patternDate'] = $this->patternDate;
+        if (null !== $this->patternDateTime) $json['patternDateTime'] = $this->patternDateTime;
+        if (null !== $this->patternTime) $json['patternTime'] = $this->patternTime;
+        if (null !== $this->patternCode) $json['patternCode'] = $this->patternCode;
+        if (null !== $this->patternOid) $json['patternOid'] = $this->patternOid;
+        if (null !== $this->patternUuid) $json['patternUuid'] = $this->patternUuid;
+        if (null !== $this->patternId) $json['patternId'] = $this->patternId;
+        if (null !== $this->patternUnsignedInt) $json['patternUnsignedInt'] = $this->patternUnsignedInt;
+        if (null !== $this->patternPositiveInt) $json['patternPositiveInt'] = $this->patternPositiveInt;
+        if (null !== $this->patternMarkdown) $json['patternMarkdown'] = $this->patternMarkdown;
+        if (null !== $this->patternAnnotation) $json['patternAnnotation'] = $this->patternAnnotation;
+        if (null !== $this->patternAttachment) $json['patternAttachment'] = $this->patternAttachment;
+        if (null !== $this->patternIdentifier) $json['patternIdentifier'] = $this->patternIdentifier;
+        if (null !== $this->patternCodeableConcept) $json['patternCodeableConcept'] = $this->patternCodeableConcept;
+        if (null !== $this->patternCoding) $json['patternCoding'] = $this->patternCoding;
+        if (null !== $this->patternQuantity) $json['patternQuantity'] = $this->patternQuantity;
+        if (null !== $this->patternRange) $json['patternRange'] = $this->patternRange;
+        if (null !== $this->patternPeriod) $json['patternPeriod'] = $this->patternPeriod;
+        if (null !== $this->patternRatio) $json['patternRatio'] = $this->patternRatio;
+        if (null !== $this->patternReference) $json['patternReference'] = $this->patternReference;
+        if (null !== $this->patternSampledData) $json['patternSampledData'] = $this->patternSampledData;
+        if (null !== $this->patternSignature) $json['patternSignature'] = $this->patternSignature;
+        if (null !== $this->patternHumanName) $json['patternHumanName'] = $this->patternHumanName;
+        if (null !== $this->patternAddress) $json['patternAddress'] = $this->patternAddress;
+        if (null !== $this->patternContactPoint) $json['patternContactPoint'] = $this->patternContactPoint;
+        if (null !== $this->patternTiming) $json['patternTiming'] = $this->patternTiming;
+        if (null !== $this->patternMeta) $json['patternMeta'] = $this->patternMeta;
+        if (null !== $this->exampleBoolean) $json['exampleBoolean'] = $this->exampleBoolean;
+        if (null !== $this->exampleInteger) $json['exampleInteger'] = $this->exampleInteger;
+        if (null !== $this->exampleDecimal) $json['exampleDecimal'] = $this->exampleDecimal;
+        if (null !== $this->exampleBase64Binary) $json['exampleBase64Binary'] = $this->exampleBase64Binary;
+        if (null !== $this->exampleInstant) $json['exampleInstant'] = $this->exampleInstant;
+        if (null !== $this->exampleString) $json['exampleString'] = $this->exampleString;
+        if (null !== $this->exampleUri) $json['exampleUri'] = $this->exampleUri;
+        if (null !== $this->exampleDate) $json['exampleDate'] = $this->exampleDate;
+        if (null !== $this->exampleDateTime) $json['exampleDateTime'] = $this->exampleDateTime;
+        if (null !== $this->exampleTime) $json['exampleTime'] = $this->exampleTime;
+        if (null !== $this->exampleCode) $json['exampleCode'] = $this->exampleCode;
+        if (null !== $this->exampleOid) $json['exampleOid'] = $this->exampleOid;
+        if (null !== $this->exampleUuid) $json['exampleUuid'] = $this->exampleUuid;
+        if (null !== $this->exampleId) $json['exampleId'] = $this->exampleId;
+        if (null !== $this->exampleUnsignedInt) $json['exampleUnsignedInt'] = $this->exampleUnsignedInt;
+        if (null !== $this->examplePositiveInt) $json['examplePositiveInt'] = $this->examplePositiveInt;
+        if (null !== $this->exampleMarkdown) $json['exampleMarkdown'] = $this->exampleMarkdown;
+        if (null !== $this->exampleAnnotation) $json['exampleAnnotation'] = $this->exampleAnnotation;
+        if (null !== $this->exampleAttachment) $json['exampleAttachment'] = $this->exampleAttachment;
+        if (null !== $this->exampleIdentifier) $json['exampleIdentifier'] = $this->exampleIdentifier;
+        if (null !== $this->exampleCodeableConcept) $json['exampleCodeableConcept'] = $this->exampleCodeableConcept;
+        if (null !== $this->exampleCoding) $json['exampleCoding'] = $this->exampleCoding;
+        if (null !== $this->exampleQuantity) $json['exampleQuantity'] = $this->exampleQuantity;
+        if (null !== $this->exampleRange) $json['exampleRange'] = $this->exampleRange;
+        if (null !== $this->examplePeriod) $json['examplePeriod'] = $this->examplePeriod;
+        if (null !== $this->exampleRatio) $json['exampleRatio'] = $this->exampleRatio;
+        if (null !== $this->exampleReference) $json['exampleReference'] = $this->exampleReference;
+        if (null !== $this->exampleSampledData) $json['exampleSampledData'] = $this->exampleSampledData;
+        if (null !== $this->exampleSignature) $json['exampleSignature'] = $this->exampleSignature;
+        if (null !== $this->exampleHumanName) $json['exampleHumanName'] = $this->exampleHumanName;
+        if (null !== $this->exampleAddress) $json['exampleAddress'] = $this->exampleAddress;
+        if (null !== $this->exampleContactPoint) $json['exampleContactPoint'] = $this->exampleContactPoint;
+        if (null !== $this->exampleTiming) $json['exampleTiming'] = $this->exampleTiming;
+        if (null !== $this->exampleMeta) $json['exampleMeta'] = $this->exampleMeta;
+        if (null !== $this->minValueBoolean) $json['minValueBoolean'] = $this->minValueBoolean;
+        if (null !== $this->minValueInteger) $json['minValueInteger'] = $this->minValueInteger;
+        if (null !== $this->minValueDecimal) $json['minValueDecimal'] = $this->minValueDecimal;
+        if (null !== $this->minValueBase64Binary) $json['minValueBase64Binary'] = $this->minValueBase64Binary;
+        if (null !== $this->minValueInstant) $json['minValueInstant'] = $this->minValueInstant;
+        if (null !== $this->minValueString) $json['minValueString'] = $this->minValueString;
+        if (null !== $this->minValueUri) $json['minValueUri'] = $this->minValueUri;
+        if (null !== $this->minValueDate) $json['minValueDate'] = $this->minValueDate;
+        if (null !== $this->minValueDateTime) $json['minValueDateTime'] = $this->minValueDateTime;
+        if (null !== $this->minValueTime) $json['minValueTime'] = $this->minValueTime;
+        if (null !== $this->minValueCode) $json['minValueCode'] = $this->minValueCode;
+        if (null !== $this->minValueOid) $json['minValueOid'] = $this->minValueOid;
+        if (null !== $this->minValueUuid) $json['minValueUuid'] = $this->minValueUuid;
+        if (null !== $this->minValueId) $json['minValueId'] = $this->minValueId;
+        if (null !== $this->minValueUnsignedInt) $json['minValueUnsignedInt'] = $this->minValueUnsignedInt;
+        if (null !== $this->minValuePositiveInt) $json['minValuePositiveInt'] = $this->minValuePositiveInt;
+        if (null !== $this->minValueMarkdown) $json['minValueMarkdown'] = $this->minValueMarkdown;
+        if (null !== $this->minValueAnnotation) $json['minValueAnnotation'] = $this->minValueAnnotation;
+        if (null !== $this->minValueAttachment) $json['minValueAttachment'] = $this->minValueAttachment;
+        if (null !== $this->minValueIdentifier) $json['minValueIdentifier'] = $this->minValueIdentifier;
+        if (null !== $this->minValueCodeableConcept) $json['minValueCodeableConcept'] = $this->minValueCodeableConcept;
+        if (null !== $this->minValueCoding) $json['minValueCoding'] = $this->minValueCoding;
+        if (null !== $this->minValueQuantity) $json['minValueQuantity'] = $this->minValueQuantity;
+        if (null !== $this->minValueRange) $json['minValueRange'] = $this->minValueRange;
+        if (null !== $this->minValuePeriod) $json['minValuePeriod'] = $this->minValuePeriod;
+        if (null !== $this->minValueRatio) $json['minValueRatio'] = $this->minValueRatio;
+        if (null !== $this->minValueReference) $json['minValueReference'] = $this->minValueReference;
+        if (null !== $this->minValueSampledData) $json['minValueSampledData'] = $this->minValueSampledData;
+        if (null !== $this->minValueSignature) $json['minValueSignature'] = $this->minValueSignature;
+        if (null !== $this->minValueHumanName) $json['minValueHumanName'] = $this->minValueHumanName;
+        if (null !== $this->minValueAddress) $json['minValueAddress'] = $this->minValueAddress;
+        if (null !== $this->minValueContactPoint) $json['minValueContactPoint'] = $this->minValueContactPoint;
+        if (null !== $this->minValueTiming) $json['minValueTiming'] = $this->minValueTiming;
+        if (null !== $this->minValueMeta) $json['minValueMeta'] = $this->minValueMeta;
+        if (null !== $this->maxValueBoolean) $json['maxValueBoolean'] = $this->maxValueBoolean;
+        if (null !== $this->maxValueInteger) $json['maxValueInteger'] = $this->maxValueInteger;
+        if (null !== $this->maxValueDecimal) $json['maxValueDecimal'] = $this->maxValueDecimal;
+        if (null !== $this->maxValueBase64Binary) $json['maxValueBase64Binary'] = $this->maxValueBase64Binary;
+        if (null !== $this->maxValueInstant) $json['maxValueInstant'] = $this->maxValueInstant;
+        if (null !== $this->maxValueString) $json['maxValueString'] = $this->maxValueString;
+        if (null !== $this->maxValueUri) $json['maxValueUri'] = $this->maxValueUri;
+        if (null !== $this->maxValueDate) $json['maxValueDate'] = $this->maxValueDate;
+        if (null !== $this->maxValueDateTime) $json['maxValueDateTime'] = $this->maxValueDateTime;
+        if (null !== $this->maxValueTime) $json['maxValueTime'] = $this->maxValueTime;
+        if (null !== $this->maxValueCode) $json['maxValueCode'] = $this->maxValueCode;
+        if (null !== $this->maxValueOid) $json['maxValueOid'] = $this->maxValueOid;
+        if (null !== $this->maxValueUuid) $json['maxValueUuid'] = $this->maxValueUuid;
+        if (null !== $this->maxValueId) $json['maxValueId'] = $this->maxValueId;
+        if (null !== $this->maxValueUnsignedInt) $json['maxValueUnsignedInt'] = $this->maxValueUnsignedInt;
+        if (null !== $this->maxValuePositiveInt) $json['maxValuePositiveInt'] = $this->maxValuePositiveInt;
+        if (null !== $this->maxValueMarkdown) $json['maxValueMarkdown'] = $this->maxValueMarkdown;
+        if (null !== $this->maxValueAnnotation) $json['maxValueAnnotation'] = $this->maxValueAnnotation;
+        if (null !== $this->maxValueAttachment) $json['maxValueAttachment'] = $this->maxValueAttachment;
+        if (null !== $this->maxValueIdentifier) $json['maxValueIdentifier'] = $this->maxValueIdentifier;
+        if (null !== $this->maxValueCodeableConcept) $json['maxValueCodeableConcept'] = $this->maxValueCodeableConcept;
+        if (null !== $this->maxValueCoding) $json['maxValueCoding'] = $this->maxValueCoding;
+        if (null !== $this->maxValueQuantity) $json['maxValueQuantity'] = $this->maxValueQuantity;
+        if (null !== $this->maxValueRange) $json['maxValueRange'] = $this->maxValueRange;
+        if (null !== $this->maxValuePeriod) $json['maxValuePeriod'] = $this->maxValuePeriod;
+        if (null !== $this->maxValueRatio) $json['maxValueRatio'] = $this->maxValueRatio;
+        if (null !== $this->maxValueReference) $json['maxValueReference'] = $this->maxValueReference;
+        if (null !== $this->maxValueSampledData) $json['maxValueSampledData'] = $this->maxValueSampledData;
+        if (null !== $this->maxValueSignature) $json['maxValueSignature'] = $this->maxValueSignature;
+        if (null !== $this->maxValueHumanName) $json['maxValueHumanName'] = $this->maxValueHumanName;
+        if (null !== $this->maxValueAddress) $json['maxValueAddress'] = $this->maxValueAddress;
+        if (null !== $this->maxValueContactPoint) $json['maxValueContactPoint'] = $this->maxValueContactPoint;
+        if (null !== $this->maxValueTiming) $json['maxValueTiming'] = $this->maxValueTiming;
+        if (null !== $this->maxValueMeta) $json['maxValueMeta'] = $this->maxValueMeta;
+        if (null !== $this->maxLength) $json['maxLength'] = $this->maxLength;
         if (0 < count($this->condition)) {
             $json['condition'] = [];
             foreach($this->condition as $condition) {
-                $json['condition'][] = json_encode($condition);
+                $json['condition'][] = $condition;
             }
         }
         if (0 < count($this->constraint)) {
             $json['constraint'] = [];
             foreach($this->constraint as $constraint) {
-                $json['constraint'][] = json_encode($constraint);
+                $json['constraint'][] = $constraint;
             }
         }
-        if (null !== $this->mustSupport) $json['mustSupport'] = json_encode($this->mustSupport);
-        if (null !== $this->isModifier) $json['isModifier'] = json_encode($this->isModifier);
-        if (null !== $this->isSummary) $json['isSummary'] = json_encode($this->isSummary);
-        if (null !== $this->binding) $json['binding'] = json_encode($this->binding);
+        if (null !== $this->mustSupport) $json['mustSupport'] = $this->mustSupport;
+        if (null !== $this->isModifier) $json['isModifier'] = $this->isModifier;
+        if (null !== $this->isSummary) $json['isSummary'] = $this->isSummary;
+        if (null !== $this->binding) $json['binding'] = $this->binding;
         if (0 < count($this->mapping)) {
             $json['mapping'] = [];
             foreach($this->mapping as $mapping) {
-                $json['mapping'][] = json_encode($mapping);
+                $json['mapping'][] = $mapping;
             }
         }
         return $json;

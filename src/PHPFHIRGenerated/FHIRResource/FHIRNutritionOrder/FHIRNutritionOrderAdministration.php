@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,13 +80,11 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     public $quantity = null;
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public $rateQuantity = null;
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public $rateRatio = null;
@@ -137,7 +135,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     public function getRateQuantity()
@@ -146,7 +143,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $rateQuantity
      * @return $this
      */
@@ -157,7 +153,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRRatio
      */
     public function getRateRatio()
@@ -166,7 +161,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     }
 
     /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour, according to the specified schedule. (choose any one of rate*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRRatio $rateRatio
      * @return $this
      */
@@ -198,10 +192,10 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement implements \J
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->schedule) $json['schedule'] = json_encode($this->schedule);
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->rateQuantity) $json['rateQuantity'] = json_encode($this->rateQuantity);
-        if (null !== $this->rateRatio) $json['rateRatio'] = json_encode($this->rateRatio);
+        if (null !== $this->schedule) $json['schedule'] = $this->schedule;
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->rateQuantity) $json['rateQuantity'] = $this->rateQuantity;
+        if (null !== $this->rateRatio) $json['rateRatio'] = $this->rateRatio;
         return $json;
     }
 

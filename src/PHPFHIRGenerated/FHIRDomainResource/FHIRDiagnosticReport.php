@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,13 +105,11 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     public $encounter = null;
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $effectiveDateTime = null;
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $effectivePeriod = null;
@@ -302,7 +300,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getEffectiveDateTime()
@@ -311,7 +308,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $effectiveDateTime
      * @return $this
      */
@@ -322,7 +318,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getEffectivePeriod()
@@ -331,7 +326,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
     }
 
     /**
-     * The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself. (choose any one of effective*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $effectivePeriod
      * @return $this
      */
@@ -567,59 +561,59 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements \JsonSerializab
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->code) $json['code'] = json_encode($this->code);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = json_encode($this->effectiveDateTime);
-        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = json_encode($this->effectivePeriod);
-        if (null !== $this->issued) $json['issued'] = json_encode($this->issued);
-        if (null !== $this->performer) $json['performer'] = json_encode($this->performer);
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->code) $json['code'] = $this->code;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->effectiveDateTime) $json['effectiveDateTime'] = $this->effectiveDateTime;
+        if (null !== $this->effectivePeriod) $json['effectivePeriod'] = $this->effectivePeriod;
+        if (null !== $this->issued) $json['issued'] = $this->issued;
+        if (null !== $this->performer) $json['performer'] = $this->performer;
         if (0 < count($this->request)) {
             $json['request'] = [];
             foreach($this->request as $request) {
-                $json['request'][] = json_encode($request);
+                $json['request'][] = $request;
             }
         }
         if (0 < count($this->specimen)) {
             $json['specimen'] = [];
             foreach($this->specimen as $specimen) {
-                $json['specimen'][] = json_encode($specimen);
+                $json['specimen'][] = $specimen;
             }
         }
         if (0 < count($this->result)) {
             $json['result'] = [];
             foreach($this->result as $result) {
-                $json['result'][] = json_encode($result);
+                $json['result'][] = $result;
             }
         }
         if (0 < count($this->imagingStudy)) {
             $json['imagingStudy'] = [];
             foreach($this->imagingStudy as $imagingStudy) {
-                $json['imagingStudy'][] = json_encode($imagingStudy);
+                $json['imagingStudy'][] = $imagingStudy;
             }
         }
         if (0 < count($this->image)) {
             $json['image'] = [];
             foreach($this->image as $image) {
-                $json['image'][] = json_encode($image);
+                $json['image'][] = $image;
             }
         }
-        if (null !== $this->conclusion) $json['conclusion'] = json_encode($this->conclusion);
+        if (null !== $this->conclusion) $json['conclusion'] = $this->conclusion;
         if (0 < count($this->codedDiagnosis)) {
             $json['codedDiagnosis'] = [];
             foreach($this->codedDiagnosis as $codedDiagnosis) {
-                $json['codedDiagnosis'][] = json_encode($codedDiagnosis);
+                $json['codedDiagnosis'][] = $codedDiagnosis;
             }
         }
         if (0 < count($this->presentedForm)) {
             $json['presentedForm'] = [];
             foreach($this->presentedForm as $presentedForm) {
-                $json['presentedForm'][] = json_encode($presentedForm);
+                $json['presentedForm'][] = $presentedForm;
             }
         }
         return $json;

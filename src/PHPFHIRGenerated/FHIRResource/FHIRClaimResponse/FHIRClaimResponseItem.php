@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -198,23 +198,23 @@ class FHIRClaimResponseItem extends FHIRBackboneElement implements \JsonSerializ
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->sequenceLinkId) $json['sequenceLinkId'] = json_encode($this->sequenceLinkId);
+        if (null !== $this->sequenceLinkId) $json['sequenceLinkId'] = $this->sequenceLinkId;
         if (0 < count($this->noteNumber)) {
             $json['noteNumber'] = [];
             foreach($this->noteNumber as $noteNumber) {
-                $json['noteNumber'][] = json_encode($noteNumber);
+                $json['noteNumber'][] = $noteNumber;
             }
         }
         if (0 < count($this->adjudication)) {
             $json['adjudication'] = [];
             foreach($this->adjudication as $adjudication) {
-                $json['adjudication'][] = json_encode($adjudication);
+                $json['adjudication'][] = $adjudication;
             }
         }
         if (0 < count($this->detail)) {
             $json['detail'] = [];
             foreach($this->detail as $detail) {
-                $json['detail'][] = json_encode($detail);
+                $json['detail'][] = $detail;
             }
         }
         return $json;

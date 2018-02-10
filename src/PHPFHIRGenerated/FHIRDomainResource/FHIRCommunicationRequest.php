@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,13 +123,11 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     public $encounter = null;
 
     /**
-     * The time when this communication is to occur. (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public $scheduledDateTime = null;
 
     /**
-     * The time when this communication is to occur. (choose any one of scheduled*, but only one)
      * @var \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public $scheduledPeriod = null;
@@ -344,7 +342,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
     public function getScheduledDateTime()
@@ -353,7 +350,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $scheduledDateTime
      * @return $this
      */
@@ -364,7 +360,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of scheduled*, but only one)
      * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
     public function getScheduledPeriod()
@@ -373,7 +368,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
     }
 
     /**
-     * The time when this communication is to occur. (choose any one of scheduled*, but only one)
      * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $scheduledPeriod
      * @return $this
      */
@@ -489,43 +483,43 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements \JsonSerial
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->category) $json['category'] = json_encode($this->category);
-        if (null !== $this->sender) $json['sender'] = json_encode($this->sender);
+        if (null !== $this->category) $json['category'] = $this->category;
+        if (null !== $this->sender) $json['sender'] = $this->sender;
         if (0 < count($this->recipient)) {
             $json['recipient'] = [];
             foreach($this->recipient as $recipient) {
-                $json['recipient'][] = json_encode($recipient);
+                $json['recipient'][] = $recipient;
             }
         }
         if (0 < count($this->payload)) {
             $json['payload'] = [];
             foreach($this->payload as $payload) {
-                $json['payload'][] = json_encode($payload);
+                $json['payload'][] = $payload;
             }
         }
         if (0 < count($this->medium)) {
             $json['medium'] = [];
             foreach($this->medium as $medium) {
-                $json['medium'][] = json_encode($medium);
+                $json['medium'][] = $medium;
             }
         }
-        if (null !== $this->requester) $json['requester'] = json_encode($this->requester);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->encounter) $json['encounter'] = json_encode($this->encounter);
-        if (null !== $this->scheduledDateTime) $json['scheduledDateTime'] = json_encode($this->scheduledDateTime);
-        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = json_encode($this->scheduledPeriod);
+        if (null !== $this->requester) $json['requester'] = $this->requester;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->encounter) $json['encounter'] = $this->encounter;
+        if (null !== $this->scheduledDateTime) $json['scheduledDateTime'] = $this->scheduledDateTime;
+        if (null !== $this->scheduledPeriod) $json['scheduledPeriod'] = $this->scheduledPeriod;
         if (0 < count($this->reason)) {
             $json['reason'] = [];
             foreach($this->reason as $reason) {
-                $json['reason'][] = json_encode($reason);
+                $json['reason'][] = $reason;
             }
         }
-        if (null !== $this->requestedOn) $json['requestedOn'] = json_encode($this->requestedOn);
-        if (null !== $this->subject) $json['subject'] = json_encode($this->subject);
-        if (null !== $this->priority) $json['priority'] = json_encode($this->priority);
+        if (null !== $this->requestedOn) $json['requestedOn'] = $this->requestedOn;
+        if (null !== $this->subject) $json['subject'] = $this->subject;
+        if (null !== $this->priority) $json['priority'] = $this->priority;
         return $json;
     }
 

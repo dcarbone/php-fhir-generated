@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -307,26 +307,26 @@ class FHIRQuestionnaire extends FHIRDomainResource implements \JsonSerializable
         if (0 < count($this->identifier)) {
             $json['identifier'] = [];
             foreach($this->identifier as $identifier) {
-                $json['identifier'][] = json_encode($identifier);
+                $json['identifier'][] = $identifier;
             }
         }
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
         if (0 < count($this->telecom)) {
             $json['telecom'] = [];
             foreach($this->telecom as $telecom) {
-                $json['telecom'][] = json_encode($telecom);
+                $json['telecom'][] = $telecom;
             }
         }
         if (0 < count($this->subjectType)) {
             $json['subjectType'] = [];
             foreach($this->subjectType as $subjectType) {
-                $json['subjectType'][] = json_encode($subjectType);
+                $json['subjectType'][] = $subjectType;
             }
         }
-        if (null !== $this->group) $json['group'] = json_encode($this->group);
+        if (null !== $this->group) $json['group'] = $this->group;
         return $json;
     }
 

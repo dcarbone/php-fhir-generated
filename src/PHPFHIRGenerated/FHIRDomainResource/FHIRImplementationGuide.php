@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -538,53 +538,53 @@ class FHIRImplementationGuide extends FHIRDomainResource implements \JsonSeriali
     {
         $json = parent::jsonSerialize();
         $json['resourceType'] = $this->_fhirElementName;
-        if (null !== $this->url) $json['url'] = json_encode($this->url);
-        if (null !== $this->version) $json['version'] = json_encode($this->version);
-        if (null !== $this->name) $json['name'] = json_encode($this->name);
-        if (null !== $this->status) $json['status'] = json_encode($this->status);
-        if (null !== $this->experimental) $json['experimental'] = json_encode($this->experimental);
-        if (null !== $this->publisher) $json['publisher'] = json_encode($this->publisher);
+        if (null !== $this->url) $json['url'] = $this->url;
+        if (null !== $this->version) $json['version'] = $this->version;
+        if (null !== $this->name) $json['name'] = $this->name;
+        if (null !== $this->status) $json['status'] = $this->status;
+        if (null !== $this->experimental) $json['experimental'] = $this->experimental;
+        if (null !== $this->publisher) $json['publisher'] = $this->publisher;
         if (0 < count($this->contact)) {
             $json['contact'] = [];
             foreach($this->contact as $contact) {
-                $json['contact'][] = json_encode($contact);
+                $json['contact'][] = $contact;
             }
         }
-        if (null !== $this->date) $json['date'] = json_encode($this->date);
-        if (null !== $this->description) $json['description'] = json_encode($this->description);
+        if (null !== $this->date) $json['date'] = $this->date;
+        if (null !== $this->description) $json['description'] = $this->description;
         if (0 < count($this->useContext)) {
             $json['useContext'] = [];
             foreach($this->useContext as $useContext) {
-                $json['useContext'][] = json_encode($useContext);
+                $json['useContext'][] = $useContext;
             }
         }
-        if (null !== $this->copyright) $json['copyright'] = json_encode($this->copyright);
-        if (null !== $this->fhirVersion) $json['fhirVersion'] = json_encode($this->fhirVersion);
+        if (null !== $this->copyright) $json['copyright'] = $this->copyright;
+        if (null !== $this->fhirVersion) $json['fhirVersion'] = $this->fhirVersion;
         if (0 < count($this->dependency)) {
             $json['dependency'] = [];
             foreach($this->dependency as $dependency) {
-                $json['dependency'][] = json_encode($dependency);
+                $json['dependency'][] = $dependency;
             }
         }
         if (0 < count($this->package)) {
             $json['package'] = [];
             foreach($this->package as $package) {
-                $json['package'][] = json_encode($package);
+                $json['package'][] = $package;
             }
         }
         if (0 < count($this->global)) {
             $json['global'] = [];
             foreach($this->global as $global) {
-                $json['global'][] = json_encode($global);
+                $json['global'][] = $global;
             }
         }
         if (0 < count($this->binary)) {
             $json['binary'] = [];
             foreach($this->binary as $binary) {
-                $json['binary'][] = json_encode($binary);
+                $json['binary'][] = $binary;
             }
         }
-        if (null !== $this->page) $json['page'] = json_encode($this->page);
+        if (null !== $this->page) $json['page'] = $this->page;
         return $json;
     }
 

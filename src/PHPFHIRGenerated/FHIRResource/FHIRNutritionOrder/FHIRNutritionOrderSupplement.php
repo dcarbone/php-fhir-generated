@@ -4,11 +4,11 @@
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 26th, 2017
+ * Class creation date: February 10th, 2018
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2017 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -224,16 +224,16 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement implements \JsonS
     public function jsonSerialize()
     {
         $json = parent::jsonSerialize();
-        if (null !== $this->type) $json['type'] = json_encode($this->type);
-        if (null !== $this->productName) $json['productName'] = json_encode($this->productName);
+        if (null !== $this->type) $json['type'] = $this->type;
+        if (null !== $this->productName) $json['productName'] = $this->productName;
         if (0 < count($this->schedule)) {
             $json['schedule'] = [];
             foreach($this->schedule as $schedule) {
-                $json['schedule'][] = json_encode($schedule);
+                $json['schedule'][] = $schedule;
             }
         }
-        if (null !== $this->quantity) $json['quantity'] = json_encode($this->quantity);
-        if (null !== $this->instruction) $json['instruction'] = json_encode($this->instruction);
+        if (null !== $this->quantity) $json['quantity'] = $this->quantity;
+        if (null !== $this->instruction) $json['instruction'] = $this->instruction;
         return $json;
     }
 
