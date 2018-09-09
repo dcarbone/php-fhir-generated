@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,32 +67,14 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * Details for all kinds of technology mediated contact points for a person or organization, including telephone, email, etc.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRContactPoint
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRContactPoint extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * Telecommunications form for contact point - what communications system is required to make use of the contact.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem
-     */
-    public $system = null;
-
-    /**
-     * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $value = null;
-
-    /**
-     * Identifies the purpose for the contact point.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
-     */
-    public $use = null;
-
-    /**
-     * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
-     */
-    public $rank = null;
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'ContactPoint';
 
     /**
      * Time period when the contact point was/is in use.
@@ -99,169 +83,263 @@ class FHIRContactPoint extends FHIRElement implements \JsonSerializable
     public $period = null;
 
     /**
-     * @var string
+     * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
      */
-    private $_fhirElementName = 'ContactPoint';
+    public $rank = null;
 
     /**
      * Telecommunications form for contact point - what communications system is required to make use of the contact.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem
      */
-    public function getSystem() {
-        return $this->system;
-    }
-
-    /**
-     * Telecommunications form for contact point - what communications system is required to make use of the contact.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem $system
-     * @return $this
-     */
-    public function setSystem($system) {
-        $this->system = $system;
-        return $this;
-    }
-
-    /**
-     * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getValue() {
-        return $this->value;
-    }
-
-    /**
-     * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $value
-     * @return $this
-     */
-    public function setValue($value) {
-        $this->value = $value;
-        return $this;
-    }
+    public $system = null;
 
     /**
      * Identifies the purpose for the contact point.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
      */
-    public function getUse() {
-        return $this->use;
-    }
+    public $use = null;
 
     /**
-     * Identifies the purpose for the contact point.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse $use
-     * @return $this
+     * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function setUse($use) {
-        $this->use = $use;
-        return $this;
-    }
+    public $value = null;
 
     /**
-     * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * FHIRContactPoint Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public function getRank() {
-        return $this->rank;
-    }
-
-    /**
-     * Specifies a preferred order in which to use a set of contacts. Contacts are ranked with lower values coming before higher values.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt $rank
-     * @return $this
-     */
-    public function setRank($rank) {
-        $this->rank = $rank;
-        return $this;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['rank'])) {
+                $this->setRank($data['rank']);
+            }
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRContactPoint::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * Time period when the contact point was/is in use.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getPeriod() {
-        return $this->period;
-    }
-
-    /**
-     * Time period when the contact point was/is in use.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
-    public function setPeriod($period) {
+    public function setPeriod(FHIRPeriod $period = null)
+    {
+        if (null === $period) {
+            return $this; 
+        }
         $this->period = $period;
         return $this;
     }
 
     /**
-     * @return string
+     * Time period when the contact point was/is in use.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getPeriod()
+    {
+        return $this->period;
     }
 
+
     /**
-     * @param mixed $data
+     * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     * @return $this
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['system'])) {
-                $this->setSystem($data['system']);
-            }
-            if (isset($data['value'])) {
-                $this->setValue($data['value']);
-            }
-            if (isset($data['use'])) {
-                $this->setUse($data['use']);
-            }
-            if (isset($data['rank'])) {
-                $this->setRank($data['rank']);
-            }
-            if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function setRank($rank)
+    {
+        if (null === $rank) {
+            return $this; 
         }
-        parent::__construct($data);
+        if (is_scalar($rank)) {
+            $rank = new FHIRPositiveInt($rank);
+        }
+        if (!($rank instanceof FHIRPositiveInt)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRContactPoint::setRank - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRPositiveInt or appropriate scalar value, %s seen.',
+                gettype($rank)
+            ));
+        }
+        $this->rank = $rank;
+        return $this;
     }
+
+    /**
+     * Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPositiveInt
+     */
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+
+    /**
+     * Telecommunications form for contact point - what communications system is required to make use of the contact.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem
+     * @return $this
+     */
+    public function setSystem($system)
+    {
+        if (null === $system) {
+            return $this; 
+        }
+        if (is_scalar($system)) {
+            $system = new FHIRContactPointSystem($system);
+        }
+        if (!($system instanceof FHIRContactPointSystem)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRContactPoint::setSystem - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem or appropriate scalar value, %s seen.',
+                gettype($system)
+            ));
+        }
+        $this->system = $system;
+        return $this;
+    }
+
+    /**
+     * Telecommunications form for contact point - what communications system is required to make use of the contact.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPointSystem
+     */
+    public function getSystem()
+    {
+        return $this->system;
+    }
+
+
+    /**
+     * Identifies the purpose for the contact point.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
+     * @return $this
+     */
+    public function setUse($use)
+    {
+        if (null === $use) {
+            return $this; 
+        }
+        if (is_scalar($use)) {
+            $use = new FHIRContactPointUse($use);
+        }
+        if (!($use instanceof FHIRContactPointUse)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRContactPoint::setUse - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRContactPointUse or appropriate scalar value, %s seen.',
+                gettype($use)
+            ));
+        }
+        $this->use = $use;
+        return $this;
+    }
+
+    /**
+     * Identifies the purpose for the contact point.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPointUse
+     */
+    public function getUse()
+    {
+        return $this->use;
+    }
+
+
+    /**
+     * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        if (null === $value) {
+            return $this; 
+        }
+        if (is_scalar($value)) {
+            $value = new FHIRString($value);
+        }
+        if (!($value instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRContactPoint::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($value)
+            ));
+        }
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return (string)$this->getValue();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->system)) $json['system'] = $this->system;
-        if (isset($this->value)) $json['value'] = $this->value;
-        if (isset($this->use)) $json['use'] = $this->use;
-        if (isset($this->rank)) $json['rank'] = $this->rank;
-        if (isset($this->period)) $json['period'] = $this->period;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getPeriod())) {
+            $a['period'] = $v;
+        }
+        if (null !== ($v = $this->getRank())) {
+            $a['rank'] = $v;
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $a['system'] = $v;
+        }
+        if (null !== ($v = $this->getUse())) {
+            $a['use'] = $v;
+        }
+        if (null !== ($v = $this->getValue())) {
+            $a['value'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<ContactPoint xmlns="http://hl7.org/fhir"></ContactPoint>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
-        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
-        if (isset($this->rank)) $this->rank->xmlSerialize(true, $sxe->addChild('rank'));
-        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<ContactPoint xmlns="http://hl7.org/fhir"></ContactPoint>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,20 +67,14 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * A human's name with the ability to identify parts and usage.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRHumanName
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRHumanName extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * Identifies the purpose for this name.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRNameUse
-     */
-    public $use = null;
-
-    /**
-     * A full text representation of the name.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $text = null;
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'HumanName';
 
     /**
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
@@ -88,21 +84,9 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
 
     /**
      * Given name.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public $given = [];
-
-    /**
-     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
-     */
-    public $prefix = [];
-
-    /**
-     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString[]
-     */
-    public $suffix = [];
+    public $given = null;
 
     /**
      * Indicates the period of time when this name was valid for the named person.
@@ -111,260 +95,341 @@ class FHIRHumanName extends FHIRElement implements \JsonSerializable
     public $period = null;
 
     /**
-     * @var string
+     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    private $_fhirElementName = 'HumanName';
+    public $prefix = null;
+
+    /**
+     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $suffix = null;
+
+    /**
+     * Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $text = null;
 
     /**
      * Identifies the purpose for this name.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRNameUse
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRNameUse
      */
-    public function getUse() {
-        return $this->use;
-    }
+    public $use = null;
 
     /**
-     * Identifies the purpose for this name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRNameUse $use
-     * @return $this
+     * FHIRHumanName Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public function setUse($use) {
-        $this->use = $use;
-        return $this;
-    }
-
-    /**
-     * A full text representation of the name.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getText() {
-        return $this->text;
-    }
-
-    /**
-     * A full text representation of the name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $text
-     * @return $this
-     */
-    public function setText($text) {
-        $this->text = $text;
-        return $this;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['family'])) {
+                $this->setFamily($data['family']);
+            }
+            if (isset($data['given'])) {
+                $this->setGiven($data['given']);
+            }
+            if (isset($data['period'])) {
+                $this->setPeriod($data['period']);
+            }
+            if (isset($data['prefix'])) {
+                $this->setPrefix($data['prefix']);
+            }
+            if (isset($data['suffix'])) {
+                $this->setSuffix($data['suffix']);
+            }
+            if (isset($data['text'])) {
+                $this->setText($data['text']);
+            }
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRHumanName::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getFamily() {
-        return $this->family;
-    }
-
-    /**
-     * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $family
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setFamily($family) {
+    public function setFamily($family)
+    {
+        if (null === $family) {
+            return $this; 
+        }
+        if (is_scalar($family)) {
+            $family = new FHIRString($family);
+        }
+        if (!($family instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRHumanName::setFamily - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($family)
+            ));
+        }
         $this->family = $family;
         return $this;
     }
 
     /**
-     * Given name.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
+     * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getGiven() {
+    public function getFamily()
+    {
+        return $this->family;
+    }
+
+
+    /**
+     * Given name.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setGiven($given)
+    {
+        if (null === $given) {
+            return $this; 
+        }
+        if (is_scalar($given)) {
+            $given = new FHIRString($given);
+        }
+        if (!($given instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRHumanName::setGiven - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($given)
+            ));
+        }
+        $this->given = $given;
+        return $this;
+    }
+
+    /**
+     * Given name.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getGiven()
+    {
         return $this->given;
     }
 
-    /**
-     * Given name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $given
-     * @return $this
-     */
-    public function addGiven($given) {
-        $this->given[] = $given;
-        return $this;
-    }
-
-    /**
-     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
-     */
-    public function getPrefix() {
-        return $this->prefix;
-    }
-
-    /**
-     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $prefix
-     * @return $this
-     */
-    public function addPrefix($prefix) {
-        $this->prefix[] = $prefix;
-        return $this;
-    }
-
-    /**
-     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString[]
-     */
-    public function getSuffix() {
-        return $this->suffix;
-    }
-
-    /**
-     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $suffix
-     * @return $this
-     */
-    public function addSuffix($suffix) {
-        $this->suffix[] = $suffix;
-        return $this;
-    }
 
     /**
      * Indicates the period of time when this name was valid for the named person.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRPeriod
-     */
-    public function getPeriod() {
-        return $this->period;
-    }
-
-    /**
-     * Indicates the period of time when this name was valid for the named person.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRPeriod $period
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
      * @return $this
      */
-    public function setPeriod($period) {
+    public function setPeriod(FHIRPeriod $period = null)
+    {
+        if (null === $period) {
+            return $this; 
+        }
         $this->period = $period;
         return $this;
     }
 
     /**
+     * Indicates the period of time when this name was valid for the named person.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRPeriod
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+
+    /**
+     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setPrefix($prefix)
+    {
+        if (null === $prefix) {
+            return $this; 
+        }
+        if (is_scalar($prefix)) {
+            $prefix = new FHIRString($prefix);
+        }
+        if (!($prefix instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRHumanName::setPrefix - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($prefix)
+            ));
+        }
+        $this->prefix = $prefix;
+        return $this;
+    }
+
+    /**
+     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getPrefix()
+    {
+        return $this->prefix;
+    }
+
+
+    /**
+     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setSuffix($suffix)
+    {
+        if (null === $suffix) {
+            return $this; 
+        }
+        if (is_scalar($suffix)) {
+            $suffix = new FHIRString($suffix);
+        }
+        if (!($suffix instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRHumanName::setSuffix - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($suffix)
+            ));
+        }
+        $this->suffix = $suffix;
+        return $this;
+    }
+
+    /**
+     * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getSuffix()
+    {
+        return $this->suffix;
+    }
+
+
+    /**
+     * Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setText($text)
+    {
+        if (null === $text) {
+            return $this; 
+        }
+        if (is_scalar($text)) {
+            $text = new FHIRString($text);
+        }
+        if (!($text instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRHumanName::setText - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($text)
+            ));
+        }
+        $this->text = $text;
+        return $this;
+    }
+
+    /**
+     * Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+
+    /**
+     * Identifies the purpose for this name.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRNameUse
+     * @return $this
+     */
+    public function setUse($use)
+    {
+        if (null === $use) {
+            return $this; 
+        }
+        if (is_scalar($use)) {
+            $use = new FHIRNameUse($use);
+        }
+        if (!($use instanceof FHIRNameUse)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRHumanName::setUse - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRNameUse or appropriate scalar value, %s seen.',
+                gettype($use)
+            ));
+        }
+        $this->use = $use;
+        return $this;
+    }
+
+    /**
+     * Identifies the purpose for this name.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRNameUse
+     */
+    public function getUse()
+    {
+        return $this->use;
+    }
+
+
+    /**
      * @return string
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @param mixed $data
+     * @return mixed
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['use'])) {
-                $this->setUse($data['use']);
-            }
-            if (isset($data['text'])) {
-                $this->setText($data['text']);
-            }
-            if (isset($data['family'])) {
-                $this->setFamily($data['family']);
-            }
-            if (isset($data['given'])) {
-                if (is_array($data['given'])) {
-                    foreach($data['given'] as $d) {
-                        $this->addGiven($d);
-                    }
-                } else {
-                    throw new \InvalidArgumentException('"given" must be array of objects or null, '.gettype($data['given']).' seen.');
-                }
-            }
-            if (isset($data['prefix'])) {
-                if (is_array($data['prefix'])) {
-                    foreach($data['prefix'] as $d) {
-                        $this->addPrefix($d);
-                    }
-                } else {
-                    throw new \InvalidArgumentException('"prefix" must be array of objects or null, '.gettype($data['prefix']).' seen.');
-                }
-            }
-            if (isset($data['suffix'])) {
-                if (is_array($data['suffix'])) {
-                    foreach($data['suffix'] as $d) {
-                        $this->addSuffix($d);
-                    }
-                } else {
-                    throw new \InvalidArgumentException('"suffix" must be array of objects or null, '.gettype($data['suffix']).' seen.');
-                }
-            }
-            if (isset($data['period'])) {
-                $this->setPeriod($data['period']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getFamily())) {
+            $a['family'] = $v;
         }
-        parent::__construct($data);
+        if (null !== ($v = $this->getGiven())) {
+            $a['given'] = $v;
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $a['period'] = $v;
+        }
+        if (null !== ($v = $this->getPrefix())) {
+            $a['prefix'] = $v;
+        }
+        if (null !== ($v = $this->getSuffix())) {
+            $a['suffix'] = $v;
+        }
+        if (null !== ($v = $this->getText())) {
+            $a['text'] = $v;
+        }
+        if (null !== ($v = $this->getUse())) {
+            $a['use'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @return string
-     */
-    public function __toString() {
-        return $this->get_fhirElementName();
-    }
-
-    /**
-     * @return array
-     */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->use)) $json['use'] = $this->use;
-        if (isset($this->text)) $json['text'] = $this->text;
-        if (isset($this->family)) $json['family'] = $this->family;
-        if (0 < count($this->given)) {
-            $json['given'] = [];
-            foreach($this->given as $given) {
-                if (null !== $given) $json['given'][] = $given;
-            }
-        }
-        if (0 < count($this->prefix)) {
-            $json['prefix'] = [];
-            foreach($this->prefix as $prefix) {
-                if (null !== $prefix) $json['prefix'][] = $prefix;
-            }
-        }
-        if (0 < count($this->suffix)) {
-            $json['suffix'] = [];
-            foreach($this->suffix as $suffix) {
-                if (null !== $suffix) $json['suffix'][] = $suffix;
-            }
-        }
-        if (isset($this->period)) $json['period'] = $this->period;
-        return $json;
-    }
-
-    /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<HumanName xmlns="http://hl7.org/fhir"></HumanName>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
-        if (isset($this->text)) $this->text->xmlSerialize(true, $sxe->addChild('text'));
-        if (isset($this->family)) $this->family->xmlSerialize(true, $sxe->addChild('family'));
-        if (0 < count($this->given)) {
-            foreach($this->given as $given) {
-                $given->xmlSerialize(true, $sxe->addChild('given'));
-            }
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<HumanName xmlns="http://hl7.org/fhir"></HumanName>');
         }
-        if (0 < count($this->prefix)) {
-            foreach($this->prefix as $prefix) {
-                $prefix->xmlSerialize(true, $sxe->addChild('prefix'));
-            }
+        if ($returnSXE) {
+            return $sxe;
         }
-        if (0 < count($this->suffix)) {
-            foreach($this->suffix as $suffix) {
-                $suffix->xmlSerialize(true, $sxe->addChild('suffix'));
-            }
-        }
-        if (isset($this->period)) $this->period->xmlSerialize(true, $sxe->addChild('period'));
-        if ($returnSXE) return $sxe;
         return $sxe->saveXML();
     }
-
-
 }

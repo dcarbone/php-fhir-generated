@@ -1,0 +1,394 @@
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ * 
+ * Class creation date: September 9th, 2018
+ * 
+ * PHPFHIR Copyright:
+ * 
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * FHIR Copyright Notice:
+ *
+ *   Copyright (c) 2011+, HL7, Inc.
+ *   All rights reserved.
+ * 
+ *   Redistribution and use in source and binary forms, with or without modification,
+ *   are permitted provided that the following conditions are met:
+ * 
+ *    * Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *    * Neither the name of HL7 nor the names of its contributors may be used to
+ *      endorse or promote products derived from this software without specific
+ *      prior written permission.
+ * 
+ *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ *   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ *   POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * 
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
+ */
+
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
+use PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept;
+use PHPFHIRGenerated\FHIRElement\FHIRIdentifier;
+use PHPFHIRGenerated\FHIRElement\FHIRQuantity;
+use PHPFHIRGenerated\FHIRElement\FHIRReference;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
+
+/**
+ * A sample to be used for analysis.
+ *
+ * Class FHIRSpecimenContainer
+ * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen
+ */
+class FHIRSpecimenContainer extends FHIRBackboneElement implements \JsonSerializable
+{
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Specimen.Container';
+
+    /**
+     * Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $additiveCodeableConcept = null;
+
+    /**
+     * Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public $additiveReference = null;
+
+    /**
+     * The capacity (volume or other measure) the container may contain.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    public $capacity = null;
+
+    /**
+     * Textual description of the container.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $description = null;
+
+    /**
+     * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public $identifier = null;
+
+    /**
+     * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    public $specimenQuantity = null;
+
+    /**
+     * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public $type = null;
+
+    /**
+     * FHIRSpecimenContainer Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
+     */
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['additiveCodeableConcept'])) {
+                $this->setAdditiveCodeableConcept($data['additiveCodeableConcept']);
+            }
+            if (isset($data['additiveReference'])) {
+                $this->setAdditiveReference($data['additiveReference']);
+            }
+            if (isset($data['capacity'])) {
+                $this->setCapacity($data['capacity']);
+            }
+            if (isset($data['description'])) {
+                $this->setDescription($data['description']);
+            }
+            if (isset($data['identifier'])) {
+                $this->setIdentifier($data['identifier']);
+            }
+            if (isset($data['specimenQuantity'])) {
+                $this->setSpecimenQuantity($data['specimenQuantity']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
+    }
+
+    /**
+     * Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setAdditiveCodeableConcept(FHIRCodeableConcept $additiveCodeableConcept = null)
+    {
+        if (null === $additiveCodeableConcept) {
+            return $this; 
+        }
+        $this->additiveCodeableConcept = $additiveCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getAdditiveCodeableConcept()
+    {
+        return $this->additiveCodeableConcept;
+    }
+
+
+    /**
+     * Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     * @return $this
+     */
+    public function setAdditiveReference(FHIRReference $additiveReference = null)
+    {
+        if (null === $additiveReference) {
+            return $this; 
+        }
+        $this->additiveReference = $additiveReference;
+        return $this;
+    }
+
+    /**
+     * Introduced substance to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRReference
+     */
+    public function getAdditiveReference()
+    {
+        return $this->additiveReference;
+    }
+
+
+    /**
+     * The capacity (volume or other measure) the container may contain.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * @return $this
+     */
+    public function setCapacity(FHIRQuantity $capacity = null)
+    {
+        if (null === $capacity) {
+            return $this; 
+        }
+        $this->capacity = $capacity;
+        return $this;
+    }
+
+    /**
+     * The capacity (volume or other measure) the container may contain.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    public function getCapacity()
+    {
+        return $this->capacity;
+    }
+
+
+    /**
+     * Textual description of the container.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        if (null === $description) {
+            return $this; 
+        }
+        if (is_scalar($description)) {
+            $description = new FHIRString($description);
+        }
+        if (!($description instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRSpecimenContainer::setDescription - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($description)
+            ));
+        }
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * Textual description of the container.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+
+    /**
+     * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     * @return $this
+     */
+    public function setIdentifier(FHIRIdentifier $identifier = null)
+    {
+        if (null === $identifier) {
+            return $this; 
+        }
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRIdentifier
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+
+    /**
+     * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * @return $this
+     */
+    public function setSpecimenQuantity(FHIRQuantity $specimenQuantity = null)
+    {
+        if (null === $specimenQuantity) {
+            return $this; 
+        }
+        $this->specimenQuantity = $specimenQuantity;
+        return $this;
+    }
+
+    /**
+     * The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    public function getSpecimenQuantity()
+    {
+        return $this->specimenQuantity;
+    }
+
+
+    /**
+     * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     * @return $this
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        if (null === $type) {
+            return $this; 
+        }
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getAdditiveCodeableConcept())) {
+            $a['additiveCodeableConcept'] = $v;
+        }
+        if (null !== ($v = $this->getAdditiveReference())) {
+            $a['additiveReference'] = $v;
+        }
+        if (null !== ($v = $this->getCapacity())) {
+            $a['capacity'] = $v;
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $a['description'] = $v;
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $a['identifier'] = $v;
+        }
+        if (null !== ($v = $this->getSpecimenQuantity())) {
+            $a['specimenQuantity'] = $v;
+        }
+        if (null !== ($v = $this->getType())) {
+            $a['type'] = $v;
+        }
+        return $a;
+    }
+
+    /**
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
+     * @return string|\SimpleXMLElement
+     */
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<SpecimenContainer xmlns="http://hl7.org/fhir"></SpecimenContainer>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
+        return $sxe->saveXML();
+    }
+}

@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,9 +67,15 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * Specifies contact information for a person or organization.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRContactDetail
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRContactDetail extends FHIRElement implements \JsonSerializable
 {
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'ContactDetail';
+
     /**
      * The name of an individual to contact.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRString
@@ -76,120 +84,127 @@ class FHIRContactDetail extends FHIRElement implements \JsonSerializable
 
     /**
      * The contact details for the individual (if a name was provided) or the organization.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactPoint
      */
-    public $telecom = [];
+    public $telecom = null;
 
     /**
-     * @var string
+     * FHIRContactDetail Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    private $_fhirElementName = 'ContactDetail';
-
-    /**
-     * The name of an individual to contact.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getName() {
-        return $this->name;
-    }
-
-    /**
-     * The name of an individual to contact.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
-     * @return $this
-     */
-    public function setName($name) {
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * The contact details for the individual (if a name was provided) or the organization.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactPoint[]
-     */
-    public function getTelecom() {
-        return $this->telecom;
-    }
-
-    /**
-     * The contact details for the individual (if a name was provided) or the organization.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactPoint $telecom
-     * @return $this
-     */
-    public function addTelecom($telecom) {
-        $this->telecom[] = $telecom;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
-    }
-
-    /**
-     * @param mixed $data
-     */
-    public function __construct($data = []) {
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
         if (is_array($data)) {
             if (isset($data['name'])) {
                 $this->setName($data['name']);
             }
             if (isset($data['telecom'])) {
-                if (is_array($data['telecom'])) {
-                    foreach($data['telecom'] as $d) {
-                        $this->addTelecom($d);
-                    }
-                } else {
-                    throw new \InvalidArgumentException('"telecom" must be array of objects or null, '.gettype($data['telecom']).' seen.');
-                }
+                $this->setTelecom($data['telecom']);
             }
         } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRContactDetail::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
         }
-        parent::__construct($data);
     }
+
+    /**
+     * The name of an individual to contact.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setName($name)
+    {
+        if (null === $name) {
+            return $this; 
+        }
+        if (is_scalar($name)) {
+            $name = new FHIRString($name);
+        }
+        if (!($name instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRContactDetail::setName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($name)
+            ));
+        }
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * The name of an individual to contact.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+
+    /**
+     * The contact details for the individual (if a name was provided) or the organization.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     * @return $this
+     */
+    public function setTelecom(FHIRContactPoint $telecom = null)
+    {
+        if (null === $telecom) {
+            return $this; 
+        }
+        $this->telecom = $telecom;
+        return $this;
+    }
+
+    /**
+     * The contact details for the individual (if a name was provided) or the organization.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactPoint
+     */
+    public function getTelecom()
+    {
+        return $this->telecom;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->name)) $json['name'] = $this->name;
-        if (0 < count($this->telecom)) {
-            $json['telecom'] = [];
-            foreach($this->telecom as $telecom) {
-                if (null !== $telecom) $json['telecom'][] = $telecom;
-            }
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getName())) {
+            $a['name'] = $v;
         }
-        return $json;
+        if (null !== ($v = $this->getTelecom())) {
+            $a['telecom'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<ContactDetail xmlns="http://hl7.org/fhir"></ContactDetail>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (0 < count($this->telecom)) {
-            foreach($this->telecom as $telecom) {
-                $telecom->xmlSerialize(true, $sxe->addChild('telecom'));
-            }
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<ContactDetail xmlns="http://hl7.org/fhir"></ContactDetail>');
         }
-        if ($returnSXE) return $sxe;
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

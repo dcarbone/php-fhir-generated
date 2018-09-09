@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,102 +67,105 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * Base definition for all elements that are defined inside a resource - but not those in a data type.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRBackboneElement
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRBackboneElement extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension[]
-     */
-    public $modifierExtension = [];
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'BackboneElement';
 
     /**
-     * @var string
+     * May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRExtension
      */
-    private $_fhirElementName = 'BackboneElement';
+    public $modifierExtension = null;
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRExtension[]
+     * FHIRBackboneElement Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public function getModifierExtension() {
-        return $this->modifierExtension;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['modifierExtension'])) {
+                $this->setModifierExtension($data['modifierExtension']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
-     * May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRExtension $modifierExtension
+     * May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
      * @return $this
      */
-    public function addModifierExtension($modifierExtension) {
-        $this->modifierExtension[] = $modifierExtension;
+    public function setModifierExtension(FHIRExtension $modifierExtension = null)
+    {
+        if (null === $modifierExtension) {
+            return $this; 
+        }
+        $this->modifierExtension = $modifierExtension;
         return $this;
     }
 
     /**
-     * @return string
+     * May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRExtension
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getModifierExtension()
+    {
+        return $this->modifierExtension;
     }
 
-    /**
-     * @param mixed $data
-     */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['modifierExtension'])) {
-                if (is_array($data['modifierExtension'])) {
-                    foreach($data['modifierExtension'] as $d) {
-                        $this->addModifierExtension($d);
-                    }
-                } else {
-                    throw new \InvalidArgumentException('"modifierExtension" must be array of objects or null, '.gettype($data['modifierExtension']).' seen.');
-                }
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
-        }
-        parent::__construct($data);
-    }
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (0 < count($this->modifierExtension)) {
-            $json['modifierExtension'] = [];
-            foreach($this->modifierExtension as $modifierExtension) {
-                if (null !== $modifierExtension) $json['modifierExtension'][] = $modifierExtension;
-            }
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getModifierExtension())) {
+            $a['modifierExtension'] = $v;
         }
-        return $json;
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<BackboneElement xmlns="http://hl7.org/fhir"></BackboneElement>');
-        parent::xmlSerialize(true, $sxe);
-        if (0 < count($this->modifierExtension)) {
-            foreach($this->modifierExtension as $modifierExtension) {
-                $modifierExtension->xmlSerialize(true, $sxe->addChild('modifierExtension'));
-            }
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<BackboneElement xmlns="http://hl7.org/fhir"></BackboneElement>');
         }
-        if ($returnSXE) return $sxe;
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

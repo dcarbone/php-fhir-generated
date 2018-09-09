@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRResource;
+<?php
+
+namespace PHPFHIRGenerated\FHIRResource;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -60,108 +62,106 @@
  * 
  */
 
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter;
 use PHPFHIRGenerated\FHIRResource;
 
 /**
  * This special resource type is used to represent an operation request and response (operations.html). It has no other use, and there is no RESTful endpoint associated with it.
  * If the element is present, it must have either a @value, an @id, or extensions
+ *
+ * Class FHIRParameters
+ * @package PHPFHIRGenerated\FHIRResource
  */
 class FHIRParameters extends FHIRResource implements \JsonSerializable
 {
-    /**
-     * A parameter passed to or received from the operation.
-     * @var \PHPFHIRGenerated\FHIRResource\FHIRParameters\FHIRParametersParameter[]
-     */
-    public $parameter = [];
-
-    /**
-     * @var string
-     */
-    private $_fhirElementName = 'Parameters';
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Parameters';
 
     /**
      * A parameter passed to or received from the operation.
-     * @return \PHPFHIRGenerated\FHIRResource\FHIRParameters\FHIRParametersParameter[]
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      */
-    public function getParameter() {
-        return $this->parameter;
+    public $parameter = null;
+
+    /**
+     * FHIRParameters Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
+     */
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['parameter'])) {
+                $this->setParameter($data['parameter']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRResource\FHIRParameters::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * A parameter passed to or received from the operation.
-     * @param \PHPFHIRGenerated\FHIRResource\FHIRParameters\FHIRParametersParameter $parameter
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      * @return $this
      */
-    public function addParameter($parameter) {
-        $this->parameter[] = $parameter;
+    public function setParameter(FHIRParametersParameter $parameter = null)
+    {
+        if (null === $parameter) {
+            return $this; 
+        }
+        $this->parameter = $parameter;
         return $this;
     }
 
     /**
-     * @return string
+     * A parameter passed to or received from the operation.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getParameter()
+    {
+        return $this->parameter;
     }
 
-    /**
-     * @param mixed $data
-     */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['parameter'])) {
-                if (is_array($data['parameter'])) {
-                    foreach($data['parameter'] as $d) {
-                        $this->addParameter($d);
-                    }
-                } else {
-                    throw new \InvalidArgumentException('"parameter" must be array of objects or null, '.gettype($data['parameter']).' seen.');
-                }
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
-        }
-        parent::__construct($data);
-    }
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        $json['resourceType'] = $this->_fhirElementName;
-        if (0 < count($this->parameter)) {
-            $json['parameter'] = [];
-            foreach($this->parameter as $parameter) {
-                if (null !== $parameter) $json['parameter'][] = $parameter;
-            }
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        $a['resourceType'] = self::FHIR_TYPE_NAME;
+        if (null !== ($v = $this->getParameter())) {
+            $a['parameter'] = $v;
         }
-        return $json;
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Parameters xmlns="http://hl7.org/fhir"></Parameters>');
-        parent::xmlSerialize(true, $sxe);
-        if (0 < count($this->parameter)) {
-            foreach($this->parameter as $parameter) {
-                $parameter->xmlSerialize(true, $sxe->addChild('parameter'));
-            }
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Parameters xmlns="http://hl7.org/fhir"></Parameters>');
         }
-        if ($returnSXE) return $sxe;
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

@@ -1,0 +1,266 @@
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ * 
+ * Class creation date: September 9th, 2018
+ * 
+ * PHPFHIR Copyright:
+ * 
+ * Copyright 2016-2018 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * FHIR Copyright Notice:
+ *
+ *   Copyright (c) 2011+, HL7, Inc.
+ *   All rights reserved.
+ * 
+ *   Redistribution and use in source and binary forms, with or without modification,
+ *   are permitted provided that the following conditions are met:
+ * 
+ *    * Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *    * Neither the name of HL7 nor the names of its contributors may be used to
+ *      endorse or promote products derived from this software without specific
+ *      prior written permission.
+ * 
+ *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ *   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ *   POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * 
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
+ */
+
+use PHPFHIRGenerated\FHIRElement\FHIRBackboneElement;
+use PHPFHIRGenerated\FHIRElement\FHIRMarkdown;
+use PHPFHIRGenerated\FHIRElement\FHIRString;
+use PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult;
+
+/**
+ * A summary of information based on the results of executing a TestScript.
+ *
+ * Class FHIRTestReportAssert
+ * @package PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport
+ */
+class FHIRTestReportAssert extends FHIRBackboneElement implements \JsonSerializable
+{
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'TestReport.Assert';
+
+    /**
+     * A link to further details on the result.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $detail = null;
+
+    /**
+     * An explanatory message associated with the result.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public $message = null;
+
+    /**
+     * The result of this assertion.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult
+     */
+    public $result = null;
+
+    /**
+     * FHIRTestReportAssert Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
+     */
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['detail'])) {
+                $this->setDetail($data['detail']);
+            }
+            if (isset($data['message'])) {
+                $this->setMessage($data['message']);
+            }
+            if (isset($data['result'])) {
+                $this->setResult($data['result']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportAssert::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
+    }
+
+    /**
+     * A link to further details on the result.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setDetail($detail)
+    {
+        if (null === $detail) {
+            return $this; 
+        }
+        if (is_scalar($detail)) {
+            $detail = new FHIRString($detail);
+        }
+        if (!($detail instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRTestReportAssert::setDetail - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($detail)
+            ));
+        }
+        $this->detail = $detail;
+        return $this;
+    }
+
+    /**
+     * A link to further details on the result.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDetail()
+    {
+        return $this->detail;
+    }
+
+
+    /**
+     * An explanatory message associated with the result.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        if (null === $message) {
+            return $this; 
+        }
+        if (is_scalar($message)) {
+            $message = new FHIRMarkdown($message);
+        }
+        if (!($message instanceof FHIRMarkdown)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRTestReportAssert::setMessage - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRMarkdown or appropriate scalar value, %s seen.',
+                gettype($message)
+            ));
+        }
+        $this->message = $message;
+        return $this;
+    }
+
+    /**
+     * An explanatory message associated with the result.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRMarkdown
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+
+    /**
+     * The result of this assertion.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult
+     * @return $this
+     */
+    public function setResult($result)
+    {
+        if (null === $result) {
+            return $this; 
+        }
+        if (is_scalar($result)) {
+            $result = new FHIRTestReportActionResult($result);
+        }
+        if (!($result instanceof FHIRTestReportActionResult)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRTestReportAssert::setResult - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult or appropriate scalar value, %s seen.',
+                gettype($result)
+            ));
+        }
+        $this->result = $result;
+        return $this;
+    }
+
+    /**
+     * The result of this assertion.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRTestReportActionResult
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getDetail())) {
+            $a['detail'] = $v;
+        }
+        if (null !== ($v = $this->getMessage())) {
+            $a['message'] = $v;
+        }
+        if (null !== ($v = $this->getResult())) {
+            $a['result'] = $v;
+        }
+        return $a;
+    }
+
+    /**
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
+     * @return string|\SimpleXMLElement
+     */
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<TestReportAssert xmlns="http://hl7.org/fhir"></TestReportAssert>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
+        return $sxe->saveXML();
+    }
+}

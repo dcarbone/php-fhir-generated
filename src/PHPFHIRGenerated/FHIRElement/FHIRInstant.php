@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -61,83 +63,117 @@
  */
 
 use PHPFHIRGenerated\FHIRElement;
+use PHPFHIRGenerated\FHIRInstantPrimitive;
 
 /**
  * An instant in time - known at least to the second
- * Note: This is intended for precisely observed times, typically system logs etc., and not human-reported times - for them, see date and dateTime below. Time zone is always required
+ * Note: This is intended for where precisely observed times are required, typically system logs etc., and not human-reported times - for them, see date and dateTime (which can be as precise as instant, but is not required to be) below. Time zone is always required
  * If the element is present, it must have either a @value, an @id, or extensions
+ *
+ * Class FHIRInstant
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRInstant extends FHIRElement implements \JsonSerializable
 {
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'instant';
+
     /**
-     * @var string
+     * @var \PHPFHIRGenerated\FHIRInstantPrimitive
      */
     public $value = null;
 
     /**
-     * @var string
+     * FHIRInstant Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    private $_fhirElementName = 'instant';
-
-    /**
-     * @return string
-     */
-    public function getValue() {
-        return $this->value;
+    public function __construct($data = null)
+    {
+        if (is_scalar($data)) {
+            $this->setValue($data);
+            return;
+        }
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRInstant::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
-     * @param string $value
+     * @param null|\PHPFHIRGenerated\FHIRInstantPrimitive
      * @return $this
      */
-    public function setValue($value) {
+    public function setValue($value)
+    {
+        if (null === $value) {
+            return $this; 
+        }
+        if (is_scalar($value)) {
+            $value = new FHIRInstantPrimitive($value);
+        }
+        if (!($value instanceof FHIRInstantPrimitive)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRInstant::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRInstantPrimitive or appropriate scalar value, %s seen.',
+                gettype($value)
+            ));
+        }
         $this->value = $value;
         return $this;
     }
 
     /**
-     * @return string
+     * @return null|\PHPFHIRGenerated\FHIRInstantPrimitive
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
-    }
-
-    /**
-     * @param mixed $data
-     */
-    public function __construct($data = []) {
-        if (is_scalar($data)) {
-            $this->setValue($data);
-        } else {
-            parent::__construct($data);
-        }
+    public function getValue()
+    {
+        return $this->value;
     }
 
     /**
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return (string)$this->getValue();
     }
 
     /**
      * @return mixed
      */
-    public function jsonSerialize() {
-        return $this->value;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (0 === count($a) && null !== ($v = $this->getValue())) {
+            return $v->getValue();
+        }
+        if (null !== ($v = $this->getValue())) {
+            $a['value'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<instant xmlns="http://hl7.org/fhir"></instant>');
-        $sxe->addAttribute('value', $this->value);
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<instant xmlns="http://hl7.org/fhir"></instant>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

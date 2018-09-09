@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,32 +67,14 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * The parameters to the module. This collection specifies both the input and output parameters. Input parameters are provided by the caller as part of the $evaluate operation. Output parameters are included in the GuidanceResponse.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRParameterDefinition
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public $name = null;
-
-    /**
-     * Whether the parameter is input or output for the module.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public $use = null;
-
-    /**
-     * The minimum number of times this parameter SHALL appear in the request or response.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
-     */
-    public $min = null;
-
-    /**
-     * The maximum number of times this element is permitted to appear in the request or response.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $max = null;
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'ParameterDefinition';
 
     /**
      * A brief discussion of what the parameter is for and how it is used by the module.
@@ -99,227 +83,362 @@ class FHIRParameterDefinition extends FHIRElement implements \JsonSerializable
     public $documentation = null;
 
     /**
+     * The maximum number of times this element is permitted to appear in the request or response.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $max = null;
+
+    /**
+     * The minimum number of times this parameter SHALL appear in the request or response.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    public $min = null;
+
+    /**
+     * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public $name = null;
+
+    /**
+     * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     */
+    public $profile = null;
+
+    /**
      * The type of the parameter.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $type = null;
 
     /**
-     * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRReference
-     */
-    public $profile = null;
-
-    /**
-     * @var string
-     */
-    private $_fhirElementName = 'ParameterDefinition';
-
-    /**
-     * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public function getName() {
-        return $this->name;
-    }
-
-    /**
-     * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $name
-     * @return $this
-     */
-    public function setName($name) {
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
      * Whether the parameter is input or output for the module.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getUse() {
-        return $this->use;
-    }
+    public $use = null;
 
     /**
-     * Whether the parameter is input or output for the module.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $use
-     * @return $this
+     * FHIRParameterDefinition Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public function setUse($use) {
-        $this->use = $use;
-        return $this;
-    }
-
-    /**
-     * The minimum number of times this parameter SHALL appear in the request or response.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRInteger
-     */
-    public function getMin() {
-        return $this->min;
-    }
-
-    /**
-     * The minimum number of times this parameter SHALL appear in the request or response.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRInteger $min
-     * @return $this
-     */
-    public function setMin($min) {
-        $this->min = $min;
-        return $this;
-    }
-
-    /**
-     * The maximum number of times this element is permitted to appear in the request or response.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getMax() {
-        return $this->max;
-    }
-
-    /**
-     * The maximum number of times this element is permitted to appear in the request or response.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $max
-     * @return $this
-     */
-    public function setMax($max) {
-        $this->max = $max;
-        return $this;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['documentation'])) {
+                $this->setDocumentation($data['documentation']);
+            }
+            if (isset($data['max'])) {
+                $this->setMax($data['max']);
+            }
+            if (isset($data['min'])) {
+                $this->setMin($data['min']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['profile'])) {
+                $this->setProfile($data['profile']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+            if (isset($data['use'])) {
+                $this->setUse($data['use']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRParameterDefinition::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * A brief discussion of what the parameter is for and how it is used by the module.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDocumentation() {
-        return $this->documentation;
-    }
-
-    /**
-     * A brief discussion of what the parameter is for and how it is used by the module.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $documentation
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setDocumentation($documentation) {
+    public function setDocumentation($documentation)
+    {
+        if (null === $documentation) {
+            return $this; 
+        }
+        if (is_scalar($documentation)) {
+            $documentation = new FHIRString($documentation);
+        }
+        if (!($documentation instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRParameterDefinition::setDocumentation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($documentation)
+            ));
+        }
         $this->documentation = $documentation;
         return $this;
     }
 
     /**
-     * The type of the parameter.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * A brief discussion of what the parameter is for and how it is used by the module.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getType() {
-        return $this->type;
+    public function getDocumentation()
+    {
+        return $this->documentation;
     }
 
+
     /**
-     * The type of the parameter.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $type
+     * The maximum number of times this element is permitted to appear in the request or response.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setType($type) {
-        $this->type = $type;
+    public function setMax($max)
+    {
+        if (null === $max) {
+            return $this; 
+        }
+        if (is_scalar($max)) {
+            $max = new FHIRString($max);
+        }
+        if (!($max instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRParameterDefinition::setMax - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($max)
+            ));
+        }
+        $this->max = $max;
         return $this;
     }
 
     /**
-     * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRReference
+     * The maximum number of times this element is permitted to appear in the request or response.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getProfile() {
-        return $this->profile;
+    public function getMax()
+    {
+        return $this->max;
+    }
+
+
+    /**
+     * The minimum number of times this parameter SHALL appear in the request or response.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
+     * @return $this
+     */
+    public function setMin($min)
+    {
+        if (null === $min) {
+            return $this; 
+        }
+        if (is_scalar($min)) {
+            $min = new FHIRInteger($min);
+        }
+        if (!($min instanceof FHIRInteger)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRParameterDefinition::setMin - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRInteger or appropriate scalar value, %s seen.',
+                gettype($min)
+            ));
+        }
+        $this->min = $min;
+        return $this;
     }
 
     /**
-     * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRReference $profile
+     * The minimum number of times this parameter SHALL appear in the request or response.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRInteger
+     */
+    public function getMin()
+    {
+        return $this->min;
+    }
+
+
+    /**
+     * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
-    public function setProfile($profile) {
+    public function setName($name)
+    {
+        if (null === $name) {
+            return $this; 
+        }
+        if (is_scalar($name)) {
+            $name = new FHIRCode($name);
+        }
+        if (!($name instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRParameterDefinition::setName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($name)
+            ));
+        }
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * The name of the parameter used to allow access to the value of the parameter in evaluation contexts.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+
+    /**
+     * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
+     * @return $this
+     */
+    public function setProfile($profile)
+    {
+        if (null === $profile) {
+            return $this; 
+        }
+        if (is_scalar($profile)) {
+            $profile = new FHIRCanonical($profile);
+        }
+        if (!($profile instanceof FHIRCanonical)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRParameterDefinition::setProfile - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCanonical or appropriate scalar value, %s seen.',
+                gettype($profile)
+            ));
+        }
         $this->profile = $profile;
         return $this;
     }
 
     /**
-     * @return string
+     * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCanonical
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getProfile()
+    {
+        return $this->profile;
     }
 
+
     /**
-     * @param mixed $data
+     * The type of the parameter.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return $this
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['name'])) {
-                $this->setName($data['name']);
-            }
-            if (isset($data['use'])) {
-                $this->setUse($data['use']);
-            }
-            if (isset($data['min'])) {
-                $this->setMin($data['min']);
-            }
-            if (isset($data['max'])) {
-                $this->setMax($data['max']);
-            }
-            if (isset($data['documentation'])) {
-                $this->setDocumentation($data['documentation']);
-            }
-            if (isset($data['type'])) {
-                $this->setType($data['type']);
-            }
-            if (isset($data['profile'])) {
-                $this->setProfile($data['profile']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function setType($type)
+    {
+        if (null === $type) {
+            return $this; 
         }
-        parent::__construct($data);
+        if (is_scalar($type)) {
+            $type = new FHIRCode($type);
+        }
+        if (!($type instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRParameterDefinition::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($type)
+            ));
+        }
+        $this->type = $type;
+        return $this;
     }
+
+    /**
+     * The type of the parameter.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+
+    /**
+     * Whether the parameter is input or output for the module.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return $this
+     */
+    public function setUse($use)
+    {
+        if (null === $use) {
+            return $this; 
+        }
+        if (is_scalar($use)) {
+            $use = new FHIRCode($use);
+        }
+        if (!($use instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRParameterDefinition::setUse - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($use)
+            ));
+        }
+        $this->use = $use;
+        return $this;
+    }
+
+    /**
+     * Whether the parameter is input or output for the module.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getUse()
+    {
+        return $this->use;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->name)) $json['name'] = $this->name;
-        if (isset($this->use)) $json['use'] = $this->use;
-        if (isset($this->min)) $json['min'] = $this->min;
-        if (isset($this->max)) $json['max'] = $this->max;
-        if (isset($this->documentation)) $json['documentation'] = $this->documentation;
-        if (isset($this->type)) $json['type'] = $this->type;
-        if (isset($this->profile)) $json['profile'] = $this->profile;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getDocumentation())) {
+            $a['documentation'] = $v;
+        }
+        if (null !== ($v = $this->getMax())) {
+            $a['max'] = $v;
+        }
+        if (null !== ($v = $this->getMin())) {
+            $a['min'] = $v;
+        }
+        if (null !== ($v = $this->getName())) {
+            $a['name'] = $v;
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $a['profile'] = $v;
+        }
+        if (null !== ($v = $this->getType())) {
+            $a['type'] = $v;
+        }
+        if (null !== ($v = $this->getUse())) {
+            $a['use'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<ParameterDefinition xmlns="http://hl7.org/fhir"></ParameterDefinition>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (isset($this->use)) $this->use->xmlSerialize(true, $sxe->addChild('use'));
-        if (isset($this->min)) $this->min->xmlSerialize(true, $sxe->addChild('min'));
-        if (isset($this->max)) $this->max->xmlSerialize(true, $sxe->addChild('max'));
-        if (isset($this->documentation)) $this->documentation->xmlSerialize(true, $sxe->addChild('documentation'));
-        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (isset($this->profile)) $this->profile->xmlSerialize(true, $sxe->addChild('profile'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<ParameterDefinition xmlns="http://hl7.org/fhir"></ParameterDefinition>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

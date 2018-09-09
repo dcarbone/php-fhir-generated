@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -66,9 +68,20 @@ use PHPFHIRGenerated\PHPFHIRHelper;
 /**
  * A human-readable formatted text, including images.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRNarrative
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRNarrative extends FHIRElement implements \JsonSerializable
 {
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Narrative';
+
+    /**
+     * @var string
+     */
+    public $div = null;
+
     /**
      * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRNarrativeStatus
@@ -76,108 +89,98 @@ class FHIRNarrative extends FHIRElement implements \JsonSerializable
     public $status = null;
 
     /**
-     * The actual narrative content, a stripped down version of XHTML.
-     * @var \string
+     * FHIRNarrative Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public $div = null;
-
-    /**
-     * @var string
-     */
-    private $_fhirElementName = 'Narrative';
-
-    /**
-     * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRNarrativeStatus
-     */
-    public function getStatus() {
-        return $this->status;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['div'])) {
+                $this->setDiv($data['div']);
+            }
+            if (isset($data['status'])) {
+                $this->setStatus($data['status']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRNarrative::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRNarrativeStatus $status
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRNarrativeStatus
      * @return $this
      */
-    public function setStatus($status) {
+    public function setStatus($status)
+    {
+        if (null === $status) {
+            return $this; 
+        }
+        if (is_scalar($status)) {
+            $status = new FHIRNarrativeStatus($status);
+        }
+        if (!($status instanceof FHIRNarrativeStatus)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRNarrative::setStatus - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRNarrativeStatus or appropriate scalar value, %s seen.',
+                gettype($status)
+            ));
+        }
         $this->status = $status;
         return $this;
     }
 
     /**
-     * The actual narrative content, a stripped down version of XHTML.
-     * @return \string
+     * The status of the narrative - whether it's entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRNarrativeStatus
      */
-    public function getDiv() {
-        return $this->div;
+    public function getStatus()
+    {
+        return $this->status;
     }
 
-    /**
-     * The actual narrative content, a stripped down version of XHTML.
-     * @param \string $div
-     * @return $this
-     */
-    public function setDiv($div) {
-        $this->div = $div;
-        return $this;
-    }
 
     /**
      * @return string
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @param mixed $data
+     * @return mixed
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-            if (isset($data['div'])) {
-                $this->setDiv($data['div']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getDiv())) {
+            $a['div'] = $v;
         }
-        parent::__construct($data);
+        if (null !== ($v = $this->getStatus())) {
+            $a['status'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @return string
-     */
-    public function __toString() {
-        return $this->get_fhirElementName();
-    }
-
-    /**
-     * @return array
-     */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->status)) $json['status'] = $this->status;
-        if (isset($this->div)) $json['div'] = $this->div;
-        return $json;
-    }
-
-    /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Narrative xmlns="http://hl7.org/fhir"></Narrative>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->status)) $this->status->xmlSerialize(true, $sxe->addChild('status'));
-        if (isset($this->div)) {
-           PHPFHIRHelper::recursiveXMLImport($sxe, $this->div);
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Narrative xmlns="http://hl7.org/fhir"></Narrative>');
         }
-        if ($returnSXE) return $sxe;
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

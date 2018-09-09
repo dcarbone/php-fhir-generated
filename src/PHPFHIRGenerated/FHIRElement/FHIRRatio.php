@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,14 +67,14 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * A relationship of two Quantity values - expressed as a numerator and a denominator.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRRatio
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRRatio extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * The value of the numerator.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public $numerator = null;
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Ratio';
 
     /**
      * The value of the denominator.
@@ -81,100 +83,119 @@ class FHIRRatio extends FHIRElement implements \JsonSerializable
     public $denominator = null;
 
     /**
-     * @var string
+     * The value of the numerator.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    private $_fhirElementName = 'Ratio';
+    public $numerator = null;
 
     /**
-     * The value of the numerator.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * FHIRRatio Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public function getNumerator() {
-        return $this->numerator;
-    }
-
-    /**
-     * The value of the numerator.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $numerator
-     * @return $this
-     */
-    public function setNumerator($numerator) {
-        $this->numerator = $numerator;
-        return $this;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['denominator'])) {
+                $this->setDenominator($data['denominator']);
+            }
+            if (isset($data['numerator'])) {
+                $this->setNumerator($data['numerator']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRRatio::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * The value of the denominator.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public function getDenominator() {
-        return $this->denominator;
-    }
-
-    /**
-     * The value of the denominator.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $denominator
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
-    public function setDenominator($denominator) {
+    public function setDenominator(FHIRQuantity $denominator = null)
+    {
+        if (null === $denominator) {
+            return $this; 
+        }
         $this->denominator = $denominator;
         return $this;
     }
 
     /**
-     * @return string
+     * The value of the denominator.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getDenominator()
+    {
+        return $this->denominator;
     }
 
+
     /**
-     * @param mixed $data
+     * The value of the numerator.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * @return $this
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['numerator'])) {
-                $this->setNumerator($data['numerator']);
-            }
-            if (isset($data['denominator'])) {
-                $this->setDenominator($data['denominator']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function setNumerator(FHIRQuantity $numerator = null)
+    {
+        if (null === $numerator) {
+            return $this; 
         }
-        parent::__construct($data);
+        $this->numerator = $numerator;
+        return $this;
     }
+
+    /**
+     * The value of the numerator.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    public function getNumerator()
+    {
+        return $this->numerator;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->numerator)) $json['numerator'] = $this->numerator;
-        if (isset($this->denominator)) $json['denominator'] = $this->denominator;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getDenominator())) {
+            $a['denominator'] = $v;
+        }
+        if (null !== ($v = $this->getNumerator())) {
+            $a['numerator'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Ratio xmlns="http://hl7.org/fhir"></Ratio>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->numerator)) $this->numerator->xmlSerialize(true, $sxe->addChild('numerator'));
-        if (isset($this->denominator)) $this->denominator->xmlSerialize(true, $sxe->addChild('denominator'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Ratio xmlns="http://hl7.org/fhir"></Ratio>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

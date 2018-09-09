@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,32 +67,14 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRQuantity
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRQuantity extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public $value = null;
-
-    /**
-     * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
-     */
-    public $comparator = null;
-
-    /**
-     * A human-readable form of the unit.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $unit = null;
-
-    /**
-     * The identification of the system that provides the coded form of the unit.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $system = null;
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Quantity';
 
     /**
      * A computer processable form of the unit in some unit representation system.
@@ -99,169 +83,272 @@ class FHIRQuantity extends FHIRElement implements \JsonSerializable
     public $code = null;
 
     /**
-     * @var string
-     */
-    private $_fhirElementName = 'Quantity';
-
-    /**
-     * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDecimal
-     */
-    public function getValue() {
-        return $this->value;
-    }
-
-    /**
-     * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDecimal $value
-     * @return $this
-     */
-    public function setValue($value) {
-        $this->value = $value;
-        return $this;
-    }
-
-    /**
      * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
      */
-    public function getComparator() {
-        return $this->comparator;
-    }
-
-    /**
-     * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator $comparator
-     * @return $this
-     */
-    public function setComparator($comparator) {
-        $this->comparator = $comparator;
-        return $this;
-    }
-
-    /**
-     * A human-readable form of the unit.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getUnit() {
-        return $this->unit;
-    }
-
-    /**
-     * A human-readable form of the unit.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $unit
-     * @return $this
-     */
-    public function setUnit($unit) {
-        $this->unit = $unit;
-        return $this;
-    }
+    public $comparator = null;
 
     /**
      * The identification of the system that provides the coded form of the unit.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
      */
-    public function getSystem() {
-        return $this->system;
-    }
+    public $system = null;
 
     /**
-     * The identification of the system that provides the coded form of the unit.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $system
-     * @return $this
+     * A human-readable form of the unit.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function setSystem($system) {
-        $this->system = $system;
-        return $this;
+    public $unit = null;
+
+    /**
+     * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     */
+    public $value = null;
+
+    /**
+     * FHIRQuantity Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
+     */
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['code'])) {
+                $this->setCode($data['code']);
+            }
+            if (isset($data['comparator'])) {
+                $this->setComparator($data['comparator']);
+            }
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
+            if (isset($data['unit'])) {
+                $this->setUnit($data['unit']);
+            }
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRQuantity::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * A computer processable form of the unit in some unit representation system.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public function getCode() {
-        return $this->code;
-    }
-
-    /**
-     * A computer processable form of the unit in some unit representation system.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
-    public function setCode($code) {
+    public function setCode($code)
+    {
+        if (null === $code) {
+            return $this; 
+        }
+        if (is_scalar($code)) {
+            $code = new FHIRCode($code);
+        }
+        if (!($code instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuantity::setCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($code)
+            ));
+        }
         $this->code = $code;
         return $this;
     }
 
     /**
-     * @return string
+     * A computer processable form of the unit in some unit representation system.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getCode()
+    {
+        return $this->code;
     }
 
+
     /**
-     * @param mixed $data
+     * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
+     * @return $this
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['value'])) {
-                $this->setValue($data['value']);
-            }
-            if (isset($data['comparator'])) {
-                $this->setComparator($data['comparator']);
-            }
-            if (isset($data['unit'])) {
-                $this->setUnit($data['unit']);
-            }
-            if (isset($data['system'])) {
-                $this->setSystem($data['system']);
-            }
-            if (isset($data['code'])) {
-                $this->setCode($data['code']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function setComparator($comparator)
+    {
+        if (null === $comparator) {
+            return $this; 
         }
-        parent::__construct($data);
+        if (is_scalar($comparator)) {
+            $comparator = new FHIRQuantityComparator($comparator);
+        }
+        if (!($comparator instanceof FHIRQuantityComparator)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuantity::setComparator - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator or appropriate scalar value, %s seen.',
+                gettype($comparator)
+            ));
+        }
+        $this->comparator = $comparator;
+        return $this;
     }
+
+    /**
+     * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "<" , then the real value is < stated value.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantityComparator
+     */
+    public function getComparator()
+    {
+        return $this->comparator;
+    }
+
+
+    /**
+     * The identification of the system that provides the coded form of the unit.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return $this
+     */
+    public function setSystem($system)
+    {
+        if (null === $system) {
+            return $this; 
+        }
+        if (is_scalar($system)) {
+            $system = new FHIRUri($system);
+        }
+        if (!($system instanceof FHIRUri)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuantity::setSystem - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($system)
+            ));
+        }
+        $this->system = $system;
+        return $this;
+    }
+
+    /**
+     * The identification of the system that provides the coded form of the unit.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getSystem()
+    {
+        return $this->system;
+    }
+
+
+    /**
+     * A human-readable form of the unit.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setUnit($unit)
+    {
+        if (null === $unit) {
+            return $this; 
+        }
+        if (is_scalar($unit)) {
+            $unit = new FHIRString($unit);
+        }
+        if (!($unit instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuantity::setUnit - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($unit)
+            ));
+        }
+        $this->unit = $unit;
+        return $this;
+    }
+
+    /**
+     * A human-readable form of the unit.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+
+    /**
+     * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        if (null === $value) {
+            return $this; 
+        }
+        if (is_scalar($value)) {
+            $value = new FHIRDecimal($value);
+        }
+        if (!($value instanceof FHIRDecimal)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRQuantity::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDecimal or appropriate scalar value, %s seen.',
+                gettype($value)
+            ));
+        }
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * The value of the measured amount. The value includes an implicit precision in the presentation of the value.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDecimal
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return (string)$this->getValue();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->value)) $json['value'] = $this->value;
-        if (isset($this->comparator)) $json['comparator'] = $this->comparator;
-        if (isset($this->unit)) $json['unit'] = $this->unit;
-        if (isset($this->system)) $json['system'] = $this->system;
-        if (isset($this->code)) $json['code'] = $this->code;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getCode())) {
+            $a['code'] = $v;
+        }
+        if (null !== ($v = $this->getComparator())) {
+            $a['comparator'] = $v;
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $a['system'] = $v;
+        }
+        if (null !== ($v = $this->getUnit())) {
+            $a['unit'] = $v;
+        }
+        if (null !== ($v = $this->getValue())) {
+            $a['value'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Quantity xmlns="http://hl7.org/fhir"></Quantity>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->value)) $this->value->xmlSerialize(true, $sxe->addChild('value'));
-        if (isset($this->comparator)) $this->comparator->xmlSerialize(true, $sxe->addChild('comparator'));
-        if (isset($this->unit)) $this->unit->xmlSerialize(true, $sxe->addChild('unit'));
-        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Quantity xmlns="http://hl7.org/fhir"></Quantity>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

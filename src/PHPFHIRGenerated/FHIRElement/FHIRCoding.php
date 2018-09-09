@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,20 +67,14 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * A reference to a code defined by a terminology system.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRCoding
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRCoding extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * The identification of the code system that defines the meaning of the symbol in the code.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $system = null;
-
-    /**
-     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $version = null;
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Coding';
 
     /**
      * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
@@ -93,175 +89,266 @@ class FHIRCoding extends FHIRElement implements \JsonSerializable
     public $display = null;
 
     /**
-     * Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).
+     * The identification of the code system that defines the meaning of the symbol in the code.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public $system = null;
+
+    /**
+     * Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).
      * @var \PHPFHIRGenerated\FHIRElement\FHIRBoolean
      */
     public $userSelected = null;
 
     /**
-     * @var string
-     */
-    private $_fhirElementName = 'Coding';
-
-    /**
-     * The identification of the code system that defines the meaning of the symbol in the code.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getSystem() {
-        return $this->system;
-    }
-
-    /**
-     * The identification of the code system that defines the meaning of the symbol in the code.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $system
-     * @return $this
-     */
-    public function setSystem($system) {
-        $this->system = $system;
-        return $this;
-    }
-
-    /**
      * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getVersion() {
-        return $this->version;
-    }
+    public $version = null;
 
     /**
-     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $version
-     * @return $this
+     * FHIRCoding Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public function setVersion($version) {
-        $this->version = $version;
-        return $this;
-    }
-
-    /**
-     * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public function getCode() {
-        return $this->code;
-    }
-
-    /**
-     * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $code
-     * @return $this
-     */
-    public function setCode($code) {
-        $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * A representation of the meaning of the code in the system, following the rules of the system.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getDisplay() {
-        return $this->display;
-    }
-
-    /**
-     * A representation of the meaning of the code in the system, following the rules of the system.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $display
-     * @return $this
-     */
-    public function setDisplay($display) {
-        $this->display = $display;
-        return $this;
-    }
-
-    /**
-     * Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBoolean
-     */
-    public function getUserSelected() {
-        return $this->userSelected;
-    }
-
-    /**
-     * Indicates that this coding was chosen by a user directly - i.e. off a pick list of available items (codes or displays).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBoolean $userSelected
-     * @return $this
-     */
-    public function setUserSelected($userSelected) {
-        $this->userSelected = $userSelected;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
-    }
-
-    /**
-     * @param mixed $data
-     */
-    public function __construct($data = []) {
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
         if (is_array($data)) {
-            if (isset($data['system'])) {
-                $this->setSystem($data['system']);
-            }
-            if (isset($data['version'])) {
-                $this->setVersion($data['version']);
-            }
             if (isset($data['code'])) {
                 $this->setCode($data['code']);
             }
             if (isset($data['display'])) {
                 $this->setDisplay($data['display']);
             }
+            if (isset($data['system'])) {
+                $this->setSystem($data['system']);
+            }
             if (isset($data['userSelected'])) {
                 $this->setUserSelected($data['userSelected']);
             }
+            if (isset($data['version'])) {
+                $this->setVersion($data['version']);
+            }
         } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRCoding::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
         }
-        parent::__construct($data);
     }
+
+    /**
+     * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        if (null === $code) {
+            return $this; 
+        }
+        if (is_scalar($code)) {
+            $code = new FHIRCode($code);
+        }
+        if (!($code instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCoding::setCode - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($code)
+            ));
+        }
+        $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+
+    /**
+     * A representation of the meaning of the code in the system, following the rules of the system.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setDisplay($display)
+    {
+        if (null === $display) {
+            return $this; 
+        }
+        if (is_scalar($display)) {
+            $display = new FHIRString($display);
+        }
+        if (!($display instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCoding::setDisplay - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($display)
+            ));
+        }
+        $this->display = $display;
+        return $this;
+    }
+
+    /**
+     * A representation of the meaning of the code in the system, following the rules of the system.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getDisplay()
+    {
+        return $this->display;
+    }
+
+
+    /**
+     * The identification of the code system that defines the meaning of the symbol in the code.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     * @return $this
+     */
+    public function setSystem($system)
+    {
+        if (null === $system) {
+            return $this; 
+        }
+        if (is_scalar($system)) {
+            $system = new FHIRUri($system);
+        }
+        if (!($system instanceof FHIRUri)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCoding::setSystem - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUri or appropriate scalar value, %s seen.',
+                gettype($system)
+            ));
+        }
+        $this->system = $system;
+        return $this;
+    }
+
+    /**
+     * The identification of the code system that defines the meaning of the symbol in the code.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUri
+     */
+    public function getSystem()
+    {
+        return $this->system;
+    }
+
+
+    /**
+     * Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     * @return $this
+     */
+    public function setUserSelected($userSelected)
+    {
+        if (null === $userSelected) {
+            return $this; 
+        }
+        if (is_scalar($userSelected)) {
+            $userSelected = new FHIRBoolean($userSelected);
+        }
+        if (!($userSelected instanceof FHIRBoolean)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCoding::setUserSelected - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBoolean or appropriate scalar value, %s seen.',
+                gettype($userSelected)
+            ));
+        }
+        $this->userSelected = $userSelected;
+        return $this;
+    }
+
+    /**
+     * Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBoolean
+     */
+    public function getUserSelected()
+    {
+        return $this->userSelected;
+    }
+
+
+    /**
+     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        if (null === $version) {
+            return $this; 
+        }
+        if (is_scalar($version)) {
+            $version = new FHIRString($version);
+        }
+        if (!($version instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRCoding::setVersion - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($version)
+            ));
+        }
+        $this->version = $version;
+        return $this;
+    }
+
+    /**
+     * The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->system)) $json['system'] = $this->system;
-        if (isset($this->version)) $json['version'] = $this->version;
-        if (isset($this->code)) $json['code'] = $this->code;
-        if (isset($this->display)) $json['display'] = $this->display;
-        if (isset($this->userSelected)) $json['userSelected'] = $this->userSelected;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getCode())) {
+            $a['code'] = $v;
+        }
+        if (null !== ($v = $this->getDisplay())) {
+            $a['display'] = $v;
+        }
+        if (null !== ($v = $this->getSystem())) {
+            $a['system'] = $v;
+        }
+        if (null !== ($v = $this->getUserSelected())) {
+            $a['userSelected'] = $v;
+        }
+        if (null !== ($v = $this->getVersion())) {
+            $a['version'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Coding xmlns="http://hl7.org/fhir"></Coding>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->system)) $this->system->xmlSerialize(true, $sxe->addChild('system'));
-        if (isset($this->version)) $this->version->xmlSerialize(true, $sxe->addChild('version'));
-        if (isset($this->code)) $this->code->xmlSerialize(true, $sxe->addChild('code'));
-        if (isset($this->display)) $this->display->xmlSerialize(true, $sxe->addChild('display'));
-        if (isset($this->userSelected)) $this->userSelected->xmlSerialize(true, $sxe->addChild('userSelected'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Coding xmlns="http://hl7.org/fhir"></Coding>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

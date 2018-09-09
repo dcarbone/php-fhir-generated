@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -60,84 +62,118 @@
  * 
  */
 
+use PHPFHIRGenerated\FHIRDecimalPrimitive;
 use PHPFHIRGenerated\FHIRElement;
 
 /**
  * A rational number with implicit precision
  * Do not use a IEEE type floating point type, instead use something that works like a true decimal, with inbuilt precision (e.g. Java BigInteger)
  * If the element is present, it must have either a @value, an @id, or extensions
+ *
+ * Class FHIRDecimal
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRDecimal extends FHIRElement implements \JsonSerializable
 {
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'decimal';
+
     /**
-     * @var string
+     * @var \PHPFHIRGenerated\FHIRDecimalPrimitive
      */
     public $value = null;
 
     /**
-     * @var string
+     * FHIRDecimal Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    private $_fhirElementName = 'decimal';
-
-    /**
-     * @return string
-     */
-    public function getValue() {
-        return $this->value;
+    public function __construct($data = null)
+    {
+        if (is_scalar($data)) {
+            $this->setValue($data);
+            return;
+        }
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['value'])) {
+                $this->setValue($data['value']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRDecimal::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
-     * @param string $value
+     * @param null|\PHPFHIRGenerated\FHIRDecimalPrimitive
      * @return $this
      */
-    public function setValue($value) {
+    public function setValue($value)
+    {
+        if (null === $value) {
+            return $this; 
+        }
+        if (is_scalar($value)) {
+            $value = new FHIRDecimalPrimitive($value);
+        }
+        if (!($value instanceof FHIRDecimalPrimitive)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRDecimal::setValue - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRDecimalPrimitive or appropriate scalar value, %s seen.',
+                gettype($value)
+            ));
+        }
         $this->value = $value;
         return $this;
     }
 
     /**
-     * @return string
+     * @return null|\PHPFHIRGenerated\FHIRDecimalPrimitive
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
-    }
-
-    /**
-     * @param mixed $data
-     */
-    public function __construct($data = []) {
-        if (is_scalar($data)) {
-            $this->setValue($data);
-        } else {
-            parent::__construct($data);
-        }
+    public function getValue()
+    {
+        return $this->value;
     }
 
     /**
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return (string)$this->getValue();
     }
 
     /**
      * @return mixed
      */
-    public function jsonSerialize() {
-        return $this->value;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (0 === count($a) && null !== ($v = $this->getValue())) {
+            return $v->getValue();
+        }
+        if (null !== ($v = $this->getValue())) {
+            $a['value'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<decimal xmlns="http://hl7.org/fhir"></decimal>');
-        $sxe->addAttribute('value', $this->value);
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<decimal xmlns="http://hl7.org/fhir"></decimal>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

@@ -1,12 +1,12 @@
 # php-fhir-generated
 Pre-generated classes from dcarbone/php-fhir
 
-# VERSION: Master
+# VERSION: feature/refactor
 
 - Homepage: [https://build.fhir.org/](https://build.fhir.org/)
 - Resources: [https://build.fhir.org/resourcelist.html](https://build.fhir.org/resourcelist.html)
 
-`master` will contain the latest output from `dcarbone/php-fhir` based upon the latest (at time of generation) version
+`feature/refactor` will contain the latest output from `dcarbone/php-fhir` branch `feature/refactor` based upon the latest (at time of generation) version
 of FHIR.  Use at your own risk.
 
 ## Usage
@@ -20,7 +20,7 @@ composer.json require entry:
 
 ```json
 {
-   "dcarbone/php-fhir-generated": "dev-master"
+   "dcarbone/php-fhir-generated": "dev-feature/refactor"
 }
 ```
 

@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,14 +67,14 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * A set of ordered Quantities defined by a low and high limit.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRRange
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRRange extends FHIRElement implements \JsonSerializable
 {
-    /**
-     * The low limit. The boundary is inclusive.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public $low = null;
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Range';
 
     /**
      * The high limit. The boundary is inclusive.
@@ -81,100 +83,119 @@ class FHIRRange extends FHIRElement implements \JsonSerializable
     public $high = null;
 
     /**
-     * @var string
+     * The low limit. The boundary is inclusive.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    private $_fhirElementName = 'Range';
+    public $low = null;
 
     /**
-     * The low limit. The boundary is inclusive.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * FHIRRange Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public function getLow() {
-        return $this->low;
-    }
-
-    /**
-     * The low limit. The boundary is inclusive.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $low
-     * @return $this
-     */
-    public function setLow($low) {
-        $this->low = $low;
-        return $this;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['high'])) {
+                $this->setHigh($data['high']);
+            }
+            if (isset($data['low'])) {
+                $this->setLow($data['low']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRRange::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * The high limit. The boundary is inclusive.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRQuantity
-     */
-    public function getHigh() {
-        return $this->high;
-    }
-
-    /**
-     * The high limit. The boundary is inclusive.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRQuantity $high
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      * @return $this
      */
-    public function setHigh($high) {
+    public function setHigh(FHIRQuantity $high = null)
+    {
+        if (null === $high) {
+            return $this; 
+        }
         $this->high = $high;
         return $this;
     }
 
     /**
-     * @return string
+     * The high limit. The boundary is inclusive.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getHigh()
+    {
+        return $this->high;
     }
 
+
     /**
-     * @param mixed $data
+     * The low limit. The boundary is inclusive.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     * @return $this
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['low'])) {
-                $this->setLow($data['low']);
-            }
-            if (isset($data['high'])) {
-                $this->setHigh($data['high']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function setLow(FHIRQuantity $low = null)
+    {
+        if (null === $low) {
+            return $this; 
         }
-        parent::__construct($data);
+        $this->low = $low;
+        return $this;
     }
+
+    /**
+     * The low limit. The boundary is inclusive.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRQuantity
+     */
+    public function getLow()
+    {
+        return $this->low;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->low)) $json['low'] = $this->low;
-        if (isset($this->high)) $json['high'] = $this->high;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getHigh())) {
+            $a['high'] = $v;
+        }
+        if (null !== ($v = $this->getLow())) {
+            $a['low'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Range xmlns="http://hl7.org/fhir"></Range>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->low)) $this->low->xmlSerialize(true, $sxe->addChild('low'));
-        if (isset($this->high)) $this->high->xmlSerialize(true, $sxe->addChild('high'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Range xmlns="http://hl7.org/fhir"></Range>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

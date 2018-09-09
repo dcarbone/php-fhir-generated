@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,14 +67,20 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * A contributor to the content of a knowledge asset, including authors, editors, reviewers, and endorsers.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRContributor
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRContributor extends FHIRElement implements \JsonSerializable
 {
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Contributor';
+
     /**
-     * The type of contributor.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContributorType
+     * Contact details to assist a user in finding and communicating with the contributor.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      */
-    public $type = null;
+    public $contact = null;
 
     /**
      * The name of the individual or organization responsible for the contribution.
@@ -81,144 +89,167 @@ class FHIRContributor extends FHIRElement implements \JsonSerializable
     public $name = null;
 
     /**
-     * Contact details to assist a user in finding and communicating with the contributor.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
-     */
-    public $contact = [];
-
-    /**
-     * @var string
-     */
-    private $_fhirElementName = 'Contributor';
-
-    /**
      * The type of contributor.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRContributorType
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRContributorType
      */
-    public function getType() {
-        return $this->type;
+    public $type = null;
+
+    /**
+     * FHIRContributor Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
+     */
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['contact'])) {
+                $this->setContact($data['contact']);
+            }
+            if (isset($data['name'])) {
+                $this->setName($data['name']);
+            }
+            if (isset($data['type'])) {
+                $this->setType($data['type']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRContributor::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
-     * The type of contributor.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContributorType $type
+     * Contact details to assist a user in finding and communicating with the contributor.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      * @return $this
      */
-    public function setType($type) {
-        $this->type = $type;
+    public function setContact(FHIRContactDetail $contact = null)
+    {
+        if (null === $contact) {
+            return $this; 
+        }
+        $this->contact = $contact;
         return $this;
     }
 
     /**
-     * The name of the individual or organization responsible for the contribution.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
+     * Contact details to assist a user in finding and communicating with the contributor.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContactDetail
      */
-    public function getName() {
-        return $this->name;
+    public function getContact()
+    {
+        return $this->contact;
     }
+
 
     /**
      * The name of the individual or organization responsible for the contribution.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $name
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
      * @return $this
      */
-    public function setName($name) {
+    public function setName($name)
+    {
+        if (null === $name) {
+            return $this; 
+        }
+        if (is_scalar($name)) {
+            $name = new FHIRString($name);
+        }
+        if (!($name instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRContributor::setName - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($name)
+            ));
+        }
         $this->name = $name;
         return $this;
     }
 
     /**
-     * Contact details to assist a user in finding and communicating with the contributor.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRContactDetail[]
+     * The name of the individual or organization responsible for the contribution.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
      */
-    public function getContact() {
-        return $this->contact;
+    public function getName()
+    {
+        return $this->name;
     }
 
+
     /**
-     * Contact details to assist a user in finding and communicating with the contributor.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRContactDetail $contact
+     * The type of contributor.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRContributorType
      * @return $this
      */
-    public function addContact($contact) {
-        $this->contact[] = $contact;
+    public function setType($type)
+    {
+        if (null === $type) {
+            return $this; 
+        }
+        if (is_scalar($type)) {
+            $type = new FHIRContributorType($type);
+        }
+        if (!($type instanceof FHIRContributorType)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRContributor::setType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRContributorType or appropriate scalar value, %s seen.',
+                gettype($type)
+            ));
+        }
+        $this->type = $type;
         return $this;
     }
 
     /**
-     * @return string
+     * The type of contributor.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRContributorType
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getType()
+    {
+        return $this->type;
     }
 
-    /**
-     * @param mixed $data
-     */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['type'])) {
-                $this->setType($data['type']);
-            }
-            if (isset($data['name'])) {
-                $this->setName($data['name']);
-            }
-            if (isset($data['contact'])) {
-                if (is_array($data['contact'])) {
-                    foreach($data['contact'] as $d) {
-                        $this->addContact($d);
-                    }
-                } else {
-                    throw new \InvalidArgumentException('"contact" must be array of objects or null, '.gettype($data['contact']).' seen.');
-                }
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
-        }
-        parent::__construct($data);
-    }
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->type)) $json['type'] = $this->type;
-        if (isset($this->name)) $json['name'] = $this->name;
-        if (0 < count($this->contact)) {
-            $json['contact'] = [];
-            foreach($this->contact as $contact) {
-                if (null !== $contact) $json['contact'][] = $contact;
-            }
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getContact())) {
+            $a['contact'] = $v;
         }
-        return $json;
+        if (null !== ($v = $this->getName())) {
+            $a['name'] = $v;
+        }
+        if (null !== ($v = $this->getType())) {
+            $a['type'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Contributor xmlns="http://hl7.org/fhir"></Contributor>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->type)) $this->type->xmlSerialize(true, $sxe->addChild('type'));
-        if (isset($this->name)) $this->name->xmlSerialize(true, $sxe->addChild('name'));
-        if (0 < count($this->contact)) {
-            foreach($this->contact as $contact) {
-                $contact->xmlSerialize(true, $sxe->addChild('contact'));
-            }
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Contributor xmlns="http://hl7.org/fhir"></Contributor>');
         }
-        if ($returnSXE) return $sxe;
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

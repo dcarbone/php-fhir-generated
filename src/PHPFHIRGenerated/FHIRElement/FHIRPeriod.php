@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,9 +67,21 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * A time period defined by a start and end date and optionally time.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRPeriod
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRPeriod extends FHIRElement implements \JsonSerializable
 {
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Period';
+
+    /**
+     * The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public $end = null;
+
     /**
      * The start of the period. The boundary is inclusive.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
@@ -75,106 +89,131 @@ class FHIRPeriod extends FHIRElement implements \JsonSerializable
     public $start = null;
 
     /**
-     * The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * FHIRPeriod Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
      */
-    public $end = null;
-
-    /**
-     * @var string
-     */
-    private $_fhirElementName = 'Period';
-
-    /**
-     * The start of the period. The boundary is inclusive.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getStart() {
-        return $this->start;
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['end'])) {
+                $this->setEnd($data['end']);
+            }
+            if (isset($data['start'])) {
+                $this->setStart($data['start']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRPeriod::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
-     * The start of the period. The boundary is inclusive.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $start
+     * The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
-    public function setStart($start) {
-        $this->start = $start;
-        return $this;
-    }
-
-    /**
-     * The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getEnd() {
-        return $this->end;
-    }
-
-    /**
-     * The end of the period. If the end of the period is missing, it means that the period is ongoing. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $end
-     * @return $this
-     */
-    public function setEnd($end) {
+    public function setEnd($end)
+    {
+        if (null === $end) {
+            return $this; 
+        }
+        if (is_scalar($end)) {
+            $end = new FHIRDateTime($end);
+        }
+        if (!($end instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRPeriod::setEnd - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($end)
+            ));
+        }
         $this->end = $end;
         return $this;
     }
 
     /**
-     * @return string
+     * The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getEnd()
+    {
+        return $this->end;
     }
 
+
     /**
-     * @param mixed $data
+     * The start of the period. The boundary is inclusive.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     * @return $this
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['start'])) {
-                $this->setStart($data['start']);
-            }
-            if (isset($data['end'])) {
-                $this->setEnd($data['end']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function setStart($start)
+    {
+        if (null === $start) {
+            return $this; 
         }
-        parent::__construct($data);
+        if (is_scalar($start)) {
+            $start = new FHIRDateTime($start);
+        }
+        if (!($start instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRPeriod::setStart - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($start)
+            ));
+        }
+        $this->start = $start;
+        return $this;
     }
+
+    /**
+     * The start of the period. The boundary is inclusive.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
+     */
+    public function getStart()
+    {
+        return $this->start;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->start)) $json['start'] = $this->start;
-        if (isset($this->end)) $json['end'] = $this->end;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getEnd())) {
+            $a['end'] = $v;
+        }
+        if (null !== ($v = $this->getStart())) {
+            $a['start'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Period xmlns="http://hl7.org/fhir"></Period>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->start)) $this->start->xmlSerialize(true, $sxe->addChild('start'));
-        if (isset($this->end)) $this->end->xmlSerialize(true, $sxe->addChild('end'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Period xmlns="http://hl7.org/fhir"></Period>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }

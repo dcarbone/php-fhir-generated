@@ -1,10 +1,12 @@
-<?php namespace PHPFHIRGenerated\FHIRElement;
+<?php
+
+namespace PHPFHIRGenerated\FHIRElement;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: February 10th, 2018
+ * Class creation date: September 9th, 2018
  * 
  * PHPFHIR Copyright:
  * 
@@ -52,7 +54,7 @@
  *   POSSIBILITY OF SUCH DAMAGE.
  * 
  * 
- *   Generated on Sat, Feb 10, 2018 20:53+0000 for FHIR v3.2.0
+ *   Generated on Sun, Sep 9, 2018 00:54+0000 for FHIR v3.5.0
  * 
  *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
  *   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -65,50 +67,20 @@ use PHPFHIRGenerated\FHIRElement;
 /**
  * For referring to data content defined in other formats.
  * If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions
+ *
+ * Class FHIRAttachment
+ * @package PHPFHIRGenerated\FHIRElement
  */
 class FHIRAttachment extends FHIRElement implements \JsonSerializable
 {
+    // Raw name of FHIR type represented by this class
+    const FHIR_TYPE_NAME = 'Attachment';
+
     /**
      * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
      * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
      */
     public $contentType = null;
-
-    /**
-     * The human language of the content. The value can be any valid value according to BCP 47.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
-     */
-    public $language = null;
-
-    /**
-     * The actual data of the attachment - a sequence of bytes. In XML, represented using base64.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
-     */
-    public $data = null;
-
-    /**
-     * An alternative location where the data can be accessed.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public $url = null;
-
-    /**
-     * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
-     */
-    public $size = null;
-
-    /**
-     * The calculated hash of the data using SHA-1. Represented using base64.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
-     */
-    public $hash = null;
-
-    /**
-     * A label or set of text to display in place of the data.
-     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public $title = null;
 
     /**
      * The date that the attachment was first created.
@@ -117,238 +89,401 @@ class FHIRAttachment extends FHIRElement implements \JsonSerializable
     public $creation = null;
 
     /**
-     * @var string
+     * The actual data of the attachment - a sequence of bytes, base64 encoded.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    private $_fhirElementName = 'Attachment';
+    public $data = null;
 
     /**
-     * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * The calculated hash of the data using SHA-1. Represented using base64.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
      */
-    public function getContentType() {
-        return $this->contentType;
+    public $hash = null;
+
+    /**
+     * The human language of the content. The value can be any valid value according to BCP 47.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public $language = null;
+
+    /**
+     * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
+     */
+    public $size = null;
+
+    /**
+     * A label or set of text to display in place of the data.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public $title = null;
+
+    /**
+     * A location where the data can be accessed.
+     * @var \PHPFHIRGenerated\FHIRElement\FHIRUrl
+     */
+    public $url = null;
+
+    /**
+     * FHIRAttachment Constructor
+     *
+     * @var mixed $data Value depends upon object being constructed.
+     */
+    public function __construct($data = null)
+    {
+        parent::__construct($data);
+        if (is_array($data)) {
+            if (isset($data['contentType'])) {
+                $this->setContentType($data['contentType']);
+            }
+            if (isset($data['creation'])) {
+                $this->setCreation($data['creation']);
+            }
+            if (isset($data['data'])) {
+                $this->setData($data['data']);
+            }
+            if (isset($data['hash'])) {
+                $this->setHash($data['hash']);
+            }
+            if (isset($data['language'])) {
+                $this->setLanguage($data['language']);
+            }
+            if (isset($data['size'])) {
+                $this->setSize($data['size']);
+            }
+            if (isset($data['title'])) {
+                $this->setTitle($data['title']);
+            }
+            if (isset($data['url'])) {
+                $this->setUrl($data['url']);
+            }
+        } else if (null !== $data) {
+            throw new \InvalidArgumentException(
+                '\PHPFHIRGenerated\FHIRElement\FHIRAttachment::__construct - Argument 1 expected to be array or null, '.
+                gettype($data).
+                ' seen.'
+            );
+        }
     }
 
     /**
      * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $contentType
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      * @return $this
      */
-    public function setContentType($contentType) {
+    public function setContentType($contentType)
+    {
+        if (null === $contentType) {
+            return $this; 
+        }
+        if (is_scalar($contentType)) {
+            $contentType = new FHIRCode($contentType);
+        }
+        if (!($contentType instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setContentType - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($contentType)
+            ));
+        }
         $this->contentType = $contentType;
         return $this;
     }
 
     /**
-     * The human language of the content. The value can be any valid value according to BCP 47.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRCode
+     * Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
      */
-    public function getLanguage() {
-        return $this->language;
+    public function getContentType()
+    {
+        return $this->contentType;
     }
 
-    /**
-     * The human language of the content. The value can be any valid value according to BCP 47.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRCode $language
-     * @return $this
-     */
-    public function setLanguage($language) {
-        $this->language = $language;
-        return $this;
-    }
-
-    /**
-     * The actual data of the attachment - a sequence of bytes. In XML, represented using base64.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
-     */
-    public function getData() {
-        return $this->data;
-    }
-
-    /**
-     * The actual data of the attachment - a sequence of bytes. In XML, represented using base64.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $data
-     * @return $this
-     */
-    public function setData($data) {
-        $this->data = $data;
-        return $this;
-    }
-
-    /**
-     * An alternative location where the data can be accessed.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUri
-     */
-    public function getUrl() {
-        return $this->url;
-    }
-
-    /**
-     * An alternative location where the data can be accessed.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUri $url
-     * @return $this
-     */
-    public function setUrl($url) {
-        $this->url = $url;
-        return $this;
-    }
-
-    /**
-     * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
-     */
-    public function getSize() {
-        return $this->size;
-    }
-
-    /**
-     * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt $size
-     * @return $this
-     */
-    public function setSize($size) {
-        $this->size = $size;
-        return $this;
-    }
-
-    /**
-     * The calculated hash of the data using SHA-1. Represented using base64.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
-     */
-    public function getHash() {
-        return $this->hash;
-    }
-
-    /**
-     * The calculated hash of the data using SHA-1. Represented using base64.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary $hash
-     * @return $this
-     */
-    public function setHash($hash) {
-        $this->hash = $hash;
-        return $this;
-    }
-
-    /**
-     * A label or set of text to display in place of the data.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRString
-     */
-    public function getTitle() {
-        return $this->title;
-    }
-
-    /**
-     * A label or set of text to display in place of the data.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRString $title
-     * @return $this
-     */
-    public function setTitle($title) {
-        $this->title = $title;
-        return $this;
-    }
 
     /**
      * The date that the attachment was first created.
-     * @return \PHPFHIRGenerated\FHIRElement\FHIRDateTime
-     */
-    public function getCreation() {
-        return $this->creation;
-    }
-
-    /**
-     * The date that the attachment was first created.
-     * @param \PHPFHIRGenerated\FHIRElement\FHIRDateTime $creation
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      * @return $this
      */
-    public function setCreation($creation) {
+    public function setCreation($creation)
+    {
+        if (null === $creation) {
+            return $this; 
+        }
+        if (is_scalar($creation)) {
+            $creation = new FHIRDateTime($creation);
+        }
+        if (!($creation instanceof FHIRDateTime)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setCreation - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRDateTime or appropriate scalar value, %s seen.',
+                gettype($creation)
+            ));
+        }
         $this->creation = $creation;
         return $this;
     }
 
     /**
-     * @return string
+     * The date that the attachment was first created.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRDateTime
      */
-    public function get_fhirElementName() {
-        return $this->_fhirElementName;
+    public function getCreation()
+    {
+        return $this->creation;
     }
 
+
     /**
-     * @param mixed $data
+     * The actual data of the attachment - a sequence of bytes, base64 encoded.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     * @return $this
      */
-    public function __construct($data = []) {
-        if (is_array($data)) {
-            if (isset($data['contentType'])) {
-                $this->setContentType($data['contentType']);
-            }
-            if (isset($data['language'])) {
-                $this->setLanguage($data['language']);
-            }
-            if (isset($data['data'])) {
-                $this->setData($data['data']);
-            }
-            if (isset($data['url'])) {
-                $this->setUrl($data['url']);
-            }
-            if (isset($data['size'])) {
-                $this->setSize($data['size']);
-            }
-            if (isset($data['hash'])) {
-                $this->setHash($data['hash']);
-            }
-            if (isset($data['title'])) {
-                $this->setTitle($data['title']);
-            }
-            if (isset($data['creation'])) {
-                $this->setCreation($data['creation']);
-            }
-        } else if (null !== $data) {
-            throw new \InvalidArgumentException('$data expected to be array of values, saw "'.gettype($data).'"');
+    public function setData($data)
+    {
+        if (null === $data) {
+            return $this; 
         }
-        parent::__construct($data);
+        if (is_scalar($data)) {
+            $data = new FHIRBase64Binary($data);
+        }
+        if (!($data instanceof FHIRBase64Binary)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setData - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
+                gettype($data)
+            ));
+        }
+        $this->data = $data;
+        return $this;
     }
+
+    /**
+     * The actual data of the attachment - a sequence of bytes, base64 encoded.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+
+    /**
+     * The calculated hash of the data using SHA-1. Represented using base64.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     * @return $this
+     */
+    public function setHash($hash)
+    {
+        if (null === $hash) {
+            return $this; 
+        }
+        if (is_scalar($hash)) {
+            $hash = new FHIRBase64Binary($hash);
+        }
+        if (!($hash instanceof FHIRBase64Binary)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setHash - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRBase64Binary or appropriate scalar value, %s seen.',
+                gettype($hash)
+            ));
+        }
+        $this->hash = $hash;
+        return $this;
+    }
+
+    /**
+     * The calculated hash of the data using SHA-1. Represented using base64.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRBase64Binary
+     */
+    public function getHash()
+    {
+        return $this->hash;
+    }
+
+
+    /**
+     * The human language of the content. The value can be any valid value according to BCP 47.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        if (null === $language) {
+            return $this; 
+        }
+        if (is_scalar($language)) {
+            $language = new FHIRCode($language);
+        }
+        if (!($language instanceof FHIRCode)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setLanguage - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRCode or appropriate scalar value, %s seen.',
+                gettype($language)
+            ));
+        }
+        $this->language = $language;
+        return $this;
+    }
+
+    /**
+     * The human language of the content. The value can be any valid value according to BCP 47.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRCode
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+
+    /**
+     * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        if (null === $size) {
+            return $this; 
+        }
+        if (is_scalar($size)) {
+            $size = new FHIRUnsignedInt($size);
+        }
+        if (!($size instanceof FHIRUnsignedInt)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setSize - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt or appropriate scalar value, %s seen.',
+                gettype($size)
+            ));
+        }
+        $this->size = $size;
+        return $this;
+    }
+
+    /**
+     * The number of bytes of data that make up this attachment (before base64 encoding, if that is done).
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUnsignedInt
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+
+    /**
+     * A label or set of text to display in place of the data.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        if (null === $title) {
+            return $this; 
+        }
+        if (is_scalar($title)) {
+            $title = new FHIRString($title);
+        }
+        if (!($title instanceof FHIRString)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setTitle - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRString or appropriate scalar value, %s seen.',
+                gettype($title)
+            ));
+        }
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * A label or set of text to display in place of the data.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRString
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+
+    /**
+     * A location where the data can be accessed.
+     * @param null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        if (null === $url) {
+            return $this; 
+        }
+        if (is_scalar($url)) {
+            $url = new FHIRUrl($url);
+        }
+        if (!($url instanceof FHIRUrl)) {
+            throw new \InvalidArgumentException(sprintf(
+                'FHIRAttachment::setUrl - Argument 1 expected to be instance of \PHPFHIRGenerated\FHIRElement\FHIRUrl or appropriate scalar value, %s seen.',
+                gettype($url)
+            ));
+        }
+        $this->url = $url;
+        return $this;
+    }
+
+    /**
+     * A location where the data can be accessed.
+     * @return null|\PHPFHIRGenerated\FHIRElement\FHIRUrl
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
 
     /**
      * @return string
      */
-    public function __toString() {
-        return $this->get_fhirElementName();
+    public function __toString()
+    {
+        return (string)self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return array
+     * @return mixed
      */
-    public function jsonSerialize() {
-        $json = parent::jsonSerialize();
-        if (isset($this->contentType)) $json['contentType'] = $this->contentType;
-        if (isset($this->language)) $json['language'] = $this->language;
-        if (isset($this->data)) $json['data'] = $this->data;
-        if (isset($this->url)) $json['url'] = $this->url;
-        if (isset($this->size)) $json['size'] = $this->size;
-        if (isset($this->hash)) $json['hash'] = $this->hash;
-        if (isset($this->title)) $json['title'] = $this->title;
-        if (isset($this->creation)) $json['creation'] = $this->creation;
-        return $json;
+    public function jsonSerialize()
+    {
+        $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getContentType())) {
+            $a['contentType'] = $v;
+        }
+        if (null !== ($v = $this->getCreation())) {
+            $a['creation'] = $v;
+        }
+        if (null !== ($v = $this->getData())) {
+            $a['data'] = $v;
+        }
+        if (null !== ($v = $this->getHash())) {
+            $a['hash'] = $v;
+        }
+        if (null !== ($v = $this->getLanguage())) {
+            $a['language'] = $v;
+        }
+        if (null !== ($v = $this->getSize())) {
+            $a['size'] = $v;
+        }
+        if (null !== ($v = $this->getTitle())) {
+            $a['title'] = $v;
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $a['url'] = $v;
+        }
+        return $a;
     }
 
     /**
-     * @param boolean $returnSXE
-     * @param \SimpleXMLElement $sxe
+     * @param bool $returnSXE
+     * @param null|\SimpleXMLElement $sxe
      * @return string|\SimpleXMLElement
      */
-    public function xmlSerialize($returnSXE = false, $sxe = null) {
-        if (null === $sxe) $sxe = new \SimpleXMLElement('<Attachment xmlns="http://hl7.org/fhir"></Attachment>');
-        parent::xmlSerialize(true, $sxe);
-        if (isset($this->contentType)) $this->contentType->xmlSerialize(true, $sxe->addChild('contentType'));
-        if (isset($this->language)) $this->language->xmlSerialize(true, $sxe->addChild('language'));
-        if (isset($this->data)) $this->data->xmlSerialize(true, $sxe->addChild('data'));
-        if (isset($this->url)) $this->url->xmlSerialize(true, $sxe->addChild('url'));
-        if (isset($this->size)) $this->size->xmlSerialize(true, $sxe->addChild('size'));
-        if (isset($this->hash)) $this->hash->xmlSerialize(true, $sxe->addChild('hash'));
-        if (isset($this->title)) $this->title->xmlSerialize(true, $sxe->addChild('title'));
-        if (isset($this->creation)) $this->creation->xmlSerialize(true, $sxe->addChild('creation'));
-        if ($returnSXE) return $sxe;
+    public function xmlSerialize($returnSXE = false, \SimpleXMLElement $sxe = null)
+    {
+        if (null === $sxe) {
+            $sxe = new \SimpleXMLElement('<Attachment xmlns="http://hl7.org/fhir"></Attachment>');
+        }
+        if ($returnSXE) {
+            return $sxe;
+        }
         return $sxe->saveXML();
     }
-
-
 }
